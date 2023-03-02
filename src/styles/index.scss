@@ -2,7 +2,14 @@
   box-sizing: border-box;
 }
 
-html, body, #___gatsby, #gatsby-focus-wrapper {
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
   height: 100%;
+  margin: 0;
 }
 
+html {
+  font-family: "Inter", sans-serif;
+}
