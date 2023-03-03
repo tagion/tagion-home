@@ -1,7 +1,7 @@
 import * as React from "react";
 import classNames from "classnames/bind";
 
-import { Header } from "../../components";
+import { Footer, Header } from "../../components";
 
 import * as styles from "./layout.module.scss";
 
@@ -16,7 +16,7 @@ export const Layout: React.FC<InputProps> = ({ children }) => {
     <div className={cx("layout")}>
       <Header />
       <main>{children}</main>
-      <div>footer</div>
+      <Footer/>
     </div>
   );
 };
