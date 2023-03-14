@@ -4,7 +4,7 @@ import { Layout } from "../templates/layout";
 const IndexPage = () => {
   return (
     <Layout>
-      <div> Tagion main page</div>
+      <div style={{ height: "1200px" }}> Tagion main page</div>
     </Layout>
   );
 };

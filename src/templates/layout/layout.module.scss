@@ -1,3 +1,18 @@
-.layout {
+@import "./../../styles/variables.scss";
 
+$main_desktop-padding-top: $header-desktop-height + 10px;
+$main_mobile-padding-top: $header-mobile-height + 10px;
+
+.layout {
+  margin: auto;
+  max-width: $page-max-width;
+  background-color: $layout-bg-color;
+
+  main {
+    padding: $main_desktop-padding-top 10px 10px 10px;
+
+    @media (max-width: $tablet-size) {
+      padding: $main_mobile-padding-top 10px 10px 10px;
+    }
+  }
 }

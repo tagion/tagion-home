@@ -1,0 +1,97 @@
+@import "./../../styles/variables.scss";
+
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+
+  height: $header-desktop-height;
+  width: 100%;
+  max-width: inherit;
+  background-color: inherit;
+
+  @media (max-width: $tablet-size) {
+    height: $header-mobile-height;
+  }
+
+  @media (min-width: calc($tablet-size + 1px)) {
+    padding: 0 5px;
+    border-bottom: 1px solid $header-border-bottom-color;
+  }
+
+  .header_content {
+    width: 100%;
+    height: 100%;
+    max-width: 1170px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    .logo_wrapper {
+      max-width: 148px;
+      width: 100%;
+    }
+
+    @media (max-width: $tablet-size) {
+      margin: 0 24px;
+      border-bottom: 1px solid $header-border-bottom-color;
+
+      .logo_wrapper {
+        width: 116px;
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      max-width: 342px;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+        color: $main-text-color;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19.2px;
+      }
+    }
+
+    .external_links {
+      display: flex;
+      flex-direction: row;
+      height: 26px;
+
+      a:not(:first-child) {
+        img {
+          margin-left: 32px;
+          height: 26px;
+        }
+      }
+    }
+
+    nav,
+    .external_links {
+      @media (max-width: $tablet-size) {
+        display: none;
+      }
+    }
+  }
+
+  .burger_menu {
+    display: none;
+    width: 26px;
+    height: 21.5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (max-width: $tablet-size) {
+      display: block;
+    }
+  }
+}
