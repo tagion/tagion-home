@@ -16,12 +16,12 @@ const cx = classNames.bind(styles);
 
 export const Footer: React.FC = () => {
   const columnOfLinksItem = (linkColumn: FooterColumnLinkType) => (
-    <div className={cx("column")}>
+    <div className={cx("column")} key={linkColumn.title}>
       <div className={cx("column_title")}>{linkColumn.title}</div>
       <div className={cx("column_links")}>
         {linkColumn.links &&
           linkColumn.links.map(({ linkTo, name, icon }: LinkType) => (
-            <Link to={linkTo}>
+            <Link to={linkTo} key={name}>
               {!!icon && <img src={icon} alt={`${name} icon`} />}
               {name}
             </Link>

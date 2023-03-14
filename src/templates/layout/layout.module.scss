@@ -1,7 +1,10 @@
 @import "./../../styles/variables.scss";
 
-$main_desktop-padding-top: $header-desktop-height + 10px;
-$main_mobile-padding-top: $header-mobile-height + 10px;
+$desktop_indent-to-header: 72px;
+$mobile_indent-to-header: 44px;
+
+$main_desktop-padding-top: $header-desktop-height + $desktop_indent-to-header;
+$main_mobile-padding-top: $header-mobile-height + $mobile_indent-to-header;
 
 .layout {
   margin: auto;
@@ -9,10 +12,10 @@ $main_mobile-padding-top: $header-mobile-height + 10px;
   background-color: $layout-bg-color;
 
   main {
-    padding: $main_desktop-padding-top 10px 10px 10px;
+    padding: $main_desktop-padding-top 0 150px 0;
 
     @media (max-width: $tablet-size) {
-      padding: $main_mobile-padding-top 10px 10px 10px;
+      padding: $main_mobile-padding-top 24px 90px 24px;
     }
   }
 }
