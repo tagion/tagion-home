@@ -3,8 +3,6 @@ import { Link } from "gatsby";
 import classNames from "classnames/bind";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
 
 import logoIcon from "../../assets/images/logo.svg";
 import twitterIcon from "../../assets/images/twitter_icon.svg";
@@ -12,6 +10,7 @@ import discordIcon from "../../assets/images/discord_icon.svg";
 import telegramIcon from "../../assets/images/telegram_icon.svg";
 import githubIcon from "../../assets/images/github_icon.svg";
 import burgerMenuIcon from "../../assets/images/burger_menu_icon.svg";
+import closeButtonIcon from "../../assets/images/close_button_icon.svg";
 
 import * as styles from "./header.module.scss";
 
@@ -19,7 +18,7 @@ const cx = classNames.bind(styles);
 
 export const Header: React.FC = () => {
   const [isNavPanelOpened, setIsNavPanelOpened] = useState<boolean>(false);
-  
+
   return (
     <header>
       <div className={cx("header_content")}>
@@ -82,13 +81,11 @@ const NavigationPanel = ({
         sx={{
           p: 2,
           height: 1,
-          backgroundColor: "#E7E7E7",
+          backgroundColor: "#000000",
           width: "100vw",
         }}
       >
-        <IconButton sx={{ mb: 2 }}>
-          <CloseIcon onClick={() => isOpenedHandler(false)} />
-        </IconButton>
+        <img src={closeButtonIcon} alt="Close Icon" onClick={() => isOpenedHandler(false)}/>
       </Box>
     </Drawer>
   );

@@ -3,9 +3,16 @@ $mobile-size: 480px;
 $tablet-size: 768px;
 $desktop-size: 1024px;
 
+$content-max-width: 1170px;
 $page-max-width: 1440px;
+
 $header-desktop-height: 120px;
 $header-mobile-height: 67px;
+$header-content-width: 100%;
+$header-content-height: 100%;
+
+$card-border-radius: 16px;
+$card-event-label-border-radius:100px;
 
 // colors
 $body-bg-color: #f5f5f5;
@@ -15,3 +22,9 @@ $main-text-color: rgba(34, 34, 34, 1);
 $header-border-bottom-color: rgba(34, 34, 34, 0.1);
 
 $footer-link-gray-color: rgba(231, 231, 231, 1);
+
+$card-bg-color: rgba(255, 255, 255, 1);
+$card-box-shadow-color: 0px 5px 50px rgba(0, 0, 0, 0.1);
+$card-text-shadow-color: 0px 5px 50px rgba(0, 0, 0, 0.1);
+$card-border-color: 1px solid rgba(34, 34, 34, 1);
+$card-text-opacity: 0.4;
