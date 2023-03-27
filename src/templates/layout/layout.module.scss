@@ -9,7 +9,7 @@ $main_mobile-padding-top: $header-mobile-height + $mobile_indent-to-header;
 .layout {
   margin: auto;
   max-width: $page-max-width;
-  background-color: $layout-bg-color;
+  background-color: $main-white-color;
 
   main {
     padding: $main_desktop-padding-top 0 150px 0;

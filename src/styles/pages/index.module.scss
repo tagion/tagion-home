@@ -1,0 +1,53 @@
+@import "./../../styles/variables.scss";
+
+.talk_with_us_form {
+  display: flex;
+  width: 100%;
+  max-width: 1170px;
+  margin: auto auto 72px;
+
+  .text {
+    width: fill-available;
+
+    span {
+      display: block;
+
+      &:first-child {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 60px;
+
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  @media (max-width: calc($tablet-size)) {
+    margin-bottom: 53px;
+    flex-direction: column;
+
+    .text {
+      width: fill-available;
+
+      span {
+        &:first-child {
+          font-size: 32px;
+          line-height: 39px;
+
+          margin-bottom: 16px;
+        }
+        &:last-child {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}

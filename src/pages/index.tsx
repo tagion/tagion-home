@@ -1,15 +1,31 @@
 import * as React from "react";
+import classNames from "classnames/bind";
 
-import { Card } from "../components";
+import { Card, Form } from "../components";
 import { Layout } from "../templates/layout";
 
 import batmanIcon from "../assets/images/batman.svg";
+
+import * as styles from "../styles/pages/index.module.scss";
+
+const cx = classNames.bind(styles);
 
 const IndexPage = () => {
   return (
     <Layout>
       {/*the code below is for testing purposes only */}
       <>
+        <div className={cx("talk_with_us_form")}>
+          <div className={cx("text")}>
+            <span>Talk with us</span>
+            <span>
+              Need some extra help and guidance? <br />
+              We`re here for it.
+            </span>
+          </div>
+          <Form />
+        </div>
+
         <div
           style={{
             display: "flex",
