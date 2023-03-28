@@ -1,7 +1,7 @@
-import * as React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 
-import { Card, Form } from "../components";
+import { Button, Card, Form, Label } from "../components";
 import { Layout } from "../templates/layout";
 
 import batmanIcon from "../assets/images/batman.svg";
@@ -11,10 +11,65 @@ import * as styles from "../styles/pages/index.module.scss";
 const cx = classNames.bind(styles);
 
 const IndexPage = () => {
+  const [choosenLabel, setChoosenLabel] = useState("");
+
   return (
     <Layout>
       {/*the code below is for testing purposes only */}
       <>
+        <div style={{ margin: "10px auto", width: "100%", maxWidth: "1170px" }}>
+          <Label
+            name="Testnet running"
+            boxShadow={true}
+            isTitleLabel={true}
+            isDecreases={false}
+            withBorder={true}
+          />
+          <br />
+          <Button
+            name="Learn more"
+            onClick={() => {
+              console.log("click");
+            }}
+          />
+          <br />
+          <br />
+          <Button
+            name="View more"
+            isWhite={true}
+            isNotWide={true}
+            onClick={() => {
+              console.log("click");
+            }}
+          />
+        </div>
+
+        <div className={cx("filter")}>
+          {labelsContent &&
+            labelsContent.map(({ name }) => (
+              <Label
+                key={name}
+                name={name}
+                isActive={choosenLabel === name}
+                withBorder={true}
+                onClick={setChoosenLabel}
+              />
+            ))}
+        </div>
+
+        <div className={cx("filter")}>
+          {labelsContent &&
+            labelsContent.map(({ name }) => (
+              <Label
+                key={name}
+                name={name}
+                isActive={choosenLabel === name}
+                isGrayTextColor={true}
+                onClick={setChoosenLabel}
+              />
+            ))}
+        </div>
+
         <div className={cx("talk_with_us_form")}>
           <div className={cx("text")}>
             <span>Talk with us</span>
@@ -351,5 +406,23 @@ const valueForContributorsCardContent = [
     title: "Get Tagion rewards",
     description: "Join early, explore and play Get Tagions in return",
     img: batmanIcon,
+  },
+];
+
+const labelsContent = [
+  {
+    name: "ALL",
+  },
+  {
+    name: "Governance",
+  },
+  {
+    name: "Development",
+  },
+  {
+    name: "Tagion.org",
+  },
+  {
+    name: "Network Testing",
   },
 ];

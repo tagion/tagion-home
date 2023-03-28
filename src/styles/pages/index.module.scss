@@ -51,3 +51,19 @@
     }
   }
 }
+
+.filter {
+  display: flex;
+  width: 100%;
+  max-width: 1170px;
+  margin: auto auto 60px;
+  flex-wrap: wrap;
+
+  & > *:not(:last-child) {
+    margin-right: 8px;
+    
+    @media (max-width: $tablet-size) {
+      margin-bottom: 7px;
+    }
+  }
+}
