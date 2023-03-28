@@ -1,0 +1,37 @@
+@import "./../../styles/variables.scss";
+
+.button {
+  width: fit-content;
+  height: 56px;
+  padding: 0 24px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+
+  color: $main-white-color;
+  background-color: $main-dark-color;
+  border-radius: $button-border-radius;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &.isWhite {
+    border: 1px solid $main-gray-color;
+    background-color: $main-white-color;
+    color: $main-dark-color;
+  }
+
+  @media (max-width: $tablet-size) {
+    width: 100% !important;
+    height: 50px;
+    line-height: 20px;
+    padding: 0;
+
+    &.isNotWide {
+      width: fit-content !important;
+      height: 43px;
+      padding: 0 24px;
+    }
+  }
+}

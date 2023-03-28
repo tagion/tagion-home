@@ -4,6 +4,8 @@ import { useFormik } from "formik";
 import { Select } from "@material-ui/core";
 import { MenuItem } from "@mui/material";
 
+import { Button } from "../button";
+
 import { ReactComponent as SelectArrowIcon } from "../../assets/images/select_tag_arrow_icon.svg";
 
 import * as styles from "./form.module.scss";
@@ -110,10 +112,7 @@ export const Form: React.FC = () => {
           industry.
         </label>
       </div>
-
-      <button type="submit" className={cx("submit")}>
-        Submit
-      </button>
+      <Button name="Submit" type="submit" widthInPx={141} />
     </form>
   );
 };
