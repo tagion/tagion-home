@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
 
-import { Button, Card, Form, Label } from "../components";
+import { Button, Card, FAQ, Form, Label } from "../components";
 import { Layout } from "../templates/layout";
 
 import batmanIcon from "../assets/images/batman.svg";
@@ -17,6 +17,7 @@ const IndexPage = () => {
     <Layout>
       {/*the code below is for testing purposes only */}
       <>
+        <FAQ />
         <div style={{ margin: "10px auto", width: "100%", maxWidth: "1170px" }}>
           <Label
             name="Testnet running"

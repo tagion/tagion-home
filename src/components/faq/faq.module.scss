@@ -1,0 +1,131 @@
+@import "./../../styles/variables.scss";
+
+.FAQ {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto auto 112px;
+
+  .block_name {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 60px;
+  }
+
+  .sections_wrapper > .FAQ_section {
+    display: flex;
+    padding: 32px 0 72px;
+    border-bottom: 1px solid $main-border-color;
+
+    &:first-child {
+      border-top: 1px solid $main-border-color;
+    }
+
+    .title {
+      max-width: 300px;
+      width: 100%;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    .QandA_wrapper {
+      width: -webkit-fill-available;
+
+      .QandA {
+        &:not(:last-child) {
+          margin-bottom: 69px;
+
+          &.isOpened {
+            margin-bottom: 16px;
+          }
+        }
+
+        .question {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+
+          span {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+          }
+
+          .icon_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            margin-left: 10px;
+
+            .icon {
+              width: 22px;
+            }
+          }
+        }
+
+        .answer {
+          display: inline-block;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          margin-top: 47px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet-size) {
+    margin-bottom: 66px;
+
+    .block_name {
+      font-size: 32px;
+      line-height: 39px;
+      margin-bottom: 48px;
+    }
+
+    .sections_wrapper > .FAQ_section {
+      flex-direction: column;
+      border: none !important;
+      padding: 0 0 48px;
+
+      .title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: $faq-mobile-title-text-color;
+        margin-bottom: 32px;
+      }
+
+      .QandA_wrapper > .QandA {
+        &:not(:last-child) {
+          margin-bottom: 32px;
+        }
+
+        .question {
+          span {
+            font-size: 18px;
+            line-height: 26px;
+          }
+
+          .icon_wrapper {
+            align-self: flex-start;
+
+            .icon {
+              min-width: 19px;
+              width: 19px;
+            }
+          }
+        }
+
+        .answer {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}
