@@ -17,7 +17,7 @@ header {
 
   @media (min-width: calc($tablet-size + 1px)) {
     padding: 0 5px;
-    border-bottom: 1px solid $header-border-bottom-color;
+    border-bottom: 1px solid $main-border-color;
   }
 
   .header_content {
@@ -38,7 +38,7 @@ header {
 
     @media (max-width: $tablet-size) {
       margin: 0 24px;
-      border-bottom: 1px solid $header-border-bottom-color;
+      border-bottom: 1px solid $main-border-color;
 
       .logo_wrapper {
         width: 116px;
