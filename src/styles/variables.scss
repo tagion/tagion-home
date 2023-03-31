@@ -6,19 +6,17 @@ $desktop-size: 1024px;
 $content-max-width: 1170px;
 $page-max-width: 1440px;
 
+$main-border-radius: 100px;
+
 $header-desktop-height: 120px;
 $header-mobile-height: 67px;
 $header-content-width: 100%;
 $header-content-height: 100%;
 
 $card-border-radius: 16px;
-$card-event-label-border-radius: 100px;
 
 $form-border-radius: 18px;
 $input-border-radius: 8px;
-$checkbox-border-radius: 100px;
-
-$button-border-radius: 100px;
 
 // colors
 $main-dark-color: rgba(34, 34, 34, 1);
@@ -33,9 +31,11 @@ $card-box-shadow-color: 0px 5px 50px rgba(0, 0, 0, 0.1);
 $card-text-shadow-color: 0px 5px 50px rgba(0, 0, 0, 0.1);
 $card-text-opacity: 0.4;
 
-$form-border-color: 1px solid rgba(241, 241, 241, 1);
-$input-border-color: 0.5px solid rgba(138, 138, 138, 1);
+$form-border-color: rgba(241, 241, 241, 1);
+$input-border-color: rgba(138, 138, 138, 1);
 
 $label-box-shadow-color: 0px 0px 10px rgba(0, 0, 0, 0.15);
 
 $faq-mobile-title-text-color: rgba(77, 77, 77, 1);
+
+$sign-up-email-gray-text-color: rgba(0, 0, 0, 0.5);

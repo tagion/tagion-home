@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
 
-import { Button, Card, FAQ, Form, Label } from "../components";
+import { Button, Card, EmailSignUp, FAQ, Form, Label } from "../components";
 import { Layout } from "../templates/layout";
 
 import batmanIcon from "../assets/images/batman.svg";
@@ -17,6 +17,7 @@ const IndexPage = () => {
     <Layout>
       {/*the code below is for testing purposes only */}
       <>
+        <EmailSignUp />
         <FAQ />
         <div style={{ margin: "10px auto", width: "100%", maxWidth: "1170px" }}>
           <Label
@@ -39,6 +40,14 @@ const IndexPage = () => {
             name="View more"
             isWhite={true}
             isNotWide={true}
+            onClick={() => {
+              console.log("click");
+            }}
+          />
+          <br />
+          <Button
+            name="Details"
+            withArrow={true}
             onClick={() => {
               console.log("click");
             }}
@@ -247,6 +256,7 @@ const IndexPage = () => {
               ))}
           </div>
         </div>
+        <EmailSignUp />
       </>
     </Layout>
   );
