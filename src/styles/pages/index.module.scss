@@ -3,7 +3,7 @@
 .talk_with_us_form {
   display: flex;
   width: 100%;
-  max-width: 1170px;
+  max-width: $content-max-width;
   margin: auto auto 72px;
 
   .text {
@@ -55,7 +55,7 @@
 .filter {
   display: flex;
   width: 100%;
-  max-width: 1170px;
+  max-width: $content-max-width;
   margin: auto auto 60px;
   flex-wrap: wrap;
 

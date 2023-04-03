@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./card";
+export * from "./email-sign-up";
 export * from "./faq";
 export * from "./footer";
 export * from "./form";

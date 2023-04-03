@@ -1,6 +1,11 @@
 @import "./../../styles/variables.scss";
 
 .button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
   width: fit-content;
   height: 56px;
   padding: 0 24px;
@@ -8,10 +13,11 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 26px;
+  letter-spacing: 0.6px;
 
   color: $main-white-color;
   background-color: $main-dark-color;
-  border-radius: $button-border-radius;
+  border-radius: $main-border-radius;
   border: none;
   outline: none;
   cursor: pointer;
@@ -22,11 +28,26 @@
     color: $main-dark-color;
   }
 
+  &.withArrow {
+    height: 43px;
+    padding: 0 34px;
+  }
+
+  svg {
+    margin-left: 8.5px;
+  }
+
   @media (max-width: $tablet-size) {
     width: 100% !important;
     height: 50px;
     line-height: 20px;
     padding: 0;
+
+    &.withArrow {
+      height: 36px;
+      font-size: 16px;
+      line-height: 24px;
+    }
 
     &.isNotWide {
       width: fit-content !important;

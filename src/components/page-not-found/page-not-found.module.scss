@@ -7,10 +7,19 @@
   flex-direction: column;
 
   span {
-    color: #222222;
-    font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 32px;
     line-height: 40px;
+    text-align: center;
+  }
+
+  img {
+    margin: 0 30px 51px;
+    max-width: 574px;
+
+  }
+
+  a {
+    margin-top: 87px;
   }
 }

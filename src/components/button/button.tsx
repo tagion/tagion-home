@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames/bind";
 
+import { ReactComponent as DownArrowIcon } from "../../assets/images/down-arrow.svg";
+
 import * as styles from "./button.module.scss";
 
 const cx = classNames.bind(styles);
@@ -11,6 +13,8 @@ interface InputProps {
   widthInPx?: number;
   isWhite?: boolean;
   isNotWide?: boolean;
+  withArrow?: boolean;
+  className?: string;
   onClick?: () => void;
 }
 
@@ -20,16 +24,23 @@ export const Button: React.FC<InputProps> = ({
   widthInPx,
   isWhite,
   isNotWide,
+  withArrow,
+  className,
   onClick,
 }) => {
   return (
     <button
       type={type}
-      className={cx("button", { isWhite, isNotWide })}
+      className={`${cx("button", {
+        isWhite,
+        isNotWide,
+        withArrow,
+      })} ${className}`}
       onClick={() => onClick?.()}
       style={{ width: `${widthInPx}px` }}
     >
-      {name}
+      <span>{name}</span>
+      {withArrow && <DownArrowIcon />}
     </button>
   );
 };
