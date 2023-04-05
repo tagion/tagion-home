@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
 
-import { Button, Card, EmailSignUp, FAQ, Form, Label } from "../components";
+import {
+  Button,
+  Card,
+  EmailSignUp,
+  FAQ,
+  Form,
+  Label,
+  Timeline,
+} from "../components";
 import { Layout } from "../templates/layout";
 
 import batmanIcon from "../assets/images/batman.svg";
@@ -17,6 +25,7 @@ const IndexPage = () => {
     <Layout>
       {/*the code below is for testing purposes only */}
       <>
+        <Timeline />
         <EmailSignUp />
         <FAQ />
         <div style={{ margin: "10px auto", width: "100%", maxWidth: "1170px" }}>
