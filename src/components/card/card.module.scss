@@ -16,6 +16,38 @@
     text-shadow: $card-text-shadow-color;
   }
 
+  &.isTimeline {
+    width: 100%;
+    max-width: 312px;
+    min-height: 514px;
+
+    padding: 24px 18px;
+    justify-content: flex-start;
+    display: flex;
+
+    .card_header {
+      margin-bottom: 56px;
+
+      .img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    .card_body {
+      .title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 25px;
+      }
+      .description {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+
   &.isUpcomingEventCard {
     width: 100%;
     max-width: 370px;
@@ -356,7 +388,7 @@
           font-size: 24px;
           line-height: 32px;
         }
-        
+
         .description {
           max-width: 239px;
           width: 100%;

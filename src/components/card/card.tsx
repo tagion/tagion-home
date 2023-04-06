@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import classNames from "classnames/bind";
 
+import { PropsWithChildren } from "../../common/types/props-with-children.type";
+
 import twitterIcon from "../../assets/images/twitter_icon.svg";
 import arrowIcon from "../../assets/images/right_arrow_icon.svg";
 import arrowInCircleIcon from "../../assets/images/arrow_in_circle_icon.svg";
@@ -35,10 +37,11 @@ interface InputProps {
   isLinkCard?: boolean;
   isContributingCard?: boolean;
   isTagionEcosystemCard?: boolean;
+  isTimeline?: boolean;
   isValueForContributorsCard?: boolean;
 }
 
-export const Card: React.FC<InputProps> = ({
+export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   widthInPx,
   heightInPx,
   paddingsInPx,
@@ -53,6 +56,8 @@ export const Card: React.FC<InputProps> = ({
   isTagionEcosystemCard,
   isValueForContributorsCard,
   isLinkCard,
+  isTimeline,
+  children,
 }) => {
   const doesCardHaveLinkWrapper = linkWithArrowInfo;
   const isCardHeaderDisplayed =
@@ -79,6 +84,7 @@ export const Card: React.FC<InputProps> = ({
         isTagionEcosystemCard,
         isValueForContributorsCard,
         isTweet: tweetInfo,
+        isTimeline,
         cardShadow: !isContributingCard,
       })}
       style={propsStyles}
@@ -114,7 +120,7 @@ export const Card: React.FC<InputProps> = ({
           <span className={cx("description")}>{description}</span>
         )}
       </div>
-
+      {children}
       {isCardFooterDisplayed && (
         <div className={cx("card_footer")}>
           {tweetInfo && (

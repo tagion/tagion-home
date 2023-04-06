@@ -1,0 +1,23 @@
+#chartjs-tooltip {
+  .tooltip {
+    width: 250px;
+    height: 350px;
+    padding: 15px 10px;
+    border-radius: 16px;
+    background-color: $main-white-color;
+    box-shadow: $card-box-shadow-color;
+
+    .title {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 25px;
+      margin-bottom: 24px;
+    }
+
+    .description {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

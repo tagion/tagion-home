@@ -16,4 +16,4 @@ With Tagion, people worldwide can trade goods, services, and digital assets with
     `npm run develop`
     Your site is running at http://localhost:8000!
 
-    [<img src="https://global-uploads.webflow.com/61f08c64c9a5660542818af1/62f730030a7517090032ebc6_Tagion-Logo%403x.png" alt="Tagion logo" />]
+    <img src="https://global-uploads.webflow.com/61f08c64c9a5660542818af1/62f730030a7517090032ebc6_Tagion-Logo%403x.png" alt="Tagion logo" />
