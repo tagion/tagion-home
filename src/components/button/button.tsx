@@ -8,9 +8,12 @@ import * as styles from "./button.module.scss";
 const cx = classNames.bind(styles);
 
 interface InputProps {
-  name: string;
+  id?: string;
+  name?: string;
+  Icon?: any;
   type?: "submit" | "button" | "reset";
   widthInPx?: number;
+  heightInPx?: number;
   isWhite?: boolean;
   isNotWide?: boolean;
   withArrow?: boolean;
@@ -19,9 +22,12 @@ interface InputProps {
 }
 
 export const Button: React.FC<InputProps> = ({
+  id,
   name,
+  Icon,
   type,
   widthInPx,
+  heightInPx,
   isWhite,
   isNotWide,
   withArrow,
@@ -37,9 +43,11 @@ export const Button: React.FC<InputProps> = ({
         withArrow,
       })} ${className}`}
       onClick={() => onClick?.()}
-      style={{ width: `${widthInPx}px` }}
+      style={{ width: `${widthInPx}px`, height: `${heightInPx}px` }}
+      id={id}
     >
-      <span>{name}</span>
+      {name && <span>{name}</span>}
+      {Icon}
       {withArrow && <DownArrowIcon />}
     </button>
   );

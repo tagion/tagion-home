@@ -9,7 +9,7 @@ header {
   height: $header-desktop-height;
   width: 100%;
   max-width: inherit;
-  background-color: inherit;
+  background-color: transparent;
 
   @media (max-width: $tablet-size) {
     height: $header-mobile-height;

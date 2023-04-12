@@ -10,26 +10,26 @@ export const timelineYearsData = [
         {
           title: "Q1",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
+            "2018 Q1 is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
           img: batmanIcon,
         },
         {
           title: "Q2",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
+            "2018 Q2 is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
   
           img: batmanIcon,
         },
         {
           title: "Q3",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
+            "2018 Q3 is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
           img: batmanIcon,
         },
         {
           title: "Q4",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
+            "2018 Q4 is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
           img: batmanIcon,
         },
       ],
@@ -41,13 +41,13 @@ export const timelineYearsData = [
         {
           title: "Q1",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
+            "2019 Q1 is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
           img: batmanIcon,
         },
         {
           title: "Q2",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
+            "2019 Q2 is simply dummy text of the printing and typesetting industry. Ipsum is simplIpsum is simply dummy text of the printing and typesetting industry.",
           img: batmanIcon,
         },
         {

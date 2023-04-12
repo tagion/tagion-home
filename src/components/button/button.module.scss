@@ -31,10 +31,10 @@
   &.withArrow {
     height: 43px;
     padding: 0 34px;
-  }
 
-  svg {
-    margin-left: 8.5px;
+    svg {
+      margin-left: 8.5px;
+    }
   }
 
   @media (max-width: $tablet-size) {

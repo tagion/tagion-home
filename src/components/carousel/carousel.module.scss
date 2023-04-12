@@ -1,0 +1,42 @@
+@import "./../../styles/variables.scss";
+
+.slider_wrapper {
+  width: 100%;
+  margin: auto;
+
+  .slides_container {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+
+    overflow: scroll;
+    scroll-behavior: smooth;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    .slide_wrapper {
+      height: 100%;
+      height: fit-content;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: $desktop-size) {
+  .slider_wrapper {
+    margin: 0;
+  }
+}
+
+.button {
+  margin-left: 24px;
+}

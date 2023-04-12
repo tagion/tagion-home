@@ -19,6 +19,7 @@ import { BorderWidthSizes, PageSizes } from "../../common/enums";
 import { Button, Card } from "../../components";
 
 import * as styles from "./timeline.module.scss";
+import { Carousel } from "../carousel";
 
 const cx = classNames.bind(styles);
 
@@ -43,6 +44,37 @@ export const Timeline: React.FC = () => {
     quarter: 0,
   });
 
+  const carouselItemCreator = (
+    index: number,
+    firstShowedIndex: number,
+    isMobileSize: boolean,
+    item: any,
+    itemsLength: number,
+    maximusShowed: number
+  ) => {
+    console.log(
+      index,
+      firstShowedIndex,
+      isMobileSize,
+      item,
+      itemsLength,
+      maximusShowed
+    );
+    return (
+      <button
+      key={index}
+      className={cx("year", {
+        grayBackground: selectedIndexes.year === index,
+      })}
+      onClick={() =>
+        setSelectedIndexes((indexes) => ({ ...indexes, year: index }))
+      }
+    >
+      {item.year}
+    </button>
+    );
+  };
+
   const isChartDispayedHandler = () => {
     setIsChartDispayed(window.innerWidth > PageSizes.MOBILE);
   };
@@ -59,7 +91,7 @@ export const Timeline: React.FC = () => {
   const selectedQuarterData =
     timelineYearsData[selectedIndexes.year].data[selectedIndexes.quarter];
 
-    // todo add useMemo
+  // todo add useMemo
   const pointBorderWidthCreator = (labels: Array<string>) => {
     const pointBorderWidthArray: Array<number> = [];
     labels.forEach((elem) =>
@@ -107,43 +139,52 @@ export const Timeline: React.FC = () => {
           </div>
         </div>
       ) : (
-        <Card
-          img={selectedQuarterData.img}
-          description={selectedQuarterData.description}
-          title={selectedQuarterData.title}
-          isTimeline={true}
-        >
-          <div className={cx("buttons")}>
-            <Button
-              name="Back"
-              isWhite={true}
-              isNotWide={true}
-              onClick={() =>
-                setSelectedIndexes((indexes) => ({
-                  ...indexes,
-                  quarter: !indexes.quarter
-                    ? indexes.quarter
-                    : indexes.quarter - 1,
-                }))
-              }
-            />
-            <Button
-              name="Next"
-              isWhite={true}
-              isNotWide={true}
-              onClick={() =>
-                setSelectedIndexes((indexes) => ({
-                  ...indexes,
-                  quarter:
-                    indexes.quarter ===
-                    timelineYearsData[selectedIndexes.year].data.length - 1
+        <>
+          <Card
+            img={selectedQuarterData.img}
+            description={selectedQuarterData.description}
+            title={selectedQuarterData.title}
+            isTimeline={true}
+          >
+            <div className={cx("buttons")}>
+              <Button
+                name="Back"
+                isWhite={true}
+                isNotWide={true}
+                onClick={() =>
+                  setSelectedIndexes((indexes) => ({
+                    ...indexes,
+                    quarter: !indexes.quarter
                       ? indexes.quarter
-                      : indexes.quarter + 1,
-                }))
-              }
-            />
-          </div>
-        </Card>
+                      : indexes.quarter - 1,
+                  }))
+                }
+              />
+              <Button
+                name="Next"
+                isWhite={true}
+                isNotWide={true}
+                onClick={() =>
+                  setSelectedIndexes((indexes) => ({
+                    ...indexes,
+                    quarter:
+                      indexes.quarter ===
+                      timelineYearsData[selectedIndexes.year].data.length - 1
+                        ? indexes.quarter
+                        : indexes.quarter + 1,
+                  }))
+                }
+              />
+            </div>
+          </Card>
+          <Carousel
+            items={timelineYearsData}
+            carouselName="timeline"
+            slideMinWidth={125}
+            showedProp={3}
+            carouselItemCreator={carouselItemCreator}
+          />
+        </>
       )}
     </div>
   );

@@ -39,6 +39,10 @@ interface InputProps {
   isTagionEcosystemCard?: boolean;
   isTimeline?: boolean;
   isValueForContributorsCard?: boolean;
+  withoutShadow?: boolean;
+  isNotVisible?: boolean;
+  style?: any;
+  className?: any;
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
@@ -57,7 +61,11 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   isValueForContributorsCard,
   isLinkCard,
   isTimeline,
+  withoutShadow,
+  isNotVisible,
   children,
+  style,
+  className
 }) => {
   const doesCardHaveLinkWrapper = linkWithArrowInfo;
   const isCardHeaderDisplayed =
@@ -73,11 +81,12 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
       ? `${paddingsInPx?.top}px ${paddingsInPx?.right}px ${paddingsInPx?.bottom}px ${paddingsInPx?.left}px`
       : "",
     borderRadius: `${borderRadiusInPx}px`,
+    ...style
   };
 
   const card = () => (
     <div
-      className={cx("card", {
+      className={`${cx("card", {
         isUpcomingEventCard,
         isLinkCard: isLinkCard,
         isContributingCard,
@@ -85,8 +94,9 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
         isValueForContributorsCard,
         isTweet: tweetInfo,
         isTimeline,
-        cardShadow: !isContributingCard,
-      })}
+        isNotVisible,
+        cardShadow: !isContributingCard && !withoutShadow,
+      })} ${className}`}
       style={propsStyles}
     >
       {isCardHeaderDisplayed && (
