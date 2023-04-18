@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 
 import {
@@ -11,8 +11,12 @@ import {
   Timeline,
 } from "../components";
 import { Layout } from "../templates/layout";
+import { PageSizes } from "../common/enums";
+import { Carousel } from "../components/carousel";
 
 import batmanIcon from "../assets/images/batman.svg";
+import { ReactComponent as ArrowLeftIcon } from "../assets/images/timeline_arrow_left.svg";
+import { ReactComponent as ArrowRightIcon } from "../assets/images/timeline_arrow_right.svg";
 
 import * as styles from "../styles/pages/index.module.scss";
 
@@ -20,11 +24,84 @@ const cx = classNames.bind(styles);
 
 const IndexPage = () => {
   const [choosenLabel, setChoosenLabel] = useState("");
+  const carouselItemCreator = (
+    index: number,
+    firstShowedIndex: number,
+    isMobileSize: boolean,
+    item: {
+      nickname: string;
+      name: string;
+      description: string;
+    },
+    itemsLength: number,
+    maximusShowed: number
+  ) => {
+    return (
+      <Card
+        key={index}
+        tweetInfo={{
+          nickname: item.nickname,
+          name: item.name,
+        }}
+        isNotVisible={
+          isMobileSize &&
+          firstShowedIndex - 1 === index &&
+          firstShowedIndex - 1 !== tweetCards.length - 2
+        }
+        description={itemsLength - 1 === index ? "fsdfdsf" : item.description}
+        img={batmanIcon}
+        withoutShadow={
+          !isMobileSize &&
+          (firstShowedIndex + (maximusShowed - 1) < index ||
+            firstShowedIndex > index)
+        }
+      />
+    );
+  };
 
   return (
     <Layout>
       {/*the code below is for testing purposes only */}
       <>
+        <Carousel
+          items={tweetCards}
+          carouselItemCreator={carouselItemCreator}
+          carouselName="tweets"
+          slideMinWidth={270}
+          nextButtonId="next-button-tweets"
+          prevButtonId="prev-button-tweets"
+          additionalContent={{
+            topSideClassName: cx("timeline_top_content"),
+            title: {
+              text: <div className={cx("title")}>Tweets about Tagion</div>,
+              wrapperClassName: cx("timeline_title"),
+            },
+            buttons: {
+              wrapperClassName: cx("timeline_buttons"),
+              prevButton: (
+                <Button Icon={<ArrowLeftIcon />} id="prev-button-tweets" />
+              ),
+              nextButton: (
+                <Button Icon={<ArrowRightIcon />} id="next-button-tweets" />
+              ),
+            },
+          }}
+          breakpoints={{
+            desktop: {
+              pageWidth: PageSizes.DESKTOP,
+              itemWidth: 270,
+              marginBeetwenItems: 30,
+            },
+            mobile: {
+              marginBeetwenItems: 16,
+            },
+          }}
+        />
+        <br />
+        <br />
+
+        <br />
+
         <Timeline />
         <EmailSignUp />
         <FAQ />
@@ -305,6 +382,72 @@ const temporaryCardsContentSource = [
 ];
 
 const tweetCards = [
+  {
+    name: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      " typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      " Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
+  {
+    name: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    nickname: "@Lorem",
+  },
   {
     name: "Lorem Ipsum",
     description:
