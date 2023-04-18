@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import classNames from "classnames/bind";
 
-import { Button } from "../../old-components/button";
+import { Button } from "../button";
 
 import PageNotFoundIcon from "../../assets/images/404.svg";
 
