@@ -8,19 +8,19 @@ $main_mobile-padding-top: $header-mobile-height + $mobile_indent-to-header;
 
 .layout {
   margin: auto;
-  max-width: $page-max-width;
+  max-width: $desktop-max-size;
   background-color: $main-white-color;
 
   main {
     padding: $main_desktop-padding-top 0 150px 0;
 
-    // todo remove when the situation with breakpoints is clarified
-    @media (max-width: calc($content-max-width + 30px)) {
-      padding: $main_desktop-padding-top 24px 150px 24px;
-    }
+    // // todo remove when the situation with breakpoints is clarified
+    // @media (max-width: calc($content-max-width + 30px)) {
+    //   padding: $main_desktop-padding-top 24px 150px 24px;
+    // }
 
-    @media (max-width: $tablet-size) {
-      padding: $main_mobile-padding-top 24px 90px 24px;
-    }
+    // @media (max-width: $tablet-size) {
+    //   padding: $main_mobile-padding-top 24px 90px 24px;
+    // }
   }
 }

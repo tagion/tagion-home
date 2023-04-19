@@ -1,7 +1,9 @@
 // sizes
-$mobile-size: 480px;
-$tablet-size: 768px;
+$mobile-size: 280px;
+$tablet-size: 600px;
 $desktop-size: 1024px;
+$desktop-large-size: 1440px;
+$desktop-max-size: 1920px;
 
 $content-max-width: 1170px;
 $page-max-width: 1440px;
@@ -19,8 +21,15 @@ $form-border-radius: 18px;
 $input-border-radius: 8px;
 
 // colors
-$main-dark-color: rgba(34, 34, 34, 1);
-$main-white-color: rgba(255, 255, 255, 1);
+$main-dark-color: #0e0e0e;
+$main-white-color: #ffffff;
+
+$footer-copyright-text-color: rgba(255, 255, 255, 0.5);
+$footer-link-text-color: rgba(255, 255, 255, 0.8);
+
+////////////////////// old-colors
+// $main-dark-color: rgba(34, 34, 34, 1);
+// $main-white-color: rgba(255, 255, 255, 1);
 $main-gray-color: rgba(231, 231, 231, 1);
 
 $main-border-color: rgba(34, 34, 34, 0.1);

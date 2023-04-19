@@ -7,8 +7,9 @@ import {
   LinkType,
   FooterColumnLinkType,
 } from "../../content";
+import { SocialLinks } from "../socials-links";
 
-import logoIcon from "../../assets/images/logo.svg";
+import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
 
 import * as styles from "./footer.module.scss";
 
@@ -33,22 +34,24 @@ export const Footer: React.FC = () => {
   return (
     <footer>
       <div className={cx("footer_content")}>
-        <div className={cx("top_footer")}>
-          <Link to="/" className={cx("logo_wrapper")}>
-            <img src={logoIcon} alt="Tagion logo icon" />
-          </Link>
-          <div className={cx("link_columns")}>
-            {footerColumnLinks &&
-              footerColumnLinks.map((linkColumn) =>
-                columnOfLinksItem(linkColumn)
-              )}
+        <div className={cx("logo_column")}>
+          <LogoIcon className={cx("logo")} />
+          <SocialLinks className={cx("socials")} />
+        </div>
+
+        <div className={cx("link_columns")}>
+          {footerColumnLinks &&
+            footerColumnLinks.map((linkColumn) =>
+              columnOfLinksItem(linkColumn)
+            )}
+          <div className={cx("additional_links_column")}>
+            <SocialLinks className={cx("socials")} />
+            <Link to="/">Privacy Policy</Link>
+            <Link to="/">Terms & Conditions</Link>
           </div>
         </div>
-        <div className={cx("bottom_footer")}>
-          <span>© 2023 Tagion</span>
-          <Link to="/">Privacy Policy</Link>
-          <Link to="/">Terms & Conditions</Link>
-        </div>
+
+        <span className={cx("copyright")}>© 2023 Tagion</span>
       </div>
     </footer>
   );

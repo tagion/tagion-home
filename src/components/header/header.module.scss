@@ -15,16 +15,10 @@ header {
     height: $header-mobile-height;
   }
 
-  @media (min-width: calc($tablet-size + 1px)) {
-    padding: 0 5px;
-    border-bottom: 1px solid $main-border-color;
-  }
-
   .header_content {
     width: $header-content-width;
     height: $header-content-height;
-    max-width: $content-max-width;
-    margin: auto;
+    margin: 0 120px;
 
     display: flex;
     justify-content: space-between;
@@ -32,32 +26,33 @@ header {
     flex-direction: row;
 
     .logo_wrapper {
-      max-width: 148px;
-      width: 100%;
-    }
-
-    @media (max-width: $tablet-size) {
-      margin: 0 24px;
-      border-bottom: 1px solid $main-border-color;
-
-      .logo_wrapper {
-        width: 116px;
-      }
+      width: 170px;
+      height: 44px;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
-      max-width: 342px;
+      max-width: 590px;
       width: 100%;
 
       a {
         text-decoration: none;
         color: $main-dark-color;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 16px;
-        line-height: 19.2px;
+        line-height: 20px;
+
+        display: flex;
+        align-items: center;
+
+        .arrow {
+          width: 12px;
+          height: 12px;
+          fill: $main-dark-color;
+          margin-left: 7.5px;
+        }
       }
     }
 
@@ -67,32 +62,47 @@ header {
       height: 26px;
 
       a:not(:first-child) {
-        img {
-          margin-left: 32px;
-          height: 26px;
-        }
-      }
-    }
-
-    nav,
-    .external_links {
-      @media (max-width: $tablet-size) {
-        display: none;
+        margin-left: 16px;
       }
     }
   }
 
   .burger_menu {
     display: none;
-    width: 26px;
-    height: 21.5px;
+    width: 40px;
+    height: 40px;
 
     &:hover {
       cursor: pointer;
     }
+  }
 
-    @media (max-width: $tablet-size) {
-      display: block;
+  @media (max-width: calc($desktop-max-size - 1px)) {
+    .header_content {
+      margin: 0 80px;
+    }
+
+    @media (max-width: calc($desktop-large-size - 1px)) {
+      .header_content {
+        .logo_wrapper {
+          width: 124px;
+          height: 32px;
+        }
+        .burger_menu {
+          display: block;
+        }
+
+        nav,
+        .external_links {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: calc($tablet-size - 1px)) {
+      .header_content {
+        margin: 0 16px;
+      }
     }
   }
 }
