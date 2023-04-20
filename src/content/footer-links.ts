@@ -12,25 +12,16 @@ export type FooterColumnLinkType = typeof footerColumnLinks[number];
 
 export const footerColumnLinks = [
   {
-    title: "EXPLORE",
+    title: "Tapps",
     links: [
-      { name: "Ecosystem", linkTo: "https://www.google.com.ua/" },
       { name: "Wallet", linkTo: "https://www.google.com.ua/" },
-      { name: "Get Tagions", linkTo: "https://www.google.com.ua/" },
       { name: "Dex", linkTo: "https://www.google.com.ua/" },
+      { name: "Get Tagions", linkTo: "https://www.google.com.ua/" },
     ],
   },
+
   {
-    title: "DOCS",
-    links: [
-      { name: "SDKs", linkTo: "https://www.google.com.ua/" },
-      { name: "Whitepaper", linkTo: "https://www.google.com.ua/" },
-      { name: "Governance paper", linkTo: "https://www.google.com.ua/" },
-      { name: "TechPaper", linkTo: "https://www.google.com.ua/" },
-    ],
-  },
-  {
-    title: "IDENTITY",
+    title: "Company",
     links: [
       { name: "Community", linkTo: "https://www.google.com.ua/" },
       { name: "About", linkTo: "https://www.google.com.ua/" },
@@ -38,23 +29,32 @@ export const footerColumnLinks = [
     ],
   },
   {
-    title: "SOCIAL",
+    title: "Docs",
     links: [
-      {
-        name: "Twitter",
-        linkTo: "https://www.google.com.ua/",
-        icon: twitterIcon,
-      },
-      {
-        name: "Discord",
-        linkTo: "https://www.google.com.ua/",
-        icon: discordIcon,
-      },
-      {
-        name: "Telegram",
-        linkTo: "https://www.google.com.ua/",
-        icon: telegramIcon,
-      },
+      { name: "SDKs", linkTo: "https://www.google.com.ua/" },
+      { name: "Whitepaper", linkTo: "https://www.google.com.ua/" },
+      { name: "Governance paper", linkTo: "https://www.google.com.ua/" },
+      { name: "TechPaper", linkTo: "https://www.google.com.ua/" },
     ],
   },
+  // {
+  //   title: "SOCIAL",
+  //   links: [
+  //     {
+  //       name: "Twitter",
+  //       linkTo: "https://www.google.com.ua/",
+  //       icon: twitterIcon,
+  //     },
+  //     {
+  //       name: "Discord",
+  //       linkTo: "https://www.google.com.ua/",
+  //       icon: discordIcon,
+  //     },
+  //     {
+  //       name: "Telegram",
+  //       linkTo: "https://www.google.com.ua/",
+  //       icon: telegramIcon,
+  //     },
+  //   ],
+  // },
 ];

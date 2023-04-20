@@ -5,13 +5,12 @@ import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 
 import logoIcon from "../../assets/images/logo.svg";
+import twitterIcon from "../../assets/images/twitter_icon.svg";
+import discordIcon from "../../assets/images/discord_icon.svg";
+import telegramIcon from "../../assets/images/telegram_icon.svg";
+import githubIcon from "../../assets/images/github_icon.svg";
 import burgerMenuIcon from "../../assets/images/burger_menu_icon.svg";
 import closeButtonIcon from "../../assets/images/close_button_icon.svg";
-import { ReactComponent as DownArrowIcon } from "../../assets/images/down-arrow.svg";
-import { ReactComponent as TwitterIcon } from "../../assets/images/twitter_icon.svg";
-import { ReactComponent as DiscordIcon } from "../../assets/images/discord_icon.svg";
-import { ReactComponent as TelegramIcon } from "../../assets/images/telegram_icon.svg";
-import { ReactComponent as GithubIcon } from "../../assets/images/github_icon.svg";
 
 import * as styles from "./header.module.scss";
 
@@ -28,30 +27,25 @@ export const Header: React.FC = () => {
         </Link>
 
         <nav>
-          <Link to="/ecosystem">
-            <span>Ecosystem</span>
-            <DownArrowIcon className={cx("arrow")} />
-          </Link>
+          <Link to="/explore">Explore</Link>
           <Link to="/community">Community</Link>
-          <Link to="/docs">
-            <span>Docs</span> <DownArrowIcon className={cx("arrow")} />
-          </Link>
+          <Link to="/docs">Docs</Link>
           <Link to="/about">About</Link>
           <Link to="/blog">Blog</Link>
         </nav>
 
         <div className={cx("external_links")}>
           <a href="https://twitter.com/">
-            <TwitterIcon />
+            <img src={twitterIcon} alt="Twitter icon" />
           </a>
           <a href="https://discord.com/">
-            <TelegramIcon />
+            <img src={discordIcon} alt="Discord icon" />
           </a>
           <a href="https://t.me/joinchat/SCowXllJB2gOXDHu">
-            <GithubIcon />
+            <img src={telegramIcon} alt="Telegram icon" />
           </a>
           <a href="https://github.com/tagion/tagion-home">
-            <DiscordIcon />
+            <img src={githubIcon} alt="GitHub icon" />
           </a>
         </div>
 
@@ -91,11 +85,7 @@ const NavigationPanel = ({
           width: "100vw",
         }}
       >
-        <img
-          src={closeButtonIcon}
-          alt="Close Icon"
-          onClick={() => isOpenedHandler(false)}
-        />
+        <img src={closeButtonIcon} alt="Close Icon" onClick={() => isOpenedHandler(false)}/>
       </Box>
     </Drawer>
   );
