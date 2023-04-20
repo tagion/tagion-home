@@ -1,0 +1,19 @@
+@import "./../../styles/variables.scss";
+
+.card {
+  width: 100%;
+
+  img {
+    width: 116px;
+  }
+
+  .title {
+    margin: 18px 0 12px;
+  }
+
+  @media (min-width: $tablet-size) {
+    img {
+      width: 180px;
+    }
+  }
+}
