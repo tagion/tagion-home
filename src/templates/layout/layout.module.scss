@@ -12,6 +12,9 @@ $main_mobile-padding-top: $header-mobile-height + $mobile_indent-to-header;
   background-color: $main-white-color;
 
   main {
-    padding: 116px 16px 80px;
+    padding: 116px 0 80px;
+    & > * {
+      margin: 0 16px;
+    }
   }
 }
