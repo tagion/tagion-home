@@ -8,19 +8,24 @@ import * as styles from "./card.module.scss";
 const cx = classNames.bind(styles);
 
 interface InputProps {
-  title?: string;
+  title?: string | JSX.Element;
   description: string;
-  img?: string;
+  img?: { path: string; alt: string };
+  ImgComponent?: () => JSX.Element;
+  className?: string;
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   title,
   description,
   img,
+  ImgComponent,
+  className,
 }) => {
   return (
-    <div className={cx("card", {})}>
-      <img src={img} alt={title} />
+    <div className={`${cx("card", {})} ${className}`}>
+      {img && <img src={img.path} alt={img.alt} />}
+      {ImgComponent && ImgComponent()}
       <div className={`${cx("title")} title-font`}>{title}</div>
       <div className={`${cx("description")} body-font`}>{description}</div>
     </div>

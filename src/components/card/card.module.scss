@@ -2,6 +2,8 @@
 
 .card {
   width: 100%;
+  z-index: 98;
+  position: relative;
 
   img {
     width: 116px;
