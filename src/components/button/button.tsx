@@ -35,7 +35,11 @@ export const Button: React.FC<InputProps> = ({
   return (
     <button
       type={type}
-      className={`${cx("button", { isCarousel, isWhite })} ${className}`}
+      className={`${cx("button", {
+        isCarousel,
+        isWhite,
+        withArrow,
+      })} ${className}`}
       onClick={() => onClick?.()}
       style={{ width: `${widthInPx}px` }}
     >

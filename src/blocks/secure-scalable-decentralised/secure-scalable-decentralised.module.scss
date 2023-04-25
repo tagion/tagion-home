@@ -1,0 +1,139 @@
+@import "./../../styles/variables.scss";
+
+.secure_scalable_decentralised_block {
+  margin-top: 80px;
+
+  .title {
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+
+    .blocks_wrapper {
+      .block {
+        margin-bottom: 40px;
+
+        .header {
+          display: flex;
+          align-items: flex-start;
+          height: 36px;
+
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 32px;
+          border-bottom: 1px solid $secure_decentralised_block-border-color;
+
+          .indicator {
+            width: 12px;
+            height: 12px;
+            background-color: $main-purple-color;
+            border-radius: 100%;
+            margin-right: 8px;
+            margin-top: 4px;
+          }
+        }
+
+        .secure_scalable_decentralised_card {
+          div:first-child {
+            margin-bottom: 24px;
+          }
+
+          div:last-child {
+            color: $body-text-color;
+          }
+        }
+      }
+    }
+
+    button {
+      align-self: center;
+    }
+  }
+
+  @media (max-width: calc($tablet-size - 1px)) {
+    .title {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .body {
+      .blocks_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .block {
+          width: 48.5%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .body {
+      .blocks_wrapper {
+        .block {
+          width: 47.1%;
+
+          .header {
+            margin-bottom: 40px;
+          }
+
+          .secure_scalable_decentralised_card {
+            div:first-child {
+              font-weight: 500;
+              font-size: 40px;
+              line-height: 44px;
+            }
+          }
+        }
+      }
+
+      button {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .title {
+      margin-bottom: 48px;
+    }
+
+    .body {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 100%;
+
+      .blocks_wrapper {
+        width: 57.5%;
+        margin-top: 52px;
+
+        .block {
+          width: 44.2%;
+          margin-bottom: 88px;
+
+          &:last-child {
+            margin-bottom: 180px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .body {
+      .blocks_wrapper {
+        width: 970px;
+        .block {
+          width: 43.9%;
+        }
+      }
+    }
+  }
+}

@@ -2,10 +2,20 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 
 import { Layout } from "../templates/layout";
-import { Button, Card, GradientBlock } from "../components";
+import {
+  Button,
+  Card,
+  GradientBlock,
+  GradientSpotsWrapper,
+} from "../components";
+import {
+  ExploreOurEcosystemBlock,
+  SecureScalableDecentralisedBlock,
+} from "../blocks";
 import {
   nextGennFinancialInfrastrucureData,
   gradientBlockData,
+  gradientSpotsProps,
 } from "../content";
 
 import * as styles from "../styles/pages/index.module.scss";
@@ -81,6 +91,10 @@ const IndexPage = () => {
         </GradientBlock>
         {carouselButtons()}
       </div>
+      <GradientSpotsWrapper spots={gradientSpotsProps}>
+        <ExploreOurEcosystemBlock />
+        <SecureScalableDecentralisedBlock />
+      </GradientSpotsWrapper>
     </Layout>
   );
 };

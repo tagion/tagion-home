@@ -1,0 +1,112 @@
+@import "./../../styles/variables.scss";
+
+.explore_our_ecosystem_block {
+  margin-top: 80px;
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+
+    .description {
+      margin-bottom: 20px;
+
+      br {
+        display: block;
+        margin: 18px 0;
+        content: " ";
+      }
+    }
+
+    .tagionMonitorInfo_wrapper {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        margin-top: 40px;
+        align-self: center;
+        padding: 0 24px 0 22px;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .body {
+      .description {
+        margin-bottom: 16px;
+      }
+
+      .tagionMonitorInfo_wrapper {
+        button {
+          align-self: center;
+          margin-top: 40px;
+          padding: 0 31.5px 0 24px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    width: 644px;
+
+    .body {
+      .description {
+        margin-bottom: 32px;
+      }
+
+      .tagionMonitorInfo_wrapper {
+        button {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+
+    .title {
+      width: 737px;
+      align-self: flex-end;
+    }
+
+    .body {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .description {
+        width: 411px;
+      }
+
+      .tagionMonitorInfo_wrapper {
+        width: 737px;
+
+        button {
+          align-self: flex-start;
+          margin-top: 48px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .title {
+      width: 967px;
+    }
+
+    .body {
+      .description {
+        width: 544px;
+      }
+
+      .tagionMonitorInfo_wrapper {
+        width: 967px;
+      }
+    }
+  }
+}
