@@ -69,7 +69,7 @@
       flex-direction: column;
 
       .title {
-        font-family: "Transducer", sans-serif;
+        font-family: "Transducer-Extended-Medium";
         font-weight: 500;
         font-size: 20px;
         line-height: 24px;
@@ -88,6 +88,7 @@
 
       button {
         align-self: center;
+        font-weight: 600;
       }
     }
   }

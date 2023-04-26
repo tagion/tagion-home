@@ -1,0 +1,51 @@
+@import "./../../styles/variables.scss";
+
+.tagion_monitor_info {
+  .info_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 104px;
+    border-bottom: 1px solid $main-dark-color;
+
+    .title {
+      margin-bottom: 8px;
+    }
+
+    .data {
+      color: $body-text-color;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .info_block {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .info_block {
+      align-items: flex-end;
+      height: 124px;
+      padding-bottom: 16px;
+
+      .title {
+        width: 126px;
+      }
+
+      .data {
+        font-size: 64px;
+        line-height: 68px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .info_block {
+      height: 145px;
+    }
+  }
+}

@@ -9,12 +9,12 @@
   height: 52px;
   padding: 0 24px;
 
-  font-weight: 500;
+  font-family: "Transducer-Extended-Regular";
   font-size: 16px;
-  line-height: 20px;
+  line-height: 19px;
 
-  color: $main-dark-color;
-  background-color: $main-white-color;
+  color: $main-white-color;
+  background-color: $main-dark-color;
   border-radius: 36px;
   border: 1px solid $main-dark-color;
   outline: none;
@@ -24,13 +24,12 @@
     border: 1px solid $main-white-color;
     background-color: $main-white-color;
     color: $main-dark-color;
+
+    svg {
+      stroke: $main-dark-color;
+    }
   }
 
-  // &.withArrow {
-  //   height: 43px;
-  //   padding: 0 34px;
-  // }
-  
   &.isCarousel {
     width: 52px;
     height: 52px;
@@ -43,26 +42,12 @@
     }
   }
 
-  svg {
-    margin-left: 14.6px;
+  &.withArrow {
+    padding: 0 31.5px 0 24px;
   }
 
-  // @media (max-width: $tablet-size) {
-  //   // width: 100% !important;
-  //   // height: 50px;
-  //   // line-height: 20px;
-  //   // padding: 0;
-
-  //   // &.withArrow {
-  //   //   height: 36px;
-  //   //   font-size: 16px;
-  //   //   line-height: 24px;
-  //   // }
-
-  //   // &.isNotWide {
-  //   //   width: fit-content !important;
-  //   //   height: 43px;
-  //   //   padding: 0 24px;
-  //   // }
-  // }
+  svg {
+    margin-left: 14.6px;
+    stroke: $main-white-color;
+  }
 }
