@@ -22,8 +22,9 @@ type GradientPropType = Array<{
 
 interface InputProps {
   spots: {
-    desktop_max: GradientPropType;
-    desktop: GradientPropType;
+    desktop_max?: GradientPropType;
+    desktop?: GradientPropType;
+    mobile?: GradientPropType;
   };
 }
 
@@ -39,6 +40,8 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
       gradientProperties = spots.desktop_max;
     } else if (pageWidth >= PageSizes.DESKTOP && spots.desktop) {
       gradientProperties = spots.desktop;
+    } else if (pageWidth >= 0 && spots.mobile) {
+      gradientProperties = spots.mobile;
     }
 
     return gradientProperties.map((spot, i) => (

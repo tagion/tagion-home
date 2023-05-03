@@ -11,12 +11,14 @@ import {
 import {
   ExploreOurEcosystemBlock,
   SecureScalableDecentralisedBlock,
+  SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
 } from "../blocks";
 import {
   nextGennFinancialInfrastrucureData,
   gradientBlockData,
   gradientSpotsProps,
+  newsletterSubscribeGradientSpotsProps,
 } from "../content";
 
 import * as styles from "../styles/pages/index.module.scss";
@@ -97,6 +99,11 @@ const IndexPage = () => {
         <SecureScalableDecentralisedBlock />
       </GradientSpotsWrapper>
       <YouCanParticipateBlock />
+      <GradientSpotsWrapper spots={newsletterSubscribeGradientSpotsProps}>
+        {/* temporary_block will be replaced by a component  */}
+        <div className={cx("temporary_block")} />
+        <SubscribeToOurNewsletterBlock />
+      </GradientSpotsWrapper>
     </Layout>
   );
 };

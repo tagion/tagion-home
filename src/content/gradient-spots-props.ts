@@ -62,3 +62,47 @@ export const gradientSpotsProps = {
     },
   ],
 };
+
+// Subscribe to our newsletter block (will be deleted and replaced with gif)
+export const newsletterSubscribeGradientSpotsProps = {
+  desktop: [
+    {
+      color: Colors.GRADIENT_SPOT_PURPLE,
+      width: "730px",
+      height: "1406px",
+      transform: "rotate(73.84deg)",
+      bottom: "-479px",
+      left: "-14px",
+      filter: "blur(200px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "739px",
+      height: "642px",
+      transform: "rotate(5.52deg)",
+      bottom: "-200px",
+      left: "200px",
+      filter: "blur(150px)",
+    },
+  ],
+  mobile: [
+    {
+      color: Colors.GRADIENT_SPOT_PURPLE,
+      width: "730px",
+      height: "1406px",
+      transform: "rotate(73.84deg)",
+      bottom: "-479px",
+      left: "-14px",
+      filter: "blur(200px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "739px",
+      height: "642px",
+      transform: "rotate(5.52deg)",
+      bottom: "-200px",
+      left: "-152px",
+      filter: "blur(150px)",
+    },
+  ],
+};
