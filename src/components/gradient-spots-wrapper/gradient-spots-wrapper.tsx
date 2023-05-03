@@ -41,7 +41,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
       gradientProperties = spots.desktop;
     }
 
-    return gradientProperties.map((spot) => (
+    return gradientProperties.map((spot, i) => (
       <div
         className={cx("spot")}
         style={{
@@ -55,6 +55,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
           left: spot.left,
           right: spot.right,
         }}
+        key={i}
       ></div>
     ));
   };

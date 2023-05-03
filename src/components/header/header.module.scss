@@ -28,6 +28,10 @@ header {
     .logo_wrapper {
       width: 170px;
       height: 44px;
+
+      svg {
+        fill: $main-dark-color;
+      }
     }
 
     nav {
@@ -71,6 +75,10 @@ header {
     display: none;
     width: 40px;
     height: 40px;
+
+    svg {
+      fill: $main-dark-color;
+    }
 
     &:hover {
       cursor: pointer;

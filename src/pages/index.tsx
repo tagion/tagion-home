@@ -11,6 +11,7 @@ import {
 import {
   ExploreOurEcosystemBlock,
   SecureScalableDecentralisedBlock,
+  YouCanParticipateBlock,
 } from "../blocks";
 import {
   nextGennFinancialInfrastrucureData,
@@ -95,6 +96,7 @@ const IndexPage = () => {
         <ExploreOurEcosystemBlock />
         <SecureScalableDecentralisedBlock />
       </GradientSpotsWrapper>
+      <YouCanParticipateBlock />
     </Layout>
   );
 };

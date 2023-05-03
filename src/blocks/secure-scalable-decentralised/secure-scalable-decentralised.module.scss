@@ -9,12 +9,13 @@
   }
 
   .body {
-    display: flex;
     flex-direction: column;
 
     .blocks_wrapper {
+      margin-top: 0;
       .block {
         margin-bottom: 40px;
+        padding-top: 0;
 
         .header {
           display: flex;
@@ -49,8 +50,9 @@
       }
     }
 
-    button {
-      align-self: center;
+    .button_wrapper {
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -66,10 +68,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
-        .block {
-          width: 48.5%;
-        }
       }
     }
   }
@@ -78,7 +76,7 @@
     .body {
       .blocks_wrapper {
         .block {
-          width: 47.1%;
+          padding-right: 32px;
 
           .header {
             margin-bottom: 40px;
@@ -94,8 +92,9 @@
         }
       }
 
-      button {
-        align-self: flex-start;
+      .button_wrapper {
+        display: flex;
+        justify-content: flex-start;
       }
     }
   }
@@ -107,31 +106,16 @@
 
     .body {
       flex-direction: row-reverse;
-      justify-content: space-between;
-      width: 100%;
 
       .blocks_wrapper {
-        width: 57.5%;
         margin-top: 52px;
 
         .block {
-          width: 44.2%;
           margin-bottom: 88px;
 
           &:last-child {
             margin-bottom: 180px;
           }
-        }
-      }
-    }
-  }
-
-  @media (min-width: $desktop-max-size) {
-    .body {
-      .blocks_wrapper {
-        width: 970px;
-        .block {
-          width: 43.9%;
         }
       }
     }

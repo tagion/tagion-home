@@ -4,8 +4,8 @@ import classNames from "classnames/bind";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 
-import logoIcon from "../../assets/images/logo.svg";
-import burgerMenuIcon from "../../assets/images/burger_menu_icon.svg";
+import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
+import { ReactComponent as BurgerMenuIcon } from "../../assets/images/burger_menu_icon.svg";
 import closeButtonIcon from "../../assets/images/close_button_icon.svg";
 import { ReactComponent as DownArrowIcon } from "../../assets/images/down-arrow.svg";
 import { ReactComponent as TwitterIcon } from "../../assets/images/twitter_icon.svg";
@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
     <header>
       <div className={cx("header_content")}>
         <Link to="/" className={cx("logo_wrapper")}>
-          <img src={logoIcon} alt="Tagion logo icon" />
+          <LogoIcon />
         </Link>
 
         <nav>
@@ -61,7 +61,7 @@ export const Header: React.FC = () => {
             setIsNavPanelOpened(true);
           }}
         >
-          <img src={burgerMenuIcon} />
+          <BurgerMenuIcon />
         </div>
 
         <NavigationPanel

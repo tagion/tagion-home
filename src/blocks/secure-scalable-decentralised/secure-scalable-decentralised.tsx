@@ -1,7 +1,9 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { Grid } from "@mui/material";
 
 import { secureScalableDecentralizedData } from "../../content";
+import { miuCustomColumns } from "../../helpers";
 import { Button, Card } from "../../components";
 
 import * as styles from "./secure-scalable-decentralised.module.scss";
@@ -11,7 +13,7 @@ const cx = classNames.bind(styles);
 export const SecureScalableDecentralisedBlock: React.FC = () => {
   const blocksGenerator = () =>
     secureScalableDecentralizedData.map((block, i) => (
-      <div className={cx("block")} key={i}>
+      <Grid item xs={4} sm={2} md={4} lg={3.35} key={i} className={cx("block")}>
         <div className={cx("header")}>
           <div className={cx("indicator")}></div>
           <span>{`0${i + 1}`}</span>
@@ -22,7 +24,7 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
           description={block.description}
           fixedFontSize={{ description: "20" }}
         />
-      </div>
+      </Grid>
     ));
 
   return (
@@ -32,12 +34,21 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
         <br />
         Decentralized.
       </div>
-      <div className={cx("body")}>
-        <div className={cx("blocks_wrapper")}>
-          {secureScalableDecentralizedData && blocksGenerator()}
-        </div>
-        <Button name="Compare" withArrow />
-      </div>
+      <Grid container columns={miuCustomColumns} className={cx("body")}>
+        <Grid item lg={7}>
+          <Grid
+            container
+            columns={{ xs: 4, sm: 4, md: 8, lg: 7, xl: 7 }}
+            className={cx("blocks_wrapper")}
+            spacing={2}
+          >
+            {secureScalableDecentralizedData && blocksGenerator()}
+          </Grid>
+        </Grid>
+        <Grid item lg={5} className={cx("button_wrapper")}>
+          <Button name="Compare" withArrow />
+        </Grid>
+      </Grid>
     </div>
   );
 };

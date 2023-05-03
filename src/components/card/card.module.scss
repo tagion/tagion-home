@@ -19,4 +19,12 @@
       width: 180px;
     }
   }
+
+  @media (min-width: $desktop-large-size) {
+    .title {
+      svg {
+        display: none;
+      }
+    }
+  }
 }
