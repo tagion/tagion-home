@@ -19,7 +19,10 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
           <span>{`0${i + 1}`}</span>
         </div>
         <Card
-          className={cx("secure_scalable_decentralised_card")}
+          classNames={{
+            title: cx("title_card"),
+            description: cx("description_card"),
+          }}
           title={block.title}
           description={block.description}
           fixedFontSize={{ description: "20" }}

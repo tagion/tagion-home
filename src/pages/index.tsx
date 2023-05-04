@@ -2,20 +2,15 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 
 import { Layout } from "../templates/layout";
-import {
-  Button,
-  Card,
-  GradientBlock,
-  GradientSpotsWrapper,
-} from "../components";
+import { Button, GradientBlock, GradientSpotsWrapper } from "../components";
 import {
   ExploreOurEcosystemBlock,
+  FinancialInfrastrucureNextGenBlock,
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
 } from "../blocks";
 import {
-  nextGennFinancialInfrastrucureData,
   gradientBlockData,
   gradientSpotsProps,
   newsletterSubscribeGradientSpotsProps,
@@ -56,22 +51,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <div className={cx("financial_infrastrucure_next_gen")}>
-        <div className={cx("title")}>
-          Next generation financial infrastrucure
-        </div>
-        <div className={cx("blocks")}>
-          {nextGennFinancialInfrastrucureData &&
-            nextGennFinancialInfrastrucureData.map((item, i) => (
-              <Card
-                key={i}
-                title={item.title}
-                description={item.description}
-                img={{ path: item.img, alt: item.title }}
-              />
-            ))}
-        </div>
-      </div>
+      <FinancialInfrastrucureNextGenBlock />
 
       <div className={cx("gradientBlock_wrapper")}>
         <GradientBlock>
