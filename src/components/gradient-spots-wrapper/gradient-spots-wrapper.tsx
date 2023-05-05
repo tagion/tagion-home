@@ -21,15 +21,21 @@ type GradientPropType = Array<{
 }>;
 
 interface InputProps {
+  bgColor?: string;
+  disableMainSidePaddings?: boolean;
   spots: {
     desktop_max?: GradientPropType;
+    desktop_large?: GradientPropType;
     desktop?: GradientPropType;
+    tablet?: GradientPropType;
     mobile?: GradientPropType;
   };
 }
 
 export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   spots,
+  bgColor,
+  disableMainSidePaddings,
   children,
 }) => {
   const [pageWidth, setPageWidth] = useState(0);
@@ -38,8 +44,24 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
     let gradientProperties: GradientPropType = [];
     if (pageWidth >= PageSizes.DESKTOP_MAX && spots.desktop_max) {
       gradientProperties = spots.desktop_max;
-    } else if (pageWidth >= PageSizes.DESKTOP && spots.desktop) {
+    } else if (
+      pageWidth >= PageSizes.DESKTOP_LARGE &&
+      pageWidth < PageSizes.DESKTOP_MAX &&
+      spots.desktop_large
+    ) {
+      gradientProperties = spots.desktop_large;
+    } else if (
+      pageWidth >= PageSizes.DESKTOP &&
+      pageWidth < PageSizes.DESKTOP_LARGE &&
+      spots.desktop
+    ) {
       gradientProperties = spots.desktop;
+    } else if (
+      pageWidth >= PageSizes.TABLET &&
+      pageWidth < PageSizes.DESKTOP &&
+      spots.tablet
+    ) {
+      gradientProperties = spots.tablet;
     } else if (pageWidth >= 0 && spots.mobile) {
       gradientProperties = spots.mobile;
     }
@@ -74,7 +96,12 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   }, []);
 
   return (
-    <div className={cx("gradient_spots_wrapper")}>
+    <div
+      className={cx("gradient_spots_wrapper", {
+        mainSidePaddings: !disableMainSidePaddings,
+      })}
+      style={{ backgroundColor: bgColor }}
+    >
       {gradientSpotsGenerator()}
       <div className={cx("children_wrapper")}>{children}</div>
     </div>

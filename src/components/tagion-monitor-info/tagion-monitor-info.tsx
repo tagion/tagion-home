@@ -9,7 +9,7 @@ interface InputProps {
   className?: string;
 }
 
-export const TagionMonitorInfo: React.FC<InputProps> = ({ className }) => {
+export const TagionMonitorInfo: React.FC<InputProps> = ({ className = "" }) => {
   const infoBlock = (dataItem: number, index: number) => (
     <div className={cx("info_block")} key={index}>
       <div className={`${cx("title")} body-font`}>{infoTitles[index]}</div>

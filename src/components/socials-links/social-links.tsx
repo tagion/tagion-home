@@ -14,7 +14,7 @@ interface InputProps {
   className?: string;
 }
 
-export const SocialLinks: React.FC<InputProps> = ({ className }) => {
+export const SocialLinks: React.FC<InputProps> = ({ className = "" }) => {
   return (
     <div className={`${cx("social_links")} ${className}`}>
       <a href="https://twitter.com/">

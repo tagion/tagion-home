@@ -17,9 +17,9 @@ export const gradientBlockData = [
     // img: nextGen1Icon,
   },
   {
-    title: () => "Tagion Commons serving everyone`s economic interests",
+    title: () => "Tagion Commons serving something",
     description:
-      "Governing as a Commons is an efficient way of developing, maintaining, utilising and operating resources.",
+      "Governing as a Commons is an efficient way of developing, maintaining.",
     // img: nextGen2Icon,
   },
 ];
