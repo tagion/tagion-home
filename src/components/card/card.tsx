@@ -24,6 +24,15 @@ interface InputProps {
   };
 }
 
+const initialClassNames = {
+  card: "",
+  mainContent: "",
+  counter: "",
+  title: "",
+  description: "",
+  img: "",
+};
+
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   title,
   description,
@@ -31,24 +40,20 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   counter,
   fixedFontSize,
   ImgComponent,
-  classNames,
+  classNames = initialClassNames,
 }) => {
   return (
-    <div className={`${cx("card")} ${classNames?.card || ""}`}>
-      <div className={`${cx("img_wrapper")} ${classNames?.img || ""}`}>
+    <div className={`${cx("card")} ${classNames?.card}`}>
+      <div className={`${cx("img_wrapper")} ${classNames?.img}`}>
         {img && <img src={img.path} alt={img.alt} />}
         {ImgComponent && ImgComponent()}
       </div>
 
-      <div className={`${cx("main_content")} ${classNames?.mainContent || ""}`}>
+      <div className={`${cx("main_content")} ${classNames?.mainContent}`}>
         {counter && (
-          <div className={`font-16 ${classNames?.counter || ""}`}>
-            {counter}
-          </div>
+          <div className={`font-16 ${classNames?.counter}`}>{counter}</div>
         )}
-        <div
-          className={`${cx("title")} subtitle-font ${classNames?.title || ""}`}
-        >
+        <div className={`${cx("title")} subtitle-font ${classNames?.title}`}>
           {title}
         </div>
         <div
@@ -56,7 +61,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
             fixedFontSize?.description
               ? `font-${fixedFontSize.description}`
               : "body-font"
-          } ${classNames?.description || ""}`}
+          } ${classNames?.description}`}
         >
           {description}
         </div>

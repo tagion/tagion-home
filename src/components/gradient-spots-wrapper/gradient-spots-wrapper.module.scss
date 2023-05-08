@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   margin: 0 !important;
-  padding: 0 16px;
+  width: 100%;
 
   .children_wrapper {
     * {
@@ -19,15 +19,19 @@
     border-radius: 100%;
   }
 
-  @media (min-width: $tablet-size) {
-    padding: 0 24px;
-  }
+  &.mainSidePaddings {
+    padding: 0 16px;
 
-  @media (min-width: $desktop-size) {
-    padding: 0 80px;
-  }
+    @media (min-width: $tablet-size) {
+      padding: 0 24px;
+    }
 
-  @media (min-width: $desktop-max-size) {
-    padding: 0 120px;
+    @media (min-width: $desktop-size) {
+      padding: 0 80px;
+    }
+
+    @media (min-width: $desktop-max-size) {
+      padding: 0 120px;
+    }
   }
 }

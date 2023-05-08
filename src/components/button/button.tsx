@@ -29,7 +29,7 @@ export const Button: React.FC<InputProps> = ({
   isCarousel,
   Icon,
   withArrow,
-  className,
+  className = "",
   onClick,
 }) => {
   return (
