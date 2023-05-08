@@ -5,6 +5,7 @@
   width: 100%;
   background-color: $main-dark-color;
   overflow: hidden;
+  margin-top: 80px;
 
   .gradient_color {
     position: absolute;
@@ -24,6 +25,10 @@
 
     @media (min-width: $desktop-size) {
       right: -400px;
+    }
+
+    @media (min-width: $desktop-large-size) {
+      margin-top: 180px;
     }
   }
 }

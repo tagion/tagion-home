@@ -5,17 +5,20 @@
   z-index: 98;
   position: relative;
 
-  img {
-    width: 116px;
-    margin-bottom: 18px;
+  .img_wrapper {
+    margin-bottom: 16px;
+
+    img {
+      width: 116px;
+    }
   }
 
-  .title {
+  .main_content > .title {
     margin-bottom: 12px;
   }
 
   @media (min-width: $tablet-size) {
-    img {
+    .img_wrapper > img {
       width: 180px;
     }
   }

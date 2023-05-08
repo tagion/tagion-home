@@ -47,7 +47,6 @@ export const YouCanParticipateBlock: React.FC = () => {
                     lg={5}
                   >
                     <Card
-                      className={cx("you_can_participate_card")}
                       title={sectionContent.title}
                       description={sectionContent.description}
                     />
