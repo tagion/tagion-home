@@ -26,10 +26,11 @@ jobs:
           export AWS_DEFAULT_REGION=${{ vars.AWS_DEFAULT_REGION }}
           export AWS_SECRET_ACCESS_KEY=${{ vars.AWS_SECRET_ACCESS_KEY }}
           export AWS_ACCESS_KEY_ID=${{ vars.AWS_ACCESS_KEY_ID }}
-          #export KUBECONFIG=$KUBECONFIG
-          export IMAGE_TAG=$DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID
-          #aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+          export KUBECONFIG=${{ vars.KUBECONFIG }}
+          export IMAGE_TAG=${{ vars.DOCKER_REGISTRY}}/${{ vars.DOCKER_REGISTRY}}:${{ env.GITHUB_RUN_NUMBER }}
+          aws ecr get-login-password --region ${{ vars.AWS_DEFAULT_REGION }} | docker login --username AWS --password-stdin ${{ vars.DOCKER_REGISTRY}}
           env | grep -i aws
+          env | grep -i github
           which kubectl || echo "no kubectl"
           kubectl get ing
           #docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
