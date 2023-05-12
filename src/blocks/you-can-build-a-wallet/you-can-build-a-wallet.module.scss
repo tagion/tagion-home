@@ -10,18 +10,7 @@
   margin-top: 80px;
 
   .carousel_buttons {
-    display: flex;
-
-    button {
-      margin-top: 24px;
-      &:last-child {
-        margin-left: 16px;
-      }
-    }
-
-    svg {
-      stroke: $main-dark-color;
-    }
+    margin-top: 24px;
   }
 
   .content_wrapper {

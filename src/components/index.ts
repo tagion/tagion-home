@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./card";
+export * from "./custom-swiper";
 export * from "./footer";
 export * from "./gradient-block";
 export * from "./gradient-spots-wrapper";
@@ -8,4 +9,5 @@ export * from "./header";
 export * from "./input";
 export * from "./page-not-found";
 export * from "./socials-links";
+export * from "./swiper-buttons";
 export * from "./tagion-monitor-info";

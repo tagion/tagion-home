@@ -10,6 +10,8 @@ const cx = classNames.bind(styles);
 interface InputProps {
   name?: string;
   type?: "submit" | "button" | "reset";
+  id?: string;
+  isDisabled?: boolean;
   widthInPx?: number;
   Icon?: () => JSX.Element;
   isWhite?: boolean;
@@ -31,17 +33,22 @@ export const Button: React.FC<InputProps> = ({
   withArrow,
   className = "",
   onClick,
+  id,
+  isDisabled,
 }) => {
   return (
     <button
       type={type}
       className={`${cx("button", {
         isCarousel,
+        isDisabled,
         isWhite,
         withArrow,
       })} ${className}`}
       onClick={() => onClick?.()}
       style={{ width: `${widthInPx}px` }}
+      id={id}
+      disabled={isDisabled}
     >
       {name && <span>{name}</span>}
       {Icon && Icon()}
