@@ -36,6 +36,8 @@ jobs:
         ECR_REPOSITORY: tagion-home
         IMAGE_TAG: ${{ github.sha }}
       run: |
+        npm install
+        npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
@@ -46,6 +48,5 @@ jobs:
 
     - name: Deploy to EKS
       run: |
-        kubectl apply -f fedhr-postgres-deployment.yaml
-        kubectl apply -f fedhr-graphene-deployment.yaml
-        kubectl apply -f fedhr-ingress.yaml
+        kubectl delete deploy $TEST_PROJECT_NAME || kubectl get deploy
+        envsubst < k8s/dev_deployment.yml | kubectl apply -f -
