@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dev-tagion-home
-        image: dev-tagion-home
+        image: tagion-home
         ports:
         - containerPort: 5000
 
