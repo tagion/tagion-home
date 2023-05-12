@@ -38,8 +38,8 @@ jobs:
       run: |
         npm install --legacy-peer-deps
         npm run build
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+        docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
 
     - name: Update kube config
       run: |
@@ -48,6 +48,4 @@ jobs:
     - name: Deploy to EKS
       run: |
         kubectl delete deploy $DEV_PROJECT_NAME || echo "old deploy deleted"
-        export DEPLOY_IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo $DEPLOY_IMAGE
-        envsubst < k8s/dev_deployment.yml | kubectl apply -f -
+        kubectl apply -f k8s/dev_deployment.yml

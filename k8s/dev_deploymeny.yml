@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: $DEV_PROJECT_NAME
-        image: $DEPLOY_IMAGE
+        image: tagion-home
         ports:
         - containerPort: 5000
 
