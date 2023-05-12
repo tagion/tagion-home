@@ -14,7 +14,7 @@ spec:
         app: dev-tagion-home
     spec:
       containers:
-      - name: $DEV_PROJECT_NAME
+      - name: dev-tagion-home
         image: dev-tagion-home
         ports:
         - containerPort: 5000
