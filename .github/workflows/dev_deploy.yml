@@ -48,5 +48,6 @@ jobs:
     - name: Deploy to EKS
       run: |
         kubectl delete deploy $DEV_PROJECT_NAME || echo "old deploy deleted"
+        cd k8s
         ls -l
         kubectl apply -f k8s/dev_deployment.yml
