@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dev-tagion-home
-        image: tagion-home
+        image: 763081292656.dkr.ecr.eu-central-1.amazonaws.com/tagion-home
         ports:
         - containerPort: 5000
 
