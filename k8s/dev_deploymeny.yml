@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: $DEV_PROJECT_NAME
-        image: $IMAGE_TAG
+        image: $DEPLOY_IMAGE
         ports:
         - containerPort: 5000
 
