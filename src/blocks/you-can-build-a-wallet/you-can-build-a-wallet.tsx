@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
 
-import { Button, GradientSpotsWrapper } from "../../components";
+import { Button, GradientSpotsWrapper, SwiperButtons } from "../../components";
 import {
   gradientBlockData,
   youCanBuildWalletGradientSpotsProps,
@@ -11,8 +11,6 @@ import { Colors } from "../../common/enums/colors";
 import * as styles from "./you-can-build-a-wallet.module.scss";
 
 import { ReactComponent as SecurityIcon } from "../../assets/images/security.svg";
-import { ReactComponent as LeftArrowIcon } from "../../assets/images/left_arrow.svg";
-import { ReactComponent as RightArrowIcon } from "../../assets/images/right-arrow.svg";
 
 const cx = classNames.bind(styles);
 
@@ -20,24 +18,18 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const carouselButtons = (isWhiteColor?: boolean) => (
-    <div className={cx("carousel_buttons")}>
-      <Button
-        Icon={() => <LeftArrowIcon />}
-        isCarousel={true}
-        isWhite={isWhiteColor}
-        onClick={() => setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev))}
-      />
-      <Button
-        Icon={() => <RightArrowIcon />}
-        isCarousel={true}
-        isWhite={isWhiteColor}
-        onClick={() =>
-          setSelectedIndex((prev) =>
-            prev < gradientBlockData.length - 1 ? prev + 1 : prev
-          )
-        }
-      />
-    </div>
+    <SwiperButtons
+      isWhiteColor={isWhiteColor}
+      className={cx("carousel_buttons")}
+      prevOnClick={() =>
+        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev))
+      }
+      nextOnClick={() =>
+        setSelectedIndex((prev) =>
+          prev < gradientBlockData.length - 1 ? prev + 1 : prev
+        )
+      }
+    />
   );
 
   return (

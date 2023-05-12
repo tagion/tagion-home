@@ -40,6 +40,14 @@
     svg {
       margin: 0;
     }
+
+    &.isDisabled {
+      border: 1px solid $swiper-button-disable-color;
+
+      svg {
+        stroke: $swiper-button-disable-color;
+      }
+    }
   }
 
   &.withArrow {

@@ -8,6 +8,7 @@ import {
   FinancialInfrastrucureNextGenBlock,
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
+  ValuePartnersBlock,
   YouCanBuildAWalletBlock,
   YouCanParticipateBlock,
 } from "../blocks";
@@ -23,6 +24,7 @@ const cx = classNames.bind(styles);
 const IndexPage = () => {
   return (
     <Layout>
+      <ValuePartnersBlock />
       <FinancialInfrastrucureNextGenBlock />
       <YouCanBuildAWalletBlock />
       <GradientSpotsWrapper spots={gradientSpotsProps}>

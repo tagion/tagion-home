@@ -1,0 +1,25 @@
+@import "./../../styles/variables.scss";
+
+$hide-buttons-breakpoint: $value_partner_card-tablet-breakpoint + 10px;
+
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  .swiper_slide {
+    display: flex;
+    width: fit-content;
+  }
+
+  .swiper_buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  @media (min-width: $hide-buttons-breakpoint) {
+    .swiper_buttons {
+      display: none;
+    }
+  }
+}
