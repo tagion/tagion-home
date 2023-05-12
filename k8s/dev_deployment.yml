@@ -2,16 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: $DEV_PROJECT_NAME
+  name: dev-tagion-home
 spec:
   selector:
     matchLabels:
-      app: $DEV_PROJECT_NAME
+      app: dev-tagion-home
   replicas: 1
   template:
     metadata:
       labels:
-        app: $DEV_PROJECT_NAME
+        app: dev-tagion-home
     spec:
       containers:
       - name: $DEV_PROJECT_NAME
@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: $DEV_PROJECT_NAME
+  name: dev-tagion-home
 spec:
   type: NodePort
   selector:
-    app: $DEV_PROJECT_NAME
+    app: dev-tagion-home
   ports:
     - protocol: TCP
       port: 5000
