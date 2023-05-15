@@ -1,0 +1,128 @@
+@import "./../../styles/variables.scss";
+
+.you_can_participate_block {
+  margin-top: 80px;
+
+  .title_wrapper {
+    margin-bottom: 32px;
+
+    .title {
+      max-width: 327px;
+    }
+  }
+
+  .sections_wrapper {
+    .section {
+      display: flex;
+      padding: 16px 0;
+      border-bottom: 1px solid $main-dark-color;
+
+      .img_wrapper > svg {
+        width: 50px;
+        height: 50px;
+      }
+
+      .card_wrapper {
+        padding-left: 4px;
+      }
+
+      .arrow_link_wrapper {
+        display: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .sections_wrapper {
+      .section {
+        .img_wrapper > svg {
+          width: 70px;
+          height: 70px;
+        }
+
+        .card_wrapper {
+          display: flex;
+          align-items: center;
+          margin-left: -7px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .title_wrapper {
+      margin-bottom: 24px;
+      .title {
+        max-width: none;
+      }
+    }
+
+    .sections_wrapper {
+      .section > .card_wrapper {
+        padding-left: 52px;
+        margin: 0;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    margin-top: 180px;
+
+    .title_wrapper {
+      justify-content: flex-end;
+      margin-bottom: 56px;
+
+      .title {
+        padding-right: 200px;
+      }
+    }
+
+    .sections_wrapper {
+      .section {
+        align-items: center;
+        height: 228px;
+        padding: 0;
+
+        .img_wrapper {
+          padding-left: 40px;
+
+          svg {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .card_wrapper {
+          padding-left: 0;
+        }
+
+        .arrow_link_wrapper {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          svg {
+            width: 52px;
+            height: 52px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .sections_wrapper {
+      .section > .img_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+    }
+  }
+}

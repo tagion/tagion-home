@@ -1,0 +1,37 @@
+@import "./../../styles/variables.scss";
+
+.gradient_spots_wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 !important;
+  width: 100%;
+
+  .children_wrapper {
+    * {
+      z-index: 98;
+      position: relative;
+    }
+  }
+
+  .spot {
+    z-index: 1;
+    position: absolute;
+    border-radius: 100%;
+  }
+
+  &.mainSidePaddings {
+    padding: 0 16px;
+
+    @media (min-width: $tablet-size) {
+      padding: 0 24px;
+    }
+
+    @media (min-width: $desktop-size) {
+      padding: 0 80px;
+    }
+
+    @media (min-width: $desktop-max-size) {
+      padding: 0 120px;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "./../../styles/variables.scss";
+
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+
+  height: $header-desktop-height;
+  width: 100%;
+  max-width: inherit;
+  background-color: inherit;
+
+  @media (max-width: $tablet-size) {
+    height: $header-mobile-height;
+  }
+
+  .header_content {
+    width: $header-content-width;
+    height: $header-content-height;
+    margin: 0 120px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    .logo_wrapper {
+      width: 170px;
+      height: 44px;
+
+      svg {
+        fill: $main-dark-color;
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      max-width: 590px;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+        color: $main-dark-color;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+        display: flex;
+        align-items: center;
+
+        .arrow {
+          width: 12px;
+          height: 12px;
+          fill: $main-dark-color;
+          margin-left: 7.5px;
+        }
+      }
+    }
+
+    .external_links {
+      display: flex;
+      flex-direction: row;
+      height: 26px;
+
+      a:not(:first-child) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  .burger_menu {
+    display: none;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      fill: $main-dark-color;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: calc($desktop-max-size - 1px)) {
+    .header_content {
+      margin: 0 80px;
+    }
+
+    @media (max-width: calc($desktop-large-size - 1px)) {
+      .header_content {
+        .logo_wrapper {
+          width: 124px;
+          height: 32px;
+        }
+        .burger_menu {
+          display: block;
+        }
+
+        nav,
+        .external_links {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: calc($tablet-size - 1px)) {
+      .header_content {
+        margin: 0 16px;
+      }
+    }
+  }
+}

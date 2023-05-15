@@ -1,0 +1,34 @@
+@import "./../../styles/variables.scss";
+
+.gradient_block {
+  position: relative;
+  width: 100%;
+  background-color: $main-dark-color;
+  overflow: hidden;
+  margin-top: 80px;
+
+  .gradient_color {
+    position: absolute;
+    width: 725px;
+    height: 615px;
+    background: $main-purple-color;
+    mix-blend-mode: normal;
+    filter: blur(150px);
+    transform: rotate(-59.75deg);
+    right: -533px;
+    top: -86px;
+    border-radius: 100%;
+
+    @media (min-width: $tablet-size) {
+      right: -439px;
+    }
+
+    @media (min-width: $desktop-size) {
+      right: -400px;
+    }
+
+    @media (min-width: $desktop-large-size) {
+      margin-top: 180px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "./../../styles/variables.scss";
+
+.card {
+  width: 100%;
+  z-index: 98;
+  position: relative;
+
+  .img_wrapper {
+    margin-bottom: 16px;
+
+    img {
+      width: 116px;
+    }
+  }
+
+  .main_content > .title {
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: $tablet-size) {
+    .img_wrapper > img {
+      width: 180px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .title {
+      svg {
+        display: none;
+      }
+    }
+  }
+}

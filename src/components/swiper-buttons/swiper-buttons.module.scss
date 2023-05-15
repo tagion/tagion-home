@@ -1,0 +1,15 @@
+@import "./../../styles/variables.scss";
+
+.swiper_buttons {
+  display: flex;
+
+  button {
+    &:last-child {
+      margin-left: 16px;
+    }
+
+    svg {
+      stroke: $main-dark-color;
+    }
+  }
+}
