@@ -15,6 +15,7 @@ type BreakpointsType = { mobile: number; tablet: number };
 
 interface InputProps {
   items: Array<JSX.Element>;
+  swiperId: string;
   className: string;
   spaceBetween?: BreakpointsType;
   lateralSpace?: BreakpointsType;
@@ -24,6 +25,7 @@ interface InputProps {
 export const CustomSwiper: React.FC<InputProps> = ({
   items,
   className,
+  swiperId,
   spaceBetween,
   lateralSpace,
   singleItemWindowWidth = 0,
@@ -78,6 +80,7 @@ export const CustomSwiper: React.FC<InputProps> = ({
         <Swiper
           slidesPerView={"auto"}
           className={`${cx("swiper")} ${className}`}
+          id={swiperId}
         >
           {items &&
             items.map((item, i) => (
@@ -95,16 +98,20 @@ export const CustomSwiper: React.FC<InputProps> = ({
                 {item}
               </SwiperSlide>
             ))}
-          <SwiperButtonsWrapper itemsLength={items.length} />
+          <SwiperButtonsWrapper
+            itemsLength={items.length}
+            swiperId={swiperId}
+          />
         </Swiper>
       )}
     </>
   );
 };
 
-const SwiperButtonsWrapper: React.FC<{ itemsLength: number }> = ({
-  itemsLength,
-}) => {
+const SwiperButtonsWrapper: React.FC<{
+  itemsLength: number;
+  swiperId: string;
+}> = ({ itemsLength, swiperId }) => {
   const swiper = useSwiper();
   const [selectedItemId, setSelectedItemId] = useState(0);
 
@@ -113,7 +120,12 @@ const SwiperButtonsWrapper: React.FC<{ itemsLength: number }> = ({
   });
 
   const getIdByClassName = (className: string) =>
-    Number(document.getElementsByClassName(className)[0].getAttribute("id"));
+    Number(
+      document
+        .getElementById(swiperId)
+        ?.getElementsByClassName(className)[0]
+        .getAttribute("id")
+    );
 
   return (
     <SwiperButtons
