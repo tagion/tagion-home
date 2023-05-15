@@ -1,12 +1,21 @@
-FROM node:16.4.2-alpine
+FROM node:18.13.0
 
-ENV NODE_ENV=production
-ENV PORT=5000
+#ENV NODE_ENV=production
+ENV PORT=8000
 
 WORKDIR /usr/src/app
 
 COPY . .
+ 
+RUN apt update -y && apt upgrade -y
 
-EXPOSE 5000
+RUN npm install
+RUN npm install -g gatsby-cli
+RUN gatsby build
 
-CMD ["npm", "run", "start:prod"]
+
+EXPOSE 8000
+
+CMD ["gatsby", "serve", "--port 80", "--host 0.0.0.0"]
+#CMD ["npm", "run", "develop"]
+CMD ["sleep", "3600"]
