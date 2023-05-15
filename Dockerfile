@@ -16,6 +16,6 @@ RUN gatsby build
 
 EXPOSE 8000
 
-CMD ["gatsby", "serve", "--port 80", "--host 0.0.0.0"]
+CMD ["gatsby", "serve", "--port 8000", "--host 0.0.0.0"]
 #CMD ["npm", "run", "develop"]
 #CMD ["sleep", "3600"]
