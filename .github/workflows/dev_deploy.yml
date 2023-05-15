@@ -36,8 +36,8 @@ jobs:
         ECR_REPOSITORY: tagion-home
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        #npm install --legacy-peer-deps
-        #npm run build
+        npm install --legacy-peer-deps
+        npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
         docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
 
