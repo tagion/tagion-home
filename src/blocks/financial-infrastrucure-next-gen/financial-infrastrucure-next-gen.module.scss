@@ -1,0 +1,102 @@
+@import "./../../styles/variables.scss";
+
+.financial_infrastrucure_next_gen {
+  margin-top: 80px;
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .card {
+    .main_content > .card_counter {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    width: 644px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    width: auto;
+    margin-top: 180px;
+
+    .title {
+      margin-bottom: 96px;
+      width: 1063px;
+    }
+
+    .blocks {
+      height: 359px;
+      overflow-y: scroll;
+      position: relative;
+
+      .card {
+        display: flex;
+        height: 359px;
+        margin-bottom: 0;
+
+        .main_content {
+          width: 49%;
+          padding: 49px 0 16px;
+
+          .card_counter {
+            display: block;
+            margin-bottom: 40px;
+          }
+
+          .card_title {
+            margin-bottom: 24px;
+          }
+
+          .card_description {
+            width: 500px;
+          }
+        }
+
+        .card_img {
+          display: flex;
+          justify-content: center;
+          min-width: 42%;
+          padding: 16px 0;
+          margin: 0;
+
+          img {
+            width: 323px;
+            height: 323px;
+            margin-left: -44px;
+          }
+        }
+      }
+
+      // scrollbar styling
+      &::-webkit-scrollbar {
+        width: 3px;
+        border-radius: $scrollbar-border-radius;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $main-dark-color;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        background-clip: padding-box;
+        border-radius: $scrollbar-border-radius;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $main-dark-color;
+        border-radius: $scrollbar-border-radius;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .title {
+      width: 1396px;
+    }
+  }
+}

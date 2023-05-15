@@ -1,0 +1,49 @@
+@import "./../../styles/variables.scss";
+
+.label {
+  width: fit-content;
+  height: 46px;
+  padding: 10px 32px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+
+  border-radius: 100px;
+
+  cursor: pointer;
+
+  &.isActive,
+  &.isTitleLabel {
+    background-color: $main-gray-color;
+  }
+
+  &.isTitleLabel {
+    padding: 10px 22px;
+  }
+
+  &.boxShadow {
+    box-shadow: $label-box-shadow-color;
+  }
+
+  &.isGrayTextColor {
+    opacity: 0.4;
+  }
+
+  &.withBorder {
+    border: 2px solid $main-gray-color;
+  }
+
+  @media (max-width: $mobile-size) {
+    &.isDecreases {
+      padding: 8px 24px;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  @media (max-width: 260px) {
+    height: auto;
+    text-align: center;
+  }
+}

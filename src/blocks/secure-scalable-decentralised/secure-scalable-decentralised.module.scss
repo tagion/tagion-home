@@ -1,0 +1,119 @@
+@import "./../../styles/variables.scss";
+
+.secure_scalable_decentralised_block {
+  margin-top: 80px;
+
+  .title {
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .body {
+    flex-direction: column;
+
+    .blocks_wrapper {
+      margin-top: 0;
+      .block {
+        margin-bottom: 40px;
+        padding-top: 0;
+
+        .header {
+          display: flex;
+          align-items: flex-start;
+          height: 36px;
+
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 32px;
+          border-bottom: 1px solid $secure_decentralised_block-border-color;
+
+          .indicator {
+            width: 12px;
+            height: 12px;
+            background-color: $main-purple-color;
+            border-radius: 100%;
+            margin-right: 8px;
+            margin-top: 4px;
+          }
+        }
+
+        .title_card {
+          margin-bottom: 24px;
+        }
+
+        .description_card {
+          color: $body-text-color;
+        }
+      }
+    }
+
+    .button_wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: calc($tablet-size - 1px)) {
+    .title {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .body {
+      .blocks_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .body {
+      .blocks_wrapper {
+        .block {
+          padding-right: 32px;
+
+          .header {
+            margin-bottom: 40px;
+          }
+
+          .title_card {
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 44px;
+          }
+        }
+      }
+
+      .button_wrapper {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .title {
+      margin-bottom: 48px;
+    }
+
+    .body {
+      flex-direction: row-reverse;
+
+      .blocks_wrapper {
+        margin-top: 52px;
+
+        .block {
+          margin-bottom: 88px;
+
+          &:last-child {
+            margin-bottom: 180px;
+          }
+        }
+      }
+    }
+  }
+}

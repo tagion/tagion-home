@@ -1,0 +1,155 @@
+@import "./../../styles/variables.scss";
+
+.form {
+  max-width: 552px;
+  width: 100%;
+  height: 709px;
+  padding: 35px 32px;
+
+  border: 1px solid $form-border-color;
+  box-shadow: $card-box-shadow-color;
+  border-radius: $form-border-radius;
+
+  .title {
+    display: block;
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .field_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    .select {
+      * {
+        background-color: $main-white-color;
+      }
+
+      & > div {
+        padding: 18px 24px 18px 10px;
+        border: 0.5px solid $input-border-color;
+        border-radius: $input-border-radius;
+      }
+
+      &::before,
+      &::after,
+      &:active {
+        border-bottom: 0 !important;
+      }
+
+      svg {
+        width: 22.5px;
+        right: 25px;
+      }
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 2px;
+    }
+
+    input {
+      height: 56px;
+    }
+    // uncomment if you need to remove the blue background color when autofilling the text
+    // input:-webkit-autofill,
+    // input:-webkit-autofill:focus {
+    //   transition: background-color 600000s 0s, color 600000s 0s;
+    // }
+
+    textarea {
+      height: 121px;
+      resize: none;
+    }
+
+    textarea,
+    input {
+      border: 0.5px solid $input-border-color;
+      border-radius: $input-border-radius;
+      font-size: 16px;
+      padding: 18px 10px;
+    }
+  }
+
+  .checkbox_wrapper {
+    margin-bottom: 18px;
+
+    .checkbox {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+
+      & + label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      & + label::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        margin: 3px 19px 0 0;
+        display: inline-block;
+        align-self: flex-start;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        border: 1.5px solid $main-dark-color;
+        border-radius: $main-border-radius;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+      }
+
+      &:checked + label::before {
+        background-image: url("../../assets/images/checkmark_icon.svg");
+      }
+    }
+
+    label {
+      display: flex;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  @media (max-width: calc($tablet-size)) {
+    padding: 30px 18px 44px;
+    height: auto;
+
+    .title {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 20px;
+    }
+
+    .wrapper {
+      margin-bottom: 20px;
+
+      input {
+        height: 48px;
+      }
+    }
+
+    .checkbox_wrapper {
+      margin-bottom: 25px;
+
+      .checkbox + label::before {
+        margin-right: 33px;
+      }
+
+      label {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}

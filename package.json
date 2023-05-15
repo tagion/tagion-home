@@ -8,8 +8,9 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
+    "dev:test": "gatsby develop -H 127.0.0.1",
+    "deploy": "gatsby serve --port 8000 --host 0.0.0.0",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -18,13 +19,23 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.10",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.13",
+    "@svgr/webpack": "^6.5.1",
+    "chart.js": "^4.2.1",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "classnames": "^2.3.2",
+    "formik": "^2.2.9",
     "gatsby": "^5.6.1",
     "gatsby-plugin-sass": "^6.6.0",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.58.2"
+    "sass": "^1.58.2",
+    "swiper": "^9.3.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

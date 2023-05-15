@@ -1,0 +1,15 @@
+@import "./../../styles/variables.scss";
+
+.social_links {
+  display: flex;
+  flex-direction: row;
+  height: 26px;
+
+  a:not(:first-child) {
+    margin-left: 16px;
+  }
+
+  svg {
+    fill: $main-white-color;
+  }
+}

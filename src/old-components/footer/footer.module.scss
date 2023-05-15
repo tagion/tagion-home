@@ -1,0 +1,120 @@
+@import "./../../styles/variables.scss";
+
+footer {
+  .footer_content {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 10px;
+
+    .top_footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .logo_wrapper {
+        width: 117px;
+        height: fit-content;
+        margin-right: 30px;
+      }
+
+      .link_columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 720px;
+        margin-top: 2.5px;
+        overflow: hidden;
+
+        .column {
+          width: 160px;
+
+          .column_title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 24px;
+          }
+
+          .column_links {
+            display: flex;
+            flex-direction: column;
+
+            a {
+              display: flex;
+              align-items: center;
+
+              text-decoration: none;
+              color: $main-dark-color;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 26px;
+
+              img {
+                height: 23px;
+                margin-right: 12px;
+              }
+            }
+
+            a:not(:last-child) {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom_footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      max-width: 550px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 72px 0 25px 0;
+
+      a {
+        text-decoration: none;
+        color: $main-dark-color;
+      }
+    }
+
+    @media (max-width: calc($tablet-size)) {
+      padding: 0 24px;
+
+      .top_footer {
+        flex-direction: column;
+
+        .link_columns {
+          flex-wrap: wrap;
+          width: 100%;
+          margin-top: 4px;
+
+          .column {
+            margin-top: 37px;
+            flex: 50%;
+          }
+        }
+      }
+
+      .bottom_footer {
+        padding: 89px 0 17px 0;
+        font-size: 14px;
+
+        span,
+        a {
+          flex: 50%;
+          color: $main-gray-color;
+
+          &:last-child {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+  }
+}

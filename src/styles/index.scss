@@ -1,8 +1,22 @@
+@import "./variables.scss";
+@import "./auxiliary-classes.scss";
+@import "./chartjs.scss";
+@import "./fonts.scss";
+
 * {
   box-sizing: border-box;
 }
 
-html, body, #___gatsby, #gatsby-focus-wrapper {
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
   height: 100%;
+  margin: 0;
+  background-color: $body-bg-color;
 }
 
+html {
+  font-family: "Inter", sans-serif;
+  color: $main-dark-color;
+}
