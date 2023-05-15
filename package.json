@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "dev:test": "gatsby develop -H 127.0.0.1",
+    "deploy": "gatsby serve --port 8000 --host 0.0.0.0",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
