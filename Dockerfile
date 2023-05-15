@@ -9,7 +9,7 @@ COPY . .
  
 RUN apt update -y && apt upgrade -y
 
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN npm install -g gatsby-cli
 RUN gatsby build
 
