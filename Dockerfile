@@ -18,4 +18,4 @@ EXPOSE 8000
 
 CMD ["gatsby", "serve", "--port 80", "--host 0.0.0.0"]
 #CMD ["npm", "run", "develop"]
-CMD ["sleep", "3600"]
+#CMD ["sleep", "3600"]
