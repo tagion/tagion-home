@@ -11,8 +11,6 @@ COPY . .
 
 #RUN npm install --legacy-peer-deps
 RUN npm install -g gatsby-cli
-RUN npm init gatsby -- -ts
-RUN cd my-gatsby-site/
 RUN ls -l
 
 
@@ -20,5 +18,5 @@ EXPOSE 8000
 
 #CMD ["gatsby", "develop", "-H 0.0.0.0"]
 #CMD ["gatsby", "serve", "--port 8000", "--host 0.0.0.0"]
-CMD ["npm", "run", "develop"]
+CMD ["npm", "run", "deploy"]
 #CMD ["sleep", "3600"]
