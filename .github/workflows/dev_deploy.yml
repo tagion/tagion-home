@@ -2,7 +2,7 @@ name: Deploy_DEV
 on:
   push: 
     branches: 
-      - deploy
+      - develop
 
 env:
   APP_NAME: tagion-home
@@ -48,6 +48,4 @@ jobs:
     - name: Deploy to EKS
       run: |
         kubectl delete deploy $DEV_PROJECT_NAME || echo "old deploy deleted"
-        ls -l
-        cd k8s
-        kubectl apply -f dev_deployment.yml
+        kubectl apply -f k8s/dev_deployment.yml
