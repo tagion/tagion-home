@@ -24,12 +24,13 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
           </div>
           <form className={cx("form")}>
             <Input
-              placeholder="Email"
+              label="Email address"
               name="email"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setInputValue(e.target.value)
               }
               value={inputValue}
+              className={cx("email_input")}
             />
             <Button name="Subscribe" />
           </form>

@@ -1,0 +1,32 @@
+@import "./../../styles/variables.scss";
+
+.lets_talk_block {
+  .grid {
+    .description {
+      .title {
+        margin-bottom: 16px;
+      }
+    }
+
+    .form_title {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .grid {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .grid {
+      flex-direction: row;
+      .form_title {
+        font-family: "Transducer-Extended-Medium";
+        margin-top: 12px;
+        display: block;
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@ import {
   YouCanBuildAWalletBlock,
   YouCanParticipateBlock,
   TimelineBlock,
+  LetsTalkBlock,
 } from "../blocks";
 import {
   gradientSpotsProps,
@@ -25,18 +26,17 @@ const cx = classNames.bind(styles);
 const IndexPage = () => {
   return (
     <Layout>
-      <TimelineBlock />
       <FinancialInfrastrucureNextGenBlock />
       <YouCanBuildAWalletBlock />
       <GradientSpotsWrapper spots={gradientSpotsProps}>
-        <ExploreOurEcosystemBlock />
+        {/* <ExploreOurEcosystemBlock /> */}
         <SecureScalableDecentralisedBlock />
       </GradientSpotsWrapper>
+      <TimelineBlock />
       <YouCanParticipateBlock />
       <ValuePartnersBlock />
       <GradientSpotsWrapper spots={newsletterSubscribeGradientSpotsProps}>
-        {/* temporary_block will be replaced by a component  */}
-        <div className={cx("temporary_block")} />
+        <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </GradientSpotsWrapper>
     </Layout>

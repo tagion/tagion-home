@@ -1,5 +1,6 @@
 export * from "./explore-our-ecosystem";
 export * from "./financial-infrastrucure-next-gen";
+export * from "./lets-talk";
 export * from "./secure-scalable-decentralised";
 export * from "./subscribe-to-our-newsletter";
 export * from "./timeline-block";
