@@ -37,7 +37,7 @@ export const ValuePartnersBlock: React.FC = () => {
     ));
 
   return (
-    <div className={cx("value_partners_block")}>
+    <div className={`${cx("value_partners_block")} main-top-margins`}>
       <div className={`${cx("title")} title-font`}>Value partners</div>
       <div className={cx("content")}>
         <CustomSwiper

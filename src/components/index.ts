@@ -1,6 +1,7 @@
 export * from "./button";
 export * from "./card";
 export * from "./custom-swiper";
+export * from "./dropdown";
 export * from "./footer";
 export * from "./gradient-block";
 export * from "./gradient-spots-wrapper";
