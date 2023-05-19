@@ -8,6 +8,7 @@ export * from "./gradient-spots-wrapper";
 export * from "./head";
 export * from "./header";
 export * from "./input";
+export * from "./introductory-block";
 export * from "./page-not-found";
 export * from "./socials-links";
 export * from "./swiper-buttons";
