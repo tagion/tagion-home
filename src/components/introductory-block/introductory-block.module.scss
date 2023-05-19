@@ -1,0 +1,143 @@
+@import "./../../styles/variables.scss";
+
+.introductory_block {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+  padding: 10px 16px 0;
+
+  .testnet_running {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    margin-left: -4px;
+
+    span {
+      margin-left: -2px;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .text_wrapper {
+      .title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 16px;
+      }
+    }
+    .icon_wrapper {
+      align-self: center;
+
+      .icon {
+        width: 240px;
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    padding: 10px 24px 0;
+
+    .content {
+      .text_wrapper {
+        .title {
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 44px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding: 30px 80px 0;
+
+    .content {
+      .text_wrapper {
+        width: 644px;
+
+        .title {
+          font-weight: 500;
+          font-size: 64px;
+          line-height: 68px;
+        }
+      }
+      .icon_wrapper {
+        .icon {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding: 30px 0 0 80px;
+    z-index: 99;
+
+    .testnet_running {
+      margin-bottom: 48px;
+
+      img {
+        width: 67px;
+        height: 67px;
+      }
+    }
+
+    .content {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      .icon_wrapper {
+        width: 553px;
+        height: 553px;
+        position: relative;
+        overflow: hidden;
+        top: -120px;
+
+        .icon {
+          position: absolute;
+          width: 553px;
+          right: -110px;
+        }
+      }
+
+      .text_wrapper {
+        .title {
+          font-weight: 500;
+          font-size: 100px;
+          line-height: 100%;
+          margin-bottom: 32px;
+        }
+
+        .description {
+          width: 514px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    padding: 30px 0 0 120px;
+
+    .content {
+      .icon_wrapper {
+        width: 767px;
+        height: 767px;
+
+        .icon {
+          width: 767px;
+          right: -50px;
+        }
+      }
+    }
+  }
+}
