@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import classNames from "classnames/bind";
-import Drawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
+
+import { SideMenu } from "../side-menu";
+import { PageSizes } from "../../common/enums";
 
 import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
 import { ReactComponent as BurgerMenuIcon } from "../../assets/images/burger_menu_icon.svg";
-import closeButtonIcon from "../../assets/images/close_button_icon.svg";
 import { ReactComponent as DownArrowIcon } from "../../assets/images/down-arrow.svg";
 import { ReactComponent as TwitterIcon } from "../../assets/images/twitter_icon.svg";
 import { ReactComponent as DiscordIcon } from "../../assets/images/discord_icon.svg";
@@ -18,7 +18,22 @@ import * as styles from "./header.module.scss";
 const cx = classNames.bind(styles);
 
 export const Header: React.FC = () => {
-  const [isNavPanelOpened, setIsNavPanelOpened] = useState<boolean>(false);
+  const [isSideMenuOpened, setIsSideMenuOpened] = useState<boolean>(false);
+  const [isSideMenuDisplayed, setIsSideMenuDisplayed] =
+    useState<boolean>(false);
+
+  const resizeHandler = () => {
+    setIsSideMenuDisplayed(() =>
+      window.innerWidth > PageSizes.DESKTOP_LARGE ? false : true
+    );
+  };
+  useEffect(() => {
+    resizeHandler();
+    window.addEventListener("resize", () => resizeHandler());
+    return () => {
+      window.removeEventListener("resize", () => resizeHandler());
+    };
+  }, []);
 
   return (
     <header>
@@ -58,45 +73,18 @@ export const Header: React.FC = () => {
         <div
           className={cx("burger_menu")}
           onClick={() => {
-            setIsNavPanelOpened(true);
+            setIsSideMenuOpened(true);
           }}
         >
           <BurgerMenuIcon />
         </div>
-
-        <NavigationPanel
-          isOpened={isNavPanelOpened}
-          isOpenedHandler={setIsNavPanelOpened}
-        />
+        {isSideMenuDisplayed && (
+          <SideMenu
+            isOpened={isSideMenuOpened}
+            isOpenedHandler={setIsSideMenuOpened}
+          />
+        )}
       </div>
     </header>
-  );
-};
-
-// for testing. In the future it will be transferred to a separate file. We are waiting for the design...
-const NavigationPanel = ({
-  isOpened,
-  isOpenedHandler,
-}: {
-  isOpened: boolean;
-  isOpenedHandler: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
-  return (
-    <Drawer anchor="right" open={isOpened}>
-      <Box
-        sx={{
-          p: 2,
-          height: 1,
-          backgroundColor: "#000000",
-          width: "100vw",
-        }}
-      >
-        <img
-          src={closeButtonIcon}
-          alt="Close Icon"
-          onClick={() => isOpenedHandler(false)}
-        />
-      </Box>
-    </Drawer>
   );
 };
