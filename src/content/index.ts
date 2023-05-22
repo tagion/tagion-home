@@ -1,6 +1,7 @@
 export * from "./footer-links";
 export * from "./gradient-block";
 export * from "./gradient-spots-props";
+export * from "./navigation-links";
 export * from "./next-gen-financial-infrastrucure";
 export * from "./secure-scalable-decentralized";
 export * from "./timeline";

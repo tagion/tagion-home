@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./card";
+export * from "./custom-link";
 export * from "./custom-swiper";
 export * from "./dropdown";
 export * from "./footer";
@@ -10,6 +11,7 @@ export * from "./header";
 export * from "./input";
 export * from "./introductory-block";
 export * from "./page-not-found";
+export * from "./side-menu";
 export * from "./socials-links";
 export * from "./swiper-buttons";
 export * from "./tagion-monitor-info";
