@@ -30,7 +30,7 @@ export const YouCanParticipateBlock: React.FC = () => {
         <Grid item xs={4} md={6} lg={12} className={cx("sections_wrapper")}>
           {youCanParticipateBlockData &&
             youCanParticipateBlockData.map((sectionContent, i) => (
-              <Link key={i} to="/blog">
+              <Link key={i} to={sectionContent.linkTo}>
                 <Grid
                   className={cx("section")}
                   container

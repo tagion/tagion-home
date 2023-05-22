@@ -13,6 +13,10 @@ export const youCanParticipateBlockData = [
     ),
     description: "Join the journey",
     Img: <TokenIcon />,
+<<<<<<< HEAD
+=======
+    linkTo: '/404'
+>>>>>>> develop
   },
   {
     title: (
@@ -26,6 +30,10 @@ export const youCanParticipateBlockData = [
     description:
       "Discover how-to's, latest news, community generated content and more",
     Img: <SignedPaperIcon />,
+<<<<<<< HEAD
+=======
+    linkTo: '/blog'
+>>>>>>> develop
   },
   {
     title: (
@@ -35,5 +43,9 @@ export const youCanParticipateBlockData = [
     ),
     description: "Become a part of a diverse network",
     Img: <CommunityIcon />,
+<<<<<<< HEAD
+=======
+    linkTo: '/community'
+>>>>>>> develop
   },
 ];

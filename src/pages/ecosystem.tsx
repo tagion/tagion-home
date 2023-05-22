@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Layout } from "../templates";
 
-const ExplorePage = () => {
+const EcosystemPage = () => {
   return (
     <Layout>
       <div>Coming soon!</div>
@@ -9,6 +9,6 @@ const ExplorePage = () => {
   );
 };
 
-export default ExplorePage;
+export default EcosystemPage;
 
 export { Head } from "../components/head";

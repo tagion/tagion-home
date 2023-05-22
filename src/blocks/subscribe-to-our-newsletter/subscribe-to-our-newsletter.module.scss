@@ -19,12 +19,8 @@
         display: flex;
         flex-direction: column;
 
-        input {
+        .email_input {
           margin: 24px 0 32px;
-
-          &:focus {
-            outline: none;
-          }
         }
 
         button {
@@ -73,7 +69,7 @@
         .form {
           width: 100%;
 
-          input {
+          .email_input {
             align-self: center;
             width: 50%;
           }
@@ -103,7 +99,7 @@
           button {
             align-self: flex-start;
           }
-          input {
+          .email_input {
             width: 100%;
           }
         }
@@ -139,7 +135,7 @@
           flex-direction: row;
           margin-top: 48px;
 
-          input {
+          .email_input {
             width: 307px;
             margin: 0 24px 0 0;
           }
@@ -160,7 +156,7 @@
 
   @media (min-width: $desktop-max-size) {
     .content_wrapper {
-      .body > .form > input {
+      .body > .form > .email_input {
         width: 402px;
       }
 

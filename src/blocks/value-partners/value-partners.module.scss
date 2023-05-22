@@ -1,7 +1,9 @@
 @import "./../../styles/variables.scss";
 
 .value_partners_block {
-  margin: 0 !important;
+  // todo create class for overwriting styles
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 
   .title {
     margin: 0 16px 40px;

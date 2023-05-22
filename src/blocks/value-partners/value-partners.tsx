@@ -37,7 +37,7 @@ export const ValuePartnersBlock: React.FC = () => {
     ));
 
   return (
-    <div className={cx("value_partners_block")}>
+    <div className={`${cx("value_partners_block")} main-top-margins`}>
       <div className={`${cx("title")} title-font`}>Value partners</div>
       <div className={cx("content")}>
         <CustomSwiper
@@ -46,6 +46,7 @@ export const ValuePartnersBlock: React.FC = () => {
           lateralSpace={{ mobile: 16, tablet: 24 }}
           spaceBetween={{ mobile: 16, tablet: 16 }}
           singleItemWindowWidth={359}
+          swiperId="value-partners"
         />
         <div className={cx("desktop_partners_card")}>
           {valuePartnerCardGenerator()}
