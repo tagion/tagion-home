@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 interface InputProps {
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  gifAnimation: any;
+  gifAnimation: string;
   title: string;
   description: string;
 }
