@@ -12,6 +12,7 @@ interface InputProps {
   name: string;
   value: string;
   label?: string;
+  isGrayTextColor?: boolean;
   className?: string;
   error?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -21,6 +22,7 @@ export const Input: React.FC<InputProps> = ({
   name,
   value,
   label,
+  isGrayTextColor,
   className,
   error,
   onChange,
@@ -32,7 +34,10 @@ export const Input: React.FC<InputProps> = ({
         variant="standard"
         name={name}
         value={value}
-        className={`${cx("input", { isError: error })} font-16`}
+        className={`${cx("input", {
+          isError: error,
+          isGrayTextColor,
+        })} font-16`}
         onChange={onChange}
         InputProps={
           !!error

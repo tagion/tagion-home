@@ -53,10 +53,10 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
             </span>
             <Button name="Learn more" withArrow={true} isWhite={true} />
           </div>
-          {carouselButtons(true)}
+          {/* {carouselButtons(true)} */}
         </div>
       </GradientSpotsWrapper>
-      {carouselButtons()}
+      {/* {carouselButtons()} */}
     </div>
   );
 };
