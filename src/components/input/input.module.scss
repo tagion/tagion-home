@@ -63,10 +63,27 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
+        color: $main-dark-color;
 
         &:-webkit-autofill,
         &:-webkit-autofill:focus {
           transition: background-color 600000s 0s, color 600000s 0s;
+        }
+      }
+    }
+
+    &.isGrayTextColor {
+      label,
+      input {
+        color: $input-gray-text-color !important;
+      }
+
+      div {
+        &::before {
+          border-bottom: 1px solid $main-white-color;
+        }
+        &::after {
+          border-bottom: 2px solid $main-white-color;
         }
       }
     }

@@ -5,13 +5,11 @@ import classNames from "classnames/bind";
 import { SideMenu } from "../side-menu";
 import { PageSizes } from "../../common/enums";
 
+import { SocialLinks } from "../socials-links";
+
 import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
 import { ReactComponent as BurgerMenuIcon } from "../../assets/images/burger_menu_icon.svg";
 import { ReactComponent as DownArrowIcon } from "../../assets/images/down-arrow.svg";
-import { ReactComponent as TwitterIcon } from "../../assets/images/twitter_icon.svg";
-import { ReactComponent as DiscordIcon } from "../../assets/images/discord_icon.svg";
-import { ReactComponent as TelegramIcon } from "../../assets/images/telegram_icon.svg";
-import { ReactComponent as GithubIcon } from "../../assets/images/github_icon.svg";
 
 import * as styles from "./header.module.scss";
 
@@ -37,54 +35,38 @@ export const Header: React.FC = () => {
 
   return (
     <header>
-      <div className={cx("header_content")}>
-        <Link to="/" className={cx("logo_wrapper")}>
-          <LogoIcon />
+      <Link to="/" className={cx("logo_wrapper")}>
+        <LogoIcon />
+      </Link>
+
+      <nav>
+        <Link to="/coming-soon">
+          <span>Ecosystem</span>
+          <DownArrowIcon className={cx("arrow")} />
         </Link>
+        <Link to="/coming-soon">Community</Link>
+        <Link to="/coming-soon">
+          <span>Docs</span> <DownArrowIcon className={cx("arrow")} />
+        </Link>
+        <Link to="/coming-soon">About</Link>
+        <Link to="/coming-soon">Blog</Link>
+      </nav>
 
-        <nav>
-          <Link to="/ecosystem">
-            <span>Ecosystem</span>
-            <DownArrowIcon className={cx("arrow")} />
-          </Link>
-          <Link to="/community">Community</Link>
-          <Link to="/docs">
-            <span>Docs</span> <DownArrowIcon className={cx("arrow")} />
-          </Link>
-          <Link to="/about">About</Link>
-          <Link to="/blog">Blog</Link>
-        </nav>
+      <SocialLinks className={cx("external_links")} />
 
-        <div className={cx("external_links")}>
-          <a href="https://twitter.com/">
-            <TwitterIcon />
-          </a>
-          <a href="https://discord.com/">
-            <TelegramIcon />
-          </a>
-          <a href="https://t.me/joinchat/SCowXllJB2gOXDHu">
-            <GithubIcon />
-          </a>
-          <a href="https://github.com/tagion/tagion-home">
-            <DiscordIcon />
-          </a>
-        </div>
+      <BurgerMenuIcon
+        className={cx("burger_menu_icon")}
+        onClick={() => {
+          setIsSideMenuOpened(true);
+        }}
+      />
 
-        <div
-          className={cx("burger_menu")}
-          onClick={() => {
-            setIsSideMenuOpened(true);
-          }}
-        >
-          <BurgerMenuIcon />
-        </div>
-        {isSideMenuDisplayed && (
-          <SideMenu
-            isOpened={isSideMenuOpened}
-            isOpenedHandler={setIsSideMenuOpened}
-          />
-        )}
-      </div>
+      {isSideMenuDisplayed && (
+        <SideMenu
+          isOpened={isSideMenuOpened}
+          isOpenedHandler={setIsSideMenuOpened}
+        />
+      )}
     </header>
   );
 };

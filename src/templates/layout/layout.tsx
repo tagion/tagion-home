@@ -10,13 +10,17 @@ import * as styles from "./layout.module.scss";
 const cx = classNames.bind(styles);
 
 interface InputProps {
+  withPaddingTop?: boolean;
   children: React.ReactNode;
 }
 
-export const Layout: React.FC<InputProps> = ({ children }) => {
+export const Layout: React.FC<InputProps> = ({
+  withPaddingTop = true,
+  children,
+}) => {
   return (
     <ThemeProvider theme={theme}>
-      <div className={cx("layout")}>
+      <div className={cx("layout", { withPaddingTop })}>
         <Header />
         <main>{children}</main>
         <Footer />

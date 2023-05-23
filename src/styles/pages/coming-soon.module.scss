@@ -1,0 +1,135 @@
+@import "./../../styles/variables.scss";
+
+$coming-soon-tablet-size: 560px;
+$coming-soon-desktop-large-size: 1412px;
+
+.coming_soon_page {
+  height: 540px;
+  padding-top: 80px;
+  margin: 0 !important;
+
+  background-image: url("../../assets/images/coming-soon-background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top right -400px;
+  background-size: 960px 540px;
+
+  .content {
+    font-family: "Transducer-Extended-Medium";
+    margin-top: 56px;
+    padding: 0 16px;
+    color: $main-white-color;
+
+    .title {
+      margin-bottom: 48px;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    .form_name {
+      margin-bottom: 19px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .form {
+      width: 206px;
+
+      .email_input {
+        width: 180px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  @media (min-width: $coming-soon-tablet-size) {
+    height: 960px;
+    background-position: top right -600px;
+    background-size: 1707px 960px;
+
+    .content {
+      margin-top: 256px;
+      padding: 0 24px;
+
+      .title {
+        margin-bottom: 149px;
+        font-size: 64px;
+        line-height: 68px;
+      }
+
+      .form_name {
+        font-size: 32px;
+        line-height: 36px;
+      }
+
+      .form {
+        width: 326px;
+
+        .email_input {
+          width: 240px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    height: 1107px;
+    background-position: top right -555px;
+    background-size: 1967px 1107px;
+
+    .content {
+      margin-top: 282px;
+      padding: 0 80px;
+
+      .title {
+        margin-bottom: 217px;
+        font-size: 100px;
+        line-height: 100%;
+      }
+
+      .form_name {
+        margin-bottom: 27px;
+      }
+
+      .form {
+        width: 514px;
+        display: flex;
+
+        .email_input {
+          margin-right: 24px;
+          width: 307px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $coming-soon-desktop-large-size) {
+    height: 900px;
+    background-attachment: inherit;
+    background-position: top 0 right 0;
+    background-size: cover;
+
+    .content {
+      margin-top: 200px;
+
+      .title {
+        margin-bottom: 164px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    height: 1080px;
+
+    .content {
+      margin-top: 240px;
+      padding: 0 120px;
+
+      .title {
+        margin-bottom: 248px;
+      }
+    }
+  }
+}

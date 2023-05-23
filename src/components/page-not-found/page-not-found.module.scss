@@ -6,7 +6,7 @@
   align-items: center;
   flex-direction: column;
 
-  span {
+  & > span {
     font-weight: 600;
     font-size: 32px;
     line-height: 40px;
@@ -16,10 +16,10 @@
   img {
     margin: 0 30px 51px;
     max-width: 574px;
-
   }
 
   a {
     margin-top: 87px;
+    text-decoration: none;
   }
 }
