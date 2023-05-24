@@ -1,0 +1,48 @@
+@import "./../../styles/variables.scss";
+
+.information_block_wrapper {
+  margin: 0 !important;
+  padding-top: 15px;
+
+  .button_wrapper {
+    margin-bottom: 46px;
+
+    .mobile_button {
+      stroke: $main-dark-color;
+      width: 13.7px;
+      height: 10.5px;
+    }
+
+    .desktop_button {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    padding-top: 31px;
+
+    .button_wrapper {
+      margin-bottom: 55px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding-top: 32px;
+    
+    .button_wrapper {
+      margin-bottom: 0;
+
+      .mobile_button {
+        display: none;
+      }
+
+      .desktop_button {
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding-top: 96px;
+  }
+}

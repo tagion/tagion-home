@@ -1,0 +1,123 @@
+@import "./../../styles/variables.scss";
+
+.page_title {
+  margin-bottom: 24px;
+  font-family: "Transducer-Extended-Medium";
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.privacy_policy_content {
+  .block {
+    .title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 12px;
+      font-family: "Transducer-Extended-Medium";
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      .subtitle {
+        font-family: "Transducer-Extended-Medium";
+      }
+
+      .link {
+        color: $main-dark-color;
+        text-decoration: none;
+      }
+
+      .email {
+        cursor: pointer;
+      }
+
+      .link,
+      .email {
+        border-bottom: 1px solid $main-dark-color;
+      }
+    }
+
+    br {
+      content: " ";
+      display: block;
+      height: 24px;
+    }
+  }
+
+  &:not(:first-child) {
+    .block {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (min-width: $tablet-size) {
+  .page_title {
+    margin-bottom: 32px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .privacy_policy_content {
+    .block > .title {
+      margin-bottom: 16px;
+    }
+
+    &:not(:first-child) {
+      .block {
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-size) {
+  .page_title {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .page_title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    .privacy_policy_content {
+      .block {
+        .title {
+          margin-bottom: 24px;
+          font-size: 32px;
+          line-height: 36px;
+        }
+
+        .description {
+          font-size: 20px;
+          line-height: 26px;
+        }
+      }
+
+      &:not(:first-child) {
+        .block {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .page_title {
+      margin-bottom: 48px;
+    }
+
+    .privacy_policy_content {
+      .block {
+        line-height: 36px;
+      }
+    }
+  }
+}

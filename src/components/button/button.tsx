@@ -15,8 +15,7 @@ interface InputProps {
   widthInPx?: number;
   Icon?: () => JSX.Element;
   isWhite?: boolean;
-  isNotWide?: boolean;
-  isCarousel?: boolean;
+  isRounded?: boolean;
   withArrow?: boolean;
   className?: string;
   onClick?: () => void;
@@ -27,8 +26,7 @@ export const Button: React.FC<InputProps> = ({
   type,
   widthInPx,
   isWhite,
-  isNotWide,
-  isCarousel,
+  isRounded,
   Icon,
   withArrow,
   className = "",
@@ -40,7 +38,7 @@ export const Button: React.FC<InputProps> = ({
     <button
       type={type}
       className={`${cx("button", {
-        isCarousel,
+        isRounded,
         isDisabled,
         isWhite,
         withArrow,
