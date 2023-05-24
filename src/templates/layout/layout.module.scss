@@ -16,6 +16,20 @@ $desktop_max_margin: 120px;
     }
   }
 
+  &.withPaddingBottom {
+    main {
+      padding-bottom: 80px;
+
+      @media (min-width: $desktop-large-size) {
+        padding-bottom: 180px;
+      }
+
+      @media (min-width: $desktop-max-size) {
+        padding-bottom: 180px;
+      }
+    }
+  }
+
   main {
     & > * {
       margin-left: $mobile_margin;

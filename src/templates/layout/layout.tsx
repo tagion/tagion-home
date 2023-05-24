@@ -11,16 +11,18 @@ const cx = classNames.bind(styles);
 
 interface InputProps {
   withPaddingTop?: boolean;
+  withPaddingBottom?: boolean;
   children: React.ReactNode;
 }
 
 export const Layout: React.FC<InputProps> = ({
   withPaddingTop = true,
+  withPaddingBottom,
   children,
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <div className={cx("layout", { withPaddingTop })}>
+      <div className={cx("layout", { withPaddingTop, withPaddingBottom })}>
         <Header />
         <main>{children}</main>
         <Footer />

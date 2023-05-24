@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
             )}
           <div className={cx("additional_links_column")}>
             <SocialLinks className={cx("socials")} />
-            <Link to="/">Privacy Policy</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/">Terms & Conditions</Link>
           </div>
         </div>
