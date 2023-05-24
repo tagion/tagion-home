@@ -42,7 +42,7 @@ const IndexPage = () => {
         {/* <ExploreOurEcosystemBlock /> */}
         <SecureScalableDecentralisedBlock />
       </GradientSpotsWrapper>
-      <TimelineBlock />
+      {/* <TimelineBlock /> */}
       <YouCanParticipateBlock />
       <ValuePartnersBlock />
       <GradientSpotsWrapper spots={newsletterSubscribeGradientSpotsProps}>

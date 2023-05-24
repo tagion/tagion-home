@@ -73,6 +73,10 @@
         }
       }
 
+      // a temporary solution for firefox
+      scrollbar-color: $main-dark-color $main-gray-color;
+      scrollbar-width: thin;
+
       // scrollbar styling
       &::-webkit-scrollbar {
         width: 3px;

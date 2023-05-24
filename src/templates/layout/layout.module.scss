@@ -10,11 +10,13 @@ $desktop_max_margin: 120px;
   max-width: $desktop-max-size;
   background-color: $main-white-color;
 
-  main {
-    // todo delete top and bottom paddings
-    // padding: 116px 0 80px;
-    padding-top: 116px;
+  &.withPaddingTop {
+    main {
+      padding-top: $header-height;
+    }
+  }
 
+  main {
     & > * {
       margin-left: $mobile_margin;
       margin-right: $mobile_margin;

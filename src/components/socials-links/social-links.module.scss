@@ -1,15 +1,31 @@
 @import "./../../styles/variables.scss";
 
+$icon-desktop-large-size: 23.33px;
+$icon-desktop-max-size: 28px;
+
 .social_links {
-  display: flex;
-  flex-direction: row;
-  height: 26px;
+  height: $icon-desktop-large-size;
 
   a:not(:first-child) {
-    margin-left: 16px;
+    margin-left: 16.6px;
   }
 
   svg {
+    width: $icon-desktop-large-size;
+    height: $icon-desktop-large-size;
     fill: $main-white-color;
+  }
+
+  @media (min-width: $desktop-max-size) {
+    height: $icon-desktop-max-size;
+
+    a:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    svg {
+      width: $icon-desktop-max-size;
+      height: $icon-desktop-max-size;
+    }
   }
 }
