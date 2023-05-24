@@ -1,0 +1,24 @@
+$mobile_lateral_padding: 16px;
+$tablet_lateral_padding: 24px;
+$desktop_lateral_padding: 80px;
+$desktop_max_lateral_padding: 120px;
+
+.main-lateral-paddings {
+  padding-left: $mobile_lateral_padding;
+  padding-right: $mobile_lateral_padding;
+
+  @media (min-width: $tablet-size) {
+    padding-left: $tablet_lateral_padding;
+    padding-right: $tablet_lateral_padding;
+  }
+
+  @media (min-width: $desktop-size) {
+    padding-left: $desktop_lateral_padding;
+    padding-right: $desktop_lateral_padding;
+  }
+
+  @media (min-width: $desktop-max-size) {
+    padding-left: $desktop_max_lateral_padding;
+    padding-right: $desktop_max_lateral_margin;
+  }
+}
