@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 import { sendEmail } from "../helpers";
 
-import * as styles from "../styles/pages/privacy-policy.module.scss";
+import * as styles from "../wrappers/information-block-wrapper/information-block-wrapper.module.scss";
 
 const cx = classNames.bind(styles);
 
