@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
+import { navigate } from "gatsby";
 
 import { Button, GradientSpotsWrapper, SwiperButtons } from "../../components";
 import {
@@ -51,7 +52,12 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
             <span className={`${cx("description")} body-font`}>
               {gradientBlockData[selectedIndex].description}
             </span>
-            <Button name="Learn more" withArrow={true} isWhite={true} />
+            <Button
+              name="Learn more"
+              withArrow={true}
+              isWhite={true}
+              onClick={() => navigate("/coming-soon")}
+            />
           </div>
           {/* {carouselButtons(true)} */}
         </div>

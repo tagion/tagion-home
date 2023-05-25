@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 import { Grid } from "@mui/material";
+import { navigate } from "gatsby";
 
 import { secureScalableDecentralizedData } from "../../content";
 import { miuCustomColumns } from "../../helpers";
@@ -49,7 +50,11 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
           </Grid>
         </Grid>
         <Grid item lg={5} className={cx("button_wrapper")}>
-          <Button name="Compare" withArrow />
+          <Button
+            name="Compare"
+            withArrow
+            onClick={() => navigate("/coming-soon")}
+          />
         </Grid>
       </Grid>
     </div>
