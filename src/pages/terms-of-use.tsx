@@ -1,20 +1,20 @@
 import React from "react";
 
 import { Layout } from "../templates/layout";
-import { privacyPolicyData } from "../content";
+import { termsOfUseData } from "../content";
 import { InformationBlockWrapper } from "../wrappers";
 
-const PrivacyPolicyPage = () => {
+const TermsOfUsePage = () => {
   return (
     <Layout withPaddingBottom>
       <InformationBlockWrapper
-        content={privacyPolicyData}
-        pageTitle="Privacy Policy"
+        content={termsOfUseData}
+        pageTitle="Terms of use"
       />
     </Layout>
   );
 };
 
-export default PrivacyPolicyPage;
+export default TermsOfUsePage;
 
 export { Head } from "../components/head";

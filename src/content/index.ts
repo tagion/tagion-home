@@ -5,6 +5,7 @@ export * from "./navigation-links";
 export * from "./next-gen-financial-infrastrucure";
 export * from "./privacy-policy";
 export * from "./secure-scalable-decentralized";
+export * from "./terms-of-use";
 export * from "./timeline";
 export * from "./value-partners";
 export * from "./you-can-participate";
