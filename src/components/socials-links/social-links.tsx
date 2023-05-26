@@ -17,16 +17,16 @@ interface InputProps {
 export const SocialLinks: React.FC<InputProps> = ({ className = "" }) => {
   return (
     <div className={`${cx("social_links")} ${className}`}>
-      <a href="https://twitter.com/">
+      <a href="https://twitter.com/TagionOfficial" target="_blank">
         <TwitterIcon />
       </a>
-      <a href="https://discord.com/">
+      <a href="https://t.me/tagionChat" target="_blank">
         <TelegramIcon />
       </a>
-      <a href="https://t.me/joinchat/SCowXllJB2gOXDHu">
+      <a href="https://github.com/tagion" target="_blank">
         <GithubIcon />
       </a>
-      <a href="https://github.com/tagion/tagion-home">
+      <a href="https://discord.gg/za2hb62quR" target="_blank">
         <DiscordIcon />
       </a>
     </div>
