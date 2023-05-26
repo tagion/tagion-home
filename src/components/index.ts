@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./card";
+export * from "./coming-soon";
 export * from "./custom-link";
 export * from "./custom-swiper";
 export * from "./dropdown";

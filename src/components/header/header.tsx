@@ -167,7 +167,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                     key={i}
                   >
                     <div className={cx("icon")}>
-                      <Icon />
+                      {Icon && <Icon />}
                     </div>
                     <div
                       className={`${cx("text", {
