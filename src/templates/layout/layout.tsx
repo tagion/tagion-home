@@ -12,18 +12,20 @@ const cx = classNames.bind(styles);
 interface InputProps {
   withPaddingTop?: boolean;
   withPaddingBottom?: boolean;
+  isHeaderShownOnTop?: boolean;
   children: React.ReactNode;
 }
 
 export const Layout: React.FC<InputProps> = ({
   withPaddingTop = true,
   withPaddingBottom,
+  isHeaderShownOnTop,
   children,
 }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className={cx("layout", { withPaddingTop, withPaddingBottom })}>
-        <Header />
+        <Header isHeaderShownOnTop={isHeaderShownOnTop} />
         <main>{children}</main>
         <Footer />
       </div>

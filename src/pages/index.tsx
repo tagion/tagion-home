@@ -4,18 +4,17 @@ import classNames from "classnames/bind";
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
-  ExploreOurEcosystemBlock,
   FinancialInfrastrucureNextGenBlock,
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
   YouCanBuildAWalletBlock,
   YouCanParticipateBlock,
-  TimelineBlock,
   LetsTalkBlock,
 } from "../blocks";
 import {
   gradientSpotsProps,
+  introductoryBlockSpotsProps,
   newsletterSubscribeGradientSpotsProps,
 } from "../content";
 
@@ -28,15 +27,21 @@ const cx = classNames.bind(styles);
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <IntroductoryBlock
-        Icon={HeroIcon}
-        gifAnimation={pointAnimation}
-        title="We Are Pioneering Money"
-        description="Tagion empowers everyone everywhere to participate in a sustainable
+    <Layout withPaddingTop={false}>
+      <GradientSpotsWrapper
+        spots={introductoryBlockSpotsProps}
+        disableMainSidePaddings
+      >
+        <IntroductoryBlock
+          Icon={HeroIcon}
+          gifAnimation={pointAnimation}
+          title="We Are Pioneering Money"
+          description="Tagion empowers everyone everywhere to participate in a sustainable
             economic world. Evolving trust with your participation."
-      />
-      <FinancialInfrastrucureNextGenBlock />
+        />
+        <FinancialInfrastrucureNextGenBlock />
+      </GradientSpotsWrapper>
+
       <YouCanBuildAWalletBlock />
       <GradientSpotsWrapper spots={gradientSpotsProps}>
         {/* <ExploreOurEcosystemBlock /> */}

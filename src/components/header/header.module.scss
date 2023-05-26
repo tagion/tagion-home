@@ -1,6 +1,6 @@
 @import "./../../styles/variables.scss";
 
-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,9 +12,17 @@ header {
   height: $header-height;
   padding: 0 16px;
 
-  opacity: 0.95;
-  background-color: $main-white-color;
-  backdrop-filter: blur(125px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: $submenu-bg-color;
+
+  transition: backdrop-filter 100ms, -webkit-backdrop-filter 200ms,
+    background-color 400ms;
+
+  &.isHeaderTransparent {
+    backdrop-filter: inherit;
+    background-color: transparent;
+  }
 
   .logo_wrapper {
     svg {
@@ -66,15 +74,15 @@ header {
       justify-content: space-between;
       width: 585px;
 
-      a {
+      .menu_item {
         display: flex;
         align-items: center;
+        padding: 10px 0;
+        cursor: pointer;
 
-        color: $main-dark-color;
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
-        text-decoration: none;
 
         .arrow {
           width: 12px;
@@ -96,5 +104,78 @@ header {
 
   @media (min-width: $desktop-max-size) {
     padding: 0 120px;
+  }
+}
+
+.popper {
+  width: fit-content !important;
+  position: fixed !important;
+  transform: translate(-50%, 0) !important;
+  top: 92px !important;
+  left: 50% !important;
+  z-index: 101;
+
+  .submenu {
+    width: 665px;
+    padding: 40px;
+    border-radius: $card-border-radius;
+    column-count: 2;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: $submenu-bg-color;
+
+    .link {
+      display: flex;
+      width: 227px;
+      height: 48px;
+      margin-left: auto;
+      margin-bottom: 24px;
+      text-decoration: none;
+      cursor: pointer;
+
+      &.isOdd {
+        &:nth-child(2) {
+          margin-bottom: 48px;
+        }
+      }
+
+      &.isDisabled {
+        pointer-events: none;
+        cursor: default;
+      }
+
+      &:nth-child(-n + 2) {
+        width: 328px;
+        margin-left: 0;
+      }
+
+      .icon {
+        margin-right: 12px;
+      }
+
+      .text {
+        color: $main-dark-color;
+
+        .title {
+          width: fit-content;
+          border-bottom: 1px solid $main-dark-color;
+          margin-bottom: 4px;
+
+          font-family: "Transducer-Extended-Medium";
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+        }
+
+        &.isComingSoon {
+          color: $text-coming-soon-color;
+
+          .title {
+            border-bottom: none;
+          }
+        }
+      }
+    }
   }
 }
