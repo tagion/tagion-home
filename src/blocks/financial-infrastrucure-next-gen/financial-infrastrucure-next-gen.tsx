@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 export const FinancialInfrastrucureNextGenBlock: React.FC = () => {
   return (
-    <div className={cx("financial_infrastrucure_next_gen")}>
+    <div className={`${cx("financial_infrastrucure_next_gen")} main-lateral-paddings`}>
       <div className={`${cx("title")} title-font`} onClick={() => focus()}>
         Next generation financial infrastructure
       </div>

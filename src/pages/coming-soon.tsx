@@ -12,7 +12,7 @@ const ComingSoonPage = () => {
   const [email, setEmail] = useState("");
   
   return (
-    <Layout withPaddingTop={false}>
+    <Layout withPaddingTop={false} isHeaderShownOnTop>
       <div className={cx("coming_soon_page")}>
         <div className={cx("content")}>
           <div className={cx("title")}>
