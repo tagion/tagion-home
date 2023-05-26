@@ -11,37 +11,57 @@ import { ReactComponent as GovermentIcon } from "../assets/images/coming-soon/go
 import { ReactComponent as BuildIcon } from "../assets/images/coming-soon/build_icon.svg";
 import { ReactComponent as WhitePaperIcon } from "../assets/images/coming-soon/whitePaper_icon.svg";
 
+export const techPaperLink = {
+  name: "TechPaper",
+  linkTo: "https://tagion.org/resources/tech-paper.pdf",
+  externalLink: true,
+  description: "Dive into the tech details",
+  Icon: () => <TechPaperIcon />,
+};
+
+export const privacyPolicyLink = {
+  name: "Privacy Policy",
+  linkTo: "/privacy-policy",
+  externalLink: false,
+};
+
+export const termsOfUseLink = {
+  name: "Terms of use",
+  linkTo: "/terms-of-use",
+  externalLink: false,
+};
+
 export const navigationLinks = [
   {
     name: "Ecosystem",
     subContent: [
       {
         name: "Explore Ecosystem",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <GlobeIcon />,
       },
       {
         name: "Running Networks",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <RocketIcon />,
       },
       {
         name: "Get Tagions",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <TokenIcon />,
       },
       {
         name: "Wallet",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <WalletIcon />,
       },
       {
         name: "DEX",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <DEXIcon />,
       },
@@ -49,33 +69,27 @@ export const navigationLinks = [
   },
   {
     name: "Community",
-    linkTo: "/coming-soon",
+    linkTo: "/community",
   },
   {
     name: "Docs",
     subContent: [
-      {
-        name: "TechPaper",
-        linkTo: "https://tagion.org/resources/tech-paper.pdf",
-        externalLink: true,
-        description: "Dive into the tech details",
-        Icon: () => <TechPaperIcon />,
-      },
+      { ...techPaperLink },
       {
         name: "Governance paper",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <GovermentIcon />,
       },
       {
         name: "SDKs",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <BuildIcon />,
       },
       {
         name: "WhitePaper",
-        linkTo: "/coming-soon",
+        linkTo: "/404",
         description: "Coming soon",
         Icon: () => <WhitePaperIcon />,
       },
@@ -83,10 +97,10 @@ export const navigationLinks = [
   },
   {
     name: "About",
-    linkTo: "/coming-soon",
+    linkTo: "/about",
   },
   {
     name: "Blog",
-    linkTo: "/coming-soon",
+    linkTo: "/blog",
   },
 ];

@@ -24,8 +24,9 @@
       }
 
       .close_icon {
-        fill: $main-dark-color;
         width: 40px;
+        fill: $main-dark-color;
+        cursor: pointer;
       }
     }
   }
