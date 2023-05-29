@@ -1,0 +1,103 @@
+@import "./../../styles/variables.scss";
+
+.message {
+  width: 243px;
+  // height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 12px 17px 12px 15.8px;
+  border-radius: 8px;
+  position: relative;
+  background: $main-dark-color;
+
+  * {
+    z-index: 99;
+  }
+
+  .gradient_spot {
+    width: 182px;
+    height: 160px;
+    top: 10px;
+    left: -47px;
+    position: absolute;
+
+    mix-blend-mode: normal;
+    filter: blur(54.5107px);
+    background-color: $ozone-blue-color;
+    transform: matrix(-0.95, -0.31, 0.29, -0.96, 0, 0);
+    z-index: 0;
+
+    &.isSuccess {
+      background-color: $phito-green-color;
+    }
+  }
+
+  .text {
+    margin-left: 11.7px;
+    color: $main-white-color;
+
+    .main {
+      font-family: "Transducer-Extended-Medium";
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 2px;
+    }
+
+    .secondary {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  .status_icon {
+    width: 22.5px;
+    height: 22.5px;
+    stroke: $main-white-color;
+  }
+
+  .close_icon {
+    width: 10px;
+    height: 10px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  @media (min-width: $desktop-size) {
+    width: 421px;
+    // height: 100px;
+    padding: 24px 32px 24px 30.5px;
+
+    .gradient_spot {
+      width: 316px;
+      height: 286px;
+      top: 44px;
+      left: -47px;
+    }
+
+    .text {
+      margin-left: 14.5px;
+
+      .main {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 4px;
+      }
+      .secondary {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .status_icon {
+      width: 39px;
+      height: 39px;
+    }
+
+    .close_icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

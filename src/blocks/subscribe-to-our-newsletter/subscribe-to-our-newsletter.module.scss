@@ -19,8 +19,12 @@
         display: flex;
         flex-direction: column;
 
+        .name_input {
+          margin-top: 27px;
+        }
+
         .email_input {
-          margin: 24px 0 32px;
+          margin: 7px 0 12px;
         }
 
         button {
@@ -69,7 +73,8 @@
         .form {
           width: 100%;
 
-          .email_input {
+          .email_input,
+          .name_input {
             align-self: center;
             width: 50%;
           }
@@ -89,6 +94,7 @@
 
       .body {
         width: 422px;
+        align-items: flex-start;
 
         .title {
           text-align: inherit;
@@ -96,10 +102,14 @@
         }
 
         .form {
+          width: 344px;
+
           button {
             align-self: flex-start;
           }
-          .email_input {
+
+          .email_input,
+          .name_input {
             width: 100%;
           }
         }
@@ -112,7 +122,7 @@
         overflow: hidden;
 
         position: absolute;
-        bottom: 0;
+        top: -25px;
         right: 0;
 
         svg {
@@ -129,15 +139,18 @@
   @media (min-width: $desktop-large-size) {
     .content_wrapper {
       .body {
-        width: 681px;
+        width: 729px;
 
         .form {
           flex-direction: row;
+          justify-content: space-between;
           margin-top: 48px;
+          width: inherit;
 
-          .email_input {
-            width: 307px;
-            margin: 0 24px 0 0;
+          .email_input,
+          .name_input {
+            width: 260px;
+            margin: 0;
           }
         }
       }
@@ -145,6 +158,8 @@
       .icon_wrapper {
         width: 435px;
         height: 480px;
+        bottom: 0;
+        top: auto;
 
         svg {
           bottom: -55px;
@@ -156,10 +171,6 @@
 
   @media (min-width: $desktop-max-size) {
     .content_wrapper {
-      .body > .form > .email_input {
-        width: 402px;
-      }
-
       .icon_wrapper {
         width: 520px;
 

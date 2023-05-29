@@ -50,11 +50,11 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
           </Grid>
         </Grid>
         <Grid item lg={5} className={cx("button_wrapper")}>
-          <Button
+          {/* <Button
             name="Compare"
             withArrow
-            onClick={() => navigate("/coming-soon")}
-          />
+            onClick={() => navigate("/about")}
+          /> */}
         </Grid>
       </Grid>
     </div>
