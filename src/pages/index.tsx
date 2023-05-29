@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { ToastContainer } from "react-toastify";
 
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
@@ -22,6 +23,7 @@ import { ReactComponent as HeroIcon } from "../assets/images/hero_icon.svg";
 import pointAnimation from "../assets/videos/point-animation.gif";
 
 import * as styles from "../styles/pages/index.module.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 const cx = classNames.bind(styles);
 
@@ -54,6 +56,16 @@ const IndexPage = () => {
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </GradientSpotsWrapper>
+      {/* todo create separate component for ToastContainer and import in Layout wrapper*/}
+      <ToastContainer
+        autoClose={3000}
+        closeOnClick={false}
+        closeButton={false}
+        draggable={false}
+        icon={false}
+        hideProgressBar={true}
+        className={cx("toast_container")}
+      />
     </Layout>
   );
 };

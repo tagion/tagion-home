@@ -52,12 +52,12 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
             <span className={`${cx("description")} body-font`}>
               {gradientBlockData[selectedIndex].description}
             </span>
-            <Button
+            {/* <Button
               name="Learn more"
               withArrow={true}
               isWhite={true}
-              onClick={() => navigate("/coming-soon")}
-            />
+              onClick={() => navigate("/about")}
+            /> */}
           </div>
           {/* {carouselButtons(true)} */}
         </div>

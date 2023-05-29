@@ -17,3 +17,4 @@ export * from "./socials-links";
 export * from "./swiper-buttons";
 export * from "./tagion-monitor-info";
 export * from "./timeline";
+export * from "./toastify";

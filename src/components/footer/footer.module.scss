@@ -31,6 +31,7 @@ footer {
       a {
         text-decoration: none;
         color: $main-gray-text-color;
+        width: fit-content;
 
         &:not(:last-child) {
           margin-bottom: 20px;
