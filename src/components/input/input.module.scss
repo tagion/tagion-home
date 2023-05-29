@@ -8,9 +8,11 @@
     display: flex;
     align-items: flex-end;
     align-self: flex-end;
-    height: 20px;
+    min-height: 12px;
     line-height: 12px;
+    margin-top: 8px;
     color: $main-red-color;
+    text-align: end;
   }
 
   .input {
@@ -23,6 +25,7 @@
 
       svg {
         width: 18px;
+        stroke: $main-red-color;
       }
     }
 

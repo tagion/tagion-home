@@ -5,7 +5,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { Button, Input, Dropdown } from "../../components";
-import { formValidationSchema } from "../../helpers";
+import { letsTalkSchema } from "../../helpers";
 import { defineYourselfDropdownData } from "../../content/lets-talk";
 
 import * as styles from "./form.module.scss";
@@ -30,7 +30,7 @@ export const Form: React.FC = () => {
       help: "",
       checkbox: false,
     },
-    validationSchema: formValidationSchema,
+    validationSchema: letsTalkSchema,
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: async (

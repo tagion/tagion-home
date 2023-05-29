@@ -13,7 +13,7 @@ export const youCanParticipateBlockData = [
     ),
     description: "Join the journey",
     Img: <TokenIcon />,
-    linkTo: "/coming-soon",
+    linkTo: "/get-tagions",
   },
   {
     title: (
@@ -27,7 +27,7 @@ export const youCanParticipateBlockData = [
     description:
       "Discover how-to's, latest news, community generated content and more",
     Img: <SignedPaperIcon />,
-    linkTo: "/coming-soon",
+    linkTo: "/blog",
   },
   {
     title: (
@@ -37,6 +37,6 @@ export const youCanParticipateBlockData = [
     ),
     description: "Become a part of a diverse network",
     Img: <CommunityIcon />,
-    linkTo: "/coming-soon",
+    linkTo: "/community",
   },
 ];
