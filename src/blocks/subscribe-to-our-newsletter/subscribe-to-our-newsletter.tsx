@@ -9,7 +9,8 @@ import { subscribeToNewsletterSchema } from "../../helpers";
 
 import * as styles from "./subscribe-to-our-newsletter.module.scss";
 
-import { ReactComponent as RingsIcon } from "../../assets/images/rings_icon.svg";
+// import { ReactComponent as RingsIcon } from "../../assets/images/rings_icon.svg";
+import ringsIcon from "../../assets/images/rings_icon.svg";
 
 const cx = classNames.bind(styles);
 
@@ -50,7 +51,8 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
     <div className={cx("subscribe_to_our_newsletter_block")}>
       <div className={cx("content_wrapper")}>
         <div className={cx("icon_wrapper")}>
-          <RingsIcon />
+          {/* <RingsIcon /> */}
+          <img src={ringsIcon} />
         </div>
         <div className={cx("body")}>
           <div className={`${cx("title")} title-font`}>
@@ -86,8 +88,8 @@ const toastGenerator = ({ isSuccess }: { isSuccess: boolean }) =>
         <ToastifyMessage
           closeToast={closeToast}
           status="success"
-          mainText="Successfully Sent"
-          secondaryText="We will get back to you shortly"
+          mainText="Success!"
+          secondaryText="Thanks for subscribing"
         />
       ))
     : toast(({ closeToast }) => (
@@ -95,10 +97,6 @@ const toastGenerator = ({ isSuccess }: { isSuccess: boolean }) =>
           closeToast={closeToast}
           status="error"
           mainText="Error occured"
-          secondaryText={
-            <>
-              Contact us via <span className="underline">ir@tagion.com</span>
-            </>
-          }
+          secondaryText="Please try again later"
         />
       ));

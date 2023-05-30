@@ -37,7 +37,8 @@ export const YouCanParticipateBlock: React.FC = () => {
                   columns={{ xs: 4, sm: 4, md: 6, lg: 12 }}
                 >
                   <Grid className={cx("img_wrapper")} item xs={1} md={1} lg={5}>
-                    {sectionContent.Img}
+                    {/* {sectionContent.Img} */}
+                    <img src={sectionContent.Img} />
                   </Grid>
                   <Grid
                     className={cx("card_wrapper")}
