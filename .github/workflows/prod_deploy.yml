@@ -40,7 +40,7 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         echo ${{ env.GATSBY_ENV }} > .env
-        echo ${{ env.GOOGLE_ANALYTICS_ID } >> .env
+        echo ${{ env.GOOGLE_ANALYTICS_ID }} >> .env
         npm install --legacy-peer-deps
         npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
