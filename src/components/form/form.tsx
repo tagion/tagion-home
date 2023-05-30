@@ -1,12 +1,14 @@
 import React from "react";
 import classNames from "classnames/bind";
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
 import { SelectChangeEvent } from "@mui/material/Select";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
-import { Button, Input, Dropdown } from "../../components";
+import { Button, Input, Dropdown, ToastifyMessage } from "../../components";
 import { letsTalkSchema } from "../../helpers";
 import { defineYourselfDropdownData } from "../../content/lets-talk";
+import { sendLetsTalkForm } from "../../api/send-lets-talk-form";
 
 import * as styles from "./form.module.scss";
 import "react-tooltip/dist/react-tooltip.css";
@@ -27,28 +29,37 @@ export const Form: React.FC = () => {
       email: "",
       name: "",
       defineYourselfIndex: "",
-      help: "",
+      howWeCanHelp: "",
       checkbox: false,
     },
     validationSchema: letsTalkSchema,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: async (
-      { email, name, defineYourselfIndex, help, checkbox },
-      { setSubmitting, setFieldValue }
-    ) => {
-      console.log(
-        `
-        email: ${email},
-        name: ${name},
-        defineYourself: ${
-          defineYourselfDropdownData[Number(defineYourselfIndex)]
-        },
-        help: ${help},
-        checkbox: ${checkbox}
-        `
-      );
-    },
+    onSubmit: async ({
+      email,
+      name,
+      defineYourselfIndex,
+      howWeCanHelp,
+      checkbox,
+    }) =>
+      // { setSubmitting, setFieldValue }
+      {
+        try {
+          const {
+            data: { isSucceeded },
+          } = await sendLetsTalkForm({
+            email,
+            fullName: name,
+            category: defineYourselfDropdownData[Number(defineYourselfIndex)],
+            howWeCanHelp,
+          });
+
+          isSucceeded && toastGenerator({ isSuccess: true });
+        } catch (e) {
+          console.error(`Error: ${e}.`);
+          toastGenerator({ isSuccess: false });
+        }
+      },
   });
 
   const handleInputChange = async (e: formikOnChangeEventType) => {
@@ -94,8 +105,8 @@ export const Form: React.FC = () => {
         <label htmlFor="help">How can we help?</label>
         <div className={cx("textarea_wrapper")} id="textarea-wrapper">
           <textarea
-            name="help"
-            value={formik.values.help}
+            name="howWeCanHelp"
+            value={formik.values.howWeCanHelp}
             onChange={handleInputChange}
             className="font-16"
             onClick={() => {
@@ -146,3 +157,26 @@ export const Form: React.FC = () => {
     </form>
   );
 };
+
+const toastGenerator = ({ isSuccess }: { isSuccess: boolean }) =>
+  isSuccess
+    ? toast(({ closeToast }) => (
+        <ToastifyMessage
+          closeToast={closeToast}
+          status="success"
+          mainText="Sent Successfully"
+          secondaryText="We will get back to you shortly"
+        />
+      ))
+    : toast(({ closeToast }) => (
+        <ToastifyMessage
+          closeToast={closeToast}
+          status="error"
+          mainText="Error occured"
+          secondaryText={
+            <>
+              Contact us via <span className="underline">ir@tagion.com</span>
+            </>
+          }
+        />
+      ));
