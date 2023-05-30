@@ -7,6 +7,8 @@ on:
 env:
   APP_NAME: tagion-home
   DEV_PROJECT_NAME: dev-tagion-home
+  GATSBY_ENV: ${{ secrets.DEV_GATSBY_ENV }}
+  GOOGLE_ANALYTICS_ID: ${{ secrets.DEV_GATSBY_GOOGLE_ANALYTICS_ID }}
 
 
 
@@ -36,6 +38,8 @@ jobs:
         ECR_REPOSITORY: tagion-home
         IMAGE_TAG: ${{ github.sha }}
       run: |
+        echo ${{ env.GATSBY_ENV }} > .env
+        echo ${{ env.GOOGLE_ANALYTICS_ID } >> .env
         npm install --legacy-peer-deps
         npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
