@@ -9,6 +9,10 @@ import * as styles from "./layout.module.scss";
 
 const cx = classNames.bind(styles);
 
+console.log("GATSBY_ENV", process.env.GATSBY_ENV);
+console.log("GATSBY_GOOGLE_ANALYTICS_ID: ", process.env.GATSBY_GOOGLE_ANALYTICS_ID);
+console.log("trackingIds: ", [process.env.GATSBY_GOOGLE_ANALYTICS_ID]);
+
 interface InputProps {
   withPaddingTop?: boolean;
   withPaddingBottom?: boolean;
