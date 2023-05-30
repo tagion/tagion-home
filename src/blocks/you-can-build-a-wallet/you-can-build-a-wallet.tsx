@@ -11,7 +11,8 @@ import { Colors } from "../../common/enums/colors";
 
 import * as styles from "./you-can-build-a-wallet.module.scss";
 
-import { ReactComponent as SecurityIcon } from "../../assets/images/security.svg";
+// import { ReactComponent as SecurityIcon } from "../../assets/images/security.svg";
+import securityIcon from "../../assets/images/security.svg";
 
 const cx = classNames.bind(styles);
 
@@ -42,7 +43,8 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
       >
         <div className={cx("content_wrapper")}>
           <div className={cx("img_wrapper")}>
-            <SecurityIcon className={cx("security_icon")} />
+            {/* <SecurityIcon className={cx("security_icon")} /> */}
+            <img src={securityIcon} className={cx("security_icon")}/>
           </div>
 
           <div className={cx("content")}>
