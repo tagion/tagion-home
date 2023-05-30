@@ -44,9 +44,6 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-sass",
     "gatsby-plugin-svgr",
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: "gatsby-plugin-manifest",
       options: {

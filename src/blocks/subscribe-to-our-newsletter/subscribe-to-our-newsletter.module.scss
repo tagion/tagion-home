@@ -39,7 +39,14 @@
       justify-content: center;
       height: 200px;
 
-      svg {
+      // svg {
+      //   position: absolute;
+      //   top: -33px;
+      //   width: 198px;
+      //   height: 208px;
+      // }
+
+      img {
         position: absolute;
         top: -33px;
         width: 198px;
@@ -125,7 +132,15 @@
         top: -25px;
         right: 0;
 
-        svg {
+        // svg {
+        //   width: 424px;
+        //   height: auto;
+        //   top: auto;
+        //   bottom: 0;
+        //   left: 0;
+        // }
+
+        img {
           width: 424px;
           height: auto;
           top: auto;
@@ -161,7 +176,12 @@
         bottom: 0;
         top: auto;
 
-        svg {
+        // svg {
+        //   bottom: -55px;
+        //   width: 495px;
+        // }
+
+        img {
           bottom: -55px;
           width: 495px;
         }
@@ -174,7 +194,12 @@
       .icon_wrapper {
         width: 520px;
 
-        svg {
+        // svg {
+        //   bottom: -95px;
+        //   width: 570px;
+        // }
+
+        img {
           bottom: -95px;
           width: 570px;
         }
