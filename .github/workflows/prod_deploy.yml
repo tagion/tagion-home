@@ -10,8 +10,7 @@ env:
   PROD_PROJECT_NAME: prod-tagion-home
   GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
   GOOGLE_ANALYTICS_ID: ${{ secrets.GATSBY_GOOGLE_ANALYTICS_ID }}
-
-
+  GATSBY_MAIL_SERVICE_ENDPOINT: ${{ vars.GATSBY_MAIL_SERVICE_ENDPOINT }}
 
 jobs:
   deploy:

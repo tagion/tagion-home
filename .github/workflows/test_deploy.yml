@@ -9,8 +9,7 @@ env:
   TEST_PROJECT_NAME: test-tagion-home
   GATSBY_ENV: ${{ secrets.TEST_GATSBY_ENV }}
   GOOGLE_ANALYTICS_ID: ${{ secrets.TEST_GATSBY_GOOGLE_ANALYTICS_ID }}
-
-
+  GATSBY_MAIL_SERVICE_ENDPOINT: ${{ vars.TEST_GATSBY_MAIL_SERVICE_ENDPOINT }}
 
 jobs:
   deploy:
@@ -40,7 +39,7 @@ jobs:
       run: |
         echo ${{ env.GATSBY_ENV }} > .env
         echo ${{ env.GOOGLE_ANALYTICS_ID }} >> .env
-        echo ${{ env.TEST_GATSBY_MAIL_SERVICE_ENDPOINT }} >> .env
+        echo ${{ env.GATSBY_MAIL_SERVICE_ENDPOINT }} >> .env
         npm install --legacy-peer-deps
         npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
