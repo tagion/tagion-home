@@ -11,6 +11,7 @@ const cx = classNames.bind(styles);
 
 console.log("GATSBY_ENV: ", process.env.GATSBY_ENV);
 console.log("GATSBY_GOOGLE_ANALYTICS_ID: ", process.env.GATSBY_GOOGLE_ANALYTICS_ID);
+console.log("GATSBY_MAIL_SERVICE_ENDPOINT: ", process.env.GATSBY_MAIL_SERVICE_ENDPOINT);
 
 interface InputProps {
   withPaddingTop?: boolean;

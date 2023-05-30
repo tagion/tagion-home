@@ -40,6 +40,7 @@ jobs:
       run: |
         echo ${{ env.GATSBY_ENV }} > .env
         echo ${{ env.GOOGLE_ANALYTICS_ID }} >> .env
+        echo ${{ env.TEST_GATSBY_MAIL_SERVICE_ENDPOINT }} >> .env
         npm install --legacy-peer-deps
         npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
