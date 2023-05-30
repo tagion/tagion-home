@@ -11,8 +11,6 @@ COPY . .
 
 #RUN npm install --legacy-peer-deps
 RUN npm install -g gatsby-cli
-RUN ls -l
-
 
 EXPOSE 8000
 
