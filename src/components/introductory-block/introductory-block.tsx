@@ -1,11 +1,8 @@
 import React from "react";
 import classNames from "classnames/bind";
-// import Img from "gatsby-image";
-import { StaticImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
 
 import heroSvg from "../../assets/images/hero_icon.svg";
-import { ReactComponent as HeroSvg } from "../../assets/images/hero_icon.svg";
+// import { ReactComponent as HeroSvg } from "../../assets/images/hero_icon.svg";
 
 import * as styles from "./introductory-block.module.scss";
 
@@ -41,17 +38,6 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
           <div className={`${cx("description")} body-font`}>{description}</div>
         </div>
       </div>
-
-      <StaticImage
-        src="../../assets/images/test3.png"
-        alt="test"
-        layout={"fullWidth"}
-        quality={100}
-        // className={cx("icon")}
-      />
-
-      <img src={heroSvg} />
-      <HeroSvg />
     </div>
   );
 };
