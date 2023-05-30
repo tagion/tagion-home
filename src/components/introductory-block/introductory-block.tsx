@@ -1,5 +1,10 @@
 import React from "react";
 import classNames from "classnames/bind";
+// import Img from "gatsby-image";
+import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+
+import heroSvg from "../../assets/images/hero_icon.svg";
 
 import * as styles from "./introductory-block.module.scss";
 
@@ -28,13 +33,21 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
       )}
       <div className={cx("content")}>
         <div className={cx("icon_wrapper")}>
-          <Icon className={cx("icon")} />
+          <img src={heroSvg} className={cx("icon")}/>
         </div>
         <div className={cx("text_wrapper")}>
           <div className={`${cx("title")} title-font`}>{title}</div>
           <div className={`${cx("description")} body-font`}>{description}</div>
         </div>
       </div>
+
+      <StaticImage
+        src="../../assets/images/test3.png"
+        alt="test"
+        layout={"fullWidth"}
+        quality={100}
+        // className={cx("icon")}
+      />
     </div>
   );
 };
