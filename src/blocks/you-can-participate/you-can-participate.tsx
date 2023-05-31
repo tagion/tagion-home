@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 export const YouCanParticipateBlock: React.FC = () => {
   return (
-    <div className={cx("you_can_participate_block")}>
+    <div className={`${cx("you_can_participate_block")} main-lateral-paddings`}>
       <Grid
         container
         columns={miuCustomColumns}
@@ -30,14 +30,15 @@ export const YouCanParticipateBlock: React.FC = () => {
         <Grid item xs={4} md={6} lg={12} className={cx("sections_wrapper")}>
           {youCanParticipateBlockData &&
             youCanParticipateBlockData.map((sectionContent, i) => (
-              <Link key={i} to="/blog">
+              <Link key={i} to={sectionContent.linkTo}>
                 <Grid
                   className={cx("section")}
                   container
                   columns={{ xs: 4, sm: 4, md: 6, lg: 12 }}
                 >
                   <Grid className={cx("img_wrapper")} item xs={1} md={1} lg={5}>
-                    {sectionContent.Img}
+                    {/* {sectionContent.Img} */}
+                    <img src={sectionContent.Img} />
                   </Grid>
                   <Grid
                     className={cx("card_wrapper")}

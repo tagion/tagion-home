@@ -6,3 +6,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
+
+.underline {
+  border-bottom: 1px solid $main-white-color;
+}

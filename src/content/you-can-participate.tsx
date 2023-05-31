@@ -1,8 +1,12 @@
 import React from "react";
-import { ReactComponent as CommunityIcon } from "../assets/images/community_icon.svg";
-import { ReactComponent as SignedPaperIcon } from "../assets/images/signed_paper_icon.svg";
-import { ReactComponent as TokenIcon } from "../assets/images/token_icon.svg";
+// import { ReactComponent as CommunityIcon } from "../assets/images/community_icon.svg";
+// import { ReactComponent as SignedPaperIcon } from "../assets/images/signed_paper_icon.svg";
+// import { ReactComponent as TokenIcon } from "../assets/images/token_icon.svg";
 import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arrow_link.svg";
+
+import communityIcon from "../assets/images/community_icon.svg";
+import signedPaperIcon from "../assets/images/signed_paper_icon.svg";
+import tokenIcon from "../assets/images/token_icon.svg";
 
 export const youCanParticipateBlockData = [
   {
@@ -12,7 +16,8 @@ export const youCanParticipateBlockData = [
       </>
     ),
     description: "Join the journey",
-    Img: <TokenIcon />,
+    Img: tokenIcon,
+    linkTo: "/get-tagions",
   },
   {
     title: (
@@ -25,7 +30,8 @@ export const youCanParticipateBlockData = [
     ),
     description:
       "Discover how-to's, latest news, community generated content and more",
-    Img: <SignedPaperIcon />,
+    Img: signedPaperIcon,
+    linkTo: "/blog",
   },
   {
     title: (
@@ -34,6 +40,7 @@ export const youCanParticipateBlockData = [
       </>
     ),
     description: "Become a part of a diverse network",
-    Img: <CommunityIcon />,
+    Img: communityIcon,
+    linkTo: "/community",
   },
 ];

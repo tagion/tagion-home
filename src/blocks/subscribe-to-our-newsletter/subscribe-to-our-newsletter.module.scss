@@ -19,12 +19,12 @@
         display: flex;
         flex-direction: column;
 
-        input {
-          margin: 24px 0 32px;
+        .name_input {
+          margin-top: 27px;
+        }
 
-          &:focus {
-            outline: none;
-          }
+        .email_input {
+          margin: 7px 0 12px;
         }
 
         button {
@@ -39,7 +39,14 @@
       justify-content: center;
       height: 200px;
 
-      svg {
+      // svg {
+      //   position: absolute;
+      //   top: -33px;
+      //   width: 198px;
+      //   height: 208px;
+      // }
+
+      img {
         position: absolute;
         top: -33px;
         width: 198px;
@@ -73,7 +80,8 @@
         .form {
           width: 100%;
 
-          input {
+          .email_input,
+          .name_input {
             align-self: center;
             width: 50%;
           }
@@ -93,6 +101,7 @@
 
       .body {
         width: 422px;
+        align-items: flex-start;
 
         .title {
           text-align: inherit;
@@ -100,10 +109,14 @@
         }
 
         .form {
+          width: 344px;
+
           button {
             align-self: flex-start;
           }
-          input {
+
+          .email_input,
+          .name_input {
             width: 100%;
           }
         }
@@ -116,10 +129,18 @@
         overflow: hidden;
 
         position: absolute;
-        bottom: -80px;
+        top: -25px;
         right: 0;
 
-        svg {
+        // svg {
+        //   width: 424px;
+        //   height: auto;
+        //   top: auto;
+        //   bottom: 0;
+        //   left: 0;
+        // }
+
+        img {
           width: 424px;
           height: auto;
           top: auto;
@@ -131,17 +152,22 @@
   }
 
   @media (min-width: $desktop-large-size) {
+    padding: 80px 0 60px 80px;
+    
     .content_wrapper {
       .body {
-        width: 681px;
+        width: 729px;
 
         .form {
           flex-direction: row;
+          justify-content: space-between;
           margin-top: 48px;
+          width: inherit;
 
-          input {
-            width: 307px;
-            margin: 0 24px 0 0;
+          .email_input,
+          .name_input {
+            width: 268px;
+            margin: 0;
           }
         }
       }
@@ -149,8 +175,15 @@
       .icon_wrapper {
         width: 435px;
         height: 480px;
+        bottom: 0;
+        top: auto;
 
-        svg {
+        // svg {
+        //   bottom: -55px;
+        //   width: 495px;
+        // }
+
+        img {
           bottom: -55px;
           width: 495px;
         }
@@ -160,14 +193,15 @@
 
   @media (min-width: $desktop-max-size) {
     .content_wrapper {
-      .body > .form > input {
-        width: 402px;
-      }
-
       .icon_wrapper {
         width: 520px;
 
-        svg {
+        // svg {
+        //   bottom: -95px;
+        //   width: 570px;
+        // }
+
+        img {
           bottom: -95px;
           width: 570px;
         }

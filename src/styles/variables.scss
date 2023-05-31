@@ -9,8 +9,7 @@ $desktop-max-size: 1920px;
 
 $main-border-radius: 100px;
 
-$header-desktop-height: 120px;
-$header-mobile-height: 67px;
+$header-height: 80px;
 $header-content-width: 100%;
 $header-content-height: 100%;
 
@@ -21,6 +20,10 @@ $scrollbar-border-radius: 5px;
 $main-dark-color: #121113;
 $main-white-color: #ffffff;
 $main-purple-color: #3f0b81;
+$main-red-color: #ff4e4e;
+
+$phito-green-color: #55ffa6;
+$ozone-blue-color: #4f36e3;
 
 $main-purple-text-color: #866fcf;
 $main-gray-text-color: rgba(255, 255, 255, 0.8);
@@ -31,7 +34,15 @@ $footer-copyright-text-color: rgba(255, 255, 255, 0.5);
 $secure_decentralised_block-border-color: #000000;
 $swiper-button-disable-color: #888889;
 
+$timeline-status-gray-color: rgba(14, 14, 14, 0.1);
+$timeline-status-green-color: #55ffa6;
+
 $input-border-color: #6e6e6e;
+$input-gray-text-color: rgba(255, 255, 255, 0.8);
+
+$submenu-bg-color: hsla(0, 0%, 100%, 0.8);
+
+$text-coming-soon-color: #9f9f9f;
 
 // breakpoints
 $value_partner_card-tablet-breakpoint: 360px;

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import classNames from "classnames/bind";
 
-import { Button } from "../../old-components/button";
+import { Button } from "../button";
 
 import PageNotFoundIcon from "../../assets/images/404.svg";
 
@@ -17,7 +17,7 @@ export const PageNotFound = () => {
       <span>Sorry, page not found</span>
       <span>The page you were looking for doesn't exist.</span>
       <Link to="/">
-        <Button name="Back to home" isNotWide={true} />
+        <Button name="Back to home"/>
       </Link>
     </div>
   );

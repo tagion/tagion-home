@@ -1,8 +1,7 @@
-import * as React from "react";
-import { PageProps } from "gatsby";
+import React from "react";
 import { PageNotFound } from "../components";
 
-const NotFoundPage: React.FC<PageProps> = () => {
+const NotFoundPage: React.FC = () => {
   return <PageNotFound />;
 };
 

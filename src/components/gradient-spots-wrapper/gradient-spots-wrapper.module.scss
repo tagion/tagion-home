@@ -7,7 +7,9 @@
   width: 100%;
 
   .children_wrapper {
-    * {
+    height: 100%;
+    
+    & > * {
       z-index: 98;
       position: relative;
     }

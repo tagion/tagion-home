@@ -1,0 +1,160 @@
+@import "./../../styles/variables.scss";
+
+.gradient_wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+
+  .side_menu_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 80px;
+
+      .logo_wrapper {
+        display: block;
+        width: 124px;
+        height: 32px;
+      }
+
+      .close_icon {
+        width: 40px;
+        fill: $main-dark-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .links_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-top: 16px;
+    overflow-y: auto;
+
+    .link,
+    .link_with_content {
+      width: fit-content;
+      font-family: "Transducer-Extended-Medium";
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: $main-dark-color;
+      text-decoration: none;
+
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    .link_with_content {
+      cursor: pointer;
+      .name {
+        &.underline {
+          span {
+            border-bottom: 1px solid $main-dark-color;
+          }
+        }
+
+        .arrow_icon {
+          fill: $main-dark-color;
+          width: 16.5px;
+          margin-left: 11.5px;
+
+          &.isOpened {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .sublinks_wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .sublink {
+          margin-top: 8px;
+          margin-bottom: 2px;
+          text-decoration: none;
+          color: $main-dark-color;
+
+          &.isComingSoon {
+            color: $text-coming-soon-color;
+          }
+
+          &:first-child {
+            margin-top: 13.6px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .name {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            margin-bottom: 2px;
+          }
+
+          .description {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .links_wrapper {
+      margin-top: 34px;
+
+      .link,
+      .link_with_content {
+        font-size: 32px;
+        line-height: 36px;
+
+        &:not(:first-child) {
+          margin-top: 24px;
+        }
+      }
+
+      .link_with_content {
+        .name > .arrow_icon {
+          width: 29.5px;
+          margin-left: 16.5px;
+        }
+
+        .sublinks_wrapper > .sublink {
+          margin-top: 16px;
+
+          &:first-child {
+            margin-top: 24px;
+          }
+
+          &:last-child {
+            margin-bottom: 16px;
+          }
+
+          .name {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 4px;
+          }
+
+          .description {
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

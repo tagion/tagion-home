@@ -31,14 +31,14 @@ export const SwiperButtons: React.FC<InputProps> = ({
     <div className={`${cx("swiper_buttons")} ${className}`}>
       <Button
         Icon={() => <LeftArrowIcon />}
-        isCarousel
+        isRounded
         isWhite={isWhiteColor}
         onClick={() => prevOnClick()}
         isDisabled={prevButton?.disabled}
       />
       <Button
         Icon={() => <RightArrowIcon />}
-        isCarousel
+        isRounded
         isWhite={isWhiteColor}
         onClick={() => nextOnClick()}
         isDisabled={nextButton?.disabled}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
+import { detect } from "detect-browser";
 
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
 
@@ -23,6 +24,7 @@ type GradientPropType = Array<{
 interface InputProps {
   bgColor?: string;
   disableMainSidePaddings?: boolean;
+  className?: string;
   spots: {
     desktop_max?: GradientPropType;
     desktop_large?: GradientPropType;
@@ -37,8 +39,15 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   bgColor,
   disableMainSidePaddings,
   children,
+  className,
 }) => {
   const [pageWidth, setPageWidth] = useState(0);
+
+  const browser = detect();
+  const isAppleDevice =
+    browser?.name === "ios" ||
+    browser?.name === "safari" ||
+    browser?.os === "iOS";
 
   const gradientSpotsGenerator = () => {
     let gradientProperties: GradientPropType = [];
@@ -97,12 +106,12 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
 
   return (
     <div
-      className={cx("gradient_spots_wrapper", {
+      className={`${cx("gradient_spots_wrapper", {
         mainSidePaddings: !disableMainSidePaddings,
-      })}
+      })} ${className}`}
       style={{ backgroundColor: bgColor }}
     >
-      {gradientSpotsGenerator()}
+      {!isAppleDevice && gradientSpotsGenerator()}
       <div className={cx("children_wrapper")}>{children}</div>
     </div>
   );

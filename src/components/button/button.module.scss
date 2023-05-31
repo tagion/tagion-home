@@ -9,7 +9,7 @@
   height: 52px;
   padding: 0 24px;
 
-  font-family: "Transducer-Extended-Regular";
+  font-family: "Transducer-Extended-Medium";
   font-size: 16px;
   line-height: 19px;
 
@@ -30,7 +30,7 @@
     }
   }
 
-  &.isCarousel {
+  &.isRounded {
     width: 52px;
     height: 52px;
     background-color: transparent;
@@ -39,6 +39,9 @@
 
     svg {
       margin: 0;
+      stroke: $main-dark-color;
+      width: 17.8px;
+      height: 13.4px;
     }
 
     &.isDisabled {

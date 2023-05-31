@@ -6,8 +6,9 @@ const pageTitles = [
   { path: "/about/", title: "Tagion | About" },
   { path: "/blog/", title: "Tagion | Blog" },
   { path: "/community/", title: "Tagion | Community" },
-  { path: "/explore/", title: "Explore" },
-  { path: "/docs/", title: "Docs" },
+  // { path: "/docs/", title: "Docs" },
+  { path: "/privacy-policy/", title: "Tagion | Privacy Policy" },
+  { path: "/terms-of-use/", title: "Tagion | Terms of use" },
 ];
 
 export const Head: HeadFC = (props) => {

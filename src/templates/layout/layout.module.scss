@@ -10,11 +10,27 @@ $desktop_max_margin: 120px;
   max-width: $desktop-max-size;
   background-color: $main-white-color;
 
-  main {
-    // todo delete top and bottom paddings
-    // padding: 116px 0 80px;
-    padding-top: 116px;
+  &.withPaddingTop {
+    main {
+      padding-top: $header-height;
+    }
+  }
 
+  &.withPaddingBottom {
+    main {
+      padding-bottom: 80px;
+
+      @media (min-width: $desktop-large-size) {
+        padding-bottom: 180px;
+      }
+
+      @media (min-width: $desktop-max-size) {
+        padding-bottom: 180px;
+      }
+    }
+  }
+
+  main {
     & > * {
       margin-left: $mobile_margin;
       margin-right: $mobile_margin;

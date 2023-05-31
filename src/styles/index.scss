@@ -2,6 +2,8 @@
 @import "./auxiliary-classes.scss";
 @import "./chartjs.scss";
 @import "./fonts.scss";
+@import "./margins.scss";
+@import "./paddings.scss";
 
 * {
   box-sizing: border-box;
@@ -19,4 +21,20 @@ body,
 html {
   font-family: "Inter", sans-serif;
   color: $main-dark-color;
+}
+
+// will be moved to the dropdown component
+.MuiPopover-paper {
+  border: 1px solid rgba(14, 14, 14, 0.1);
+  border-radius: 16px;
+  box-shadow: none;
+  margin-top: 8px;
+
+  ul > li {
+    padding: 8px 0 8px 23px;
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
 }

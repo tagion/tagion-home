@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
+import { navigate } from "gatsby";
 
 import { Button, GradientSpotsWrapper, SwiperButtons } from "../../components";
 import {
@@ -10,7 +11,8 @@ import { Colors } from "../../common/enums/colors";
 
 import * as styles from "./you-can-build-a-wallet.module.scss";
 
-import { ReactComponent as SecurityIcon } from "../../assets/images/security.svg";
+// import { ReactComponent as SecurityIcon } from "../../assets/images/security.svg";
+import securityIcon from "../../assets/images/security.svg";
 
 const cx = classNames.bind(styles);
 
@@ -41,7 +43,8 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
       >
         <div className={cx("content_wrapper")}>
           <div className={cx("img_wrapper")}>
-            <SecurityIcon className={cx("security_icon")} />
+            {/* <SecurityIcon className={cx("security_icon")} /> */}
+            <img src={securityIcon} className={cx("security_icon")}/>
           </div>
 
           <div className={cx("content")}>
@@ -51,12 +54,17 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
             <span className={`${cx("description")} body-font`}>
               {gradientBlockData[selectedIndex].description}
             </span>
-            <Button name="Learn more" withArrow={true} isWhite={true} />
+            {/* <Button
+              name="Learn more"
+              withArrow={true}
+              isWhite={true}
+              onClick={() => navigate("/about")}
+            /> */}
           </div>
-          {carouselButtons(true)}
+          {/* {carouselButtons(true)} */}
         </div>
       </GradientSpotsWrapper>
-      {carouselButtons()}
+      {/* {carouselButtons()} */}
     </div>
   );
 };
