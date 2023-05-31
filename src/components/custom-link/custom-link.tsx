@@ -5,13 +5,13 @@ import { PropsWithChildren } from "../../common/types/props-with-children.type";
 
 interface InputProps {
   linkTo: string;
-  className: string;
+  className?: string;
   isExternalLink?: boolean;
 }
 
 export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
   linkTo,
-  className,
+  className = "",
   children,
   isExternalLink = false,
 }) => {
