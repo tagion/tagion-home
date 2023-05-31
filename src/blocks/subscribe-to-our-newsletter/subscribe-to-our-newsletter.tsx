@@ -28,10 +28,10 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
     onSubmit: async ({ email, fullName: name }) => {
       try {
         const {
-          data: { type, isnew },
+          data: { type },
         } = await subscribeToNewsletter({ email, name });
 
-        if (type === "contact" && isnew) {
+        if (type === "contact" || type === "account") {
           toastGenerator({ isSuccess: true });
         } else {
           toastGenerator({ isSuccess: false });
