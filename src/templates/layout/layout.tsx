@@ -4,23 +4,29 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import { Footer, Header } from "../../components";
 import { theme } from "../../helpers";
+import { PropsWithChildren } from "../../common/types/props-with-children.type";
 
 import * as styles from "./layout.module.scss";
 
 const cx = classNames.bind(styles);
 
 console.log("GATSBY_ENV: ", process.env.GATSBY_ENV);
-console.log("GATSBY_GOOGLE_ANALYTICS_ID: ", process.env.GATSBY_GOOGLE_ANALYTICS_ID);
-console.log("GATSBY_MAIL_SERVICE_ENDPOINT: ", process.env.GATSBY_MAIL_SERVICE_ENDPOINT);
+console.log(
+  "GATSBY_GOOGLE_ANALYTICS_ID: ",
+  process.env.GATSBY_GOOGLE_ANALYTICS_ID
+);
+console.log(
+  "GATSBY_MAIL_SERVICE_ENDPOINT: ",
+  process.env.GATSBY_MAIL_SERVICE_ENDPOINT
+);
 
 interface InputProps {
   withPaddingTop?: boolean;
   withPaddingBottom?: boolean;
   isHeaderShownOnTop?: boolean;
-  children: React.ReactNode;
 }
 
-export const Layout: React.FC<InputProps> = ({
+export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
   withPaddingTop = true,
   withPaddingBottom,
   isHeaderShownOnTop,

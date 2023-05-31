@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 export const YouCanParticipateBlock: React.FC = () => {
   return (
-    <div className={cx("you_can_participate_block")}>
+    <div className={`${cx("you_can_participate_block")} main-lateral-paddings`}>
       <Grid
         container
         columns={miuCustomColumns}

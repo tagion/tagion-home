@@ -32,7 +32,11 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
     ));
 
   return (
-    <div className={cx("secure_scalable_decentralised_block")}>
+    <div
+      className={`${cx(
+        "secure_scalable_decentralised_block"
+      )} main-lateral-paddings`}
+    >
       <div className={`${cx("title")} title-font`}>
         Secure. Scalable.
         <br />
