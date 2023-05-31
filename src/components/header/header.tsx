@@ -166,9 +166,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                     })}
                     key={i}
                   >
-                    <div className={cx("icon")}>
-                      {Icon && <Icon />}
-                    </div>
+                    <div className={cx("icon")}>{Icon && <Icon />}</div>
                     <div
                       className={`${cx("text", {
                         isComingSoon: description === "Coming soon",
