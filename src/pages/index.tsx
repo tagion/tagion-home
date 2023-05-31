@@ -19,7 +19,6 @@ import {
   newsletterSubscribeGradientSpotsProps,
 } from "../content";
 
-import { ReactComponent as HeroIcon } from "../assets/images/hero_icon.svg";
 import pointAnimation from "../assets/videos/point-animation.gif";
 
 import * as styles from "../styles/pages/index.module.scss";
@@ -35,7 +34,6 @@ const IndexPage = () => {
         disableMainSidePaddings
       >
         <IntroductoryBlock
-          Icon={HeroIcon}
           gifAnimation={pointAnimation}
           title="We Are Pioneering Money"
           description="Tagion empowers everyone everywhere to participate in a sustainable

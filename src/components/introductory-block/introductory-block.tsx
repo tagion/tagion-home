@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 
-import heroSvg from "../../assets/images/hero_icon.svg";
+import mainPageIntroSvg from "../../assets/images/main-page-intro.svg";
 // import { ReactComponent as HeroSvg } from "../../assets/images/hero_icon.svg";
 
 import * as styles from "./introductory-block.module.scss";
@@ -9,14 +9,14 @@ import * as styles from "./introductory-block.module.scss";
 const cx = classNames.bind(styles);
 
 interface InputProps {
-  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  // Icon: React.FC<React.SVGProps<SVGSVGElement>>;
   gifAnimation: string;
   title: string;
   description: string;
 }
 
 export const IntroductoryBlock: React.FC<InputProps> = ({
-  Icon,
+  // Icon,
   gifAnimation,
   title,
   description,
@@ -31,7 +31,7 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
       )}
       <div className={cx("content")}>
         <div className={cx("icon_wrapper")}>
-          <img src={heroSvg} className={cx("icon")} />
+          <img src={mainPageIntroSvg} className={cx("icon")} />
         </div>
         <div className={cx("text_wrapper")}>
           <div className={`${cx("title")} title-font`}>{title}</div>

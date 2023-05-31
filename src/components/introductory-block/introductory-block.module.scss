@@ -27,6 +27,8 @@
     flex-direction: column;
 
     .text_wrapper {
+      z-index: 96;
+
       .title {
         font-weight: 500;
         font-size: 32px;
@@ -34,12 +36,14 @@
         margin-bottom: 16px;
       }
     }
+
     .icon_wrapper {
       align-self: center;
+      margin-bottom: 39px;
 
       .icon {
-        width: 240px;
-        margin-bottom: 32px;
+        width: 402px;
+        height: 226px;
       }
     }
   }
@@ -48,6 +52,15 @@
     padding: 116px 24px 0;
 
     .content {
+      .icon_wrapper {
+        margin-bottom: 18px;
+
+        .icon {
+          width: 480px;
+          height: 270px;
+        }
+      }
+
       .text_wrapper {
         .title {
           font-weight: 500;
@@ -72,8 +85,11 @@
         }
       }
       .icon_wrapper {
+        margin-bottom: 38px;
+
         .icon {
-          width: 400px;
+          width: 700px;
+          height: 394px;
         }
       }
     }
@@ -97,21 +113,25 @@
       justify-content: space-between;
 
       .icon_wrapper {
-        width: 664px;
-        height: 664px;
+        height: 472px;
+        width: 840px;
+        margin-bottom: 0;
+
         position: relative;
-        overflow: hidden;
-        top: -120px;
+        top: -83px;
+        right: -122px;
 
         .icon {
           position: absolute;
-          width: 664px;
-          height: 664px;
-          right: -130px;
+          width: inherit;
+          height: inherit;
+          right: 0;
         }
       }
 
       .text_wrapper {
+        width: 745px;
+
         .title {
           font-weight: 500;
           font-size: 100px;
@@ -130,14 +150,16 @@
     padding-left: 120px;
 
     .content {
+      justify-content: flex-end;
+
       .icon_wrapper {
-        width: 767px;
-        height: 767px;
+        width: 1000px;
+        height: 562px;
+        right: auto;
+        top: -114px;
 
         .icon {
-          width: 767px;
-          height: 767px;
-          right: -50px;
+          left: 15px;
         }
       }
     }
