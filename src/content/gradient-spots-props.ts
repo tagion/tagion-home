@@ -1,68 +1,5 @@
 import { Colors } from "../common/enums/colors";
 
-export const gradientSpotsProps = {
-  desktop_max: [
-    // top
-    {
-      color: Colors.GRADIENT_SPOT_PURPLE,
-      width: "467px",
-      height: "899px",
-      transform: "rotate(-110.3deg)",
-      top: "367px",
-      left: "-255px",
-      filter: "blur(200px)",
-    },
-    {
-      color: Colors.GRADIENT_SPOT_GREEN,
-      width: "725px",
-      height: "524px",
-      transform: "rotate(5.52deg)",
-      top: "290px",
-      left: "-547px",
-      filter: "blur(150px)",
-    },
-    // bottom
-    {
-      color: Colors.GRADIENT_SPOT_PURPLE,
-      width: "730px",
-      height: "1406px",
-      transform: "rotate(73.84deg)",
-      bottom: "-809px",
-      right: "602px",
-      filter: "blur(200px)",
-    },
-    {
-      color: Colors.GRADIENT_SPOT_GREEN,
-      width: "739px",
-      height: "642px",
-      transform: "rotate(5.52deg)",
-      bottom: "-61px",
-      right: "-136px",
-      filter: "blur(150px)",
-    },
-  ],
-  desktop: [
-    {
-      color: Colors.GRADIENT_SPOT_PURPLE,
-      width: "467px",
-      height: "899px",
-      transform: "rotate(-110.3deg)",
-      top: "435px",
-      left: "-440px",
-      filter: "blur(200px)",
-    },
-    {
-      color: Colors.GRADIENT_SPOT_GREEN,
-      width: "725px",
-      height: "524px",
-      transform: "rotate(5.52deg)",
-      top: "290px",
-      left: "-672px",
-      filter: "blur(150px)",
-    },
-  ],
-};
-
 // Subscribe to our newsletter block (will be deleted and replaced with gif)
 export const newsletterSubscribeGradientSpotsProps = {
   desktop: [
@@ -310,7 +247,6 @@ export const sideMenuSpotsProps = {
   ],
 };
 
-
 //
 export const introductoryBlockSpotsProps = {
   desktop_max: [
@@ -350,7 +286,6 @@ export const introductoryBlockSpotsProps = {
       left: "-43px",
       filter: "blur(150px)",
     },
-
   ],
   desktop_large: [
     {
@@ -502,6 +437,199 @@ export const introductoryBlockSpotsProps = {
       top: "-229px",
       left: "-30px",
       filter: "blur(150px)",
+    },
+  ],
+};
+
+export const secureScalableDecentralisedBlockSpotsProps = {
+  desktop_max: [
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "1009px",
+      height: "729px",
+      transform: "matrix(-0.99, 0.12, 0.12, 0.99, 0, 0)",
+      top: "23%",
+      right: "40px",
+      filter: "blur(150px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_SPACE_BLUE,
+      width: "874px",
+      height: "580px",
+      transform: "matrix(-0.98, 0.21, 0.21, 0.98, 0, 0)",
+      top: "37%",
+      right: "-554px",
+      filter: "blur(200px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_OZONE_BLUE,
+      width: "822px",
+      height: "1584px",
+      transform: "matrix(-0.53, 0.85, 0.85, 0.53, 0, 0)",
+      top: "10%",
+      right: "-410px",
+      filter: "blur(200px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_GREEN,
+      width: "720px",
+      height: "611px",
+      transform: "matrix(-0.12, 0.99, 0.99, 0.12, 0, 0)",
+      top: "18%",
+      right: "230px",
+      filter: "blur(150px)",
+    },
+  ],
+  desktop_large: [
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "895px",
+      height: "647px",
+      transform: "matrix(-0.99, 0.12, 0.12, 0.99, 0, 0)",
+      top: "27%",
+      right: "-265px",
+      filter: "blur(150px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_SPACE_BLUE,
+      width: "775px",
+      height: "515px",
+      transform: "matrix(-0.98, 0.21, 0.21, 0.98, 0, 0)",
+      top: "39%",
+      right: "-650px",
+      filter: "blur(200px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_OZONE_BLUE,
+      width: "730px",
+      height: "1406px",
+      transform: "matrix(-0.53, 0.85, 0.85, 0.53, 0, 0)",
+      top: "14%",
+      right: "-531px",
+      filter: "blur(200px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_GREEN,
+      width: "639px",
+      height: "542px",
+      transform: "matrix(-0.12, 0.99, 0.99, 0.12, 0, 0)",
+      top: "23%",
+      right: "38px",
+      filter: "blur(150px)",
+    },
+  ],
+  desktop: [
+    {
+      color: Colors.GRADIENT_SPOT_SPACE_BLUE,
+      width: "474px",
+      height: "315px",
+      transform: "matrix(-0.98, 0.21, 0.21, 0.98, 0, 0)",
+      top: "54%",
+      right: "-317px",
+      filter: "blur(150px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "548px",
+      height: "396px",
+      transform: "matrix(-0.99, 0.12, 0.12, 0.99, 0, 0)",
+      top: "44%",
+      right: "-13px",
+      filter: "blur(100px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_OZONE_BLUE,
+      width: "446px",
+      height: "860px",
+      transform: "matrix(-0.53, 0.85, 0.85, 0.53, 0, 0)",
+      top: "28%",
+      right: "-221px",
+      filter: "blur(150px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_GREEN,
+      width: "391px",
+      height: "332px",
+      transform: "matrix(-0.12, 0.99, 0.99, 0.12, 0, 0)",
+      top: "35%",
+      right: "124px",
+      filter: "blur(100px)",
+    },
+  ],
+  tablet: [
+    {
+      color: Colors.GRADIENT_SPOT_SPACE_BLUE,
+      width: "374px",
+      height: "248px",
+      transform: "matrix(-0.98, 0.21, 0.21, 0.98, 0, 0)",
+      top: "47%",
+      right: "-275px",
+      filter: "blur(150px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "432px",
+      height: "312px",
+      transform: "matrix(-0.99, 0.12, 0.12, 0.99, 0, 0)",
+      top: "36%",
+      right: "-49px",
+      filter: "blur(120px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_OZONE_BLUE,
+      width: "352px",
+      height: "679px",
+      transform: "matrix(-0.53, 0.85, 0.85, 0.53, 0, 0)",
+      top: "23%",
+      right: "-221px",
+      filter: "blur(150px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_GREEN,
+      width: "308px",
+      height: "262px",
+      transform: "matrix(-0.12, 0.99, 0.99, 0.12, 0, 0)",
+      top: "31%",
+      right: "38px",
+      filter: "blur(100px)",
+    },
+  ],
+  mobile: [
+    {
+      color: Colors.GRADIENT_SPOT_SPACE_BLUE,
+      width: "270px",
+      height: "179px",
+      transform: "matrix(-0.98, 0.21, 0.21, 0.98, 0, 0)",
+      top: "53%",
+      right: "-232px",
+      filter: "blur(100px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_IONIC_MINT,
+      width: "311px",
+      height: "225px",
+      transform: "matrix(-0.99, 0.12, 0.12, 0.99, 0, 0)",
+      top: "49%",
+      right: "-50px",
+      filter: "blur(90px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_OZONE_BLUE,
+      width: "254px",
+      height: "489px",
+      transform: "matrix(-0.53, 0.85, 0.85, 0.53, 0, 0)",
+      top: "44%",
+      right: "-198px",
+      filter: "blur(100px)",
+    },
+    {
+      color: Colors.GRADIENT_SPOT_GREEN,
+      width: "222px",
+      height: "188px",
+      transform: "matrix(-0.12, 0.99, 0.99, 0.12, 0, 0)",
+      top: "47%",
+      right: "16px",
+      filter: "blur(65px)",
     },
   ],
 };

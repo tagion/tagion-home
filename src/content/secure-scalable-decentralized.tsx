@@ -35,7 +35,7 @@ export const secureScalableDecentralizedData = [
   {
     title: (
       <>
-        Eco-friendly
+        Eco friendly
         <br />
         consensus
       </>
