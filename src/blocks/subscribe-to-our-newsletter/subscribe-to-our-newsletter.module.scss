@@ -152,6 +152,8 @@
   }
 
   @media (min-width: $desktop-large-size) {
+    padding: 80px 0 60px 80px;
+    
     .content_wrapper {
       .body {
         width: 729px;
@@ -164,7 +166,7 @@
 
           .email_input,
           .name_input {
-            width: 260px;
+            width: 268px;
             margin: 0;
           }
         }
