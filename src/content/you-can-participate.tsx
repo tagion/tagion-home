@@ -31,7 +31,8 @@ export const youCanParticipateBlockData = [
     description:
       "Discover how-to's, latest news, community generated content and more",
     Img: signedPaperIcon,
-    linkTo: "/blog",
+    linkTo: "https://tagion.medium.com/",
+    externalLink: true,
   },
   {
     title: (
@@ -41,6 +42,7 @@ export const youCanParticipateBlockData = [
     ),
     description: "Become a part of a diverse network",
     Img: communityIcon,
-    linkTo: "/community",
+    linkTo: "https://t.co/OAuiTbX6cJ",
+    externalLink: true,
   },
 ];
