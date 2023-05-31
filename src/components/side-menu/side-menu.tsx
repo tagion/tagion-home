@@ -42,7 +42,13 @@ export const SideMenu: React.FC<InputProps> = ({
       >
         <div className={cx("side_menu_content")}>
           <div className={cx("header")}>
-            <Link to="/" className={cx("logo_wrapper")}>
+            <Link
+              to="/"
+              onClick={() => {
+                location.pathname === "/" && isOpenedHandler(false);
+              }}
+              className={cx("logo_wrapper")}
+            >
               <LogoIcon />
             </Link>
             <CloseIcon
