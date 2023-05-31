@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 
 import { youCanParticipateBlockData } from "../../content";
 import { miuCustomColumns } from "../../helpers";
-import { Card } from "../../components";
+import { Card, CustomLink } from "../../components";
 
 import { ReactComponent as ArrowLinkIcon } from "../../assets/images/arrow_in_circle_link_icon.svg";
 
@@ -30,7 +30,11 @@ export const YouCanParticipateBlock: React.FC = () => {
         <Grid item xs={4} md={6} lg={12} className={cx("sections_wrapper")}>
           {youCanParticipateBlockData &&
             youCanParticipateBlockData.map((sectionContent, i) => (
-              <Link key={i} to={sectionContent.linkTo}>
+              <CustomLink
+                key={i}
+                linkTo={sectionContent.linkTo}
+                isExternalLink={sectionContent?.externalLink}
+              >
                 <Grid
                   className={cx("section")}
                   container
@@ -56,7 +60,7 @@ export const YouCanParticipateBlock: React.FC = () => {
                     <ArrowLinkIcon />
                   </Grid>
                 </Grid>
-              </Link>
+              </CustomLink>
             ))}
         </Grid>
       </Grid>
