@@ -14,7 +14,7 @@ import {
   LetsTalkBlock,
 } from "../blocks";
 import {
-  gradientSpotsProps,
+  secureScalableDecentralisedBlockSpotsProps,
   introductoryBlockSpotsProps,
   newsletterSubscribeGradientSpotsProps,
 } from "../content";
@@ -44,14 +44,15 @@ const IndexPage = () => {
         <FinancialInfrastrucureNextGenBlock />
       </GradientSpotsWrapper>
 
-      <YouCanBuildAWalletBlock />
-      <GradientSpotsWrapper spots={gradientSpotsProps}>
-        {/* <ExploreOurEcosystemBlock /> */}
+      <GradientSpotsWrapper
+        spots={secureScalableDecentralisedBlockSpotsProps}
+        disableMainSidePaddings={true}
+      >
         <SecureScalableDecentralisedBlock />
+        <YouCanParticipateBlock />
+        <ValuePartnersBlock />
       </GradientSpotsWrapper>
-      {/* <TimelineBlock /> */}
-      <YouCanParticipateBlock />
-      <ValuePartnersBlock />
+
       <GradientSpotsWrapper spots={newsletterSubscribeGradientSpotsProps}>
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
