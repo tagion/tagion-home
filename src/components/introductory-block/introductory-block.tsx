@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 
-import mainPageIntroSvg from "../../assets/images/main-page-intro.svg";
+import mainPageIntro from "../../assets/images/main-page-intro.png";
 // import { ReactComponent as HeroSvg } from "../../assets/images/hero_icon.svg";
 
 import * as styles from "./introductory-block.module.scss";
@@ -31,7 +31,7 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
       )}
       <div className={cx("content")}>
         <div className={cx("icon_wrapper")}>
-          <img src={mainPageIntroSvg} className={cx("icon")} />
+          <img src={mainPageIntro} className={cx("icon")} />
         </div>
         <div className={cx("text_wrapper")}>
           <div className={`${cx("title")} title-font`}>{title}</div>
