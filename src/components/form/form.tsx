@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
@@ -24,6 +24,14 @@ type formikOnChangeEventType =
   | SelectChangeEvent<string>;
 
 export const Form: React.FC = () => {
+  // todo create hook for validating
+  const [isFieldsHaveErrorMessages, setIsFieldsHaveErrorMessages] = useState({
+    email: false,
+    name: false,
+    defineYourselfIndex: false,
+    checkbox: false,
+  });
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -63,18 +71,41 @@ export const Form: React.FC = () => {
   });
 
   const handleInputChange = async (e: formikOnChangeEventType) => {
+    e.target.name &&
+      setIsFieldsHaveErrorMessages((isFieldsHaveErrorMessages) => ({
+        ...isFieldsHaveErrorMessages,
+        [e.target.name as string]: false,
+      }));
     formik.handleChange(e);
   };
 
+  const isFieldsHaveErrorMessagesHandler = () =>
+    setIsFieldsHaveErrorMessages(() => ({
+      email: !!formik.errors.email,
+      name: !!formik.errors.name,
+      defineYourselfIndex: !!formik.errors.defineYourselfIndex,
+      checkbox: !!formik.errors.checkbox,
+    }));
+
+  useEffect(() => {
+    isFieldsHaveErrorMessagesHandler();
+  }, [formik.errors]);
+
   return (
-    <form className={cx("form")} onSubmit={formik.handleSubmit}>
+    <form
+      className={cx("form")}
+      onSubmit={(e) => {
+        formik.handleSubmit(e);
+        isFieldsHaveErrorMessagesHandler();
+      }}
+    >
       <div className={cx("input_wrapper")}>
         <Input
           label="Name"
           name="name"
           onChange={handleInputChange}
           value={formik.values.name}
-          error={!formik.values.name.length ? formik.errors.name : ""}
+          error={isFieldsHaveErrorMessages.name ? formik.errors.name : ""}
           className={cx("input")}
         />
         <Input
@@ -82,7 +113,7 @@ export const Form: React.FC = () => {
           name="email"
           value={formik.values.email}
           onChange={handleInputChange}
-          error={!formik.values.email.length ? formik.errors.email : ""}
+          error={isFieldsHaveErrorMessages.email ? formik.errors.email : ""}
           className={cx("input")}
         />
       </div>
@@ -95,7 +126,7 @@ export const Form: React.FC = () => {
         menuItems={defineYourselfDropdownData}
         className={cx("dropdown")}
         error={
-          formik.values.defineYourselfIndex === ""
+          isFieldsHaveErrorMessages.defineYourselfIndex
             ? formik.errors.defineYourselfIndex
             : ""
         }
@@ -125,7 +156,9 @@ export const Form: React.FC = () => {
 
       <div
         className={cx("checkbox_wrapper", {
-          isError: !formik.values.checkbox ? formik.errors.checkbox : "",
+          isError: isFieldsHaveErrorMessages.checkbox
+            ? formik.errors.checkbox
+            : "",
         })}
         // id="test-id"
       >
@@ -135,7 +168,7 @@ export const Form: React.FC = () => {
           id="checkbox"
           className={cx("checkbox")}
           checked={formik.values.checkbox}
-          onChange={formik.handleChange}
+          onChange={handleInputChange}
         />
         <label htmlFor="checkbox">
           I agree to comply with GDPR and the website's terms before submitting
