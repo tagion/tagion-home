@@ -11,13 +11,13 @@ import * as styles from "./layout.module.scss";
 
 const cx = classNames.bind(styles);
 
-console.log("GATSBY_ENV: ", process.env.GATSBY_ENV);
+console.log("1: ", process.env.GATSBY_ENV);
 console.log(
-  "GATSBY_GOOGLE_ANALYTICS_ID: ",
+  "2: ",
   process.env.GATSBY_GOOGLE_ANALYTICS_ID
 );
 console.log(
-  "GATSBY_MAIL_SERVICE_ENDPOINT: ",
+  "3: ",
   process.env.GATSBY_MAIL_SERVICE_ENDPOINT
 );
 
