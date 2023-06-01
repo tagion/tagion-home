@@ -56,7 +56,7 @@ const IndexPage = () => {
         <SubscribeToOurNewsletterBlock />
       </GradientSpotsWrapper>
       {/* todo create separate component for ToastContainer and import in Layout wrapper*/}
-      <ToastContainer
+      {/* <ToastContainer
         autoClose={3000}
         closeOnClick={false}
         closeButton={false}
@@ -64,7 +64,7 @@ const IndexPage = () => {
         icon={false}
         hideProgressBar={true}
         className={cx("toast_container")}
-      />
+      /> */}
     </Layout>
   );
 };

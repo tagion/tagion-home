@@ -1,6 +1,7 @@
 import * as React from "react";
 import classNames from "classnames/bind";
 import { ThemeProvider } from "@mui/material/styles";
+import { ToastContainer } from "react-toastify";
 
 import { Footer, Header } from "../../components";
 import { theme } from "../../helpers";
@@ -39,6 +40,15 @@ export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
         <main>{children}</main>
         <Footer />
       </div>
+      <ToastContainer
+        autoClose={3000}
+        closeOnClick={false}
+        closeButton={false}
+        draggable={false}
+        icon={false}
+        hideProgressBar={true}
+        className={cx("toast_container")}
+      />
     </ThemeProvider>
   );
 };
