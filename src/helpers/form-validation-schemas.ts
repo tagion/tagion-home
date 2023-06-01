@@ -12,7 +12,9 @@ export const FULL_NAME_REGEXP =
 
 export const letsTalkSchema = Yup.object().shape({
   name: Yup.string().required(message),
-  email: Yup.string().required(message),
+  email: Yup.string()
+    .matches(EMAIL_REGEXP, `Please use following format: name@example.com`)
+    .required(message),
   defineYourselfIndex: Yup.number().required(message),
   checkbox: Yup.bool().notOneOf([false], message),
 });
