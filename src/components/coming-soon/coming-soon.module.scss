@@ -1,23 +1,17 @@
 @import "./../../styles/variables.scss";
 
-$coming-soon-tablet-size: 560px;
-$coming-soon-desktop-large-size: 1412px;
-
 .coming_soon_page {
-  height: 540px;
   padding-top: 80px;
   margin: 0 !important;
+  max-height: 2500px;
 
-  background-image: url("../../assets/images/coming-soon-background.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top right -400px;
-  background-size: 960px 540px;
+  background: url("../../assets/images/coming-soon-background.png") no-repeat;
+  background-size: cover;
+  background-position: -290px;
 
   .content {
     font-family: "Transducer-Extended-Medium";
-    margin-top: 56px;
-    padding: 0 16px;
+    padding: 56px 16px 92px;
     color: $main-white-color;
 
     .title {
@@ -40,18 +34,26 @@ $coming-soon-desktop-large-size: 1412px;
       .email_input {
         width: 180px;
         margin-bottom: 4px;
+
+        & > div:last-child {
+          height: 20px;
+        }
       }
     }
   }
 
-  @media (min-width: $coming-soon-tablet-size) {
-    height: 960px;
-    background-position: top right -600px;
-    background-size: 1707px 960px;
+  @media (min-height: 1010px) and (max-width: 490px) {
+    background-position: -450px;
+  }
 
+  @media (min-height: 1010px) and (max-width: 599px) {
+    background-position: -350px;
+  }
+
+  @media (min-width: $tablet-size) {
+    background-position: -480px;
     .content {
-      margin-top: 256px;
-      padding: 0 24px;
+      padding: 256px 24px 123px;
 
       .title {
         margin-bottom: 149px;
@@ -72,16 +74,25 @@ $coming-soon-desktop-large-size: 1412px;
         }
       }
     }
+
+    @media (min-height: 1280px) and (max-width: 650px) {
+      background-position: -540px;
+    }
+
+    @media (min-height: 1400px) {
+      background-position: -700px;
+    }
+
+    @media (min-height: 1500px) {
+      background-position: -800px;
+    }
   }
 
   @media (min-width: $desktop-size) {
-    height: 1107px;
-    background-position: top right -555px;
-    background-size: 1967px 1107px;
+    background-position: -400px;
 
     .content {
-      margin-top: 282px;
-      padding: 0 80px;
+      padding: 282px 80px 170px;
 
       .title {
         margin-bottom: 217px;
@@ -100,36 +111,56 @@ $coming-soon-desktop-large-size: 1412px;
         .email_input {
           margin-right: 24px;
           width: 307px;
+          
+          & > div:last-child {
+            height: 10px;
+          }
         }
       }
     }
+
+    @media (min-height: 1600px) {
+      background-position: -600px;
+    }
   }
 
-  @media (min-width: $coming-soon-desktop-large-size) {
-    height: 900px;
-    background-attachment: inherit;
-    background-position: top 0 right 0;
-    background-size: cover;
+  @media (min-width: $desktop-large-size) {
+    background-position: right;
 
     .content {
-      margin-top: 200px;
+      padding: 200px 80px 94px;
 
       .title {
         margin-bottom: 164px;
       }
     }
+
+    @media (min-height: 1200px) and (max-width: 1700px) {
+      background-position: -200px;
+    }
+
+    @media (min-height: 1500px) and (max-width: 1800px) {
+      background-position: -600px;
+    }
+
+    @media (min-height: 1600px) and (max-width: 1920px) {
+      background-position: -600px;
+    }
   }
 
   @media (min-width: $desktop-max-size) {
-    height: 1080px;
+    background-position: right;
 
     .content {
-      margin-top: 240px;
-      padding: 0 120px;
+      padding: 240px 120px 151px;
 
       .title {
         margin-bottom: 248px;
       }
+    }
+
+    @media (min-height: 1600px) {
+      background-position: -500px;
     }
   }
 }

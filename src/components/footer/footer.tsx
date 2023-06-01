@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
   // );
 
   return (
-    <footer>
+    <footer id="footer">
       <div className={cx("main_links")}>
         <div className={cx("logo_and_socials")}>
           <Link to="/" className={cx("logo")}>
