@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
@@ -20,6 +20,10 @@ const initialFormValues = {
 };
 
 export const SubscribeToOurNewsletterBlock: React.FC = () => {
+  // todo create hook for validating
+  const [isEmailFieldHaveErrorMessage, setIsEmailFieldHaveErrorMessage] =
+    useState(false);
+
   const formik = useFormik({
     initialValues: initialFormValues,
     validationSchema: subscribeToNewsletterSchema,
@@ -44,8 +48,13 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
   });
 
   const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.target.name && setIsEmailFieldHaveErrorMessage(() => false);
     formik.handleChange(e);
   };
+
+  useEffect(() => {
+    setIsEmailFieldHaveErrorMessage(() => !!formik.errors.email);
+  }, [formik.errors]);
 
   return (
     <div className={cx("subscribe_to_our_newsletter_block")}>
@@ -58,7 +67,13 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
           <div className={`${cx("title")} title-font`}>
             Subscribe to our newsletter
           </div>
-          <form className={cx("form")} onSubmit={formik.handleSubmit}>
+          <form
+            className={cx("form")}
+            onSubmit={(e) => {
+              setIsEmailFieldHaveErrorMessage(() => !!formik.errors.email);
+              formik.handleSubmit(e);
+            }}
+          >
             <Input
               label="Full name"
               name="fullName"
@@ -72,7 +87,7 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
               onChange={handleInputChange}
               value={formik.values.email}
               className={cx("email_input")}
-              error={formik.errors.email}
+              error={isEmailFieldHaveErrorMessage ? formik.errors.email : ""}
             />
             <Button name="Subscribe" />
           </form>
