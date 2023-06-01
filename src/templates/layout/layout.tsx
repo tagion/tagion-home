@@ -11,15 +11,15 @@ import * as styles from "./layout.module.scss";
 
 const cx = classNames.bind(styles);
 
-console.log("1: ", process.env.GATSBY_ENV);
-console.log(
-  "2: ",
-  process.env.GATSBY_GOOGLE_ANALYTICS_ID
-);
-console.log(
-  "3: ",
-  process.env.GATSBY_MAIL_SERVICE_ENDPOINT
-);
+// console.log("1: ", process.env.GATSBY_ENV);
+// console.log(
+//   "2: ",
+//   process.env.GATSBY_GOOGLE_ANALYTICS_ID
+// );
+// console.log(
+//   "3: ",
+//   process.env.GATSBY_MAIL_SERVICE_ENDPOINT
+// );
 
 interface InputProps {
   withPaddingTop?: boolean;
