@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 import { Grid } from "@mui/material";
-import { navigate } from "gatsby";
+// import { navigate } from "gatsby";
 
 import { secureScalableDecentralizedData } from "../../content";
 import { miuCustomColumns } from "../../helpers";
@@ -14,7 +14,16 @@ const cx = classNames.bind(styles);
 export const SecureScalableDecentralisedBlock: React.FC = () => {
   const blocksGenerator = () =>
     secureScalableDecentralizedData.map((block, i) => (
-      <Grid item xs={4} sm={2} md={4} lg={3.35} key={i} className={cx("block")}>
+      <Grid
+        item
+        xs={4}
+        sm={2}
+        md={4}
+        lg={3.12}
+        xl={3.08}
+        key={i}
+        className={cx("block")}
+      >
         <div className={cx("header")}>
           <div className={cx("indicator")}></div>
           <span>{`0${i + 1}`}</span>
@@ -43,12 +52,13 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
         Decentralized.
       </div>
       <Grid container columns={miuCustomColumns} className={cx("body")}>
-        <Grid item lg={7}>
+        <Grid item lg={6.91} xl={6.93}>
           <Grid
             container
             columns={{ xs: 4, sm: 4, md: 8, lg: 7, xl: 7 }}
             className={cx("blocks_wrapper")}
-            spacing={2}
+            // spacing={2}
+            columnSpacing={{ xs: 2, lg: 0 }}
           >
             {secureScalableDecentralizedData && blocksGenerator()}
           </Grid>
