@@ -47,6 +47,8 @@
 
         .description_card {
           color: $body-text-color;
+          font-size: 16px;
+          line-height: 24px;
         }
       }
     }
@@ -105,9 +107,28 @@
 
     .body {
       flex-direction: row-reverse;
+      justify-content: space-between;
 
       .blocks_wrapper {
         margin-top: 52px;
+
+        .block {
+          padding-right: 0;
+
+          .title_card,
+          .description_card {
+            width: 328px;
+          }
+
+          .title_card > .eight_seconds_br {
+            display: none;
+          }
+
+          .description_card {
+            font-size: 20px;
+            line-height: 26px;
+          }
+        }
       }
     }
   }

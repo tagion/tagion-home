@@ -9,8 +9,7 @@ import { subscribeToNewsletterSchema } from "../../helpers";
 
 import * as styles from "./subscribe-to-our-newsletter.module.scss";
 
-// import { ReactComponent as RingsIcon } from "../../assets/images/rings_icon.svg";
-import ringsIcon from "../../assets/images/rings_icon.svg";
+import ringsPng from "../../assets/images/rings.png";
 
 const cx = classNames.bind(styles);
 
@@ -60,8 +59,7 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
     <div className={cx("subscribe_to_our_newsletter_block")}>
       <div className={cx("content_wrapper")}>
         <div className={cx("icon_wrapper")}>
-          {/* <RingsIcon /> */}
-          <img src={ringsIcon} />
+          <img src={ringsPng} />
         </div>
         <div className={cx("body")}>
           <div className={`${cx("title")} title-font`}>
