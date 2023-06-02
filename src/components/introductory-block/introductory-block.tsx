@@ -24,9 +24,9 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
   return (
     <div className={cx("introductory_block")}>
       {gifAnimation && (
-        <div className={cx("testnet_running")}>
+        <div className={cx("gif_wrapper")}>
           <img src={gifAnimation} alt="point animation" />
-          <span className="font-16">Testnet running</span>
+          <span className="font-16">Networks running</span>
         </div>
       )}
       <div className={cx("content")}>

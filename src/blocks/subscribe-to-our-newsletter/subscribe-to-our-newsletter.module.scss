@@ -37,20 +37,14 @@
       position: relative;
       display: flex;
       justify-content: center;
-      height: 200px;
-
-      // svg {
-      //   position: absolute;
-      //   top: -33px;
-      //   width: 198px;
-      //   height: 208px;
-      // }
+      height: 199px;
 
       img {
         position: absolute;
-        top: -33px;
-        width: 198px;
-        height: 208px;
+        top: -40px;
+        width: 231px;
+        height: 237px;
+        transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0);
       }
     }
   }
@@ -123,7 +117,7 @@
       }
 
       .icon_wrapper {
-        width: 330px;
+        width: 342px;
         height: 435px;
         border-radius: $card-border-radius;
         overflow: hidden;
@@ -132,20 +126,12 @@
         top: -25px;
         right: 0;
 
-        // svg {
-        //   width: 424px;
-        //   height: auto;
-        //   top: auto;
-        //   bottom: 0;
-        //   left: 0;
-        // }
-
         img {
-          width: 424px;
+          width: 508px;
           height: auto;
-          top: auto;
+          top: -30px;
           bottom: 0;
-          left: 0;
+          left: -34px;
         }
       }
     }
@@ -153,7 +139,7 @@
 
   @media (min-width: $desktop-large-size) {
     padding: 80px 0 60px 80px;
-    
+
     .content_wrapper {
       .body {
         width: 729px;
@@ -178,14 +164,12 @@
         bottom: 0;
         top: auto;
 
-        // svg {
-        //   bottom: -55px;
-        //   width: 495px;
-        // }
-
         img {
-          bottom: -55px;
-          width: 495px;
+          bottom: -118px;
+          width: 589px;
+          left: auto;
+          top: auto;
+          right: -103px;
         }
       }
     }
@@ -196,14 +180,9 @@
       .icon_wrapper {
         width: 520px;
 
-        // svg {
-        //   bottom: -95px;
-        //   width: 570px;
-        // }
-
         img {
-          bottom: -95px;
-          width: 570px;
+          bottom: -158px;
+          width: 660px;
         }
       }
     }
