@@ -1,11 +1,15 @@
 import React from "react";
+import classNames from "classnames/bind";
+
+import * as styles from "../blocks/secure-scalable-decentralised/secure-scalable-decentralised.module.scss";
+
+const cx = classNames.bind(styles);
 
 export const secureScalableDecentralizedData = [
   {
     title: (
       <>
-        8 seconds to
-        <br />
+        8 seconds to <br className={cx("eight_seconds_br")} />
         finality
       </>
     ),
@@ -35,17 +39,12 @@ export const secureScalableDecentralizedData = [
   {
     title: (
       <>
-        Eco friendly
+        Eco-friendly
         <br />
         consensus
       </>
     ),
-    description: (
-      <>
-        Use your smartphone to reach consensus and settle transactions.
-        <br />
-        No need to stake or mine.
-      </>
-    ),
+    description:
+      "The Tagion consensus mechanism uses nearly no energy compared to PoW systems and you do not need to mine or stake a future!",
   },
 ];

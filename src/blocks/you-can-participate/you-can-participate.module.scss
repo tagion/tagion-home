@@ -43,14 +43,10 @@
   @media (min-width: $tablet-size) {
     .sections_wrapper {
       .section {
-        // .img_wrapper > svg {
-        //   width: 70px;
-        //   height: 70px;
-        // }
-
         .img_wrapper > img {
           width: 70px;
           height: 70px;
+          margin-bottom: 0;
         }
 
         .card_wrapper {

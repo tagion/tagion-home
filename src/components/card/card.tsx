@@ -44,10 +44,12 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
 }) => {
   return (
     <div className={`${cx("card")} ${classNames?.card}`}>
-      <div className={`${cx("img_wrapper")} ${classNames?.img}`}>
-        {img && <img src={img.path} alt={img.alt} />}
-        {ImgComponent && ImgComponent()}
-      </div>
+      {(img || ImgComponent) && (
+        <div className={`${cx("img_wrapper")} ${classNames?.img}`}>
+          {img && <img src={img.path} alt={img.alt} />}
+          {ImgComponent && ImgComponent()}
+        </div>
+      )}
 
       <div className={`${cx("main_content")} ${classNames?.mainContent}`}>
         {counter && (
