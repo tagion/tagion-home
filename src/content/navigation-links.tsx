@@ -31,7 +31,17 @@ export const termsOfUseLink = {
   externalLink: false,
 };
 
-export const navigationLinks = [
+export const navigationLinks: Array<{
+  name: string;
+  linkTo?: string;
+  subContent?: Array<{
+    name: string;
+    linkTo?: string;
+    externalLink?: boolean;
+    description: string;
+    Icon: () => React.JSX.Element;
+  }>;
+}> = [
   {
     name: "Ecosystem",
     subContent: [

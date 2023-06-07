@@ -40,6 +40,8 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
   const poperCanBeOpen = isSubMenuOpened && Boolean(anchorSubMenuElement);
   const poperId = poperCanBeOpen ? "popper" : undefined;
 
+  const selectedSubContent = navigationLinks[selectedSubMenuIndex].subContent;
+
   const closeSubMenu = () => {
     setIsSubMenuOpened(false);
     setAnchorSubMenuElement(null);
@@ -146,7 +148,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
         />
       )}
 
-      {anchorSubMenuElement && (
+      {anchorSubMenuElement && selectedSubContent?.length && (
         <Popper
           id={poperId}
           open={isSubMenuOpened}
@@ -154,29 +156,39 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
           className={cx("popper")}
         >
           <ClickAwayListener onClickAway={handleClickAway}>
-            <div className={cx("submenu")}>
+            <div
+              className={cx("submenu", {
+                isTwoRows:
+                  selectedSubContent.length <= 4 &&
+                  selectedSubContent.length > 2,
+              })}
+            >
               {navigationLinks[selectedSubMenuIndex].subContent?.map(
-                ({ Icon, name, description, linkTo }, i, subContentArray) => (
-                  <a
-                    href={linkTo}
-                    target="_blank"
-                    className={cx("link", {
-                      isOdd: subContentArray.length % 2 !== 0,
-                      isDisabled: description === "Coming soon",
-                    })}
-                    key={i}
-                  >
-                    <div className={cx("icon")}>{Icon && <Icon />}</div>
-                    <div
-                      className={`${cx("text", {
-                        isComingSoon: description === "Coming soon",
-                      })} user_select_none`}
+                ({ Icon, name, description, linkTo }, i, subContentArray) => {
+                  const isEvenNumber = subContentArray.length % 2 === 0;
+                  return (
+                    <a
+                      href={linkTo}
+                      target="_blank"
+                      className={cx("link", {
+                        isOdd: !isEvenNumber,
+                        isEven: isEvenNumber,
+                        isDisabled: description === "Coming soon",
+                      })}
+                      key={i}
                     >
-                      <div className={cx("title")}>{name}</div>
-                      <div className="font-16">{description}</div>
-                    </div>
-                  </a>
-                )
+                      <div className={cx("icon")}>{Icon && <Icon />}</div>
+                      <div
+                        className={`${cx("text", {
+                          isComingSoon: description === "Coming soon",
+                        })} user_select_none`}
+                      >
+                        <div className={cx("title")}>{name}</div>
+                        <div className="font-16">{description}</div>
+                      </div>
+                    </a>
+                  );
+                }
               )}
             </div>
           </ClickAwayListener>
