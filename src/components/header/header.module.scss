@@ -117,6 +117,7 @@
 
   .submenu {
     width: 665px;
+    height: 272px;
     padding: 40px;
     border-radius: $card-border-radius;
     column-count: 2;
@@ -124,6 +125,10 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     background-color: $submenu-bg-color;
+
+    &.isTwoRows {
+      height: 200px;
+    }
 
     .link {
       display: flex;
@@ -133,6 +138,12 @@
       margin-bottom: 24px;
       text-decoration: none;
       cursor: pointer;
+
+      &.isEven {
+        &:nth-child(2n) {
+          margin-bottom: 0;
+        }
+      }
 
       &.isOdd {
         &:nth-child(2) {
