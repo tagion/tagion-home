@@ -27,6 +27,7 @@ export const useSignupToOurNewsletterFormik = () => {
     validateOnBlur: false,
     onSubmit: async ({ email, fullName: name }) => {
       try {
+        toast.dismiss();
         const {
           data: { type },
         } = await subscribeToNewsletter({ email, name });
