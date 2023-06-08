@@ -12,8 +12,14 @@ import ringsPng from "../../assets/images/rings.png";
 const cx = classNames.bind(styles);
 
 export const SubscribeToOurNewsletterBlock: React.FC = () => {
-  const { formik, handleInputChange, isEmailFieldHaveErrorMessage, onSubmit } =
-    useSignupToOurNewsletterFormik();
+  const {
+    formik,
+    handleInputChange,
+    isEmailFieldHaveErrorMessage,
+    onSubmit,
+    buttonText,
+    isPending,
+  } = useSignupToOurNewsletterFormik();
 
   return (
     <div className={cx("subscribe_to_our_newsletter_block")}>
@@ -41,7 +47,12 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
               className={cx("email_input")}
               error={isEmailFieldHaveErrorMessage ? formik.errors.email : ""}
             />
-            <Button name="Subscribe" />
+            <Button
+              name={buttonText}
+              isLoading={isPending}
+              isDisabled={buttonText === "Done"}
+              contentWidth={112.3}
+            />
           </form>
         </div>
       </div>
