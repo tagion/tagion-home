@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { SelectChangeEvent } from "@mui/material/Select";
+import { AxiosError } from "axios";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { Button, Input, Dropdown, ToastifyMessage } from "../../components";
@@ -65,7 +66,9 @@ export const Form: React.FC = () => {
           isSucceeded && toastGenerator({ isSuccess: true });
         } catch (e) {
           console.error(`Error: ${e}.`);
-          toastGenerator({ isSuccess: false });
+          toastGenerator({
+            isSuccess: (e as AxiosError)?.response?.status === 429,
+          });
         }
       },
   });
