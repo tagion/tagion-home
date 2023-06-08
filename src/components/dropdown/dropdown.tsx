@@ -55,6 +55,23 @@ export const Dropdown: React.FC<InputProps> = ({
     };
   }, []);
 
+  // fix for scrolling in Safari
+  // maybe in the future we will move it to the root component
+  useEffect(() => {
+    if (globalThis?.document) {
+      const body = globalThis.document.body;
+
+      const observer = new MutationObserver(() => {
+        body.style.touchAction = body.style.overflow === "hidden" ? "none" : "";
+      });
+
+      observer.observe(body, {
+        attributes: true,
+        attributeFilter: ["style"],
+      });
+    }
+  }, []);
+
   return (
     <div className={`${cx("dropdown_wrapper")} ${className}`}>
       <FormControl fullWidth>
@@ -68,7 +85,7 @@ export const Dropdown: React.FC<InputProps> = ({
           value={value}
           displayEmpty
           onChange={onChange}
-          IconComponent={() => <DownArrowIcon/>}
+          IconComponent={() => <DownArrowIcon />}
         >
           {menuItems.length &&
             menuItems.map((item, i) => (
