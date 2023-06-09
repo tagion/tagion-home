@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { subscribeToNewsletterSchema } from "../helpers";
 import { subscribeToNewsletter } from "../api/subscribe-to-newsletter";
 import { ToastifyMessage } from "../components";
+import { useRequest } from "./useRequest";
+import { ISubscribeToNewsletterResponse } from "../common/interfaces/subscribe-to-newsletter-request";
 
 const initialFormValues = {
   email: "",
@@ -12,8 +14,31 @@ const initialFormValues = {
 };
 
 export const useSignupToOurNewsletterFormik = () => {
+  const [buttonText, setButtonText] = useState("Subscribe");
   const [isEmailFieldHaveErrorMessage, setIsEmailFieldHaveErrorMessage] =
     useState(false);
+
+  const { response, isPending, error, reqHandler, resetStates } =
+    useRequest<ISubscribeToNewsletterResponse>({
+      onSuccess: ({ type }) => {
+        if (type === "contact" || type === "account") {
+          toastGenerator({ isSuccess: true });
+        } else {
+          toastGenerator({ isSuccess: false });
+        }
+      },
+      onFailure: (e) => {
+        toastGenerator({ isSuccess: false });
+      },
+    });
+
+  const buttonTextHandler = () => {
+    setButtonText("Done");
+    setTimeout(() => {
+      setButtonText("Subscribe");
+      resetStates();
+    }, 2000);
+  };
 
   const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.target.name && setIsEmailFieldHaveErrorMessage(() => false);
@@ -26,20 +51,7 @@ export const useSignupToOurNewsletterFormik = () => {
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: async ({ email, fullName: name }) => {
-      try {
-        const {
-          data: { type },
-        } = await subscribeToNewsletter({ email, name });
-
-        if (type === "contact" || type === "account") {
-          toastGenerator({ isSuccess: true });
-        } else {
-          toastGenerator({ isSuccess: false });
-        }
-      } catch (e) {
-        console.error(`Error: ${e}.`);
-        toastGenerator({ isSuccess: false });
-      }
+      await reqHandler(() => subscribeToNewsletter({ email, name }));
     },
   });
 
@@ -52,11 +64,19 @@ export const useSignupToOurNewsletterFormik = () => {
     setIsEmailFieldHaveErrorMessage(() => !!formik.errors.email);
   }, [formik.errors]);
 
+  useEffect(() => {
+    if (!isPending && response) {
+      buttonTextHandler();
+    }
+  }, [isPending, response]);
+
   return {
     formik,
     handleInputChange,
     isEmailFieldHaveErrorMessage,
     onSubmit,
+    buttonText,
+    isPending,
   };
 };
 
