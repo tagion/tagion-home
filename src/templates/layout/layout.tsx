@@ -47,6 +47,7 @@ export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
         draggable={false}
         icon={false}
         hideProgressBar={true}
+        limit={1}
         className={cx("toast_container")}
       />
     </ThemeProvider>

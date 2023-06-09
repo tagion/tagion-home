@@ -53,6 +53,7 @@ export const Form: React.FC = () => {
     }) =>
       // { setSubmitting, setFieldValue }
       {
+        toast.dismiss();
         try {
           const {
             data: { isSucceeded },
