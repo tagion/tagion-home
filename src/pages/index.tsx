@@ -20,6 +20,9 @@ import {
 } from "../content";
 
 import pointAnimation from "../assets/videos/point-animation.gif";
+import startPageGradient from "../assets/images/gradient-spots/start-of-page.png";
+import middlePageGradient from "../assets/images/gradient-spots/middle-of-page.png";
+import endPageGradient from "../assets/images/gradient-spots/end-of-page.png";
 
 import * as styles from "../styles/pages/index.module.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,6 +35,7 @@ const IndexPage = () => {
       <GradientSpotsWrapper
         spots={introductoryBlockSpotsProps}
         disableMainSidePaddings
+        gradientImage={startPageGradient}
       >
         <IntroductoryBlock
           gifAnimation={pointAnimation}
@@ -45,13 +49,19 @@ const IndexPage = () => {
       <GradientSpotsWrapper
         spots={secureScalableDecentralisedBlockSpotsProps}
         disableMainSidePaddings={true}
+        gradientImage={middlePageGradient}
+        backgroundPosition={{ y: "center" }}
       >
         <SecureScalableDecentralisedBlock />
         <YouCanParticipateBlock />
         <ValuePartnersBlock />
       </GradientSpotsWrapper>
 
-      <GradientSpotsWrapper spots={newsletterSubscribeGradientSpotsProps}>
+      <GradientSpotsWrapper
+        spots={newsletterSubscribeGradientSpotsProps}
+        gradientImage={endPageGradient}
+        backgroundPosition={{ y: "center" }}
+      >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </GradientSpotsWrapper>

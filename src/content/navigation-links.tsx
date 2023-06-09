@@ -13,7 +13,7 @@ import { ReactComponent as WhitePaperIcon } from "../assets/images/coming-soon/w
 
 export const techPaperLink = {
   name: "TechPaper",
-  linkTo: "https://tagion.org/resources/tech-paper.pdf",
+  linkTo: "/resources/tech-paper.pdf",
   externalLink: true,
   description: "Dive into the tech details",
   Icon: () => <TechPaperIcon />,
