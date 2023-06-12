@@ -28,7 +28,6 @@
     "chart.js": "^4.3.0",
     "chartjs-plugin-datalabels": "^2.2.0",
     "classnames": "^2.3.2",
-    "detect-browser": "^5.3.0",
     "dotenv": "^16.0.3",
     "formik": "^2.4.0",
     "gatsby": "^5.10.0",

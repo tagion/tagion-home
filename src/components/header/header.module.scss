@@ -58,6 +58,8 @@
   }
 
   @media (min-width: $desktop-large-size) {
+    height: $header-height-large;
+
     .logo_wrapper {
       svg {
         width: 155px;

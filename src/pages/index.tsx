@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { ToastContainer } from "react-toastify";
 
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
@@ -9,20 +8,12 @@ import {
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
-  YouCanBuildAWalletBlock,
   YouCanParticipateBlock,
   LetsTalkBlock,
 } from "../blocks";
-import {
-  secureScalableDecentralisedBlockSpotsProps,
-  introductoryBlockSpotsProps,
-  newsletterSubscribeGradientSpotsProps,
-} from "../content";
+import { mainPageGradients } from "../content";
 
 import pointAnimation from "../assets/videos/point-animation.gif";
-import startPageGradient from "../assets/images/gradient-spots/start-of-page.png";
-import middlePageGradient from "../assets/images/gradient-spots/middle-of-page.png";
-import endPageGradient from "../assets/images/gradient-spots/end-of-page.png";
 
 import * as styles from "../styles/pages/index.module.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,9 +24,8 @@ const IndexPage = () => {
   return (
     <Layout withPaddingTop={false}>
       <GradientSpotsWrapper
-        spots={introductoryBlockSpotsProps}
+        gradients={mainPageGradients.introductoryBlock}
         disableMainSidePaddings
-        gradientImage={startPageGradient}
       >
         <IntroductoryBlock
           gifAnimation={pointAnimation}
@@ -43,14 +33,12 @@ const IndexPage = () => {
           description="Tagion empowers everyone everywhere to participate in a sustainable
             economic world. Evolving trust with your participation."
         />
-        <FinancialInfrastrucureNextGenBlock />
       </GradientSpotsWrapper>
+      <FinancialInfrastrucureNextGenBlock />
 
       <GradientSpotsWrapper
-        spots={secureScalableDecentralisedBlockSpotsProps}
         disableMainSidePaddings={true}
-        gradientImage={middlePageGradient}
-        backgroundPosition={{ y: "center" }}
+        gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
         <SecureScalableDecentralisedBlock />
         <YouCanParticipateBlock />
@@ -58,23 +46,11 @@ const IndexPage = () => {
       </GradientSpotsWrapper>
 
       <GradientSpotsWrapper
-        spots={newsletterSubscribeGradientSpotsProps}
-        gradientImage={endPageGradient}
-        backgroundPosition={{ y: "center" }}
+        gradients={mainPageGradients.subscribeToNewsletterBlock}
       >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </GradientSpotsWrapper>
-      {/* todo create separate component for ToastContainer and import in Layout wrapper*/}
-      {/* <ToastContainer
-        autoClose={3000}
-        closeOnClick={false}
-        closeButton={false}
-        draggable={false}
-        icon={false}
-        hideProgressBar={true}
-        className={cx("toast_container")}
-      /> */}
     </Layout>
   );
 };
