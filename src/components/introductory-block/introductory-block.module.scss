@@ -39,12 +39,6 @@
 
     .icon_wrapper {
       align-self: center;
-      margin-bottom: 39px;
-
-      .icon {
-        width: 402px;
-        height: 226px;
-      }
     }
   }
 
@@ -53,12 +47,6 @@
 
     .content {
       .icon_wrapper {
-        margin-bottom: 18px;
-
-        .icon {
-          width: 480px;
-          height: 270px;
-        }
       }
 
       .text_wrapper {
@@ -76,8 +64,6 @@
 
     .content {
       .text_wrapper {
-        width: 644px;
-
         .title {
           font-weight: 500;
           font-size: 64px;
@@ -85,18 +71,12 @@
         }
       }
       .icon_wrapper {
-        margin-bottom: 38px;
-
-        .icon {
-          width: 700px;
-          height: 394px;
-        }
       }
     }
   }
 
   @media (min-width: $desktop-large-size) {
-    padding: 188px 0 138px 80px;
+    padding: 188px 80px 138px 80px;
     z-index: 99;
 
     .gif_wrapper {
@@ -113,25 +93,9 @@
       justify-content: space-between;
 
       .icon_wrapper {
-        height: 472px;
-        width: 840px;
-        margin-bottom: 0;
-
-        position: relative;
-        top: -83px;
-        right: -122px;
-
-        .icon {
-          position: absolute;
-          width: inherit;
-          height: inherit;
-          right: 0;
-        }
       }
 
       .text_wrapper {
-        width: 745px;
-
         .title {
           font-weight: 500;
           font-size: 100px;
@@ -140,7 +104,6 @@
         }
 
         .description {
-          width: 514px;
         }
       }
     }
@@ -148,19 +111,10 @@
 
   @media (min-width: $desktop-max-size) {
     padding-left: 120px;
+    padding-right: 120px;
 
     .content {
-      justify-content: flex-end;
-
       .icon_wrapper {
-        width: 1000px;
-        height: 562px;
-        right: auto;
-        top: -114px;
-
-        .icon {
-          left: 15px;
-        }
       }
     }
   }
