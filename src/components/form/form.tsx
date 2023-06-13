@@ -3,12 +3,15 @@ import classNames from "classnames/bind";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { SelectChangeEvent } from "@mui/material/Select";
+import { AxiosError } from "axios";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { Button, Input, Dropdown, ToastifyMessage } from "../../components";
 import { letsTalkSchema } from "../../helpers";
 import { defineYourselfDropdownData } from "../../content/lets-talk";
 import { sendLetsTalkForm } from "../../api/send-lets-talk-form";
+import { useRequest } from "../../hooks/useRequest";
+import { ISendLetsTalkFormResponse } from "../../common/interfaces/lets-talk-form-request";
 
 import * as styles from "./form.module.scss";
 import "react-tooltip/dist/react-tooltip.css";
@@ -25,12 +28,36 @@ type formikOnChangeEventType =
 
 export const Form: React.FC = () => {
   // todo create hook for validating
+  const [buttonText, setButtonText] = useState("Submit");
   const [isFieldsHaveErrorMessages, setIsFieldsHaveErrorMessages] = useState({
     email: false,
     name: false,
     defineYourselfIndex: false,
     checkbox: false,
   });
+
+  const { response, isPending, error, reqHandler, resetStates } =
+    useRequest<ISendLetsTalkFormResponse>({
+      onSuccess: ({ isSucceeded }) => {
+        isSucceeded && toastGenerator({ isSuccess: true });
+      },
+      onFailure: (e) => {
+        const isTooManyRequestsError =
+          (e as AxiosError)?.response?.status === 429;
+        toastGenerator({
+          isSuccess: isTooManyRequestsError,
+        });
+        isTooManyRequestsError && buttonTextHandler();
+      },
+    });
+
+  const buttonTextHandler = () => {
+    setButtonText("Done");
+    setTimeout(() => {
+      setButtonText("Submit");
+      resetStates();
+    }, 2000);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -43,31 +70,16 @@ export const Form: React.FC = () => {
     validationSchema: letsTalkSchema,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: async ({
-      email,
-      name,
-      defineYourselfIndex,
-      howWeCanHelp,
-      checkbox,
-    }) =>
-      // { setSubmitting, setFieldValue }
-      {
-        try {
-          const {
-            data: { isSucceeded },
-          } = await sendLetsTalkForm({
-            email,
-            fullName: name,
-            category: defineYourselfDropdownData[Number(defineYourselfIndex)],
-            howWeCanHelp,
-          });
-
-          isSucceeded && toastGenerator({ isSuccess: true });
-        } catch (e) {
-          console.error(`Error: ${e}.`);
-          toastGenerator({ isSuccess: false });
-        }
-      },
+    onSubmit: async ({ email, name, defineYourselfIndex, howWeCanHelp }) => {
+      await reqHandler(() =>
+        sendLetsTalkForm({
+          email,
+          fullName: name,
+          category: defineYourselfDropdownData[Number(defineYourselfIndex)],
+          howWeCanHelp,
+        })
+      );
+    },
   });
 
   const handleInputChange = async (e: formikOnChangeEventType) => {
@@ -90,6 +102,12 @@ export const Form: React.FC = () => {
   useEffect(() => {
     isFieldsHaveErrorMessagesHandler();
   }, [formik.errors]);
+
+  useEffect(() => {
+    if (!isPending && response) {
+      buttonTextHandler();
+    }
+  }, [isPending, response]);
 
   return (
     <form
@@ -175,7 +193,13 @@ export const Form: React.FC = () => {
           this form.
         </label>
       </div>
-      <Button name="Submit" className={cx("submit_button")} />
+      <Button
+        name={buttonText}
+        isLoading={isPending}
+        contentWidth={77.6}
+        className={cx("submit_button")}
+        isDisabled={buttonText === "Done"}
+      />
       {/* <ReactTooltip
         anchorId="test-id"
         // data-tooltip-id="app-title"

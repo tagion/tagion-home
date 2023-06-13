@@ -75,23 +75,3 @@ export const ComingSoon: React.FC = () => {
     </div>
   );
 };
-
-//duplicated code!!!!!!!!!!!!!!!!
-const toastGenerator = ({ isSuccess }: { isSuccess: boolean }) =>
-  isSuccess
-    ? toast(({ closeToast }) => (
-        <ToastifyMessage
-          closeToast={closeToast}
-          status="success"
-          mainText="Success!"
-          secondaryText="Thanks for subscribing"
-        />
-      ))
-    : toast(({ closeToast }) => (
-        <ToastifyMessage
-          closeToast={closeToast}
-          status="error"
-          mainText="Error occured"
-          secondaryText="Please try again later"
-        />
-      ));

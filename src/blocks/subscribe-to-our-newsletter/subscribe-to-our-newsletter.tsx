@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classNames from "classnames/bind";
 import { toast } from "react-toastify";
-import { useFormik } from "formik";
 
 import { Button, Input, ToastifyMessage } from "../../components";
-import { subscribeToNewsletter } from "../../api/subscribe-to-newsletter";
-import { subscribeToNewsletterSchema } from "../../helpers";
+import { useSignupToOurNewsletterFormik } from "../../hooks";
 
 import * as styles from "./subscribe-to-our-newsletter.module.scss";
 
@@ -13,47 +11,15 @@ import ringsPng from "../../assets/images/rings.png";
 
 const cx = classNames.bind(styles);
 
-const initialFormValues = {
-  email: "",
-  fullName: "",
-};
-
 export const SubscribeToOurNewsletterBlock: React.FC = () => {
-  // todo create hook for validating
-  const [isEmailFieldHaveErrorMessage, setIsEmailFieldHaveErrorMessage] =
-    useState(false);
-
-  const formik = useFormik({
-    initialValues: initialFormValues,
-    validationSchema: subscribeToNewsletterSchema,
-    validateOnChange: false,
-    validateOnBlur: false,
-    onSubmit: async ({ email, fullName: name }) => {
-      try {
-        const {
-          data: { type },
-        } = await subscribeToNewsletter({ email, name });
-
-        if (type === "contact" || type === "account") {
-          toastGenerator({ isSuccess: true });
-        } else {
-          toastGenerator({ isSuccess: false });
-        }
-      } catch (e) {
-        console.error(`Error: ${e}.`);
-        toastGenerator({ isSuccess: false });
-      }
-    },
-  });
-
-  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.target.name && setIsEmailFieldHaveErrorMessage(() => false);
-    formik.handleChange(e);
-  };
-
-  useEffect(() => {
-    setIsEmailFieldHaveErrorMessage(() => !!formik.errors.email);
-  }, [formik.errors]);
+  const {
+    formik,
+    handleInputChange,
+    isEmailFieldHaveErrorMessage,
+    onSubmit,
+    buttonText,
+    isPending,
+  } = useSignupToOurNewsletterFormik();
 
   return (
     <div className={cx("subscribe_to_our_newsletter_block")}>
@@ -65,13 +31,7 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
           <div className={`${cx("title")} title-font`}>
             Subscribe to our newsletter
           </div>
-          <form
-            className={cx("form")}
-            onSubmit={(e) => {
-              setIsEmailFieldHaveErrorMessage(() => !!formik.errors.email);
-              formik.handleSubmit(e);
-            }}
-          >
+          <form className={cx("form")} onSubmit={onSubmit}>
             <Input
               label="Full name"
               name="fullName"
@@ -87,7 +47,12 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
               className={cx("email_input")}
               error={isEmailFieldHaveErrorMessage ? formik.errors.email : ""}
             />
-            <Button name="Subscribe" />
+            <Button
+              name={buttonText}
+              isLoading={isPending}
+              isDisabled={buttonText === "Done"}
+              contentWidth={112.3}
+            />
           </form>
         </div>
       </div>

@@ -61,4 +61,29 @@
     margin-left: 14.6px;
     stroke: $main-white-color;
   }
+
+  .spinner {
+    width: 24px;
+    height: 24px;
+    animation: 1s linear 0s normal none infinite running loading;
+    -webkit-animation: 1s linear 0s normal none infinite running loading;
+
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
 }
