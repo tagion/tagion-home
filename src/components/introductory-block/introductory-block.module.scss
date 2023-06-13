@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 !important;
-  padding: 116px 16px 0;
+  padding: 108px 16px 0;
 
   .gif_wrapper {
     display: flex;
@@ -49,7 +49,7 @@
   }
 
   @media (min-width: $tablet-size) {
-    padding: 116px 24px 0;
+    padding: 108px 24px 80px;
 
     .content {
       .icon_wrapper {
@@ -72,7 +72,7 @@
   }
 
   @media (min-width: $desktop-size) {
-    padding: 116px 80px 0;
+    padding: 108px 80px 0;
 
     .content {
       .text_wrapper {
@@ -96,7 +96,7 @@
   }
 
   @media (min-width: $desktop-large-size) {
-    padding: 208px 0 0 80px;
+    padding: 188px 0 138px 80px;
     z-index: 99;
 
     .gif_wrapper {

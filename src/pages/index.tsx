@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { ToastContainer } from "react-toastify";
 
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
@@ -9,15 +8,10 @@ import {
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
-  YouCanBuildAWalletBlock,
   YouCanParticipateBlock,
   LetsTalkBlock,
 } from "../blocks";
-import {
-  secureScalableDecentralisedBlockSpotsProps,
-  introductoryBlockSpotsProps,
-  newsletterSubscribeGradientSpotsProps,
-} from "../content";
+import { mainPageGradients } from "../content";
 
 import pointAnimation from "../assets/videos/point-animation.gif";
 
@@ -30,7 +24,7 @@ const IndexPage = () => {
   return (
     <Layout withPaddingTop={false}>
       <GradientSpotsWrapper
-        spots={introductoryBlockSpotsProps}
+        gradients={mainPageGradients.introductoryBlock}
         disableMainSidePaddings
       >
         <IntroductoryBlock
@@ -39,32 +33,24 @@ const IndexPage = () => {
           description="Tagion empowers everyone everywhere to participate in a sustainable
             economic world. Evolving trust with your participation."
         />
-        <FinancialInfrastrucureNextGenBlock />
       </GradientSpotsWrapper>
+      <FinancialInfrastrucureNextGenBlock />
 
       <GradientSpotsWrapper
-        spots={secureScalableDecentralisedBlockSpotsProps}
         disableMainSidePaddings={true}
+        gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
         <SecureScalableDecentralisedBlock />
         <YouCanParticipateBlock />
         <ValuePartnersBlock />
       </GradientSpotsWrapper>
 
-      <GradientSpotsWrapper spots={newsletterSubscribeGradientSpotsProps}>
+      <GradientSpotsWrapper
+        gradients={mainPageGradients.subscribeToNewsletterBlock}
+      >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </GradientSpotsWrapper>
-      {/* todo create separate component for ToastContainer and import in Layout wrapper*/}
-      {/* <ToastContainer
-        autoClose={3000}
-        closeOnClick={false}
-        closeButton={false}
-        draggable={false}
-        icon={false}
-        hideProgressBar={true}
-        className={cx("toast_container")}
-      /> */}
     </Layout>
   );
 };

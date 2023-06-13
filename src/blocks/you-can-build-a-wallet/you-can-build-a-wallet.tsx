@@ -37,7 +37,6 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
   return (
     <div className={cx("you_can_build_a_wallet_block")}>
       <GradientSpotsWrapper
-        spots={youCanBuildWalletGradientSpotsProps}
         bgColor={Colors.MAIN_DARK}
         disableMainSidePaddings={true}
       >

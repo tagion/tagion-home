@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import Drawer from "@mui/material/Drawer";
 
 import { Colors } from "../../common/enums/colors";
-import { sideMenuSpotsProps, navigationLinks } from "../../content";
+import { navigationLinks, sideMenuGradients } from "../../content";
 import { CustomLink, GradientSpotsWrapper } from "../../components";
 
 import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
@@ -36,9 +36,9 @@ export const SideMenu: React.FC<InputProps> = ({
   return (
     <Drawer anchor="right" open={isOpened} disableRestoreFocus={true}>
       <GradientSpotsWrapper
-        spots={sideMenuSpotsProps}
         bgColor={Colors.MAIN_WHITE}
         className={cx("gradient_wrapper")}
+        gradients={sideMenuGradients}
       >
         <div className={cx("side_menu_content")}>
           <div className={cx("header")}>
@@ -84,7 +84,7 @@ export const SideMenu: React.FC<InputProps> = ({
                               linkTo={
                                 sublinkItem.description === "Coming soon"
                                   ? ""
-                                  : sublinkItem.linkTo
+                                  : sublinkItem.linkTo || ""
                               }
                               className={cx("sublink", {
                                 isComingSoon:
@@ -106,7 +106,7 @@ export const SideMenu: React.FC<InputProps> = ({
                   </div>
                 ) : (
                   <CustomLink
-                    linkTo={linkItem.linkTo}
+                    linkTo={linkItem.linkTo || ""}
                     className={cx("link")}
                     key={i}
                   >
