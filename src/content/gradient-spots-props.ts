@@ -669,7 +669,7 @@ export const mainPageGradients = {
         require("../assets/images/gradient/main-page/mobile/introductory_block_280.png")
           .default,
 
-      options: {},
+      options: { bgSize: "100% 103%" },
     },
   },
   secureScalableDecentralisedBlockGradient: {
