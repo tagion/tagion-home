@@ -17,6 +17,10 @@
     }
   }
 
+  @media (min-width: $tablet-size) {
+    margin-top: 0;
+  }
+
   @media (min-width: $desktop-size) {
     width: 644px;
     margin-top: 120px;

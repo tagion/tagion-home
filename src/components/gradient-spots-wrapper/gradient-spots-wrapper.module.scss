@@ -5,12 +5,10 @@
   overflow: hidden;
   margin: 0 !important;
   width: 100%;
-  // background: url("../../assets/images/gradient-spots/main2.png") no-repeat;
-  background-size: cover !important;
 
   .children_wrapper {
     height: 100%;
-    
+
     & > * {
       z-index: 98;
       position: relative;
