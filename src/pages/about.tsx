@@ -8,6 +8,7 @@ import { mainPageGradients } from "../content";
 import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 import {
   LetsTalkBlock,
+  OurVisionAndMissionBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
   YouCanParticipateBlock,
@@ -26,7 +27,7 @@ const AboutPage = () => {
       >
         <IntroductoryBlock
           title="About"
-          description="Five years ago, we were dreaming of a fairer, more efficient and inclusive monetary system and banking infrastructure. Today, we’re building our dream - a decentralised, scalable and secure money-based network with real human interactions. And the best part, is that we are building it together with you. "
+          description="Five years ago, we were dreaming of a fairer, more efficient and inclusive monetary system and banking infrastructure. Today, we’re building our dream - a decentralised, scalable and secure money-based network with real human interactions. And the best part, is that we are building it together with you."
           img={aboutPageIntro}
           classNames={{
             imgWrapper: cx("about_img_wrapper"),
@@ -36,7 +37,7 @@ const AboutPage = () => {
           }}
         />
       </GradientSpotsWrapper>
-      <div className="title-font">Our vision and mission</div>
+      <OurVisionAndMissionBlock />
       <ValuePartnersBlock />
       <YouCanParticipateBlock />
       <GradientSpotsWrapper
