@@ -1,0 +1,285 @@
+@import "../../styles/variables.scss";
+@import "../../styles/margins.scss";
+
+$vertical_line_width: 126px;
+$circle_margin_right_desktop_large: -23px;
+$circle_margin_right_desktop_max: -26px;
+$circle_margin_top_mobile: -16.5px;
+
+.our_vision_and_mission_block {
+  .text {
+    margin-bottom: 80px;
+
+    br {
+      content: " ";
+      display: block;
+      height: 24px;
+    }
+
+    .title {
+      margin-bottom: 16px;
+    }
+  }
+
+  .circles_block {
+    display: flex;
+    justify-content: center;
+
+    .circles_wrapper {
+      width: fit-content;
+
+      .circle_block {
+        width: 280px;
+        height: 280px;
+
+        &:not(:first-child) {
+          margin-top: $circle_margin_top_mobile;
+        }
+
+        .circle {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          width: 100%;
+          height: 100%;
+          padding: 0 17px 0 40px;
+          border: 1px solid $main-dark-color;
+          border-radius: 100%;
+
+          .vertical_line_wrapper {
+            display: none;
+          }
+
+          .label {
+            width: fit-content;
+            padding: 4px 8px;
+            background: $main-purple-color;
+            border-radius: 16px;
+
+            color: $main-white-color;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+          }
+
+          .title {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            margin: 12px 0 4px;
+          }
+
+          .label,
+          .title {
+            font-family: "Transducer-Extended-Medium";
+          }
+
+          .description {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+
+    .horizontal_lines {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .text {
+      margin-bottom: 48px;
+    }
+
+    .circles_block > .circles_wrapper {
+      .circle_block {
+        width: 440px;
+        height: 440px;
+
+        .circle {
+          justify-content: flex-start;
+          padding: 133px 21px 0 48px;
+
+          .title {
+            margin: 24px 0 8px;
+            font-size: 32px;
+            line-height: 36px;
+          }
+
+          .description {
+            width: 320px;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .text {
+      width: 644px;
+      margin-bottom: 80px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .text {
+      display: flex;
+      width: auto;
+      margin-bottom: 119px;
+
+      .title {
+        width: 50%;
+        padding-right: 120px;
+        margin-bottom: 0;
+      }
+
+      .description {
+        width: 50%;
+        padding-left: 20px;
+      }
+    }
+
+    .circles_block {
+      display: flex;
+      align-items: center;
+      padding-top: 65px;
+
+      .circles_wrapper {
+        display: flex;
+        width: 1280px;
+
+        .circle_block {
+          &:not(:last-child) {
+            margin-right: $circle_margin_right_desktop_large;
+          }
+
+          &:not(:first-child) {
+            margin-top: 0;
+          }
+
+          .circle {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            border: 1px solid $main-dark-color;
+            border-radius: 100%;
+
+            .vertical_line_wrapper {
+              display: block;
+              position: absolute;
+              right: 50%;
+              top: 50%;
+
+              .line {
+                position: absolute;
+                right: 172px;
+                bottom: 136px;
+
+                width: $vertical_line_width;
+                margin-right: calc(($vertical_line_width / (-2)));
+                margin-bottom: calc($vertical_line_width / 2);
+                transform: rotate(90deg);
+                border: 0.5px solid $main-dark-color;
+
+                .purple_spot_label {
+                  position: absolute;
+                  left: -21px;
+                  top: -8px;
+
+                  width: 15px;
+                  height: 15px;
+                  transform: rotate(-90deg);
+                  border-radius: 100%;
+                  background-color: $main-purple-color;
+
+                  div {
+                    width: 176px;
+                    margin-left: 21px;
+                    margin-top: -7px;
+
+                    font-family: "Transducer-Extended-Medium";
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 24px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .horizontal_lines {
+        display: block;
+        width: calc((100vw - 1280px / 2));
+        height: 0;
+        border: 1px solid $main-dark-color;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .text {
+      margin-bottom: 104px;
+
+      .title {
+        width: 45%;
+        padding-right: 130px;
+      }
+
+      .description {
+        width: 55%;
+        padding-left: 0;
+      }
+    }
+
+    .circles_block {
+      padding-top: 120px;
+
+      .circles_wrapper {
+        display: flex;
+        width: 1680px;
+        height: auto;
+
+        .circle_block {
+          height: 577px;
+          width: 577px;
+
+          &:not(:last-child) {
+            margin-right: $circle_margin_right_desktop_max;
+          }
+
+          .circle {
+            padding: 190px 27.33px 0 64px;
+
+            .vertical_line_wrapper > .line {
+              right: 126px;
+              bottom: 259px;
+            }
+
+            .title {
+              width: 400px;
+              margin: 32px 0 16px;
+            }
+
+            .description {
+              width: 419px;
+              font-size: 20px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+
+      .horizontal_lines {
+        width: $desktop_max_lateral_margin;
+      }
+    }
+  }
+}
