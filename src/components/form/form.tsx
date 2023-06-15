@@ -109,6 +109,8 @@ export const Form: React.FC = () => {
     }
   }, [isPending, response]);
 
+  const isDoneStatus = buttonText === "Done";
+
   return (
     <form
       className={cx("form")}
@@ -196,9 +198,12 @@ export const Form: React.FC = () => {
       <Button
         name={buttonText}
         isLoading={isPending}
-        contentWidth={77.6}
+        contentWidth={81}
         className={cx("submit_button")}
-        isDisabled={buttonText === "Done"}
+        withSuccessIcon={isDoneStatus}
+        isDisabled={isDoneStatus || isPending}
+        isGradientAdded={!isPending}
+        isGradientFixedActive={isDoneStatus}
       />
       {/* <ReactTooltip
         anchorId="test-id"
