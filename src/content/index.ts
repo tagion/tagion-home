@@ -3,6 +3,7 @@ export * from "./gradient-block";
 export * from "./gradient-spots-props";
 export * from "./navigation-links";
 export * from "./next-gen-financial-infrastrucure";
+export * from "./our-vision-and-mission";
 export * from "./privacy-policy";
 export * from "./secure-scalable-decentralized";
 export * from "./terms-of-use";
