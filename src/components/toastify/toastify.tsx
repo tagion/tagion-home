@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 
-import { ReactComponent as SuccessIcon } from "../../assets/images/success_icon.svg";
+import { ReactComponent as SuccessIcon } from "../../assets/images/circle_success_icon.svg";
 import { ReactComponent as ErrorIcon } from "../../assets/images/warning_icon.svg";
 import { ReactComponent as CloseIcon } from "../../assets/images/close_icon.svg";
 

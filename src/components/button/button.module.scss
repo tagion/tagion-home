@@ -16,16 +16,37 @@
   color: $main-white-color;
   background-color: $main-dark-color;
   border-radius: 36px;
-  border: 1px solid $main-dark-color;
+  border: 0;
   outline: none;
   cursor: pointer;
 
+  &.isGradientAdded {
+    background-image: url("../../assets/images/gradient/buttons/black_button.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-position-x 0.3s;
+  }
+
+  &.isGradientAdded:hover,
+  &.isGradientFixedActive {
+    background-position-x: center !important;
+  }
+
   &.isWhite {
-    border: 1px solid $main-white-color;
     background-color: $main-white-color;
     color: $main-dark-color;
 
-    svg {
+    .arrow_icon {
+      stroke: $main-dark-color;
+    }
+
+    &.isGradientAdded {
+      background-image: url("../../assets/images/gradient/buttons/white_button.png");
+    }
+
+    .success_icon {
+      width: 14.9px;
+      margin-left: 9.5px;
       stroke: $main-dark-color;
     }
   }
@@ -37,7 +58,7 @@
     border-radius: 36px;
     padding: 0;
 
-    svg {
+    .arrow_icon {
       margin: 0;
       stroke: $main-dark-color;
       width: 17.8px;
@@ -47,19 +68,28 @@
     &.isDisabled {
       border: 1px solid $swiper-button-disable-color;
 
-      svg {
+      .arrow_icon {
         stroke: $swiper-button-disable-color;
       }
     }
+  }
+
+  &.isDisabled {
+    cursor: default;
   }
 
   &.withArrow {
     padding: 0 31.5px 0 24px;
   }
 
-  svg {
+  .arrow_icon {
     margin-left: 14.6px;
     stroke: $main-white-color;
+  }
+
+  .success_icon {
+    width: 14.9px;
+    margin-left: 9.5px;
   }
 
   .spinner {
