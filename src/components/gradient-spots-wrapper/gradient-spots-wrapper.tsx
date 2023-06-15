@@ -1,98 +1,76 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
-import { detect } from "detect-browser";
 
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
+import { PageSizes } from "../../common/enums";
 
 import * as styles from "./gradient-spots-wrapper.module.scss";
-import { PageSizes } from "../../common/enums";
 
 const cx = classNames.bind(styles);
 
-type GradientPropType = Array<{
-  color: string;
-  width: string;
-  height: string;
-  filter: string;
-  transform: string;
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-}>;
+type IGradientResolution = {
+  img: () => string;
+  options?: { bgSize?: string; bgPositionY?: string; bgPositionX?: string };
+};
 
 interface InputProps {
   bgColor?: string;
   disableMainSidePaddings?: boolean;
   className?: string;
-  spots: {
-    desktop_max?: GradientPropType;
-    desktop_large?: GradientPropType;
-    desktop?: GradientPropType;
-    tablet?: GradientPropType;
-    mobile?: GradientPropType;
+  gradients?: {
+    desktop_max?: IGradientResolution;
+    desktop_large?: IGradientResolution;
+    desktop?: IGradientResolution;
+    tablet?: IGradientResolution;
+    mobile?: IGradientResolution;
   };
 }
 
 export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
-  spots,
   bgColor,
   disableMainSidePaddings,
   children,
   className,
+  gradients,
 }) => {
   const [pageWidth, setPageWidth] = useState(0);
 
-  const browser = detect();
-  const isAppleDevice =
-    browser?.name === "ios" ||
-    browser?.name === "safari" ||
-    browser?.os === "iOS";
-
-  const gradientSpotsGenerator = () => {
-    let gradientProperties: GradientPropType = [];
-    if (pageWidth >= PageSizes.DESKTOP_MAX && spots.desktop_max) {
-      gradientProperties = spots.desktop_max;
+  let gradientImg: string = "";
+  let gradientOptions = null;
+  if (gradients) {
+    if (pageWidth >= PageSizes.DESKTOP_MAX && gradients.desktop_max) {
+      gradientImg = gradients.desktop_max.img();
+      gradientOptions = gradients.desktop_max.options;
     } else if (
       pageWidth >= PageSizes.DESKTOP_LARGE &&
       pageWidth < PageSizes.DESKTOP_MAX &&
-      spots.desktop_large
+      gradients.desktop_large
     ) {
-      gradientProperties = spots.desktop_large;
+      gradientImg = gradients.desktop_large.img();
+      gradientOptions = gradients.desktop_large.options;
     } else if (
       pageWidth >= PageSizes.DESKTOP &&
       pageWidth < PageSizes.DESKTOP_LARGE &&
-      spots.desktop
+      gradients.desktop
     ) {
-      gradientProperties = spots.desktop;
+      gradientImg = gradients.desktop.img();
+      gradientOptions = gradients.desktop.options;
     } else if (
       pageWidth >= PageSizes.TABLET &&
       pageWidth < PageSizes.DESKTOP &&
-      spots.tablet
+      gradients.tablet
     ) {
-      gradientProperties = spots.tablet;
-    } else if (pageWidth >= 0 && spots.mobile) {
-      gradientProperties = spots.mobile;
+      gradientImg = gradients.tablet.img();
+      gradientOptions = gradients.tablet.options;
+    } else if (
+      pageWidth >= 0 &&
+      pageWidth < PageSizes.TABLET &&
+      gradients.mobile
+    ) {
+      gradientImg = gradients.mobile.img();
+      gradientOptions = gradients.mobile.options;
     }
-
-    return gradientProperties.map((spot, i) => (
-      <div
-        className={cx("spot")}
-        style={{
-          width: spot.width,
-          height: spot.height,
-          backgroundColor: spot.color,
-          filter: spot.filter,
-          transform: spot.transform,
-          top: spot.top,
-          bottom: spot.bottom,
-          left: spot.left,
-          right: spot.right,
-        }}
-        key={i}
-      ></div>
-    ));
-  };
+  }
 
   const setPageWidthHandler = () => setPageWidth(window.innerWidth);
 
@@ -109,9 +87,12 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
       className={`${cx("gradient_spots_wrapper", {
         mainSidePaddings: !disableMainSidePaddings,
       })} ${className}`}
-      style={{ backgroundColor: bgColor }}
+      style={{
+        background: `no-repeat ${gradientOptions?.bgPositionX || "0%"} ${
+          gradientOptions?.bgPositionY || "top"
+        } / ${gradientOptions?.bgSize || "100% 100%"} url(${gradientImg})`,
+      }}
     >
-      {!isAppleDevice && gradientSpotsGenerator()}
       <div className={cx("children_wrapper")}>{children}</div>
     </div>
   );

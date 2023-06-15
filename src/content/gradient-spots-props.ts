@@ -633,3 +633,154 @@ export const secureScalableDecentralisedBlockSpotsProps = {
     },
   ],
 };
+
+export const mainPageGradients = {
+  introductoryBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-max/introductory_block_1920.png")
+          .default,
+
+      options: {},
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-large/introductory_block_1440.png")
+          .default,
+
+      options: {},
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop/introductory_block_1024.png")
+          .default,
+
+      options: {},
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/main-page/tablet/introductory_block_600.png")
+          .default,
+
+      options: {},
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/main-page/mobile/introductory_block_280.png")
+          .default,
+
+      options: { bgSize: "100% 103%" },
+    },
+  },
+  secureScalableDecentralisedBlockGradient: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-max/secure_block_1920.png")
+          .default,
+
+      options: {
+        bgSize: "80% 80%",
+        bgPositionX: "right",
+        bgPositionY: "5%",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-large/secure_block_1440.png")
+          .default,
+
+      options: {
+        bgSize: "80% 80%",
+        bgPositionX: "right",
+        bgPositionY: "15%",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop/secure_block_1024.png")
+          .default,
+
+      options: {
+        bgSize: "80% 80%",
+        bgPositionX: "right",
+        bgPositionY: "58%",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/main-page/tablet/secure_block_600.png")
+          .default,
+
+      options: { bgSize: "100% 65%", bgPositionY: "42%" },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/main-page/mobile/secure_block_280.png")
+          .default,
+
+      options: { bgSize: "100% 48%", bgPositionY: "53%" },
+    },
+  },
+  subscribeToNewsletterBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-max/subscribe_block_1920.png")
+          .default,
+
+      options: {
+        bgPositionY: "320px",
+        bgSize: "90% 100%",
+        bgPositionX: "left",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-large/subscribe_block_1440.png")
+          .default,
+
+      options: { bgPositionY: "320px" },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop/subscribe_block_1024.png")
+          .default,
+
+      options: { bgPositionY: "390px" },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/main-page/tablet/subscribe_block_600.png")
+          .default,
+
+      options: { bgPositionY: "526px", bgSize: "100% 80%" },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/main-page/mobile/subscribe_block_280.png")
+          .default,
+
+      options: { bgPositionY: "526px", bgSize: "100% 80%" },
+    },
+  },
+};
+
+export const sideMenuGradients = {
+  desktop: {
+    img: () =>
+      require("../assets/images/gradient/side-menu/desktop/side-menu_1024.png")
+        .default,
+    options: { bgPositionY: "bottom" },
+  },
+  tablet: {
+    img: () =>
+      require("../assets/images/gradient/side-menu/tablet/side-menu_600.png")
+        .default,
+    options: { bgPositionY: "bottom", bgSize: "100% 74%" },
+  },
+  mobile: {
+    img: () =>
+      require("../assets/images/gradient/side-menu/mobile/side-menu_280.png")
+        .default,
+    options: { bgPositionY: "bottom", bgSize: "100% 54%" },
+  },
+};
