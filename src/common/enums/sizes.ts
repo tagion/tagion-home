@@ -14,6 +14,7 @@ export enum BorderWidthSizes {}
 
 export enum PaddingSizes {
   INPUT_TOP_BOTTOM = 8,
+  BUTTON_LATERAL = 24
 }
 
 export enum BorderRadiusSizes {}
