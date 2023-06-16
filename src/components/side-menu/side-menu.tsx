@@ -40,7 +40,7 @@ export const SideMenu: React.FC<InputProps> = ({
         className={cx("gradient_wrapper")}
         gradients={sideMenuGradients}
       >
-        <div className={cx("side_menu_content")}>
+        <div className={`${cx("side_menu_content")} user_select_none`}>
           <div className={cx("header")}>
             <Link
               to="/"
@@ -93,7 +93,7 @@ export const SideMenu: React.FC<InputProps> = ({
                               isExternalLink={sublinkItem?.externalLink}
                               key={i}
                             >
-                              <div className={cx("name")}>
+                              <div className={cx("sublink_name")}>
                                 {sublinkItem.name}
                               </div>
                               <div className={cx("description")}>
