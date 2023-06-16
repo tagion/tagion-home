@@ -172,13 +172,17 @@
 
         .title {
           width: fit-content;
-          border-bottom: 1px solid $main-dark-color;
+          border-bottom: 1px solid transparent;
           margin-bottom: 4px;
 
           font-family: "Transducer-Extended-Medium";
           font-weight: 500;
           font-size: 20px;
           line-height: 24px;
+
+          &:hover {
+            border-bottom: 1px solid $main-dark-color;
+          }
         }
 
         &.isComingSoon {
