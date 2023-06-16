@@ -54,8 +54,9 @@
     }
 
     .link_with_content {
-      cursor: pointer;
       .name {
+        cursor: pointer;
+
         &.underline {
           span {
             border-bottom: 1px solid $main-dark-color;
@@ -85,6 +86,7 @@
 
           &.isComingSoon {
             color: $text-coming-soon-color;
+            cursor: default;
           }
 
           &:first-child {
@@ -95,7 +97,7 @@
             margin-bottom: 0;
           }
 
-          .name {
+          .sublink_name {
             font-weight: 500;
             font-size: 12px;
             line-height: 16px;
@@ -143,7 +145,7 @@
             margin-bottom: 16px;
           }
 
-          .name {
+          .sublink_name {
             font-size: 20px;
             line-height: 24px;
             margin-bottom: 4px;
