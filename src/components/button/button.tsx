@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 import { PaddingSizes } from "../../common/enums";
 
-import { ReactComponent as RightArrowIcon } from "../../assets/images/right-arrow.svg";
+import { ReactComponent as RightArrowIcon } from "../../assets/images/right_arrow.svg";
 import { ReactComponent as SuccessIcon } from "../../assets/images/success_icon.svg";
 import spinerIcon from "../../assets/images/spiner.png";
 
@@ -17,7 +17,7 @@ interface InputProps {
   id?: string;
   isDisabled?: boolean;
   widthInPx?: number;
-  Icon?: () => JSX.Element;
+  Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
   isWhite?: boolean;
   isRounded?: boolean;
   isLoading?: boolean;
@@ -73,7 +73,7 @@ export const Button: React.FC<InputProps> = ({
         {!isLoading ? (
           <>
             {name && <span>{name}</span>}
-            {Icon && Icon()}
+            {Icon && <Icon className={cx("arrow_icon")}/>}
             {withArrow && <RightArrowIcon className={cx("arrow_icon")} />}
             {withSuccessIcon && <SuccessIcon className={cx("success_icon")} />}
           </>

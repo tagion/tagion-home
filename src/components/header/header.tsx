@@ -33,37 +33,22 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
   const [anchorSubMenuElement, setAnchorSubMenuElement] =
     useState<null | HTMLElement>(null);
-  const [selectedSubMenuIndex, setSelectedSubMenuIndex] = useState<number>(0);
+  const [selectedSubMenuIndex, setSelectedSubMenuIndex] = useState<number>(-1);
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
 
   // todo move all poper logic into a separate component or hook
   const poperCanBeOpen = isSubMenuOpened && Boolean(anchorSubMenuElement);
   const poperId = poperCanBeOpen ? "popper" : undefined;
 
-  const selectedSubContent = navigationLinks[selectedSubMenuIndex].subContent;
+  const selectedSubContent = navigationLinks[selectedSubMenuIndex]?.subContent;
 
-  const closeSubMenu = () => {
-    setIsSubMenuOpened(false);
-    setAnchorSubMenuElement(null);
-  };
-
-  const handleMenuItemClick = (
+  const handleOnMouseOverMenuItem = (
     event: React.MouseEvent<HTMLElement>,
     index: number
   ) => {
     setSelectedSubMenuIndex(index);
-    setAnchorSubMenuElement(event.currentTarget);
-    !isSubMenuOpened && setIsSubMenuOpened(() => true);
-  };
-
-  const handleClickAway = (e: MouseEvent | TouchEvent) => {
-    const isComingSoonPage = comingSoonPages.some(
-      (item) => item === (e?.target as HTMLElement)?.textContent
-    );
-
-    if (!isComingSoonPage) {
-      closeSubMenu();
-    }
+    !anchorSubMenuElement && setAnchorSubMenuElement(event.currentTarget);
+    setIsSubMenuOpened(() => true);
   };
 
   const resizeHandler = () => {
@@ -74,10 +59,19 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
   };
 
   const scrollHandler = () => {
-    closeSubMenu();
-
     const scrollWithTransparentHeader =
       window.innerWidth < PageSizes.DESKTOP_LARGE ? 60 : 150;
+
+    if (
+      window.document.documentElement.scrollTop <= scrollWithTransparentHeader
+    ) {
+      document
+        .getElementById("header")
+        ?.style.setProperty(
+          "transition",
+          "backdrop-filter 100ms, -webkit-backdrop-filter 200ms, background-color 400ms"
+        );
+    }
 
     setIsHeaderTransparent(
       () =>
@@ -106,6 +100,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
 
   return (
     <header
+      id="header"
       className={cx("header", {
         isHeaderTransparent: isHeaderTransparent && !isHeaderShownOnTop,
       })}
@@ -116,20 +111,30 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
 
       <nav>
         {navigationLinks.length &&
-          navigationLinks.map((link, i) => (
-            <div
-              className={`${cx("menu_item")} user_select_none`}
-              onClick={(e) =>
-                link.linkTo ? navigate(link.linkTo) : handleMenuItemClick(e, i)
-              }
-              key={i}
-            >
-              <span>{link.name}</span>
-              {link.subContent?.length && (
-                <DownArrowIcon className={cx("arrow")} />
-              )}
-            </div>
-          ))}
+          navigationLinks.map((link, i) => {
+            const withSubMenu = link.subContent?.length;
+            return (
+              <div
+                className={cx("menu_item_wrapper")}
+                onMouseOver={(e) =>
+                  withSubMenu && handleOnMouseOverMenuItem(e, i)
+                }
+                onMouseLeave={() => withSubMenu && setIsSubMenuOpened(false)}
+                key={i}
+              >
+                <div
+                  className={`${cx("menu_item", {
+                    withSubMenu,
+                    isActive: isSubMenuOpened && selectedSubMenuIndex === i,
+                  })} user_select_none`}
+                  onClick={() => link.linkTo && navigate(link.linkTo)}
+                >
+                  <span>{link.name}</span>
+                  {withSubMenu && <DownArrowIcon className={cx("arrow")} />}
+                </div>
+              </div>
+            );
+          })}
       </nav>
 
       <SocialLinks className={cx("external_links")} />
@@ -154,44 +159,43 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
           open={isSubMenuOpened}
           anchorEl={anchorSubMenuElement}
           className={cx("popper")}
+          onMouseOver={() => setIsSubMenuOpened(true)}
+          onMouseLeave={() => setIsSubMenuOpened(false)}
         >
-          <ClickAwayListener onClickAway={handleClickAway}>
-            <div
-              className={cx("submenu", {
-                isTwoRows:
-                  selectedSubContent.length <= 4 &&
-                  selectedSubContent.length > 2,
-              })}
-            >
-              {navigationLinks[selectedSubMenuIndex].subContent?.map(
-                ({ Icon, name, description, linkTo }, i, subContentArray) => {
-                  const isEvenNumber = subContentArray.length % 2 === 0;
-                  return (
-                    <a
-                      href={linkTo}
-                      target="_blank"
-                      className={cx("link", {
-                        isOdd: !isEvenNumber,
-                        isEven: isEvenNumber,
-                        isDisabled: description === "Coming soon",
-                      })}
-                      key={i}
+          <div
+            className={cx("submenu", {
+              isTwoRows:
+                selectedSubContent.length <= 4 && selectedSubContent.length > 2,
+            })}
+          >
+            {selectedSubContent?.map(
+              ({ Icon, name, description, linkTo }, i, subContentArray) => {
+                const isEvenNumber = subContentArray.length % 2 === 0;
+                return (
+                  <a
+                    href={linkTo}
+                    target="_blank"
+                    className={cx("link", {
+                      isOdd: !isEvenNumber,
+                      isEven: isEvenNumber,
+                      isDisabled: description === "Coming soon",
+                    })}
+                    key={i}
+                  >
+                    <div className={cx("icon")}>{Icon && <Icon />}</div>
+                    <div
+                      className={`${cx("text", {
+                        isComingSoon: description === "Coming soon",
+                      })} user_select_none`}
                     >
-                      <div className={cx("icon")}>{Icon && <Icon />}</div>
-                      <div
-                        className={`${cx("text", {
-                          isComingSoon: description === "Coming soon",
-                        })} user_select_none`}
-                      >
-                        <div className={cx("title")}>{name}</div>
-                        <div className="font-16">{description}</div>
-                      </div>
-                    </a>
-                  );
-                }
-              )}
-            </div>
-          </ClickAwayListener>
+                      <div className={cx("title")}>{name}</div>
+                      <div className="font-16">{description}</div>
+                    </div>
+                  </a>
+                );
+              }
+            )}
+          </div>
         </Popper>
       )}
     </header>

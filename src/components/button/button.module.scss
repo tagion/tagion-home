@@ -56,13 +56,12 @@
     height: 52px;
     background-color: transparent;
     border-radius: 36px;
+    border: 1px solid $main-dark-color;
     padding: 0;
 
     .arrow_icon {
       margin: 0;
       stroke: $main-dark-color;
-      width: 17.8px;
-      height: 13.4px;
     }
 
     &.isDisabled {
@@ -83,6 +82,8 @@
   }
 
   .arrow_icon {
+    width: 17.8px;
+    height: 13.4px;
     margin-left: 14.6px;
     stroke: $main-white-color;
   }
