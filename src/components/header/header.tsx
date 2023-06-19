@@ -33,14 +33,14 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
   const [anchorSubMenuElement, setAnchorSubMenuElement] =
     useState<null | HTMLElement>(null);
-  const [selectedSubMenuIndex, setSelectedSubMenuIndex] = useState<number>(0);
+  const [selectedSubMenuIndex, setSelectedSubMenuIndex] = useState<number>(-1);
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
 
   // todo move all poper logic into a separate component or hook
   const poperCanBeOpen = isSubMenuOpened && Boolean(anchorSubMenuElement);
   const poperId = poperCanBeOpen ? "popper" : undefined;
 
-  const selectedSubContent = navigationLinks[selectedSubMenuIndex].subContent;
+  const selectedSubContent = navigationLinks[selectedSubMenuIndex]?.subContent;
 
   const handleOnMouseOverMenuItem = (
     event: React.MouseEvent<HTMLElement>,
@@ -61,6 +61,17 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
   const scrollHandler = () => {
     const scrollWithTransparentHeader =
       window.innerWidth < PageSizes.DESKTOP_LARGE ? 60 : 150;
+
+    if (
+      window.document.documentElement.scrollTop <= scrollWithTransparentHeader
+    ) {
+      document
+        .getElementById("header")
+        ?.style.setProperty(
+          "transition",
+          "backdrop-filter 100ms, -webkit-backdrop-filter 200ms, background-color 400ms"
+        );
+    }
 
     setIsHeaderTransparent(
       () =>
@@ -89,6 +100,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
 
   return (
     <header
+      id="header"
       className={cx("header", {
         isHeaderTransparent: isHeaderTransparent && !isHeaderShownOnTop,
       })}
@@ -156,7 +168,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                 selectedSubContent.length <= 4 && selectedSubContent.length > 2,
             })}
           >
-            {navigationLinks[selectedSubMenuIndex].subContent?.map(
+            {selectedSubContent?.map(
               ({ Icon, name, description, linkTo }, i, subContentArray) => {
                 const isEvenNumber = subContentArray.length % 2 === 0;
                 return (
