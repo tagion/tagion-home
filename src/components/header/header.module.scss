@@ -16,9 +16,6 @@
   -webkit-backdrop-filter: blur(20px);
   background-color: $submenu-bg-color;
 
-  transition: backdrop-filter 100ms, -webkit-backdrop-filter 200ms,
-    background-color 400ms;
-
   &.isHeaderTransparent {
     backdrop-filter: inherit;
     background-color: transparent;
