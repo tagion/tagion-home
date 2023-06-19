@@ -45,7 +45,7 @@ export const InformationBlockWrapper: React.FC<
           onClick={() => navigate("/")}
         />
         <Button
-          Icon={() => <LeftArrowIcon />}
+          Icon={LeftArrowIcon}
           isRounded
           onClick={() => navigate("/")}
           className={cx("desktop_button")}

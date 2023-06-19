@@ -6,7 +6,7 @@ import { Button } from "../button";
 import * as styles from "./swiper-buttons.module.scss";
 
 import { ReactComponent as LeftArrowIcon } from "../../assets/images/left_arrow.svg";
-import { ReactComponent as RightArrowIcon } from "../../assets/images/right-arrow.svg";
+import { ReactComponent as RightArrowIcon } from "../../assets/images/right_arrow.svg";
 
 const cx = classNames.bind(styles);
 
@@ -30,14 +30,14 @@ export const SwiperButtons: React.FC<InputProps> = ({
   return (
     <div className={`${cx("swiper_buttons")} ${className}`}>
       <Button
-        Icon={() => <LeftArrowIcon />}
+        Icon={LeftArrowIcon}
         isRounded
         isWhite={isWhiteColor}
         onClick={() => prevOnClick()}
         isDisabled={prevButton?.disabled}
       />
       <Button
-        Icon={() => <RightArrowIcon />}
+        Icon={RightArrowIcon}
         isRounded
         isWhite={isWhiteColor}
         onClick={() => nextOnClick()}
