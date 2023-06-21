@@ -10,7 +10,10 @@ export const youCanParticipateBlockData = [
   {
     title: (
       <>
-        Get Tagions <SmallArrowLinkIcon />
+        <span>Get </span>
+        <div style={{ display: "inline-block" }}>
+          Tagions <SmallArrowLinkIcon />
+        </div>
       </>
     ),
     description: "Join the journey",

@@ -9,7 +9,7 @@ import * as styles from "./gradient-spots-wrapper.module.scss";
 const cx = classNames.bind(styles);
 
 type IGradientResolution = {
-  img: () => string;
+  img: (value?: boolean) => string;
   options?: { bgSize?: string; bgPositionY?: string; bgPositionX?: string };
 };
 
@@ -17,6 +17,7 @@ interface InputProps {
   bgColor?: string;
   disableMainSidePaddings?: boolean;
   className?: string;
+  imgArgument?: boolean;
   gradients?: {
     desktop_max?: IGradientResolution;
     desktop_large?: IGradientResolution;
@@ -30,6 +31,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   bgColor,
   disableMainSidePaddings,
   children,
+  imgArgument,
   className,
   gradients,
 }) => {
@@ -39,35 +41,35 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   let gradientOptions = null;
   if (gradients) {
     if (pageWidth >= PageSizes.DESKTOP_MAX && gradients.desktop_max) {
-      gradientImg = gradients.desktop_max.img();
+      gradientImg = gradients.desktop_max.img(imgArgument);
       gradientOptions = gradients.desktop_max.options;
     } else if (
       pageWidth >= PageSizes.DESKTOP_LARGE &&
       pageWidth < PageSizes.DESKTOP_MAX &&
       gradients.desktop_large
     ) {
-      gradientImg = gradients.desktop_large.img();
+      gradientImg = gradients.desktop_large.img(imgArgument);
       gradientOptions = gradients.desktop_large.options;
     } else if (
       pageWidth >= PageSizes.DESKTOP &&
       pageWidth < PageSizes.DESKTOP_LARGE &&
       gradients.desktop
     ) {
-      gradientImg = gradients.desktop.img();
+      gradientImg = gradients.desktop.img(imgArgument);
       gradientOptions = gradients.desktop.options;
     } else if (
       pageWidth >= PageSizes.TABLET &&
       pageWidth < PageSizes.DESKTOP &&
       gradients.tablet
     ) {
-      gradientImg = gradients.tablet.img();
+      gradientImg = gradients.tablet.img(imgArgument);
       gradientOptions = gradients.tablet.options;
     } else if (
       pageWidth >= 0 &&
       pageWidth < PageSizes.TABLET &&
       gradients.mobile
     ) {
-      gradientImg = gradients.mobile.img();
+      gradientImg = gradients.mobile.img(imgArgument);
       gradientOptions = gradients.mobile.options;
     }
   }

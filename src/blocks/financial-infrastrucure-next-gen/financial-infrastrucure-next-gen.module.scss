@@ -2,14 +2,21 @@
 
 .financial_infrastrucure_next_gen {
   margin-top: 80px;
+  max-width: 450px;
 
   .title {
     margin-bottom: 40px;
   }
 
   .card {
-    .main_content > .card_counter {
-      display: none;
+    .main_content {
+      .card_title {
+        max-width: 426px;
+      }
+
+      .card_counter {
+        display: none;
+      }
     }
 
     &:not(:last-child) {
@@ -22,8 +29,17 @@
   }
 
   @media (min-width: $desktop-size) {
-    width: 644px;
+    max-width: none;
+    width: 550px;
     margin-top: 120px;
+
+    .card > .main_content {
+      width: 534px;
+
+      .card_title {
+        max-width: none;
+      }
+    }
   }
 
   @media (min-width: $desktop-large-size) {

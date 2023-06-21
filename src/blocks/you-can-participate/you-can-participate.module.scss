@@ -5,10 +5,6 @@
 
   .title_wrapper {
     margin-bottom: 32px;
-
-    .title {
-      max-width: 327px;
-    }
   }
 
   .sections_wrapper {
@@ -62,9 +58,6 @@
   @media (min-width: $desktop-size) {
     .title_wrapper {
       margin-bottom: 24px;
-      .title {
-        max-width: none;
-      }
     }
 
     .sections_wrapper {
@@ -83,7 +76,7 @@
       margin-bottom: 56px;
 
       .title {
-        padding-right: 200px;
+        padding-right: 300px;
       }
     }
 
@@ -109,6 +102,10 @@
 
         .card_wrapper {
           padding-left: 0;
+
+          .card_title {
+            width: 79%;
+          }
         }
 
         .arrow_link_wrapper {
@@ -127,11 +124,19 @@
 
   @media (min-width: $desktop-max-size) {
     .sections_wrapper {
-      .section > .img_wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
+      .section {
+        .img_wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+        }
+
+        .card_wrapper {
+          .card_title {
+            width: auto;
+          }
+        }
       }
     }
   }

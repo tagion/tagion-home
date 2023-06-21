@@ -784,3 +784,19 @@ export const sideMenuGradients = {
     options: { bgPositionY: "bottom", bgSize: "100% 54%" },
   },
 };
+
+// todo fix the logic of breakpoints
+const toastifyMessageGradient = {
+  img: (isSuccess?: boolean): string =>
+    require(isSuccess
+      ? "../assets/images/gradient/toastify-messages/success.png"
+      : "../assets/images/gradient/toastify-messages/error.png").default,
+};
+
+export const toastifyMessageGradients = {
+  desktop_max: toastifyMessageGradient,
+  desktop_large: toastifyMessageGradient,
+  desktop: toastifyMessageGradient,
+  tablet: toastifyMessageGradient,
+  mobile: toastifyMessageGradient,
+};

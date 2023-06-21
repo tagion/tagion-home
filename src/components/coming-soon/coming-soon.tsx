@@ -40,7 +40,7 @@ export const ComingSoon: React.FC = () => {
       className={cx("coming_soon_page")}
       style={{ minHeight: `calc(100vh - ${footerHeight}px)` }}
     >
-      <div className={cx("content")}>
+      <div className={`${cx("content")} prompt-regular`}>
         <div className={cx("title")}>
           Coming
           <br />

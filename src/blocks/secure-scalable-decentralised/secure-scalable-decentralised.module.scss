@@ -42,7 +42,9 @@
         }
 
         .title_card {
-          margin-bottom: 24px;
+          .eight_seconds_br {
+            display: none;
+          }
         }
 
         .description_card {
@@ -59,18 +61,22 @@
     }
   }
 
-  @media (max-width: calc($tablet-size - 1px)) {
-    .title {
-      font-size: 24px;
-    }
-  }
-
   @media (min-width: $tablet-size) {
     .body {
       .blocks_wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        .block {
+          .title_card {
+            margin-bottom: 16px;
+
+            .eight_seconds_br {
+              display: block;
+            }
+          }
+        }
       }
     }
   }
@@ -83,12 +89,6 @@
 
           .header {
             margin-bottom: 40px;
-          }
-
-          .title_card {
-            font-weight: 500;
-            font-size: 40px;
-            line-height: 44px;
           }
         }
       }
@@ -120,8 +120,8 @@
             width: 328px;
           }
 
-          .title_card > .eight_seconds_br {
-            display: none;
+          .title_card {
+            margin-bottom: 24px;
           }
 
           .description_card {

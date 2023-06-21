@@ -37,7 +37,9 @@ export const LetsTalkBlock: React.FC = () => {
           xl={6}
           className={cx("form-wrapper")}
         >
-          <div className={`${cx("form_title")} font-40`}>Make an inquiry</div>
+          <div className={`${cx("form_title")} font-50 prompt-regular`}>
+            Make an inquiry
+          </div>
           <Form />
         </Grid>
       </Grid>

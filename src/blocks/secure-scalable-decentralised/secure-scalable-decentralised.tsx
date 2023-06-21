@@ -30,7 +30,7 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
         </div>
         <Card
           classNames={{
-            title: cx("title_card"),
+            title: `${cx("title_card")} subtitle-font-28-36-50`,
             description: cx("description_card"),
           }}
           title={block.title}

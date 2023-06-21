@@ -57,13 +57,13 @@ const CircleBlock = ({
   return (
     <div className={cx("circle_block")}>
       <div className={cx("circle")}>
-        <div className={cx("label")}>{label}</div>
-        <div className={cx("title")}>{title}</div>
+        <div className={`${cx("label")} prompt-regular`}>{label}</div>
+        <div className={`${cx("title")} prompt-regular`}>{title}</div>
         <div className={cx("description")}>{description}</div>
         {withVerticalLine && (
           <div className={cx("vertical_line_wrapper")}>
             <div className={cx("line")}>
-              <div className={cx("purple_spot_label")}>
+              <div className={`${cx("purple_spot_label")} prompt-regular font-28`}>
                 <div>We are here</div>
               </div>
             </div>
