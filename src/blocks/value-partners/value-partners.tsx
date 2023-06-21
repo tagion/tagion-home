@@ -26,7 +26,10 @@ export const ValuePartnersBlock: React.FC = () => {
           title={partner.name}
           description={partner.description}
           ImgComponent={() => partner.logo}
-          classNames={{ img: cx("partner_logo"), title: cx("partner_title") }}
+          classNames={{
+            img: cx("partner_logo"),
+            title: `${cx("partner_title")} subtitle-font-28-36`,
+          }}
         />
         <Button
           name="Learn more"

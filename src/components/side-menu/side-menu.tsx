@@ -64,7 +64,10 @@ export const SideMenu: React.FC<InputProps> = ({
                   (index) => index === i
                 );
                 return linkItem.subContent ? (
-                  <div className={cx("link_with_content")} key={i}>
+                  <div
+                    className={`${cx("link_with_content")} prompt-regular`}
+                    key={i}
+                  >
                     <div
                       className={cx("name", { underline: isLinkOpened })}
                       onClick={() => onClickLinkHandler(i)}
@@ -96,7 +99,9 @@ export const SideMenu: React.FC<InputProps> = ({
                               <div className={cx("sublink_name")}>
                                 {sublinkItem.name}
                               </div>
-                              <div className={cx("description")}>
+                              <div
+                                className={`${cx("description")} inter-regular`}
+                              >
                                 {sublinkItem.description}
                               </div>
                             </CustomLink>
@@ -107,7 +112,7 @@ export const SideMenu: React.FC<InputProps> = ({
                 ) : (
                   <CustomLink
                     linkTo={linkItem.linkTo || ""}
-                    className={cx("link")}
+                    className={`${cx("link")} prompt-regular`}
                     key={i}
                   >
                     {linkItem.name}

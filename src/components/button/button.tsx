@@ -58,7 +58,7 @@ export const Button: React.FC<InputProps> = ({
         withArrow,
         isGradientAdded,
         isGradientFixedActive,
-      })} ${className}`}
+      })} prompt-regular font-20 ${className}`}
       onClick={() => onClick?.()}
       style={{
         width: `${widthInPx}px`,
@@ -73,7 +73,7 @@ export const Button: React.FC<InputProps> = ({
         {!isLoading ? (
           <>
             {name && <span>{name}</span>}
-            {Icon && <Icon className={cx("arrow_icon")}/>}
+            {Icon && <Icon className={cx("arrow_icon")} />}
             {withArrow && <RightArrowIcon className={cx("arrow_icon")} />}
             {withSuccessIcon && <SuccessIcon className={cx("success_icon")} />}
           </>

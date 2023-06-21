@@ -64,7 +64,7 @@ export const TimelineBlock: React.FC = () => {
                       {item.status}
                     </div>
                     {label(item.label, cx("mobile_label"))}
-                    <div className={`${cx("subtitle")} subtitle-font`}>
+                    <div className={`${cx("subtitle")} subtitle-font-28-50`}>
                       {item.title}
                     </div>
 

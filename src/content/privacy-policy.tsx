@@ -68,7 +68,9 @@ export const privacyPolicyData = [
         <br />
         We process the following categories of data about you:
         <br />
-        <span className={cx("subtitle")}>General Personal Data</span>
+        <span className={`${cx("subtitle")} prompt-regular`}>
+          General Personal Data
+        </span>
         <br />
         Information about your behavior on our digital services (e.g. number of
         visits, information about how you access our digital services, including

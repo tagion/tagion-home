@@ -55,7 +55,6 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
     setIsSideMenuDisplayed(() =>
       window.innerWidth > PageSizes.DESKTOP_LARGE ? false : true
     );
-    setIsSubMenuOpened(() => window.innerWidth > PageSizes.DESKTOP_LARGE);
   };
 
   const scrollHandler = () => {
@@ -188,7 +187,9 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                         isComingSoon: description === "Coming soon",
                       })} user_select_none`}
                     >
-                      <div className={cx("title")}>{name}</div>
+                      <div className={`${cx("title")} font-28 prompt-regular`}>
+                        {name}
+                      </div>
                       <div className="font-16">{description}</div>
                     </div>
                   </a>

@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { Link } from "gatsby";
 import { Grid } from "@mui/material";
 
 import { youCanParticipateBlockData } from "../../content";
@@ -41,7 +40,6 @@ export const YouCanParticipateBlock: React.FC = () => {
                   columns={{ xs: 4, sm: 4, md: 6, lg: 12 }}
                 >
                   <Grid className={cx("img_wrapper")} item xs={1} md={1} lg={5}>
-                    {/* {sectionContent.Img} */}
                     <img src={sectionContent.Img} />
                   </Grid>
                   <Grid
@@ -54,6 +52,9 @@ export const YouCanParticipateBlock: React.FC = () => {
                     <Card
                       title={sectionContent.title}
                       description={sectionContent.description}
+                      classNames={{
+                        title: `${cx("card_title")} subtitle-font-28-36-50`,
+                      }}
                     />
                   </Grid>
                   <Grid className={cx("arrow_link_wrapper")} item lg={2}>

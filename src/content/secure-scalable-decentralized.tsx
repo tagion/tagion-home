@@ -9,8 +9,8 @@ export const secureScalableDecentralizedData = [
   {
     title: (
       <>
-        8 seconds to <br className={cx("eight_seconds_br")} />
-        finality
+        8 seconds <br className={cx("eight_seconds_br")} />
+        to finality
       </>
     ),
     description: "Transfer money, exchange and validate data fast.",
