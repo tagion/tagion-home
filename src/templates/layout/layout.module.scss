@@ -53,7 +53,6 @@ $desktop_max_margin: 120px;
   }
 }
 
-
 // todo create separate component for ToastContainer
 .toast_container {
   width: auto !important;
@@ -68,6 +67,10 @@ $desktop_max_margin: 120px;
     border-radius: 8px;
     margin-bottom: 16px;
     padding: 0;
+
+    @media (min-width: $desktop-size) {
+      border-radius: $toastify-desktop-border-radius;
+    }
 
     [class~="Toastify__toast-body"] {
       padding: 0;

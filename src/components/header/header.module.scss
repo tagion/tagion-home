@@ -134,7 +134,7 @@
 
   .submenu {
     width: 665px;
-    height: 272px;
+    height: 284px;
     padding: 40px;
     border-radius: $card-border-radius;
     column-count: 2;
@@ -145,7 +145,7 @@
     background-color: $submenu-bg-color;
 
     &.isTwoRows {
-      height: 200px;
+      height: 208px;
     }
 
     .link {
@@ -190,11 +190,6 @@
           width: fit-content;
           border-bottom: 1px solid transparent;
           margin-bottom: 4px;
-
-          font-family: "Transducer-Extended-Medium";
-          font-weight: 500;
-          font-size: 20px;
-          line-height: 24px;
 
           &:hover {
             border-bottom: 1px solid $main-dark-color;

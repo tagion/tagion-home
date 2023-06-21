@@ -2,10 +2,8 @@
 
 .lets_talk_block {
   .grid {
-    .description {
-      .title {
-        margin-bottom: 16px;
-      }
+    .description > .title {
+      margin-bottom: 16px;
     }
 
     .form_title {
@@ -22,10 +20,10 @@
   @media (min-width: $desktop-large-size) {
     .grid {
       flex-direction: row;
+
       .form_title {
-        font-family: "Transducer-Extended-Medium";
-        margin-top: 12px;
         display: block;
+        margin-top: 12px;
       }
     }
   }

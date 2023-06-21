@@ -25,7 +25,8 @@
       text-decoration: none;
 
       .partner_title {
-        font-size: 19px;
+        display: flex;
+        align-items: center;
         white-space: nowrap;
       }
 
@@ -54,10 +55,6 @@
       .link_wrapper {
         min-height: 309px;
         padding: 32px;
-
-        .partner_title {
-          font-size: 20px;
-        }
       }
     }
   }
@@ -130,8 +127,6 @@
         }
 
         .partner_title {
-          font-size: 32px;
-          line-height: 36px;
           margin-bottom: 24px;
         }
       }

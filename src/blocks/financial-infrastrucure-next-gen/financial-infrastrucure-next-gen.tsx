@@ -12,7 +12,9 @@ export const FinancialInfrastrucureNextGenBlock: React.FC = () => {
   return (
     <div className={`${cx("financial_infrastrucure_next_gen")}`}>
       <div className={`${cx("title")} title-font`} onClick={() => focus()}>
-        Next generation financial infrastructure
+        Next generation
+        <br />
+        financial infrastructure
       </div>
       <div className={cx("blocks")}>
         {nextGennFinancialInfrastrucureData &&

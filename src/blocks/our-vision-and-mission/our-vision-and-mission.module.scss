@@ -58,21 +58,14 @@ $circle_margin_top_mobile: -16.5px;
             border-radius: 16px;
 
             color: $main-white-color;
-            font-weight: 500;
-            font-size: 12px;
+            font-size: 16px;
             line-height: 16px;
           }
 
           .title {
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 28px;
+            line-height: 28px;
             margin: 12px 0 4px;
-          }
-
-          .label,
-          .title {
-            font-family: "Transducer-Extended-Medium";
           }
 
           .description {
@@ -105,7 +98,7 @@ $circle_margin_top_mobile: -16.5px;
 
           .title {
             margin: 24px 0 8px;
-            font-size: 32px;
+            font-size: 36px;
             line-height: 36px;
           }
 
@@ -134,7 +127,7 @@ $circle_margin_top_mobile: -16.5px;
 
       .title {
         width: 50%;
-        padding-right: 120px;
+        padding-right: 170px;
         margin-bottom: 0;
       }
 
@@ -202,11 +195,6 @@ $circle_margin_top_mobile: -16.5px;
                     width: 176px;
                     margin-left: 21px;
                     margin-top: -7px;
-
-                    font-family: "Transducer-Extended-Medium";
-                    font-weight: 500;
-                    font-size: 20px;
-                    line-height: 24px;
                   }
                 }
               }
@@ -230,7 +218,7 @@ $circle_margin_top_mobile: -16.5px;
 
       .title {
         width: 45%;
-        padding-right: 130px;
+        padding-right: 190px;
       }
 
       .description {

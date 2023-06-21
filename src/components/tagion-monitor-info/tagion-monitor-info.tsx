@@ -13,7 +13,7 @@ export const TagionMonitorInfo: React.FC<InputProps> = ({ className = "" }) => {
   const infoBlock = (dataItem: number, index: number) => (
     <div className={cx("info_block")} key={index}>
       <div className={`${cx("title")} body-font`}>{infoTitles[index]}</div>
-      <div className={`${cx("data")} subtitle-font`}>{dataItem}</div>
+      <div className={`${cx("data")} subtitle-font-28-50`}>{dataItem}</div>
     </div>
   );
 
