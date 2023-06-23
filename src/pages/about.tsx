@@ -15,6 +15,7 @@ import {
   YouCanParticipateBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
+import { NatureIsOurClientBlock } from "../blocks";
 
 import * as styles from "../styles/pages/about.module.scss";
 
@@ -48,6 +49,7 @@ const AboutPage = () => {
         <OurValuesBlock />
       </GradientSpotsWrapper>
       <ValuePartnersBlock />
+      <NatureIsOurClientBlock />
       <YouCanParticipateBlock />
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}
