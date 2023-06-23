@@ -7,6 +7,8 @@ $circle_margin_right_desktop_max: -26px;
 $circle_margin_top_mobile: -16.5px;
 
 .our_vision_and_mission_block {
+  margin-bottom: 80px;
+
   .text {
     margin-bottom: 80px;
 
@@ -120,6 +122,8 @@ $circle_margin_top_mobile: -16.5px;
   }
 
   @media (min-width: $desktop-large-size) {
+    margin-bottom: 180px;
+
     .text {
       display: flex;
       width: auto;

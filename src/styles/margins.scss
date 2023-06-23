@@ -34,6 +34,7 @@ $desktop_large_top_margin: 180px;
   }
 }
 
-.disable-margins {
-  margin: 0 !important;
+.disable-lateral-margins {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
