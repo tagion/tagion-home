@@ -3,16 +3,18 @@ import classNames from "classnames/bind";
 
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
-import { mainPageGradients } from "../content";
+import { aboutPageGradients, mainPageGradients } from "../content";
 
 import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 import {
   LetsTalkBlock,
+  OurValuesBlock,
   OurVisionAndMissionBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
   YouCanParticipateBlock,
 } from "../blocks";
+import { Colors } from "../common/enums";
 
 import * as styles from "../styles/pages/about.module.scss";
 
@@ -38,6 +40,13 @@ const AboutPage = () => {
         />
       </GradientSpotsWrapper>
       <OurVisionAndMissionBlock />
+      <GradientSpotsWrapper
+        gradients={aboutPageGradients.OurValuesBlock}
+        disableMainSidePaddings
+        bgColor={Colors.MAIN_DARK}
+      >
+        <OurValuesBlock />
+      </GradientSpotsWrapper>
       <ValuePartnersBlock />
       <YouCanParticipateBlock />
       <GradientSpotsWrapper
