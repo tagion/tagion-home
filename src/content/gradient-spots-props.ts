@@ -800,3 +800,63 @@ export const toastifyMessageGradients = {
   tablet: toastifyMessageGradient,
   mobile: toastifyMessageGradient,
 };
+
+export const aboutPageGradients = {
+  OurValuesBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-max/our_values_1920.png")
+          .default,
+
+      options: {
+        bgSize: "40% 1206px",
+        bgPositionY: "top",
+        bgPositionX: "right",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-large/our_values_1440.png")
+          .default,
+
+      options: {
+        bgSize: "50% 1258px",
+        bgPositionY: "top",
+        bgPositionX: "right",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop/our_values_1024.png")
+          .default,
+
+      options: {
+        bgSize: "40% 914px",
+        bgPositionY: "top",
+        bgPositionX: "right",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/about-page/tablet/our_values_600.png")
+          .default,
+
+      options: {
+        bgSize: "400px 808px",
+        bgPositionY: "top",
+        bgPositionX: "right",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/about-page/mobile/our_values_280.png")
+          .default,
+
+      options: {
+        bgSize: "280px 870px",
+        bgPositionY: "top",
+        bgPositionX: "right",
+      },
+    },
+  },
+};
