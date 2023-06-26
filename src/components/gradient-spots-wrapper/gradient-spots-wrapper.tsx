@@ -16,7 +16,7 @@ type IGradientResolution = {
 interface InputProps {
   bgColor?: string;
   disableMainSidePaddings?: boolean;
-  className?: string;
+  className?: { bgWrapper?: string; gradientWrapper?: string };
   imgArgument?: boolean;
   gradients?: {
     desktop_max?: IGradientResolution;
@@ -88,7 +88,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
     <div
       className={`${cx("gradient_spots_wrapper", {
         mainSidePaddings: !disableMainSidePaddings,
-      })} disable-lateral-margins ${className}`}
+      })} disable-lateral-margins ${className?.gradientWrapper || ""}`}
       style={{
         background: `no-repeat ${gradientOptions?.bgPositionX || "0%"} ${
           gradientOptions?.bgPositionY || "top"
@@ -100,7 +100,10 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   );
 
   return bgColor ? (
-    <div style={{ backgroundColor: bgColor }} className="disable-lateral-margins">
+    <div
+      style={{ backgroundColor: bgColor }}
+      className={`disable-lateral-margins ${className?.bgWrapper || ""}`}
+    >
       {gradientSpotsWrapper}
     </div>
   ) : (

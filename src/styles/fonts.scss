@@ -84,6 +84,30 @@
   }
 }
 
+.subtitle-gradient-block-font {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  color: $main-white-color;
+
+  @media (min-width: $tablet-size) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $desktop-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
+
 .body-font {
   font-style: normal;
   font-weight: 400;
