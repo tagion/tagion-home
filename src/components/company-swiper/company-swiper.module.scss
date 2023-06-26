@@ -1,0 +1,56 @@
+@import "./../../styles/variables.scss";
+
+.company_swiper_block {
+  .title {
+    margin: 0 16px 40px;
+  }
+
+  .content {
+    .desktop_card {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .title {
+      margin: 0 24px 40px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .title {
+      margin: 0 80px 40px;
+    }
+
+    .content {
+      .desktop_card {
+        display: flex;
+        width: 100%;
+        padding: 0 80px;
+        cursor: pointer;
+      }
+
+      .mobile_card {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .title {
+      margin: 0 80px 80px;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .title {
+      margin: 0 120px 80px;
+    }
+
+    .content {
+      .desktop_card {
+        padding: 0 120px;
+      }
+    }
+  }
+}

@@ -7,12 +7,14 @@ import { aboutPageGradients, mainPageGradients } from "../content";
 
 import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 import {
+  FoundationBlock,
   LetsTalkBlock,
   OurValuesBlock,
   OurVisionAndMissionBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
   YouCanParticipateBlock,
+  NatureIsOurClientBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
 
@@ -41,13 +43,22 @@ const AboutPage = () => {
       </GradientSpotsWrapper>
       <OurVisionAndMissionBlock />
       <GradientSpotsWrapper
-        gradients={aboutPageGradients.OurValuesBlock}
+        gradients={aboutPageGradients.ourValuesBlock}
         disableMainSidePaddings
         bgColor={Colors.MAIN_DARK}
       >
         <OurValuesBlock />
       </GradientSpotsWrapper>
       <ValuePartnersBlock />
+      <GradientSpotsWrapper
+        gradients={aboutPageGradients.foundationBlock}
+        disableMainSidePaddings
+        className={{ bgWrapper: "main-top-margins" }}
+        bgColor={Colors.MAIN_DARK}
+      >
+        <FoundationBlock />
+      </GradientSpotsWrapper>
+      <NatureIsOurClientBlock />
       <YouCanParticipateBlock />
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}

@@ -802,7 +802,7 @@ export const toastifyMessageGradients = {
 };
 
 export const aboutPageGradients = {
-  OurValuesBlock: {
+  ourValuesBlock: {
     desktop_max: {
       img: () =>
         require("../assets/images/gradient/about-page/desktop-max/our_values_1920.png")
@@ -857,6 +857,48 @@ export const aboutPageGradients = {
         bgPositionY: "top",
         bgPositionX: "right",
       },
+    },
+  },
+  foundationBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-max/foundation_1920.png")
+          .default,
+
+          options: {
+            bgSize: "45% 100%",
+            bgPositionX: "right",
+          },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-large/foundation_1440.png")
+          .default,
+
+      options: {
+        bgSize: "55% 100%",
+        bgPositionX: "right",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop/foundation_1024.png")
+          .default,
+
+      options: {
+        bgSize: "70% 100%",
+        bgPositionX: "right",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/about-page/tablet/foundation_600.png")
+          .default,
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/about-page/mobile/foundation_280.png")
+          .default,
     },
   },
 };
