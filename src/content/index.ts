@@ -2,6 +2,7 @@ export * from "./footer-links";
 export * from "./gradient-block";
 export * from "./gradient-spots-props";
 export * from "./navigation-links";
+export * from "./nature-is-our-client";
 export * from "./next-gen-financial-infrastrucure";
 export * from "./our-vision-and-mission";
 export * from "./our-values";

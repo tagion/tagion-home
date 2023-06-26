@@ -1,0 +1,80 @@
+@import "./../../styles/variables.scss";
+
+.link_wrapper {
+  width: 100%;
+  max-width: 327px;
+  min-height: 302px;
+  padding: 16px;
+  border: 1px solid $main-dark-color;
+  border-radius: $card-border-radius;
+  text-decoration: none;
+
+  .company_title {
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+  }
+
+  .company_title {
+    svg {
+      margin-left: 3.3px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .company_logo {
+    margin-bottom: 24px;
+  }
+
+  .learn_more_button {
+    display: none;
+  }
+
+  @media (min-width: $value_partner_card-tablet-breakpoint) {
+    min-height: 309px;
+    padding: 32px;
+  }
+
+  @media (min-width: $desktop-size) {
+    width: 33.3%;
+    max-width: none;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 532px;
+    padding: 32px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $main-dark-color;
+
+      .learn_more_button {
+        display: block;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    .company_logo {
+      margin-bottom: 52px;
+    }
+
+    .company_title {
+      margin-bottom: 24px !important;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    height: 480px;
+  }
+}
