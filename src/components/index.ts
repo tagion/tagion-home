@@ -2,6 +2,8 @@ export * from "./button";
 export * from "./card";
 export * from "./coming-soon";
 export * from "./company-swiper";
+export * from "./contributor-swiper-card";
+export * from "./contributor-swiper";
 export * from "./company-swiper-card";
 export * from "./custom-link";
 export * from "./custom-swiper";

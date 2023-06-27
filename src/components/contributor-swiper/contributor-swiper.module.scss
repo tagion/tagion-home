@@ -1,56 +1,48 @@
 @import "./../../styles/variables.scss";
 
 .company_swiper_block {
-  .title {
+  .title_wrapper {
     margin: 0 16px 40px;
   }
 
-  .content {
-    .desktop_card {
-      display: none;
-    }
+  .swiper_buttons {
+    display: none;
   }
 
   @media (min-width: $tablet-size) {
-    .title {
+    .title_wrapper {
       margin: 0 24px 40px;
     }
   }
 
   @media (min-width: $desktop-size) {
-    .title {
+    .title_wrapper {
       margin: 0 80px 48px;
-    }
-
-    .content {
-      .desktop_card {
-        display: flex;
-        width: 100%;
-        padding: 0 80px;
-        cursor: pointer;
-      }
-
-      .mobile_card {
-        display: none;
-      }
     }
   }
 
   @media (min-width: $desktop-large-size) {
-    .title {
+    .title_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin: 0 80px 80px;
+    }
+
+    .swiper_buttons {
+      display: flex;
     }
   }
 
   @media (min-width: $desktop-max-size) {
-    .title {
+    .title_wrapper {
       margin: 0 120px 80px;
     }
 
     .content {
-      .desktop_card {
-        padding: 0 120px;
-      }
+      width: 1703px;
+      margin: 0 auto;
+      padding-left: 17px;
     }
   }
 }

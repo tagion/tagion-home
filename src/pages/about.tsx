@@ -3,7 +3,11 @@ import classNames from "classnames/bind";
 
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
-import { aboutPageGradients, mainPageGradients } from "../content";
+import {
+  aboutPageGradients,
+  mainPageGradients,
+  youCanParticipateBlockData,
+} from "../content";
 
 import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 import {
@@ -15,6 +19,7 @@ import {
   ValuePartnersBlock,
   YouCanParticipateBlock,
   NatureIsOurClientBlock,
+  MeetOurContributorsBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
 
@@ -49,6 +54,7 @@ const AboutPage = () => {
       >
         <OurValuesBlock />
       </GradientSpotsWrapper>
+      <MeetOurContributorsBlock />
       <ValuePartnersBlock />
       <GradientSpotsWrapper
         gradients={aboutPageGradients.foundationBlock}
@@ -59,7 +65,7 @@ const AboutPage = () => {
         <FoundationBlock />
       </GradientSpotsWrapper>
       <NatureIsOurClientBlock />
-      <YouCanParticipateBlock />
+      <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}
       >

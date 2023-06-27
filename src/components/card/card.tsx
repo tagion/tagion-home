@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 interface InputProps {
   title?: string | JSX.Element;
   description: string | JSX.Element;
+  label?: string;
   img?: { path: string; alt: string };
   counter?: string;
   fixedFontSize?: { description: string };
@@ -20,6 +21,7 @@ interface InputProps {
     counter?: string;
     title?: string;
     description?: string;
+    label?: string;
     img?: string;
   };
 }
@@ -27,6 +29,7 @@ interface InputProps {
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   title,
   description,
+  label,
   img,
   counter,
   fixedFontSize,
@@ -55,6 +58,13 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
         >
           {title}
         </div>
+        {label && (
+          <div
+            className={`${cx("label")} ${classNames?.label || ""}`}
+          >
+            {label}
+          </div>
+        )}
         <div
           className={`${cx("description")} ${
             fixedFontSize?.description
