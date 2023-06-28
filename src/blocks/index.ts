@@ -3,6 +3,7 @@ export * from "./foundation";
 export * from "./financial-infrastrucure-next-gen";
 export * from "./lets-talk";
 export * from "./nature-is-our-client";
+export * from "./meet-our-contributors";
 export * from "./our-vision-and-mission";
 export * from "./our-values";
 export * from "./secure-scalable-decentralised";

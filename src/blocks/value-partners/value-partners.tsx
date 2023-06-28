@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 import { valuePartnersBlockData } from "../../content";
 import { CompanySwiper } from "../../components/company-swiper";
-import { SwiperCompanyCard } from "../../components/company-swiper-card";
+import { SwiperCompanyCard } from "../../components";
 
 import * as styles from "./value-partners.module.scss";
 

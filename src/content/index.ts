@@ -1,3 +1,4 @@
+export * from "./contributors";
 export * from "./footer-links";
 export * from "./gradient-block";
 export * from "./gradient-spots-props";

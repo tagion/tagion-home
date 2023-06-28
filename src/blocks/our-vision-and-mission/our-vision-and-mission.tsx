@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 export const OurVisionAndMissionBlock: React.FC = () => {
   return (
-    <div className={`${cx("our_vision_and_mission_block")} disable-lateral-margins`}>
+    <div className={`${cx("our_vision_and_mission_block")} disable-lateral-margins main-top-margins`}>
       <div className={`${cx("text")} main-lateral-margins`}>
         <div className={`${cx("title")} title-font`}>
           Our vision and mission
@@ -33,6 +33,7 @@ export const OurVisionAndMissionBlock: React.FC = () => {
                   description={description}
                   label={label}
                   withVerticalLine={i == 1}
+                  key={i}
                 />
               )
             )}
