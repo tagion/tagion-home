@@ -8,6 +8,7 @@
   border: 1px solid $main-dark-color;
   border-radius: $card-border-radius;
   text-decoration: none;
+  background-color: $main-white-color;
 
   .company_title {
     display: flex;
@@ -52,9 +53,11 @@
     padding: 32px;
     border: 1px solid transparent;
     cursor: pointer;
+    background-color: transparent;
 
     &:hover {
       border: 1px solid $main-dark-color;
+      background-color: $main-white-color;
 
       .learn_more_button {
         display: block;

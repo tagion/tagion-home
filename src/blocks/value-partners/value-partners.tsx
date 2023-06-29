@@ -9,7 +9,11 @@ import * as styles from "./value-partners.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const ValuePartnersBlock: React.FC = () => {
+interface InputProps {
+  className?: string;
+}
+
+export const ValuePartnersBlock: React.FC<InputProps> = ({ className }) => {
   const valuePartnerCardGenerator = () =>
     valuePartnersBlockData &&
     valuePartnersBlockData.map((partner, i) => (
@@ -27,6 +31,7 @@ export const ValuePartnersBlock: React.FC = () => {
     <CompanySwiper
       cardGenerator={valuePartnerCardGenerator}
       title="Value partners"
+      classNames={{ wrapper: className }}
     />
   );
 };
