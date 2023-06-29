@@ -42,7 +42,10 @@
     .content {
       width: 1703px;
       margin: 0 auto;
-      padding-left: 17px;
+
+      & > div {
+        margin-left: 16px;
+      }
     }
   }
 }
