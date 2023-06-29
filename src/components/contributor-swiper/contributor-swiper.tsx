@@ -33,11 +33,7 @@ export const ContributorSwiper: React.FC<InputProps> = ({
       <div className={`${cx("title_wrapper")} ${classNames?.title} title-font`}>
         <span>{title}</span>
         {swiperInstance && (
-          <SwiperButtonsWrapper
-            itemsLength={generatedCards.length}
-            swiperId={title}
-            swiperInstance={swiperInstance}
-          />
+          <SwiperButtonsWrapper swiperInstance={swiperInstance} />
         )}
       </div>
 
@@ -58,6 +54,7 @@ export const ContributorSwiper: React.FC<InputProps> = ({
             desktop_large: 27,
             desktop_max: 0,
           }}
+          // todo delete swiperId
           swiperId={title}
           setSwiperInstance={setSwiperInstance}
           disableBottomSwiperButtons
@@ -69,30 +66,29 @@ export const ContributorSwiper: React.FC<InputProps> = ({
 
 // todo move to a separate component
 const SwiperButtonsWrapper: React.FC<{
-  itemsLength: number;
-  swiperId: string;
   swiperInstance: SwiperClass;
-}> = ({ itemsLength, swiperId, swiperInstance }) => {
-  const [selectedItemId, setSelectedItemId] = useState(0);
+}> = ({ swiperInstance }) => {
+  const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
+  const [isPrevButtonDisabled, setIsPrevButtonDisabled] = useState(true);
 
-  swiperInstance.on("slideChangeTransitionEnd", () => {
-    setSelectedItemId(getIdByClassName("swiper-slide-active"));
-  });
+  swiperInstance.on("reachEnd", () => setIsNextButtonDisabled(() => true));
 
-  const getIdByClassName = (className: string) =>
-    Number(
-      document
-        .getElementById(swiperId)
-        ?.getElementsByClassName(className)[0]
-        .getAttribute("id")
-    );
+  swiperInstance.on("reachBeginning", () =>
+    setIsPrevButtonDisabled(() => true)
+  );
 
   return (
     <SwiperButtons
-      prevOnClick={() => swiperInstance?.slidePrev()}
-      nextOnClick={() => swiperInstance?.slideNext()}
-      prevButton={{ disabled: selectedItemId === 0 }}
-      nextButton={{ disabled: selectedItemId === itemsLength - 1 }}
+      prevOnClick={() => {
+        setIsNextButtonDisabled(() => false);
+        swiperInstance?.slidePrev();
+      }}
+      nextOnClick={() => {
+        setIsPrevButtonDisabled(() => false);
+        swiperInstance?.slideNext();
+      }}
+      prevButton={{ disabled: isPrevButtonDisabled }}
+      nextButton={{ disabled: isNextButtonDisabled }}
       className={cx("swiper_buttons")}
     />
   );
