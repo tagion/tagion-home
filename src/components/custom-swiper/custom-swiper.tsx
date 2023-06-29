@@ -114,6 +114,7 @@ export const CustomSwiper: React.FC<InputProps> = ({
           className={`${cx("swiper")} ${className || ""}`}
           id={swiperId}
           onSwiper={(swiper) => setSwiperInstance?.(swiper)}
+          watchSlidesProgress
         >
           {items &&
             items.map((item, i) => (
