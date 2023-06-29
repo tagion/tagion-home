@@ -48,6 +48,18 @@ $circle_margin_top_mobile: -16.5px;
           padding: 0 17px 0 40px;
           border: 1px solid $main-dark-color;
           border-radius: 100%;
+          cursor: pointer;
+          transition: background-color 0.4s, color 0.4s;
+
+          &:hover {
+            background-color: $main_dark_color;
+            color: $main_white_color;
+
+            .label {
+              color: $main_dark_color;
+              background-color: $phito-green-color;
+            }
+          }
 
           .vertical_line_wrapper {
             display: none;
@@ -56,10 +68,11 @@ $circle_margin_top_mobile: -16.5px;
           .label {
             width: fit-content;
             padding: 4px 8px;
-            background: $main-purple-color;
+            background-color: $main-purple-color;
             border-radius: 16px;
 
             color: $main-white-color;
+            transition: background-color 0.4s, color 0.4s;
             font-size: 16px;
             line-height: 16px;
           }
