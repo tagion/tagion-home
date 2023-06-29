@@ -55,16 +55,25 @@ const AboutPage = () => {
         <OurValuesBlock />
       </GradientSpotsWrapper>
       <MeetOurContributorsBlock />
-      <ValuePartnersBlock />
+      <GradientSpotsWrapper
+        gradients={aboutPageGradients.valuePartnersBlock}
+        disableMainSidePaddings
+      >
+        <ValuePartnersBlock className="main-bottom-margins" />
+      </GradientSpotsWrapper>
       <GradientSpotsWrapper
         gradients={aboutPageGradients.foundationBlock}
         disableMainSidePaddings
-        className={{ bgWrapper: "main-top-margins" }}
         bgColor={Colors.MAIN_DARK}
       >
         <FoundationBlock />
       </GradientSpotsWrapper>
-      <NatureIsOurClientBlock />
+      <GradientSpotsWrapper
+        gradients={aboutPageGradients.natureIsOurClientBlock}
+        disableMainSidePaddings
+      >
+        <NatureIsOurClientBlock />
+      </GradientSpotsWrapper>
       <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 interface InputProps {
   cardGenerator: () => React.JSX.Element[];
   title: string;
-  classNames?: { title: string };
+  classNames?: { wrapper?: string; title?: string };
 }
 
 export const CompanySwiper: React.FC<InputProps> = ({
@@ -22,7 +22,7 @@ export const CompanySwiper: React.FC<InputProps> = ({
     <div
       className={`${cx(
         "company_swiper_block"
-      )} main-top-margins disable-lateral-margins`}
+      )} main-top-margins disable-lateral-margins ${classNames?.wrapper}`}
     >
       <div className={`${cx("title")} ${classNames?.title} title-font`}>
         {title}
