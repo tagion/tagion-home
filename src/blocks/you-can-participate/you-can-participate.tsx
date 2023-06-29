@@ -12,9 +12,23 @@ import * as styles from "./you-can-participate.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const YouCanParticipateBlock: React.FC = () => {
+interface InputProps {
+  className?: string;
+  data: Array<{
+    title: React.JSX.Element;
+    description: string;
+    Img: string;
+    linkTo: string;
+    externalLink?: boolean;
+  }>;
+}
+
+export const YouCanParticipateBlock: React.FC<InputProps> = ({
+  className,
+  data,
+}) => {
   return (
-    <div className={`${cx("you_can_participate_block")} main-lateral-paddings`}>
+    <div className={`${cx("you_can_participate_block")} ${className}`}>
       <Grid
         container
         columns={miuCustomColumns}
@@ -27,8 +41,8 @@ export const YouCanParticipateBlock: React.FC = () => {
 
       <Grid container columns={miuCustomColumns}>
         <Grid item xs={4} md={6} lg={12} className={cx("sections_wrapper")}>
-          {youCanParticipateBlockData &&
-            youCanParticipateBlockData.map((sectionContent, i) => (
+          {data &&
+            data.map((sectionContent, i) => (
               <CustomLink
                 key={i}
                 linkTo={sectionContent.linkTo}
