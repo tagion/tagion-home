@@ -34,6 +34,14 @@ $desktop_large_top_margin: 180px;
   }
 }
 
+.main-bottom-margins {
+  margin-bottom: $mobile_top_margin !important;
+
+  @media (min-width: $desktop-large-size) {
+    margin-bottom: $desktop_large_top_margin !important;
+  }
+}
+
 .disable-lateral-margins {
   margin-left: 0 !important;
   margin-right: 0 !important;

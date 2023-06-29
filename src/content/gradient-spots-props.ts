@@ -865,10 +865,10 @@ export const aboutPageGradients = {
         require("../assets/images/gradient/about-page/desktop-max/foundation_1920.png")
           .default,
 
-          options: {
-            bgSize: "45% 100%",
-            bgPositionX: "right",
-          },
+      options: {
+        bgSize: "45% 100%",
+        bgPositionX: "right",
+      },
     },
     desktop_large: {
       img: () =>
@@ -899,6 +899,113 @@ export const aboutPageGradients = {
       img: () =>
         require("../assets/images/gradient/about-page/mobile/foundation_280.png")
           .default,
+    },
+  },
+  valuePartnersBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-max/value_partners_1920.png")
+          .default,
+
+      options: {
+        bgPositionY: "280px",
+        bgSize: "90% 1600px",
+        bgPositionX: "right",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-large/value_partners_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "320px",
+        bgSize: "100% 1600px",
+        bgPositionX: "right",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop/value_partners_1024.png")
+          .default,
+
+      options: {
+        bgPositionY: "120px",
+        bgSize: "80% 1000px",
+        bgPositionX: "right",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/about-page/tablet/value_partners_600.png")
+          .default,
+      options: {
+        bgPositionY: "90px",
+        bgSize: "100% 1000px",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/about-page/mobile/value_partners_280.png")
+          .default,
+      options: {
+        bgPositionY: "280px",
+        bgSize: "100% 800px",
+      },
+    },
+  },
+  natureIsOurClientBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-max/nature_is_our_client_1920.png")
+          .default,
+
+      options: {
+        bgPositionY: "bottom",
+        bgSize: "70% 1600px",
+        bgPositionX: "right",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-large/nature_is_our_client_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "bottom",
+        bgSize: "80% 1700px",
+        bgPositionX: "right",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop/nature_is_our_client_1024.png")
+          .default,
+
+      options: {
+        bgPositionY: "bottom",
+        bgSize: "66% 1000px",
+        bgPositionX: "right",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/about-page/tablet/nature_is_our_client_600.png")
+          .default,
+      options: {
+        bgPositionY: "-680px",
+        bgSize: "90% 1050px",
+        bgPositionX: "right",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/about-page/mobile/nature_is_our_client_280.png")
+          .default,
+      options: {
+        bgPositionY: "-830px",
+        bgSize: "100% 1300px",
+      },
     },
   },
 };
