@@ -1,0 +1,91 @@
+@import "./../../styles/variables.scss";
+
+.get_tagions_introductory_block {
+  padding-bottom: 80px;
+  padding-top: 120px;
+
+  .get_tagions_img_wrapper {
+    margin-bottom: 40px;
+
+    img {
+      width: 248px;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: $tablet-size) {
+  .get_tagions_introductory_block {
+    .get_tagions_img_wrapper {
+      img {
+        width: 400px;
+      }
+    }
+
+    .get_tagions_text_wrapper {
+      width: 410px;
+    }
+  }
+}
+
+@media (min-width: $desktop-size) {
+  .get_tagions_introductory_block {
+    padding-top: 136px;
+
+    .get_tagions_img_wrapper {
+      margin-bottom: 56px;
+
+      img {
+        width: 500px;
+      }
+    }
+
+    .get_tagions_text_wrapper {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: $desktop-large-size) {
+  .get_tagions_introductory_block {
+    padding-top: 148px;
+    padding-bottom: 180px;
+
+    .get_tagions_img_wrapper {
+      margin-bottom: 0;
+
+      img {
+        width: 600px;
+      }
+    }
+
+    .get_tagions_text_wrapper {
+      width: 45%;
+      align-self: center;
+
+      div:last-child {
+        width: 420px;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-max-size) {
+  .get_tagions_introductory_block {
+    padding-top: 140px;
+
+    .get_tagions_img_wrapper {
+      img {
+        width: 700px;
+      }
+    }
+
+    .get_tagions_text_wrapper {
+      width: 750px;
+
+      div:last-child {
+        width: 534px;
+      }
+    }
+  }
+}
