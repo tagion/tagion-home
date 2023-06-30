@@ -71,22 +71,21 @@ const SwiperButtonsWrapper: React.FC<{
   const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
   const [isPrevButtonDisabled, setIsPrevButtonDisabled] = useState(true);
 
-  swiperInstance.on("reachEnd", () => setIsNextButtonDisabled(() => true));
-
-  swiperInstance.on("reachBeginning", () =>
-    setIsPrevButtonDisabled(() => true)
-  );
+  swiperInstance.on("progress", () => {
+    if (swiperInstance.progress >= 1) {
+      setIsNextButtonDisabled(() => true);
+    } else if (swiperInstance.progress <= 0) {
+      setIsPrevButtonDisabled(() => true);
+    } else {
+      setIsPrevButtonDisabled(() => false);
+      setIsNextButtonDisabled(() => false);
+    }
+  });
 
   return (
     <SwiperButtons
-      prevOnClick={() => {
-        setIsNextButtonDisabled(() => false);
-        swiperInstance?.slidePrev();
-      }}
-      nextOnClick={() => {
-        setIsPrevButtonDisabled(() => false);
-        swiperInstance?.slideNext();
-      }}
+      prevOnClick={() => swiperInstance?.slidePrev()}
+      nextOnClick={() => swiperInstance?.slideNext()}
       prevButton={{ disabled: isPrevButtonDisabled }}
       nextButton={{ disabled: isNextButtonDisabled }}
       className={cx("swiper_buttons")}
