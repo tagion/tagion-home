@@ -5,6 +5,7 @@ $hide-buttons-breakpoint: $value_partner_card-tablet-breakpoint + 10px;
 .swiper {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 
   .swiper_slide {
     display: flex;

@@ -13,10 +13,6 @@
       padding: 16px 0;
       border-bottom: 1px solid $main-dark-color;
 
-      // .img_wrapper > svg {
-      //   width: 50px;
-      //   height: 50px;
-      // }
       .img_wrapper > img {
         width: 50px;
         height: 50px;
@@ -89,11 +85,6 @@
         .img_wrapper {
           padding-left: 40px;
 
-          // svg {
-          //   width: 100px;
-          //   height: 100px;
-          // }
-
           img {
             width: 100px;
             height: 100px;
@@ -126,10 +117,7 @@
     .sections_wrapper {
       .section {
         .img_wrapper {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0;
+          padding-left: 25px;
         }
 
         .card_wrapper {
