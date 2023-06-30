@@ -2,8 +2,7 @@ import React from "react";
 import classNames from "classnames/bind";
 
 import { valuePartnersBlockData } from "../../content";
-import { CompanySwiper } from "../../components/company-swiper";
-import { SwiperCompanyCard } from "../../components";
+import { SwiperCompanyCard, CompanySwiper } from "../../components";
 
 import * as styles from "./value-partners.module.scss";
 
@@ -21,6 +20,7 @@ export const ValuePartnersBlock: React.FC<InputProps> = ({ className }) => {
         company={partner}
         companyNumbers={valuePartnersBlockData.length}
         index={i}
+        key={i}
         classNames={{
           imgWrapper: cx("value_partners_imgWrapper"),
         }}

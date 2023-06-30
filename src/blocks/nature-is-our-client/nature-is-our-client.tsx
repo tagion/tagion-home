@@ -2,8 +2,7 @@ import React from "react";
 import classNames from "classnames/bind";
 
 import { natureIsOurClientBlockData } from "../../content";
-import { CompanySwiper } from "../../components/company-swiper";
-import { SwiperCompanyCard } from "../../components/company-swiper-card";
+import { SwiperCompanyCard, CompanySwiper } from "../../components";
 
 import * as styles from "./nature-is-our-client.module.scss";
 
@@ -17,6 +16,7 @@ export const NatureIsOurClientBlock: React.FC = () => {
         company={client}
         companyNumbers={natureIsOurClientBlockData.length}
         index={i}
+        key={i}
         classNames={{
           imgWrapper: cx("nature_client_imgWrapper"),
           linkWrapper: cx("nature_client_linkWrapper"),
