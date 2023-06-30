@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 
-import { CustomSwiper } from "../../components";
+import { CustomSwiper } from "..";
 
 import * as styles from "./company-swiper.module.scss";
 
