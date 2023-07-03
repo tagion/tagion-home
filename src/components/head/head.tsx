@@ -9,6 +9,7 @@ const pageTitles = [
   // { path: "/docs/", title: "Docs" },
   { path: "/privacy-policy/", title: "Tagion | Privacy Policy" },
   { path: "/terms-of-use/", title: "Tagion | Terms of use" },
+  { path: "/get-tagions/", title: "Tagion | Get Tagions" },
 ];
 
 export const Head: HeadFC = (props) => {
