@@ -8,8 +8,6 @@ import {
   mainPageGradients,
   youCanParticipateBlockData,
 } from "../content";
-
-import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 import {
   FoundationBlock,
   LetsTalkBlock,
@@ -22,6 +20,8 @@ import {
   MeetOurContributorsBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
+
+import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 
 import * as styles from "../styles/pages/about.module.scss";
 

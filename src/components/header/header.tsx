@@ -168,12 +168,16 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
             })}
           >
             {selectedSubContent?.map(
-              ({ Icon, name, description, linkTo }, i, subContentArray) => {
+              (
+                { Icon, name, description, linkTo, img, externalLink },
+                i,
+                subContentArray
+              ) => {
                 const isEvenNumber = subContentArray.length % 2 === 0;
                 return (
                   <a
                     href={linkTo}
-                    target="_blank"
+                    target={externalLink ? "_blank" : ""}
                     className={cx("link", {
                       isOdd: !isEvenNumber,
                       isEven: isEvenNumber,
@@ -181,7 +185,12 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                     })}
                     key={i}
                   >
-                    <div className={cx("icon")}>{Icon && <Icon />}</div>
+                    {Icon && (
+                      <div className={cx("icon")}>
+                        <Icon />
+                      </div>
+                    )}
+                    {img && <img src={img} className={cx("icon")} />}
                     <div
                       className={`${cx("text", {
                         isComingSoon: description === "Coming soon",
