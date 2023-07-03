@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 
 import {
   SubscribeToOurNewsletterBlock,
+  BuyEarnTagionsBlock,
   YouCanParticipateBlock,
 } from "../blocks";
 import { Layout } from "../templates/layout";
@@ -36,9 +37,7 @@ const GetTagionsPage = () => {
             introductoryBlock: cx("get_tagions_introductory_block"),
           }}
         />
-        <h2 style={{ height: "300px", border: "1px solid black" }}>
-          ---Where to buy Tagions---
-        </h2>
+        <BuyEarnTagionsBlock />
       </GradientSpotsWrapper>
 
       <GradientSpotsWrapper

@@ -1094,4 +1094,51 @@ export const getTagionsPageGradients = {
       },
     },
   },
+
+  buyEarnTagionBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-max/foundation_1920.png")
+          .default,
+
+      options: {
+        bgSize: "850px 100%",
+        bgPositionX: "100px",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop-large/foundation_1440.png")
+          .default,
+
+      options: {
+        bgSize: "1180px 100%",
+        bgPositionX: "-100px",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop/foundation_1024.png")
+          .default,
+
+      options: {
+        bgSize: "60% 100%",
+        bgPositionX: "right",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/about-page/tablet/foundation_600.png")
+          .default,
+          options: {
+            bgSize: "80% 100%",
+            bgPositionX: "right",
+          },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/about-page/mobile/foundation_280.png")
+          .default,
+    },
+  },
 };

@@ -1,0 +1,255 @@
+@import "./../../styles/variables.scss";
+
+.buy_earn_tagions_block {
+  & > div {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .moving_subblock {
+    &:last-child {
+      margin-top: 16px;
+    }
+  }
+
+  .card_wrapper {
+    border: 1px solid $main-dark-color;
+    border-radius: 16px;
+    padding: 48px 24px;
+
+    .card {
+      margin-bottom: 32px;
+
+      .main_content {
+        .card_title {
+          font-size: 32px;
+          line-height: 32px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .card_img {
+        margin-bottom: 32px;
+
+        img {
+          width: 200px;
+        }
+      }
+    }
+
+    .button_wrapper {
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    &.withGradient {
+      .card {
+        .card_title {
+          color: $main-white-color;
+        }
+
+        .card_description {
+          color: $main-gray-text-color;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .card_wrapper {
+      padding: 40px;
+      position: relative;
+
+      .card {
+        position: initial;
+        margin-bottom: 40px;
+
+        .main_content {
+          width: 48%;
+
+          .card_title {
+            font-size: 36px;
+            line-height: 36px;
+          }
+        }
+
+        .card_img {
+          position: absolute;
+          top: 40px;
+          right: 40px;
+          margin-bottom: 0;
+        }
+      }
+
+      .button_wrapper {
+        margin: 0;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .card_wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 48px;
+      min-height: 296px;
+
+      .card {
+        margin-bottom: 40px;
+
+        .main_content {
+          width: 440px;
+        }
+
+        .card_img {
+          right: 48px;
+          top: 0;
+
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    display: flex;
+    flex-direction: row;
+    height: 506px;
+
+    .moving_subblock {
+      width: calc((100% / 2) - 12px);
+      transition: width 0.4s;
+
+      &:last-child {
+        margin-top: 0;
+      }
+
+      .button_wrapper {
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+
+      &:last-child {
+        margin-left: 24px;
+      }
+
+      &.isBigger {
+        width: 66%;
+
+        .button_wrapper {
+          opacity: 1;
+        }
+
+        .card {
+          .card_img {
+            img {
+              width: 300px;
+            }
+          }
+        }
+      }
+
+      &.isLower {
+        .card {
+          .card_img {
+            img {
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    .card_wrapper {
+      justify-content: flex-start;
+      min-height: auto;
+      height: 100%;
+
+      .card {
+        .main_content {
+          .card_title {
+            width: 320px;
+            font-size: 50px;
+            line-height: 50px;
+            margin-bottom: 24px;
+          }
+
+          .card_description {
+            width: 333px;
+          }
+        }
+
+        .card_img {
+          bottom: 32px;
+          right: 32px;
+          top: auto;
+          height: fit-content;
+          align-items: flex-end;
+
+          img {
+            width: 250px;
+            transition: width 0.4s;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    height: 660px;
+
+    .moving_subblock {
+      &.isBigger {
+        width: 66%;
+
+        .button_wrapper {
+          opacity: 1;
+        }
+
+        .card {
+          .card_img {
+            img {
+              width: 350px;
+            }
+          }
+        }
+      }
+
+      &.isLower {
+        .card {
+          .card_img {
+            img {
+              width: 250px;
+            }
+          }
+        }
+      }
+    }
+
+    .card_wrapper {
+      .card {
+        .main_content {
+          .card_title {
+            font-size: 80px;
+            line-height: 80px;
+            width: 505px;
+          }
+
+          .card_description {
+            width: 470px;
+          }
+        }
+
+        .card_img {
+          img {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
