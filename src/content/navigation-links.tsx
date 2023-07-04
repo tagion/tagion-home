@@ -34,6 +34,7 @@ export const termsOfUseLink = {
 export const navigationLinks: Array<{
   name: string;
   linkTo?: string;
+  externalLink?: boolean;
   subContent?: Array<{
     name: string;
     linkTo?: string;
@@ -112,6 +113,7 @@ export const navigationLinks: Array<{
   },
   {
     name: "Blog",
-    linkTo: "/blog",
+    linkTo: "https://tagion.medium.com/",
+    externalLink: true,
   },
 ];

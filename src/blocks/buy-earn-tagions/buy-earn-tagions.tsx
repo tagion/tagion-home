@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 import { navigate } from "gatsby";
 
-import { Button, Card, GradientSpotsWrapper } from "../../components";
+import {
+  Button,
+  Card,
+  GradientSpotsWrapper,
+  SubmitRequestModal,
+} from "../../components";
 import { getTagionsPageGradients } from "../../content";
 import { Colors, PageSizes } from "../../common/enums";
 
@@ -16,6 +21,7 @@ const cx = classNames.bind(styles);
 export const BuyEarnTagionsBlock: React.FC = ({}) => {
   const [hoveredCardIndex, setHoveredCardIndex] = useState(-1);
   const [isMobileSize, setIsMobileSize] = useState(false);
+  const [isModalOpened, setIsModalOpened] = useState(false);
 
   const resizeHandler = () =>
     setIsMobileSize(() => window.innerWidth < PageSizes.TABLET);
@@ -45,6 +51,7 @@ export const BuyEarnTagionsBlock: React.FC = ({}) => {
           className={cx("card_wrapper", { withGradient: true })}
           onMouseEnter={() => setHoveredCardIndex(0)}
           onMouseLeave={() => setHoveredCardIndex(-1)}
+          onClick={() => setIsModalOpened(true)}
         >
           <Card
             title="Where to buy Tagions"
@@ -78,6 +85,7 @@ export const BuyEarnTagionsBlock: React.FC = ({}) => {
         })}
         onMouseEnter={() => setHoveredCardIndex(1)}
         onMouseLeave={() => setHoveredCardIndex(-1)}
+        onClick={() => navigate("/community")}
       >
         <Card
           title="Ways to earn Tagions"
@@ -105,10 +113,14 @@ export const BuyEarnTagionsBlock: React.FC = ({}) => {
             contentWidth={isMobileSize ? 111 : 143}
             className={cx("button")}
             withArrow={!isMobileSize}
-            onClick={() => navigate("/community")}
           />
         </div>
       </div>
+
+      <SubmitRequestModal
+        open={isModalOpened}
+        setIsModalOpened={setIsModalOpened}
+      />
     </div>
   );
 };

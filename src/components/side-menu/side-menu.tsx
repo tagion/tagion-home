@@ -37,7 +37,7 @@ export const SideMenu: React.FC<InputProps> = ({
     <Drawer anchor="right" open={isOpened} disableRestoreFocus={true}>
       <GradientSpotsWrapper
         bgColor={Colors.MAIN_WHITE}
-        className={{gradientWrapper: cx("gradient_wrapper")}}
+        className={{ gradientWrapper: cx("gradient_wrapper") }}
         gradients={sideMenuGradients}
       >
         <div className={`${cx("side_menu_content")} user_select_none`}>
@@ -114,6 +114,7 @@ export const SideMenu: React.FC<InputProps> = ({
                     linkTo={linkItem.linkTo || ""}
                     className={`${cx("link")} prompt-regular`}
                     key={i}
+                    isExternalLink={linkItem.externalLink}
                   >
                     {linkItem.name}
                   </CustomLink>

@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames/bind";
 import { Grid } from "@mui/material";
 
-import { miuCustomColumns } from "../../helpers";
+import { letsTalkSchema, miuCustomColumns } from "../../helpers";
 import { Form } from "../../components/form";
 
 import * as styles from "./lets-talk.module.scss";
@@ -40,7 +40,12 @@ export const LetsTalkBlock: React.FC = () => {
           <div className={`${cx("form_title")} font-50 prompt-regular`}>
             Make an inquiry
           </div>
-          <Form />
+          <Form
+            withDefineYourself
+            withHowWeCanHelp
+            inOneRowMainInputs
+            schema={letsTalkSchema}
+          />
         </Grid>
       </Grid>
     </div>

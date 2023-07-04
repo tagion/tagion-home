@@ -1130,15 +1130,67 @@ export const getTagionsPageGradients = {
       img: () =>
         require("../assets/images/gradient/about-page/tablet/foundation_600.png")
           .default,
-          options: {
-            bgSize: "80% 100%",
-            bgPositionX: "right",
-          },
+      options: {
+        bgSize: "80% 100%",
+        bgPositionX: "right",
+      },
     },
     mobile: {
       img: () =>
         require("../assets/images/gradient/about-page/mobile/foundation_280.png")
           .default,
+    },
+  },
+
+  submitModal: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/get-tagions-page/desktop-max/modal_1920.png")
+          .default,
+
+      options: {
+        bgSize: "75% 67%",
+        bgPositionY: "bottom",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/get-tagions-page/desktop-large/modal_1440.png")
+          .default,
+
+      options: {
+        bgSize: "90% 63%",
+        bgPositionY: "bottom",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/get-tagions-page/desktop/modal_1024.png")
+          .default,
+
+      options: {
+        bgSize: "70% 63%",
+        bgPositionY: "bottom",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/get-tagions-page/tablet/modal_600.png")
+          .default,
+      options: {
+        bgSize: "93% 40%",
+        bgPositionY: "bottom",
+        bgPositionX: "right",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/get-tagions-page/mobile/modal_280.png")
+          .default,
+      options: {
+        bgSize: "100% 25%",
+        bgPositionY: "bottom",
+      },
     },
   },
 };

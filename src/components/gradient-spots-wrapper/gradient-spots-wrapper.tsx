@@ -18,6 +18,7 @@ interface InputProps {
   disableMainSidePaddings?: boolean;
   className?: { bgWrapper?: string; gradientWrapper?: string };
   imgArgument?: boolean;
+  disableOverflowHidden?: boolean;
   gradients?: {
     desktop_max?: IGradientResolution;
     desktop_large?: IGradientResolution;
@@ -34,6 +35,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   imgArgument,
   className,
   gradients,
+  disableOverflowHidden,
 }) => {
   const [pageWidth, setPageWidth] = useState(0);
 
@@ -88,6 +90,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
     <div
       className={`${cx("gradient_spots_wrapper", {
         mainSidePaddings: !disableMainSidePaddings,
+        disableOverflowHidden,
       })} disable-lateral-margins ${className?.gradientWrapper || ""}`}
       style={{
         background: `no-repeat ${gradientOptions?.bgPositionX || "0%"} ${
