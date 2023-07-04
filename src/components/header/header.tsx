@@ -112,6 +112,14 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
         {navigationLinks.length &&
           navigationLinks.map((link, i) => {
             const withSubMenu = link.subContent?.length;
+
+            const linkContent = (
+              <>
+                <span>{link.name}</span>
+                {withSubMenu && <DownArrowIcon className={cx("arrow")} />}
+              </>
+            );
+
             return (
               <div
                 className={cx("menu_item_wrapper")}
@@ -121,16 +129,28 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                 onMouseLeave={() => withSubMenu && setIsSubMenuOpened(false)}
                 key={i}
               >
-                <div
-                  className={`${cx("menu_item", {
-                    withSubMenu,
-                    isActive: isSubMenuOpened && selectedSubMenuIndex === i,
-                  })} user_select_none`}
-                  onClick={() => link.linkTo && navigate(link.linkTo)}
-                >
-                  <span>{link.name}</span>
-                  {withSubMenu && <DownArrowIcon className={cx("arrow")} />}
-                </div>
+                {link.externalLink ? (
+                  <a
+                    className={`${cx("menu_item", {
+                      withSubMenu,
+                      isActive: isSubMenuOpened && selectedSubMenuIndex === i,
+                    })} user_select_none`}
+                    href={link.linkTo}
+                    target="_blank"
+                  >
+                    {linkContent}
+                  </a>
+                ) : (
+                  <div
+                    className={`${cx("menu_item", {
+                      withSubMenu,
+                      isActive: isSubMenuOpened && selectedSubMenuIndex === i,
+                    })} user_select_none`}
+                    onClick={() => link.linkTo && navigate(link.linkTo)}
+                  >
+                    {linkContent}
+                  </div>
+                )}
               </div>
             );
           })}

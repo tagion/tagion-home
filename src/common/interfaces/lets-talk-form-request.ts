@@ -3,6 +3,7 @@ import { UserCategoryType } from "../types/user-category-type";
 export interface ISendLetsTalkFormPayload {
   fullName: string;
   email: string;
+  phoneNumber?: string;
   category: UserCategoryType;
   howWeCanHelp: string;
 }
