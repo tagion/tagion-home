@@ -1,0 +1,192 @@
+@import "./../../styles/variables.scss";
+
+.modal {
+  [class~="MuiDialog-paper"] {
+    margin: 0 16px;
+    border-radius: 8px;
+  }
+
+  .content {
+    padding: 24px 50px 203px 16px;
+    position: relative;
+
+    .close_mobile_icon {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 22px;
+      right: 22px;
+
+      path {
+        stroke: $main-dark-color;
+      }
+    }
+
+    .close_desktop_icon {
+      display: none;
+    }
+
+    .rocket_icon {
+      position: absolute;
+      width: 280px;
+      bottom: 0;
+      left: -35px;
+    }
+
+    .title {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    form,
+    .title {
+      max-width: 378px;
+    }
+
+    button {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    [class~="MuiDialog-paper"] {
+      margin: 0 24px;
+      border-radius: 16px;
+    }
+
+    .content {
+      width: 552px;
+      padding: 48px 142px 200px 32px;
+
+      .close_mobile_icon {
+        top: 44px;
+        right: 44px;
+      }
+
+      .rocket_icon {
+        width: 350px;
+        left: auto;
+        right: 20px;
+      }
+
+      .title {
+        font-size: 36px;
+        line-height: 36px;
+      }
+
+      form,
+      .title {
+        max-width: none;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    [class~="MuiDialog-paper"] {
+      margin: 0 80px;
+      max-width: none;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+
+      width: 864px;
+      padding: 65px 110px 65px 56px;
+
+      .close_mobile_icon {
+        display: none;
+      }
+
+      .close_desktop_icon {
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 32px;
+        right: 32px;
+
+        svg {
+          width: 10px;
+
+          path {
+            stroke: $main-dark-color;
+          }
+        }
+      }
+
+      .rocket_icon {
+        width: 320px;
+        right: auto;
+        left: 0;
+      }
+
+      .title {
+        width: 284px;
+        font-size: 36px;
+        line-height: 36px;
+        margin-top: 27px;
+      }
+
+      form {
+        width: 314px;
+        padding: 0;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .content {
+      width: 1280px;
+      padding: 147px 109px;
+
+      .close_desktop_icon {
+        width: 52px;
+        height: 52px;
+      }
+
+      .rocket_icon {
+        width: 440px;
+      }
+
+      .title {
+        width: 517px;
+        font-size: 50px;
+        line-height: 50px;
+        margin-top: 24px;
+      }
+
+      form {
+        width: 410px;
+      }
+    }
+  }
+  @media (min-width: $desktop-max-size) {
+    [class~="MuiDialog-paper"] {
+      margin: 0 120px;
+    }
+
+    .content {
+      width: 1680px;
+      padding: 180px 284px 254px 142px;
+
+      .close_desktop_icon {
+        top: 40px;
+        right: 40px;
+      }
+
+      .rocket_icon {
+        width: 600px;
+      }
+
+      .title {
+        width: 686px;
+        margin-top: 41px;
+      }
+
+      form {
+        width: 402px;
+      }
+    }
+  }
+}
