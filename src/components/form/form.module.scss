@@ -3,6 +3,8 @@
 .form {
   width: 100%;
   padding-top: 35px;
+  position: inherit;
+  z-index: 2;
 
   .input,
   .dropdown {
