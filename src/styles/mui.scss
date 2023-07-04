@@ -18,6 +18,8 @@
 }
 
 // mui Dialog (Modal)
-.MuiModal-backdrop {
-  background-color: rgba($main-dark-color, 0.8) !important;
+.MuiDialog-root {
+  .MuiModal-backdrop {
+    background-color: rgba($main-dark-color, 0.8) !important;
+  }
 }

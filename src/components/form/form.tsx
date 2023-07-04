@@ -8,8 +8,10 @@ import * as Yup from "yup";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { Button, Input, Dropdown, ToastifyMessage } from "../../components";
-import { letsTalkSchema } from "../../helpers";
-import { defineYourselfDropdownData } from "../../content/lets-talk";
+import {
+  DefineYourselfOptions,
+  defineYourselfDropdownData,
+} from "../../content/lets-talk";
 import { sendLetsTalkForm } from "../../api/send-lets-talk-form";
 import { useRequest } from "../../hooks/useRequest";
 import { ISendLetsTalkFormResponse } from "../../common/interfaces/lets-talk-form-request";
@@ -95,12 +97,18 @@ export const Form: React.FC<InputProps> = ({
       howWeCanHelp,
     }) => {
       console.log(email, name, phoneNumber, defineYourselfIndex, howWeCanHelp);
+
+      const category =
+        defineYourselfIndex === ""
+          ? DefineYourselfOptions.INTERESTED
+          : defineYourselfDropdownData[Number(defineYourselfIndex)];
+
       await reqHandler(() =>
         sendLetsTalkForm({
           email,
           fullName: name,
           phoneNumber,
-          category: defineYourselfDropdownData[Number(defineYourselfIndex)],
+          category,
           howWeCanHelp,
         })
       );
