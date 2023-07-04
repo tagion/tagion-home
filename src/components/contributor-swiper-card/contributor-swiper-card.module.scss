@@ -80,8 +80,11 @@
         }
 
         .contributor_description {
-          font-size: 16px;
-          line-height: 24px;
+          // temporary changed
+          // font-size: 16px;
+          // line-height: 24px;
+          font-size: 15px;
+          line-height: 20px;
         }
       }
     }
@@ -105,8 +108,6 @@
 
         .contributor_description {
           width: 223px;
-          font-size: 16px;
-          line-height: 24px;
         }
       }
     }
@@ -125,9 +126,7 @@
         }
 
         .contributor_description {
-          width: 194px;
-          font-size: 16px;
-          line-height: 24px;
+          width: 210px;
         }
       }
     }
@@ -140,9 +139,12 @@
     .contributor_card {
       padding-right: 25px;
 
-      .contributor_description {
-        min-width: 270px;
-        width: auto;
+      .contributor_mainContent {
+        .contributor_description {
+          width: 270px;
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
   }

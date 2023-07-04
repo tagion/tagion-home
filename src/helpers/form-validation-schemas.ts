@@ -33,8 +33,9 @@ export const submitRequestSchema = Yup.object().shape({
   email: Yup.string()
     .matches(EMAIL_REGEXP, `Please use following format: name@example.com`)
     .required(message),
-  phoneNumber: Yup.string()
-    .matches(PHONE_NUMBER_REGEXP, `Phone number is not valid`)
-    .required(message),
+  phoneNumber: Yup.string().matches(
+    PHONE_NUMBER_REGEXP,
+    `Phone number is not valid`
+  ),
   checkbox: Yup.bool().notOneOf([false], message),
 });
