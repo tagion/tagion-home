@@ -1,7 +1,7 @@
 import React from "react";
 
 import tokenIcon from "../assets/images/token.png";
-import { ReactComponent as GlobeIcon } from "../assets/images/coming-soon/globe_icon.svg";
+import globeIcon from "../assets/images/globe.png";
 import { ReactComponent as RocketIcon } from "../assets/images/coming-soon/rocket_icon.svg";
 import { ReactComponent as WalletIcon } from "../assets/images/coming-soon/wallet_icon.svg";
 import { ReactComponent as DEXIcon } from "../assets/images/coming-soon/DEX_icon.svg";
@@ -49,9 +49,9 @@ export const navigationLinks: Array<{
     subContent: [
       {
         name: "Explore Ecosystem",
-        linkTo: "/404",
-        description: "Coming soon",
-        Icon: () => <GlobeIcon />,
+        linkTo: "/ecosystem",
+        description: "Learn about our tech stack",
+        img: globeIcon,
       },
       {
         name: "Running Networks",

@@ -1,0 +1,27 @@
+@import "./../../styles/variables.scss";
+
+.scrollingBlock_title {
+  max-width: 400px;
+}
+
+// 600
+@media (min-width: $tablet-size) {
+}
+
+// 1024
+@media (min-width: $desktop-size) {
+  .scrollingBlock_title {
+    max-width: none;
+    width: 564px;
+  }
+}
+
+// 1440
+@media (min-width: $desktop-large-size) {
+  .scrollingBlock_title {
+    width: 869px;
+  }
+}
+
+@media (min-width: $desktop-max-size) {
+}

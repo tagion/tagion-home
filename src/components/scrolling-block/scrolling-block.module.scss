@@ -1,6 +1,6 @@
 @import "./../../styles/variables.scss";
 
-.financial_infrastrucure_next_gen {
+.scrolling_block {
   margin-top: 80px;
   max-width: 450px;
 
@@ -48,7 +48,6 @@
 
     .title {
       margin-bottom: 96px;
-      width: 1063px;
     }
 
     .blocks {
@@ -75,7 +74,7 @@
           }
 
           .card_description {
-            width: 500px;
+            width: 628px;
           }
         }
 
@@ -120,8 +119,8 @@
   }
 
   @media (min-width: $desktop-max-size) {
-    .title {
-      width: 1396px;
+    .blocks > .card > .main_content > .card_description {
+      width: 686px;
     }
   }
 }

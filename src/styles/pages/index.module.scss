@@ -17,6 +17,10 @@
   }
 }
 
+.scrollingBlock_title {
+  max-width: 406px;
+}
+
 // 600
 @media (min-width: $tablet-size) {
   .main_introductory_block {
@@ -55,6 +59,10 @@
       width: 534px;
     }
   }
+
+  .scrollingBlock_title {
+    max-width: none;
+  }
 }
 
 // 1440
@@ -86,6 +94,10 @@
         width: 514px;
       }
     }
+  }
+
+  .scrollingBlock_title {
+    width: 954px;
   }
 }
 
