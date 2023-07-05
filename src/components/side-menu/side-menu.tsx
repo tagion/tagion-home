@@ -37,10 +37,10 @@ export const SideMenu: React.FC<InputProps> = ({
     <Drawer anchor="right" open={isOpened} disableRestoreFocus={true}>
       <GradientSpotsWrapper
         bgColor={Colors.MAIN_WHITE}
-        className={cx("gradient_wrapper")}
+        className={{ gradientWrapper: cx("gradient_wrapper") }}
         gradients={sideMenuGradients}
       >
-        <div className={cx("side_menu_content")}>
+        <div className={`${cx("side_menu_content")} user_select_none`}>
           <div className={cx("header")}>
             <Link
               to="/"
@@ -64,7 +64,10 @@ export const SideMenu: React.FC<InputProps> = ({
                   (index) => index === i
                 );
                 return linkItem.subContent ? (
-                  <div className={cx("link_with_content")} key={i}>
+                  <div
+                    className={`${cx("link_with_content")} prompt-regular`}
+                    key={i}
+                  >
                     <div
                       className={cx("name", { underline: isLinkOpened })}
                       onClick={() => onClickLinkHandler(i)}
@@ -93,10 +96,12 @@ export const SideMenu: React.FC<InputProps> = ({
                               isExternalLink={sublinkItem?.externalLink}
                               key={i}
                             >
-                              <div className={cx("name")}>
+                              <div className={cx("sublink_name")}>
                                 {sublinkItem.name}
                               </div>
-                              <div className={cx("description")}>
+                              <div
+                                className={`${cx("description")} inter-regular`}
+                              >
                                 {sublinkItem.description}
                               </div>
                             </CustomLink>
@@ -107,8 +112,9 @@ export const SideMenu: React.FC<InputProps> = ({
                 ) : (
                   <CustomLink
                     linkTo={linkItem.linkTo || ""}
-                    className={cx("link")}
+                    className={`${cx("link")} prompt-regular`}
                     key={i}
+                    isExternalLink={linkItem.externalLink}
                   >
                     {linkItem.name}
                   </CustomLink>

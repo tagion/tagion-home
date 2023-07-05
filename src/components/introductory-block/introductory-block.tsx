@@ -45,7 +45,7 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
           <img src={img} className={cx("icon")} />
         </div>
         <div className={`${cx("text_wrapper")} ${classNames?.textWrapper}`}>
-          <div className={`${cx("title")} title-font`}>{title}</div>
+          <div className={`${cx("title")} prompt-regular`}>{title}</div>
           <div className={`${cx("description")} body-font`}>{description}</div>
         </div>
       </div>

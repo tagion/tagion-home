@@ -3,6 +3,8 @@
 .form {
   width: 100%;
   padding-top: 35px;
+  position: inherit;
+  z-index: 2;
 
   .input,
   .dropdown {
@@ -137,12 +139,14 @@
     padding-top: 40px;
 
     .input_wrapper {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
+      &.inOneRow {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
 
-      .input {
-        width: calc(50% - 20px);
+        .input {
+          width: calc(50% - 20px);
+        }
       }
     }
   }
@@ -150,7 +154,9 @@
   @media (min-width: $desktop_large_size) {
     .input_wrapper {
       .input {
-        width: calc(50% - 12px);
+        &.inOneRow {
+          width: calc(50% - 12px);
+        }
       }
     }
   }

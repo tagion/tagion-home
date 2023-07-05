@@ -13,8 +13,18 @@
     }
   }
 
-  .main_content > .title {
-    margin-bottom: 12px;
+  .main_content {
+    .title {
+      margin-bottom: 12px;
+    }
+
+    .label {
+      width: fit-content;
+      padding: 4px 8px;
+      border-radius: 16px;
+      background: $label-bg-color;
+      color: $main-dark-color;
+    }
   }
 
   @media (min-width: $tablet-size) {

@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 interface InputProps {
   title?: string | JSX.Element;
   description: string | JSX.Element;
+  label?: string;
   img?: { path: string; alt: string };
   counter?: string;
   fixedFontSize?: { description: string };
@@ -20,50 +21,56 @@ interface InputProps {
     counter?: string;
     title?: string;
     description?: string;
+    label?: string;
     img?: string;
   };
 }
 
-const initialClassNames = {
-  card: "",
-  mainContent: "",
-  counter: "",
-  title: "",
-  description: "",
-  img: "",
-};
-
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   title,
   description,
+  label,
   img,
   counter,
   fixedFontSize,
   ImgComponent,
-  classNames = initialClassNames,
+  classNames,
 }) => {
   return (
-    <div className={`${cx("card")} ${classNames?.card}`}>
+    <div className={`${cx("card")} ${classNames?.card || ""}`}>
       {(img || ImgComponent) && (
-        <div className={`${cx("img_wrapper")} ${classNames?.img}`}>
+        <div className={`${cx("img_wrapper")} ${classNames?.img || ""}`}>
           {img && <img src={img.path} alt={img.alt} />}
           {ImgComponent && ImgComponent()}
         </div>
       )}
 
-      <div className={`${cx("main_content")} ${classNames?.mainContent}`}>
+      <div className={`${cx("main_content")} ${classNames?.mainContent || ""}`}>
         {counter && (
-          <div className={`font-16 ${classNames?.counter}`}>{counter}</div>
+          <div className={`font-16 ${classNames?.counter || ""}`}>
+            {counter}
+          </div>
         )}
-        <div className={`${cx("title")} subtitle-font ${classNames?.title}`}>
+        <div
+          className={`${cx("title")} subtitle-font-28-50 ${
+            classNames?.title || ""
+          }`}
+        >
           {title}
         </div>
+        {label && (
+          <div
+            className={`${cx("label")} ${classNames?.label || ""}`}
+          >
+            {label}
+          </div>
+        )}
         <div
           className={`${cx("description")} ${
             fixedFontSize?.description
               ? `font-${fixedFontSize.description}`
               : "body-font"
-          } ${classNames?.description}`}
+          } ${classNames?.description || ""}`}
         >
           {description}
         </div>

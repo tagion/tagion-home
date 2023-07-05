@@ -1,52 +1,110 @@
 @import "./variables.scss";
 
 @font-face {
-  font-family: Transducer-Extended-Medium;
-  src: url(../styles/fonts/Transducer/.47842.otf);
+  font-family: Prompt-Regular;
+  src: url(../styles/fonts/Prompt/Prompt-Regular.ttf);
 }
 
-@font-face {
-  font-family: Transducer-Extended-Regular;
-  src: url(../styles/fonts/Transducer/.47840.otf);
+.prompt-regular {
+  font-family: "Prompt-Regular", sans-serif;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
 }
 
 .title-font {
-  font-family: "Transducer-Extended-Medium";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 26px;
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 32px;
   line-height: 32px;
 
   color: $main-dark-color;
 
   @media (min-width: $tablet-size) {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 36px;
   }
 
   @media (min-width: $desktop-size) {
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 50px;
+    line-height: 50px;
   }
 
   @media (min-width: $desktop-large-size) {
-    font-size: 64px;
-    line-height: 68px;
+    font-size: 80px;
+    line-height: 80px;
   }
 }
 
-.subtitle-font {
-  font-family: "Transducer-Extended-Medium";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+.subtitle-font-28-50 {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
 
   color: $main-dark-color;
 
   @media (min-width: $desktop-large-size) {
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
+.subtitle-font-28-36 {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  color: $main-dark-color;
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.subtitle-font-28-36-50 {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  color: $main-dark-color;
+
+  @media (min-width: $desktop-size) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
+.subtitle-gradient-block-font {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  color: $main-white-color;
+
+  @media (min-width: $tablet-size) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $desktop-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 80px;
+    line-height: 80px;
   }
 }
 
@@ -65,18 +123,30 @@
 
 // additional static fonts
 
-.font-40 {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 44px;
+// ** Prompt **
+.font-50 {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.font-28 {
+  font-size: 28px;
+  line-height: 28px;
 }
 
 .font-20 {
-  font-weight: 400;
   font-size: 20px;
-  line-height: 26px;
+  line-height: 20px;
 }
 
+.prompt-16 {
+  font-family: "Prompt-Regular";
+  font-size: 16px;
+  line-height: 16px;
+}
+
+// ** Inter **
 .font-16 {
   font-weight: 400;
   font-size: 16px;

@@ -11,7 +11,7 @@ import {
   YouCanParticipateBlock,
   LetsTalkBlock,
 } from "../blocks";
-import { mainPageGradients } from "../content";
+import { mainPageGradients, youCanParticipateBlockData } from "../content";
 
 import pointAnimation from "../assets/videos/point-animation.gif";
 import mainPageIntro from "../assets/images/main-page-intro.png";
@@ -49,7 +49,10 @@ const IndexPage = () => {
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
         <SecureScalableDecentralisedBlock />
-        <YouCanParticipateBlock />
+        <YouCanParticipateBlock
+          className="main-lateral-paddings"
+          data={youCanParticipateBlockData.mainPage}
+        />
         <ValuePartnersBlock />
       </GradientSpotsWrapper>
 

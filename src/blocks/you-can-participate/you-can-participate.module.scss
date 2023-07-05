@@ -5,10 +5,6 @@
 
   .title_wrapper {
     margin-bottom: 32px;
-
-    .title {
-      max-width: 327px;
-    }
   }
 
   .sections_wrapper {
@@ -17,10 +13,6 @@
       padding: 16px 0;
       border-bottom: 1px solid $main-dark-color;
 
-      // .img_wrapper > svg {
-      //   width: 50px;
-      //   height: 50px;
-      // }
       .img_wrapper > img {
         width: 50px;
         height: 50px;
@@ -62,9 +54,6 @@
   @media (min-width: $desktop-size) {
     .title_wrapper {
       margin-bottom: 24px;
-      .title {
-        max-width: none;
-      }
     }
 
     .sections_wrapper {
@@ -83,7 +72,7 @@
       margin-bottom: 56px;
 
       .title {
-        padding-right: 200px;
+        padding-right: 300px;
       }
     }
 
@@ -96,11 +85,6 @@
         .img_wrapper {
           padding-left: 40px;
 
-          // svg {
-          //   width: 100px;
-          //   height: 100px;
-          // }
-
           img {
             width: 100px;
             height: 100px;
@@ -109,6 +93,10 @@
 
         .card_wrapper {
           padding-left: 0;
+
+          .card_title {
+            width: 79%;
+          }
         }
 
         .arrow_link_wrapper {
@@ -127,11 +115,16 @@
 
   @media (min-width: $desktop-max-size) {
     .sections_wrapper {
-      .section > .img_wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
+      .section {
+        .img_wrapper {
+          padding-left: 25px;
+        }
+
+        .card_wrapper {
+          .card_title {
+            width: auto;
+          }
+        }
       }
     }
   }

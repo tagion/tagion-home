@@ -1,8 +1,8 @@
 import React from "react";
 
+import tokenIcon from "../assets/images/token.png";
 import { ReactComponent as GlobeIcon } from "../assets/images/coming-soon/globe_icon.svg";
 import { ReactComponent as RocketIcon } from "../assets/images/coming-soon/rocket_icon.svg";
-import { ReactComponent as TokenIcon } from "../assets/images/coming-soon/tagion_icon.svg";
 import { ReactComponent as WalletIcon } from "../assets/images/coming-soon/wallet_icon.svg";
 import { ReactComponent as DEXIcon } from "../assets/images/coming-soon/DEX_icon.svg";
 
@@ -34,12 +34,14 @@ export const termsOfUseLink = {
 export const navigationLinks: Array<{
   name: string;
   linkTo?: string;
+  externalLink?: boolean;
   subContent?: Array<{
     name: string;
     linkTo?: string;
     externalLink?: boolean;
     description: string;
-    Icon: () => React.JSX.Element;
+    Icon?: () => React.JSX.Element;
+    img?: string;
   }>;
 }> = [
   {
@@ -59,9 +61,9 @@ export const navigationLinks: Array<{
       },
       {
         name: "Get Tagions",
-        linkTo: "/404",
-        description: "Coming soon",
-        Icon: () => <TokenIcon />,
+        linkTo: "/get-tagions",
+        description: "Buy tokens",
+        img: tokenIcon,
       },
       {
         name: "Wallet",
@@ -111,6 +113,7 @@ export const navigationLinks: Array<{
   },
   {
     name: "Blog",
-    linkTo: "/blog",
+    linkTo: "https://tagion.medium.com/",
+    externalLink: true,
   },
 ];

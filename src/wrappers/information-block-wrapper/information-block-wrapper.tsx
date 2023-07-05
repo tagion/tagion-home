@@ -45,7 +45,7 @@ export const InformationBlockWrapper: React.FC<
           onClick={() => navigate("/")}
         />
         <Button
-          Icon={() => <LeftArrowIcon />}
+          Icon={LeftArrowIcon}
           isRounded
           onClick={() => navigate("/")}
           className={cx("desktop_button")}
@@ -60,12 +60,20 @@ export const InformationBlockWrapper: React.FC<
         xl={9}
         className={cx("content_wrapper")}
       >
-        <div className={cx("page_title")}>{pageTitle}</div>
+        <div className={`${cx("page_title")} prompt-regular`}>{pageTitle}</div>
         <div className={cx("content")}>
           {content.length &&
             content.map(({ title, description }) => (
               <div className={cx("block")}>
-                {title && <div className={cx("title")}>{title}</div>}
+                {title && (
+                  <div
+                    className={`${cx(
+                      "title"
+                    )} prompt-regular subtitle-font-28-36`}
+                  >
+                    {title}
+                  </div>
+                )}
                 <div className={cx("description")}>{description}</div>
               </div>
             ))}

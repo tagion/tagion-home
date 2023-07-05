@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { toast } from "react-toastify";
 
 import { Button, Input, ToastifyMessage } from "../../components";
 import { useSignupToOurNewsletterFormik } from "../../hooks";
@@ -20,6 +19,8 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
     buttonText,
     isPending,
   } = useSignupToOurNewsletterFormik();
+
+  const isDoneStatus = buttonText === "Done";
 
   return (
     <div className={cx("subscribe_to_our_newsletter_block")}>
@@ -50,8 +51,11 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
             <Button
               name={buttonText}
               isLoading={isPending}
-              isDisabled={buttonText === "Done"}
               contentWidth={112.3}
+              withSuccessIcon={isDoneStatus}
+              isDisabled={isDoneStatus || isPending}
+              isGradientAdded={!isPending}
+              isGradientFixedActive={isDoneStatus}
             />
           </form>
         </div>
@@ -59,22 +63,3 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
     </div>
   );
 };
-
-const toastGenerator = ({ isSuccess }: { isSuccess: boolean }) =>
-  isSuccess
-    ? toast(({ closeToast }) => (
-        <ToastifyMessage
-          closeToast={closeToast}
-          status="success"
-          mainText="Success!"
-          secondaryText="Thanks for subscribing"
-        />
-      ))
-    : toast(({ closeToast }) => (
-        <ToastifyMessage
-          closeToast={closeToast}
-          status="error"
-          mainText="Error occured"
-          secondaryText="Please try again later"
-        />
-      ));

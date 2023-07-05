@@ -4,11 +4,14 @@ import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { AxiosError } from "axios";
+import * as Yup from "yup";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { Button, Input, Dropdown, ToastifyMessage } from "../../components";
-import { letsTalkSchema } from "../../helpers";
-import { defineYourselfDropdownData } from "../../content/lets-talk";
+import {
+  DefineYourselfOptions,
+  defineYourselfDropdownData,
+} from "../../content/lets-talk";
 import { sendLetsTalkForm } from "../../api/send-lets-talk-form";
 import { useRequest } from "../../hooks/useRequest";
 import { ISendLetsTalkFormResponse } from "../../common/interfaces/lets-talk-form-request";
@@ -26,12 +29,27 @@ type formikOnChangeEventType =
     }>
   | SelectChangeEvent<string>;
 
-export const Form: React.FC = () => {
+interface InputProps {
+  withPhoneNumber?: boolean;
+  withDefineYourself?: boolean;
+  withHowWeCanHelp?: boolean;
+  inOneRowMainInputs?: boolean;
+  schema: Yup.AnyObject;
+}
+
+export const Form: React.FC<InputProps> = ({
+  withPhoneNumber,
+  withDefineYourself,
+  withHowWeCanHelp,
+  inOneRowMainInputs,
+  schema,
+}) => {
   // todo create hook for validating
   const [buttonText, setButtonText] = useState("Submit");
   const [isFieldsHaveErrorMessages, setIsFieldsHaveErrorMessages] = useState({
     email: false,
     name: false,
+    phoneNumber: false,
     defineYourselfIndex: false,
     checkbox: false,
   });
@@ -63,19 +81,34 @@ export const Form: React.FC = () => {
     initialValues: {
       email: "",
       name: "",
+      phoneNumber: "",
       defineYourselfIndex: "",
       howWeCanHelp: "",
       checkbox: false,
     },
-    validationSchema: letsTalkSchema,
+    validationSchema: schema,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: async ({ email, name, defineYourselfIndex, howWeCanHelp }) => {
+    onSubmit: async ({
+      email,
+      name,
+      phoneNumber,
+      defineYourselfIndex,
+      howWeCanHelp,
+    }) => {
+      console.log(email, name, phoneNumber, defineYourselfIndex, howWeCanHelp);
+
+      const category =
+        defineYourselfIndex === ""
+          ? DefineYourselfOptions.INTERESTED
+          : defineYourselfDropdownData[Number(defineYourselfIndex)];
+
       await reqHandler(() =>
         sendLetsTalkForm({
           email,
           fullName: name,
-          category: defineYourselfDropdownData[Number(defineYourselfIndex)],
+          phoneNumber,
+          category,
           howWeCanHelp,
         })
       );
@@ -95,6 +128,7 @@ export const Form: React.FC = () => {
     setIsFieldsHaveErrorMessages(() => ({
       email: !!formik.errors.email,
       name: !!formik.errors.name,
+      phoneNumber: !!formik.errors.phoneNumber,
       defineYourselfIndex: !!formik.errors.defineYourselfIndex,
       checkbox: !!formik.errors.checkbox,
     }));
@@ -109,6 +143,8 @@ export const Form: React.FC = () => {
     }
   }, [isPending, response]);
 
+  const isDoneStatus = buttonText === "Done";
+
   return (
     <form
       className={cx("form")}
@@ -117,7 +153,7 @@ export const Form: React.FC = () => {
         isFieldsHaveErrorMessagesHandler();
       }}
     >
-      <div className={cx("input_wrapper")}>
+      <div className={cx("input_wrapper", { inOneRow: inOneRowMainInputs })}>
         <Input
           label="Name"
           name="name"
@@ -136,41 +172,60 @@ export const Form: React.FC = () => {
         />
       </div>
 
-      <Dropdown
-        name="defineYourselfIndex"
-        label="How would you define yourself?"
-        value={formik.values.defineYourselfIndex}
-        onChange={(e) => handleInputChange(e)}
-        menuItems={defineYourselfDropdownData}
-        className={cx("dropdown")}
-        error={
-          isFieldsHaveErrorMessages.defineYourselfIndex
-            ? formik.errors.defineYourselfIndex
-            : ""
-        }
-      />
+      {withPhoneNumber && (
+        <Input
+          label="Phone (optional)"
+          name="phoneNumber"
+          value={formik.values.phoneNumber}
+          onChange={handleInputChange}
+          error={
+            isFieldsHaveErrorMessages.phoneNumber
+              ? formik.errors.phoneNumber
+              : ""
+          }
+          className={cx("input")}
+        />
+      )}
 
-      <div className={cx("textarea_block")}>
-        <label htmlFor="help">How can we help?</label>
-        <div className={cx("textarea_wrapper")} id="textarea-wrapper">
-          <textarea
-            name="howWeCanHelp"
-            value={formik.values.howWeCanHelp}
-            onChange={handleInputChange}
-            className="font-16"
-            onClick={() => {
-              document
-                .getElementById("textarea-wrapper")
-                ?.style.setProperty("outline-width", "2px");
-            }}
-            onBlur={() => {
-              document
-                .getElementById("textarea-wrapper")
-                ?.style.setProperty("outline-width", "1px");
-            }}
-          />
+      {withDefineYourself && (
+        <Dropdown
+          name="defineYourselfIndex"
+          label="How would you define yourself?"
+          value={formik.values.defineYourselfIndex}
+          onChange={(e) => handleInputChange(e)}
+          menuItems={defineYourselfDropdownData}
+          className={cx("dropdown")}
+          error={
+            isFieldsHaveErrorMessages.defineYourselfIndex
+              ? formik.errors.defineYourselfIndex
+              : ""
+          }
+        />
+      )}
+
+      {withHowWeCanHelp && (
+        <div className={cx("textarea_block")}>
+          <label htmlFor="help">How can we help?</label>
+          <div className={cx("textarea_wrapper")} id="textarea-wrapper">
+            <textarea
+              name="howWeCanHelp"
+              value={formik.values.howWeCanHelp}
+              onChange={handleInputChange}
+              className="font-16"
+              onClick={() => {
+                document
+                  .getElementById("textarea-wrapper")
+                  ?.style.setProperty("outline-width", "2px");
+              }}
+              onBlur={() => {
+                document
+                  .getElementById("textarea-wrapper")
+                  ?.style.setProperty("outline-width", "1px");
+              }}
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       <div
         className={cx("checkbox_wrapper", {
@@ -196,9 +251,13 @@ export const Form: React.FC = () => {
       <Button
         name={buttonText}
         isLoading={isPending}
-        contentWidth={77.6}
+        contentWidth={81}
         className={cx("submit_button")}
-        isDisabled={buttonText === "Done"}
+        withSuccessIcon={isDoneStatus}
+        isDisabled={isDoneStatus || isPending}
+        isGradientAdded={!isPending}
+        isGradientFixedActive={isDoneStatus}
+        type="submit"
       />
       {/* <ReactTooltip
         anchorId="test-id"

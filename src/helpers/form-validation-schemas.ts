@@ -8,6 +8,9 @@ export const EMAIL_REGEXP =
 export const FULL_NAME_REGEXP =
   /^[ a-zA-Z]+("?)(([',.-][a-zA-Z ])[a-zA-Z ]*)*$/;
 
+export const PHONE_NUMBER_REGEXP =
+  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
 //////
 
 export const letsTalkSchema = Yup.object().shape({
@@ -23,4 +26,16 @@ export const subscribeToNewsletterSchema = Yup.object().shape({
   email: Yup.string()
     .matches(EMAIL_REGEXP, `Please use following format: name@example.com`)
     .required(message),
+});
+
+export const submitRequestSchema = Yup.object().shape({
+  name: Yup.string().required(message),
+  email: Yup.string()
+    .matches(EMAIL_REGEXP, `Please use following format: name@example.com`)
+    .required(message),
+  phoneNumber: Yup.string().matches(
+    PHONE_NUMBER_REGEXP,
+    `Phone number is not valid`
+  ),
+  checkbox: Yup.bool().notOneOf([false], message),
 });

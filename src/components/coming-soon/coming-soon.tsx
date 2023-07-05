@@ -11,8 +11,14 @@ const cx = classNames.bind(styles);
 
 export const ComingSoon: React.FC = () => {
   const [footerHeight, setFooterHeight] = useState(0);
-  const { formik, handleInputChange, isEmailFieldHaveErrorMessage, onSubmit } =
-    useSignupToOurNewsletterFormik();
+  const {
+    formik,
+    handleInputChange,
+    isEmailFieldHaveErrorMessage,
+    onSubmit,
+    buttonText,
+    isPending,
+  } = useSignupToOurNewsletterFormik();
 
   const resizeHandler = () => {
     const footerHeight = document.getElementById("footer")?.offsetHeight || 0;
@@ -27,12 +33,14 @@ export const ComingSoon: React.FC = () => {
     return () => window.removeEventListener("resize", () => resizeHandler());
   }, []);
 
+  const isDoneStatus = buttonText === "Done";
+
   return (
     <div
       className={cx("coming_soon_page")}
       style={{ minHeight: `calc(100vh - ${footerHeight}px)` }}
     >
-      <div className={cx("content")}>
+      <div className={`${cx("content")} prompt-regular`}>
         <div className={cx("title")}>
           Coming
           <br />
@@ -65,10 +73,16 @@ export const ComingSoon: React.FC = () => {
           </div>
 
           <Button
-            name="Subscribe"
+            name={buttonText}
             type="submit"
             isWhite
             className={cx("submit")}
+            isLoading={isPending}
+            contentWidth={112.3}
+            withSuccessIcon={isDoneStatus}
+            isDisabled={isDoneStatus || isPending}
+            isGradientAdded={!isPending}
+            isGradientFixedActive={isDoneStatus}
           />
         </form>
       </div>

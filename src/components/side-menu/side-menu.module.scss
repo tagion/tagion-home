@@ -41,9 +41,8 @@
     .link,
     .link_with_content {
       width: fit-content;
-      font-family: "Transducer-Extended-Medium";
-      font-weight: 500;
-      font-size: 16px;
+      font-weight: 400;
+      font-size: 20px;
       line-height: 20px;
       color: $main-dark-color;
       text-decoration: none;
@@ -54,11 +53,12 @@
     }
 
     .link_with_content {
-      cursor: pointer;
       .name {
+        cursor: pointer;
+
         &.underline {
           span {
-            border-bottom: 1px solid $main-dark-color;
+            text-decoration-line: underline;
           }
         }
 
@@ -85,6 +85,7 @@
 
           &.isComingSoon {
             color: $text-coming-soon-color;
+            cursor: default;
           }
 
           &:first-child {
@@ -95,9 +96,8 @@
             margin-bottom: 0;
           }
 
-          .name {
-            font-weight: 500;
-            font-size: 12px;
+          .sublink_name {
+            font-size: 16px;
             line-height: 16px;
             margin-bottom: 2px;
           }
@@ -118,7 +118,7 @@
 
       .link,
       .link_with_content {
-        font-size: 32px;
+        font-size: 36px;
         line-height: 36px;
 
         &:not(:first-child) {
@@ -143,9 +143,9 @@
             margin-bottom: 16px;
           }
 
-          .name {
-            font-size: 20px;
-            line-height: 24px;
+          .sublink_name {
+            font-size: 28px;
+            line-height: 28px;
             margin-bottom: 4px;
           }
 
