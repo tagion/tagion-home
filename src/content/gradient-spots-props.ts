@@ -1018,7 +1018,7 @@ export const getTagionsPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 1200px",
+        bgSize: "100% 85%",
       },
     },
     desktop_large: {
@@ -1027,7 +1027,7 @@ export const getTagionsPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 1250px",
+        bgSize: "100% 88%",
       },
     },
     desktop: {
@@ -1036,18 +1036,25 @@ export const getTagionsPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 900px",
+        bgSize: "80% 70%",
       },
     },
     tablet: {
       img: () =>
         require("../assets/images/gradient/main-page/tablet/introductory_block_600.png")
           .default,
+      options: {
+        bgSize: "100% 70%",
+      },
     },
     mobile: {
       img: () =>
         require("../assets/images/gradient/main-page/mobile/introductory_block_280.png")
           .default,
+
+      options: {
+        bgSize: "100% 50%",
+      },
     },
   },
   subscribeToNewsletterBlock: {
