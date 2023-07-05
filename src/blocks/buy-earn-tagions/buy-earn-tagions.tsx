@@ -67,10 +67,10 @@ export const BuyEarnTagionsBlock: React.FC = ({}) => {
           />
           <div className={cx("button_wrapper")}>
             <Button
-              name="Buy Tagioncoin"
+              name="Buy Tagions"
               isWhite
               isGradientAdded
-              contentWidth={isMobileSize ? 148 : 180}
+              contentWidth={isMobileSize ? 117 : 150}
               className={cx("button")}
               withArrow={!isMobileSize}
             />
