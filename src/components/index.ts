@@ -19,6 +19,7 @@ export * from "./introductory-block";
 export * from "./page-not-found";
 export * from "./side-menu";
 export * from "./submit-request-modal";
+export * from "./scrolling-block";
 export * from "./socials-links";
 export * from "./swiper-buttons";
 export * from "./tagion-monitor-info";

@@ -7,7 +7,8 @@ import { submitRequestSchema } from "../../helpers";
 import { getTagionsPageGradients } from "../../content";
 
 import { ReactComponent as CloseIcon } from "../../assets/images/close_icon.svg";
-import rocketIcon from "../../assets/images/rocket.png";
+// todo change to new rocket
+import rocketIcon from "../../assets/images/rocket_old.png";
 
 import * as styles from "./submit-request-modal.module.scss";
 
