@@ -1,4 +1,5 @@
 export * from "./buy-earn-tagions";
+export * from "./core-building";
 export * from "./explore-our-ecosystem";
 export * from "./foundation";
 export * from "./lets-talk";

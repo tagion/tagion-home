@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, ScrollingBlock } from "../components";
 import {
+  CoreBuildingBlock,
   SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
 } from "../blocks";
@@ -26,6 +27,7 @@ const EcosystemPage = () => {
         data={buildForTheRealWorldData}
         classNames={{ title: cx("scrollingBlock_title") }}
       />
+      <CoreBuildingBlock />
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}
       >
