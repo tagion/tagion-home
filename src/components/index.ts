@@ -25,4 +25,5 @@ export * from "./swiper-buttons";
 export * from "./tagion-monitor-info";
 export * from "./timeline";
 export * from "./toastify";
+export * from "./questions-block";
 export * from "./questions-block-generator";

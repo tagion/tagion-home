@@ -4,8 +4,15 @@
   max-width: 400px;
 }
 
+.questionsBlock {
+  margin-top: 240px;
+}
+
 // 600
 @media (min-width: $tablet-size) {
+  .questionsBlock {
+    margin-top: 180px;
+  }
 }
 
 // 1024
@@ -21,7 +28,8 @@
   .scrollingBlock_title {
     width: 869px;
   }
-}
 
-@media (min-width: $desktop-max-size) {
+  .questionsBlock {
+    margin-top: 380px;
+  }
 }

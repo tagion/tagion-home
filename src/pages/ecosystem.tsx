@@ -4,7 +4,6 @@ import classNames from "classnames/bind";
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, ScrollingBlock } from "../components";
 import {
-  CoreBuildingBlock,
   SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
 } from "../blocks";
@@ -12,7 +11,10 @@ import {
   mainPageGradients,
   youCanParticipateBlockData,
   buildForTheRealWorldData,
+  coreBuildingBlockData,
+  FAQBlockData,
 } from "../content";
+import { QuestionsBlock } from "../components";
 
 import * as styles from "../styles/pages/ecosystem.module.scss";
 
@@ -27,7 +29,25 @@ const EcosystemPage = () => {
         data={buildForTheRealWorldData}
         classNames={{ title: cx("scrollingBlock_title") }}
       />
-      <CoreBuildingBlock />
+      <QuestionsBlock
+        title="Core building blocks"
+        description="For a real decentralised, independent, censorship resistant, borderless monetary system and banking infrastucture."
+        data={coreBuildingBlockData}
+      />
+      <QuestionsBlock
+        title={
+          <>
+            Frequently
+            <br />
+            asked questions
+          </>
+        }
+        data={FAQBlockData}
+        direction="column"
+        classNames={{
+          questionsBlock: cx("questionsBlock"),
+        }}
+      />
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}
       >
