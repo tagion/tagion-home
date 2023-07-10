@@ -27,10 +27,10 @@ $desktop_large_top_margin: 180px;
 }
 
 .main-top-margins {
-  margin-top: $mobile_top_margin !important;
+  margin-top: $mobile_top_margin;
 
   @media (min-width: $desktop-large-size) {
-    margin-top: $desktop_large_top_margin !important;
+    margin-top: $desktop_large_top_margin;
   }
 }
 
