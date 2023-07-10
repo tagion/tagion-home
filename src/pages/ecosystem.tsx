@@ -2,7 +2,11 @@ import React from "react";
 import classNames from "classnames/bind";
 
 import { Layout } from "../templates/layout";
-import { GradientSpotsWrapper, ScrollingBlock } from "../components";
+import {
+  GradientSpotsWrapper,
+  IntroductoryBlock,
+  ScrollingBlock,
+} from "../components";
 import {
   SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
@@ -16,6 +20,8 @@ import {
 } from "../content";
 import { QuestionsBlock } from "../components";
 
+import ecosystemPageIntro from "../assets/images/ecosystem/ecosystem_page_intro.png";
+
 import * as styles from "../styles/pages/ecosystem.module.scss";
 
 const cx = classNames.bind(styles);
@@ -23,7 +29,27 @@ const cx = classNames.bind(styles);
 const EcosystemPage = () => {
   return (
     <Layout withPaddingTop={false}>
-      <div style={{ height: "200px" }} />
+      <GradientSpotsWrapper
+        gradients={mainPageGradients.introductoryBlock}
+        disableMainSidePaddings
+      >
+        <IntroductoryBlock
+          title={
+            <>
+              Explore Our
+              <br />
+              Ecosystem
+            </>
+          }
+          description="Safe, secure and stable transactions powered by permissionless Tagion Hashgraph and Wavefront, Proof of Community and DART distributed database."
+          img={ecosystemPageIntro}
+          classNames={{
+            imgWrapper: cx("ecosystem_img_wrapper"),
+            textWrapper: cx("ecosystem_text_wrapper"),
+            introductoryBlock: cx("ecosystem_introductory_block"),
+          }}
+        />
+      </GradientSpotsWrapper>
       <ScrollingBlock
         title="Build for the real world with confidence"
         data={buildForTheRealWorldData}

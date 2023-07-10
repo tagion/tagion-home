@@ -1,7 +1,6 @@
 @import "./../../styles/variables.scss";
 
 .scrolling_block {
-  margin-top: 80px;
   max-width: 450px;
 
   .title {
@@ -24,14 +23,9 @@
     }
   }
 
-  @media (min-width: $tablet-size) {
-    margin-top: 0;
-  }
-
   @media (min-width: $desktop-size) {
     max-width: none;
     width: 550px;
-    margin-top: 120px;
 
     .card > .main_content {
       width: 534px;
@@ -44,7 +38,6 @@
 
   @media (min-width: $desktop-large-size) {
     width: auto;
-    margin-top: 0;
 
     .title {
       margin-bottom: 96px;
