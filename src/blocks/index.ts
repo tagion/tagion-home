@@ -2,6 +2,7 @@ export * from "./buy-earn-tagions";
 export * from "./core-building";
 export * from "./explore-our-ecosystem";
 export * from "./foundation";
+export * from "./inclusive-elastic-decentralised";
 export * from "./lets-talk";
 export * from "./nature-is-our-client";
 export * from "./meet-our-contributors";

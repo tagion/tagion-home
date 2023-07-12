@@ -4,19 +4,23 @@ import { Link } from "gatsby";
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
 
 interface InputProps {
-  linkTo: string;
+  linkTo?: string;
   className?: string;
   isExternalLink?: boolean;
 }
 
 export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
-  linkTo,
+  linkTo = "",
   className = "",
   children,
   isExternalLink = false,
 }) => {
   return isExternalLink ? (
-    <a href={linkTo} target="_blank" className={className}>
+    <a
+      href={linkTo}
+      target="_blank"
+      className={`${!linkTo ? "disable-link" : ""} ${className}`}
+    >
       {children}
     </a>
   ) : (
