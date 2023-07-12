@@ -5,6 +5,7 @@ export * from "./FAQ";
 export * from "./footer-links";
 export * from "./gradient-block";
 export * from "./gradient-spots-props";
+export * from "./inclusive-elastic-decentralised";
 export * from "./navigation-links";
 export * from "./nature-is-our-client";
 export * from "./next-gen-financial-infrastrucure";

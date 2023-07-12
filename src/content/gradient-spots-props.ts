@@ -1201,3 +1201,63 @@ export const getTagionsPageGradients = {
     },
   },
 };
+
+export const EcosystemPageGradients = {
+  iElasticDecentralisedBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-large/inclusive-elastic_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "-2px",
+        bgSize: "103% 104px",
+        bgPositionX: "-2px",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-large/inclusive-elastic_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "-2px",
+        bgSize: "103% 104px",
+        bgPositionX: "-2px",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-large/inclusive-elastic_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "-2px",
+        bgSize: "103% 102px",
+        bgPositionX: "-2px",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-large/inclusive-elastic_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "-2px",
+        bgSize: "103% 102px",
+        bgPositionX: "-2px",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-large/inclusive-elastic_1440.png")
+          .default,
+
+      options: {
+        bgPositionY: "-2px",
+        bgSize: "103% 102px",
+        bgPositionX: "-2px",
+      },
+    },
+  },
+};

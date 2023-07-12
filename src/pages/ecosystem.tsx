@@ -10,6 +10,7 @@ import {
 import {
   SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
+  InclusiveElasticDecentralisedBlock,
 } from "../blocks";
 import {
   mainPageGradients,
@@ -19,6 +20,7 @@ import {
   FAQBlockData,
 } from "../content";
 import { QuestionsBlock } from "../components";
+import { Colors } from "../common/enums";
 
 import ecosystemPageIntro from "../assets/images/ecosystem/ecosystem_page_intro.png";
 
@@ -50,6 +52,10 @@ const EcosystemPage = () => {
           }}
         />
       </GradientSpotsWrapper>
+      <GradientSpotsWrapper bgColor={Colors.MAIN_DARK} disableMainSidePaddings>
+        <InclusiveElasticDecentralisedBlock />
+      </GradientSpotsWrapper>
+
       <ScrollingBlock
         title="Build for the real world with confidence"
         data={buildForTheRealWorldData}
