@@ -20,8 +20,10 @@ export const SwiperButtonsWrapper: React.FC<InputProps> = ({
   swiperInstance.on("progress", () => {
     if (swiperInstance.progress >= 1) {
       setIsNextButtonDisabled(() => true);
+      isPrevButtonDisabled && setIsPrevButtonDisabled(() => false);
     } else if (swiperInstance.progress <= 0) {
       setIsPrevButtonDisabled(() => true);
+      isNextButtonDisabled && setIsNextButtonDisabled(() => false);
     } else {
       setIsPrevButtonDisabled(() => false);
       setIsNextButtonDisabled(() => false);

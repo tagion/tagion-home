@@ -1,6 +1,8 @@
 @import "./../../styles/variables.scss";
 
 .main_introductory_block {
+  padding-bottom: 80px;
+
   .main_img_wrapper {
     margin-bottom: 39px;
 
@@ -69,6 +71,7 @@
 @media (min-width: $desktop-large-size) {
   .main_introductory_block {
     padding-right: 0;
+    padding-bottom: 138px;
 
     .main_img_wrapper {
       height: 472px;

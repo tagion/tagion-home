@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import classNames from "classnames/bind";
-import { navigate } from "gatsby";
 
-import { Button, GradientSpotsWrapper, SwiperButtons } from "../../components";
-import {
-  gradientBlockData,
-  youCanBuildWalletGradientSpotsProps,
-} from "../../content";
+import { GradientSpotsWrapper, SwiperButtons } from "../../components";
+import { gradientBlockData } from "../../content";
 import { Colors } from "../../common/enums/colors";
 
 import * as styles from "./you-can-build-a-wallet.module.scss";
 
-// import { ReactComponent as SecurityIcon } from "../../assets/images/security.svg";
 import securityIcon from "../../assets/images/security.svg";
 
 const cx = classNames.bind(styles);
@@ -19,20 +14,20 @@ const cx = classNames.bind(styles);
 export const YouCanBuildAWalletBlock: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const carouselButtons = (isWhiteColor?: boolean) => (
-    <SwiperButtons
-      isWhiteColor={isWhiteColor}
-      className={cx("carousel_buttons")}
-      prevOnClick={() =>
-        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev))
-      }
-      nextOnClick={() =>
-        setSelectedIndex((prev) =>
-          prev < gradientBlockData.length - 1 ? prev + 1 : prev
-        )
-      }
-    />
-  );
+  // const carouselButtons = (isWhiteColor?: boolean) => (
+  //   <SwiperButtons
+  //     isWhiteColor={isWhiteColor}
+  //     className={cx("carousel_buttons")}
+  //     prevOnClick={() =>
+  //       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev))
+  //     }
+  //     nextOnClick={() =>
+  //       setSelectedIndex((prev) =>
+  //         prev < gradientBlockData.length - 1 ? prev + 1 : prev
+  //       )
+  //     }
+  //   />
+  // );
 
   return (
     <div className={cx("you_can_build_a_wallet_block")}>
@@ -42,8 +37,7 @@ export const YouCanBuildAWalletBlock: React.FC = () => {
       >
         <div className={cx("content_wrapper")}>
           <div className={cx("img_wrapper")}>
-            {/* <SecurityIcon className={cx("security_icon")} /> */}
-            <img src={securityIcon} className={cx("security_icon")}/>
+            <img src={securityIcon} className={cx("security_icon")} />
           </div>
 
           <div className={cx("content")}>

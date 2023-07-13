@@ -14,7 +14,7 @@ interface InputProps {
     description: string;
     img: string;
   }>;
-  classNames?: { title: string };
+  classNames?: { wrapper?: string; title: string };
 }
 
 export const ScrollingBlock: React.FC<InputProps> = ({
@@ -23,7 +23,7 @@ export const ScrollingBlock: React.FC<InputProps> = ({
   classNames,
 }) => {
   return (
-    <div className={`${cx("scrolling_block")}`}>
+    <div className={`${cx("scrolling_block")} ${classNames?.wrapper}`}>
       <div className={`${cx("title")} title-font ${classNames?.title || ""}`}>
         {title}
       </div>

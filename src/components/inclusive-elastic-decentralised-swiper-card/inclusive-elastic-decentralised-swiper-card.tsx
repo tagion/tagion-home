@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { CustomLink, GradientSpotsWrapper } from "..";
 import { PageSizes } from "../../common/enums";
 import { useResizeEvent } from "../../hooks";
-import { EcosystemPageGradients } from "../../content";
+import { ecosystemPageGradients } from "../../content";
 
 import * as styles from "./inclusive-elastic-decentralised-swiper-card.module.scss";
 
@@ -68,7 +68,7 @@ export const InclusiveElasticDecentralisedSwiperCard: React.FC<InputProps> = ({
       <div className={cx("logo_wrapper", { withPaddings: !gradientLogo })}>
         {gradientLogo ? (
           <GradientSpotsWrapper
-            gradients={EcosystemPageGradients.iElasticDecentralisedBlock}
+            gradients={ecosystemPageGradients.iElasticDecentralisedBlock}
             disableMainSidePaddings
             className={{
               gradientWrapper: cx("gradientSpotsWrapper_gradientWrapper"),
