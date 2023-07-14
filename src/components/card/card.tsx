@@ -11,7 +11,7 @@ interface InputProps {
   title?: string | JSX.Element;
   description: string | JSX.Element;
   label?: string;
-  img?: { path: string; alt: string };
+  img?: { path: string; alt?: string };
   counter?: string;
   fixedFontSize?: { description: string };
   ImgComponent?: () => JSX.Element;
@@ -59,9 +59,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
           {title}
         </div>
         {label && (
-          <div
-            className={`${cx("label")} ${classNames?.label || ""}`}
-          >
+          <div className={`${cx("label")} ${classNames?.label || ""}`}>
             {label}
           </div>
         )}
