@@ -15,4 +15,5 @@ export * from "./secure-scalable-decentralized";
 export * from "./terms-of-use";
 export * from "./timeline";
 export * from "./value-partners";
+export * from "./value-for-contributors";
 export * from "./you-can-participate";

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ExternalLinks } from "../common/enums/external_links";
+
 import tokenIcon from "../assets/images/token.png";
 import globeIcon from "../assets/images/globe.png";
 import { ReactComponent as RocketIcon } from "../assets/images/coming-soon/rocket_icon.svg";
@@ -113,7 +115,7 @@ export const navigationLinks: Array<{
   },
   {
     name: "Blog",
-    linkTo: "https://tagion.medium.com/",
+    linkTo: ExternalLinks.MEDIUM,
     externalLink: true,
   },
 ];
