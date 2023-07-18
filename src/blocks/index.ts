@@ -8,6 +8,7 @@ export * from "./nature-is-our-client";
 export * from "./meet-our-contributors";
 export * from "./our-vision-and-mission";
 export * from "./our-values";
+export * from "./permissionless-tagion-hashgraph";
 export * from "./secure-scalable-decentralised";
 export * from "./subscribe-to-our-newsletter";
 export * from "./timeline-block";

@@ -11,6 +11,7 @@ export * from "./nature-is-our-client";
 export * from "./next-gen-financial-infrastrucure";
 export * from "./our-vision-and-mission";
 export * from "./our-values";
+export * from "./permissionless-tagion-hashgraph";
 export * from "./privacy-policy";
 export * from "./secure-scalable-decentralized";
 export * from "./terms-of-use";
