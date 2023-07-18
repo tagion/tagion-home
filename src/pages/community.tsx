@@ -1,12 +1,16 @@
 import React from "react";
 
 import { Layout } from "../templates/layout";
-import { ComingSoon } from "../components";
+// import { ComingSoon } from "../components";
+import { ValueForContributorsBlock } from "../blocks/value-for-contributors";
 
 const CommunityPage = () => {
   return (
-    <Layout withPaddingTop={false} isHeaderShownOnTop>
-      <ComingSoon />
+    <Layout withPaddingTop={false}>
+      {/* <ComingSoon /> */}
+      <div style={{ height: "120px" }} />
+      <ValueForContributorsBlock />
+      <div style={{ height: "120px" }} />
     </Layout>
   );
 };

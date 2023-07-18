@@ -1,0 +1,120 @@
+@import "./../../styles/variables.scss";
+
+.core_building_block {
+  .description {
+    margin-top: 16px;
+  }
+
+  .questions_block {
+    margin-top: 40px;
+
+    .questionBlockGenerator_questionBlock {
+      .questionBlockGenerator_questionWrapper > span {
+        margin-top: 24px;
+      }
+
+      &:first-child > .questionBlockGenerator_questionWrapper > span {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .questions_block {
+      .questions_block_title {
+        width: 410px;
+      }
+
+      .questionBlockGenerator_questionWrapper > span {
+        padding-right: 102px;
+      }
+
+      .questionBlockGenerator_list {
+        padding-right: 142px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    width: 63%;
+
+    .questions_block {
+      .questions_block_title {
+        width: 644px;
+      }
+
+      .questionBlockGenerator_questionBlock {
+        .questionBlockGenerator_list {
+          margin: 0 0 16px;
+        }
+
+        .questionBlockGenerator_questionWrapper > span {
+          margin: 24px 0 16px;
+          padding-right: 50px;
+        }
+
+        &:first-child > .questionBlockGenerator_questionWrapper > span {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    width: auto;
+
+    .description {
+      width: 707px;
+      margin-top: 24px;
+    }
+
+    .questions_block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 80px;
+
+      .questions_block_title {
+        width: 440px;
+      }
+
+      .questionBlockGenerator_mainWrapper {
+        width: 57.5%;
+
+        .questionBlockGenerator_questionBlock {
+          .questionBlockGenerator_list {
+            margin-top: 8px;
+            padding-right: 109px;
+          }
+
+          .questionBlockGenerator_questionWrapper > span {
+            margin: 40px 0 16px;
+            padding-right: 57px;
+          }
+
+          &:first-child > .questionBlockGenerator_questionWrapper > span {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .questions_block > .questionBlockGenerator_mainWrapper {
+      width: 970px;
+
+      .questionBlockGenerator_questionBlock {
+        .questionBlockGenerator_list {
+          padding-right: 142px;
+        }
+
+        .questionBlockGenerator_questionWrapper {
+          span {
+            padding-right: 90px;
+          }
+        }
+      }
+    }
+  }
+}

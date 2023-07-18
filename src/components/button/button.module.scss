@@ -60,6 +60,14 @@
       stroke: $main-dark-color;
     }
 
+    &.isWhite {
+      border: 1px solid $main-white-color;
+
+      .arrow_icon {
+        stroke: $main-white-color;
+      }
+    }
+
     &.isDisabled {
       border: 1px solid $swiper-button-disable-color;
 

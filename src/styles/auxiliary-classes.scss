@@ -10,3 +10,26 @@
 .underline {
   border-bottom: 1px solid $main-white-color;
 }
+
+.br-separator {
+  content: " ";
+  display: block;
+  height: 24px;
+}
+
+.email-interaction {
+  border-bottom: 1px solid $main-dark-color;
+  cursor: pointer;
+}
+
+.underlined-link {
+  color: $main-dark-color;
+  border-bottom: 1px solid $main-dark-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.disable-link {
+  pointer-events: none;
+  cursor: default;
+}

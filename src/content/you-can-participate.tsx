@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ExternalLinks } from "../common/enums/external_links";
+
 import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arrow_link.svg";
 
 import communityPng from "../assets/images/community.png";
@@ -32,7 +34,7 @@ export const visitTheBlog = {
   description:
     "Discover how-to's, latest news, community generated content and more",
   Img: signedPaperPng,
-  linkTo: "https://tagion.medium.com/",
+  linkTo: ExternalLinks.MEDIUM,
   externalLink: true,
 };
 
