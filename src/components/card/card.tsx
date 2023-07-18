@@ -12,6 +12,7 @@ interface InputProps {
   description: string | JSX.Element;
   label?: string;
   img?: { path: string; alt?: string };
+  videoSrc?: string;
   counter?: string;
   fixedFontSize?: { description: string };
   ImgComponent?: () => JSX.Element;
@@ -23,6 +24,7 @@ interface InputProps {
     description?: string;
     label?: string;
     img?: string;
+    videoWrapper?: string;
   };
 }
 
@@ -31,6 +33,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   description,
   label,
   img,
+  videoSrc,
   counter,
   fixedFontSize,
   ImgComponent,
@@ -45,6 +48,22 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
         </div>
       )}
 
+      {videoSrc && (
+        <div
+          className={`${cx("video_wrapper")} ${classNames?.videoWrapper || ""}`}
+        >
+          <video
+            autoPlay
+            loop
+            playsInline
+            muted
+            disableRemotePlayback={true}
+            disablePictureInPicture={true}
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </div>
+      )}
       <div className={`${cx("main_content")} ${classNames?.mainContent || ""}`}>
         {counter && (
           <div className={`font-16 ${classNames?.counter || ""}`}>

@@ -19,6 +19,8 @@ export * from "./introductory-block";
 export * from "./inclusive-elastic-decentralised-swiper";
 export * from "./inclusive-elastic-decentralised-swiper-card";
 export * from "./page-not-found";
+export * from "./permissionless-tagion-hashgraph-card";
+export * from "./permissionless-tagion-hashgraph-swiper";
 export * from "./side-menu";
 export * from "./submit-request-modal";
 export * from "./scrolling-block";

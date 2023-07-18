@@ -11,6 +11,7 @@ import {
   SubscribeToOurNewsletterBlock,
   YouCanParticipateBlock,
   InclusiveElasticDecentralisedBlock,
+  PermissionlessTagionHashgraphBlock,
 } from "../blocks";
 import {
   youCanParticipateBlockData,
@@ -83,6 +84,7 @@ const EcosystemPage = () => {
         className={{ bgWrapper: "main-top-margins" }}
       >
         <InclusiveElasticDecentralisedBlock />
+        <PermissionlessTagionHashgraphBlock />
       </GradientSpotsWrapper>
 
       <div
