@@ -1,0 +1,100 @@
+@import "./../../styles/variables.scss";
+
+.inclusive_elastic_decentralised_swiper_card {
+  width: 204px;
+  border-radius: $card-border-radius;
+  border: 1px solid $contributor-img-bg-color;
+  overflow: hidden;
+
+  .logo_wrapper {
+    display: flex;
+    align-items: center;
+    height: 98px;
+    border-bottom: 1px solid $contributor-img-bg-color;
+
+    &.withPaddings {
+      padding: 0 24px;
+    }
+
+    .gradientSpotsWrapper_gradientWrapper > div {
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    svg {
+      fill: $main-white-color;
+    }
+  }
+
+  .data_wrapper {
+    padding: 24px;
+
+    .data {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      .title {
+        line-height: 24px;
+        margin-bottom: 4px;
+        color: $main-gray-text-color;
+      }
+
+      .value {
+        position: relative;
+        display: block;
+        width: fit-content;
+        color: $main-white-color;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        text-decoration: none;
+
+        .arrow_link {
+          display: none;
+          width: 11px;
+          position: absolute;
+          right: -19px;
+          top: 0;
+
+          path {
+            stroke: $main-white-color;
+          }
+        }
+
+        &:hover {
+          border-bottom: 2px solid $main-white-color;
+
+          .arrow_link {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .logo_wrapper {
+      height: 100px;
+
+      &.withPaddings,
+      .gradientSpotsWrapper_gradientWrapper > div {
+        padding: 0 40px;
+      }
+    }
+
+    .data_wrapper {
+      padding: 40px;
+
+      .data {
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    width: 402px;
+  }
+}

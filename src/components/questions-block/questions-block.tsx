@@ -31,7 +31,7 @@ export const QuestionsBlock: React.FC<InputProps> = ({
 }) => {
   return (
     <div
-      className={`${cx("questions_block")} main-top-margins ${
+      className={`${cx("questions_block")} main-top-margins main-lateral-margins ${
         classNames?.questionsBlock
       }`}
     >

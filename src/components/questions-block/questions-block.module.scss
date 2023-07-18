@@ -1,6 +1,9 @@
 @import "./../../styles/variables.scss";
 
 .questions_block {
+  position: relative;
+  z-index: 99;
+
   .description {
     margin-top: 16px;
   }
