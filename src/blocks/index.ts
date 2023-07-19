@@ -1,5 +1,6 @@
 export * from "./buy-earn-tagions";
 export * from "./core-building";
+export * from "./ecosystem-visualization";
 export * from "./explore-our-ecosystem";
 export * from "./foundation";
 export * from "./inclusive-elastic-decentralised";

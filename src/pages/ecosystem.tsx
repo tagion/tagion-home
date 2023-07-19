@@ -12,6 +12,7 @@ import {
   YouCanParticipateBlock,
   InclusiveElasticDecentralisedBlock,
   PermissionlessTagionHashgraphBlock,
+  EcosystemVisualizationBlock,
 } from "../blocks";
 import {
   youCanParticipateBlockData,
@@ -77,12 +78,13 @@ const EcosystemPage = () => {
           }}
         />
       </GradientSpotsWrapper>
-
       <GradientSpotsWrapper
-        bgColor={Colors.MAIN_DARK}
-        disableMainSidePaddings
-        className={{ bgWrapper: "main-top-margins" }}
+        gradients={ecosystemPageGradients.ecosystemVisualizationBlock}
       >
+        <EcosystemVisualizationBlock />
+      </GradientSpotsWrapper>
+
+      <GradientSpotsWrapper bgColor={Colors.MAIN_DARK} disableMainSidePaddings>
         <InclusiveElasticDecentralisedBlock />
         <PermissionlessTagionHashgraphBlock />
       </GradientSpotsWrapper>

@@ -710,4 +710,55 @@ export const ecosystemPageGradients = {
       options: { bgPositionY: "526px", bgSize: "100% 80%" },
     },
   },
+
+  ecosystemVisualizationBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-max/ecosystem_visualization_1920.png")
+          .default,
+
+      options: {
+        bgPosition: "bottom -1400px right 0",
+        bgSize: "100% 2500px",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/desktop-max/ecosystem_visualization_1920.png")
+          .default,
+
+      options: {
+        bgPosition: "bottom -680px right 0",
+        bgSize: "1500px 1400px",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/about-page/desktop/value_partners_1024.png")
+          .default,
+
+      options: {
+        bgPosition: "bottom -620px right 0",
+        bgSize: "1000px 1200px",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/ecosystem/tablet/ecosystem_visualization_600.png")
+          .default,
+      options: {
+        bgPosition: "bottom -600px left 0",
+        bgSize: "100% 1000px",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/about-page/mobile/value_partners_280.png")
+          .default,
+      options: {
+        bgPosition: "bottom -470px left 0",
+        bgSize: "100% 800px",
+      },
+    },
+  },
 };

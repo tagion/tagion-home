@@ -1,5 +1,7 @@
 @import "./../../styles/variables.scss";
 
+$disabled_carousel_width: 911px;
+
 .inclusive_elastic_decentralised_swiper {
   padding: 80px 0;
 
@@ -51,7 +53,7 @@
     }
   }
 
-  @media (min-width: 920px) {
+  @media (min-width: $disabled_carousel_width) {
     .content {
       .desktop_cards {
         display: flex;
