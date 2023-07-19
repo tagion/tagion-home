@@ -10,7 +10,12 @@ const cx = classNames.bind(styles);
 
 type IGradientResolution = {
   img: (value?: boolean) => string;
-  options?: { bgSize?: string; bgPositionY?: string; bgPositionX?: string };
+  options?: {
+    bgSize?: string;
+    bgPositionY?: string;
+    bgPositionX?: string;
+    bgPosition?: string;
+  };
 };
 
 interface InputProps {
@@ -96,6 +101,8 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
         background: `no-repeat ${gradientOptions?.bgPositionX || "0%"} ${
           gradientOptions?.bgPositionY || "top"
         } / ${gradientOptions?.bgSize || "100% 100%"} url(${gradientImg})`,
+        [gradientOptions?.bgPosition ? "backgroundPosition" : ""]:
+          gradientOptions?.bgPosition,
       }}
     >
       <div className={cx("children_wrapper")}>{children}</div>
