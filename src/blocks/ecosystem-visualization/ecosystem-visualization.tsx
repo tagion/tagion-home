@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
 import { ecosystemVisualizationBlockData } from "../../content";
@@ -13,6 +13,49 @@ const cx = classNames.bind(styles);
 export const EcosystemVisualizationBlock: React.FC = () => {
   const [pageSize, setPageSize] = useState("");
   const [hoveredImgIndex, setHoveredImgIndex] = useState(-1);
+  const [popupScrollData, setPopupScrollData] = useState({
+    scrollPosition: 0,
+    isFixed: false,
+    isTopAbsolutePosition: false,
+  });
+
+  const scrollHandler = () => {
+    const cardsContainerElement = document.getElementById("cards_container");
+
+    if (cardsContainerElement) {
+      const { height, top } = cardsContainerElement.getBoundingClientRect();
+
+      setPopupScrollData((popupScrollData) => {
+        const isScrollToTop =
+          popupScrollData.scrollPosition - window.scrollY > 0;
+        const popupElement = document.getElementById("popup");
+        const topPadding = (popupElement?.offsetHeight || 0) + 30;
+        const cardsContainerPositionAccordingToBottomOfPage =
+          window.innerHeight - (height + top);
+
+        return {
+          scrollPosition: window.scrollY,
+          isFixed:
+            isScrollToTop && cardsContainerPositionAccordingToBottomOfPage < 0
+              ? Math.abs(cardsContainerPositionAccordingToBottomOfPage) +
+                  topPadding <
+                height
+              : cardsContainerPositionAccordingToBottomOfPage - 180 < 0 &&
+                Math.abs(cardsContainerPositionAccordingToBottomOfPage) <
+                  height - topPadding,
+          isTopAbsolutePosition:
+            cardsContainerPositionAccordingToBottomOfPage + height < topPadding,
+        };
+      });
+    }
+  };
+
+  useEffect(() => {
+    scrollHandler();
+    window.addEventListener("scroll", function () {
+      scrollHandler();
+    });
+  }, []);
 
   useResizeEvent({
     resizeHandler: () => {
@@ -25,13 +68,18 @@ export const EcosystemVisualizationBlock: React.FC = () => {
       if (window.innerWidth >= PageSizes.DESKTOP_MAX) {
         setPageSize("DESKTOP_MAX");
       }
+      setHoveredImgIndex(-1);
     },
   });
 
   const hoveredImgData = ecosystemVisualizationBlockData[hoveredImgIndex];
 
   return (
-    <div className={`${cx("ecosystem_visualization_block")} main-top-margins main-bottom-margins`}>
+    <div
+      className={`${cx(
+        "ecosystem_visualization_block"
+      )} main-top-margins main-bottom-margins`}
+    >
       <div className={`${cx("title")} title-font`}>Ecosystem visualization</div>
       <div className={`${cx("description")} body-font`}>
         Tagion Ecosystem is a living organism. It evolves with your
@@ -57,7 +105,10 @@ export const EcosystemVisualizationBlock: React.FC = () => {
           )}
       </div>
 
-      <div className={`${cx("desktop_large_cards_container")}`}>
+      <div
+        className={`${cx("desktop_large_cards_container")}`}
+        id="cards_container"
+      >
         {ecosystemVisualizationBlockData.length &&
           ecosystemVisualizationBlockData.map(
             ({ img, title, imgPositions, width }, i) => {
@@ -89,6 +140,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                   }}
                   onMouseOver={() => setHoveredImgIndex(i)}
                   onMouseLeave={() => setHoveredImgIndex(-1)}
+                  key={i}
                 />
               );
             }
@@ -99,8 +151,13 @@ export const EcosystemVisualizationBlock: React.FC = () => {
         <div
           className={cx("popup", {
             isVisible: hoveredImgIndex >= 0,
-            rightSide: hoveredImgIndex === 2,
+            absoluteRightSide: hoveredImgIndex === 2,
+            fixedRightSide: hoveredImgIndex === 2 && popupScrollData.isFixed,
+            isFixed: popupScrollData.isFixed,
+            isTopAbsolutePosition:
+              popupScrollData.isTopAbsolutePosition && !popupScrollData.isFixed,
           })}
+          id="popup"
         >
           <div className={`${cx("popup_title")} prompt-regular prompt-36`}>
             {hoveredImgData.title}

@@ -98,24 +98,39 @@
 
     .popup {
       display: none;
-      position: fixed;
-      bottom: 80px;
-      left: 80px;
+      position: absolute;
+      bottom: -140px;
+      left: -40px;
 
-      width: 750px;
+      width: 628px;
       padding: 32px;
       background-color: $main_white_color;
       border-radius: 16px;
       border: 1px solid $main_dark_color;
       pointer-events: none;
 
+      &.isFixed {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+      }
+
       &.isVisible {
         display: block;
       }
 
-      &.rightSide {
+      &.absoluteRightSide {
         left: auto;
-        right: 80px;
+        right: -40px;
+      }
+
+      &.fixedRightSide {
+        right: 40px;
+      }
+
+      &.isTopAbsolutePosition {
+        bottom: auto;
+        top: 200px;
       }
 
       .popup_title {
@@ -136,12 +151,23 @@
     }
 
     .popup {
-      bottom: 120px;
-      left: 120px;
+      bottom: -120px;
+      left: -60px;
       width: 828px;
 
-      &.rightSide {
-        right: 120px;
+      &.isFixed {
+        left: calc(((100vw - $desktop-max-size) / 2) + 60px);
+        bottom: 60px;
+      }
+
+      &.absoluteRightSide {
+        left: auto;
+        right: -60px;
+      }
+
+      &.fixedRightSide {
+        left: auto;
+        right: calc(((100vw - $desktop-max-size) / 2) + 60px);
       }
 
       .popup_description {
