@@ -20,7 +20,7 @@ export const coreBuildingBlockData = [
       {
         valueName: "Unique Node Swapping Mechanism for a Permissionless System",
         bulletedList: [
-          "Tagion introduces a unique concept to make the Hashgraph-based system permissionless, where nodes can be randomly swapped in and out. Nodes are swapped in with weights based on their reputational score (see Proof of Community) and their score as node operators, reducing the risk of Sybil attacks, A protocol exists for becoming a node, and new node operators must earn sufficient scores to be swapped in.",
+          "Tagion introduces a unique concept to make the Hashgraph-based system permissionless, where nodes can be randomly swapped in and out. Nodes are swapped in with weights based on their reputational score (see Proof of Community) and their score as node operators, reducing the risk of Sybil attacks. A protocol exists for becoming a node, and new node operators must earn sufficient scores to be swapped in.",
         ],
       },
     ],
