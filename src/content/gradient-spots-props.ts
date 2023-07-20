@@ -762,3 +762,51 @@ export const ecosystemPageGradients = {
     },
   },
 };
+
+export const communityPageGradients = {
+  introductoryBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-max/introductory_block_1920.png")
+          .default,
+
+      options: {
+        bgSize: "100% 80%",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop-large/introductory_block_1440.png")
+          .default,
+      options: {
+        bgSize: "100% 80%",
+      },
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/main-page/desktop/introductory_block_1024.png")
+          .default,
+
+      options: {
+        bgSize: "90% 100%",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/main-page/tablet/introductory_block_600.png")
+          .default,
+
+      options: {
+        bgSize: "100% 100%",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/main-page/mobile/introductory_block_280.png")
+          .default,
+      options: {
+        bgSize: "100% 100%",
+      },
+    },
+  },
+};
