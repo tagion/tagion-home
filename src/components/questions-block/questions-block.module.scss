@@ -24,6 +24,8 @@
 
   @media (min-width: $tablet-size) {
     .question_container {
+      -webkit-text-size-adjust: 100%;
+
       .question_container_title {
         width: 410px;
       }
