@@ -1,0 +1,140 @@
+@import "./../../styles/variables.scss";
+
+.questions_block {
+  position: relative;
+  z-index: 99;
+
+  .description {
+    margin-top: 16px;
+  }
+
+  .question_container {
+    margin-top: 40px;
+  }
+
+  @media (min-width: $tablet-size) {
+    .question_container {
+      -webkit-text-size-adjust: 100%;
+
+      .question_container_title {
+        width: 410px;
+      }
+
+      .questionBlockGenerator_list {
+        padding-right: 142px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    width: 63%;
+
+    .question_container {
+      .question_container_title {
+        width: 644px;
+      }
+
+      .questionBlockGenerator_questionBlock {
+        .questionBlockGenerator_list {
+          margin: 0 0 16px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    width: auto;
+
+    .description {
+      width: 707px;
+      margin-top: 24px;
+    }
+
+    .question_container {
+      display: flex;
+      justify-content: space-between;
+
+      &.isColumn {
+        flex-direction: column;
+        margin-top: 48px;
+
+        .question_container_title {
+          width: auto;
+          margin: 0 0 8px;
+          align-self: flex-end;
+        }
+
+        .questionBlockGenerator_mainWrapper {
+          width: 100%;
+
+          .questionBlockGenerator_questionBlock {
+            .questionBlockGenerator_list {
+              padding-right: 267px;
+            }
+          }
+        }
+      }
+
+      &.isRow {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        .question_container_title {
+          margin-top: 40px;
+        }
+
+        .questionBlockGenerator_mainWrapper {
+          .questionBlockGenerator_questionBlock {
+            .questionBlockGenerator_list {
+              padding-right: 109px;
+            }
+          }
+        }
+      }
+
+      .question_container_title {
+        width: 440px;
+        margin-top: 40px;
+      }
+
+      .questionBlockGenerator_mainWrapper {
+        width: 57.5%;
+
+        .questionBlockGenerator_questionBlock {
+          .questionBlockGenerator_list {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .question_container {
+      &.isColumn {
+        .questionBlockGenerator_mainWrapper {
+          .questionBlockGenerator_questionBlock {
+            .questionBlockGenerator_list {
+              padding-right: 588px;
+            }
+          }
+        }
+      }
+
+      &.isRow {
+        .questionBlockGenerator_mainWrapper {
+          .questionBlockGenerator_questionBlock {
+            .questionBlockGenerator_list {
+              padding-right: 142px;
+            }
+          }
+        }
+      }
+
+      .questionBlockGenerator_mainWrapper {
+        width: 970px;
+      }
+    }
+  }
+}

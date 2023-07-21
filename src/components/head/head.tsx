@@ -6,6 +6,7 @@ const pageTitles = [
   { path: "/about/", title: "Tagion | About" },
   { path: "/blog/", title: "Tagion | Blog" },
   { path: "/community/", title: "Tagion | Community" },
+  { path: "/ecosystem/", title: "Tagion | Ecosystem" },
   // { path: "/docs/", title: "Docs" },
   { path: "/privacy-policy/", title: "Tagion | Privacy Policy" },
   { path: "/terms-of-use/", title: "Tagion | Terms of use" },

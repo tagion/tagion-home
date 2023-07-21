@@ -7,8 +7,8 @@ const cx = classNames.bind(styles);
 
 interface InputProps {
   gifAnimation?: string;
-  title: string;
-  description: string;
+  title: string | React.ReactElement;
+  description: string | React.ReactElement;
   img: string;
   classNames?: {
     imgWrapper?: string;

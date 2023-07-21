@@ -1,6 +1,8 @@
 @import "./../../styles/variables.scss";
 
 .main_introductory_block {
+  padding-bottom: 80px;
+
   .main_img_wrapper {
     margin-bottom: 39px;
 
@@ -15,6 +17,10 @@
       width: 240px;
     }
   }
+}
+
+.scrollingBlock_title {
+  max-width: 406px;
 }
 
 // 600
@@ -55,12 +61,17 @@
       width: 534px;
     }
   }
+
+  .scrollingBlock_title {
+    max-width: none;
+  }
 }
 
 // 1440
 @media (min-width: $desktop-large-size) {
   .main_introductory_block {
     padding-right: 0;
+    padding-bottom: 138px;
 
     .main_img_wrapper {
       height: 472px;
@@ -86,6 +97,10 @@
         width: 514px;
       }
     }
+  }
+
+  .scrollingBlock_title {
+    width: 954px;
   }
 }
 

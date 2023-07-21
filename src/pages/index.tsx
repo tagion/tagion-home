@@ -2,16 +2,23 @@ import React from "react";
 import classNames from "classnames/bind";
 
 import { Layout } from "../templates/layout";
-import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
-  FinancialInfrastrucureNextGenBlock,
+  GradientSpotsWrapper,
+  IntroductoryBlock,
+  ScrollingBlock,
+} from "../components";
+import {
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
   YouCanParticipateBlock,
   LetsTalkBlock,
 } from "../blocks";
-import { mainPageGradients, youCanParticipateBlockData } from "../content";
+import {
+  mainPageGradients,
+  nextGennFinancialInfrastrucureData,
+  youCanParticipateBlockData,
+} from "../content";
 
 import pointAnimation from "../assets/videos/point-animation.gif";
 import mainPageIntro from "../assets/images/main-page-intro.png";
@@ -42,7 +49,11 @@ const IndexPage = () => {
           }}
         />
       </GradientSpotsWrapper>
-      <FinancialInfrastrucureNextGenBlock />
+      <ScrollingBlock
+        title="Next generation financial infrastructure"
+        data={nextGennFinancialInfrastrucureData}
+        classNames={{ title: cx("scrollingBlock_title") }}
+      />
 
       <GradientSpotsWrapper
         disableMainSidePaddings={true}

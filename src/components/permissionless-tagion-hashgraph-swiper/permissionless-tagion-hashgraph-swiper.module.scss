@@ -1,0 +1,55 @@
+@import "./../../styles/variables.scss";
+
+.tagion_hashgrap_swiper_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 80px;
+
+  .desktop_card {
+    display: none;
+  }
+
+  .swiper_buttons {
+    margin-top: 32px;
+  }
+
+  .mobile_card {
+    [class~="swiper-wrapper"] > div {
+      height: auto;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .swiper_buttons {
+      margin-top: 40px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .desktop_card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 80px;
+
+      & > :not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    .mobile_card,
+    .swiper_buttons {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding-bottom: 180px;
+
+    .desktop_card {
+      padding: 0;
+      align-items: center;
+    }
+  }
+}

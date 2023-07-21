@@ -1,24 +1,35 @@
 import React from "react";
 import classNames from "classnames/bind";
 
-import { nextGennFinancialInfrastrucureData } from "../../content";
-import { Card } from "../../components";
+import { Card } from "..";
 
-import * as styles from "./financial-infrastrucure-next-gen.module.scss";
+import * as styles from "./scrolling-block.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const FinancialInfrastrucureNextGenBlock: React.FC = () => {
+interface InputProps {
+  title: string | React.ReactElement;
+  data: Array<{
+    title: string;
+    description: string;
+    img: string;
+  }>;
+  classNames?: { wrapper?: string; title: string };
+}
+
+export const ScrollingBlock: React.FC<InputProps> = ({
+  title,
+  data,
+  classNames,
+}) => {
   return (
-    <div className={`${cx("financial_infrastrucure_next_gen")}`}>
-      <div className={`${cx("title")} title-font`} onClick={() => focus()}>
-        Next generation
-        <br />
-        financial infrastructure
+    <div className={`${cx("scrolling_block")} ${classNames?.wrapper}`}>
+      <div className={`${cx("title")} title-font ${classNames?.title || ""}`}>
+        {title}
       </div>
       <div className={cx("blocks")}>
-        {nextGennFinancialInfrastrucureData &&
-          nextGennFinancialInfrastrucureData.map((item, i) => (
+        {data &&
+          data.map((item, i) => (
             <Card
               key={i}
               title={item.title}
