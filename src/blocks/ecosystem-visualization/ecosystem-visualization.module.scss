@@ -156,7 +156,7 @@
       width: 828px;
 
       &.isFixed {
-        left: calc(((100vw - $desktop-max-size) / 2) + 60px);
+        left: calc(((100% - $desktop-max-size) / 2) + 60px);
         bottom: 60px;
       }
 
@@ -167,7 +167,7 @@
 
       &.fixedRightSide {
         left: auto;
-        right: calc(((100vw - $desktop-max-size) / 2) + 60px);
+        right: calc(((100% - $desktop-max-size) / 2) + 60px);
       }
 
       .popup_description {
