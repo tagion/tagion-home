@@ -809,4 +809,51 @@ export const communityPageGradients = {
       },
     },
   },
+  tweetsAboutTagionBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/community-page/desktop-max/tweets_about_tagion_1920.png")
+          .default,
+
+      options: {
+        bgSize: "100% 110%",
+        bgPositionY: "bottom",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/community-page/desktop-large/tweets_about_tagion_1440.png")
+          .default,
+      options: {},
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/community-page/desktop/tweets_about_tagion_1024.png")
+          .default,
+
+      options: {
+        bgSize: "100% 105%",
+        bgPositionY: "bottom",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/community-page/tablet/tweets_about_tagion_600.png")
+          .default,
+
+      options: {
+        bgSize: "100% 120%",
+        bgPositionY: "bottom",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/community-page/mobile/tweets_about_tagion_280.png")
+          .default,
+      options: {
+        bgSize: "100% 130%",
+        bgPositionY: "bottom",
+      },
+    },
+  },
 };

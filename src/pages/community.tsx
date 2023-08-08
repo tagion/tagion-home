@@ -6,6 +6,7 @@ import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
   LetsTalkBlock,
   SubscribeToOurNewsletterBlock,
+  TweetsAboutTagionBlock,
   ValueForContributorsBlock,
 } from "../blocks";
 import { communityPageGradients, mainPageGradients } from "../content";
@@ -56,6 +57,12 @@ const CommunityPage = () => {
         />
       </GradientSpotsWrapper>
       <ValueForContributorsBlock />
+      <GradientSpotsWrapper
+        gradients={communityPageGradients.tweetsAboutTagionBlock}
+        disableMainSidePaddings
+      >
+        <TweetsAboutTagionBlock />
+      </GradientSpotsWrapper>
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}
       >

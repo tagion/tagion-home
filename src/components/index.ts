@@ -28,6 +28,8 @@ export * from "./socials-links";
 export * from "./swiper-buttons";
 export * from "./swiper-buttons-wrapper";
 export * from "./tagion-monitor-info";
+export * from "./tweets-swiper";
+export * from "./tweets-swiper-card";
 export * from "./timeline";
 export * from "./toastify";
 export * from "./questions-block";

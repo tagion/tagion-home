@@ -1,6 +1,6 @@
 @import "./../../styles/variables.scss";
 
-.contributor_swiper_block {
+.tweets_swiper_block {
   .title_wrapper {
     margin: 0 16px 40px;
   }
@@ -40,12 +40,8 @@
     }
 
     .content {
-      width: 1703px;
+      width: 1704px;
       margin: 0 auto;
-
-      & > div {
-        margin-left: 16px;
-      }
     }
   }
 }
