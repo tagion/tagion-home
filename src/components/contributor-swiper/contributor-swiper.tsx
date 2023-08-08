@@ -27,7 +27,7 @@ export const ContributorSwiper: React.FC<InputProps> = ({
   return (
     <div
       className={`${cx(
-        "company_swiper_block"
+        "contributor_swiper_block"
       )} main-top-margins disable-lateral-margins`}
     >
       <div className={`${cx("title_wrapper")} ${classNames?.title} title-font`}>

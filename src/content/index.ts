@@ -17,6 +17,7 @@ export * from "./privacy-policy";
 export * from "./secure-scalable-decentralized";
 export * from "./terms-of-use";
 export * from "./timeline";
+export * from "./tweets";
 export * from "./value-partners";
 export * from "./value-for-contributors";
 export * from "./you-can-participate";

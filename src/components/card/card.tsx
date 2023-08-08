@@ -70,13 +70,15 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
             {counter}
           </div>
         )}
-        <div
-          className={`${cx("title")} subtitle-font-28-50 ${
-            classNames?.title || ""
-          }`}
-        >
-          {title}
-        </div>
+        {title && (
+          <div
+            className={`${cx("title")} subtitle-font-28-50 ${
+              classNames?.title || ""
+            }`}
+          >
+            {title}
+          </div>
+        )}
         {label && (
           <div className={`${cx("label")} ${classNames?.label || ""}`}>
             {label}

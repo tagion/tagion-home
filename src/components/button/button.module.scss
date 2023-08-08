@@ -66,6 +66,14 @@
       .arrow_icon {
         stroke: $main-white-color;
       }
+
+      &.isDisabled {
+        border: 1px solid $swiper-button-disable-white-color;
+
+        .arrow_icon {
+          stroke: $swiper-button-disable-white-color;
+        }
+      }
     }
 
     &.isDisabled {

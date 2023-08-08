@@ -15,6 +15,8 @@ $header-content-width: 100%;
 $header-content-height: 100%;
 
 $card-border-radius: 16px;
+$tweet_border-radius: 12px;
+$card_small_border-radius: 8px;
 $scrollbar-border-radius: 5px;
 $toastify-desktop-border-radius: 16px;
 $toastify-mobile-radius: 16px;
@@ -36,6 +38,7 @@ $body-text-color: #3e3e3e;
 $footer-copyright-text-color: rgba(255, 255, 255, 0.5);
 $secure_decentralised_block-border-color: #000000;
 $swiper-button-disable-color: #888889;
+$swiper-button-disable-white-color: rgba(255, 255, 255, 0.5);
 
 $timeline-status-gray-color: rgba(14, 14, 14, 0.1);
 $timeline-status-green-color: #55ffa6;
