@@ -38,6 +38,7 @@ export const ecosystemVisualizationBlockData = [
       desktop_large: { top: "0", right: "0", left: "0", margin: "0 auto" },
       desktop_max: { top: "0", right: "0", left: "0", margin: "0 auto" },
     },
+    style: { borderRadius: "70px" },
   },
   {
     title: "Build the future",
@@ -55,9 +56,9 @@ export const ecosystemVisualizationBlockData = [
     },
   },
   {
-    title: "DEX",
+    title: "Tagion Decentralised Exchange Protocol",
     description:
-      "Exchange digital assets seamlessly, while maintaining regulatory compliance. Tagion Decentralised Exchange (DEX) - our non-custodial distributed order book marketplace – will enable real price discovery and transparency and create the best use of liquidity and pricing.",
+      "Exchange digital assets seamlessly. Tagion Decentralised Exchange Protocol will enable real price discovery and transparency to create the best use of liquidity and pricing.",
     img: DEX,
     videoSrc: "/videos/DEX.mp4",
     videoPositions: {
