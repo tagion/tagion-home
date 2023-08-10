@@ -12,11 +12,12 @@ export const ecosystemVisualizationBlockData = [
   {
     title: "Connect with currencies",
     description:
-      "Tagion offers low energy consumption, low time to finality and high transaction volume simultaneously without compromising on decentralisation, scalability and security. Interoperability with other currencies, both fiat and crypto, thanks to our DEX provides endless opportunities for seamless trading.",
+      "Tagion offers fast, efficient transactions without compromising decentralisation or security. Our DEX will ensure seamless trading with various currencies, both crypto and fiat.",
     img: connectWithCurrencies,
-    imgPositions: {
-      desktop_large: { top: "302px", right: "0" },
-      desktop_max: { top: "384px", right: "0" },
+    videoSrc: "/videos/connect_with_currencies.mp4",
+    videoPositions: {
+      desktop_large: { top: "302px", right: "25px" },
+      desktop_max: { top: "384px", right: "50px" },
     },
     width: {
       desktop_large: "506px",
@@ -26,13 +27,14 @@ export const ecosystemVisualizationBlockData = [
   {
     title: "Participate in a fair economy",
     description:
-      "Everyone, anywhere can transfer, borrow, lend money, grow your portfolio, fund your ideas, settle payments, buy insurance, invest in the future. Tagion is a Common Good, as we believe money and the financial system should serve all actors` interests equally, so no single actor can exploit the system to their advantage.",
+      "Picture this: easy money transfers, borrowing, lending, investing, and more with Tagion. We're all about fairness - no one can take unfair advantage because the network is built to include, rather than exclude and exploit.",
     img: participateInFairEconomy,
+    videoSrc: "/videos/participate_in_fair_economy.mp4",
     width: {
       desktop_large: "506px",
       desktop_max: "644px",
     },
-    imgPositions: {
+    videoPositions: {
       desktop_large: { top: "0", right: "0", left: "0", margin: "0 auto" },
       desktop_max: { top: "0", right: "0", left: "0", margin: "0 auto" },
     },
@@ -40,93 +42,96 @@ export const ecosystemVisualizationBlockData = [
   {
     title: "Build the future",
     description:
-      "The ability to create own governance rules in customised sub-ecosystems creates endless opportunities for building use cases in different industries, ranging from supply chain to arts, from nature conservation to banking, from healthcare to audit.",
+      "Shape the future by designing your own rules in custom ecosystems and applications. Explore limitless possibilities across industries like supply chain, arts, nature conservation, banking, healthcare, and audit.",
     img: buildTheFuture,
+    videoSrc: "/videos/build_the_future.mp4",
     width: {
       desktop_large: "506px",
       desktop_max: "644px",
     },
-    imgPositions: {
-      desktop_large: { top: "302px", left: "0" },
-      desktop_max: { top: "384px", left: "0" },
+    videoPositions: {
+      desktop_large: { top: "302px", left: "25px" },
+      desktop_max: { top: "384px", left: "50px" },
     },
   },
   {
     title: "DEX",
     description:
-      "Tagion Decentralised Exchange (DEX) - our non-custodial distributed order book marketplace – will enable real price discovery and transparency and create the best use of liquidity and pricing. It enables seamless exchange of digital assets, while maintaining regulatory compliance.",
+      "Exchange digital assets seamlessly, while maintaining regulatory compliance. Tagion Decentralised Exchange (DEX) - our non-custodial distributed order book marketplace – will enable real price discovery and transparency and create the best use of liquidity and pricing.",
     img: DEX,
-    imgPositions: {
-      desktop_large: { top: "317px", right: "0", left: "0", margin: "0 auto" },
-      desktop_max: { top: "408px", right: "0", left: "0", margin: "0 auto" },
+    videoSrc: "/videos/DEX.mp4",
+    videoPositions: {
+      desktop_large: { top: "340px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { top: "438px", right: "0", left: "0", margin: "0 auto" },
     },
     width: {
       desktop_large: "290px",
-      desktop_max: "369px",
+      desktop_max: "380px",
     },
   },
   {
     title: "Proof of Community",
     description:
-      "Tagion empowers community ownership and governance, allowing members to shape development, decision-making, and resource management. Through the Proof of Community model, reputation-weighted voting and rewards are earned, ensuring fairness. A self-sustainable revenue model enables users to pay for system utilisation while contributors are compensated for their work. This inclusive approach involves node operators, core members, developers, and ambassadors, fostering engagement and education.",
+      "As a node operator, core contributor, developer or ambassador, you can take part in network governance and shape the network’s development. Based on reputation-weighted voting and rewards earned, Tagion’s governance model ensures fairness and empowers community ownership.",
     img: proofOfCommunity,
+    videoSrc: "/videos/proof_of_community.mp4",
     width: {
       desktop_large: "506px",
       desktop_max: "644px",
     },
-    imgPositions: {
+    videoPositions: {
       desktop_large: {
-        bottom: "701px",
+        bottom: "708px",
         right: "0",
         left: "0",
         margin: "0 auto",
       },
-      desktop_max: { bottom: "896px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { bottom: "904px", right: "0", left: "0", margin: "0 auto" },
     },
   },
   {
     title: "Node Swapping",
     description:
-      "Tagion introduces a permissionless system for Hashgraph, allowing random node swapping based on reputational scores and operator performance. Node Swapping reduces the risk of Sybil attacks. and enables the network to be decentralised. See Proof of Community for more information on how to become a node.",
+      "Active nodes, carrying out validation tasks, are periodically and randomly rotated with passive ones, reducing the risk of Sybil attacks and enabling network decentralisation. This is a novel feature innovating Hashgraph technology.",
     img: nodeSwapping,
+    videoSrc: "/videos/node_swapping.mp4",
     width: {
       desktop_large: "506px",
       desktop_max: "644px",
     },
-    imgPositions: {
+    videoPositions: {
       desktop_large: {
-        bottom: "413px",
+        bottom: "422px",
         right: "0",
         left: "0",
         margin: "0 auto",
       },
-      desktop_max: { bottom: "528px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { bottom: "538px", right: "0", left: "0", margin: "0 auto" },
     },
   },
   {
     title: "DART Distributed Database and Hashgraph Consensus Mechanism",
     description: (
       <>
-        DART offers distributed and scalable storage for applications, ensuring
-        data integrity and back up. You can create customised solutions with
-        sub-DARTs with specific case-based rules and integrated trading
-        capabilities. The DART can handle large amounts of data efficiently as
-        the databases are distributed across nodes, optimising the network
-        capacity.
+        Ensure your data integrity and back up with distributed and scalable
+        storage. The DART can handle large amounts of data efficiently as the
+        databases are distributed across nodes, optimising the network capacity.
+        You can create customised solutions with sub-DARTs with specific
+        case-based rules and integrated trading capabilities.
         <br className="br-separator" /> Hashgraph is a revolutionary technology
-        that ensures agreement across nodes, offering a secure and reliable
-        distrbuted ledger. Unlike traditional blockchains, which rely on
-        probability, Hashgraph consensus is deterministic. There is always an
-        definitive order of events, so there is greater trust, accuracy and
-        reliability in the network.
+        that ensures agreement across nodes. Unlike traditional blockchains,
+        which rely on probability, Hashgraph provides a definitive order of
+        events, so there is greater trust, accuracy and reliability in the
+        network.
       </>
     ),
     img: DART,
+    videoSrc: "/videos/DART.mp4",
     width: {
-      desktop_large: "460px",
-      desktop_max: "586px",
+      desktop_large: "506px",
+      desktop_max: "644px",
     },
-    imgPositions: {
+    videoPositions: {
       desktop_large: { bottom: "0", right: "0", left: "0", margin: "0 auto" },
       desktop_max: { bottom: "0", right: "0", left: "0", margin: "0 auto" },
     },
