@@ -72,11 +72,26 @@ export const EcosystemVisualizationBlock: React.FC = () => {
     },
   });
 
-  const videoHandler = (title: string, isVideoPlaying: boolean) => {
-    const video = document.getElementById(`${title}-video`) as HTMLVideoElement;
+  const videoHandler = (
+    isVideoPlaying: boolean,
+    videoId: string,
+    playWithVideoId?: string
+  ) => {
+    const video = document.getElementById(videoId) as HTMLVideoElement;
 
-    if (video) {
-      isVideoPlaying ? video.play() : video.pause();
+    const changeVideoStatus = (video: HTMLVideoElement) => {
+      if (video) {
+        isVideoPlaying ? video.play() : video.pause();
+      }
+    };
+
+    if (playWithVideoId) {
+      const additionalVideo = document.getElementById(
+        playWithVideoId
+      ) as HTMLVideoElement;
+      [video, additionalVideo].forEach((video) => changeVideoStatus(video));
+    } else {
+      changeVideoStatus(video);
     }
   };
 
@@ -121,7 +136,17 @@ export const EcosystemVisualizationBlock: React.FC = () => {
       >
         {ecosystemVisualizationBlockData.length &&
           ecosystemVisualizationBlockData.map(
-            ({ title, videoPositions, width, videoSrc, style }, i) => {
+            (
+              {
+                videoPositions,
+                width,
+                videoSrc,
+                style,
+                playWithVideoId,
+                videoId,
+              },
+              i
+            ) => {
               const videoAbsolutePositions =
                 pageSize === "DESKTOP_LARGE"
                   ? videoPositions?.desktop_large
@@ -143,7 +168,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                   disableRemotePlayback={true}
                   disablePictureInPicture={true}
                   key={i}
-                  id={`${title}-video`}
+                  id={videoId}
                   style={{
                     width: imgWidth,
                     top: videoAbsolutePositions?.top,
@@ -155,11 +180,11 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                   }}
                   onMouseOver={() => {
                     setHoveredVideoIndex(i);
-                    videoHandler(title, true);
+                    videoHandler(true, videoId, playWithVideoId);
                   }}
                   onMouseLeave={() => {
                     setHoveredVideoIndex(-1);
-                    videoHandler(title, false);
+                    videoHandler(false, videoId, playWithVideoId);
                   }}
                 >
                   <source src={videoSrc} type="video/mp4" />
