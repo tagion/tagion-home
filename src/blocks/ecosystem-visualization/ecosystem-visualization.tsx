@@ -121,7 +121,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
       >
         {ecosystemVisualizationBlockData.length &&
           ecosystemVisualizationBlockData.map(
-            ({ title, videoPositions, width, videoSrc }, i) => {
+            ({ title, videoPositions, width, videoSrc, style }, i) => {
               const videoAbsolutePositions =
                 pageSize === "DESKTOP_LARGE"
                   ? videoPositions?.desktop_large
@@ -151,6 +151,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                     right: videoAbsolutePositions?.right,
                     left: videoAbsolutePositions?.left,
                     margin: videoAbsolutePositions?.margin,
+                    ...style,
                   }}
                   onMouseOver={() => {
                     setHoveredVideoIndex(i);
