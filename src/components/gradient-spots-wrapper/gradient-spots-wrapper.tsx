@@ -24,6 +24,7 @@ interface InputProps {
   className?: { bgWrapper?: string; gradientWrapper?: string };
   imgArgument?: boolean;
   disableOverflowHidden?: boolean;
+  mixBlendModeMultiply?: boolean;
   gradients?: {
     desktop_max?: IGradientResolution;
     desktop_large?: IGradientResolution;
@@ -41,6 +42,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   className,
   gradients,
   disableOverflowHidden,
+  mixBlendModeMultiply,
 }) => {
   const [pageWidth, setPageWidth] = useState(0);
 
@@ -105,7 +107,13 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
           gradientOptions?.bgPosition,
       }}
     >
-      <div className={cx("children_wrapper")}>{children}</div>
+      <div
+        className={cx("children_wrapper", {
+          mixBlendModeMultiply,
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 
