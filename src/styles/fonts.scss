@@ -17,12 +17,21 @@
   src: url(../styles/fonts/Inter/Inter-Medium.ttf);
 }
 
+@font-face {
+  font-family: Inter-400;
+  src: url(../styles/fonts/Inter/Inter-Regular.ttf);
+}
+
 .prompt-regular {
   font-family: "Prompt-Regular", sans-serif;
 }
 
 .inter-regular {
   font-family: "Inter", sans-serif;
+}
+
+.inter-400 {
+  font-family: "Inter-400", sans-serif;
 }
 
 .title-font {
@@ -136,7 +145,7 @@
 
 .body-font {
   font-style: normal;
-  font-weight: 400;
+  font-family: 'Inter-400', sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: $body-text-color;

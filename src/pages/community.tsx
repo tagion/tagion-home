@@ -5,6 +5,7 @@ import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
   LetsTalkBlock,
+  StartContributingBlock,
   SubscribeToOurNewsletterBlock,
   TweetsAboutTagionBlock,
   ValueForContributorsBlock,
@@ -55,6 +56,7 @@ const CommunityPage = () => {
             introductoryBlock: cx("community_introductory_block"),
           }}
         />
+        <StartContributingBlock />
       </GradientSpotsWrapper>
       <ValueForContributorsBlock />
       <GradientSpotsWrapper
