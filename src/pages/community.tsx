@@ -5,7 +5,9 @@ import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
   LetsTalkBlock,
+  StartContributingBlock,
   SubscribeToOurNewsletterBlock,
+  TweetsAboutTagionBlock,
   ValueForContributorsBlock,
 } from "../blocks";
 import { communityPageGradients, mainPageGradients } from "../content";
@@ -54,8 +56,15 @@ const CommunityPage = () => {
             introductoryBlock: cx("community_introductory_block"),
           }}
         />
+        <StartContributingBlock />
       </GradientSpotsWrapper>
       <ValueForContributorsBlock />
+      <GradientSpotsWrapper
+        gradients={communityPageGradients.tweetsAboutTagionBlock}
+        disableMainSidePaddings
+      >
+        <TweetsAboutTagionBlock />
+      </GradientSpotsWrapper>
       <GradientSpotsWrapper
         gradients={mainPageGradients.subscribeToNewsletterBlock}
       >

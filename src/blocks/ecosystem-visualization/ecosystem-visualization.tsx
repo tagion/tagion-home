@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 export const EcosystemVisualizationBlock: React.FC = () => {
   const [pageSize, setPageSize] = useState("");
-  const [hoveredImgIndex, setHoveredImgIndex] = useState(-1);
+  const [hoveredVideoIndex, setHoveredVideoIndex] = useState(-1);
   const [popupScrollData, setPopupScrollData] = useState({
     scrollPosition: 0,
     isFixed: false,
@@ -68,11 +68,34 @@ export const EcosystemVisualizationBlock: React.FC = () => {
       if (window.innerWidth >= PageSizes.DESKTOP_MAX) {
         setPageSize("DESKTOP_MAX");
       }
-      setHoveredImgIndex(-1);
+      setHoveredVideoIndex(-1);
     },
   });
 
-  const hoveredImgData = ecosystemVisualizationBlockData[hoveredImgIndex];
+  const videoHandler = (
+    isVideoPlaying: boolean,
+    videoId: string,
+    playWithVideoId?: string
+  ) => {
+    const video = document.getElementById(videoId) as HTMLVideoElement;
+
+    const changeVideoStatus = (video: HTMLVideoElement) => {
+      if (video) {
+        isVideoPlaying ? video.play() : video.pause();
+      }
+    };
+
+    if (playWithVideoId) {
+      const additionalVideo = document.getElementById(
+        playWithVideoId
+      ) as HTMLVideoElement;
+      [video, additionalVideo].forEach((video) => changeVideoStatus(video));
+    } else {
+      changeVideoStatus(video);
+    }
+  };
+
+  const hoveredVideoData = ecosystemVisualizationBlockData[hoveredVideoIndex];
 
   return (
     <div
@@ -80,10 +103,12 @@ export const EcosystemVisualizationBlock: React.FC = () => {
         "ecosystem_visualization_block"
       )} main-top-margins main-bottom-margins`}
     >
-      <div className={`${cx("title")} title-font`}>Ecosystem visualization</div>
+      <div className={`${cx("title")} title-font`}>Ecosystem visualisation</div>
       <div className={`${cx("description")} body-font`}>
-        Tagion Ecosystem is a living organism. It evolves with your
-        participation. Interact to explore.
+        We're building a new era of distributed technology. A modular network to
+        architect real world use cases. Tagion offers customisation and
+        specialisation at every layer and is run by and for the community. Hover
+        over each module to learn more.
       </div>
 
       <div className={`${cx("mobile_cards_container")}`}>
@@ -111,12 +136,22 @@ export const EcosystemVisualizationBlock: React.FC = () => {
       >
         {ecosystemVisualizationBlockData.length &&
           ecosystemVisualizationBlockData.map(
-            ({ img, title, imgPositions, width }, i) => {
-              const imgAbsolutePositions =
+            (
+              {
+                videoPositions,
+                width,
+                videoSrc,
+                style,
+                playWithVideoId,
+                videoId,
+              },
+              i
+            ) => {
+              const videoAbsolutePositions =
                 pageSize === "DESKTOP_LARGE"
-                  ? imgPositions?.desktop_large
+                  ? videoPositions?.desktop_large
                   : pageSize === "DESKTOP_MAX"
-                  ? imgPositions?.desktop_max
+                  ? videoPositions?.desktop_max
                   : undefined;
 
               const imgWidth =
@@ -126,33 +161,43 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                   ? width?.desktop_max
                   : undefined;
               return (
-                <img
-                  src={img}
-                  alt={title}
-                  className={cx("img")}
+                <video
+                  loop
+                  playsInline
+                  muted
+                  disableRemotePlayback={true}
+                  disablePictureInPicture={true}
+                  key={i}
+                  id={videoId}
                   style={{
                     width: imgWidth,
-                    top: imgAbsolutePositions?.top,
-                    bottom: imgAbsolutePositions?.bottom,
-                    right: imgAbsolutePositions?.right,
-                    left: imgAbsolutePositions?.left,
-                    margin: imgAbsolutePositions?.margin,
+                    top: videoAbsolutePositions?.top,
+                    bottom: videoAbsolutePositions?.bottom,
+                    right: videoAbsolutePositions?.right,
+                    left: videoAbsolutePositions?.left,
+                    margin: videoAbsolutePositions?.margin,
+                    ...style,
                   }}
-                  onMouseOver={() => setHoveredImgIndex(i)}
-                  onMouseLeave={() => setHoveredImgIndex(-1)}
-                  key={i}
-                />
+                  onMouseOver={() => {
+                    setHoveredVideoIndex(i);
+                    videoHandler(true, videoId, playWithVideoId);
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredVideoIndex(-1);
+                    videoHandler(false, videoId, playWithVideoId);
+                  }}
+                >
+                  <source src={videoSrc} type="video/mp4" />
+                </video>
               );
             }
           )}
       </div>
 
-      {hoveredImgIndex > -1 && hoveredImgData && (
+      {hoveredVideoIndex > -1 && hoveredVideoData && (
         <div
           className={cx("popup", {
-            isVisible: hoveredImgIndex >= 0,
-            absoluteRightSide: hoveredImgIndex === 2,
-            fixedRightSide: hoveredImgIndex === 2 && popupScrollData.isFixed,
+            isVisible: hoveredVideoIndex >= 0,
             isFixed: popupScrollData.isFixed,
             isTopAbsolutePosition:
               popupScrollData.isTopAbsolutePosition && !popupScrollData.isFixed,
@@ -160,10 +205,10 @@ export const EcosystemVisualizationBlock: React.FC = () => {
           id="popup"
         >
           <div className={`${cx("popup_title")} prompt-regular prompt-36`}>
-            {hoveredImgData.title}
+            {hoveredVideoData.title}
           </div>
           <div className={cx("popup_description")}>
-            {hoveredImgData.description}
+            {hoveredVideoData.description}
           </div>
         </div>
       )}

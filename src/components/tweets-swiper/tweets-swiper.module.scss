@@ -1,0 +1,47 @@
+@import "./../../styles/variables.scss";
+
+.tweets_swiper_block {
+  .title_wrapper {
+    margin: 0 16px 40px;
+  }
+
+  .swiper_buttons {
+    display: none;
+  }
+
+  @media (min-width: $tablet-size) {
+    .title_wrapper {
+      margin: 0 24px 40px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .title_wrapper {
+      margin: 0 80px 48px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .title_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 80px 80px;
+    }
+
+    .swiper_buttons {
+      display: flex;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .title_wrapper {
+      margin: 0 120px 80px;
+    }
+
+    .content {
+      width: 1704px;
+      margin: 0 auto;
+    }
+  }
+}

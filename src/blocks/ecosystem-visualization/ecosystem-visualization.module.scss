@@ -3,6 +3,8 @@
 .ecosystem_visualization_block {
   .description {
     margin-top: 16px;
+    max-width: 534px;
+    font-family: "Inter-Regular", sans-serif;
   }
 
   .mobile_cards_container {
@@ -46,7 +48,8 @@
 
   @media (min-width: $desktop-size) {
     .description {
-      width: 534px;
+      width: 62%;
+      max-width: none;
     }
 
     .mobile_cards_container {
@@ -71,7 +74,7 @@
     flex-direction: column;
 
     .description {
-      width: auto;
+      width: 930px;
       margin-top: 24px;
       font-size: 20px;
       line-height: 26px;
@@ -86,8 +89,9 @@
       height: 1572px;
       margin-top: 80px;
 
-      .img {
+      video {
         position: absolute;
+        mix-blend-mode: multiply;
         cursor: pointer;
       }
     }
@@ -117,15 +121,6 @@
 
       &.isVisible {
         display: block;
-      }
-
-      &.absoluteRightSide {
-        left: auto;
-        right: -40px;
-      }
-
-      &.fixedRightSide {
-        right: 40px;
       }
 
       &.isTopAbsolutePosition {
@@ -160,14 +155,8 @@
         bottom: 60px;
       }
 
-      &.absoluteRightSide {
-        left: auto;
-        right: -60px;
-      }
-
-      &.fixedRightSide {
-        left: auto;
-        right: calc(((100% - $desktop-max-size) / 2) + 60px);
+      .popup_title > br {
+        display: none;
       }
 
       .popup_description {

@@ -80,6 +80,7 @@ const EcosystemPage = () => {
       </GradientSpotsWrapper>
       <GradientSpotsWrapper
         gradients={ecosystemPageGradients.ecosystemVisualizationBlock}
+        mixBlendModeMultiply
       >
         <EcosystemVisualizationBlock />
       </GradientSpotsWrapper>

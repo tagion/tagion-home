@@ -5,4 +5,6 @@ export enum ExternalLinks {
   TWITTER = "https://twitter.com/TagionOfficial",
   TELEGRAM = "https://t.me/tagionChat",
   MEDIUM = "https://tagion.medium.com/",
+
+  START_CONTRIBUTING_JOIN_BUTTON = "https://discord.gg/QxbkYjtvER",
 }

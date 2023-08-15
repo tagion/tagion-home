@@ -13,6 +13,10 @@
   .children_wrapper {
     height: 100%;
 
+    &.mixBlendModeMultiply {
+      mix-blend-mode: multiply;
+    }
+
     & > * {
       z-index: 98;
       position: relative;
