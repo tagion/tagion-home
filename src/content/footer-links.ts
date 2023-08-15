@@ -1,7 +1,3 @@
-import twitterIcon from "../assets/images/twitter_icon.svg";
-import discordIcon from "../assets/images/discord_icon.svg";
-import telegramIcon from "../assets/images/telegram_icon.svg";
-
 export type LinkType = {
   name: string;
   linkTo: string;

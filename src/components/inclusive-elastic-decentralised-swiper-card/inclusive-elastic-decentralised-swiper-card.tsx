@@ -13,7 +13,7 @@ import { ReactComponent as SmallArrowLinkIcon } from "../../assets/images/small_
 const cx = classNames.bind(styles);
 
 type DataCharacteristicType = {
-  value: string;
+  value: string | React.JSX.Element;
   linkTo?: string;
 };
 

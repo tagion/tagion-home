@@ -2,6 +2,14 @@
 
 .company_swiper_block {
   .title {
+    margin: 0 16px 16px;
+
+    &.withoutDescription {
+      margin: 0 16px 40px;
+    }
+  }
+
+  .description {
     margin: 0 16px 40px;
   }
 
@@ -13,12 +21,28 @@
 
   @media (min-width: $tablet-size) {
     .title {
+      margin: 0 24px 16px;
+
+      &.withoutDescription {
+        margin: 0 24px 40px;
+      }
+    }
+
+    .description {
       margin: 0 24px 40px;
     }
   }
 
   @media (min-width: $desktop-size) {
     .title {
+      margin: 0 80px 16px;
+
+      &.withoutDescription {
+        margin: 0 80px 48px;
+      }
+    }
+
+    .description {
       margin: 0 80px 48px;
     }
 
@@ -38,12 +62,28 @@
 
   @media (min-width: $desktop-large-size) {
     .title {
+      margin: 0 80px 24px;
+
+      &.withoutDescription {
+        margin: 0 80px 80px;
+      }
+    }
+
+    .description {
       margin: 0 80px 80px;
     }
   }
 
   @media (min-width: $desktop-max-size) {
     .title {
+      margin: 0 120px 24px;
+
+      &.withoutDescription {
+        margin: 0 120px 80px;
+      }
+    }
+
+    .description {
       margin: 0 120px 80px;
     }
 

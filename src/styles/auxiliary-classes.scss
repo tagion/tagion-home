@@ -33,6 +33,13 @@
   cursor: pointer;
 }
 
+.underlined-gray-link {
+  color: $main-gray-text-color;
+  border-bottom: 1px solid $main-gray-text-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .disable-link {
   pointer-events: none;
   cursor: default;

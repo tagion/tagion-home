@@ -44,7 +44,13 @@ export const SwiperCompanyCard: React.FC<InputProps> = ({
           title: `${cx("company_title")} subtitle-font-28-36`,
         }}
       />
-      <Button name="Learn more" withArrow className={cx("learn_more_button")} />
+      <Button
+        name="Learn more"
+        withArrow
+        className={cx("learn_more_button")}
+        isGradientAdded
+        contentWidth={143}
+      />
     </Link>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 
-import { ReactComponent as TwitterIcon } from "../../assets/images/twitter_icon.svg";
+import { ReactComponent as TwitterIcon } from "../../assets/images/X_icon.svg";
 import { ReactComponent as DiscordIcon } from "../../assets/images/discord_icon.svg";
 import { ReactComponent as TelegramIcon } from "../../assets/images/telegram_icon.svg";
 import { ReactComponent as GithubIcon } from "../../assets/images/github_icon.svg";
