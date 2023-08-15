@@ -11,6 +11,7 @@ export * from "./our-values";
 export * from "./permissionless-tagion-hashgraph";
 export * from "./secure-scalable-decentralised";
 export * from "./subscribe-to-our-newsletter";
+export * from "./start-contributing";
 export * from "./timeline-block";
 export * from "./tweets-about-tagion";
 export * from "./value-partners";

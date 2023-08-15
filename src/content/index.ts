@@ -15,6 +15,7 @@ export * from "./our-values";
 export * from "./permissionless-tagion-hashgraph";
 export * from "./privacy-policy";
 export * from "./secure-scalable-decentralized";
+export * from "./start-contributing";
 export * from "./terms-of-use";
 export * from "./timeline";
 export * from "./tweets";

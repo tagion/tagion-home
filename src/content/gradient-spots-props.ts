@@ -771,7 +771,7 @@ export const communityPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 80%",
+        bgSize: "100% 75%",
       },
     },
     desktop_large: {
@@ -779,7 +779,7 @@ export const communityPageGradients = {
         require("../assets/images/gradient/main-page/desktop-large/introductory_block_1440.png")
           .default,
       options: {
-        bgSize: "100% 80%",
+        bgSize: "100% 75%",
       },
     },
     desktop: {
@@ -788,7 +788,7 @@ export const communityPageGradients = {
           .default,
 
       options: {
-        bgSize: "90% 100%",
+        bgSize: "90% 65%",
       },
     },
     tablet: {
@@ -797,7 +797,7 @@ export const communityPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 100%",
+        bgSize: "100% 50%",
       },
     },
     mobile: {
@@ -805,7 +805,7 @@ export const communityPageGradients = {
         require("../assets/images/gradient/main-page/mobile/introductory_block_280.png")
           .default,
       options: {
-        bgSize: "100% 100%",
+        bgSize: "100% 38%",
       },
     },
   },
