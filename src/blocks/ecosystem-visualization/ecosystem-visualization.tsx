@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
-import { ecosystemVisualizationBlockData } from "../../content";
+import { videosData, transparentBlocksData } from "../../content";
 import { Card } from "../../components";
 import { useResizeEvent } from "../../hooks";
 import { PageSizes } from "../../common/enums";
@@ -18,6 +18,8 @@ export const EcosystemVisualizationBlock: React.FC = () => {
     isFixed: false,
     isTopAbsolutePosition: false,
   });
+
+  const hoveredVideoData = transparentBlocksData[hoveredVideoIndex];
 
   const scrollHandler = () => {
     const cardsContainerElement = document.getElementById("cards_container");
@@ -72,30 +74,38 @@ export const EcosystemVisualizationBlock: React.FC = () => {
     },
   });
 
-  const videoHandler = (
-    isVideoPlaying: boolean,
-    videoId: string,
-    playWithVideoId?: string
-  ) => {
+  const videoHandler = (isVideoPlaying: boolean, videoId: string) => {
     const video = document.getElementById(videoId) as HTMLVideoElement;
 
-    const changeVideoStatus = (video: HTMLVideoElement) => {
-      if (video) {
-        isVideoPlaying ? video.play() : video.pause();
-      }
-    };
-
-    if (playWithVideoId) {
-      const additionalVideo = document.getElementById(
-        playWithVideoId
-      ) as HTMLVideoElement;
-      [video, additionalVideo].forEach((video) => changeVideoStatus(video));
-    } else {
-      changeVideoStatus(video);
+    if (video) {
+      isVideoPlaying ? video.play() : video.pause();
     }
   };
 
-  const hoveredVideoData = ecosystemVisualizationBlockData[hoveredVideoIndex];
+  const onMouseOverHandler = (
+    index: number,
+    isVideoPlaying: boolean,
+    videoId: string
+  ) => {
+    setHoveredVideoIndex(index);
+    videoHandler(isVideoPlaying, videoId);
+  };
+
+  const onMouseLeaveHandler = (isVideoPlaying: boolean, videoId: string) => {
+    setHoveredVideoIndex(-1);
+    videoHandler(isVideoPlaying, videoId);
+  };
+
+  const sizeDeterminator = <T,>(object: {
+    desktop_large?: T;
+    desktop_max?: T;
+  }) => {
+    return pageSize === "DESKTOP_LARGE"
+      ? object?.desktop_large
+      : pageSize === "DESKTOP_MAX"
+      ? object?.desktop_max
+      : undefined;
+  };
 
   return (
     <div
@@ -112,54 +122,45 @@ export const EcosystemVisualizationBlock: React.FC = () => {
       </div>
 
       <div className={`${cx("mobile_cards_container")}`}>
-        {ecosystemVisualizationBlockData.length &&
-          ecosystemVisualizationBlockData.map(
-            ({ description, img, title }, i) => (
-              <Card
-                title={title}
-                description={description}
-                img={{ path: img, alt: title }}
-                key={i}
-                classNames={{
-                  img: cx("card_img_wrapper"),
-                  card: cx("card"),
-                  title: cx("card_title"),
-                }}
-              />
-            )
-          )}
+        {transparentBlocksData.length &&
+          transparentBlocksData.map(({ description, img, title }, i) => (
+            <Card
+              title={title}
+              description={description}
+              img={{ path: img }}
+              key={i}
+              classNames={{
+                img: cx("card_img_wrapper"),
+                card: cx("card"),
+                title: cx("card_title"),
+              }}
+            />
+          ))}
       </div>
 
       <div
         className={`${cx("desktop_large_cards_container")}`}
         id="cards_container"
       >
-        {ecosystemVisualizationBlockData.length &&
-          ecosystemVisualizationBlockData.map(
-            (
-              {
-                videoPositions,
-                width,
-                videoSrc,
-                style,
-                playWithVideoId,
-                videoId,
-              },
-              i
-            ) => {
+        {videosData.length &&
+          videosData.map(
+            ({ videoPositions, width, videoSrc, videoId, style }, i) => {
+              const videoWidth =
+                sizeDeterminator<typeof width.desktop_large>(width);
               const videoAbsolutePositions =
-                pageSize === "DESKTOP_LARGE"
-                  ? videoPositions?.desktop_large
-                  : pageSize === "DESKTOP_MAX"
-                  ? videoPositions?.desktop_max
-                  : undefined;
+                sizeDeterminator<typeof videoPositions.desktop_large>(
+                  videoPositions
+                );
+              const styles = {
+                width: videoWidth,
+                top: videoAbsolutePositions?.top,
+                bottom: videoAbsolutePositions?.bottom,
+                right: videoAbsolutePositions?.right,
+                left: videoAbsolutePositions?.left,
+                margin: videoAbsolutePositions?.margin,
+                ...style,
+              };
 
-              const imgWidth =
-                pageSize === "DESKTOP_LARGE"
-                  ? width?.desktop_large
-                  : pageSize === "DESKTOP_MAX"
-                  ? width?.desktop_max
-                  : undefined;
               return (
                 <video
                   loop
@@ -169,26 +170,46 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                   disablePictureInPicture={true}
                   key={i}
                   id={videoId}
-                  style={{
-                    width: imgWidth,
-                    top: videoAbsolutePositions?.top,
-                    bottom: videoAbsolutePositions?.bottom,
-                    right: videoAbsolutePositions?.right,
-                    left: videoAbsolutePositions?.left,
-                    margin: videoAbsolutePositions?.margin,
-                    ...style,
-                  }}
-                  onMouseOver={() => {
-                    setHoveredVideoIndex(i);
-                    videoHandler(true, videoId, playWithVideoId);
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredVideoIndex(-1);
-                    videoHandler(false, videoId, playWithVideoId);
-                  }}
+                  style={styles}
                 >
                   <source src={videoSrc} type="video/mp4" />
                 </video>
+              );
+            }
+          )}
+        {transparentBlocksData.length &&
+          transparentBlocksData.map(
+            ({ blockPositions, width, height, videoId, style }, i) => {
+              const blockWidth =
+                sizeDeterminator<typeof width.desktop_large>(width);
+              const blockAbsolutePositions =
+                sizeDeterminator<typeof blockPositions.desktop_large>(
+                  blockPositions
+                );
+              const videoHeight =
+                height && sizeDeterminator<typeof height.desktop_large>(height);
+
+              const styles = {
+                width: blockWidth,
+                top: blockAbsolutePositions?.top,
+                bottom: blockAbsolutePositions?.bottom,
+                right: blockAbsolutePositions?.right,
+                left: blockAbsolutePositions?.left,
+                margin: blockAbsolutePositions?.margin,
+                ...style,
+              };
+
+              return (
+                <div
+                  className={cx("transparent_block")}
+                  key={i}
+                  style={{
+                    ...styles,
+                    height: videoHeight,
+                  }}
+                  onMouseOver={() => onMouseOverHandler(i, true, videoId)}
+                  onMouseLeave={() => onMouseLeaveHandler(false, videoId)}
+                ></div>
               );
             }
           )}
