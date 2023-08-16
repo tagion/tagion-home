@@ -89,10 +89,15 @@
       height: 1572px;
       margin-top: 80px;
 
-      video {
+      video,
+      .transparent_block {
         position: absolute;
         mix-blend-mode: multiply;
+      }
+
+      .transparent_block {
         cursor: pointer;
+        border-radius: 100%;
       }
     }
 
