@@ -14,16 +14,11 @@ enum VideoIdsEnum {
   BUILD_THE_FUTURE_VIDEO = "build_the_future_video",
   DEX_VIDEO = "DEX_video",
   PROOF_OF_COMMUNITY_VIDEO = "proof_of_community_video",
-  NODE_SWAPPING_VIDEO = "node_swapping_video",
-  DART_VIDEO = "DART_video",
+  DART_AND_NODE_SWAPPING_VIDEO = "dart_and_node_swapping_video",
 }
 
-export const ecosystemVisualizationBlockData = [
+export const videosData = [
   {
-    title: "Connect with currencies",
-    description:
-      "Tagion offers fast, efficient transactions without compromising decentralisation or security. Our DEX will ensure seamless trading with various currencies, both crypto and fiat.",
-    img: connectWithCurrencies,
     videoSrc: "/videos/connect_with_currencies.mp4",
     videoId: VideoIdsEnum.CONNECT_WITH_CURRENCIES_VIDEO,
     videoPositions: {
@@ -36,10 +31,6 @@ export const ecosystemVisualizationBlockData = [
     },
   },
   {
-    title: "Participate in a fair economy",
-    description:
-      "Picture this: easy money transfers, borrowing, lending, investing, and more with Tagion. We're all about fairness - no one can take unfair advantage because the network is built to include, rather than exclude and exploit.",
-    img: participateInFairEconomy,
     videoSrc: "/videos/participate_in_fair_economy.mp4",
     videoId: VideoIdsEnum.PARTICIPATE_IN_FAIR_ECONOMY_VIDEO,
     width: {
@@ -50,13 +41,9 @@ export const ecosystemVisualizationBlockData = [
       desktop_large: { top: "0", right: "0", left: "0", margin: "0 auto" },
       desktop_max: { top: "0", right: "0", left: "0", margin: "0 auto" },
     },
-    style: { borderRadius: "70px" },
+    style: { borderRadius: "30%" },
   },
   {
-    title: "Build the future",
-    description:
-      "Shape the future by designing your own rules in custom ecosystems and applications. Explore limitless possibilities across industries like supply chain, arts, nature conservation, banking, healthcare, and audit.",
-    img: buildTheFuture,
     videoSrc: "/videos/build_the_future.mp4",
     videoId: VideoIdsEnum.BUILD_THE_FUTURE_VIDEO,
     width: {
@@ -69,15 +56,6 @@ export const ecosystemVisualizationBlockData = [
     },
   },
   {
-    title: (
-      <>
-        Tagion Decentralised
-        <br /> Exchange Protocol
-      </>
-    ),
-    description:
-      "Exchange digital assets seamlessly. Tagion Decentralised Exchange Protocol will enable real price discovery and transparency to create the best use of liquidity and pricing.",
-    img: DEX,
     videoSrc: "/videos/DEX.mp4",
     videoId: VideoIdsEnum.DEX_VIDEO,
     videoPositions: {
@@ -90,10 +68,6 @@ export const ecosystemVisualizationBlockData = [
     },
   },
   {
-    title: "Proof of Community",
-    description:
-      "As a node operator, core contributor, developer or ambassador, you can take part in network governance and shape the network’s development. Based on reputation-weighted voting and rewards earned, Tagion’s governance model ensures fairness and empowers community ownership.",
-    img: proofOfCommunity,
     videoSrc: "/videos/proof_of_community.mp4",
     videoId: VideoIdsEnum.PROOF_OF_COMMUNITY_VIDEO,
     width: {
@@ -102,12 +76,132 @@ export const ecosystemVisualizationBlockData = [
     },
     videoPositions: {
       desktop_large: {
-        bottom: "708px",
+        bottom: "712px",
         right: "0",
         left: "0",
         margin: "0 auto",
       },
-      desktop_max: { bottom: "904px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { bottom: "906px", right: "0", left: "0", margin: "0 auto" },
+    },
+  },
+  {
+    videoSrc: "/videos/DART_and_node_swapping.mp4",
+    videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
+    width: {
+      desktop_large: "506px",
+      desktop_max: "644px",
+    },
+    videoPositions: {
+      desktop_large: { bottom: "0", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { bottom: "0", right: "0", left: "0", margin: "0 auto" },
+    },
+  },
+];
+
+export const transparentBlocksData = [
+  {
+    title: "Connect with currencies",
+    description:
+      "Tagion offers fast, efficient transactions without compromising decentralisation or security. Our DEX will ensure seamless trading with various currencies, both crypto and fiat.",
+    img: connectWithCurrencies,
+    videoId: VideoIdsEnum.CONNECT_WITH_CURRENCIES_VIDEO,
+    blockPositions: {
+      desktop_large: { top: "379px", right: "46px" },
+      desktop_max: { top: "485px", right: "73px" },
+    },
+    width: {
+      desktop_large: "466px",
+      desktop_max: "599px",
+    },
+    height: {
+      desktop_large: "247px",
+      desktop_max: "310px",
+    },
+  },
+  {
+    title: "Participate in a fair economy",
+    description:
+      "Picture this: easy money transfers, borrowing, lending, investing, and more with Tagion. We're all about fairness - no one can take unfair advantage because the network is built to include, rather than exclude and exploit.",
+    img: participateInFairEconomy,
+    videoId: VideoIdsEnum.PARTICIPATE_IN_FAIR_ECONOMY_VIDEO,
+    width: {
+      desktop_large: "466px",
+      desktop_max: "599px",
+    },
+    height: {
+      desktop_large: "247px",
+      desktop_max: "310px",
+    },
+    blockPositions: {
+      desktop_large: { top: "96px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { top: "122px", right: "0", left: "0", margin: "0 auto" },
+    },
+  },
+  {
+    title: "Build the future",
+    description:
+      "Shape the future by designing your own rules in custom ecosystems and applications. Explore limitless possibilities across industries like supply chain, arts, nature conservation, banking, healthcare, and audit.",
+    img: buildTheFuture,
+    videoId: VideoIdsEnum.BUILD_THE_FUTURE_VIDEO,
+    width: {
+      desktop_large: "466px",
+      desktop_max: "599px",
+    },
+    height: {
+      desktop_large: "247px",
+      desktop_max: "310px",
+    },
+    blockPositions: {
+      desktop_large: { top: "379px", left: "46px" },
+      desktop_max: { top: "485px", left: "73px" },
+    },
+  },
+  {
+    title: (
+      <>
+        Tagion Decentralised
+        <br /> Exchange Protocol
+      </>
+    ),
+    description:
+      "Exchange digital assets seamlessly. Tagion Decentralised Exchange Protocol will enable real price discovery and transparency to create the best use of liquidity and pricing.",
+    img: DEX,
+    videoId: VideoIdsEnum.DEX_VIDEO,
+    blockPositions: {
+      desktop_large: { top: "342px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { top: "432px", right: "0", left: "0", margin: "0 auto" },
+    },
+    width: {
+      desktop_large: "290px",
+      desktop_max: "380px",
+    },
+    height: {
+      desktop_large: "160px",
+      desktop_max: "230px",
+    },
+  },
+  {
+    title: "Proof of Community",
+    description:
+      "As a node operator, core contributor, developer or ambassador, you can take part in network governance and shape the network’s development. Based on reputation-weighted voting and rewards earned, Tagion’s governance model ensures fairness and empowers community ownership.",
+    img: proofOfCommunity,
+    videoId: VideoIdsEnum.PROOF_OF_COMMUNITY_VIDEO,
+    width: {
+      desktop_large: "466px",
+      desktop_max: "599px",
+    },
+    height: {
+      desktop_large: "247px",
+      desktop_max: "310px",
+    },
+    blockPositions: {
+      desktop_large: {
+        bottom: "715px",
+        right: "0",
+        left: "0",
+        margin: "0 auto",
+      },
+      desktop_max: { bottom: "910px", right: "0", left: "0", margin: "0 auto" },
     },
   },
   {
@@ -115,21 +209,23 @@ export const ecosystemVisualizationBlockData = [
     description:
       "Active nodes, carrying out validation tasks, are periodically and randomly rotated with passive ones, reducing the risk of Sybil attacks and enabling network decentralisation. This is a novel feature innovating Hashgraph technology.",
     img: nodeSwapping,
-    videoSrc: "/videos/node_swapping.mp4",
-    videoId: VideoIdsEnum.NODE_SWAPPING_VIDEO,
-    playWithVideoId: VideoIdsEnum.DART_VIDEO,
+    videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
     width: {
-      desktop_large: "506px",
-      desktop_max: "644px",
+      desktop_large: "466px",
+      desktop_max: "599px",
     },
-    videoPositions: {
+    height: {
+      desktop_large: "247px",
+      desktop_max: "310px",
+    },
+    blockPositions: {
       desktop_large: {
-        bottom: "422px",
+        bottom: "460px",
         right: "0",
         left: "0",
         margin: "0 auto",
       },
-      desktop_max: { bottom: "538px", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { bottom: "590px", right: "0", left: "0", margin: "0 auto" },
     },
   },
   {
@@ -149,16 +245,19 @@ export const ecosystemVisualizationBlockData = [
       </>
     ),
     img: DART,
-    videoSrc: "/videos/DART.mp4",
-    videoId: VideoIdsEnum.DART_VIDEO,
-    playWithVideoId: VideoIdsEnum.NODE_SWAPPING_VIDEO,
+    videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
     width: {
       desktop_large: "506px",
-      desktop_max: "644px",
+      desktop_max: "639px",
     },
-    videoPositions: {
+    height: {
+      desktop_large: "460px",
+      desktop_max: "573px",
+    },
+    blockPositions: {
       desktop_large: { bottom: "0", right: "0", left: "0", margin: "0 auto" },
-      desktop_max: { bottom: "0", right: "0", left: "0", margin: "0 auto" },
+      desktop_max: { bottom: "11px", right: "0", left: "0", margin: "0 auto" },
     },
+    style: { borderRadius: "40%" },
   },
 ];
