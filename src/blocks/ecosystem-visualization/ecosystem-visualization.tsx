@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
 import { videosData, transparentBlocksData } from "../../content";
 import { Card } from "../../components";
-import { useResizeEvent } from "../../hooks";
-import { PageSizes } from "../../common/enums";
+import { usePageBreakpointDeterminator, useResizeEvent } from "../../hooks";
+import { BreakpointNames } from "../../common/enums";
 
 import * as styles from "./ecosystem-visualization.module.scss";
 
 const cx = classNames.bind(styles);
 
+type StyleType = Record<BreakpointNames, CSSProperties>;
+type BreakpointsStringType = Record<BreakpointNames, string>;
+type BreakpointsCSSPropertiesType = Record<BreakpointNames, CSSProperties>;
+
 export const EcosystemVisualizationBlock: React.FC = () => {
-  const [pageSize, setPageSize] = useState("");
   const [hoveredVideoIndex, setHoveredVideoIndex] = useState(-1);
   const [popupScrollData, setPopupScrollData] = useState({
     scrollPosition: 0,
     isFixed: false,
     isTopAbsolutePosition: false,
   });
+  const { breakpointDeterminator, pageSize } = usePageBreakpointDeterminator();
 
   const hoveredVideoData = transparentBlocksData[hoveredVideoIndex];
 
@@ -61,15 +65,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
 
   useResizeEvent({
     resizeHandler: () => {
-      if (
-        window.innerWidth >= PageSizes.DESKTOP_LARGE &&
-        window.innerWidth < PageSizes.DESKTOP_MAX
-      ) {
-        setPageSize("DESKTOP_LARGE");
-      }
-      if (window.innerWidth >= PageSizes.DESKTOP_MAX) {
-        setPageSize("DESKTOP_MAX");
-      }
+      breakpointDeterminator();
       setHoveredVideoIndex(-1);
     },
   });
@@ -96,17 +92,6 @@ export const EcosystemVisualizationBlock: React.FC = () => {
     videoHandler(isVideoPlaying, videoId);
   };
 
-  const sizeDeterminator = <T,>(object: {
-    desktop_large?: T;
-    desktop_max?: T;
-  }) => {
-    return pageSize === "DESKTOP_LARGE"
-      ? object?.desktop_large
-      : pageSize === "DESKTOP_MAX"
-      ? object?.desktop_max
-      : undefined;
-  };
-
   return (
     <div
       className={`${cx(
@@ -123,19 +108,40 @@ export const EcosystemVisualizationBlock: React.FC = () => {
 
       <div className={`${cx("mobile_cards_container")}`}>
         {transparentBlocksData.length &&
-          transparentBlocksData.map(({ description, img, title }, i) => (
-            <Card
-              title={title}
-              description={description}
-              img={{ path: img }}
-              key={i}
-              classNames={{
-                img: cx("card_img_wrapper"),
-                card: cx("card"),
-                title: cx("card_title"),
-              }}
-            />
-          ))}
+          transparentBlocksData.map(
+            (
+              { description, title, videoId, disabledForMobile, height, style },
+              i
+            ) => (
+              <Card
+                title={title}
+                description={description}
+                videoSrc={
+                  disabledForMobile
+                    ? ""
+                    : videosData.find(
+                        (videoData) => videoData.videoId === videoId
+                      )?.videoSrc
+                }
+                key={i}
+                classNames={{
+                  videoWrapper: cx("card_video_wrapper"),
+                  card: cx("card"),
+                  title: cx("card_title"),
+                }}
+                style={{
+                  videoWrapper: {
+                    height: pageSize && height?.[pageSize],
+                    marginBottom:
+                      pageSize &&
+                      (style as StyleType)?.[pageSize]?.marginBottom,
+                    marginTop:
+                      pageSize && (style as StyleType)?.[pageSize]?.marginTop,
+                  },
+                }}
+              />
+            )
+          )}
       </div>
 
       <div
@@ -145,19 +151,18 @@ export const EcosystemVisualizationBlock: React.FC = () => {
         {videosData.length &&
           videosData.map(
             ({ videoPositions, width, videoSrc, videoId, style }, i) => {
-              const videoWidth =
-                sizeDeterminator<typeof width.desktop_large>(width);
               const videoAbsolutePositions =
-                sizeDeterminator<typeof videoPositions.desktop_large>(
-                  videoPositions
-                );
+                pageSize &&
+                (videoPositions as BreakpointsCSSPropertiesType)?.[pageSize];
               const styles = {
-                width: videoWidth,
-                top: videoAbsolutePositions?.top,
-                bottom: videoAbsolutePositions?.bottom,
-                right: videoAbsolutePositions?.right,
-                left: videoAbsolutePositions?.left,
-                margin: videoAbsolutePositions?.margin,
+                width: pageSize && (width as BreakpointsStringType)?.[pageSize],
+                top: videoAbsolutePositions && videoAbsolutePositions?.top,
+                bottom:
+                  videoAbsolutePositions && videoAbsolutePositions?.bottom,
+                right: videoAbsolutePositions && videoAbsolutePositions?.right,
+                left: videoAbsolutePositions && videoAbsolutePositions?.left,
+                margin:
+                  videoAbsolutePositions && videoAbsolutePositions?.margin,
                 ...style,
               };
 
@@ -180,22 +185,19 @@ export const EcosystemVisualizationBlock: React.FC = () => {
         {transparentBlocksData.length &&
           transparentBlocksData.map(
             ({ blockPositions, width, height, videoId, style }, i) => {
-              const blockWidth =
-                sizeDeterminator<typeof width.desktop_large>(width);
               const blockAbsolutePositions =
-                sizeDeterminator<typeof blockPositions.desktop_large>(
-                  blockPositions
-                );
-              const videoHeight =
-                height && sizeDeterminator<typeof height.desktop_large>(height);
+                pageSize &&
+                (blockPositions as BreakpointsCSSPropertiesType)?.[pageSize];
 
               const styles = {
-                width: blockWidth,
-                top: blockAbsolutePositions?.top,
-                bottom: blockAbsolutePositions?.bottom,
-                right: blockAbsolutePositions?.right,
-                left: blockAbsolutePositions?.left,
-                margin: blockAbsolutePositions?.margin,
+                width: pageSize && (width as BreakpointsStringType)?.[pageSize],
+                top: blockAbsolutePositions && blockAbsolutePositions?.top,
+                bottom:
+                  blockAbsolutePositions && blockAbsolutePositions?.bottom,
+                right: blockAbsolutePositions && blockAbsolutePositions?.right,
+                left: blockAbsolutePositions && blockAbsolutePositions?.left,
+                margin:
+                  blockAbsolutePositions && blockAbsolutePositions?.margin,
                 ...style,
               };
 
@@ -205,7 +207,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
                   key={i}
                   style={{
                     ...styles,
-                    height: videoHeight,
+                    height: pageSize && height?.[pageSize],
                   }}
                   onMouseOver={() => onMouseOverHandler(i, true, videoId)}
                   onMouseLeave={() => onMouseLeaveHandler(false, videoId)}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import classNames from "classnames/bind";
 
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
@@ -26,6 +26,9 @@ interface InputProps {
     img?: string;
     videoWrapper?: string;
   };
+  style?: {
+    videoWrapper?: CSSProperties;
+  };
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
@@ -38,6 +41,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   fixedFontSize,
   ImgComponent,
   classNames,
+  style,
 }) => {
   return (
     <div className={`${cx("card")} ${classNames?.card || ""}`}>
@@ -51,6 +55,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
       {videoSrc && (
         <div
           className={`${cx("video_wrapper")} ${classNames?.videoWrapper || ""}`}
+          style={style?.videoWrapper}
         >
           <video
             autoPlay
