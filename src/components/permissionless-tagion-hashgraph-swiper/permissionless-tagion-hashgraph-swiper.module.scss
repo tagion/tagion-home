@@ -1,5 +1,7 @@
 @import "./../../styles/variables.scss";
 
+$card_width: 460px;
+
 .tagion_hashgrap_swiper_block {
   display: flex;
   flex-direction: column;
@@ -20,9 +22,9 @@
     }
   }
 
-  @media (min-width: $tablet-size) {
+  @media (min-width: calc($card_width + $swiper-card-mobile-space-between * 2 + $swiper-card-additional-width-to-hide-buttons)) {
     .swiper_buttons {
-      margin-top: 40px;
+      display: none;
     }
   }
 
@@ -38,8 +40,7 @@
       }
     }
 
-    .mobile_card,
-    .swiper_buttons {
+    .mobile_card {
       display: none;
     }
   }

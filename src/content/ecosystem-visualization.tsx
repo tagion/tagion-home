@@ -1,13 +1,5 @@
 import React from "react";
 
-import connectWithCurrencies from "../assets/images/ecosystem/connect_with_currencies.png";
-import participateInFairEconomy from "../assets/images/ecosystem/participate_in_fair_economy.png";
-import buildTheFuture from "../assets/images/ecosystem/build_the_future.png";
-import DEX from "../assets/images/ecosystem/DEX.png";
-import proofOfCommunity from "../assets/images/ecosystem/proof_of_community.png";
-import nodeSwapping from "../assets/images/ecosystem/node_swapping.png";
-import DART from "../assets/images/ecosystem/DART.png";
-
 enum VideoIdsEnum {
   CONNECT_WITH_CURRENCIES_VIDEO = "connect_with_currencies_video",
   PARTICIPATE_IN_FAIR_ECONOMY_VIDEO = "participate_in_fair_economy_video",
@@ -103,7 +95,6 @@ export const transparentBlocksData = [
     title: "Connect with currencies",
     description:
       "Tagion offers fast, efficient transactions without compromising decentralisation or security. Our DEX will ensure seamless trading with various currencies, both crypto and fiat.",
-    img: connectWithCurrencies,
     videoId: VideoIdsEnum.CONNECT_WITH_CURRENCIES_VIDEO,
     blockPositions: {
       desktop_large: { top: "379px", right: "46px" },
@@ -114,6 +105,9 @@ export const transparentBlocksData = [
       desktop_max: "599px",
     },
     height: {
+      mobile: "160px",
+      tablet: "252px",
+      desktop: "296px",
       desktop_large: "247px",
       desktop_max: "310px",
     },
@@ -122,13 +116,15 @@ export const transparentBlocksData = [
     title: "Participate in a fair economy",
     description:
       "Picture this: easy money transfers, borrowing, lending, investing, and more with Tagion. We're all about fairness - no one can take unfair advantage because the network is built to include, rather than exclude and exploit.",
-    img: participateInFairEconomy,
     videoId: VideoIdsEnum.PARTICIPATE_IN_FAIR_ECONOMY_VIDEO,
     width: {
       desktop_large: "466px",
       desktop_max: "599px",
     },
     height: {
+      mobile: "172px",
+      tablet: "271px",
+      desktop: "318px",
       desktop_large: "247px",
       desktop_max: "310px",
     },
@@ -141,13 +137,15 @@ export const transparentBlocksData = [
     title: "Build the future",
     description:
       "Shape the future by designing your own rules in custom ecosystems and applications. Explore limitless possibilities across industries like supply chain, arts, nature conservation, banking, healthcare, and audit.",
-    img: buildTheFuture,
     videoId: VideoIdsEnum.BUILD_THE_FUTURE_VIDEO,
     width: {
       desktop_large: "466px",
       desktop_max: "599px",
     },
     height: {
+      mobile: "157px",
+      tablet: "253px",
+      desktop: "297px",
       desktop_large: "247px",
       desktop_max: "310px",
     },
@@ -165,7 +163,6 @@ export const transparentBlocksData = [
     ),
     description:
       "Exchange digital assets seamlessly. Tagion Decentralised Exchange Protocol will enable real price discovery and transparency to create the best use of liquidity and pricing.",
-    img: DEX,
     videoId: VideoIdsEnum.DEX_VIDEO,
     blockPositions: {
       desktop_large: { top: "342px", right: "0", left: "0", margin: "0 auto" },
@@ -176,21 +173,27 @@ export const transparentBlocksData = [
       desktop_max: "380px",
     },
     height: {
+      mobile: "135px",
+      tablet: "212px",
+      desktop: "248px",
       desktop_large: "160px",
       desktop_max: "230px",
     },
+    style: { mobile: { marginBottom: "16px" } },
   },
   {
     title: "Proof of Community",
     description:
       "As a node operator, core contributor, developer or ambassador, you can take part in network governance and shape the network’s development. Based on reputation-weighted voting and rewards earned, Tagion’s governance model ensures fairness and empowers community ownership.",
-    img: proofOfCommunity,
     videoId: VideoIdsEnum.PROOF_OF_COMMUNITY_VIDEO,
     width: {
       desktop_large: "466px",
       desktop_max: "599px",
     },
     height: {
+      mobile: "183px",
+      tablet: "288px",
+      desktop: "338px",
       desktop_large: "247px",
       desktop_max: "310px",
     },
@@ -203,18 +206,25 @@ export const transparentBlocksData = [
       },
       desktop_max: { bottom: "910px", right: "0", left: "0", margin: "0 auto" },
     },
+    style: {
+      mobile: { marginTop: "-16px" },
+      tablet: { marginTop: "-16px" },
+      desktop: { marginTop: "-16px" },
+    },
   },
   {
     title: "Node Swapping",
     description:
       "Active nodes, carrying out validation tasks, are periodically and randomly rotated with passive ones, reducing the risk of Sybil attacks and enabling network decentralisation. This is a novel feature innovating Hashgraph technology.",
-    img: nodeSwapping,
     videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
     width: {
       desktop_large: "466px",
       desktop_max: "599px",
     },
     height: {
+      mobile: "355px",
+      tablet: "560px",
+      desktop: "657px",
       desktop_large: "247px",
       desktop_max: "310px",
     },
@@ -226,6 +236,11 @@ export const transparentBlocksData = [
         margin: "0 auto",
       },
       desktop_max: { bottom: "590px", right: "0", left: "0", margin: "0 auto" },
+    },
+    style: {
+      mobile: { marginTop: "40px" },
+      tablet: { marginTop: "40px" },
+      desktop: { marginTop: "40px" },
     },
   },
   {
@@ -244,8 +259,8 @@ export const transparentBlocksData = [
         network.
       </>
     ),
-    img: DART,
     videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
+    disabledForMobile: true,
     width: {
       desktop_large: "506px",
       desktop_max: "639px",

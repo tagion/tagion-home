@@ -1,19 +1,16 @@
-// sizes
+// *********** sizes  *********** //
 $mobile-size: 280px;
 $tablet-size: 600px;
 $desktop-size: 1024px;
 $desktop-large-size: 1440px;
 $desktop-max-size: 1920px;
 
-// $content-max-width: 1170px;
-
-$main-border-radius: 100px;
-
 $header-height: 80px;
 $header-height-large: 84px;
 $header-content-width: 100%;
 $header-content-height: 100%;
 
+$main-border-radius: 100px;
 $card-border-radius: 16px;
 $tweet_border-radius: 12px;
 $card_small_border-radius: 8px;
@@ -21,7 +18,11 @@ $scrollbar-border-radius: 5px;
 $toastify-desktop-border-radius: 16px;
 $toastify-mobile-radius: 16px;
 
-// colors
+// swiper
+$swiper-card-mobile-space-between: 16px;
+$swiper-card-additional-width-to-hide-buttons: 10px;
+
+// *********** colors  *********** //
 $main-dark-color: #121113;
 $main-white-color: #ffffff;
 $main-purple-color: #3f0b81;

@@ -29,11 +29,6 @@ $disabled_carousel_width: 911px;
       color: $main-gray-text-color;
       margin-top: 16px;
     }
-
-    .swiper_buttons {
-      align-self: center;
-      margin-top: 32px;
-    }
   }
 
   @media (min-width: $tablet-size) {
@@ -46,10 +41,6 @@ $disabled_carousel_width: 911px;
       .title {
         max-width: 644px;
       }
-    }
-
-    .content > .swiper_buttons {
-      margin-top: 40px;
     }
   }
 
@@ -69,10 +60,6 @@ $disabled_carousel_width: 911px;
       }
 
       .mobile_cards {
-        display: none;
-      }
-
-      .swiper_buttons {
         display: none;
       }
     }

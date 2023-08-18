@@ -4,7 +4,7 @@ import { ExternalLinks } from "../common/enums/external_links";
 
 import securityIcon from "../assets/images/security.png";
 import tokenIcon from "../assets/images/token_high_resolution_cutted.png";
-import twitterIcon from "../assets/images/twitter_icon.svg";
+import twitterIcon from "../assets/images/X_icon.svg";
 import discordIcon from "../assets/images/discord_icon.svg";
 import telegramIcon from "../assets/images/telegram_icon.svg";
 import githubIcon from "../assets/images/github_icon.svg";

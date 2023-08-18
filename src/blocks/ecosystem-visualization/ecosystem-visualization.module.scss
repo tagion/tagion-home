@@ -11,13 +11,17 @@
     max-width: 410px;
 
     .card {
-      margin-top: 40px;
+      margin-top: 32px;
 
-      .card_img_wrapper {
-        margin-bottom: 32px;
+      .card_video_wrapper {
+        position: relative;
+        width: 100%;
+        margin-bottom: 24px;
 
-        img {
-          width: 230px;
+        video {
+          position: absolute;
+          width: 252px;
+          left: -12px;
         }
       }
     }
@@ -33,13 +37,10 @@
       max-width: none;
 
       .card {
-        &:first-child {
-          margin-top: 48px;
-        }
-
-        .card_img_wrapper {
-          img {
-            width: 360px;
+        .card_video_wrapper {
+          video {
+            width: 397px;
+            left: -18px;
           }
         }
       }
@@ -60,9 +61,10 @@
           line-height: 36px;
         }
 
-        .card_img_wrapper {
-          img {
-            width: 424px;
+        .card_video_wrapper {
+          video {
+            width: 466px;
+            left: -20px;
           }
         }
       }

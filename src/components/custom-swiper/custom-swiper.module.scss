@@ -1,6 +1,7 @@
 @import "./../../styles/variables.scss";
 
-$hide-buttons-breakpoint: $value_partner_card-tablet-breakpoint + 10px;
+$hide-buttons-breakpoint: $value_partner_card-tablet-breakpoint +
+  $swiper-card-additional-width-to-hide-buttons;
 
 .swiper {
   width: 100%;
