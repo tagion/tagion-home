@@ -7,4 +7,5 @@ export enum ExternalLinks {
   MEDIUM = "https://tagion.medium.com/",
 
   START_CONTRIBUTING_JOIN_BUTTON = "https://discord.gg/QxbkYjtvER",
+  ELINOR_OSTROMS_PRINCIPLES = "https://www.researchgate.net/publication/265017003_Elinor_Ostrom%27s_Legacy_Governing_the_Commons_and_the_Rational_Choice_Controversy",
 }

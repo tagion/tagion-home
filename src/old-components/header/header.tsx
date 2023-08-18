@@ -5,7 +5,7 @@ import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 
 import logoIcon from "../../assets/images/logo.svg";
-import twitterIcon from "../../assets/images/twitter_icon.svg";
+import twitterIcon from "../../assets/images/X_icon.svg";
 import discordIcon from "../../assets/images/discord_icon.svg";
 import telegramIcon from "../../assets/images/telegram_icon.svg";
 import githubIcon from "../../assets/images/github_icon.svg";
@@ -85,7 +85,11 @@ const NavigationPanel = ({
           width: "100vw",
         }}
       >
-        <img src={closeButtonIcon} alt="Close Icon" onClick={() => isOpenedHandler(false)}/>
+        <img
+          src={closeButtonIcon}
+          alt="Close Icon"
+          onClick={() => isOpenedHandler(false)}
+        />
       </Box>
     </Drawer>
   );

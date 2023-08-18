@@ -11,7 +11,7 @@ interface InputProps {
   card: {
     videoSrc: string;
     title: React.JSX.Element | string;
-    description: string;
+    description: React.JSX.Element | string;
   };
   index: number;
   classNames?: { imgWrapper?: string; linkWrapper?: string };

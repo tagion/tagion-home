@@ -49,7 +49,7 @@ export const SecureScalableDecentralisedBlock: React.FC = () => {
       <div className={`${cx("title")} title-font`}>
         Secure. Scalable.
         <br />
-        Decentralized.
+        Decentralised.
       </div>
       <Grid container columns={miuCustomColumns} className={cx("body")}>
         <Grid item lg={6.91} xl={6.93}>
