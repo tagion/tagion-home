@@ -183,8 +183,10 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
         >
           <div
             className={cx("submenu", {
-              isTwoRows:
-                selectedSubContent.length <= 4 && selectedSubContent.length > 2,
+              docsSubmenu:
+                navigationLinks[selectedSubMenuIndex].name === "Docs",
+              ecosystemSubmenu:
+                navigationLinks[selectedSubMenuIndex].name === "Ecosystem",
             })}
           >
             {selectedSubContent?.map(
@@ -193,14 +195,14 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                 i,
                 subContentArray
               ) => {
-                const isEvenNumber = subContentArray.length % 2 === 0;
+                const isFirstColumn = (subContentArray.length - 1) / 2 >= i;
                 return (
                   <a
                     href={linkTo}
                     target={externalLink ? "_blank" : ""}
                     className={cx("link", {
-                      isOdd: !isEvenNumber,
-                      isEven: isEvenNumber,
+                      isFirstColumn,
+                      isSecondColumn: !isFirstColumn,
                       isDisabled: description === "Coming soon",
                     })}
                     key={i}
@@ -219,7 +221,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                       <div className={`${cx("title")} font-28 prompt-regular`}>
                         {name}
                       </div>
-                      <div className="font-16">{description}</div>
+                      <div className="inter-16">{description}</div>
                     </div>
                   </a>
                 );

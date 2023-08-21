@@ -128,6 +128,14 @@
         &.isActive {
           border-radius: $card-border-radius;
         }
+
+        &:hover {
+          background-color: $start-contributing-item-hover-color;
+
+          &.isActive {
+            background-color: $main-dark-color;
+          }
+        }
       }
 
       .task_description {

@@ -7,7 +7,7 @@ export const FAQBlockData = [
     questions: [
       {
         valueName: "What is Tagion Program?",
-        bulletedList: [
+        paragraphList: [
           <>
             The group of projects aims to launch the Tagion Protocols Network
             (TPN) and achieve its true decentralization. The program is managed
@@ -25,13 +25,13 @@ export const FAQBlockData = [
       },
       {
         valueName: "What is Tagion?",
-        bulletedList: [
+        paragraphList: [
           "The decentralized non-political monetary system that used and governed openly as a common good.",
         ],
       },
       {
         valueName: "Who governs Tagion?",
-        bulletedList: [
+        paragraphList: [
           <>
             The system's users govern Tagion by a reputational trust score model
             and Proof of Community model. More, we are trying to extend the
@@ -48,25 +48,25 @@ export const FAQBlockData = [
       },
       {
         valueName: "What is the business model behind Tagion?",
-        bulletedList: [
+        paragraphList: [
           "The business model behind Tagion is to allow network participants, such as nodes and service providers, to make money either by being rewarded for helping with operating the network (nodes) or from earning money from services being provided on top of the network, e.g., fees and interests (service providers).",
         ],
       },
       {
         valueName: "Is Tagion compliant (Financial regulation)?",
-        bulletedList: [
+        paragraphList: [
           "Tagion follows a dualistic approach to regulation giving privacy in the network for its users and making it possible for the users and service providers to exchange compliance records seamlessly and efficiently, where the users control the data. By this, the service providers can cater to local regulations. Tagion does not have embedded compliance to any jurisdiction. In that aspect, the network is totally neutral. So, every legal entity must be compliant with its local jurisdiction.",
         ],
       },
       {
         valueName: "What is Adaptive money supply, and how does it work?",
-        bulletedList: [
+        paragraphList: [
           "Adaptive currency automatically increases and decreases in volume with the demands of the money. Tagion is inspired by the equation of exchange trying to maintain a stable internal price level by regulating the money supply based on the speed of money and the system's adoption. The adoption is an arbitrary measure of the underlying commodities Tagions are used to Trade. A sophisticated algorithm burns and spins money to secure a stable value of Tagions.",
         ],
       },
       {
         valueName: "How do the consensus mechanisms work? ",
-        bulletedList: [
+        paragraphList: [
           "Every cryptocurrency blockchain operates using a consensus mechanism. It is a system that users of a blockchain network follow to agree on the legitimacy of transactions. This system ensures that all legitimate transactions are recorded on the blockchain and that each copy contains all valid transactions. ",
         ],
       },
@@ -77,7 +77,7 @@ export const FAQBlockData = [
     questions: [
       {
         valueName: "Where can I get tagions?",
-        bulletedList: [
+        paragraphList: [
           <>
             Tagion's private pre-sales are currently in progress. Our investor
             relations team will happily answer any questions about investing in
@@ -91,19 +91,19 @@ export const FAQBlockData = [
       },
       {
         valueName: "When can I use tagions?",
-        bulletedList: [
+        paragraphList: [
           "We are working collaboratively to make the switch to a better money system. In the meantime, it's unlikely you'll be able to spend tagions at your local grocery store. However, as we grow, we're developing new commercial banking solutions alongside Tagion. We expect businesses to shift to alternative payment solutions because of their higher efficiency and lower cost.",
         ],
       },
       {
         valueName: "How can I become a part of Tagion?",
-        bulletedList: [
+        paragraphList: [
           "Tagion is still in its early days, so you have a chance to help us build and become a valuable member of our growing community with a say in the future development of Tagion. Remember - it's yours as much as it's ours.",
         ],
       },
       {
         valueName: "Where can I learn more about the technology behind it? ",
-        bulletedList: [
+        paragraphList: [
           <>
             You can find all the technical information in the{" "}
             <a

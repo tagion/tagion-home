@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 import { SwiperClass } from "swiper/react";
 
-import { CustomSwiper, SwiperButtons } from "..";
+import { CustomSwiper, Dropdown, SwiperButtonsWrapper } from "..";
+import { ContributorsTypeName } from "../../common/enums";
+import { contributorsFilterDropdownData } from "../../content/meet-our-contributors";
 
 import * as styles from "./contributor-swiper.module.scss";
+
+import { ReactComponent as RightArrowIcon } from "../../assets/images/right_arrow.svg";
 
 const cx = classNames.bind(styles);
 
 interface InputProps {
   title: string;
   classNames?: { title: string };
-  cardGenerator: () => React.JSX.Element[];
+  cardGenerator: (
+    contributorsType: ContributorsTypeName
+  ) => React.JSX.Element[];
 }
 
 export const ContributorSwiper: React.FC<InputProps> = ({
@@ -22,7 +28,10 @@ export const ContributorSwiper: React.FC<InputProps> = ({
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
     null
   );
-  const generatedCards = cardGenerator();
+  const [selectedFilterIndex, setSelectedFilterIndex] = useState<string>("1");
+  const generatedCards = cardGenerator(
+    contributorsFilterDropdownData[Number(selectedFilterIndex)]
+  );
 
   return (
     <div
@@ -32,9 +41,56 @@ export const ContributorSwiper: React.FC<InputProps> = ({
     >
       <div className={`${cx("title_wrapper")} ${classNames?.title} title-font`}>
         <span>{title}</span>
-        {swiperInstance && (
-          <SwiperButtonsWrapper swiperInstance={swiperInstance} />
-        )}
+        <Dropdown
+          name="contributorFilterIndex"
+          value={selectedFilterIndex}
+          onChange={(e) => {
+            setSelectedFilterIndex(e.target.value);
+            swiperInstance?.slideTo(0);
+          }}
+          menuItems={contributorsFilterDropdownData}
+          withLeftArrow
+          withoutErrorMessages
+          className={{
+            dropdown: cx("dropdown"),
+            leftArrow: cx("dropdown_leftArrow"),
+            wrapper: cx("dropdown_wrapper"),
+          }}
+          menuProps={{
+            PaperProps: {
+              sx: {
+                "& .MuiMenuItem-root": {
+                  fontFamily: "Inter-400, sans-serif",
+                  lineHeight: "20px",
+                  fontSize: "16px",
+                  minHeight: "auto",
+                },
+              },
+            },
+          }}
+        />
+        <div className={cx("swiper_controls")}>
+          <div className={cx("desktop_filter")}>
+            {contributorsFilterDropdownData.map((contributorType, i) => (
+              <div
+                key={contributorType}
+                onClick={() => {
+                  setSelectedFilterIndex(i.toString());
+                  swiperInstance?.slideTo(0);
+                }}
+                className={`${cx("contributor_type_item", {
+                  selected: i === Number(selectedFilterIndex),
+                })} prompt-400`}
+              >
+                <RightArrowIcon />
+                <span> {contributorType}</span>
+              </div>
+            ))}
+          </div>
+          {swiperInstance && (
+            <SwiperButtonsWrapper swiperInstance={swiperInstance} />
+          )}
+        </div>
       </div>
 
       <div className={cx("content")}>
@@ -61,34 +117,5 @@ export const ContributorSwiper: React.FC<InputProps> = ({
         />
       </div>
     </div>
-  );
-};
-
-// todo move to a separate component
-const SwiperButtonsWrapper: React.FC<{
-  swiperInstance: SwiperClass;
-}> = ({ swiperInstance }) => {
-  const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
-  const [isPrevButtonDisabled, setIsPrevButtonDisabled] = useState(true);
-
-  swiperInstance.on("progress", () => {
-    if (swiperInstance.progress >= 1) {
-      setIsNextButtonDisabled(() => true);
-    } else if (swiperInstance.progress <= 0) {
-      setIsPrevButtonDisabled(() => true);
-    } else {
-      setIsPrevButtonDisabled(() => false);
-      setIsNextButtonDisabled(() => false);
-    }
-  });
-
-  return (
-    <SwiperButtons
-      prevOnClick={() => swiperInstance?.slidePrev()}
-      nextOnClick={() => swiperInstance?.slideNext()}
-      prevButton={{ disabled: isPrevButtonDisabled }}
-      nextButton={{ disabled: isNextButtonDisabled }}
-      className={cx("swiper_buttons")}
-    />
   );
 };

@@ -1,4 +1,9 @@
 import React from "react";
+import classNames from "classnames/bind";
+
+import * as styles from "../blocks/ecosystem-visualization/ecosystem-visualization.module.scss";
+
+const cx = classNames.bind(styles);
 
 enum VideoIdsEnum {
   CONNECT_WITH_CURRENCIES_VIDEO = "connect_with_currencies_video",
@@ -8,6 +13,33 @@ enum VideoIdsEnum {
   PROOF_OF_COMMUNITY_VIDEO = "proof_of_community_video",
   DART_AND_NODE_SWAPPING_VIDEO = "dart_and_node_swapping_video",
 }
+
+const dartAndNodeSwappingBlock = {
+  title: "Node Swapping",
+  description: (
+    <>
+      Active nodes, carrying out validation tasks, are periodically and randomly
+      rotated with passive ones, reducing the risk of Sybil attacks and enabling
+      network decentralisation. This is a novel feature innovating Hashgraph
+      technology.
+      <div className={`${cx("popup_title")} prompt-regular prompt-36 title`}>
+        DART Distributed Database and Hashgraph Consensus Mechanism
+      </div>
+      <div>
+        Ensure your data integrity and back up with distributed and scalable
+        storage. The DART can handle large amounts of data efficiently as the
+        databases are distributed across nodes, optimising the network capacity.
+        You can create customised solutions with sub-DARTs with specific
+        case-based rules and integrated trading capabilities.
+        <br className="br-separator" /> Hashgraph is a revolutionary technology
+        that ensures agreement across nodes. Unlike traditional blockchains,
+        which rely on probability, Hashgraph provides a definitive order of
+        events, so there is greater trust, accuracy and reliability in the
+        network.
+      </div>
+    </>
+  ),
+};
 
 export const videosData = [
   {
@@ -186,6 +218,8 @@ export const transparentBlocksData = [
     description:
       "As a node operator, core contributor, developer or ambassador, you can take part in network governance and shape the network’s development. Based on reputation-weighted voting and rewards earned, Tagion’s governance model ensures fairness and empowers community ownership.",
     videoId: VideoIdsEnum.PROOF_OF_COMMUNITY_VIDEO,
+    disabledForMobile: false,
+    dartAndNodeSwappingBlock: false,
     width: {
       desktop_large: "466px",
       desktop_max: "599px",
@@ -213,10 +247,10 @@ export const transparentBlocksData = [
     },
   },
   {
-    title: "Node Swapping",
-    description:
-      "Active nodes, carrying out validation tasks, are periodically and randomly rotated with passive ones, reducing the risk of Sybil attacks and enabling network decentralisation. This is a novel feature innovating Hashgraph technology.",
+    ...dartAndNodeSwappingBlock,
     videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
+    disabledForMobile: false,
+    dartAndNodeSwappingBlock: true,
     width: {
       desktop_large: "466px",
       desktop_max: "599px",
@@ -244,23 +278,10 @@ export const transparentBlocksData = [
     },
   },
   {
-    title: "DART Distributed Database and Hashgraph Consensus Mechanism",
-    description: (
-      <>
-        Ensure your data integrity and back up with distributed and scalable
-        storage. The DART can handle large amounts of data efficiently as the
-        databases are distributed across nodes, optimising the network capacity.
-        You can create customised solutions with sub-DARTs with specific
-        case-based rules and integrated trading capabilities.
-        <br className="br-separator" /> Hashgraph is a revolutionary technology
-        that ensures agreement across nodes. Unlike traditional blockchains,
-        which rely on probability, Hashgraph provides a definitive order of
-        events, so there is greater trust, accuracy and reliability in the
-        network.
-      </>
-    ),
+    ...dartAndNodeSwappingBlock,
     videoId: VideoIdsEnum.DART_AND_NODE_SWAPPING_VIDEO,
     disabledForMobile: true,
+    dartAndNodeSwappingBlock: true,
     width: {
       desktop_large: "506px",
       desktop_max: "639px",

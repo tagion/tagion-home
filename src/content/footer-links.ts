@@ -1,36 +1,44 @@
+import { ExternalLinks } from "../common/enums";
+
 export type LinkType = {
   name: string;
   linkTo: string;
   icon?: string;
+  externalLink?: boolean;
 };
 
-export type FooterColumnLinkType = typeof footerColumnLinks[number];
+export type FooterColumnLinkType = (typeof footerColumnLinks)[number];
 
 export const footerColumnLinks = [
   {
-    title: "Tapps",
+    title: "Ecosystem",
     links: [
-      { name: "Wallet", linkTo: "https://www.google.com.ua/" },
-      { name: "Dex", linkTo: "https://www.google.com.ua/" },
-      { name: "Get Tagions", linkTo: "https://www.google.com.ua/" },
+      { name: "Explore Ecosystem", linkTo: "/ecosystem" },
+      { name: "Get Tagions", linkTo: "/get-tagions" },
     ],
   },
 
   {
     title: "Company",
     links: [
-      { name: "Community", linkTo: "https://www.google.com.ua/" },
-      { name: "About", linkTo: "https://www.google.com.ua/" },
-      { name: "Blog", linkTo: "https://www.google.com.ua/" },
+      { name: "Community", linkTo: "/community" },
+      { name: "About", linkTo: "/about" },
+      { name: "Blog", linkTo: "/blog" },
     ],
   },
   {
     title: "Docs",
     links: [
-      { name: "SDKs", linkTo: "https://www.google.com.ua/" },
-      { name: "Whitepaper", linkTo: "https://www.google.com.ua/" },
-      { name: "Governance paper", linkTo: "https://www.google.com.ua/" },
-      { name: "TechPaper", linkTo: "https://www.google.com.ua/" },
+      {
+        name: "Tech paper",
+        linkTo: "/resources/tech-paper.pdf",
+        externalLink: true,
+      },
+      {
+        name: "Brand guidelines",
+        linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
+        externalLink: true,
+      },
     ],
   },
   // {

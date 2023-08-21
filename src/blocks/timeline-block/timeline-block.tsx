@@ -59,7 +59,7 @@ export const TimelineBlock: React.FC = () => {
                     <div
                       className={`${cx("status", {
                         isGreen: item.status === "Done",
-                      })} font-12`}
+                      })} inter-12`}
                     >
                       {item.status}
                     </div>

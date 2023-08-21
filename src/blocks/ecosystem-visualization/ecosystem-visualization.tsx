@@ -112,35 +112,35 @@ export const EcosystemVisualizationBlock: React.FC = () => {
             (
               { description, title, videoId, disabledForMobile, height, style },
               i
-            ) => (
-              <Card
-                title={title}
-                description={description}
-                videoSrc={
-                  disabledForMobile
-                    ? ""
-                    : videosData.find(
-                        (videoData) => videoData.videoId === videoId
-                      )?.videoSrc
-                }
-                key={i}
-                classNames={{
-                  videoWrapper: cx("card_video_wrapper"),
-                  card: cx("card"),
-                  title: cx("card_title"),
-                }}
-                style={{
-                  videoWrapper: {
-                    height: pageSize && height?.[pageSize],
-                    marginBottom:
-                      pageSize &&
-                      (style as StyleType)?.[pageSize]?.marginBottom,
-                    marginTop:
-                      pageSize && (style as StyleType)?.[pageSize]?.marginTop,
-                  },
-                }}
-              />
-            )
+            ) =>
+              !disabledForMobile && (
+                <Card
+                  title={title}
+                  description={description}
+                  videoSrc={
+                    videosData.find(
+                      (videoData) => videoData.videoId === videoId
+                    )?.videoSrc
+                  }
+                  key={i}
+                  classNames={{
+                    videoWrapper: cx("card_video_wrapper"),
+                    card: cx("card"),
+                    title: cx("card_title"),
+                    description: cx("card_description"),
+                  }}
+                  style={{
+                    videoWrapper: {
+                      height: pageSize && height?.[pageSize],
+                      marginBottom:
+                        pageSize &&
+                        (style as StyleType)?.[pageSize]?.marginBottom,
+                      marginTop:
+                        pageSize && (style as StyleType)?.[pageSize]?.marginTop,
+                    },
+                  }}
+                />
+              )
           )}
       </div>
 
@@ -224,13 +224,14 @@ export const EcosystemVisualizationBlock: React.FC = () => {
             isFixed: popupScrollData.isFixed,
             isTopAbsolutePosition:
               popupScrollData.isTopAbsolutePosition && !popupScrollData.isFixed,
+            dartAndNodeSwappingBlock: hoveredVideoData.dartAndNodeSwappingBlock,
           })}
           id="popup"
         >
           <div className={`${cx("popup_title")} prompt-regular prompt-36`}>
             {hoveredVideoData.title}
           </div>
-          <div className={cx("popup_description")}>
+          <div className={`${cx("popup_description")} inter-400`}>
             {hoveredVideoData.description}
           </div>
         </div>
