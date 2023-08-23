@@ -20,7 +20,7 @@
 
     background: $contributor-img-bg-color;
     border: 1px solid $main-dark-color;
-    border-radius: 8px;
+    border-radius: $card-border-radius;
 
     img {
       width: 100%;
@@ -62,7 +62,6 @@
         justify-content: center;
         margin-bottom: 0;
         margin-right: 24px;
-        border-radius: 12px;
 
         img {
           width: 280px;

@@ -55,17 +55,14 @@
     }
 
     .answer_list {
-      padding-left: 24px;
       margin: 0 0 16px;
 
-      & > li > ul {
-        list-style-type: initial;
-        padding-left: 24px;
-      }
+      span {
+        display: inline-block;
 
-      &.withoutListSpot {
-        list-style-type: none;
-        padding-left: 0;
+        &:not(:first-child) {
+          margin-top: 12px;
+        }
       }
     }
   }
@@ -152,6 +149,11 @@
     .question_block {
       .answer_list {
         padding-right: 326px;
+        margin-top: 16px;
+
+        span:not(:first-child) {
+          margin-top: 16px;
+        }
       }
 
       &:first-child {

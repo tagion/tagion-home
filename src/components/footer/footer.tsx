@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "gatsby";
 import classNames from "classnames/bind";
 
 import {
   LinkType,
   FooterColumnLinkType,
-  techPaperLink,
-  privacyPolicyLink,
-  termsOfUseLink,
+  footerColumnLinks,
 } from "../../content";
 import { SocialLinks } from "../socials-links";
+import { CustomLink } from "../custom-link";
+import { navigate } from "gatsby";
 
 import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
 
@@ -18,46 +17,35 @@ import * as styles from "./footer.module.scss";
 const cx = classNames.bind(styles);
 
 export const Footer: React.FC = () => {
-  // const columnOfLinksItem = (linkColumn: FooterColumnLinkType) => (
-  //   <div className={cx("column")} key={linkColumn.title}>
-  //     <div className={cx("column_title")}>{linkColumn.title}</div>
-  //     <div className={cx("column_links")}>
-  //       {linkColumn.links &&
-  //         linkColumn.links.map(({ linkTo, name, icon }: LinkType) => (
-  //           <Link to={linkTo} key={name}>
-  //             {!!icon && <img src={icon} alt={`${name} icon`} />}
-  //             {name}
-  //           </Link>
-  //         ))}
-  //     </div>
-  //   </div>
-  // );
+  const columnOfLinksItem = (linkColumn: FooterColumnLinkType) => (
+    <div className={cx("column")} key={linkColumn.title}>
+      <div className={`${cx("column_title")} prompt-20`}>
+        {linkColumn.title}
+      </div>
+      <div className={cx("column_links")}>
+        {linkColumn.links &&
+          linkColumn.links.map(
+            ({ linkTo, name, icon, externalLink }: LinkType) => (
+              <CustomLink
+                linkTo={linkTo}
+                isExternalLink={externalLink}
+                key={name}
+                className="inter-16"
+              >
+                {/* {!!icon && <img src={icon} alt={`${name} icon`} />} */}
+                {name}
+              </CustomLink>
+            )
+          )}
+      </div>
+    </div>
+  );
 
   return (
     <footer id="footer">
-      <div className={cx("main_links")}>
-        <div className={cx("logo_and_socials")}>
-          <Link to="/" className={cx("logo")}>
-            <LogoIcon />
-          </Link>
-          <SocialLinks className={cx("socials")} />
-        </div>
-        <div className={`${cx("links")} font-16`}>
-          <a href={techPaperLink.linkTo} target="_blank">{techPaperLink.name}</a>
-          <Link to={termsOfUseLink.linkTo}>{termsOfUseLink.name}</Link>
-          <Link to={privacyPolicyLink.linkTo}>{privacyPolicyLink.name}</Link>
-        </div>
-      </div>
-
-      <div className={cx("copyright_and_socials")}>
-        <SocialLinks className={cx("socials")} />
-        <span className={`${cx("copyright")} font-12`}>© 2023 Tagion</span>
-      </div>
-
-      {/* ////// old version ///// */}
-      {/* <div className={cx("footer_content")}>
+      <div className={cx("footer_content")}>
         <div className={cx("logo_column")}>
-          <LogoIcon className={cx("logo")} />
+          <LogoIcon className={cx("logo")} onClick={() => navigate("/")} />
           <SocialLinks className={cx("socials")} />
         </div>
 
@@ -66,15 +54,15 @@ export const Footer: React.FC = () => {
             footerColumnLinks.map((linkColumn) =>
               columnOfLinksItem(linkColumn)
             )}
-          <div className={cx("additional_links_column")}>
+          <div className={`${cx("additional_links_column")} inter-12`}>
             <SocialLinks className={cx("socials")} />
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-use">Terms of use</Link>
+            <CustomLink linkTo="/privacy-policy">Privacy Policy</CustomLink>
+            <CustomLink linkTo="/terms-of-use">Terms of use</CustomLink>
           </div>
         </div>
 
-        <span className={cx("copyright")}>© 2023 Tagion</span>
-      </div> */}
+        <span className={`${cx("copyright")} inter-12`}>© 2023 Tagion</span>
+      </div>
     </footer>
   );
 };

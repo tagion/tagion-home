@@ -28,6 +28,7 @@ export const NatureIsOurClientBlock: React.FC = () => {
     <CompanySwiper
       cardGenerator={natureIsOurClientCardGenerator}
       title="Nature is our client"
+      description="Initial Tagion network adoption through green-focused partnerships."
       classNames={{
         title: cx("title"),
       }}

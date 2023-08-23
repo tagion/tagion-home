@@ -10,9 +10,12 @@ export const startContributingData = [
           Do you have a keen eye for detail? If you've noticed a bug, have an
           idea for a new feature, or want to enhance the user experience, we
           want to hear from you. <br className="br-separator" />
-          Go to Discord {">"} Contributing {">"} #website channel and send a
-          message with the suggestion, including any relevant screenshots or
-          examples. <br className="br-separator" />
+          Go to{" "}
+          <b>
+            Discord {">"} Contributing {">"} #website channel
+          </b>{" "}
+          and send a message with the suggestion, including any relevant
+          screenshots or examples. <br className="br-separator" />
           Our team will carefully review each submission and select the most
           impactful and feasible suggestions to implement.
         </>

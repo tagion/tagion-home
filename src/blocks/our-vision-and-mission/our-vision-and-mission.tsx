@@ -9,7 +9,11 @@ const cx = classNames.bind(styles);
 
 export const OurVisionAndMissionBlock: React.FC = () => {
   return (
-    <div className={`${cx("our_vision_and_mission_block")} disable-lateral-margins`}>
+    <div
+      className={`${cx(
+        "our_vision_and_mission_block"
+      )} disable-lateral-margins`}
+    >
       <div className={`${cx("text")} main-lateral-margins`}>
         <div className={`${cx("title")} title-font`}>
           Our vision and mission
@@ -60,11 +64,13 @@ const CircleBlock = ({
       <div className={cx("circle")}>
         <div className={`${cx("label")} prompt-regular`}>{label}</div>
         <div className={`${cx("title")} prompt-regular`}>{title}</div>
-        <div className={cx("description")}>{description}</div>
+        <div className={`${cx("description")} inter-400`}>{description}</div>
         {withVerticalLine && (
           <div className={cx("vertical_line_wrapper")}>
             <div className={cx("line")}>
-              <div className={`${cx("purple_spot_label")} prompt-regular font-28`}>
+              <div
+                className={`${cx("purple_spot_label")} prompt-regular font-28`}
+              >
                 <div>We are here</div>
               </div>
             </div>

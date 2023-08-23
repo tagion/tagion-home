@@ -13,6 +13,14 @@
     .card {
       margin-top: 32px;
 
+      .card_description {
+        [class~="title"] {
+          margin: 32px 0 12px;
+          font-size: 28px;
+          line-height: 28px;
+        }
+      }
+
       .card_video_wrapper {
         position: relative;
         width: 100%;
@@ -22,6 +30,7 @@
           position: absolute;
           width: 252px;
           left: -12px;
+          border-radius: 15%;
         }
       }
     }
@@ -55,7 +64,8 @@
 
     .mobile_cards_container {
       .card {
-        .card_title {
+        .card_title,
+        .card_description > [class~="title"] {
           margin-bottom: 24px;
           font-size: 36px;
           line-height: 36px;
@@ -135,6 +145,12 @@
         top: 200px;
       }
 
+      &.dartAndNodeSwappingBlock {
+        .popup_title {
+          letter-spacing: -1.08px;
+        }
+      }
+
       .popup_title {
         margin-bottom: 24px;
       }
@@ -142,6 +158,10 @@
       .popup_description {
         font-size: 16px;
         line-height: 24px;
+
+        .popup_title {
+          margin-top: 24px;
+        }
       }
     }
   }
@@ -160,6 +180,16 @@
       &.isFixed {
         left: calc(((100% - $desktop-max-size) / 2) + 60px);
         bottom: 60px;
+      }
+
+      &.dartAndNodeSwappingBlock {
+        .popup_title {
+          letter-spacing: 0;
+        }
+
+        .popup_description {
+          letter-spacing: -0.2px;
+        }
       }
 
       .popup_title > br {
