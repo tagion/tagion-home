@@ -11,7 +11,7 @@ interface InputProps {
   cardGenerator: () => React.JSX.Element[];
   title: string;
   description?: string;
-  classNames?: { wrapper?: string; title?: string };
+  classNames?: { wrapper?: string; title?: string; description?: string };
 }
 
 export const CompanySwiper: React.FC<InputProps> = ({
@@ -34,7 +34,11 @@ export const CompanySwiper: React.FC<InputProps> = ({
         {title}
       </div>
       {description && (
-        <div className={`${cx("description")} ${classNames?.title} body-font`}>
+        <div
+          className={`${cx("description")} ${
+            classNames?.description
+          } body-font`}
+        >
           {description}
         </div>
       )}

@@ -14,7 +14,7 @@ interface InputProps {
     title: string;
     questions: {
       valueName: string;
-      bulletedList: Array<string | React.ReactElement>;
+      paragraphList: Array<string | React.ReactElement>;
     }[];
   }[];
 

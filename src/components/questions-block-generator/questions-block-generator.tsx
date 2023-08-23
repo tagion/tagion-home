@@ -19,7 +19,7 @@ interface InputProps {
   };
   data: Array<{
     valueName: string;
-    bulletedList: Array<string | React.ReactElement>;
+    paragraphList: Array<string | React.ReactElement>;
   }>;
 }
 
@@ -32,7 +32,11 @@ export const QuestionBlockGenerator: React.FC<InputProps> = ({
   const [openedValueIndex, setOpenedValueIndex] = useState<number>(-1);
 
   return (
-    <div className={`${cx("question_block_generator_wrapper")} ${classNames?.mainWrapper}`}>
+    <div
+      className={`${cx("question_block_generator_wrapper")} ${
+        classNames?.mainWrapper
+      }`}
+    >
       {data.length &&
         data.map((question, i) => {
           const isQuestionOpened = openedValueIndex === i;
@@ -61,15 +65,15 @@ export const QuestionBlockGenerator: React.FC<InputProps> = ({
                 </div>
               </div>
               {isQuestionOpened && (
-                <ul
+                <div
                   className={`${cx("answer_list", {
                     withoutListSpot,
                   })} body-font ${classNames?.list || ""}`}
                 >
-                  {question.bulletedList.map((item, i) => (
-                    <li key={i}>{item}</li>
+                  {question.paragraphList.map((item, i) => (
+                    <span key={i}>{item}</span>
                   ))}
-                </ul>
+                </div>
               )}
             </div>
           );

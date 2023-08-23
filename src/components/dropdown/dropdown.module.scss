@@ -43,6 +43,10 @@
       color: $main-dark-color;
     }
 
+    &.withLeftArrow > div {
+      padding-left: 32px;
+    }
+
     fieldset {
       border: 0 !important;
       border-bottom: 1px solid $main-dark-color !important;
@@ -60,6 +64,22 @@
       fill: $main-dark-color;
       position: absolute;
       pointer-events: none;
+    }
+  }
+
+  .left_arrow {
+    position: absolute;
+    left: 5px;
+    bottom: 11px;
+    width: 14px;
+    height: 14px;
+
+    stroke: $main-dark-color;
+  }
+
+  .arrow_icon {
+    &.isDropdownOpened {
+      rotate: 180deg;
     }
   }
 

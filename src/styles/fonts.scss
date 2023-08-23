@@ -22,7 +22,8 @@
   src: url(../styles/fonts/Inter/Inter-Regular.ttf);
 }
 
-.prompt-regular {
+.prompt-regular,
+.prompt-400 {
   font-family: "Prompt-Regular", sans-serif;
 }
 
@@ -145,7 +146,7 @@
 
 .body-font {
   font-style: normal;
-  font-family: 'Inter-400', sans-serif;
+  font-family: "Inter-400", sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: $body-text-color;
@@ -186,15 +187,21 @@
   line-height: 16px;
 }
 
+.prompt-20 {
+  font-family: "Prompt-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+}
+
 // ** Inter **
-.font-16 {
-  font-weight: 400;
+.inter-16 {
+  font-family: "Inter-400", sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
-.font-12 {
-  font-weight: 400;
+.inter-12 {
+  font-family: "Inter-400", sans-serif;
   font-size: 12px;
   line-height: 16px;
 }

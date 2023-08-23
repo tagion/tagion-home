@@ -3,16 +3,30 @@
 // mui select
 .MuiPopover-paper {
   border: 1px solid $select-items-border-color;
-  border-radius: 16px;
+  border-radius: 16px !important;
   box-shadow: none;
   margin-top: 8px;
   touch-action: none;
 
-  ul > li {
-    padding: 8px 0 8px 23px;
+  ul {
+    [class~="Mui-selected"] {
+      background-color: $select-item-choosen-color;
 
-    &:hover {
-      background-color: $select-item-hover-color;
+      &:hover {
+        background-color: $select-item-hover-color;
+      }
+
+      &:focus {
+        background-color: $select-item-choosen-color;
+      }
+    }
+
+    & > li {
+      padding: 8px 0 8px 24px;
+
+      &:hover {
+        background-color: $select-item-hover-color;
+      }
     }
   }
 }

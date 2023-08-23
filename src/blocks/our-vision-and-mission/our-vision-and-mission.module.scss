@@ -45,7 +45,7 @@ $circle_margin_top_mobile: -16.5px;
 
           width: 100%;
           height: 100%;
-          padding: 0 17px 0 40px;
+          padding: 0 16px 0 40px;
           border: 1px solid $main-dark-color;
           border-radius: 100%;
           cursor: pointer;
@@ -109,7 +109,7 @@ $circle_margin_top_mobile: -16.5px;
 
         .circle {
           justify-content: flex-start;
-          padding: 133px 21px 0 48px;
+          padding: 133px 41px 0 64px;
 
           .title {
             width: 320px;
@@ -119,7 +119,6 @@ $circle_margin_top_mobile: -16.5px;
           }
 
           .description {
-            width: 320px;
             font-size: 16px;
             line-height: 24px;
           }
@@ -263,7 +262,7 @@ $circle_margin_top_mobile: -16.5px;
           }
 
           .circle {
-            padding: 190px 27.33px 0 64px;
+            padding: 190px 76px 0 80px;
 
             .vertical_line_wrapper > .line {
               right: 126px;
@@ -275,7 +274,7 @@ $circle_margin_top_mobile: -16.5px;
             }
 
             .description {
-              width: 419px;
+              width: 100%;
               font-size: 20px;
               line-height: 26px;
             }

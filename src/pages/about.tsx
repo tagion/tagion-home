@@ -36,7 +36,7 @@ const AboutPage = () => {
       >
         <IntroductoryBlock
           title="About"
-          description="Five years ago, we were dreaming of a fairer, more efficient and inclusive monetary system and banking infrastructure. Today, we’re building our dream - a decentralised, scalable and secure money-based network with real human interactions. And the best part, is that we are building it together with you."
+          description="We dream of a future where everyone has equal opportunities to participate in a fair economy. Today, we are actively building our dream - a modular, decentralised, scalable and secure network infrastructure for real human interactions. And the best part, is that we are building it together with you."
           img={aboutPageIntro}
           classNames={{
             imgWrapper: cx("about_img_wrapper"),
