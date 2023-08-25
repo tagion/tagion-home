@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 
 import { Button, CustomLink } from "../../components";
-import { ExternalLinks } from "../../common/enums/external_links";
+import { ExternalLinks, PageSizes } from "../../common/enums";
 import { startContributingData } from "../../content";
+import { useResizeEvent } from "../../hooks";
 
 import * as styles from "./start-contributing.module.scss";
 
@@ -11,13 +12,23 @@ const cx = classNames.bind(styles);
 
 export const StartContributingBlock: React.FC = ({}) => {
   const [openedTaskIndex, setOpenedTaskIndex] = useState(0);
+  const [pageSize, setPageSize] = useState(0);
+  useResizeEvent({
+    resizeHandler: () => {
+      setPageSize(window.innerWidth);
+      window.innerWidth >= PageSizes.DESKTOP &&
+        setOpenedTaskIndex((openedTaskIndex) =>
+          openedTaskIndex === -1 ? 0 : openedTaskIndex
+        );
+    },
+  });
 
   const taskHeader = (index: number, taskName: string) => (
     <div
       className={cx("task_header", { isActive: openedTaskIndex === index })}
       onClick={() =>
         setOpenedTaskIndex((openedTaskIndex) =>
-          openedTaskIndex === index ? -1 : index
+          openedTaskIndex === index && pageSize < PageSizes.DESKTOP ? -1 : index
         )
       }
     >
