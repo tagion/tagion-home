@@ -65,6 +65,11 @@
 
       .body {
         margin-bottom: 32px;
+
+        [class~="navigation_path"] {
+          font-family: "Inter-600", sans-serif;
+          color: $main-dark-color;
+        }
       }
 
       a {

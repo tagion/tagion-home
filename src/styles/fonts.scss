@@ -5,21 +5,19 @@
   src: url(../styles/fonts/Prompt/Prompt-Regular.ttf);
 }
 
-// 400
 @font-face {
-  font-family: Inter-Regular;
+  font-family: Inter-400;
   src: url(../styles/fonts/Inter/Inter-Regular.ttf);
 }
 
-// 500
 @font-face {
-  font-family: Inter-Medium;
+  font-family: Inter-500;
   src: url(../styles/fonts/Inter/Inter-Medium.ttf);
 }
 
 @font-face {
-  font-family: Inter-400;
-  src: url(../styles/fonts/Inter/Inter-Regular.ttf);
+  font-family: Inter-600;
+  src: url(../styles/fonts/Inter/Inter-SemiBold.ttf);
 }
 
 .prompt-regular,
