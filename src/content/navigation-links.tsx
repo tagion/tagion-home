@@ -123,7 +123,7 @@ export const navigationLinks: Array<{
   },
   {
     name: "Blog",
-    linkTo: ExternalLinks.MEDIUM,
+    linkTo: InternalLinks.BLOG,
     externalLink: true,
   },
 ];

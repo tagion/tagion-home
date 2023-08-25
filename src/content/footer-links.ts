@@ -1,4 +1,4 @@
-import { ExternalLinks } from "../common/enums";
+import { ExternalLinks, InternalLinks } from "../common/enums";
 
 export type LinkType = {
   name: string;
@@ -13,17 +13,17 @@ export const footerColumnLinks = [
   {
     title: "Ecosystem",
     links: [
-      { name: "Explore Ecosystem", linkTo: "/ecosystem" },
-      { name: "Get Tagions", linkTo: "/get-tagions" },
+      { name: "Explore Ecosystem", linkTo: InternalLinks.ECOSYSTEM },
+      { name: "Get Tagions", linkTo: InternalLinks.GET_TAGIONS },
     ],
   },
 
   {
     title: "Company",
     links: [
-      { name: "Community", linkTo: "/community" },
-      { name: "About", linkTo: "/about" },
-      { name: "Blog", linkTo: "/blog" },
+      { name: "Community", linkTo: InternalLinks.COMMUNITY },
+      { name: "About", linkTo: InternalLinks.ABOUT },
+      { name: "Blog", linkTo: InternalLinks.BLOG, externalLink: true },
     ],
   },
   {
@@ -31,7 +31,7 @@ export const footerColumnLinks = [
     links: [
       {
         name: "Tech paper",
-        linkTo: "/resources/tech-paper.pdf",
+        linkTo: ExternalLinks.TECH_PAPER,
         externalLink: true,
       },
       {
