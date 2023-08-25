@@ -21,10 +21,10 @@ export const tweetsBlockData = [
       <>
         We`ve been quiet, but for good reason. We're laser-focused on building
         an <span className="twitter-hashtag">#alternativemonetarysystem</span>.
-        <br className="br-separator" />
+        <div className="text-separator" />
         Our 2023 roadmap: prod. ready DART, consensus mechanism, APIs/services &
         Execution Engine.
-        <br className="br-separator" />
+        <div className="text-separator" />
         Stay tuned for the launch on truly distributed infrastructure.{" "}
         <span className="twitter-hashtag">#Tagion</span>
       </>

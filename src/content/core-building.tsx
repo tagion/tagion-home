@@ -100,7 +100,7 @@ export const coreBuildingBlockData = [
             against its database. This approach is highly efficient as it
             operates at the binary data level, resulting in fast
             synchronisation.
-            <br className="br-separator" />
+            <div className="text-separator" />
             Another approach is to listen or ask for the consensus recorders,
             that is a recorder chain. Each epoch generates a new recorder that
             allows sequential updates to the database.
