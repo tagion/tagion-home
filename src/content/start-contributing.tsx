@@ -11,9 +11,9 @@ export const startContributingData = [
           idea for a new feature, or want to enhance the user experience, we
           want to hear from you. <br className="br-separator" />
           Go to{" "}
-          <b>
+          <span className="navigation_path">
             Discord {">"} Contributing {">"} #website channel
-          </b>{" "}
+          </span>{" "}
           and send a message with the suggestion, including any relevant
           screenshots or examples. <br className="br-separator" />
           Our team will carefully review each submission and select the most
@@ -42,9 +42,9 @@ export const startContributingData = [
           valuable experience and become an integral part of shaping the
           project's future.
           <br className="br-separator" /> Go to{" "}
-          <b>
+          <span className="navigation_path">
             Discord {">"} Contributing {">"} #moderation channel to apply.
-          </b>
+          </span>
         </>
       ),
     },
@@ -67,10 +67,10 @@ export const startContributingData = [
           your creativity and get rewards, exposure and recognition.
           <br className="br-separator" />
           Go to{" "}
-          <b>
+          <span className="navigation_path">
             Discord {">"} Contributing {">"} #design or #write channels and
             introduce yourself and share your portfolio and ideas with us.
-          </b>
+          </span>
         </>
       ),
     },
@@ -94,11 +94,11 @@ export const startContributingData = [
           understanding of the distributed technology space.
           <br className="br-separator" />
           Go to{" "}
-          <b>
+          <span className="navigation_path">
             Discord {">"} Contributing {">"} #translate and fill out the
             application form, indicating your language proficiency and providing
             examples of previous work.
-          </b>
+          </span>
         </>
       ),
     },
@@ -121,10 +121,10 @@ export const startContributingData = [
           contribute to the documentation.
           <br className="br-separator" />
           Go to{" "}
-          <b>
+          <span className="navigation_path">
             Discord {">"} Contributing {">"} #research and submit your
             application.
-          </b>{" "}
+          </span>{" "}
           We'll review the submission based on research background strength,
           critical thinking skills and a passion for tech and social impact.
           Highlight your research experience, area of expertise, and any
