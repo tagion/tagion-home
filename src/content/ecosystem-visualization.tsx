@@ -31,11 +31,11 @@ const dartAndNodeSwappingBlock = {
         databases are distributed across nodes, optimising the network capacity.
         You can create customised solutions with sub-DARTs with specific
         case-based rules and integrated trading capabilities.
-        <br className="br-separator" /> Hashgraph is a revolutionary technology
-        that ensures agreement across nodes. Unlike traditional blockchains,
-        which rely on probability, Hashgraph provides a definitive order of
-        events, so there is greater trust, accuracy and reliability in the
-        network.
+        <div className="text-separator" /> Hashgraph is a revolutionary
+        technology that ensures agreement across nodes. Unlike traditional
+        blockchains, which rely on probability, Hashgraph provides a definitive
+        order of events, so there is greater trust, accuracy and reliability in
+        the network.
       </div>
     </>
   ),
