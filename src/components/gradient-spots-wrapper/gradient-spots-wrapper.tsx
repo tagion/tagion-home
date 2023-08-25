@@ -74,7 +74,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
       gradientImg = gradients.tablet.img(imgArgument);
       gradientOptions = gradients.tablet.options;
     } else if (
-      pageWidth >= 0 &&
+      pageWidth > 0 &&
       pageWidth < PageSizes.TABLET &&
       gradients.mobile
     ) {
