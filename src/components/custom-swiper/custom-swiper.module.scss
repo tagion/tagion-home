@@ -12,6 +12,7 @@ $hide-buttons-breakpoint: $value_partner_card-tablet-breakpoint +
   .swiper_slide {
     display: flex;
     width: fit-content;
+    height: initial;
   }
 
   .swiper_buttons {
