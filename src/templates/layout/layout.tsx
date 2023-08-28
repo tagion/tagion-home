@@ -24,21 +24,36 @@ const cx = classNames.bind(styles);
 interface InputProps {
   withPaddingTop?: boolean;
   withPaddingBottom?: boolean;
+  withoutFooter?: boolean;
   isHeaderShownOnTop?: boolean;
+  is100PercentHeight?: boolean;
+  isPageWithDarkBackground?: boolean;
 }
 
 export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
   withPaddingTop = true,
   withPaddingBottom,
+  withoutFooter,
   isHeaderShownOnTop,
+  is100PercentHeight,
+  isPageWithDarkBackground,
   children,
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <div className={cx("layout", { withPaddingTop, withPaddingBottom })}>
-        <Header isHeaderShownOnTop={isHeaderShownOnTop} />
+      <div
+        className={cx("layout", {
+          withPaddingTop,
+          withPaddingBottom,
+          is100PercentHeight,
+        })}
+      >
+        <Header
+          isHeaderShownOnTop={isHeaderShownOnTop}
+          isPageWithDarkBackground={isPageWithDarkBackground}
+        />
         <main>{children}</main>
-        <Footer />
+        {!withoutFooter && <Footer />}
       </div>
       <ToastContainer
         autoClose={3000}

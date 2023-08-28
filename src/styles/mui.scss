@@ -22,6 +22,10 @@
       }
     }
 
+    [tabindex~="0"]:not([class~="Mui-selected"]) {
+      background-color: transparent;
+    }
+
     & > li {
       padding: 8px 0 8px 24px;
 

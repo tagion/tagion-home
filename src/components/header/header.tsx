@@ -20,13 +20,13 @@ const cx = classNames.bind(styles);
 
 interface InputProps {
   isHeaderShownOnTop?: boolean;
+  isPageWithDarkBackground?: boolean;
 }
 
-const comingSoonPages = navigationLinks.reduce<Array<string>>((acc, value) => {
-  return value.subContent?.length ? [...acc, value.name] : acc;
-}, []);
-
-export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
+export const Header: React.FC<InputProps> = ({
+  isHeaderShownOnTop,
+  isPageWithDarkBackground,
+}) => {
   const [isSideMenuOpened, setIsSideMenuOpened] = useState<boolean>(false);
   const [isSideMenuDisplayed, setIsSideMenuDisplayed] =
     useState<boolean>(false);
@@ -102,6 +102,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
       id="header"
       className={cx("header", {
         isHeaderTransparent: isHeaderTransparent && !isHeaderShownOnTop,
+        isPageWithDarkBackground,
       })}
     >
       <Link to="/" className={cx("logo_wrapper")}>
