@@ -857,3 +857,52 @@ export const communityPageGradients = {
     },
   },
 };
+
+export const notFoundPageGradient = {
+  desktop_max: {
+    img: () =>
+      require("../assets/images/gradient/404/desktop-max/gradient_1920.png")
+        .default,
+
+    options: {
+      bgSize: "2930px 2402px",
+      bgPosition: "top calc(50% + 400px) right -1800px",
+    },
+  },
+  desktop_large: {
+    img: () =>
+      require("../assets/images/gradient/404/desktop-large/gradient_1440.png")
+        .default,
+    options: {
+      bgSize: "1963px 1610px",
+      bgPosition: "top calc(50% + 300px) right -1170px",
+    },
+  },
+  desktop: {
+    img: () =>
+      require("../assets/images/gradient/404/desktop/gradient_1024.png")
+        .default,
+
+    options: {
+      bgSize: "2686px 2202px",
+      bgPosition: "top calc(50% + 650px) right -1640px",
+    },
+  },
+  tablet: {
+    img: () =>
+      require("../assets/images/gradient/404/tablet/gradient_600.png").default,
+
+    options: {
+      bgSize: "1155px 1468px",
+      bgPosition: "top calc(50% + 420px) right -620px",
+    },
+  },
+  mobile: {
+    img: () =>
+      require("../assets/images/gradient/404/mobile/gradient_280.png").default,
+    options: {
+      bgSize: "694px 883px",
+      bgPosition: "top calc(50% + 220px) right -400px",
+    },
+  },
+};
