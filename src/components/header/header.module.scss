@@ -21,6 +21,47 @@
     background-color: transparent;
   }
 
+  &.isPageWithDarkBackground {
+    background-color: $dark-header-color;
+
+    &.isHeaderTransparent {
+      background-color: transparent;
+      backdrop-filter: inherit;
+    }
+
+    .logo_wrapper {
+      svg {
+        fill: $main-white-color;
+      }
+    }
+
+    .burger_menu_icon {
+      fill: $main-white-color;
+
+      path {
+        stroke: $main-dark-color;
+      }
+    }
+
+    nav {
+      .menu_item_wrapper {
+        .menu_item {
+          color: $main-white-color;
+
+          .arrow {
+            fill: $main-white-color;
+          }
+        }
+      }
+    }
+
+    .external_links {
+      svg {
+        fill: $main-white-color;
+      }
+    }
+  }
+
   .logo_wrapper {
     svg {
       width: 124px;

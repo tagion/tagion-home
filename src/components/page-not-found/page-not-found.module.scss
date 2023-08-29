@@ -1,25 +1,79 @@
+@import "./../../styles/variables.scss";
+
 .not_found_wrapper {
-  width: 100%;
-  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 
-  & > span {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 40px;
+  width: 100%;
+  height: 100%;
+  padding: 136px 25px;
+  min-height: 100vh;
+
+  .title,
+  .description {
     text-align: center;
+    padding: 0 16px;
+  }
+
+  .title {
+    margin: 16px 0 12px;
+  }
+
+  .description {
+    margin-bottom: 40px;
   }
 
   img {
-    margin: 0 30px 51px;
-    max-width: 574px;
+    width: 100%;
+    max-width: 467px;
   }
 
-  a {
-    margin-top: 87px;
-    text-decoration: none;
+  button {
+    min-height: 52px;
+  }
+
+  @media (min-width: $tablet-size) {
+    padding: 200px 67px;
+
+    .title {
+      margin: 24px 0 16px;
+    }
+
+    .title,
+    .description {
+      padding: 0;
+    }
+
+    img {
+      max-width: 730px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding: 200px 0;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding: 174px 0;
+
+    .title {
+      font-size: 50px;
+      line-height: 50px;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    padding: 200px 0;
+
+    .title {
+      margin: 32px 0 16px;
+    }
+
+    img {
+      width: 984px;
+      max-width: none;
+    }
   }
 }
