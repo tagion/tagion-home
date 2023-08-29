@@ -41,6 +41,7 @@ export const Dropdown: React.FC<InputProps> = ({
 }) => {
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
   const resizeHandler = () => {
+    setIsDropdownOpened(() => false);
     const label = document.getElementById(`label-${className?.wrapper}`);
     if (label?.offsetHeight && label.offsetHeight > HeightSizes.INPUT_TEXT) {
       label.style.setProperty(
@@ -109,6 +110,7 @@ export const Dropdown: React.FC<InputProps> = ({
           )}
           onClose={() => setIsDropdownOpened(false)}
           onOpen={() => setIsDropdownOpened(true)}
+          open={isDropdownOpened}
           MenuProps={{
             PaperProps: {
               sx: {
