@@ -24,7 +24,7 @@
     transition: background-position-x 0.3s;
   }
 
-  &.isGradientAdded:hover,
+  &.isHovered,
   &.isGradientFixedActive {
     background-position-x: center !important;
   }
