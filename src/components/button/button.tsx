@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 
 import { PaddingSizes } from "../../common/enums";
@@ -48,6 +48,7 @@ export const Button: React.FC<InputProps> = ({
   isGradientAdded = false,
   isGradientFixedActive = false,
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <button
       type={type}
@@ -58,6 +59,7 @@ export const Button: React.FC<InputProps> = ({
         withArrow,
         isGradientAdded,
         isGradientFixedActive,
+        isHovered,
       })} prompt-regular font-20 ${className}`}
       onClick={() => onClick?.()}
       style={{
@@ -68,6 +70,8 @@ export const Button: React.FC<InputProps> = ({
       }}
       id={id}
       disabled={isDisabled || isLoading}
+      onMouseOver={() => setIsHovered(() => true)}
+      onMouseLeave={() => setIsHovered(() => false)}
     >
       <div style={{ width: contentWidth ? `${contentWidth}px` : "auto" }}>
         {!isLoading ? (
