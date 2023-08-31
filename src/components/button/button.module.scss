@@ -21,11 +21,12 @@
     background-image: url("../../assets/images/gradient/buttons/black_button.png");
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-position-x 0.3s;
+    transition: background-position-x 0.8s ease;
   }
 
   &.isHovered,
   &.isGradientFixedActive {
+    transition: background-position-x 0.3s ease;
     background-position-x: center !important;
   }
 
