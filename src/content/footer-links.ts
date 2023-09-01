@@ -31,8 +31,9 @@ export const footerColumnLinks = [
     links: [
       {
         name: "Tech paper",
-        linkTo: ExternalLinks.TECH_PAPER,
-        externalLink: true,
+        linkTo: InternalLinks.NOT_FOUND,
+      //   linkTo: ExternalLinks.TECH_PAPER,
+      //   externalLink: true,
       },
       {
         name: "Brand guidelines",
