@@ -46,8 +46,7 @@ export const joinTheCommunity = {
   ),
   description: "Become a part of a diverse network",
   Img: communityPng,
-  linkTo: "https://t.co/OAuiTbX6cJ",
-  externalLink: true,
+  linkTo: "/community",
 };
 
 export const youCanParticipateBlockData = {
