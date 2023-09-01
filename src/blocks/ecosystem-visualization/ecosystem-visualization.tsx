@@ -1,23 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
-import { ecosystemVisualizationBlockData } from "../../content";
+import { videosData, transparentBlocksData } from "../../content";
 import { Card } from "../../components";
-import { useResizeEvent } from "../../hooks";
-import { PageSizes } from "../../common/enums";
+import { usePageBreakpointDeterminator, useResizeEvent } from "../../hooks";
+import { BreakpointNames } from "../../common/enums";
 
 import * as styles from "./ecosystem-visualization.module.scss";
 
 const cx = classNames.bind(styles);
 
+type StyleType = Record<BreakpointNames, CSSProperties>;
+type BreakpointsStringType = Record<BreakpointNames, string>;
+type BreakpointsCSSPropertiesType = Record<BreakpointNames, CSSProperties>;
+
 export const EcosystemVisualizationBlock: React.FC = () => {
-  const [pageSize, setPageSize] = useState("");
-  const [hoveredImgIndex, setHoveredImgIndex] = useState(-1);
+  const [hoveredVideoIndex, setHoveredVideoIndex] = useState(-1);
   const [popupScrollData, setPopupScrollData] = useState({
     scrollPosition: 0,
     isFixed: false,
     isTopAbsolutePosition: false,
   });
+  const { breakpointDeterminator, pageSize } = usePageBreakpointDeterminator();
+
+  const hoveredVideoData = transparentBlocksData[hoveredVideoIndex];
 
   const scrollHandler = () => {
     const cardsContainerElement = document.getElementById("cards_container");
@@ -59,20 +65,32 @@ export const EcosystemVisualizationBlock: React.FC = () => {
 
   useResizeEvent({
     resizeHandler: () => {
-      if (
-        window.innerWidth >= PageSizes.DESKTOP_LARGE &&
-        window.innerWidth < PageSizes.DESKTOP_MAX
-      ) {
-        setPageSize("DESKTOP_LARGE");
-      }
-      if (window.innerWidth >= PageSizes.DESKTOP_MAX) {
-        setPageSize("DESKTOP_MAX");
-      }
-      setHoveredImgIndex(-1);
+      breakpointDeterminator();
+      setHoveredVideoIndex(-1);
     },
   });
 
-  const hoveredImgData = ecosystemVisualizationBlockData[hoveredImgIndex];
+  const videoHandler = (isVideoPlaying: boolean, videoId: string) => {
+    const video = document.getElementById(videoId) as HTMLVideoElement;
+
+    if (video) {
+      isVideoPlaying ? video.play() : video.pause();
+    }
+  };
+
+  const onMouseOverHandler = (
+    index: number,
+    isVideoPlaying: boolean,
+    videoId: string
+  ) => {
+    setHoveredVideoIndex(index);
+    videoHandler(isVideoPlaying, videoId);
+  };
+
+  const onMouseLeaveHandler = (isVideoPlaying: boolean, videoId: string) => {
+    setHoveredVideoIndex(-1);
+    videoHandler(isVideoPlaying, videoId);
+  };
 
   return (
     <div
@@ -80,28 +98,49 @@ export const EcosystemVisualizationBlock: React.FC = () => {
         "ecosystem_visualization_block"
       )} main-top-margins main-bottom-margins`}
     >
-      <div className={`${cx("title")} title-font`}>Ecosystem visualization</div>
+      <div className={`${cx("title")} title-font`}>Ecosystem visualisation</div>
       <div className={`${cx("description")} body-font`}>
-        Tagion Ecosystem is a living organism. It evolves with your
-        participation. Interact to explore.
+        We're building a new era of distributed technology. A modular network to
+        architect real world use cases. Tagion offers customisation and
+        specialisation at every layer and is run by and for the community. Hover
+        over each module to learn more.
       </div>
 
       <div className={`${cx("mobile_cards_container")}`}>
-        {ecosystemVisualizationBlockData.length &&
-          ecosystemVisualizationBlockData.map(
-            ({ description, img, title }, i) => (
-              <Card
-                title={title}
-                description={description}
-                img={{ path: img, alt: title }}
-                key={i}
-                classNames={{
-                  img: cx("card_img_wrapper"),
-                  card: cx("card"),
-                  title: cx("card_title"),
-                }}
-              />
-            )
+        {transparentBlocksData.length &&
+          transparentBlocksData.map(
+            (
+              { description, title, videoId, disabledForMobile, height, style },
+              i
+            ) =>
+              !disabledForMobile && (
+                <Card
+                  title={title}
+                  description={description}
+                  videoSrc={
+                    videosData.find(
+                      (videoData) => videoData.videoId === videoId
+                    )?.videoSrc
+                  }
+                  key={i}
+                  classNames={{
+                    videoWrapper: cx("card_video_wrapper"),
+                    card: cx("card"),
+                    title: cx("card_title"),
+                    description: cx("card_description"),
+                  }}
+                  style={{
+                    videoWrapper: {
+                      height: pageSize && height?.[pageSize],
+                      marginBottom:
+                        pageSize &&
+                        (style as StyleType)?.[pageSize]?.marginBottom,
+                      marginTop:
+                        pageSize && (style as StyleType)?.[pageSize]?.marginTop,
+                    },
+                  }}
+                />
+              )
           )}
       </div>
 
@@ -109,61 +148,91 @@ export const EcosystemVisualizationBlock: React.FC = () => {
         className={`${cx("desktop_large_cards_container")}`}
         id="cards_container"
       >
-        {ecosystemVisualizationBlockData.length &&
-          ecosystemVisualizationBlockData.map(
-            ({ img, title, imgPositions, width }, i) => {
-              const imgAbsolutePositions =
-                pageSize === "DESKTOP_LARGE"
-                  ? imgPositions?.desktop_large
-                  : pageSize === "DESKTOP_MAX"
-                  ? imgPositions?.desktop_max
-                  : undefined;
+        {videosData.length &&
+          videosData.map(
+            ({ videoPositions, width, videoSrc, videoId, style }, i) => {
+              const videoAbsolutePositions =
+                pageSize &&
+                (videoPositions as BreakpointsCSSPropertiesType)?.[pageSize];
+              const styles = {
+                width: pageSize && (width as BreakpointsStringType)?.[pageSize],
+                top: videoAbsolutePositions && videoAbsolutePositions?.top,
+                bottom:
+                  videoAbsolutePositions && videoAbsolutePositions?.bottom,
+                right: videoAbsolutePositions && videoAbsolutePositions?.right,
+                left: videoAbsolutePositions && videoAbsolutePositions?.left,
+                margin:
+                  videoAbsolutePositions && videoAbsolutePositions?.margin,
+                ...style,
+              };
 
-              const imgWidth =
-                pageSize === "DESKTOP_LARGE"
-                  ? width?.desktop_large
-                  : pageSize === "DESKTOP_MAX"
-                  ? width?.desktop_max
-                  : undefined;
               return (
-                <img
-                  src={img}
-                  alt={title}
-                  className={cx("img")}
-                  style={{
-                    width: imgWidth,
-                    top: imgAbsolutePositions?.top,
-                    bottom: imgAbsolutePositions?.bottom,
-                    right: imgAbsolutePositions?.right,
-                    left: imgAbsolutePositions?.left,
-                    margin: imgAbsolutePositions?.margin,
-                  }}
-                  onMouseOver={() => setHoveredImgIndex(i)}
-                  onMouseLeave={() => setHoveredImgIndex(-1)}
+                <video
+                  loop
+                  playsInline
+                  muted
+                  disableRemotePlayback={true}
+                  disablePictureInPicture={true}
                   key={i}
-                />
+                  id={videoId}
+                  style={styles}
+                >
+                  <source src={videoSrc} type="video/mp4" />
+                </video>
+              );
+            }
+          )}
+        {transparentBlocksData.length &&
+          transparentBlocksData.map(
+            ({ blockPositions, width, height, videoId, style }, i) => {
+              const blockAbsolutePositions =
+                pageSize &&
+                (blockPositions as BreakpointsCSSPropertiesType)?.[pageSize];
+
+              const styles = {
+                width: pageSize && (width as BreakpointsStringType)?.[pageSize],
+                top: blockAbsolutePositions && blockAbsolutePositions?.top,
+                bottom:
+                  blockAbsolutePositions && blockAbsolutePositions?.bottom,
+                right: blockAbsolutePositions && blockAbsolutePositions?.right,
+                left: blockAbsolutePositions && blockAbsolutePositions?.left,
+                margin:
+                  blockAbsolutePositions && blockAbsolutePositions?.margin,
+                ...style,
+              };
+
+              return (
+                <div
+                  className={cx("transparent_block")}
+                  key={i}
+                  style={{
+                    ...styles,
+                    height: pageSize && height?.[pageSize],
+                  }}
+                  onMouseOver={() => onMouseOverHandler(i, true, videoId)}
+                  onMouseLeave={() => onMouseLeaveHandler(false, videoId)}
+                ></div>
               );
             }
           )}
       </div>
 
-      {hoveredImgIndex > -1 && hoveredImgData && (
+      {hoveredVideoIndex > -1 && hoveredVideoData && (
         <div
           className={cx("popup", {
-            isVisible: hoveredImgIndex >= 0,
-            absoluteRightSide: hoveredImgIndex === 2,
-            fixedRightSide: hoveredImgIndex === 2 && popupScrollData.isFixed,
+            isVisible: hoveredVideoIndex >= 0,
             isFixed: popupScrollData.isFixed,
             isTopAbsolutePosition:
               popupScrollData.isTopAbsolutePosition && !popupScrollData.isFixed,
+            dartAndNodeSwappingBlock: hoveredVideoData.dartAndNodeSwappingBlock,
           })}
           id="popup"
         >
           <div className={`${cx("popup_title")} prompt-regular prompt-36`}>
-            {hoveredImgData.title}
+            {hoveredVideoData.title}
           </div>
-          <div className={cx("popup_description")}>
-            {hoveredImgData.description}
+          <div className={`${cx("popup_description")} inter-400`}>
+            {hoveredVideoData.description}
           </div>
         </div>
       )}

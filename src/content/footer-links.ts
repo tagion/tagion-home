@@ -1,40 +1,44 @@
-import twitterIcon from "../assets/images/twitter_icon.svg";
-import discordIcon from "../assets/images/discord_icon.svg";
-import telegramIcon from "../assets/images/telegram_icon.svg";
+import { ExternalLinks, InternalLinks } from "../common/enums";
 
 export type LinkType = {
   name: string;
   linkTo: string;
   icon?: string;
+  externalLink?: boolean;
 };
 
-export type FooterColumnLinkType = typeof footerColumnLinks[number];
+export type FooterColumnLinkType = (typeof footerColumnLinks)[number];
 
 export const footerColumnLinks = [
   {
-    title: "Tapps",
+    title: "Ecosystem",
     links: [
-      { name: "Wallet", linkTo: "https://www.google.com.ua/" },
-      { name: "Dex", linkTo: "https://www.google.com.ua/" },
-      { name: "Get Tagions", linkTo: "https://www.google.com.ua/" },
+      { name: "Explore Ecosystem", linkTo: InternalLinks.ECOSYSTEM },
+      { name: "Get Tagions", linkTo: InternalLinks.GET_TAGIONS },
     ],
   },
 
   {
     title: "Company",
     links: [
-      { name: "Community", linkTo: "https://www.google.com.ua/" },
-      { name: "About", linkTo: "https://www.google.com.ua/" },
-      { name: "Blog", linkTo: "https://www.google.com.ua/" },
+      { name: "Community", linkTo: InternalLinks.COMMUNITY },
+      { name: "About", linkTo: InternalLinks.ABOUT },
+      { name: "Blog", linkTo: InternalLinks.BLOG, externalLink: true },
     ],
   },
   {
     title: "Docs",
     links: [
-      { name: "SDKs", linkTo: "https://www.google.com.ua/" },
-      { name: "Whitepaper", linkTo: "https://www.google.com.ua/" },
-      { name: "Governance paper", linkTo: "https://www.google.com.ua/" },
-      { name: "TechPaper", linkTo: "https://www.google.com.ua/" },
+      {
+        name: "Tech paper",
+        linkTo: ExternalLinks.TECH_PAPER,
+        externalLink: true,
+      },
+      {
+        name: "Brand guidelines",
+        linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
+        externalLink: true,
+      },
     ],
   },
   // {

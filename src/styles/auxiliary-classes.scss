@@ -11,10 +11,12 @@
   border-bottom: 1px solid $main-white-color;
 }
 
-.br-separator {
-  content: " ";
-  display: block;
+.text-separator {
   height: 24px;
+}
+
+.twitter-hashtag {
+  color: #4a99e9;
 }
 
 .email-interaction {
@@ -25,6 +27,13 @@
 .underlined-link {
   color: $main-dark-color;
   border-bottom: 1px solid $main-dark-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.underlined-gray-link {
+  color: $main-gray-text-color;
+  border-bottom: 1px solid $main-gray-text-color;
   text-decoration: none;
   cursor: pointer;
 }

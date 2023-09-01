@@ -37,7 +37,7 @@ export const Input: React.FC<InputProps> = ({
         className={`${cx("input", {
           isError: error,
           isGrayTextColor,
-        })} font-16`}
+        })} inter-16`}
         onChange={onChange}
         InputProps={
           !!error
@@ -54,7 +54,7 @@ export const Input: React.FC<InputProps> = ({
             : undefined
         }
       />
-      <div className={`${cx("error_message")} font-12`}>{error}</div>
+      <div className={`${cx("error_message")} inter-12`}>{error}</div>
     </div>
   );
 };

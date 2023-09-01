@@ -80,6 +80,7 @@ const EcosystemPage = () => {
       </GradientSpotsWrapper>
       <GradientSpotsWrapper
         gradients={ecosystemPageGradients.ecosystemVisualizationBlock}
+        mixBlendModeMultiply
       >
         <EcosystemVisualizationBlock />
       </GradientSpotsWrapper>
@@ -97,7 +98,7 @@ const EcosystemPage = () => {
           description="For a real decentralised, independent, censorship resistant, borderless monetary system and banking infrastucture."
           data={coreBuildingBlockData}
         />
-        <div className={cx("FAQ_wrapper")}>
+        {/* <div className={cx("FAQ_wrapper")}>
           <QuestionsBlock
             title={
               <>
@@ -118,7 +119,7 @@ const EcosystemPage = () => {
             src={problemsIcon}
             alt="magnifying glass icon"
           />
-        </div>
+        </div> */}
       </div>
       <GradientSpotsWrapper
         gradients={ecosystemPageGradients.subscribeToNewsletterBlock}

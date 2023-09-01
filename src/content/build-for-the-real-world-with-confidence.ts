@@ -17,7 +17,7 @@ export const buildForTheRealWorldData = [
     img: communityPng,
   },
   {
-    title: "Adapt to the local. Stay global",
+    title: "Adapt to the local. Stay global.",
     description:
       "Make your own rules to challenge the “one-size-fits-all” approach and transcend borders. Design your own sub-ecosystems with customisable governance and connect to other networks with ease.",
     img: globePng,

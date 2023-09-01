@@ -30,6 +30,11 @@ $desktop_max_margin: 120px;
     }
   }
 
+  &.is100PercentHeight,
+  &.is100PercentHeight main {
+    height: 100%;
+  }
+
   main {
     & > * {
       margin-left: $mobile_margin;

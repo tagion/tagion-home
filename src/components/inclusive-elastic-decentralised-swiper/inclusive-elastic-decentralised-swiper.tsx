@@ -19,9 +19,6 @@ export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
   title,
   description,
 }) => {
-  const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
-    null
-  );
   const generatedCards = cardGenerator();
 
   return (
@@ -53,7 +50,6 @@ export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
             desktop_max: 24,
           }}
           swiperId={"inclusive-block"}
-          setSwiperInstance={setSwiperInstance}
           disableBottomSwiperButtons
           className={cx("mobile_cards")}
         />
@@ -63,13 +59,6 @@ export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
         <div className={`${cx("note")} body-font main-lateral-paddings`}>
           *Tagion enables sharding for unlimited TPS in the future
         </div>
-        {swiperInstance && (
-          <SwiperButtonsWrapper
-            swiperInstance={swiperInstance}
-            isWhiteColor
-            className={cx("swiper_buttons")}
-          />
-        )}
       </div>
     </div>
   );

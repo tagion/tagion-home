@@ -31,6 +31,7 @@ export const ValuePartnersBlock: React.FC<InputProps> = ({ className }) => {
     <CompanySwiper
       cardGenerator={valuePartnerCardGenerator}
       title="Value partners"
+      description="Creating adoption and building utility cases for the real world."
       classNames={{ wrapper: className }}
     />
   );

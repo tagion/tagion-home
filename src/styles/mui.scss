@@ -2,17 +2,36 @@
 
 // mui select
 .MuiPopover-paper {
-  border: 1px solid $select-items-border-color;
-  border-radius: 16px;
-  box-shadow: none;
+  border: 1px solid $select-item-hover-color;
+  border-radius: 16px !important;
+  box-shadow: none !important;
   margin-top: 8px;
   touch-action: none;
 
-  ul > li {
-    padding: 8px 0 8px 23px;
+  ul {
+    [class~="Mui-selected"] {
+      background-color: $select-item-choosen-color;
+      border-bottom: 1px solid $select-item-hover-color;
 
-    &:hover {
-      background-color: $select-item-hover-color;
+      &:hover {
+        background-color: $select-item-hover-color;
+      }
+
+      &:focus {
+        background-color: $select-item-choosen-color;
+      }
+    }
+
+    [tabindex~="0"]:not([class~="Mui-selected"]) {
+      background-color: transparent;
+    }
+
+    & > li {
+      padding: 8px 0 8px 24px;
+
+      &:hover {
+        background-color: $select-item-hover-color;
+      }
     }
   }
 }

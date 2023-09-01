@@ -194,7 +194,7 @@ export const Form: React.FC<InputProps> = ({
           value={formik.values.defineYourselfIndex}
           onChange={(e) => handleInputChange(e)}
           menuItems={defineYourselfDropdownData}
-          className={cx("dropdown")}
+          className={{ wrapper: cx("dropdown") }}
           error={
             isFieldsHaveErrorMessages.defineYourselfIndex
               ? formik.errors.defineYourselfIndex
@@ -211,7 +211,7 @@ export const Form: React.FC<InputProps> = ({
               name="howWeCanHelp"
               value={formik.values.howWeCanHelp}
               onChange={handleInputChange}
-              className="font-16"
+              className="inter-16"
               onClick={() => {
                 document
                   .getElementById("textarea-wrapper")

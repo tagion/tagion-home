@@ -1,42 +1,138 @@
 @import "./../../styles/variables.scss";
 
-.company_swiper_block {
+.contributor_swiper_block {
   .title_wrapper {
-    margin: 0 16px 40px;
-  }
+    margin: 0 16px;
 
-  .swiper_buttons {
-    display: none;
+    .dropdown_wrapper {
+      max-width: 410px;
+      height: fit-content;
+      margin: 40px 0 36px;
+
+      .dropdown {
+        & > div {
+          line-height: 20px;
+          font-size: 20px;
+          min-height: auto;
+          font-family: "Prompt-Regular", sans-serif;
+        }
+      }
+    }
+
+    .swiper_controls {
+      display: none;
+    }
   }
 
   @media (min-width: $tablet-size) {
     .title_wrapper {
-      margin: 0 24px 40px;
+      margin: 0 24px;
+
+      .dropdown_wrapper {
+        margin: 48px 0 40px;
+
+        .dropdown_leftArrow {
+          bottom: 14px;
+        }
+
+        .dropdown {
+          & > div {
+            line-height: 28px;
+            font-size: 28px;
+          }
+        }
+      }
     }
   }
 
   @media (min-width: $desktop-size) {
     .title_wrapper {
-      margin: 0 80px 48px;
+      margin: 0 80px;
+
+      .dropdown_wrapper {
+        margin: 56px 0 48px;
+        max-width: none;
+        width: 424px;
+      }
     }
   }
 
   @media (min-width: $desktop-large-size) {
     .title_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 80px 80px;
-    }
+      margin: 0 80px 72px;
 
-    .swiper_buttons {
-      display: flex;
+      .dropdown_wrapper {
+        display: none;
+      }
+
+      .swiper_controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 80px;
+
+        .desktop_filter {
+          display: flex;
+          flex-wrap: wrap;
+          width: 1150px;
+
+          .contributor_type_item {
+            position: relative;
+            font-size: 28px;
+            line-height: 28px;
+            color: $text-coming-soon-color;
+            margin-right: 24px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: padding-left 0.3s, color 0.2s;
+
+            span {
+              display: inline-block;
+              border-bottom: 2px solid transparent;
+              transition: border-bottom 0.2s;
+            }
+
+            &:hover {
+              color: $main-dark-color;
+
+              span {
+                border-bottom: 2px solid $main-dark-color;
+              }
+            }
+
+            svg {
+              position: absolute;
+              bottom: 14px;
+              left: 5px;
+              width: 0;
+              height: 0;
+              transition: visibility 0.3s, width 0.3s, height 0.3s, bottom 0.3s;
+              visibility: hidden;
+            }
+
+            &.selected {
+              padding-left: 32px;
+              color: $main-dark-color;
+
+              svg {
+                visibility: visible;
+                width: 14px;
+                height: 14px;
+                bottom: 7px;
+              }
+            }
+          }
+        }
+
+        .swiper_buttons {
+          display: flex;
+        }
+      }
     }
   }
 
   @media (min-width: $desktop-max-size) {
     .title_wrapper {
-      margin: 0 120px 80px;
+      margin: 0 120px 72px;
     }
 
     .content {

@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { MenuProps } from "@mui/material";
 
 import { HeightSizes, PaddingSizes } from "../../common/enums";
 import { ReactComponent as DownArrowIcon } from "../../assets/images/down-arrow.svg";
+import { ReactComponent as RightArrowIcon } from "../../assets/images/right_arrow.svg";
 
 import * as styles from "./dropdown.module.scss";
 
@@ -16,9 +18,12 @@ interface InputProps {
   name: string;
   value: string;
   label?: string;
-  className?: string;
+  className?: { wrapper?: string; dropdown?: string; leftArrow?: string };
   error?: string;
   menuItems: Array<string>;
+  withLeftArrow?: boolean;
+  withoutErrorMessages?: boolean;
+  menuProps?: Partial<MenuProps>;
   onChange: (event: SelectChangeEvent<string>) => void;
 }
 
@@ -26,13 +31,18 @@ export const Dropdown: React.FC<InputProps> = ({
   name,
   value,
   label,
-  className = "",
+  className,
   error,
   menuItems,
+  withLeftArrow,
+  withoutErrorMessages,
+  menuProps,
   onChange,
 }) => {
+  const [isDropdownOpened, setIsDropdownOpened] = useState(false);
   const resizeHandler = () => {
-    const label = document.getElementById(`label-${className}`);
+    setIsDropdownOpened(() => false);
+    const label = document.getElementById(`label-${className?.wrapper}`);
     if (label?.offsetHeight && label.offsetHeight > HeightSizes.INPUT_TEXT) {
       label.style.setProperty(
         "transform",
@@ -73,19 +83,42 @@ export const Dropdown: React.FC<InputProps> = ({
   }, []);
 
   return (
-    <div className={`${cx("dropdown_wrapper")} ${className}`}>
+    <div className={`${cx("dropdown_wrapper")} ${className?.wrapper}`}>
       <FormControl fullWidth>
-        <InputLabel className={cx("label")} id={`label-${className}`}>
+        <InputLabel className={cx("label")} id={`label-${className?.wrapper}`}>
           {label}
         </InputLabel>
+
+        {withLeftArrow && (
+          <RightArrowIcon
+            className={`${cx("left_arrow")} ${className?.leftArrow}`}
+          />
+        )}
+
         <Select
           label={label}
-          className={`${cx("dropdown", { isError: error })}`}
+          className={`${cx("dropdown", {
+            isError: error,
+            withLeftArrow,
+          })} ${className?.dropdown}`}
           name={name}
           value={value}
           displayEmpty
           onChange={onChange}
-          IconComponent={() => <DownArrowIcon />}
+          IconComponent={() => (
+            <DownArrowIcon className={cx("arrow_icon", { isDropdownOpened })} />
+          )}
+          onClose={() => setIsDropdownOpened(false)}
+          onOpen={() => setIsDropdownOpened(true)}
+          open={isDropdownOpened}
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                "& .MuiList-root": { padding: "16px 0" },
+                ...menuProps?.PaperProps?.sx,
+              },
+            },
+          }}
         >
           {menuItems.length &&
             menuItems.map((item, i) => (
@@ -95,7 +128,9 @@ export const Dropdown: React.FC<InputProps> = ({
             ))}
         </Select>
       </FormControl>
-      <div className={`${cx("error_message")} font-12`}>{error}</div>
+      {!withoutErrorMessages && (
+        <div className={`${cx("error_message")} inter-12`}>{error}</div>
+      )}
     </div>
   );
 };

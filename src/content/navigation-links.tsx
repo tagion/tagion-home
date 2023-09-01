@@ -1,9 +1,10 @@
 import React from "react";
 
-import { ExternalLinks } from "../common/enums/external_links";
+import { ExternalLinks, InternalLinks } from "../common/enums";
 
 import tokenIcon from "../assets/images/token.png";
 import globeIcon from "../assets/images/globe.png";
+import brandGuidelinesIcon from "../assets/images/brand_guidelines.png";
 import { ReactComponent as RocketIcon } from "../assets/images/coming-soon/rocket_icon.svg";
 import { ReactComponent as WalletIcon } from "../assets/images/coming-soon/wallet_icon.svg";
 import { ReactComponent as DEXIcon } from "../assets/images/coming-soon/DEX_icon.svg";
@@ -14,8 +15,8 @@ import { ReactComponent as BuildIcon } from "../assets/images/coming-soon/build_
 import { ReactComponent as WhitePaperIcon } from "../assets/images/coming-soon/whitePaper_icon.svg";
 
 export const techPaperLink = {
-  name: "TechPaper",
-  linkTo: "/resources/tech-paper.pdf",
+  name: "Tech paper",
+  linkTo: ExternalLinks.TECH_PAPER,
   externalLink: true,
   description: "Dive into the tech details",
   Icon: () => <TechPaperIcon />,
@@ -23,13 +24,13 @@ export const techPaperLink = {
 
 export const privacyPolicyLink = {
   name: "Privacy Policy",
-  linkTo: "/privacy-policy",
+  linkTo: InternalLinks.PRIVACY_POLICY,
   externalLink: false,
 };
 
 export const termsOfUseLink = {
   name: "Terms of use",
-  linkTo: "/terms-of-use",
+  linkTo: InternalLinks.TERMS_OF_USE,
   externalLink: false,
 };
 
@@ -51,31 +52,31 @@ export const navigationLinks: Array<{
     subContent: [
       {
         name: "Explore Ecosystem",
-        linkTo: "/ecosystem",
+        linkTo: InternalLinks.ECOSYSTEM,
         description: "Learn about our tech stack",
         img: globeIcon,
       },
       {
         name: "Running Networks",
-        linkTo: "/404",
+        linkTo: InternalLinks.NOT_FOUND,
         description: "Coming soon",
         Icon: () => <RocketIcon />,
       },
       {
         name: "Get Tagions",
-        linkTo: "/get-tagions",
+        linkTo: InternalLinks.GET_TAGIONS,
         description: "Buy tokens",
         img: tokenIcon,
       },
       {
         name: "Wallet",
-        linkTo: "/404",
+        linkTo: InternalLinks.NOT_FOUND,
         description: "Coming soon",
         Icon: () => <WalletIcon />,
       },
       {
         name: "DEX",
-        linkTo: "/404",
+        linkTo: InternalLinks.NOT_FOUND,
         description: "Coming soon",
         Icon: () => <DEXIcon />,
       },
@@ -83,39 +84,46 @@ export const navigationLinks: Array<{
   },
   {
     name: "Community",
-    linkTo: "/community",
+    linkTo: InternalLinks.COMMUNITY,
   },
   {
     name: "Docs",
     subContent: [
+      {
+        name: "Whitepaper",
+        linkTo: InternalLinks.NOT_FOUND,
+        description: "Coming soon",
+        Icon: () => <WhitePaperIcon />,
+      },
       { ...techPaperLink },
       {
         name: "Governance paper",
-        linkTo: "/404",
+        linkTo: InternalLinks.NOT_FOUND,
         description: "Coming soon",
         Icon: () => <GovermentIcon />,
       },
       {
         name: "SDKs",
-        linkTo: "/404",
+        linkTo: InternalLinks.NOT_FOUND,
         description: "Coming soon",
         Icon: () => <BuildIcon />,
       },
       {
-        name: "WhitePaper",
-        linkTo: "/404",
-        description: "Coming soon",
-        Icon: () => <WhitePaperIcon />,
+        name: "Brand guidelines",
+        linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
+        description: "Explore, create, contribute",
+        img: brandGuidelinesIcon,
+        externalLink: true,
       },
     ],
   },
   {
     name: "About",
-    linkTo: "/about",
+    linkTo: InternalLinks.ABOUT,
   },
   {
     name: "Blog",
-    linkTo: ExternalLinks.MEDIUM,
+    linkTo: InternalLinks.BLOG,
     externalLink: true,
   },
 ];

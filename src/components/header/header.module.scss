@@ -21,6 +21,47 @@
     background-color: transparent;
   }
 
+  &.isPageWithDarkBackground {
+    background-color: $dark-header-color;
+
+    &.isHeaderTransparent {
+      background-color: transparent;
+      backdrop-filter: inherit;
+    }
+
+    .logo_wrapper {
+      svg {
+        fill: $main-white-color;
+      }
+    }
+
+    .burger_menu_icon {
+      fill: $main-white-color;
+
+      path {
+        stroke: $main-dark-color;
+      }
+    }
+
+    nav {
+      .menu_item_wrapper {
+        .menu_item {
+          color: $main-white-color;
+
+          .arrow {
+            fill: $main-white-color;
+          }
+        }
+      }
+    }
+
+    .external_links {
+      svg {
+        fill: $main-white-color;
+      }
+    }
+  }
+
   .logo_wrapper {
     svg {
       width: 124px;
@@ -135,40 +176,58 @@
   animation: popper-animation 0.3s forwards;
 
   .submenu {
-    width: 665px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
     height: 284px;
     padding: 40px;
-    border-radius: $card-border-radius;
-    column-count: 2;
     margin-top: 8px;
+    border-radius: $card-border-radius;
 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     background-color: $submenu-bg-color;
 
-    &.isTwoRows {
-      height: 208px;
+    &.docsSubmenu {
+      width: 717px;
+
+      .link {
+        &.isFirstColumn {
+          width: 312px;
+        }
+
+        &.isSecondColumn {
+          width: 289px;
+          margin-left: 36px;
+        }
+      }
+    }
+
+    &.ecosystemSubmenu {
+      width: 665px;
+
+      .link {
+        &.isFirstColumn {
+          width: 328px;
+        }
+
+        &.isSecondColumn {
+          width: 221px;
+          margin-left: 36px;
+        }
+      }
     }
 
     .link {
       display: flex;
-      width: 227px;
-      height: 48px;
-      margin-left: auto;
+      height: 52px;
       margin-bottom: 24px;
       text-decoration: none;
       cursor: pointer;
 
-      &.isEven {
-        &:nth-child(2n) {
-          margin-bottom: 0;
-        }
-      }
-
-      &.isOdd {
-        &:nth-child(2) {
-          margin-bottom: 48px;
-        }
+      &:nth-child(3n) {
+        margin: 0;
       }
 
       &.isDisabled {
@@ -176,12 +235,9 @@
         cursor: default;
       }
 
-      &:nth-child(-n + 2) {
-        width: 328px;
-        margin-left: 0;
-      }
-
       .icon {
+        width: 48px;
+        height: 48px;
         margin-right: 12px;
       }
 

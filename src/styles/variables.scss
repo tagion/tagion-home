@@ -1,25 +1,28 @@
-// sizes
+// *********** sizes  *********** //
 $mobile-size: 280px;
 $tablet-size: 600px;
 $desktop-size: 1024px;
 $desktop-large-size: 1440px;
 $desktop-max-size: 1920px;
 
-// $content-max-width: 1170px;
-
-$main-border-radius: 100px;
-
 $header-height: 80px;
 $header-height-large: 84px;
 $header-content-width: 100%;
 $header-content-height: 100%;
 
+$main-border-radius: 100px;
 $card-border-radius: 16px;
+$tweet_border-radius: 12px;
+$card_small_border-radius: 8px;
 $scrollbar-border-radius: 5px;
 $toastify-desktop-border-radius: 16px;
 $toastify-mobile-radius: 16px;
 
-// colors
+// swiper
+$swiper-card-mobile-space-between: 16px;
+$swiper-card-additional-width-to-hide-buttons: 10px;
+
+// *********** colors  *********** //
 $main-dark-color: #121113;
 $main-white-color: #ffffff;
 $main-purple-color: #3f0b81;
@@ -36,6 +39,7 @@ $body-text-color: #3e3e3e;
 $footer-copyright-text-color: rgba(255, 255, 255, 0.5);
 $secure_decentralised_block-border-color: #000000;
 $swiper-button-disable-color: #888889;
+$swiper-button-disable-white-color: rgba(255, 255, 255, 0.5);
 
 $timeline-status-gray-color: rgba(14, 14, 14, 0.1);
 $timeline-status-green-color: #55ffa6;
@@ -45,14 +49,20 @@ $input-gray-text-color: rgba(255, 255, 255, 0.8);
 
 $submenu-bg-color: hsla(0, 0%, 100%, 0.8);
 
+$dark-header-color: hsl(270, 6%, 7%, 0.8);
+
 $text-coming-soon-color: #9f9f9f;
 
-$select-item-hover-color: #9f9f9f;
-$select-items-border-color: rgba(14, 14, 14, 0.1);
+$select-item-hover-color: #e3e3e3;
+$select-item-choosen-color: #f8f8f8;
 
 $label-bg-color: rgba(14, 14, 14, 0.1);
 
 $contributor-img-bg-color: #f8f8f8;
+
+$numbered-label-color: #4d2db4;
+
+$start-contributing-item-hover-color: rgba(14, 14, 14, 0.05);
 
 // breakpoints
 $value_partner_card-tablet-breakpoint: 360px;

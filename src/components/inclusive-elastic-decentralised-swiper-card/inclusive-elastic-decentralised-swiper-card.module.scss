@@ -32,13 +32,14 @@
 
     .data {
       &:not(:last-child) {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
       }
 
       .title {
         line-height: 24px;
         margin-bottom: 4px;
         color: $main-gray-text-color;
+        font-family: "Inter-400", sans-serif;
       }
 
       .value {
@@ -50,23 +51,30 @@
         cursor: pointer;
         text-decoration: none;
 
+        .kWh_ptx {
+          display: block;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
         .arrow_link {
           display: none;
+        }
+
+        .value_with_arrow {
+          display: inline-block;
+          position: relative;
+        }
+
+        .value_with_arrow > .mobile_arrow_link,
+        .arrow_link {
           width: 11px;
           position: absolute;
-          right: -19px;
-          top: 0;
+          right: -17.5px;
+          top: 6.5px;
 
           path {
             stroke: $main-white-color;
-          }
-        }
-
-        &:hover {
-          border-bottom: 2px solid $main-white-color;
-
-          .arrow_link {
-            display: block;
           }
         }
       }
@@ -89,6 +97,34 @@
       .data {
         &:not(:last-child) {
           margin-bottom: 40px;
+        }
+
+        .value {
+          display: flex;
+          align-items: flex-end;
+
+          br {
+            display: none;
+          }
+
+          .mobile_arrow_link {
+            display: none;
+          }
+
+          &:hover {
+            border-bottom: 2px solid $main-white-color;
+
+            .arrow_link {
+              display: block;
+            }
+          }
+
+          .kWh_ptx {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 24px;
+            margin-left: 8px;
+          }
         }
       }
     }

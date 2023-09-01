@@ -3,19 +3,34 @@
 .ecosystem_visualization_block {
   .description {
     margin-top: 16px;
+    max-width: 534px;
+    font-family: "Inter-400", sans-serif;
   }
 
   .mobile_cards_container {
     max-width: 410px;
 
     .card {
-      margin-top: 40px;
+      margin-top: 32px;
 
-      .card_img_wrapper {
-        margin-bottom: 32px;
+      .card_description {
+        [class~="title"] {
+          margin: 32px 0 12px;
+          font-size: 28px;
+          line-height: 28px;
+        }
+      }
 
-        img {
-          width: 230px;
+      .card_video_wrapper {
+        position: relative;
+        width: 100%;
+        margin-bottom: 24px;
+
+        video {
+          position: absolute;
+          width: 252px;
+          left: -12px;
+          border-radius: 15%;
         }
       }
     }
@@ -31,13 +46,10 @@
       max-width: none;
 
       .card {
-        &:first-child {
-          margin-top: 48px;
-        }
-
-        .card_img_wrapper {
-          img {
-            width: 360px;
+        .card_video_wrapper {
+          video {
+            width: 397px;
+            left: -18px;
           }
         }
       }
@@ -46,20 +58,23 @@
 
   @media (min-width: $desktop-size) {
     .description {
-      width: 534px;
+      width: 62%;
+      max-width: none;
     }
 
     .mobile_cards_container {
       .card {
-        .card_title {
+        .card_title,
+        .card_description > [class~="title"] {
           margin-bottom: 24px;
           font-size: 36px;
           line-height: 36px;
         }
 
-        .card_img_wrapper {
-          img {
-            width: 424px;
+        .card_video_wrapper {
+          video {
+            width: 466px;
+            left: -20px;
           }
         }
       }
@@ -71,7 +86,7 @@
     flex-direction: column;
 
     .description {
-      width: auto;
+      width: 930px;
       margin-top: 24px;
       font-size: 20px;
       line-height: 26px;
@@ -86,9 +101,15 @@
       height: 1572px;
       margin-top: 80px;
 
-      .img {
+      video,
+      .transparent_block {
         position: absolute;
+        mix-blend-mode: multiply;
+      }
+
+      .transparent_block {
         cursor: pointer;
+        border-radius: 100%;
       }
     }
 
@@ -102,8 +123,8 @@
       bottom: -140px;
       left: -40px;
 
-      width: 628px;
-      padding: 32px;
+      width: 612px;
+      padding: 24px;
       background-color: $main_white_color;
       border-radius: 16px;
       border: 1px solid $main_dark_color;
@@ -119,27 +140,28 @@
         display: block;
       }
 
-      &.absoluteRightSide {
-        left: auto;
-        right: -40px;
-      }
-
-      &.fixedRightSide {
-        right: 40px;
-      }
-
       &.isTopAbsolutePosition {
         bottom: auto;
         top: 200px;
       }
 
+      &.dartAndNodeSwappingBlock {
+        .popup_title {
+          letter-spacing: -1.08px;
+        }
+      }
+
       .popup_title {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
       }
 
       .popup_description {
         font-size: 16px;
         line-height: 24px;
+
+        .popup_title {
+          margin-top: 16px;
+        }
       }
     }
   }
@@ -154,25 +176,34 @@
       bottom: -120px;
       left: -60px;
       width: 828px;
+      padding: 32px;
 
       &.isFixed {
         left: calc(((100% - $desktop-max-size) / 2) + 60px);
         bottom: 60px;
       }
 
-      &.absoluteRightSide {
-        left: auto;
-        right: -60px;
+      &.dartAndNodeSwappingBlock {
+        .popup_title {
+          letter-spacing: 0;
+        }
+
+        .popup_description {
+          letter-spacing: -0.2px;
+        }
       }
 
-      &.fixedRightSide {
-        left: auto;
-        right: calc(((100% - $desktop-max-size) / 2) + 60px);
+      .popup_title > br {
+        display: none;
       }
 
       .popup_description {
         font-size: 20px;
         line-height: 26px;
+
+        .popup_title {
+          margin-top: 24px;
+        }
       }
     }
   }

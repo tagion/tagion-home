@@ -13,7 +13,7 @@ import { ReactComponent as SmallArrowLinkIcon } from "../../assets/images/small_
 const cx = classNames.bind(styles);
 
 type DataCharacteristicType = {
-  value: string;
+  value: string | React.JSX.Element;
   linkTo?: string;
 };
 
@@ -85,7 +85,7 @@ export const InclusiveElasticDecentralisedSwiperCard: React.FC<InputProps> = ({
         {cardData.length &&
           cardData.map(({ title, value, linkTo }, i) => (
             <div className={cx("data")} key={i}>
-              <div className={`${cx("title")} font-16`}>{title}</div>
+              <div className={`${cx("title")} inter-16`}>{title}</div>
               <CustomLink
                 linkTo={linkTo}
                 isExternalLink={true}

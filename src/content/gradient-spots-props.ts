@@ -771,7 +771,7 @@ export const communityPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 80%",
+        bgSize: "100% 75%",
       },
     },
     desktop_large: {
@@ -779,7 +779,7 @@ export const communityPageGradients = {
         require("../assets/images/gradient/main-page/desktop-large/introductory_block_1440.png")
           .default,
       options: {
-        bgSize: "100% 80%",
+        bgSize: "100% 75%",
       },
     },
     desktop: {
@@ -788,7 +788,7 @@ export const communityPageGradients = {
           .default,
 
       options: {
-        bgSize: "90% 100%",
+        bgSize: "90% 65%",
       },
     },
     tablet: {
@@ -797,7 +797,7 @@ export const communityPageGradients = {
           .default,
 
       options: {
-        bgSize: "100% 100%",
+        bgSize: "100% 50%",
       },
     },
     mobile: {
@@ -805,8 +805,104 @@ export const communityPageGradients = {
         require("../assets/images/gradient/main-page/mobile/introductory_block_280.png")
           .default,
       options: {
-        bgSize: "100% 100%",
+        bgSize: "100% 38%",
       },
+    },
+  },
+  tweetsAboutTagionBlock: {
+    desktop_max: {
+      img: () =>
+        require("../assets/images/gradient/community-page/desktop-max/tweets_about_tagion_1920.png")
+          .default,
+
+      options: {
+        bgSize: "100% 110%",
+        bgPositionY: "bottom",
+      },
+    },
+    desktop_large: {
+      img: () =>
+        require("../assets/images/gradient/community-page/desktop-large/tweets_about_tagion_1440.png")
+          .default,
+      options: {},
+    },
+    desktop: {
+      img: () =>
+        require("../assets/images/gradient/community-page/desktop/tweets_about_tagion_1024.png")
+          .default,
+
+      options: {
+        bgSize: "100% 105%",
+        bgPositionY: "bottom",
+      },
+    },
+    tablet: {
+      img: () =>
+        require("../assets/images/gradient/community-page/tablet/tweets_about_tagion_600.png")
+          .default,
+
+      options: {
+        bgSize: "100% 120%",
+        bgPositionY: "bottom",
+      },
+    },
+    mobile: {
+      img: () =>
+        require("../assets/images/gradient/community-page/mobile/tweets_about_tagion_280.png")
+          .default,
+      options: {
+        bgSize: "100% 130%",
+        bgPositionY: "bottom",
+      },
+    },
+  },
+};
+
+export const notFoundPageGradient = {
+  desktop_max: {
+    img: () =>
+      require("../assets/images/gradient/404/desktop-max/gradient_1920.png")
+        .default,
+
+    options: {
+      bgSize: "2930px 2402px",
+      bgPosition: "top calc(50% + 400px) right -1800px",
+    },
+  },
+  desktop_large: {
+    img: () =>
+      require("../assets/images/gradient/404/desktop-large/gradient_1440.png")
+        .default,
+    options: {
+      bgSize: "1963px 1610px",
+      bgPosition: "top calc(50% + 300px) right -1170px",
+    },
+  },
+  desktop: {
+    img: () =>
+      require("../assets/images/gradient/404/desktop/gradient_1024.png")
+        .default,
+
+    options: {
+      bgSize: "2686px 2202px",
+      bgPosition: "top calc(50% + 650px) right -1640px",
+    },
+  },
+  tablet: {
+    img: () =>
+      require("../assets/images/gradient/404/tablet/gradient_600.png").default,
+
+    options: {
+      bgSize: "1155px 1468px",
+      bgPosition: "top calc(50% + 420px) right -620px",
+    },
+  },
+  mobile: {
+    img: () =>
+      require("../assets/images/gradient/404/mobile/gradient_280.png").default,
+    options: {
+      bgSize: "694px 883px",
+      bgPosition: "top calc(50% + 220px) right -400px",
     },
   },
 };

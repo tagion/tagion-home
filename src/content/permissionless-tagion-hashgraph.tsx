@@ -1,3 +1,7 @@
+import React from "react";
+import { CustomLink } from "../components";
+import { ExternalLinks } from "../common/enums/external_links";
+
 export const permissionlessTagionHashgraphBlockData = [
   {
     title: "Permissionless Tagion Hashgraph and Wavefront",
@@ -7,8 +11,23 @@ export const permissionlessTagionHashgraphBlockData = [
   },
   {
     title: "A Common Good governed by the Community",
-    description:
-      "Tagion is a Common Good based on Elinor Ostrom's principles, where the community governs the system, and anyone can be a community member. Contributors, including node operators, core members, ambassadors, and developers, are rewarded and given a weighted vote based on their contribution and reputation. The users pay to use the system.",
+    description: (
+      <>
+        Tagion is a Common Good based on{" "}
+        <CustomLink
+          className="underlined-gray-link"
+          linkTo={ExternalLinks.ELINOR_OSTROMS_PRINCIPLES}
+          isExternalLink
+        >
+          Elinor Ostrom's principles
+        </CustomLink>
+        , where the community governs the system, and anyone can be a community
+        member. Contributors, including node operators, core members,
+        ambassadors, and developers, are rewarded and given a weighted vote
+        based on their contribution and reputation. The users pay to use the
+        system.
+      </>
+    ),
     videoSrc: "/videos/proof_of_community_animation.mov",
   },
   {

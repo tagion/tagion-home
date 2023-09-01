@@ -28,6 +28,7 @@ interface InputProps {
   singleItemWindowWidth?: number;
   disableBottomSwiperButtons?: boolean;
   setSwiperInstance?: React.Dispatch<React.SetStateAction<SwiperClass | null>>;
+  isWhiteColorButtons?: boolean;
 }
 
 export const CustomSwiper: React.FC<InputProps> = ({
@@ -39,6 +40,7 @@ export const CustomSwiper: React.FC<InputProps> = ({
   singleItemWindowWidth = 0,
   disableBottomSwiperButtons,
   setSwiperInstance,
+  isWhiteColorButtons,
 }) => {
   const [isSwiperDisplayed, setIsSwiperDisplayed] = useState(false);
   const [lateralSpaceWidth, setLateralSpaceWidth] = useState(0);
@@ -136,6 +138,7 @@ export const CustomSwiper: React.FC<InputProps> = ({
             <SwiperButtonsWrapper
               itemsLength={items.length}
               swiperId={swiperId}
+              isWhiteColor={isWhiteColorButtons}
             />
           )}
         </Swiper>
@@ -147,7 +150,8 @@ export const CustomSwiper: React.FC<InputProps> = ({
 const SwiperButtonsWrapper: React.FC<{
   itemsLength: number;
   swiperId: string;
-}> = ({ itemsLength, swiperId }) => {
+  isWhiteColor?: boolean;
+}> = ({ itemsLength, swiperId, isWhiteColor }) => {
   const swiper = useSwiper();
   const [selectedItemId, setSelectedItemId] = useState(0);
 
@@ -170,6 +174,7 @@ const SwiperButtonsWrapper: React.FC<{
       prevButton={{ disabled: selectedItemId === 0 }}
       nextButton={{ disabled: selectedItemId === itemsLength - 1 }}
       className={cx("swiper_buttons")}
+      isWhiteColor={isWhiteColor}
     />
   );
 };

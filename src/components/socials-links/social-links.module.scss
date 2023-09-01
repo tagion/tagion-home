@@ -7,34 +7,12 @@ $icon-desktop-max-size: 28px;
   height: $icon-desktop-max-size;
 
   a:not(:first-child) {
-    margin-left: 16.6px;
+    margin-left: 16px;
   }
 
   svg {
     width: $icon-desktop-max-size;
     height: $icon-desktop-max-size;
     fill: $main-white-color;
-  }
-
-  @media (min-width: $desktop-large-size) {
-    height: $icon-desktop-small-size;
-
-    svg {
-      width: $icon-desktop-small-size;
-      height: $icon-desktop-small-size;
-    }
-  }
-
-  @media (min-width: $desktop-max-size) {
-    height: $icon-desktop-max-size;
-
-    a:not(:first-child) {
-      margin-left: 16px;
-    }
-
-    svg {
-      width: $icon-desktop-max-size;
-      height: $icon-desktop-max-size;
-    }
   }
 }

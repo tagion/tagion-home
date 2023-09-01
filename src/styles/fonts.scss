@@ -5,12 +5,32 @@
   src: url(../styles/fonts/Prompt/Prompt-Regular.ttf);
 }
 
-.prompt-regular {
+@font-face {
+  font-family: Inter-400;
+  src: url(../styles/fonts/Inter/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Inter-500;
+  src: url(../styles/fonts/Inter/Inter-Medium.ttf);
+}
+
+@font-face {
+  font-family: Inter-600;
+  src: url(../styles/fonts/Inter/Inter-SemiBold.ttf);
+}
+
+.prompt-regular,
+.prompt-400 {
   font-family: "Prompt-Regular", sans-serif;
 }
 
 .inter-regular {
   font-family: "Inter", sans-serif;
+}
+
+.inter-400 {
+  font-family: "Inter-400", sans-serif;
 }
 
 .title-font {
@@ -124,12 +144,24 @@
 
 .body-font {
   font-style: normal;
-  font-weight: 400;
+  font-family: "Inter-400", sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: $body-text-color;
 
   @media (min-width: $desktop-large-size) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.description-gradient-block-font {
+  font-family: "Inter-400", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: $main-gray-text-color;
+
+  @media (min-width: $desktop-size) {
     font-size: 20px;
     line-height: 26px;
   }
@@ -165,15 +197,21 @@
   line-height: 16px;
 }
 
+.prompt-20 {
+  font-family: "Prompt-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+}
+
 // ** Inter **
-.font-16 {
-  font-weight: 400;
+.inter-16 {
+  font-family: "Inter-400", sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
-.font-12 {
-  font-weight: 400;
+.inter-12 {
+  font-family: "Inter-400", sans-serif;
   font-size: 12px;
   line-height: 16px;
 }

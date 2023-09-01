@@ -7,7 +7,7 @@ export const nextGennFinancialInfrastrucureData = [
   {
     title: "Open, interoperable and modular sub-ecosystems",
     description:
-      "Everyone can build their own ecosystems and connect to external networks with ease",
+      "Everyone can build their own ecosystems and connect to external networks with ease.",
     img: workInProgressPng,
   },
   {

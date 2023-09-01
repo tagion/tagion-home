@@ -1,0 +1,99 @@
+@import "./../../styles/variables.scss";
+
+.link_wrapper {
+  width: 100%;
+  max-width: 314px;
+  height: fit-content;
+  padding: 16px;
+  border-radius: $tweet_border-radius;
+  text-decoration: none;
+  background-color: $main-white-color;
+
+  .twitter_user_details_card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 14px;
+    height: 35px;
+
+    .user_img_wrapper {
+      margin: 0 8px 0 0;
+
+      img {
+        width: 35px;
+      }
+    }
+
+    .user_mainContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .user_name {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .user_nickname {
+        font-family: "Inter-500", sans-serif;
+        color: $input-border-color;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        margin: 0;
+      }
+    }
+  }
+
+  .twitter_post_details_card {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .post_img {
+      margin: 10px 0 0 0;
+
+      img {
+        display: block;
+        width: 100%;
+        border-radius: $card_small_border-radius;
+      }
+    }
+
+    .post_text {
+      font-size: 11px;
+      line-height: 17px;
+      font-family: "Inter-500", sans-serif;
+      color: $main-dark-color;
+
+      br {
+        height: 17px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    max-width: 519px;
+    padding: 24px;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid $main-dark-color;
+    }
+
+    .twitter_post_details_card {
+      .post_text {
+        font-size: 13.5px;
+        line-height: 20px;
+
+        br {
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    max-width: 544px;
+  }
+}

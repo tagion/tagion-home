@@ -20,13 +20,13 @@ const cx = classNames.bind(styles);
 
 interface InputProps {
   isHeaderShownOnTop?: boolean;
+  isPageWithDarkBackground?: boolean;
 }
 
-const comingSoonPages = navigationLinks.reduce<Array<string>>((acc, value) => {
-  return value.subContent?.length ? [...acc, value.name] : acc;
-}, []);
-
-export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
+export const Header: React.FC<InputProps> = ({
+  isHeaderShownOnTop,
+  isPageWithDarkBackground,
+}) => {
   const [isSideMenuOpened, setIsSideMenuOpened] = useState<boolean>(false);
   const [isSideMenuDisplayed, setIsSideMenuDisplayed] =
     useState<boolean>(false);
@@ -102,6 +102,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
       id="header"
       className={cx("header", {
         isHeaderTransparent: isHeaderTransparent && !isHeaderShownOnTop,
+        isPageWithDarkBackground,
       })}
     >
       <Link to="/" className={cx("logo_wrapper")}>
@@ -183,8 +184,10 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
         >
           <div
             className={cx("submenu", {
-              isTwoRows:
-                selectedSubContent.length <= 4 && selectedSubContent.length > 2,
+              docsSubmenu:
+                navigationLinks[selectedSubMenuIndex].name === "Docs",
+              ecosystemSubmenu:
+                navigationLinks[selectedSubMenuIndex].name === "Ecosystem",
             })}
           >
             {selectedSubContent?.map(
@@ -193,14 +196,14 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                 i,
                 subContentArray
               ) => {
-                const isEvenNumber = subContentArray.length % 2 === 0;
+                const isFirstColumn = (subContentArray.length - 1) / 2 >= i;
                 return (
                   <a
                     href={linkTo}
                     target={externalLink ? "_blank" : ""}
                     className={cx("link", {
-                      isOdd: !isEvenNumber,
-                      isEven: isEvenNumber,
+                      isFirstColumn,
+                      isSecondColumn: !isFirstColumn,
                       isDisabled: description === "Coming soon",
                     })}
                     key={i}
@@ -219,7 +222,7 @@ export const Header: React.FC<InputProps> = ({ isHeaderShownOnTop }) => {
                       <div className={`${cx("title")} font-28 prompt-regular`}>
                         {name}
                       </div>
-                      <div className="font-16">{description}</div>
+                      <div className="inter-16">{description}</div>
                     </div>
                   </a>
                 );
