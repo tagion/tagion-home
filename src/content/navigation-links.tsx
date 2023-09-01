@@ -16,8 +16,9 @@ import { ReactComponent as WhitePaperIcon } from "../assets/images/coming-soon/w
 
 export const techPaperLink = {
   name: "Tech paper",
-  linkTo: ExternalLinks.TECH_PAPER,
-  externalLink: true,
+  linkTo: InternalLinks.NOT_FOUND,
+  // linkTo: ExternalLinks.TECH_PAPER,
+  // externalLink: true,
   description: "Dive into the tech details",
   Icon: () => <TechPaperIcon />,
 };
