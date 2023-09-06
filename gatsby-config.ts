@@ -1,4 +1,5 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig, Node } from "gatsby";
+import path from "path";
 
 require("dotenv").config({
   path: `.env`,
@@ -11,6 +12,8 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-svgr",
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -42,12 +45,42 @@ const config: GatsbyConfig = {
         },
       },
     },
-    "gatsby-plugin-sass",
-    "gatsby-plugin-svgr",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/assets/images/small_logo.svg",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(
+          __dirname,
+          "src/content/collection-routing-data/partners"
+        ),
+        name: `partner`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(
+          __dirname,
+          "src/content/collection-routing-data/use-cases"
+        ),
+        name: `useCases`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        typeName: ({ node }: { node: Node }) => {
+          const sourceInstanceName = node.sourceInstanceName;
+          if (sourceInstanceName === `partners`) {
+            return `partner`;
+          }
+          return sourceInstanceName;
+        },
       },
     },
   ],

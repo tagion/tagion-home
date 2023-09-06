@@ -10,4 +10,7 @@ export enum InternalLinks {
   PRIVACY_POLICY = "/privacy-policy",
   TERMS_OF_USE = "/terms-of-use",
   NOT_FOUND = "/404",
+  PARTNERS_DECARD = "/partners/decard",
+  PARTNERS_VENZO = "/partners/venzo",
+  PARTNERS_AFRICA_INVESTOR = "/partners/africa-investor",
 }
