@@ -1,4 +1,5 @@
 import { ExternalLinks, InternalLinks } from "../common/enums";
+import { tokenomicsPdfLink } from "./navigation-links";
 
 export type LinkType = {
   name: string;
@@ -32,34 +33,15 @@ export const footerColumnLinks = [
       {
         name: "Tech paper",
         linkTo: InternalLinks.NOT_FOUND,
-      //   linkTo: ExternalLinks.TECH_PAPER,
-      //   externalLink: true,
+        //   linkTo: ExternalLinks.TECH_PAPER,
+        //   externalLink: true,
       },
       {
         name: "Brand guidelines",
         linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
         externalLink: true,
       },
+      tokenomicsPdfLink,
     ],
   },
-  // {
-  //   title: "SOCIAL",
-  //   links: [
-  //     {
-  //       name: "Twitter",
-  //       linkTo: "https://www.google.com.ua/",
-  //       icon: twitterIcon,
-  //     },
-  //     {
-  //       name: "Discord",
-  //       linkTo: "https://www.google.com.ua/",
-  //       icon: discordIcon,
-  //     },
-  //     {
-  //       name: "Telegram",
-  //       linkTo: "https://www.google.com.ua/",
-  //       icon: telegramIcon,
-  //     },
-  //   ],
-  // },
 ];
