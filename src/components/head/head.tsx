@@ -7,16 +7,16 @@ const pageTitles = [
   { path: "/blog/", title: "Tagion | Blog" },
   { path: "/community/", title: "Tagion | Community" },
   { path: "/ecosystem/", title: "Tagion | Ecosystem" },
-  // { path: "/docs/", title: "Docs" },
   { path: "/privacy-policy/", title: "Tagion | Privacy Policy" },
   { path: "/terms-of-use/", title: "Tagion | Terms of use" },
   { path: "/get-tagions/", title: "Tagion | Get Tagions" },
+  { path: "/partners/", title: "Tagion | Partners" },
 ];
 
 export const Head: HeadFC = (props) => {
-  const title = pageTitles.find(
-    (pageTitle) => pageTitle.path === props.location.pathname
-  )?.title;
+  const title = pageTitles.findLast((pageTitle) => {
+    return props.location.pathname.includes(pageTitle.path);
+  })?.title;
 
   return <title>{title || "Not Found"}</title>;
 };

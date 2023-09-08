@@ -1,0 +1,21 @@
+- name: climate-capital-technologies
+  pageTitle: Climate Capital Technologies
+  mainImgSrc: venzo_main.png
+  logoSrc: venzo_logo.png
+  aboutText: aboutText
+  description: Climate Capital Technologies, a partnership between DECARD and Africa Investor, mobilises investment in nature-based and sustainable projects.
+
+- name: aecorn
+  pageTitle: Aecorn
+  mainImgSrc: aecorn_main.png
+  isImgDisplayedInRelatedInformationBlock: true
+  logoSrc: aecorn_logo.png
+  aboutText: aboutText
+  description: Existing nature funding mechanisms lack efficiency, transparency, and credibility. Aecorn is revolutionising nature investment with innovative funding tools.
+
+- name: puku
+  pageTitle: PUKU
+  mainImgSrc: venzo_main.png
+  logoSrc: venzo_logo.png
+  aboutText: aboutText
+  description: PUKU's mission is to connect investment opportunities with impactful projects in Africa, benefitting local communities and safeguarding the local environment.

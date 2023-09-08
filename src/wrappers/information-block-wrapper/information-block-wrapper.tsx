@@ -1,10 +1,8 @@
 import React from "react";
 import classNames from "classnames/bind";
 import { Grid } from "@mui/material";
-import { navigate } from "gatsby";
 
 import { Button } from "../../components";
-
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
 import { miuCustomColumns } from "../../helpers";
 
@@ -14,17 +12,10 @@ import * as styles from "./information-block-wrapper.module.scss";
 
 const cx = classNames.bind(styles);
 
-interface InputProps {
-  pageTitle: string;
-  content: Array<{
-    title?: string;
-    description: JSX.Element;
-  }>;
-}
-
-export const InformationBlockWrapper: React.FC<
-  PropsWithChildren<InputProps>
-> = ({ pageTitle, content }) => {
+export const InformationBlockWrapper: React.FC<PropsWithChildren<{}>> = ({
+  children,
+}) => {
+  const onBackButtonClick = () => history.back();
   return (
     <Grid
       container
@@ -42,12 +33,12 @@ export const InformationBlockWrapper: React.FC<
       >
         <LeftArrowIcon
           className={cx("mobile_button")}
-          onClick={() => navigate("/")}
+          onClick={onBackButtonClick}
         />
         <Button
           Icon={LeftArrowIcon}
           isRounded
-          onClick={() => navigate("/")}
+          onClick={onBackButtonClick}
           className={cx("desktop_button")}
         />
       </Grid>
@@ -60,24 +51,7 @@ export const InformationBlockWrapper: React.FC<
         xl={9}
         className={cx("content_wrapper")}
       >
-        <div className={`${cx("page_title")} prompt-regular`}>{pageTitle}</div>
-        <div className={cx("content")}>
-          {content.length &&
-            content.map(({ title, description }) => (
-              <div className={cx("block")}>
-                {title && (
-                  <div
-                    className={`${cx(
-                      "title"
-                    )} prompt-regular subtitle-font-28-36`}
-                  >
-                    {title}
-                  </div>
-                )}
-                <div className={cx("description")}>{description}</div>
-              </div>
-            ))}
-        </div>
+        {children}
       </Grid>
     </Grid>
   );

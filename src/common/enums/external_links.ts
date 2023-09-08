@@ -12,4 +12,9 @@ export enum ExternalLinks {
 
   START_CONTRIBUTING_JOIN_BUTTON = "https://discord.gg/QxbkYjtvER",
   ELINOR_OSTROMS_PRINCIPLES = "https://www.researchgate.net/publication/265017003_Elinor_Ostrom%27s_Legacy_Governing_the_Commons_and_the_Rational_Choice_Controversy",
+
+  // PARTNERS
+  DECARD = "https://decard.io/",
+  VENZO = "https://venzo.com/",
+  AFRICA_INVESTOR = "https://www.africainvestor.com/",
 }
