@@ -61,7 +61,7 @@ const EcosystemPage = () => {
               Ecosystem
             </>
           }
-          description="Safe, secure and stable transactions powered by permissionless Tagion Hashgraph and Wavefront, Proof of Community and DART distributed database."
+          description="Safe, secure and stable transactions and data storage powered by permissionless Tagion Hashgraph Consensus and Wavefront, Sybil-resistant security and DART distributed database."
           img={ecosystemPageIntro}
           classNames={{
             imgWrapper: cx("ecosystem_img_wrapper"),
@@ -70,7 +70,7 @@ const EcosystemPage = () => {
           }}
         />
         <ScrollingBlock
-          title="Build for the real world with confidence"
+          title="Build for the real-world in 50+ programming languages"
           data={buildForTheRealWorldData}
           classNames={{
             wrapper: "main-lateral-margins",

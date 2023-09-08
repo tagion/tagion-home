@@ -18,14 +18,14 @@ const dartAndNodeSwappingBlock = {
   title: "Node Swapping",
   description: (
     <>
-      Active nodes, carrying out validation tasks, are periodically and randomly
-      rotated with passive ones, reducing the risk of Sybil attacks and enabling
-      network decentralisation. This is a novel feature innovating Hashgraph
-      technology.
+      Tagion introduces a permissionless system for Hashgraph, allowing random
+      node swapping based on reputational scores and operator performance. Node
+      Swapping reduces the risk of Sybil attacks and enables the network to be
+      decentralised.
       <div className={`${cx("popup_title")} prompt-regular prompt-36 title`}>
         DART Distributed Database and Hashgraph Consensus Mechanism
       </div>
-      <div>
+      <div style={{ letterSpacing: "-0.2px" }}>
         Ensure your data integrity and back up with distributed and scalable
         storage. The DART can handle large amounts of data efficiently as the
         databases are distributed across nodes, optimising the network capacity.
@@ -214,9 +214,9 @@ export const transparentBlocksData = [
     style: { mobile: { marginBottom: "16px" } },
   },
   {
-    title: "Proof of Community",
+    title: "Common Good Network Governance",
     description:
-      "As a node operator, core contributor, developer or ambassador, you can take part in network governance and shape the network’s development. Based on reputation-weighted voting and rewards earned, Tagion’s governance model ensures fairness and empowers community ownership.",
+      "Based on Nobel Prize winner Elinor Ostrom's principles of governing common resources, Tagion combines Node Governance with reputation-weighted scoring: a novel self-regulation method. We're creating a network where everyone has a stake, fostering an ecosystem that values contribution, collaboration, and mutual growth.",
     videoId: VideoIdsEnum.PROOF_OF_COMMUNITY_VIDEO,
     disabledForMobile: false,
     dartAndNodeSwappingBlock: false,

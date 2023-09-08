@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "classnames/bind";
 
 import { QuestionBlockGenerator } from "../../components";
+import { BreakpointsStyleObjectType } from "../../common/types/breakpoints-style-object-type";
+import { usePageBreakpointDeterminator, useResizeEvent } from "../../hooks";
 
 import * as styles from "./questions-block.module.scss";
 
@@ -16,6 +18,7 @@ interface InputProps {
       valueName: string;
       paragraphList: Array<string | React.ReactElement>;
     }[];
+    style?: { title: BreakpointsStyleObjectType };
   }[];
 
   classNames?: { questionsBlock?: string };
@@ -29,11 +32,18 @@ export const QuestionsBlock: React.FC<InputProps> = ({
   direction = "row",
   classNames,
 }) => {
+  const { breakpointDeterminator, pageSize } = usePageBreakpointDeterminator();
+  useResizeEvent({
+    resizeHandler: () => {
+      breakpointDeterminator();
+    },
+  });
+
   return (
     <div
-      className={`${cx("questions_block")} main-top-margins main-lateral-margins ${
-        classNames?.questionsBlock
-      }`}
+      className={`${cx(
+        "questions_block"
+      )} main-top-margins main-lateral-margins ${classNames?.questionsBlock}`}
     >
       <div className={`${cx("title")} title-font`}>{title}</div>
       <div className={`${cx("description")} body-font`}>{description}</div>
@@ -50,6 +60,7 @@ export const QuestionsBlock: React.FC<InputProps> = ({
               className={`${cx(
                 "question_container_title"
               )} subtitle-font-28-36-50`}
+              style={pageSize ? questionBlock.style?.title[pageSize] : {}}
             >
               {questionBlock.title}
             </div>

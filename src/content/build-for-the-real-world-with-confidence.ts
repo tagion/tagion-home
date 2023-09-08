@@ -1,31 +1,46 @@
-import connectionsPng from "../assets/images/connections.png";
-import communityPng from "../assets/images/community.png";
-import rocketPng from "../assets/images/rocket.png";
-import globePng from "../assets/images/globe.png";
+import { BreakpointsStyleObjectType } from "../common/types/breakpoints-style-object-type";
 
-export const buildForTheRealWorldData = [
+import rocketPng from "../assets/images/rocket.png";
+import walletPng from "../assets/images/wallet.png";
+import transactionPng from "../assets/images/transaction.png";
+import DARTPng from "../assets/images/DART.png";
+
+export const buildForTheRealWorldData: Array<{
+  title: string | React.ReactElement;
+  description: string;
+  img: string;
+  style?: { title: BreakpointsStyleObjectType };
+}> = [
   {
-    title: "Enjoy distributed performance",
+    title: "Tokenise your assets with Tagion SDKs, APIs and WASM",
     description:
-      "With the state of the art Tagion next gen technology stack, benefit from resilient and secure network.",
-    img: connectionsPng,
-  },
-  {
-    title: "Participate in an economy governed by the community",
-    description:
-      "Purpose-driven communities build projects and create, share and use resources efficiently. Tagion governance allows everyone to engage in a decentralised and transparent structure, breaking down strong mandates and encouraging collaboration.",
-    img: communityPng,
-  },
-  {
-    title: "Adapt to the local. Stay global.",
-    description:
-      "Make your own rules to challenge the “one-size-fits-all” approach and transcend borders. Design your own sub-ecosystems with customisable governance and connect to other networks with ease.",
-    img: globePng,
-  },
-  {
-    title: "Build in fair and transparent market conditions",
-    description:
-      "Tagion DEX with real price discovery and ordering enables one transparent marketplace and creates best use of liquidity and pricing. ",
+      "Unlock new possibilities: transform real and digital assets into digital tokens easilty with WASM. Experience the future of asset trading with increased liquidity, accessibility and scalability and connect to other ecosystems.",
     img: rocketPng,
+  },
+  {
+    title:
+      "Control and manage your assets with secure wallets (or make your own)",
+    description:
+      "Your financial future, your rules. Manage your assets and redefine financial independence. Craft your own personalised asset management solution.",
+    img: walletPng,
+    style: {
+      title: {
+        desktop_large: { letterSpacing: "-0.5px" },
+        desktop_max: { letterSpacing: "-0.5px", width: "800px" },
+      },
+    },
+  },
+  {
+    title: "Trade and exchange your assets with Tagion Exchange protocol",
+    description:
+      "Benefit from real price discovery and fair ordering for every asset type. Take your trading to the next level and trade assets with confidence.",
+    img: transactionPng,
+  },
+  {
+    title: "Flexible asset and data management system",
+    description:
+      "Experience the power to seamlessly update and delete data in the DART Distributed Database. Keep your information dynamic, evolving overtime, while optimising storage efficiency thanks to stateless Tagion protocol.",
+    img: DARTPng,
+    style: { title: { desktop: { width: "350px" } } },
   },
 ];
