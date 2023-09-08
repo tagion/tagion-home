@@ -5,6 +5,7 @@ import { ExternalLinks, InternalLinks } from "../common/enums";
 import tokenIcon from "../assets/images/token.png";
 import globeIcon from "../assets/images/globe.png";
 import brandGuidelinesIcon from "../assets/images/brand_guidelines.png";
+import tokenomicsIcon from "../assets/images/stack-of-coins-icon.png";
 import { ReactComponent as RocketIcon } from "../assets/images/coming-soon/rocket_icon.svg";
 import { ReactComponent as WalletIcon } from "../assets/images/coming-soon/wallet_icon.svg";
 import { ReactComponent as DEXIcon } from "../assets/images/coming-soon/DEX_icon.svg";
@@ -33,6 +34,14 @@ export const termsOfUseLink = {
   name: "Terms of use",
   linkTo: InternalLinks.TERMS_OF_USE,
   externalLink: false,
+};
+
+export const tokenomicsPdfLink = {
+  name: "Tokenomics",
+  linkTo: ExternalLinks.TAGION_TOKENOMICS,
+  description: "Know economic properties",
+  img: tokenomicsIcon,
+  externalLink: true,
 };
 
 export const navigationLinks: Array<{
@@ -116,6 +125,7 @@ export const navigationLinks: Array<{
         img: brandGuidelinesIcon,
         externalLink: true,
       },
+      tokenomicsPdfLink,
     ],
   },
   {
