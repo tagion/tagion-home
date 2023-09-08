@@ -26,7 +26,7 @@ export const coreBuildingBlockData = [
     ],
   },
   {
-    title: "A Common Good governed by the Community",
+    title: "Building towards a Common Good governed by the Community",
     questions: [
       {
         valueName:
@@ -70,6 +70,9 @@ export const coreBuildingBlockData = [
         ],
       },
     ],
+    style: {
+      title: { tablet: { width: "470px" }, desktop_max: { width: "460px" } },
+    },
   },
   {
     title: "DART Distributed Database",

@@ -38,9 +38,13 @@ const IndexPage = () => {
         <IntroductoryBlock
           gifAnimation={pointAnimation}
           img={mainPageIntro}
-          title="We Are Pioneering Money"
-          description="Tagion empowers everyone everywhere to participate in a sustainable
-            economic world. Evolving trust with your participation."
+          title={
+            <>
+              Build <br />
+              The Future. Start Today.
+            </>
+          }
+          description="Benefit from our highly scalable, decentralised and secure DLT network infrastructure and drive innovation across finance, supply chains, nature conservation, exchange protocols and beyond."
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
@@ -50,7 +54,7 @@ const IndexPage = () => {
         />
       </GradientSpotsWrapper>
       <ScrollingBlock
-        title="Next generation financial infrastructure"
+        title="Next generation adaptive infrastructure"
         data={nextGennFinancialInfrastrucureData}
         classNames={{ title: cx("scrollingBlock_title") }}
       />

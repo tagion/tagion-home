@@ -1,7 +1,9 @@
 @import "./../../styles/variables.scss";
 
 .scrollingBlock_title {
-  max-width: 400px;
+  max-width: 422px;
+  min-width: 251px;
+  letter-spacing: -0.64px;
 }
 
 .questionsBlock {
@@ -50,6 +52,10 @@
 
 // 600
 @media (min-width: $tablet-size) {
+  .scrollingBlock_title {
+    letter-spacing: normal;
+  }
+
   .questionsBlock {
     margin-top: 180px;
   }
@@ -91,7 +97,7 @@
 @media (min-width: $desktop-size) {
   .scrollingBlock_title {
     max-width: none;
-    width: 564px;
+    width: 644px;
   }
 
   .ecosystem_introductory_block {
@@ -103,6 +109,10 @@
       img {
         width: 450px;
       }
+    }
+
+    .ecosystem_text_wrapper {
+      max-width: 644px;
     }
   }
 
@@ -126,7 +136,7 @@
 // 1440
 @media (min-width: $desktop-large-size) {
   .scrollingBlock_title {
-    width: 869px;
+    width: 954px;
   }
 
   .questionsBlock {
@@ -150,7 +160,8 @@
     }
 
     .ecosystem_text_wrapper {
-      max-width: 709px;
+      max-width: none;
+      width: 737px;
     }
   }
 
@@ -172,9 +183,19 @@
 }
 
 @media (min-width: $desktop-max-size) {
+  .scrollingBlock_title {
+    width: 1112px;
+  }
+
   .ecosystem_introductory_block {
     padding-top: 311px;
     padding-bottom: 379px;
+
+    .ecosystem_text_wrapper {
+      [class~="description"] {
+        width: 686px;
+      }
+    }
 
     .ecosystem_img_wrapper {
       width: 800px;
