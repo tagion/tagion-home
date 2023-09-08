@@ -118,6 +118,23 @@
   }
 }
 
+.subtitle-font-32-36-50 {
+  font-family: "Prompt-Regular";
+  font-size: 32px;
+  line-height: 32px;
+  color: $main-dark-color;
+
+  @media (min-width: $tablet-size) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
 .subtitle-gradient-block-font {
   font-family: "Prompt-Regular";
   font-weight: 400;
