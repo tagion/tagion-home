@@ -1,0 +1,114 @@
+@import "./../../styles/variables.scss";
+
+.what_is_tagion_block {
+  @media (min-width: $mobile-size) {
+    padding: 255px 16px 80px;
+    position: relative;
+    overflow: hidden;
+    background: url("../../assets/images/coming-soon-background.png");
+    background-size: 1613px 907px;
+    background-repeat: no-repeat;
+
+    .title {
+      margin-bottom: 16px;
+      color: $main-white-color;
+    }
+
+    .description {
+      color: $main-gray-text-color;
+    }
+
+    .mobile_atoms_bond_img {
+      position: absolute;
+      transform: rotate(-90deg);
+      top: -243px;
+      right: -80px;
+      width: 556px;
+    }
+  }
+
+  @media (min-width: 474px) {
+    padding: 119px 16px;
+    background-size: 1155px 650px;
+    background-position: bottom 0 left -220px;
+
+    .title,
+    .description {
+      width: 340px;
+    }
+
+    .mobile_atoms_bond_img {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    padding: 119px 24px;
+    background-position: bottom 0 right -340px;
+
+    .title,
+    .description {
+      width: 61%;
+      max-width: 500px;
+      min-width: 340px;
+    }
+  }
+
+  @media (min-width: 810px) {
+    background-size: 1200px 675px;
+    background-position: top -68px left 0;
+
+    .title,
+    .description {
+      width: 500px;
+      max-width: none;
+      min-width: auto;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding: 85px 80px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 205px 80px;
+    background-size: 1659px 934px;
+    background-position: top -103px right -220px;
+
+    .title,
+    .description {
+      width: 48%;
+      max-width: 628px;
+      min-width: 500px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    background-position: top -103px left -36px;
+
+    .title {
+      margin-bottom: 24px;
+    }
+
+    .title,
+    .description {
+      width: 628px;
+      max-width: none;
+      min-width: auto;
+    }
+  }
+
+  @media (min-width: 1620px) {
+    background-size: 1924px 1082px;
+    background-position: top -134px left 0;
+
+    .title,
+    .description {
+      width: 647px;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    padding: 205px 120px;
+  }
+}
