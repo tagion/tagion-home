@@ -13,6 +13,7 @@ import {
   ValuePartnersBlock,
   YouCanParticipateBlock,
   LetsTalkBlock,
+  WhatIsTagionBlock,
 } from "../blocks";
 import {
   mainPageGradients,
@@ -58,7 +59,7 @@ const IndexPage = () => {
         data={nextGennFinancialInfrastrucureData}
         classNames={{ title: cx("scrollingBlock_title") }}
       />
-
+      <WhatIsTagionBlock />
       <GradientSpotsWrapper
         disableMainSidePaddings={true}
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}

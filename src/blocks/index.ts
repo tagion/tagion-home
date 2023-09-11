@@ -19,5 +19,6 @@ export * from "./timeline-block";
 export * from "./tweets-about-tagion";
 export * from "./value-partners";
 export * from "./value-for-contributors";
+export * from "./what-is-tagion";
 export * from "./you-can-build-a-wallet";
 export * from "./you-can-participate";
