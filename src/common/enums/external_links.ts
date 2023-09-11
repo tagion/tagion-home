@@ -2,6 +2,7 @@ export enum ExternalLinks {
   TECH_PAPER = "/resources/tech-paper.pdf",
   TAGION_BRAND_GUIDELINES = "/resources/tagion-brand-guidelines.pdf",
   TAGION_TOKENOMICS = "/resources/tagion-tokenomics.pdf",
+  TAGION_WHITEPAPER = "/resources/tagion-whitepaper.pdf",
 
   GITHUB = "https://github.com/tagion",
   DOCS = "",

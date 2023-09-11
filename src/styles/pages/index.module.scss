@@ -13,6 +13,9 @@
   }
 
   .main_text_wrapper {
+    max-width: 410px;
+    width: 100%;
+
     div:first-child {
       width: 240px;
     }
@@ -36,10 +39,12 @@
     }
 
     .main_text_wrapper {
-      width: 410px;
-
       div:first-child {
         width: auto;
+      }
+
+      br {
+        display: none;
       }
     }
   }
@@ -58,7 +63,12 @@
     }
 
     .main_text_wrapper {
-      width: 534px;
+      width: 660px;
+      max-width: none;
+
+      div:last-child {
+        width: 534px;
+      }
     }
   }
 
@@ -93,8 +103,16 @@
     .main_text_wrapper {
       width: 745px;
 
+      br {
+        display: block;
+      }
+
+      div:first-child {
+        width: inherit;
+      }
+
       div:last-child {
-        width: 514px;
+        width: 647px;
       }
     }
   }
@@ -117,6 +135,12 @@
 
         img {
           left: 15px;
+        }
+      }
+
+      .main_text_wrapper {
+        div:last-child {
+          width: 686px;
         }
       }
     }

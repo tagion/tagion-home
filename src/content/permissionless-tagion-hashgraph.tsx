@@ -10,10 +10,10 @@ export const permissionlessTagionHashgraphBlockData = [
     videoSrc: "/videos/hashgraph_animation.mov",
   },
   {
-    title: "A Common Good governed by the Community",
+    title: "Towards a Common Good governed by the Community",
     description: (
       <>
-        Tagion is a Common Good based on{" "}
+        Tagion's goal is to build a Common Good resource based on{" "}
         <CustomLink
           className="underlined-gray-link"
           linkTo={ExternalLinks.ELINOR_OSTROMS_PRINCIPLES}
@@ -24,8 +24,7 @@ export const permissionlessTagionHashgraphBlockData = [
         , where the community governs the system, and anyone can be a community
         member. Contributors, including node operators, core members,
         ambassadors, and developers, are rewarded and given a weighted vote
-        based on their contribution and reputation. The users pay to use the
-        system.
+        based on their contribution and reputation.
       </>
     ),
     videoSrc: "/videos/proof_of_community_animation.mov",

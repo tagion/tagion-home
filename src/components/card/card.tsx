@@ -26,9 +26,7 @@ interface InputProps {
     img?: string;
     videoWrapper?: string;
   };
-  style?: {
-    videoWrapper?: CSSProperties;
-  };
+  style?: Partial<Record<"videoWrapper" | "title", CSSProperties>>;
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
@@ -80,6 +78,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
             className={`${cx("title")} subtitle-font-28-50 ${
               classNames?.title || ""
             }`}
+            style={style?.title}
           >
             {title}
           </div>
