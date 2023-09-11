@@ -112,8 +112,12 @@
   }
 
   @media (min-width: $desktop-max-size) {
-    .blocks > .card > .main_content > .card_description {
-      width: 686px;
+    .blocks > .card > .main_content {
+      width: 828px;
+
+      .card_description {
+        width: 100%;
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arr
 import { ReactComponent as DecardLogoIcon } from "../assets/images/decard_logo_icon.svg";
 import { ReactComponent as VenzoLogoIcon } from "../assets/images/venzo_logo_icon.svg";
 import { ReactComponent as AfricaInvestorLogoIcon } from "../assets/images/africa_investor_logo_icon.svg";
+import { InternalLinks } from "../common/enums";
 
 export const valuePartnersBlockData = [
   {
@@ -17,6 +18,7 @@ export const valuePartnersBlockData = [
     description:
       "A Web3 technology and banking powerhouse with cutting-edge expertise in scalable DLT solutions.",
     linkTo: "https://decard.io/",
+    // linkTo: InternalLinks.PARTNERS_DECARD,
   },
   {
     logo: <VenzoLogoIcon />,
@@ -28,6 +30,7 @@ export const valuePartnersBlockData = [
     ),
     description:
       "Nordic leader in digital transformation with extensive experience in all aspects of digital strategy and technology.",
+    // linkTo: InternalLinks.PARTNERS_VENZO,
     linkTo: "https://venzo.com/",
   },
 
@@ -41,6 +44,7 @@ export const valuePartnersBlockData = [
     ),
     description:
       "An institutional investment holding platform and a principal investor in strategic infrastructure assets in Africa.",
+    // linkTo: InternalLinks.PARTNERS_AFRICA_INVESTOR,
     linkTo: "https://www.africainvestor.com/",
   },
 ];

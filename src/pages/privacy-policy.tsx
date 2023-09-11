@@ -3,14 +3,17 @@ import React from "react";
 import { Layout } from "../templates/layout";
 import { privacyPolicyData } from "../content";
 import { InformationBlockWrapper } from "../wrappers";
+import { PrivacyPolicyAndTermsOfUseBlock } from "../blocks";
 
 const PrivacyPolicyPage = () => {
   return (
     <Layout withPaddingBottom>
-      <InformationBlockWrapper
-        content={privacyPolicyData}
-        pageTitle="Privacy Policy"
-      />
+      <InformationBlockWrapper>
+        <PrivacyPolicyAndTermsOfUseBlock
+          content={privacyPolicyData}
+          pageTitle="Privacy Policy"
+        />
+      </InformationBlockWrapper>
     </Layout>
   );
 };

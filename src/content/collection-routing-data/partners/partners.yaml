@@ -1,0 +1,29 @@
+- partnerId: DECARD
+  name: decard
+  pageTitle: DECARD
+  mainImgSrc: decard_main.png
+  logoSrc: decard_logo.png
+  logoWidth: 189px
+  aboutText:
+    - DECARD is an innovative technology company specialising in next-generation Distributed Ledger Technology (DLT) solutions. By leveraging cutting-edge technology, DECARD builds robust financial products and services, including tokenisation, banking and payment solutions, and supply chain management.
+    - As Tagion's core technology and integration partner, DECARD collaborates on climate finance, conservation, and consultancy projects. Their comprehensive support for fintech entrepreneurs and businesses includes developing business ideas, creating legal documents, ensuring AML/KYC compliance, and managing contracts and cash flow. The team prepares and iterates on NFT and Token workflows to ensure seamless launches. Powered by the advanced DLT engine on the Tagion network, DECARD facilitates the development of integrated banking platforms with core crypto capabilities. Experience the future of finance with DECARD.
+
+- partnerId: VENZO
+  name: venzo
+  pageTitle: VENZO
+  mainImgSrc: venzo_main.png
+  logoSrc: venzo_logo.png
+  logoWidth: 163px
+  aboutText:
+    - VENZO is a leading technology company that offers comprehensive solutions to businesses worldwide. With their expertise in software development, cybersecurity and data analytics, VENZO is a trusted partner for companies seeking cutting-edge technology solutions.
+    - VENZO is one of the first partners to build use cases on top of Tagion network. As a systems integration partner, VENZO brings its exceptional capabilities to the table to deliver scalable, secure and robust decentralised applications for next generation ecosystems.
+
+- partnerId: AFRICA_INVESTOR
+  name: africa-investor
+  pageTitle: Africa Investor
+  mainImgSrc: africa_investor_main.png
+  logoSrc: africa_investor_logo.png
+  logoWidth: 221px
+  aboutText:
+    - Africa Investor is a renowned platform that takes a leading role in driving investment and economic growth in Africa. With a strong emphasis on sustainable development and inclusive finance, Africa Investor provides valuable insights, research, and networking opportunities that connect investors, policymakers, and business leaders. Its comprehensive range of services covers various sectors, including infrastructure, energy, agriculture, and technology. As a trusted partner, Africa Investor facilitates meaningful engagements and partnerships that contribute to the socio-economic transformation of Africa.
+    - Distinguishing itself through a commitment to responsible investment practices and the promotion of environmental, social, and governance (ESG) standards, Africa Investor is a world leading institutional investment platform with focus on mobilising, deploying and accelerating climate capital at scale. AI bridges pools of capital from sovereign wealth and pension funds, family offices and long-term investors with vetted infrastructure, private equity and technology investment opportunities.

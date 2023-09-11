@@ -1,0 +1,90 @@
+@import "./../../styles/variables.scss";
+
+.related_information_block {
+  margin-top: 80px;
+
+  .cards_wrapper {
+    margin-bottom: -16px;
+
+    .card {
+      padding: 24px 0 16px;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        border-bottom: 2px solid $select-item-hover-color;
+      }
+
+      .card_title {
+        margin-bottom: 16px;
+        font-size: 28px;
+        line-height: 28px;
+
+        span {
+          margin-right: -15px;
+
+          svg {
+            margin: 0 0 5.5px 6.5px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .title {
+      margin-bottom: 8px;
+    }
+
+    .cards_wrapper {
+      margin-bottom: -24px;
+
+      .card {
+        padding-bottom: 24px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    margin-top: 100px;
+
+    .cards_wrapper {
+      margin: 0 0 -32px -32px;
+
+      .card {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 32px 0 32px 32px;
+
+        &:hover {
+          background-color: $select-item-choosen-color;
+        }
+
+        .card_imgWrapper {
+          display: flex;
+          margin: 0 32px 0 auto;
+
+          img {
+            width: 270px;
+            border-radius: 8px;
+          }
+        }
+
+        .card_mainContent {
+          width: 56%;
+
+          .card_title span {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .cards_wrapper > .card > .card_mainContent {
+      width: 828px;
+    }
+  }
+}
