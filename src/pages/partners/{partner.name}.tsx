@@ -5,6 +5,7 @@ import { Layout } from "../../templates";
 import { InformationBlockWrapper } from "../../wrappers";
 import { PartnerAndUseCasesBlock } from "../../blocks";
 import { ExternalLinks } from "../../common/enums";
+import { ComingSoon } from "../../components";
 
 interface InputProps {
   data: {
@@ -42,23 +43,24 @@ const PartnerPage: React.FC<InputProps> = ({
   }, []);
 
   return (
-    <Layout withPaddingBottom>
-      <InformationBlockWrapper>
-        <PartnerAndUseCasesBlock
-          pageTitle={partner.pageTitle}
-          aboutText={partner.aboutText}
-          relatedInformationBlockData={{
-            data: allUseCases.nodes,
-            title: "Use cases",
-          }}
-          mainImgSrc={mainImgSrc}
-          logo={{ src: logoSrc, width: partner.logoWidth }}
-          websiteLink={
-            ExternalLinks[partner.partnerId as keyof typeof ExternalLinks]
-          }
-        />
-      </InformationBlockWrapper>
-    </Layout>
+    <ComingSoon />
+    // <Layout withPaddingBottom>
+    //   <InformationBlockWrapper>
+    //     <PartnerAndUseCasesBlock
+    //       pageTitle={partner.pageTitle}
+    //       aboutText={partner.aboutText}
+    //       relatedInformationBlockData={{
+    //         data: allUseCases.nodes,
+    //         title: "Use cases",
+    //       }}
+    //       mainImgSrc={mainImgSrc}
+    //       logo={{ src: logoSrc, width: partner.logoWidth }}
+    //       websiteLink={
+    //         ExternalLinks[partner.partnerId as keyof typeof ExternalLinks]
+    //       }
+    //     />
+    //   </InformationBlockWrapper>
+    // </Layout>
   );
 };
 

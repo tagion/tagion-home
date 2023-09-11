@@ -6,6 +6,7 @@ import tokenIcon from "../assets/images/token.png";
 import globeIcon from "../assets/images/globe.png";
 import brandGuidelinesIcon from "../assets/images/brand_guidelines.png";
 import tokenomicsIcon from "../assets/images/stack-of-coins-icon.png";
+import whitepaperIcon from "../assets/images/whitepaper.png";
 import { ReactComponent as RocketIcon } from "../assets/images/coming-soon/rocket_icon.svg";
 import { ReactComponent as WalletIcon } from "../assets/images/coming-soon/wallet_icon.svg";
 import { ReactComponent as DEXIcon } from "../assets/images/coming-soon/DEX_icon.svg";
@@ -13,7 +14,6 @@ import { ReactComponent as DEXIcon } from "../assets/images/coming-soon/DEX_icon
 import { ReactComponent as TechPaperIcon } from "../assets/images/coming-soon/tech_paper_icon.svg";
 import { ReactComponent as GovermentIcon } from "../assets/images/coming-soon/government_icon.svg";
 import { ReactComponent as BuildIcon } from "../assets/images/coming-soon/build_icon.svg";
-import { ReactComponent as WhitePaperIcon } from "../assets/images/coming-soon/whitePaper_icon.svg";
 
 export const techPaperLink = {
   name: "Tech paper",
@@ -101,17 +101,18 @@ export const navigationLinks: Array<{
     subContent: [
       {
         name: "Whitepaper",
-        linkTo: InternalLinks.NOT_FOUND,
-        description: "Coming soon",
-        Icon: () => <WhitePaperIcon />,
+        linkTo: ExternalLinks.TAGION_WHITEPAPER,
+        description: "Dive into the details",
+        img: whitepaperIcon,
+        externalLink: true,
       },
-      { ...techPaperLink },
-      {
-        name: "Governance paper",
-        linkTo: InternalLinks.NOT_FOUND,
-        description: "Coming soon",
-        Icon: () => <GovermentIcon />,
-      },
+      // { ...techPaperLink },
+      // {
+      //   name: "Governance paper",
+      //   linkTo: InternalLinks.NOT_FOUND,
+      //   description: "Coming soon",
+      //   Icon: () => <GovermentIcon />,
+      // },
       {
         name: "SDKs",
         linkTo: InternalLinks.NOT_FOUND,
