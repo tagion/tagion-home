@@ -1,5 +1,5 @@
 import { ExternalLinks, InternalLinks } from "../common/enums";
-import { tokenomicsPdfLink } from "./navigation-links";
+import { tokenomicsPdfLink, whitepaperPdfLink } from "./navigation-links";
 
 export type LinkType = {
   name: string;
@@ -36,6 +36,7 @@ export const footerColumnLinks = [
       //   //   linkTo: ExternalLinks.TECH_PAPER,
       //   //   externalLink: true,
       // },
+      whitepaperPdfLink,
       {
         name: "Brand guidelines",
         linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
