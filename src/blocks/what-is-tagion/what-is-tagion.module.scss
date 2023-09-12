@@ -6,7 +6,7 @@
     position: relative;
     overflow: hidden;
     background: url("../../assets/images/coming-soon-background.png");
-    background-size: 1613px 907px;
+    background-size: cover;
     background-repeat: no-repeat;
 
     .title {
@@ -28,9 +28,9 @@
   }
 
   @media (min-width: 474px) {
-    padding: 119px 16px;
-    background-size: 1155px 650px;
-    background-position: bottom 0 left -220px;
+    padding: 80px 16px;
+    background-size: cover;
+    background-position: bottom 0 left -360px;
 
     .title,
     .description {
@@ -43,8 +43,9 @@
   }
 
   @media (min-width: $tablet-size) {
-    padding: 119px 24px;
-    background-position: bottom 0 right -340px;
+    padding: 80px 24px;
+    background-size: 1437px 812px;
+    background-position: bottom 0 right -490px;
 
     .title,
     .description {
@@ -55,8 +56,8 @@
   }
 
   @media (min-width: 810px) {
-    background-size: 1200px 675px;
-    background-position: top -68px left 0;
+    background-size: 1320px 746px;
+    background-position: top 0 left -100px;
 
     .title,
     .description {
@@ -68,10 +69,11 @@
 
   @media (min-width: $desktop-size) {
     padding: 85px 80px;
+    background-position: top 0 left -50px;
   }
 
   @media (min-width: 1200px) {
-    padding: 205px 80px;
+    padding: 109px 80px;
     background-size: 1659px 934px;
     background-position: top -103px right -220px;
 
@@ -84,6 +86,7 @@
   }
 
   @media (min-width: $desktop-large-size) {
+    padding: 104px 80px;
     background-position: top -103px left -36px;
 
     .title {
@@ -109,6 +112,6 @@
   }
 
   @media (min-width: $desktop-max-size) {
-    padding: 205px 120px;
+    padding: 104px 120px;
   }
 }
