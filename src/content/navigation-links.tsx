@@ -44,6 +44,14 @@ export const tokenomicsPdfLink = {
   externalLink: true,
 };
 
+export const whitepaperPdfLink = {
+  name: "Whitepaper",
+  linkTo: ExternalLinks.TAGION_WHITEPAPER,
+  description: "Dive into the details",
+  img: whitepaperIcon,
+  externalLink: true,
+};
+
 export const navigationLinks: Array<{
   name: string;
   linkTo?: string;
@@ -99,13 +107,7 @@ export const navigationLinks: Array<{
   {
     name: "Docs",
     subContent: [
-      {
-        name: "Whitepaper",
-        linkTo: ExternalLinks.TAGION_WHITEPAPER,
-        description: "Dive into the details",
-        img: whitepaperIcon,
-        externalLink: true,
-      },
+      whitepaperPdfLink,
       // { ...techPaperLink },
       // {
       //   name: "Governance paper",

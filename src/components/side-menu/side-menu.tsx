@@ -33,6 +33,11 @@ export const SideMenu: React.FC<InputProps> = ({
     });
   };
 
+  const onLinkClick = (selectedLink?: string) =>
+    selectedLink &&
+    location.pathname.includes(selectedLink) &&
+    isOpenedHandler(false);
+
   return (
     <Drawer anchor="right" open={isOpened} disableRestoreFocus={true}>
       <GradientSpotsWrapper
@@ -95,6 +100,7 @@ export const SideMenu: React.FC<InputProps> = ({
                               })}
                               isExternalLink={sublinkItem?.externalLink}
                               key={i}
+                              onClick={() => onLinkClick(sublinkItem.linkTo)}
                             >
                               <div className={cx("sublink_name")}>
                                 {sublinkItem.name}
@@ -115,6 +121,7 @@ export const SideMenu: React.FC<InputProps> = ({
                     className={`${cx("link")} prompt-regular`}
                     key={i}
                     isExternalLink={linkItem.externalLink}
+                    onClick={() => onLinkClick(linkItem.linkTo)}
                   >
                     {linkItem.name}
                   </CustomLink>
