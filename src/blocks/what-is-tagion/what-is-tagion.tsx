@@ -18,16 +18,23 @@ export const WhatIsTagionBlock: React.FC = () => {
         What is Tagion?
       </div>
       <div className={`${cx("description")} body-font`}>
-        Tagion redefines the DLT paradigm with a unique Node Swapping mechanism
-        enabling decentralisation and a Hashgraph-based consensus for a high
-        volume of transaction capabilities. Tagion is a versatile network
-        infrastructure for custom applications and ecosystems, delivering the
-        trifecta of security, scalability and decentralisation.
+        Tagion accelerates the DLT landscape forward using a modular framework
+        rooted in an asynchronous Byzantine Fault Tolerant (aBFT) hashgraph
+        protocol.
         <div className="text-separator" />
-        Tagion isn't just another network; it's a powerful asynchronous
-        Byzantine Fault Tolerant (aBFT) protocol-based system with a toolbox for
-        developers, communities and enterprises to build locally optimised,
-        globally shared real-world use cases.
+        By uniquely swapping between active and passive nodes, Tagion ensures
+        decentralisation while boosting performance. The deterministic nature of
+        Tagion's Hashgraph supports separate storage in its distributed database
+        without compromising the byzantine proof of the data - providing a
+        highly scalable system that can handle significant data volumes.
+        <div className="text-separator" />
+        Thanks to its Commons Good governance model and unique infrastructure
+        that addresses the crux of DLT, Tagion stands apart. It's not just
+        another network; it's a powerful accelerator for sustainability.
+        <div className="text-separator" />
+        Developers, communities, and enterprises can innovate locally,
+        streamline globally, and showcase practical use of products and
+        services.
       </div>
       <img
         className={cx("mobile_atoms_bond_img")}
