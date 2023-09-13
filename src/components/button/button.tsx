@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
 import { PaddingSizes } from "../../common/enums";
@@ -43,12 +43,18 @@ export const Button: React.FC<InputProps> = ({
   className = "",
   contentWidth,
   onClick,
-  id,
+  id = name,
   isDisabled,
   isGradientAdded = false,
   isGradientFixedActive = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [buttonWidth, setButtonWidth] = useState(200);
+
+  useEffect(() => {
+    setButtonWidth(document.getElementById(id || "")?.offsetWidth || 0);
+  }, []);
+
   return (
     <button
       type={type}
@@ -65,7 +71,9 @@ export const Button: React.FC<InputProps> = ({
       style={{
         width: `${widthInPx}px`,
         backgroundPositionX: `${
-          (contentWidth || 0) + PaddingSizes.BUTTON_LATERAL * 2
+          contentWidth
+            ? (contentWidth || 0) + PaddingSizes.BUTTON_LATERAL * 2
+            : buttonWidth
         }px`,
       }}
       id={id}

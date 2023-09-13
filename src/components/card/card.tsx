@@ -26,6 +26,7 @@ interface InputProps {
     img?: string;
     videoWrapper?: string;
   };
+  onClick?: () => void;
   style?: Partial<Record<"videoWrapper" | "title", CSSProperties>>;
 }
 
@@ -39,10 +40,14 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   fixedFontSize,
   ImgComponent,
   classNames,
+  onClick,
   style,
 }) => {
   return (
-    <div className={`${cx("card")} ${classNames?.card || ""}`}>
+    <div
+      className={`${cx("card")} ${classNames?.card || ""}`}
+      onClick={onClick}
+    >
       {(img || ImgComponent) && (
         <div className={`${cx("img_wrapper")} ${classNames?.img || ""}`}>
           {img && <img src={img.path} alt={img.alt} />}

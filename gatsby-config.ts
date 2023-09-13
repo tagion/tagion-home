@@ -79,6 +79,9 @@ const config: GatsbyConfig = {
           if (sourceInstanceName === `partners`) {
             return `partner`;
           }
+          if (sourceInstanceName === `useCases`) {
+            return `useCase`;
+          }
           return sourceInstanceName;
         },
       },
