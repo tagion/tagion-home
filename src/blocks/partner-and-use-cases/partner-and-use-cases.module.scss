@@ -16,6 +16,11 @@
 
   .description {
     margin-bottom: 24px;
+
+    ul {
+      padding-left: 24px;
+      margin: 0;
+    }
   }
 
   .website_info {
@@ -76,6 +81,16 @@
 
     .about_title {
       margin: 48px 0 32px;
+    }
+
+    .description {
+      ul {
+        padding-left: 30px;
+      }
+    }
+
+    .main_img {
+      border-radius: $card-border-radius;
     }
 
     .website_info {

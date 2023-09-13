@@ -47,12 +47,14 @@
     "react-tooltip": "^5.13.1",
     "sass": "^1.62.1",
     "swiper": "^9.3.2",
+    "uuid": "^9.0.1",
     "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
+    "@types/uuid": "^9.0.3",
     "typescript": "^5.0.4"
   }
 }
