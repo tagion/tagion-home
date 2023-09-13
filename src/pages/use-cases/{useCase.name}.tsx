@@ -9,37 +9,26 @@ import { getStaticPath } from "../../helpers";
 
 interface InputProps {
   data: {
-    partner: {
-      partnerId: string;
+    useCase: {
       pageTitle: string;
       aboutText: Array<{ paragraph?: string; list?: Array<string> }>;
       mainImgSrc: string;
       logoSrc: string;
       logoWidth: string;
-    };
-    allUseCase: {
-      nodes: Array<{
-        name: string;
-        description: string;
-        pageTitle: string;
-        mainImgSrc: string;
-        isImgDisplayedInRelatedInformationBlock: boolean;
-      }>;
+      useCaseId: string;
     };
   };
 }
 
-const PartnerPage: React.FC<InputProps> = ({
-  data: { partner, allUseCase },
-}) => {
+const UseCasesPage: React.FC<InputProps> = ({ data: { useCase } }) => {
   const [mainImgSrc, setMainImgSrc] = useState("");
   const [logoSrc, setLogoSrc] = useState("");
 
   useEffect(() => {
-    getStaticPath(partner.mainImgSrc).then(
+    getStaticPath(useCase.mainImgSrc).then(
       (res) => res?.default && setMainImgSrc(res.default)
     );
-    getStaticPath(partner.logoSrc).then(
+    getStaticPath(useCase.logoSrc).then(
       (res) => res?.default && setLogoSrc(res.default)
     );
   }, []);
@@ -48,49 +37,42 @@ const PartnerPage: React.FC<InputProps> = ({
     <Layout withPaddingBottom>
       <InformationBlockWrapper>
         <PartnerAndUseCasesBlock
-          pageTitle={partner.pageTitle}
-          aboutText={partner.aboutText}
-          relatedInformationBlockData={{
-            data: allUseCase.nodes,
-            title: "Use cases",
-          }}
+          pageTitle={useCase.pageTitle}
+          aboutText={useCase.aboutText}
+          // relatedInformationBlockData={{
+          //   data: allUseCase.nodes,
+          //   title: "Use cases",
+          // }}
           mainImgSrc={mainImgSrc}
-          logo={{ src: logoSrc, width: partner.logoWidth }}
+          logo={{ src: logoSrc, width: useCase.logoWidth }}
           websiteLink={
-            ExternalLinks[partner.partnerId as keyof typeof ExternalLinks]
+            ExternalLinks[useCase.useCaseId as keyof typeof ExternalLinks]
           }
-          buttonLinkName="Visit Website"
+          buttonLinkName="Partner Details"
         />
       </InformationBlockWrapper>
     </Layout>
   );
 };
 
-export default PartnerPage;
+export default UseCasesPage;
 
 export { Head } from "../../components/head";
 
 export const query = graphql`
   query ($name: String!) {
-    partner(name: { eq: $name }) {
-      partnerId
-      pageTitle
+    useCase(name: { eq: $name }) {
       aboutText {
         paragraph
+        list
       }
-      mainImgSrc
+      description
       logoSrc
       logoWidth
-    }
-
-    allUseCase {
-      nodes {
-        name
-        description
-        pageTitle
-        mainImgSrc
-        isImgDisplayedInRelatedInformationBlock
-      }
+      mainImgSrc
+      name
+      pageTitle
+      useCaseId
     }
   }
 `;

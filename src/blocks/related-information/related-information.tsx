@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
+import { navigate } from "gatsby";
 
 import { Card } from "../../components";
 import { usePageBreakpointDeterminator, useResizeEvent } from "../../hooks";
 import { PageSizes } from "../../common/enums";
+import { getStaticPath } from "../../helpers";
 
 import * as styles from "./related-information.module.scss";
 
@@ -14,6 +16,7 @@ const cx = classNames.bind(styles);
 interface InputProps {
   title: string;
   data: Array<{
+    name: string;
     description: string;
     pageTitle: string;
     isImgDisplayedInRelatedInformationBlock: boolean | null;
@@ -35,21 +38,19 @@ export const RelatedInformationBlock: React.FC<InputProps> = ({
     },
   });
 
-  // todo move getStaticPath into a separate file
-  const getStaticPath = async (imgSrc: string) =>
-    await import(`../../assets/images/partners/${imgSrc}`);
-
   useEffect(() => {
     window.innerWidth >= PageSizes.DESKTOP_LARGE &&
       data.forEach(
         (item) =>
           item.isImgDisplayedInRelatedInformationBlock &&
           item.mainImgSrc &&
-          getStaticPath(item.mainImgSrc).then((res) =>
-            setStaticImagesPaths((staticImagePaths) => ({
-              ...staticImagePaths,
-              [item.pageTitle]: res.default,
-            }))
+          getStaticPath(item.mainImgSrc).then(
+            (res) =>
+              res?.default &&
+              setStaticImagesPaths((staticImagePaths) => ({
+                ...staticImagePaths,
+                [item.pageTitle]: res.default,
+              }))
           )
       );
   }, [pageSize]);
@@ -87,6 +88,7 @@ export const RelatedInformationBlock: React.FC<InputProps> = ({
                 title: cx("card_title"),
                 img: cx("card_imgWrapper"),
               }}
+              onClick={() => navigate(`/use-cases/${item.name}`)}
             />
           );
         })}

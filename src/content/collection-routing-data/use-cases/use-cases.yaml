@@ -1,21 +1,36 @@
-- name: climate-capital-technologies
+- useCaseId: CLIMATE_CAPITAL_TECHNOLOGIES
+  name: climate-capital-technologies
   pageTitle: Climate Capital Technologies
-  mainImgSrc: venzo_main.png
-  logoSrc: venzo_logo.png
-  aboutText: aboutText
+  mainImgSrc: use-cases/CCT_main
+  logoSrc: use-cases/CCT_logo
+  logoWidth: 64px
+  aboutText:
+    - paragraph: "Climate Capital Technologies, a partnership between DECARD and Africa Investor, mobilises investment in nature-based and sustainable projects. By combining Africa Investor's project identification and vetting capabilities with DECARD's expertise in Web3 infrastructure and community-focused economic governance, Tagion network facilitates robust investment and capital facilitation of ESG projects at scale."
+    - paragraph: "The goal is to create decentralised economic infrastructure using Web3 technology to identify Scope 3 emissions in value chains and accelerate capital flows into net-zero projects. The aim is to decarbonise infrastructure and scale up sustainable solutions. Visit the website here for more information. Climcap aims to achieve this by offering:"
+    - list:
+        - "A Robust Green Solution: A decentralised, secure, and scalable application for storing and exchanging nature-based assets."
+        - "Scope Three Emissions Compliance: Helping organisations stay up to date with the latest regulations."
+        - "Climate Capital: Mobilising, accelerating, and deploying economic value to benefit the wider community and deliver real social benefits."
+        - "Carbon Audit: Providing tools for transparent and private carbon emissions accounting."
   description: Climate Capital Technologies, a partnership between DECARD and Africa Investor, mobilises investment in nature-based and sustainable projects.
 
-- name: aecorn
+- useCaseId: AECORN
+  name: aecorn
   pageTitle: Aecorn
-  mainImgSrc: aecorn_main.png
+  mainImgSrc: use-cases/aecorn_main
   isImgDisplayedInRelatedInformationBlock: true
-  logoSrc: aecorn_logo.png
-  aboutText: aboutText
+  logoSrc: use-cases/aecorn_logo
+  logoWidth: 80px
+  aboutText:
+    - paragraph: "Existing nature funding mechanisms lack efficiency, transparency, and credibility. Aecorn is revolutionising nature investment with innovative funding tools. Built on the Tagion network and supported by VENZO, Aecorn introduces a groundbreaking nature investment instrument. By investing in land as a nature-based asset, Aecorn ensures the conversion of marginalised soil into forests, conducts in-depth research and development, nurtures the land under the guidance of forest experts, and securely stores data on the transparent Tagion network."
+    - paragraph: "Simplified nature benefit token listing and trading processes enable investments in new forest projects, while NFTs representing land are minted and tokens are issued. Aecorn transforms donations into fruitful investments, cultivating nutritious land, absorbing CO2, and generating long-term ROI. Moreover, Aecorn drives transactions to the Tagion ecosystem, contributing to its growth. Aecorn's launch aligns well with the increasing demand for legitimate ESG projects and the expanding carbon markets. It meets the needs of environmentally conscious stakeholders seeking impactful investment opportunities."
   description: Existing nature funding mechanisms lack efficiency, transparency, and credibility. Aecorn is revolutionising nature investment with innovative funding tools.
 
-- name: puku
+- useCaseId: PUKU
+  name: puku
   pageTitle: PUKU
-  mainImgSrc: venzo_main.png
-  logoSrc: venzo_logo.png
-  aboutText: aboutText
+  mainImgSrc: use-cases/PUKU_main
+  aboutText:
+    - paragraph: "PUKU's mission is to connect investment opportunities with impactful projects in Africa, benefitting local communities and safeguarding the local environment. PUKU is dedicated to mitigating climate change, protecting habitats, and preserving biodiversity in vulnerable areas. PUKU creates buy-in opportunities for sustainable or impact projects with a “Beyond Carbon Strategy” as the goal is to benefit the area’s natural flora and fauna. Investors are increasingly considering corporate social responsibility (CSR) and environmental, social, and governance (ESG) factors in their decisions."
+    - paragraph: "This trend is fueled by a heightened awareness of climate change risks, a desire to support companies addressing social and environmental issues, and the recognition that ESG-focused companies outperform their peers. PUKU offers a unique business model that combines conservation efforts with revenue from carbon credits. Our approach, which explores additional nature-based revenue streams, aligns with sustainability goals, and serves as a blueprint for other organizations. By integrating revenue from carbon credits and exploring new opportunities, PUKU generates viable investments that benefit nature, communities, and investors."
   description: PUKU's mission is to connect investment opportunities with impactful projects in Africa, benefitting local communities and safeguarding the local environment.
