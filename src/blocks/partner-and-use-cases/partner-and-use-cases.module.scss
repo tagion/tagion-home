@@ -64,9 +64,7 @@
     }
 
     .website_info {
-      position: fixed;
-      left: 80px;
-      top: 228px;
+      display: none;
     }
 
     .main_img {
@@ -91,17 +89,6 @@
 
     .main_img {
       border-radius: $card-border-radius;
-    }
-
-    .website_info {
-      position: fixed;
-      top: 320px;
-    }
-  }
-
-  @media (min-width: $desktop-max-size) {
-    .website_info {
-      left: calc(((100% - $desktop-max-size) / 2) + 120px);
     }
   }
 }
