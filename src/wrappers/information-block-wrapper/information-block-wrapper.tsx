@@ -21,6 +21,7 @@ export const InformationBlockWrapper: React.FC<PropsWithChildren<{}>> = ({
       container
       columns={miuCustomColumns}
       className={`${cx("information_block_wrapper")} main-lateral-paddings`}
+      id="information_block_wrapper"
     >
       <Grid
         item
@@ -29,18 +30,19 @@ export const InformationBlockWrapper: React.FC<PropsWithChildren<{}>> = ({
         md={3}
         lg={3}
         xl={3}
-        className={cx("button_wrapper")}
+        className={cx("navigation_side_wrapper")}
+        id="navigation_side_wrapper"
       >
         <LeftArrowIcon
           className={cx("mobile_button")}
           onClick={onBackButtonClick}
         />
-        <Button
-          Icon={LeftArrowIcon}
-          isRounded
-          onClick={onBackButtonClick}
-          className={cx("desktop_button")}
-        />
+        <div
+          className={cx("desktop_navigation_block_wrapper")}
+          id="desktop_navigation_block_wrapper"
+        >
+          <Button Icon={LeftArrowIcon} isRounded onClick={onBackButtonClick} />
+        </div>
       </Grid>
       <Grid
         item
@@ -49,7 +51,7 @@ export const InformationBlockWrapper: React.FC<PropsWithChildren<{}>> = ({
         md={5}
         lg={9}
         xl={9}
-        className={cx("content_wrapper")}
+        className={cx("content_side_wrapper")}
       >
         {children}
       </Grid>

@@ -4,7 +4,7 @@
   margin: 0 !important;
   padding-top: 15px;
 
-  .button_wrapper {
+  .navigation_side_wrapper {
     margin-bottom: 43px;
 
     .mobile_button {
@@ -14,12 +14,12 @@
       cursor: pointer;
     }
 
-    .desktop_button {
+    .desktop_navigation_block_wrapper {
       display: none;
     }
   }
 
-  .content_wrapper {
+  .content_side_wrapper {
     .page_title {
       margin-bottom: 24px;
       font-size: 36px;
@@ -85,11 +85,11 @@
   @media (min-width: $tablet-size) {
     padding-top: 31px;
 
-    .button_wrapper {
+    .navigation_side_wrapper {
       margin-bottom: 55px;
     }
 
-    .content_wrapper {
+    .content_side_wrapper {
       .page_title {
         margin-bottom: 32px;
       }
@@ -111,20 +111,31 @@
   @media (min-width: $desktop-size) {
     padding-top: 32px;
 
-    .button_wrapper {
+    .navigation_side_wrapper {
       margin-bottom: 0;
+      align-items: flex-end;
 
       .mobile_button {
         display: none;
       }
 
-      .desktop_button {
-        display: block;
+      .desktop_navigation_block_wrapper {
         position: fixed;
+        display: block;
+
+        [class~="website_info"] {
+          margin-top: 64px;
+
+          a {
+            display: block;
+            margin-top: 32px;
+            text-decoration: none;
+          }
+        }
       }
     }
 
-    .content_wrapper {
+    .content_side_wrapper {
       .page_title {
         margin-bottom: 40px;
       }
@@ -134,7 +145,13 @@
   @media (min-width: $desktop-large-size) {
     padding-top: 96px;
 
-    .content_wrapper {
+    .navigation_side_wrapper
+      > .desktop_navigation_block_wrapper
+      > [class~="website_info"] {
+      margin-top: 80px;
+    }
+
+    .content_side_wrapper {
       .page_title {
         font-size: 50px;
         line-height: 50px;
@@ -176,7 +193,7 @@
   }
 
   @media (min-width: $desktop-max-size) {
-    .content_wrapper {
+    .content_side_wrapper {
       .page_title {
         margin-bottom: 48px;
       }
