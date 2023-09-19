@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import { v4 as uuidv4 } from "uuid";
 import { createPortal } from "react-dom";
@@ -42,6 +42,10 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
   relatedInformationBlockData,
   buttonLinkName,
 }) => {
+  const [
+    desktopNavigationBlockWrapperElement,
+    setDesktopNavigationBlockWrapperElement,
+  ] = useState<HTMLElement | null>(null);
   const navigationBlockPositionHandler = () => {
     const footerEl = document.getElementById("footer");
     const headerEl = document.getElementById("header");
@@ -95,6 +99,9 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
         desktopNavigationBlockWrapperEl.style.position = "fixed";
       }
     }
+    setDesktopNavigationBlockWrapperElement(
+      () => desktopNavigationBlockWrapperEl
+    );
   };
 
   const descriptionGenerator = (
@@ -148,10 +155,6 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
     });
   }, []);
 
-  const desktopNavigationBlockWrapperEl = document.getElementById(
-    "desktop_navigation_block_wrapper"
-  );
-
   return (
     <div className={`${cx("partner_and_use_cases_block")}`}>
       <div className={`${cx("page_title")} title-font`}>{pageTitle}</div>
@@ -164,8 +167,8 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
           )}
       </div>
       {websiteInfoBlock()}
-      {desktopNavigationBlockWrapperEl &&
-        createPortal(websiteInfoBlock(), desktopNavigationBlockWrapperEl)}
+      {desktopNavigationBlockWrapperElement &&
+        createPortal(websiteInfoBlock(), desktopNavigationBlockWrapperElement)}
       {relatedInformationBlockData && (
         <RelatedInformationBlock
           data={relatedInformationBlockData.data}
