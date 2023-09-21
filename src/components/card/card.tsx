@@ -11,6 +11,7 @@ interface InputProps {
   title?: string | JSX.Element;
   description: string | JSX.Element;
   label?: string;
+  date?: string;
   img?: { path: string; alt?: string };
   videoSrc?: string;
   counter?: string;
@@ -27,13 +28,14 @@ interface InputProps {
     videoWrapper?: string;
   };
   onClick?: () => void;
-  style?: Partial<Record<"videoWrapper" | "title", CSSProperties>>;
+  style?: Partial<Record<"videoWrapper" | "title" | "img", CSSProperties>>;
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   title,
   description,
   label,
+  date,
   img,
   videoSrc,
   counter,
@@ -50,7 +52,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
     >
       {(img || ImgComponent) && (
         <div className={`${cx("img_wrapper")} ${classNames?.img || ""}`}>
-          {img && <img src={img.path} alt={img.alt} />}
+          {img && <img src={img.path} alt={img.alt} style={style?.img} />}
           {ImgComponent && ImgComponent()}
         </div>
       )}
@@ -78,6 +80,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
             {counter}
           </div>
         )}
+
         {title && (
           <div
             className={`${cx("title")} subtitle-font-28-50 ${
@@ -88,11 +91,13 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
             {title}
           </div>
         )}
+
         {label && (
           <div className={`${cx("label")} ${classNames?.label || ""}`}>
             {label}
           </div>
         )}
+
         <div
           className={`${cx("description")} ${
             fixedFontSize?.description
@@ -102,6 +107,8 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
         >
           {description}
         </div>
+
+        {date && <div className={cx("date")}>{date}</div>}
       </div>
     </div>
   );

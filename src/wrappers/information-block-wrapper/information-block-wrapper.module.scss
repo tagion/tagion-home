@@ -19,65 +19,33 @@
     }
   }
 
-  .content_side_wrapper {
-    .page_title {
-      margin-bottom: 24px;
-      font-size: 36px;
-      line-height: 36px;
-    }
+  .breadcrumbs_wrapper {
+    display: block;
+    margin-top: 15px;
 
-    .content {
-      .block {
-        .title {
-          margin-bottom: 12px;
-        }
+    .breadcrumb {
+      display: inline;
+      text-align: center;
 
-        .description {
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 24px;
+      a {
+        color: $text-coming-soon-color;
+        text-decoration: none;
+        transition: color 0.3s;
 
-          .subtitle {
-            font-size: 20px;
-            line-height: 20px;
-          }
-
-          .link {
-            color: $main-dark-color;
-            text-decoration: none;
-          }
-
-          .email,
-          .link {
-            cursor: pointer;
-          }
-
-          .link,
-          .email {
-            border-bottom: 1px solid $main-dark-color;
-          }
-
-          .list {
-            margin: 0 0 24px;
-            padding-left: 25px;
-
-            &.withoutMargin {
-              margin: 0;
-            }
-          }
-
-          br {
-            content: " ";
-            display: block;
-            height: 24px;
-          }
+        &:hover {
+          color: $main-dark-color;
+          cursor: pointer;
         }
       }
 
-      &:not(:first-child) {
-        .block {
-          margin-top: 16px;
-        }
+      svg {
+        display: inline;
+        margin-bottom: -2.5px;
+        margin-left: 4px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 4px;
       }
     }
   }
@@ -132,6 +100,24 @@
             text-decoration: none;
           }
         }
+
+        [class~="author_info"] {
+          display: flex;
+          flex-direction: column;
+          width: 193px;
+          margin-top: 68px;
+
+          [class~="author_label"] {
+            margin-bottom: 4px;
+            color: $input-border-color;
+          }
+        }
+      }
+
+      &.isInheritPosition {
+        .desktop_navigation_block_wrapper {
+          position: inherit;
+        }
       }
     }
 
@@ -139,6 +125,11 @@
       .page_title {
         margin-bottom: 40px;
       }
+    }
+
+    .breadcrumbs_wrapper {
+      margin-top: 0;
+      margin-bottom: 56px;
     }
   }
 

@@ -5,8 +5,6 @@ import { createPortal } from "react-dom";
 
 import { Button, CustomLink } from "../../components";
 import { RelatedInformationBlock } from "../related-information";
-import { useResizeEvent } from "../../hooks";
-import { PageSizes } from "../../common/enums";
 
 import * as styles from "./partner-and-use-cases.module.scss";
 
@@ -46,63 +44,6 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
     desktopNavigationBlockWrapperElement,
     setDesktopNavigationBlockWrapperElement,
   ] = useState<HTMLElement | null>(null);
-  const navigationBlockPositionHandler = () => {
-    const footerEl = document.getElementById("footer");
-    const headerEl = document.getElementById("header");
-    const informationBlockWrapperEl = document.getElementById(
-      "information_block_wrapper"
-    );
-    const desktopNavigationBlockWrapperEl = document.getElementById(
-      "desktop_navigation_block_wrapper"
-    );
-    const navigationSideWrapperEl = document.getElementById(
-      "navigation_side_wrapper"
-    );
-
-    if (
-      desktopNavigationBlockWrapperEl &&
-      informationBlockWrapperEl &&
-      footerEl &&
-      headerEl &&
-      navigationSideWrapperEl
-    ) {
-      const bottomPadding =
-        window.innerWidth >= PageSizes.DESKTOP_LARGE ? 180 : 80;
-
-      const maxPageScrollValue =
-        document.body.scrollHeight - document.body.offsetHeight;
-
-      const visibleFooterHeight =
-        footerEl?.offsetHeight - (maxPageScrollValue - window.scrollY);
-
-      const distanceToTheTopOfPage =
-        (informationBlockWrapperEl
-          ? Number(
-              window
-                .getComputedStyle(informationBlockWrapperEl)
-                .getPropertyValue("padding-top")
-                .replace("px", "")
-            )
-          : 0) + headerEl?.offsetHeight;
-
-      const distanceBetweenNavigationBlockAndFooter =
-        window.document.body.offsetHeight -
-        desktopNavigationBlockWrapperEl.offsetHeight -
-        distanceToTheTopOfPage -
-        visibleFooterHeight;
-
-      if (distanceBetweenNavigationBlockAndFooter < bottomPadding) {
-        navigationSideWrapperEl.style.display = "flex";
-        desktopNavigationBlockWrapperEl.style.position = "unset";
-      } else {
-        navigationSideWrapperEl.style.display = "block";
-        desktopNavigationBlockWrapperEl.style.position = "fixed";
-      }
-    }
-    setDesktopNavigationBlockWrapperElement(
-      () => desktopNavigationBlockWrapperEl
-    );
-  };
 
   const descriptionGenerator = (
     textObject: { paragraph?: string; list?: Array<string> },
@@ -143,16 +84,14 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
       </div>
     );
 
-  useResizeEvent({
-    resizeHandler: () => {
-      navigationBlockPositionHandler();
-    },
-  });
-
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      navigationBlockPositionHandler();
-    });
+    const desktopNavigationBlockWrapperEl = document.getElementById(
+      "desktop_navigation_block_wrapper"
+    );
+    desktopNavigationBlockWrapperEl &&
+      setDesktopNavigationBlockWrapperElement(
+        () => desktopNavigationBlockWrapperEl
+      );
   }, []);
 
   return (

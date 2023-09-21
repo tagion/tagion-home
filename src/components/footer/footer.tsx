@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
       <div className={cx("footer_content")}>
         <div className={cx("logo_column")}>
           <LogoIcon className={cx("logo")} onClick={() => navigate("/")} />
-          <SocialLinks className={cx("socials")} />
+          <SocialLinks className={cx("socials")} isWhiteColor />
         </div>
 
         <div className={cx("link_columns")}>
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
               columnOfLinksItem(linkColumn)
             )}
           <div className={`${cx("additional_links_column")} inter-12`}>
-            <SocialLinks className={cx("socials")} />
+            <SocialLinks className={cx("socials")} isWhiteColor />
             <CustomLink linkTo="/privacy-policy">Privacy Policy</CustomLink>
             <CustomLink linkTo="/terms-of-use">Terms of use</CustomLink>
           </div>

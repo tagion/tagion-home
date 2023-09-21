@@ -18,6 +18,8 @@ export * from "./input";
 export * from "./introductory-block";
 export * from "./inclusive-elastic-decentralised-swiper";
 export * from "./inclusive-elastic-decentralised-swiper-card";
+export * from "./page-description";
+export * from "./page-filter";
 export * from "./page-not-found";
 export * from "./permissionless-tagion-hashgraph-card";
 export * from "./permissionless-tagion-hashgraph-swiper";

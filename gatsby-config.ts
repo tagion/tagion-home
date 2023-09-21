@@ -72,6 +72,16 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(
+          __dirname,
+          "src/content/collection-routing-data/articles"
+        ),
+        name: `article`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-yaml`,
       options: {
         typeName: ({ node }: { node: Node }) => {
