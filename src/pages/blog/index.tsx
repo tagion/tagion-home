@@ -21,7 +21,7 @@ interface InputProps {
 
 const BlogPage = ({ location: { state } }: InputProps) => {
   const [selectedFilterIndex, setSelectedFilterIndex] = useState<string>("0");
-  const selectedFilterIndexProp = state["selectedFilterIndex"];
+  const selectedFilterIndexProp = state?.["selectedFilterIndex"];
 
   useEffect(() => {
     selectedFilterIndexProp &&
