@@ -138,6 +138,5 @@ export const navigationLinks: Array<{
   {
     name: "Blog",
     linkTo: InternalLinks.BLOG,
-    externalLink: true,
   },
 ];

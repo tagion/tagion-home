@@ -7,6 +7,7 @@ interface InputProps {
   linkTo?: string;
   className?: string;
   isExternalLink?: boolean;
+  state?: { [key: string]: string | number };
   onClick?: () => void;
 }
 
@@ -15,6 +16,7 @@ export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
   className = "",
   children,
   isExternalLink = false,
+  state,
   onClick,
 }) => {
   return isExternalLink ? (
@@ -27,7 +29,12 @@ export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
       {children}
     </a>
   ) : (
-    <Link to={linkTo} className={className} onClick={onClick}>
+    <Link
+      to={linkTo}
+      className={`${!linkTo ? "disable-link" : ""} ${className}`}
+      onClick={onClick}
+      state={state}
+    >
       {children}
     </Link>
   );

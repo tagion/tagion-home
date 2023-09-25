@@ -16,3 +16,8 @@ export enum ContributorsTypeName {
   ADVISORS = "Advisors",
   AMBASSADORS = "Ambassadors",
 }
+
+export enum BlogPageSectionsName {
+  ARTICLES = "Articles",
+  GLOSSARY_OF_TERMS = "Glossary of terms",
+}

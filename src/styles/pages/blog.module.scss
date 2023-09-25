@@ -1,0 +1,36 @@
+@import "./../../styles/variables.scss";
+
+.pageFilter_wrapper {
+  margin-top: 24px;
+}
+
+.IBW_information_block_wrapper > .IBW_navigation_side_wrapper {
+  margin-bottom: 0px;
+}
+
+@media (min-width: $tablet-size) {
+  .pageFilter_wrapper {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: $desktop-size) {
+  .pageFilter_wrapper {
+    margin-top: 56px;
+  }
+}
+
+@media (min-width: $desktop-large-size) {
+  .pageFilter_wrapper {
+    margin-top: 72px;
+
+    .pageFilter_desktopFilter {
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      [class~="contributor_type_item"] {
+        margin: 0 0 24px;
+      }
+    }
+  }
+}

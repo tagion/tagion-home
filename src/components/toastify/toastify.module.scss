@@ -20,7 +20,10 @@
       .main {
         font-size: 16px;
         line-height: 16px;
-        margin-bottom: 2px;
+
+        &.withMarginBottom {
+          margin-bottom: 2px;
+        }
       }
 
       .secondary {
@@ -53,7 +56,10 @@
         .main {
           font-size: 28px;
           line-height: 28px;
-          margin-bottom: 4px;
+
+          &.withMarginBottom {
+            margin-bottom: 4px;
+          }
         }
         .secondary {
           font-size: 16px;

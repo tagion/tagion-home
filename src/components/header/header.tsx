@@ -157,7 +157,7 @@ export const Header: React.FC<InputProps> = ({
           })}
       </nav>
 
-      <SocialLinks className={cx("external_links")} />
+      <SocialLinks className={cx("external_links")} isWhiteColor />
 
       <BurgerMenuIcon
         className={cx("burger_menu_icon")}
