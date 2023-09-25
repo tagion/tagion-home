@@ -37,7 +37,7 @@ export const Input: React.FC<InputProps> = ({
         className={`${cx("input", {
           isError: error,
           isGrayTextColor,
-        })} inter-16`}
+        })} inter_16`}
         onChange={onChange}
         InputProps={
           !!error

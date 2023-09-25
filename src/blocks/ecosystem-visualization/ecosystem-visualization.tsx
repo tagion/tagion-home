@@ -231,7 +231,7 @@ export const EcosystemVisualizationBlock: React.FC = () => {
           <div className={`${cx("popup_title")} prompt-regular prompt-36`}>
             {hoveredVideoData.title}
           </div>
-          <div className={`${cx("popup_description")} inter-400`}>
+          <div className={`${cx("popup_description")} inter_400`}>
             {hoveredVideoData.description}
           </div>
         </div>

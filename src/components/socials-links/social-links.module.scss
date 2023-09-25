@@ -16,6 +16,10 @@ $icon-desktop-max-size: 28px;
     }
   }
 
+  .copy_link:focus {
+    outline: none;
+  }
+
   svg {
     width: $icon-desktop-max-size;
     height: $icon-desktop-max-size;
@@ -35,6 +39,16 @@ $icon-desktop-max-size: 28px;
       &:hover {
         fill: $main-dark-color;
       }
+    }
+  }
+
+  .tooltip {
+    display: none;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .tooltip {
+      display: block;
     }
   }
 }
