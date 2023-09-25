@@ -1,0 +1,22 @@
+@import "./../../styles/variables.scss";
+
+.articles_block {
+  padding-top: 8px;
+
+  @media (min-width: $tablet-size) {
+    padding-top: 16px;
+  }
+
+  @media (min-width: $desktop-size) {
+    padding-top: 8px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding-top: 0;
+    padding-left: 9px;
+  }
+
+  @media (min-width: $desktop-max-size) {
+    padding-left: 10px;
+  }
+}

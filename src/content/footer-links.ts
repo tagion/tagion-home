@@ -24,7 +24,7 @@ export const footerColumnLinks = [
     links: [
       { name: "Community", linkTo: InternalLinks.COMMUNITY },
       { name: "About", linkTo: InternalLinks.ABOUT },
-      { name: "Blog", linkTo: InternalLinks.BLOG, externalLink: true },
+      { name: "Blog", linkTo: InternalLinks.BLOG },
     ],
   },
   {

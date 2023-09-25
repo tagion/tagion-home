@@ -71,6 +71,20 @@
   }
 }
 
+.subtitle-font-28_2-36 {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  color: $main-dark-color;
+
+  @media (min-width: $desktop-size) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
 .subtitle-font-28-36 {
   font-family: "Prompt-Regular";
   font-weight: 400;
@@ -157,6 +171,23 @@
   }
 }
 
+.subtitle-font-32-50-80 {
+  font-family: "Prompt-Regular";
+  font-size: 32px;
+  line-height: 32px;
+  color: $main-dark-color;
+
+  @media (min-width: $tablet-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-size) {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
+
 .subtitle-gradient-block-font {
   font-family: "Prompt-Regular";
   font-weight: 400;
@@ -220,7 +251,8 @@
   line-height: 36px;
 }
 
-.font-28 {
+.font-28,
+.prompt-28 {
   font-size: 28px;
   line-height: 28px;
 }
