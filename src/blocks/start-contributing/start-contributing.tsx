@@ -32,7 +32,7 @@ export const StartContributingBlock: React.FC = ({}) => {
         )
       }
     >
-      <div className={`${cx("label")} inter-400`}>{index + 1}</div>
+      <div className={`${cx("label")} inter_400`}>{index + 1}</div>
       <div className={`${cx("task_name")} subtitle-font-28-36`}>{taskName}</div>
     </div>
   );

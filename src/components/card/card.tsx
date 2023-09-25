@@ -76,7 +76,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
       )}
       <div className={`${cx("main_content")} ${classNames?.mainContent || ""}`}>
         {counter && (
-          <div className={`inter-16 ${classNames?.counter || ""}`}>
+          <div className={`inter_16 ${classNames?.counter || ""}`}>
             {counter}
           </div>
         )}

@@ -222,7 +222,7 @@ export const Header: React.FC<InputProps> = ({
                       <div className={`${cx("title")} font-28 prompt-regular`}>
                         {name}
                       </div>
-                      <div className="inter-16">{description}</div>
+                      <div className="inter_16">{description}</div>
                     </div>
                   </a>
                 );

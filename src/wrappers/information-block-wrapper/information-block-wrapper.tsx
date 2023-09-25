@@ -126,7 +126,7 @@ export const InformationBlockWrapper: React.FC<
   const onBackButtonClick = () => history.back();
 
   const breadcrumbs = breadcrumbsData?.length && (
-    <div className={`${cx("breadcrumbs_wrapper")} inter-16`}>
+    <div className={`${cx("breadcrumbs_wrapper")} inter_16`}>
       {breadcrumbsData.map(({ name, linkTo, stateToNewPage }, i, arr) => (
         <div className={cx("breadcrumb")}>
           <CustomLink linkTo={linkTo} key={name} state={stateToNewPage}>

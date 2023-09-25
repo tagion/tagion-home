@@ -85,7 +85,7 @@ export const InclusiveElasticDecentralisedSwiperCard: React.FC<InputProps> = ({
         {cardData.length &&
           cardData.map(({ title, value, linkTo }, i) => (
             <div className={cx("data")} key={i}>
-              <div className={`${cx("title")} inter-16`}>{title}</div>
+              <div className={`${cx("title")} inter_16`}>{title}</div>
               <CustomLink
                 linkTo={linkTo}
                 isExternalLink={true}

@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 
 import { SocialLinks } from "../../components";
 import { useResizeEvent } from "../../hooks";
-import { PageSizes } from "../../common/enums";
+import { PageSizes, SocialLinkNames } from "../../common/enums";
 
 import * as styles from "./article.module.scss";
 
@@ -20,7 +20,7 @@ interface InputProps {
   mainImgData: {
     path: string;
     alt: string;
-    style: CSSProperties;
+    style?: CSSProperties;
   };
   timeToRead: string;
   dateOfCreation: string;
@@ -47,7 +47,7 @@ export const ArticleBlock: React.FC<InputProps> = ({
         // todo handle id
         id="website_info_block"
       >
-        <span className={`${cx("author_label")} author_label inter-16`}>
+        <span className={`${cx("author_label")} author_label inter_16`}>
           Author
         </span>
         <span className={`${cx("author_name")} subtitle-font-28_2-36`}>
@@ -75,7 +75,7 @@ export const ArticleBlock: React.FC<InputProps> = ({
 
   return (
     <div className={`${cx("article_block")}`}>
-      <div className={`${cx("article_info")} inter-16`}>
+      <div className={`${cx("article_info")} inter_16`}>
         <span className={cx("date_of_creation")}>{dateOfCreation}</span> ·{" "}
         <span className={cx("time_to_read")}>{timeToRead} read</span>
       </div>
@@ -106,10 +106,9 @@ export const ArticleBlock: React.FC<InputProps> = ({
         className={cx("social_links")}
         withCopyLinkButton
         withHovering={isDesktopLarge}
-        removeLink="github"
-        onCopyLinkClick={() =>
-          navigator.clipboard.writeText(window.location.href)
-        }
+        withTooltips
+        shareMessageData={{ messageText: "Hey, check out this cool article." }}
+        removeLinks={[SocialLinkNames.GITHUB, SocialLinkNames.DISCORD]}
       />
     </div>
   );

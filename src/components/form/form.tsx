@@ -211,7 +211,7 @@ export const Form: React.FC<InputProps> = ({
               name="howWeCanHelp"
               value={formik.values.howWeCanHelp}
               onChange={handleInputChange}
-              className="inter-16"
+              className="inter_16"
               onClick={() => {
                 document
                   .getElementById("textarea-wrapper")

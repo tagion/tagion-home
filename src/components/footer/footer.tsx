@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                 linkTo={linkTo}
                 isExternalLink={externalLink}
                 key={name}
-                className="inter-16"
+                className="inter_16"
               >
                 {/* {!!icon && <img src={icon} alt={`${name} icon`} />} */}
                 {name}

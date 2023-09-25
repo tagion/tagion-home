@@ -80,7 +80,7 @@ const CircleBlock = ({
         >
           {title}
         </div>
-        <div className={`${cx("description")} inter-400`}>{description}</div>
+        <div className={`${cx("description")} inter_400`}>{description}</div>
         {withVerticalLine && (
           <div className={cx("vertical_line_wrapper")}>
             <div className={cx("line")}>
