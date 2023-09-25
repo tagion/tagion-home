@@ -3,12 +3,10 @@ import classNames from "classnames/bind";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 
-import { ToastifyMessage } from "../toastify";
+import { Tooltip, ToastifyMessage } from "../../components";
+import { socialLinksData } from "../../content/social-links";
+import { SocialLinkNames } from "../../common/enums";
 
-import { ReactComponent as TwitterIcon } from "../../assets/images/X_icon.svg";
-import { ReactComponent as DiscordIcon } from "../../assets/images/discord_icon.svg";
-import { ReactComponent as TelegramIcon } from "../../assets/images/telegram_icon.svg";
-import { ReactComponent as GithubIcon } from "../../assets/images/github_icon.svg";
 import { ReactComponent as CopyLinkIcon } from "../../assets/images/copy_link_icon.svg";
 
 import * as styles from "./social-links.module.scss";
@@ -20,8 +18,9 @@ interface InputProps {
   isWhiteColor?: boolean;
   withCopyLinkButton?: boolean;
   withHovering?: boolean;
-  removeLink?: string;
-  onCopyLinkClick?: () => void;
+  removeLinks?: Array<SocialLinkNames>;
+  shareMessageData?: { messageText: string };
+  withTooltips?: boolean;
 }
 
 export const SocialLinks: React.FC<InputProps> = ({
@@ -29,14 +28,16 @@ export const SocialLinks: React.FC<InputProps> = ({
   isWhiteColor,
   withCopyLinkButton,
   withHovering,
-  removeLink,
-  onCopyLinkClick,
+  removeLinks,
+  withTooltips,
+  shareMessageData,
 }) => {
   let filteredSocialLinksData = socialLinksData;
+  const currentLink = window.location.href;
 
-  if (removeLink) {
+  if (removeLinks?.length) {
     filteredSocialLinksData = socialLinksData.filter(
-      (linksData) => linksData.name !== removeLink
+      (linksData) => !removeLinks.includes(linksData.name)
     );
   }
 
@@ -48,21 +49,30 @@ export const SocialLinks: React.FC<InputProps> = ({
       })} ${className}`}
     >
       {filteredSocialLinksData?.length &&
-        filteredSocialLinksData.map(({ link, Icon }) => (
-          <a
-            href={link}
-            target="_blank"
-            className={`${cx("link")} link`}
-            key={uuidv4()}
-          >
-            <Icon />
-          </a>
-        ))}
+        filteredSocialLinksData.map(
+          ({ link, Icon, shareMessage, tooltipText }) => (
+            <a
+              data-tooltip-content={tooltipText}
+              href={
+                shareMessageData && shareMessage
+                  ? shareMessage(currentLink, shareMessageData.messageText)
+                  : link
+              }
+              target="_blank"
+              className={`${cx("link")} link tooltip-anchor`}
+              key={uuidv4()}
+            >
+              <Icon />
+            </a>
+          )
+        )}
+
       {withCopyLinkButton && (
         <CopyLinkIcon
-          className={`${cx("link")} link`}
+          data-tooltip-content="Copy link"
+          className={`${cx("link", "copy_link")} link tooltip-anchor`}
           onClick={() => {
-            onCopyLinkClick?.();
+            navigator.clipboard.writeText(window.location.href);
             toast(({ closeToast }) => (
               <ToastifyMessage
                 closeToast={closeToast}
@@ -73,30 +83,10 @@ export const SocialLinks: React.FC<InputProps> = ({
           }}
         />
       )}
+
+      {withTooltips && (
+        <Tooltip anchorSelect=".tooltip-anchor" className={cx("tooltip")} />
+      )}
     </div>
   );
 };
-
-//todo import file with social links and move this object to the separate file
-const socialLinksData = [
-  {
-    name: "twitter",
-    link: "https://twitter.com/TagionOfficial",
-    Icon: TwitterIcon,
-  },
-  {
-    name: "telegram",
-    link: "https://t.me/tagionChat",
-    Icon: TelegramIcon,
-  },
-  {
-    name: "github",
-    link: "https://github.com/tagion",
-    Icon: GithubIcon,
-  },
-  {
-    name: "discord",
-    link: "https://discord.gg/za2hb62quR",
-    Icon: DiscordIcon,
-  },
-];

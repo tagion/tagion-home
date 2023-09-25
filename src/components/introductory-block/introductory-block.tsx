@@ -37,7 +37,7 @@ export const IntroductoryBlock: React.FC<InputProps> = ({
       {gifAnimation && (
         <div className={cx("gif_wrapper")}>
           <img src={gifAnimation} alt="point animation" />
-          <span className="inter-16">Networks running</span>
+          <span className="inter_16">Networks running</span>
         </div>
       )}
       <div className={`${cx("content")} ${classNames?.content}`}>

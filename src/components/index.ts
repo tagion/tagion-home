@@ -33,6 +33,7 @@ export * from "./tagion-monitor-info";
 export * from "./tweets-swiper";
 export * from "./tweets-swiper-card";
 export * from "./timeline";
+export * from "./tooltip";
 export * from "./toastify";
 export * from "./questions-block";
 export * from "./questions-block-generator";
