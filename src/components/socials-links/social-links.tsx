@@ -33,7 +33,7 @@ export const SocialLinks: React.FC<InputProps> = ({
   shareMessageData,
 }) => {
   let filteredSocialLinksData = socialLinksData;
-  const currentLink = window.location.href;
+  const currentLink = typeof window !== `undefined` ? window.location.href : "";
 
   if (removeLinks?.length) {
     filteredSocialLinksData = socialLinksData.filter(
