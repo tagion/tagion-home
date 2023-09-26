@@ -17,7 +17,7 @@ interface InputProps {
     subTitle: string;
     body: React.JSX.Element;
   }>;
-  mainImgData: {
+  mainImgData?: {
     path: string;
     alt: string;
     style?: CSSProperties;
@@ -80,12 +80,14 @@ export const ArticleBlock: React.FC<InputProps> = ({
         <span className={cx("time_to_read")}>{timeToRead} read</span>
       </div>
       <div className={`${cx("page_title")} title-font`}>{pageTitle}</div>
-      <img
-        src={mainImgData.path}
-        alt={mainImgData.alt}
-        className={cx("main_img")}
-        style={mainImgData.style}
-      />
+      {mainImgData && (
+        <img
+          src={mainImgData.path}
+          alt={mainImgData.alt}
+          className={cx("main_img")}
+          style={mainImgData.style}
+        />
+      )}
       <div className={cx("body_text")}>
         {textContent?.length &&
           textContent.map((item) => (
@@ -93,7 +95,7 @@ export const ArticleBlock: React.FC<InputProps> = ({
               <span className={`${cx("subTitle")} subtitle-font-28-36`}>
                 {item.subTitle}
               </span>
-              <span className={"body-font"}>{item.body}</span>
+              <span className={`${cx("text")} body-font`}>{item.body}</span>
             </React.Fragment>
           ))}
       </div>

@@ -1,11 +1,42 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import { Colors, ExternalLinks } from "../common/enums";
+import { CustomLink } from "../components";
 
 import moneyAsAcommonsImg from "../assets/images/blog/money_as_a_commons.png";
 import reliableConsensusImg from "../assets/images/blog/reliable_consensus.png";
+import hashgraphSchemeImg from "../assets/images/blog/hashgraph_scheme.png";
+import discordMeetingImg from "../assets/images/blog/discord_meeting.png";
+import exampleOfTheHashgraphSchemeImg from "../assets/images/blog/example_of_the_hashgraph_scheme.png";
+import structureOfDARTDatabaseSchemeImg from "../assets/images/blog/structure_of_DART_database_scheme.png";
+import poolsSchemeImg from "../assets/images/blog/pools_scheme.png";
+import seniorityProbabilityMultiplierSchemeImg from "../assets/images/blog/seniority_probability_multiplier_scheme.png";
 
-export const redefiningMoneyArticleData = {
+type ArticleDataType = {
+  name: string;
+  timeToRead: string;
+  dateOfCreation: string;
+  mainImgData?: {
+    path: string;
+    alt: string;
+    style?: CSSProperties;
+  };
+  descriptiveImgData?: {
+    path: string;
+    alt: string;
+    style?: CSSProperties;
+  };
+  description: string;
+  author: string;
+  labels: Array<number>;
+  linkTo: string;
+  textContent: Array<{
+    subTitle?: string | React.ReactElement;
+    body?: React.ReactElement;
+  }>;
+};
+
+export const redefiningMoneyArticleData: ArticleDataType = {
   name: "Redefining Money",
   timeToRead: "5 min",
   dateOfCreation: "26 May 2023",
@@ -277,7 +308,7 @@ export const redefiningMoneyArticleData = {
   ],
 };
 
-export const whyTagionusesHashgraphArticleData = {
+export const whyTagionusesHashgraphArticleData: ArticleDataType = {
   name: "Why Tagion uses Hashgraph",
   timeToRead: "3 min",
   dateOfCreation: "18 Aug 2023",
@@ -434,7 +465,189 @@ export const whyTagionusesHashgraphArticleData = {
   ],
 };
 
+export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
+  name: "Tagion Stands Out from the Crowd",
+  timeToRead: "4 min",
+  dateOfCreation: "23 Sep 2023",
+  description:
+    "We held the 3rd Tagion Community Townhall to discuss the technical infrastructure and economic principles — the backbones of Tagion network that make it unique. Thanks everyone for joining!",
+  author: "Irina Panovich",
+  descriptiveImgData: {
+    path: hashgraphSchemeImg,
+    alt: "hashgraph scheme",
+    style: { border: `1px solid ${Colors.MAIN_DARK}` },
+  },
+  labels: [0, 2],
+  linkTo: "tagion-stands-out-from-the-crowd",
+  textContent: [
+    {
+      body: (
+        <>
+          We held the 3rd Tagion Community Townhall to discuss the technical
+          infrastructure and economic principles — the backbones of Tagion
+          network that make it unique. Thanks everyone for joining!
+          <div className="text-separator" />
+          In this article, we share the key takeaways from the session. You can
+          read the papers here: Whitepaper and Tokenomics
+          <img src={discordMeetingImg} className="without_margin_bottom" />
+        </>
+      ),
+    },
+    {
+      subTitle: "Tagion separates the consensus and the database layers",
+      body: (
+        <>
+          We've engineered Tagion with two distinct layers — the consensus and
+          the database layers. This is different to most blockchain systems,
+          where these layers are combined. In Tagion, the consensus layer is the
+          Hashgraph where nodes agree on the system's state.
+          <img src={exampleOfTheHashgraphSchemeImg} className="with_border" />
+          Then, we have the DART, the database part of the system. Here, we save
+          the current state, and read what we have agreed upon and what is
+          stored in the database.
+          <img src={structureOfDARTDatabaseSchemeImg} className="with_border" />
+          Distributed DART database retains byzantine proof from the consensus
+          layer.
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            The benefit of having these two separate allows specialisation and
+            scalability of the network.
+          </div>
+          <div className="text-separator" />
+          Those involved in consensus to focus on that specific role and vice
+          versa. You can opt to be part of both, but this is not a requirement.
+        </>
+      ),
+    },
+    {
+      subTitle: "Tagion solves the blockchain trilemma",
+      body: (
+        <>
+          The trilemma is the challenge of achieving scalability, security and
+          decentralisation —all three critical components of a great DLT system.
+          <div className="text-separator" />
+          Most blockchains are secure and decentralised but struggle with
+          scalability. In contrast, layer-two systems prioritise scalability but
+          sacrifice security. Some systems opt for a leader-based approach to
+          achieve security and scalability but lose on decentralisation.
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Tagion distinguishes itself from other DLT systems and achieves
+            scalability, security and decentralisation simultaneously thanks to
+            its unique infrastructure:
+          </div>
+          <img
+            src={hashgraphSchemeImg}
+            className="with_border without_margin_bottom"
+          />
+        </>
+      ),
+    },
+    {
+      subTitle: "1. Scalability",
+      body: (
+        <>
+          Scalability is important if you want to achieve a high volume of
+          transactions with many people reading and writing to the database at
+          the same time.
+          <div className="text-separator" />
+          In Tagion, we use the DART and Hashgraph to achieve scalability. To be
+          scalable, we need to write, read and remove information to and from
+          the database very quickly.
+          <div className="text-separator" />
+          The Hashgraph is fast in writing information. It's faster than
+          blockchain systems because it only sends the minimum amount of
+          messages you need to reach consensus.
+          <div className="text-separator" />
+          From a user point of view, being able to read data without having to
+          keep the full state of the system throughout time is an advantage.
+          Tagion is a stateless network, meaning that any nodes need only to
+          remember the system's current state.
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Deleting obsolete data is a unique advantage of Tagion's distributed
+            database in the DLT space. It reduces barriers to participation in
+            the system.
+          </div>
+        </>
+      ),
+    },
+    {
+      subTitle: (
+        <span style={{ letterSpacing: "-0.28px" }}>2. Decentralisation</span>
+      ),
+      body: (
+        <>
+          Having a single point of failure can be risky in the long run, so it's
+          important to decentralise.
+          <div className="text-separator" />
+          Our infrastructure doesn't just prioritise security and scalability;
+          it also champions decentralisation through a unique node swapping
+          mechanism. Tagion is the first DLT to run decentralised while
+          employing Hashgraph for consensus.
+          <img src={poolsSchemeImg} className="with_border" />
+          Passive nodes waiting to be swapped into the active pool.
+          <div className="text-separator" />
+          In the active pool, a fixed amount of nodes participate in the
+          Hashgraph consensus. To join the passive pool, nodes must stake a
+          minimum fixed amount of TGN tokens, signalling their vested interest
+          in the network. Passive nodes are also chosen based on their seniority
+          — how long they have participated in the network. There is an
+          unlimited amount of nodes that can be passive.
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            What makes the system fair and equitable is that no matter how much
+            a node has staked or how old it is, it can be swapped out.
+            Therefore, the consensus is not skewed by the amount of staked TGNs.
+          </div>
+        </>
+      ),
+    },
+    {
+      subTitle: "3. Security",
+      body: (
+        <>
+          Security is a very important aspect of any network. Mechanisms need to
+          be in place to reduce risk of malicious actors taking over the network
+          or have disagreement of the state of the database.
+          <div className="text-separator" />
+          In tagion, we use time-based staking to ensure sybil resistance and
+          achieve security.
+          <img
+            src={seniorityProbabilityMultiplierSchemeImg}
+            className="with_border"
+          />
+          To read about the technical infrastructure and staking mechanism in
+          more detail, please read the{" "}
+          <CustomLink
+            linkTo={ExternalLinks.TAGION_WHITEPAPER}
+            isExternalLink
+            className="underlined-link"
+          >
+            Whitepaper
+          </CustomLink>{" "}
+          and{" "}
+          <CustomLink
+            linkTo={ExternalLinks.TAGION_TOKENOMICS}
+            isExternalLink
+            className="underlined-link"
+          >
+            Tokenomics
+          </CustomLink>
+          .
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Join us next time! To stay up to date follow us on Tagion
+            (@TagionOfficial) / X (twitter.com).
+          </div>
+        </>
+      ),
+    },
+  ],
+};
+
 export const articlesData = [
   redefiningMoneyArticleData,
   whyTagionusesHashgraphArticleData,
+  tagionStandsOutFromTheCrowdArticleData,
 ];

@@ -12,7 +12,7 @@ interface InputProps {
   title: string;
   description: string;
   date: string;
-  img: {
+  img?: {
     path: string;
     alt?: string;
     style?: CSSProperties;
@@ -72,7 +72,7 @@ export const PageDescription: React.FC<InputProps> = ({
           img: cx("card_imgWrapper"),
         }}
         onClick={() => navigate(navigateTo)}
-        style={{ img: img.style }}
+        style={{ img: img?.style }}
       />
     </div>
   );
