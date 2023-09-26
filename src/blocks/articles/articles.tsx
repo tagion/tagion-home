@@ -20,7 +20,7 @@ export const ArticlesBlock: React.FC = () => {
             description={article.description}
             date={article.dateOfCreation}
             navigateTo={`articles/${article.linkTo}`}
-            img={article.mainImgData}
+            img={article.mainImgData || article.descriptiveImgData}
             isUpperCardHovered={hoveredCardId > 0 && hoveredCardId === i + 1}
             key={i}
             onMouseEnter={() => setHoveredCardId(i)}
