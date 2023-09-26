@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 
 import { Tooltip, ToastifyMessage } from "../../components";
@@ -50,7 +49,7 @@ export const SocialLinks: React.FC<InputProps> = ({
     >
       {filteredSocialLinksData?.length &&
         filteredSocialLinksData.map(
-          ({ link, Icon, shareMessage, tooltipText }) => (
+          ({ link, Icon, shareMessage, tooltipText }, i) => (
             <a
               data-tooltip-content={tooltipText}
               href={
@@ -60,7 +59,7 @@ export const SocialLinks: React.FC<InputProps> = ({
               }
               target="_blank"
               className={`${cx("link")} link tooltip-anchor`}
-              key={uuidv4()}
+              key={i}
             >
               <Icon />
             </a>
