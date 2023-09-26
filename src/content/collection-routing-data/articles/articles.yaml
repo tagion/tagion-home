@@ -3,3 +3,6 @@
 
 - name: why-tagion-uses-hashgraph
   dataObjectName: whyTagionusesHashgraphArticleData
+
+- name: tagion-stands-out-from-the-crowd
+  dataObjectName: tagionStandsOutFromTheCrowdArticleData
