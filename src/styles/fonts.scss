@@ -192,6 +192,19 @@
   }
 }
 
+// _36 font, -3 number of pages containing this font
+//  _50 font
+.subtitle_font_36-3_50 {
+  font-family: $prompt400;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
 .subtitle-gradient-block-font {
   font-family: "Prompt-Regular";
   font-weight: 400;
