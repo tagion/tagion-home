@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import { PageProps } from "gatsby";
 
 import { Layout } from "../../templates/layout";
-import { ArticlesBlock } from "../../blocks";
+import { ArticlesBlock, GlossaryBlock } from "../../blocks";
 import { InformationBlockWrapper } from "../../wrappers";
 import { PageSizes } from "../../common/enums";
 import { PageFilter } from "../../components";
@@ -55,7 +55,7 @@ const BlogPage = ({ location: { state } }: InputProps) => {
         }}
       >
         {selectedFilterIndex === "0" && <ArticlesBlock />}
-        {selectedFilterIndex === "1" && <div>In progress</div>}
+        {selectedFilterIndex === "1" && <GlossaryBlock />}
       </InformationBlockWrapper>
     </Layout>
   );

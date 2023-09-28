@@ -4,6 +4,7 @@ export * from "./buy-earn-tagions";
 export * from "./ecosystem-visualization";
 export * from "./explore-our-ecosystem";
 export * from "./foundation";
+export * from "./glossary";
 export * from "./inclusive-elastic-decentralised";
 export * from "./lets-talk";
 export * from "./nature-is-our-client";
