@@ -1,7 +1,9 @@
-import * as React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 import { ThemeProvider } from "@mui/material/styles";
 import { ToastContainer } from "react-toastify";
+
+import { useResizeEvent } from "../../hooks";
 
 import { Footer, Header } from "../../components";
 import { theme } from "../../helpers";
@@ -11,22 +13,11 @@ import * as styles from "./layout.module.scss";
 
 const cx = classNames.bind(styles);
 
-// console.log("1: ", process.env.GATSBY_ENV);
-// console.log(
-//   "2: ",
-//   process.env.GATSBY_GOOGLE_ANALYTICS_ID
-// );
-// console.log(
-//   "3: ",
-//   process.env.GATSBY_MAIL_SERVICE_ENDPOINT
-// );
-
 interface InputProps {
   withPaddingTop?: boolean;
   withPaddingBottom?: boolean;
   withoutFooter?: boolean;
   isHeaderShownOnTop?: boolean;
-  is100PercentHeight?: boolean;
   isPageWithDarkBackground?: boolean;
 }
 
@@ -35,24 +26,41 @@ export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
   withPaddingBottom,
   withoutFooter,
   isHeaderShownOnTop,
-  is100PercentHeight,
   isPageWithDarkBackground,
   children,
 }) => {
+  const [mainMinHeight, setMainMinHeight] = useState("");
+
+  useResizeEvent({
+    resizeHandler: () => {
+      const footerElement = document.getElementById("footer");
+      const footerOffsetHeight = footerElement?.offsetHeight;
+
+      setMainMinHeight(() =>
+        footerOffsetHeight ? `calc(100vh - ${footerOffsetHeight}px)` : ""
+      );
+    },
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <div
         className={cx("layout", {
           withPaddingTop,
           withPaddingBottom,
-          is100PercentHeight,
         })}
       >
         <Header
           isHeaderShownOnTop={isHeaderShownOnTop}
           isPageWithDarkBackground={isPageWithDarkBackground}
         />
-        <main>{children}</main>
+        <main
+          style={{
+            minHeight: mainMinHeight,
+          }}
+        >
+          {children}
+        </main>
         {!withoutFooter && <Footer />}
       </div>
       <ToastContainer

@@ -1,3 +1,4 @@
+export * from "./alphabet-filter";
 export * from "./button";
 export * from "./card";
 export * from "./coming-soon";
