@@ -11,6 +11,8 @@ import exampleOfTheHashgraphSchemeImg from "../assets/images/blog/example_of_the
 import structureOfDARTDatabaseSchemeImg from "../assets/images/blog/structure_of_DART_database_scheme.png";
 import poolsSchemeImg from "../assets/images/blog/pools_scheme.png";
 import seniorityProbabilityMultiplierSchemeImg from "../assets/images/blog/seniority_probability_multiplier_scheme.png";
+import incentivesBenefitingEcosystemImg from "../assets/images/blog/incentives_benefiting_ecosystem.png";
+import supplyAndDemandSidesImg from "../assets/images/blog/supply_and_demand_sides.png";
 
 type ArticleDataType = {
   name: string;
@@ -488,7 +490,23 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
           network that make it unique. Thanks everyone for joining!
           <div className="text-separator" />
           In this article, we share the key takeaways from the session. You can
-          read the papers here: Whitepaper and Tokenomics
+          read the papers here:{" "}
+          <CustomLink
+            linkTo={ExternalLinks.TAGION_WHITEPAPER}
+            isExternalLink
+            className="underlined-link"
+          >
+            Whitepaper
+          </CustomLink>{" "}
+          and{" "}
+          <CustomLink
+            linkTo={ExternalLinks.TAGION_TOKENOMICS}
+            isExternalLink
+            className="underlined-link"
+          >
+            Tokenomics
+          </CustomLink>
+          .
           <img src={discordMeetingImg} className="without_margin_bottom" />
         </>
       ),
@@ -646,8 +664,102 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
   ],
 };
 
+export const engineeringTokenomicsForTheLongRunArticleData: ArticleDataType = {
+  name: "Engineering Tokenomics for the Long Run",
+  timeToRead: "1 min",
+  dateOfCreation: "27 Sep 2023",
+  description:
+    "Tokenomics can be compared to a garden. Just as a well-tended garden requires the right balance of plants, nutrients, and care to flourish, a successful tokenomics system relies on the careful cultivation of incentives both on supply and demand sides to create a thriving long-term ecosystem.",
+  author: "Irina Panovich",
+  mainImgData: {
+    path: incentivesBenefitingEcosystemImg,
+    alt: "incentives benefiting ecosystem image",
+    style: { border: `1px solid ${Colors.MAIN_DARK}` },
+  },
+  labels: [0, 2],
+  linkTo: "engineering-tokenomics-for-the-long-run",
+  textContent: [
+    {
+      body: (
+        <>
+          Tokenomics can be compared to a garden. Just as a well-tended garden
+          requires the right balance of plants, nutrients, and care to flourish,
+          a successful tokenomics system relies on the careful cultivation of
+          incentives both on supply and demand sides to create a thriving
+          long-term ecosystem.
+        </>
+      ),
+    },
+    {
+      subTitle:
+        "How do we create incentive mechanisms to achieve an economic equilibrium in the long-run?",
+      body: (
+        <>
+          <img
+            src={supplyAndDemandSidesImg}
+            alt="supply and demand sides description image"
+            className="without_margin_top"
+          />
+          We approach tokenomics from both the supply and demand sides.
+          <div className="text-separator" />
+          On the supply side, we explore how the token is distributed and
+          allocated, what are the vesting terms and token emissions.
+          <div className="text-separator" />
+          On the demand side the central question is what mechanisms drive the
+          demand of the token.
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Demand is essential for the token to function as a utility token.
+          </div>
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Let's dive deeper. Listen via this link:{" "}
+            <CustomLink
+              linkTo={ExternalLinks.TAGION_TOWNHALL_3}
+              isExternalLink
+              className="underlined-link"
+            >
+              {ExternalLinks.TAGION_TOWNHALL_3}
+            </CustomLink>
+          </div>
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Join us next time!
+          </div>
+          Stay up to date via{" "}
+          <CustomLink
+            linkTo={ExternalLinks.TWITTER}
+            isExternalLink
+            className="underlined-link"
+          >
+            Twitter
+          </CustomLink>{" "}
+          and join the chat via{" "}
+          <CustomLink
+            linkTo={ExternalLinks.DISCORD}
+            isExternalLink
+            className="underlined-link"
+          >
+            Discord
+          </CustomLink>{" "}
+          or{" "}
+          <CustomLink
+            linkTo={ExternalLinks.TELEGRAM}
+            isExternalLink
+            className="underlined-link"
+          >
+            Telegram
+          </CustomLink>
+          .
+        </>
+      ),
+    },
+  ],
+};
+
 export const articlesData = [
   redefiningMoneyArticleData,
   whyTagionusesHashgraphArticleData,
   tagionStandsOutFromTheCrowdArticleData,
+  engineeringTokenomicsForTheLongRunArticleData,
 ];
