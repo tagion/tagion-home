@@ -55,6 +55,10 @@
     }
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (min-width: $tablet-size) {
     .card_imgWrapper {
       margin-bottom: 24px;
@@ -94,7 +98,6 @@
       padding: 32px;
       margin: 0 -32px;
       background-color: $contributor-img-bg-color;
-      cursor: pointer;
 
       .desktop_bottom_line {
         margin: 0 -32px;
