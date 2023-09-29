@@ -1,6 +1,7 @@
 import React, { CSSProperties, useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import { createPortal } from "react-dom";
+import { v4 as uuidv4 } from "uuid";
 
 import { SocialLinks } from "../../components";
 import { useResizeEvent } from "../../hooks";
@@ -91,11 +92,19 @@ export const ArticleBlock: React.FC<InputProps> = ({
       <div className={cx("body_text")}>
         {textContent?.length &&
           textContent.map((item) => (
-            <React.Fragment key={item.subTitle}>
-              <span className={`${cx("subTitle")} subtitle-font-28-36`}>
-                {item.subTitle}
+            <React.Fragment key={uuidv4()}>
+              {item.subTitle && (
+                <span className={`${cx("subTitle")} subtitle-font-28-36`}>
+                  {item.subTitle}
+                </span>
+              )}
+              <span
+                className={`${cx("text", {
+                  withoutSubTitle: !item.subTitle,
+                })} body-font`}
+              >
+                {item.body}
               </span>
-              <span className={`${cx("text")} body-font`}>{item.body}</span>
             </React.Fragment>
           ))}
       </div>

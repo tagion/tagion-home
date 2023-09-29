@@ -22,4 +22,7 @@ export enum ExternalLinks {
   // USE_CASES
   CLIMATE_CAPITAL_TECHNOLOGIES = "https://www.climcap.tech",
   AECORN = "https://www.aecorn.io",
+
+  // Youtube videos
+  TAGION_TOWNHALL_3 = "https://youtu.be/DY_G4JpsglA",
 }
