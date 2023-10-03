@@ -17,8 +17,9 @@ type RelatedInformationBlockDataType = {
     description: string;
     pageTitle: string;
     isImgDisplayedInRelatedInformationBlock: boolean | null;
-    mainImgSrc: string;
+    mainImgSrc?: string;
   }>;
+  isStaticImg?: boolean;
 };
 
 interface InputProps {
@@ -112,6 +113,7 @@ export const PartnerAndUseCasesBlock: React.FC<InputProps> = ({
         <RelatedInformationBlock
           data={relatedInformationBlockData.data}
           title={relatedInformationBlockData.title}
+          isStaticImg={relatedInformationBlockData.isStaticImg}
         />
       )}
     </div>
