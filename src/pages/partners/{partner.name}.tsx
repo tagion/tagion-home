@@ -53,6 +53,7 @@ const PartnerPage: React.FC<InputProps> = ({
           relatedInformationBlockData={{
             data: allUseCase.nodes,
             title: "Use cases",
+            isStaticImg: true,
           }}
           mainImgSrc={mainImgSrc}
           logo={{ src: logoSrc, width: partner.logoWidth }}

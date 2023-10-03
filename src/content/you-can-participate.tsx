@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ExternalLinks } from "../common/enums/external_links";
+import { InternalLinks } from "../common/enums";
 
 import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arrow_link.svg";
 
@@ -34,8 +34,7 @@ export const visitTheBlog = {
   description:
     "Discover how-to's, latest news, community generated content and more",
   Img: signedPaperPng,
-  linkTo: ExternalLinks.MEDIUM,
-  externalLink: true,
+  linkTo: InternalLinks.BLOG,
 };
 
 export const joinTheCommunity = {

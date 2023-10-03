@@ -6,6 +6,7 @@ import { InformationBlockWrapper } from "../../wrappers";
 import { PartnerAndUseCasesBlock } from "../../blocks";
 import { ExternalLinks } from "../../common/enums";
 import { getStaticPath } from "../../helpers";
+import { articlesData } from "../../content/articles";
 
 interface InputProps {
   data: {
@@ -25,24 +26,39 @@ const UseCasesPage: React.FC<InputProps> = ({ data: { useCase } }) => {
   const [logoSrc, setLogoSrc] = useState("");
 
   useEffect(() => {
-    getStaticPath(useCase.mainImgSrc).then(
-      (res) => res?.default && setMainImgSrc(res.default)
-    );
-    getStaticPath(useCase.logoSrc).then(
-      (res) => res?.default && setLogoSrc(res.default)
-    );
+    useCase?.mainImgSrc &&
+      getStaticPath(useCase.mainImgSrc).then(
+        (res) => res?.default && setMainImgSrc(res.default)
+      );
+    useCase?.logoSrc &&
+      getStaticPath(useCase.logoSrc).then(
+        (res) => res?.default && setLogoSrc(res.default)
+      );
   }, []);
 
+  const relatedArticles = articlesData.slice(0, 3);
+
+  const mappedRelatedArticles = relatedArticles.map((article) => ({
+    // todo rename to 'link' after deleting img staticPath
+    name: `/blog/articles/${article.linkTo}`,
+    description: article.description,
+    pageTitle: article.name,
+    mainImgSrc:
+      article.mainImgData?.path || article.descriptiveImgData?.path || "",
+    isImgDisplayedInRelatedInformationBlock: true,
+  }));
   return (
     <Layout withPaddingBottom>
       <InformationBlockWrapper>
         <PartnerAndUseCasesBlock
           pageTitle={useCase.pageTitle}
           aboutText={useCase.aboutText}
-          // relatedInformationBlockData={{
-          //   data: allUseCase.nodes,
-          //   title: "Use cases",
-          // }}
+          relatedInformationBlockData={{
+            data: mappedRelatedArticles,
+            title: "Related articles",
+            // todo move all data from .yaml files to js and delete 'staticPath' functionality
+            isStaticImg: false,
+          }}
           mainImgSrc={mainImgSrc}
           logo={{ src: logoSrc, width: useCase.logoWidth }}
           websiteLink={
