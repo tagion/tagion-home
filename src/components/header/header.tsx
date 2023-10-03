@@ -66,10 +66,7 @@ export const Header: React.FC<InputProps> = ({
     ) {
       document
         .getElementById("header")
-        ?.style.setProperty(
-          "transition",
-          "backdrop-filter 100ms, -webkit-backdrop-filter 200ms, background-color 400ms"
-        );
+        ?.style.setProperty("transition", "background-color 400ms");
     }
 
     setIsHeaderTransparent(
