@@ -18,6 +18,7 @@
 
   &.isHeaderTransparent {
     backdrop-filter: inherit;
+    -webkit-backdrop-filter: inherit;
     background-color: transparent;
   }
 
@@ -26,7 +27,6 @@
 
     &.isHeaderTransparent {
       background-color: transparent;
-      backdrop-filter: inherit;
     }
 
     .logo_wrapper {
