@@ -1,5 +1,7 @@
 import React from "react";
 
+import { InternalLinks } from "../common/enums";
+
 import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arrow_link.svg";
 import aecornLogoIcon from "../assets/images/aecorn_logo.png";
 import climateCapitalTechnologiesLogoIcon from "../assets/images/climate_capital_technologies_logo.png";
@@ -15,7 +17,7 @@ export const natureIsOurClientBlockData = [
       </>
     ),
     description: "Long term reforestation with real community ownership.",
-    linkTo: "https://aecorn.io/",
+    linkTo: InternalLinks.USE_CASES_AECORN,
   },
   {
     logo: <img src={climateCapitalTechnologiesLogoIcon} />,
@@ -25,13 +27,13 @@ export const natureIsOurClientBlockData = [
           Climate Capital
           <br />
           Technologies
-          <SmallArrowLinkIcon style={{ marginBottom: '3px' }} />
+          <SmallArrowLinkIcon style={{ marginBottom: "3px" }} />
         </span>
       </>
     ),
     description:
       "Cocreating viable business models to mobilise, accelerate and deploy investment in nature-based projects.",
-    linkTo: "https://climcap.tech/",
+    linkTo: InternalLinks.USE_CASES_CCT,
   },
 
   {
