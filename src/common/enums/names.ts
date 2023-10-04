@@ -16,3 +16,15 @@ export enum ContributorsTypeName {
   ADVISORS = "Advisors",
   AMBASSADORS = "Ambassadors",
 }
+
+export enum BlogPageSectionsName {
+  ARTICLES = "Articles",
+  GLOSSARY_OF_TERMS = "Glossary of terms",
+}
+
+export enum SocialLinkNames {
+  TWITTER = "twitter",
+  TELEGRAM = "telegram",
+  GITHUB = "github",
+  DISCORD = "discord",
+}

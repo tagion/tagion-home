@@ -6,13 +6,49 @@ $icon-desktop-max-size: 28px;
 .social_links {
   height: $icon-desktop-max-size;
 
-  a:not(:first-child) {
-    margin-left: 16px;
+  .link {
+    display: inline-block;
+    height: inherit;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+
+  .copy_link:focus {
+    outline: none;
   }
 
   svg {
     width: $icon-desktop-max-size;
     height: $icon-desktop-max-size;
-    fill: $main-white-color;
+  }
+
+  &.isWhiteColor {
+    svg {
+      fill: $main-white-color;
+    }
+  }
+
+  &.withHovering {
+    svg {
+      fill: $text-coming-soon-color;
+      transition: fill 0.3s;
+
+      &:hover {
+        fill: $main-dark-color;
+      }
+    }
+  }
+
+  .tooltip {
+    display: none;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .tooltip {
+      display: block;
+    }
   }
 }

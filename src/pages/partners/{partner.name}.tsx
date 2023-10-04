@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
-
 import { graphql } from "gatsby";
+
 import { Layout } from "../../templates";
 import { InformationBlockWrapper } from "../../wrappers";
 import { PartnerAndUseCasesBlock } from "../../blocks";
 import { ExternalLinks } from "../../common/enums";
-import { ComingSoon } from "../../components";
+import { getStaticPath } from "../../helpers";
 
 interface InputProps {
   data: {
     partner: {
       partnerId: string;
       pageTitle: string;
-      aboutText: Array<string>;
+      aboutText: Array<{ paragraph?: string; list?: Array<string> }>;
       mainImgSrc: string;
       logoSrc: string;
       logoWidth: string;
     };
-    allUseCases: {
+    allUseCase: {
       nodes: Array<{
+        name: string;
         description: string;
         pageTitle: string;
         mainImgSrc: string;
@@ -29,38 +30,40 @@ interface InputProps {
 }
 
 const PartnerPage: React.FC<InputProps> = ({
-  data: { partner, allUseCases },
+  data: { partner, allUseCase },
 }) => {
   const [mainImgSrc, setMainImgSrc] = useState("");
   const [logoSrc, setLogoSrc] = useState("");
 
-  const getStaticPath = async (imgSrc: string) =>
-    await import(`../../assets/images/partners/${imgSrc}`);
-
   useEffect(() => {
-    getStaticPath(partner.mainImgSrc).then((res) => setMainImgSrc(res.default));
-    getStaticPath(partner.logoSrc).then((res) => setLogoSrc(res.default));
+    getStaticPath(partner.mainImgSrc).then(
+      (res) => res?.default && setMainImgSrc(res.default)
+    );
+    getStaticPath(partner.logoSrc).then(
+      (res) => res?.default && setLogoSrc(res.default)
+    );
   }, []);
 
   return (
-    <ComingSoon />
-    // <Layout withPaddingBottom>
-    //   <InformationBlockWrapper>
-    //     <PartnerAndUseCasesBlock
-    //       pageTitle={partner.pageTitle}
-    //       aboutText={partner.aboutText}
-    //       relatedInformationBlockData={{
-    //         data: allUseCases.nodes,
-    //         title: "Use cases",
-    //       }}
-    //       mainImgSrc={mainImgSrc}
-    //       logo={{ src: logoSrc, width: partner.logoWidth }}
-    //       websiteLink={
-    //         ExternalLinks[partner.partnerId as keyof typeof ExternalLinks]
-    //       }
-    //     />
-    //   </InformationBlockWrapper>
-    // </Layout>
+    <Layout withPaddingBottom>
+      <InformationBlockWrapper>
+        <PartnerAndUseCasesBlock
+          pageTitle={partner.pageTitle}
+          aboutText={partner.aboutText}
+          relatedInformationBlockData={{
+            data: allUseCase.nodes,
+            title: "Use cases",
+            isStaticImg: true,
+          }}
+          mainImgSrc={mainImgSrc}
+          logo={{ src: logoSrc, width: partner.logoWidth }}
+          websiteLink={
+            ExternalLinks[partner.partnerId as keyof typeof ExternalLinks]
+          }
+          buttonLinkName="Visit Website"
+        />
+      </InformationBlockWrapper>
+    </Layout>
   );
 };
 
@@ -73,14 +76,17 @@ export const query = graphql`
     partner(name: { eq: $name }) {
       partnerId
       pageTitle
-      aboutText
+      aboutText {
+        paragraph
+      }
       mainImgSrc
       logoSrc
       logoWidth
     }
 
-    allUseCases {
+    allUseCase {
       nodes {
+        name
         description
         pageTitle
         mainImgSrc

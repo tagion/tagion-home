@@ -25,11 +25,22 @@
       background: $label-bg-color;
       color: $main-dark-color;
     }
+
+    .date {
+      font-size: 16px;
+      line-height: 20px;
+      color: $input-border-color;
+      margin-top: 16px;
+    }
   }
 
   @media (min-width: $tablet-size) {
     .img_wrapper > img {
       width: 180px;
+    }
+
+    .main_content > .date {
+      margin-top: 24px;
     }
   }
 

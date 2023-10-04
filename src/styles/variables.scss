@@ -17,10 +17,14 @@ $card_small_border-radius: 8px;
 $scrollbar-border-radius: 5px;
 $toastify-desktop-border-radius: 16px;
 $toastify-mobile-radius: 16px;
+$tooltip-border-radius: 4px;
 
 // swiper
 $swiper-card-mobile-space-between: 16px;
 $swiper-card-additional-width-to-hide-buttons: 10px;
+
+// *********** fonts  *********** //
+$prompt400: "Prompt-Regular", sans-serif;
 
 // *********** colors  *********** //
 $main-dark-color: #121113;
@@ -63,6 +67,8 @@ $contributor-img-bg-color: #f8f8f8;
 $numbered-label-color: #4d2db4;
 
 $start-contributing-item-hover-color: rgba(14, 14, 14, 0.05);
+
+$glossary-disabled-letter-color: rgba(159, 159, 159, 0.7);
 
 // breakpoints
 $value_partner_card-tablet-breakpoint: 360px;

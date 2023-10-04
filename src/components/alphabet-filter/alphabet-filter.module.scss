@@ -1,0 +1,117 @@
+@import "./../../styles/variables.scss";
+
+.alphabet_filter {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px 0 8px;
+  border-bottom: 1px solid $main-dark-color;
+
+  .letter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    margin-right: 9.5px;
+    font-size: 24px;
+    line-height: 30px;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-dark-color;
+    }
+
+    &.isSelected {
+      color: $main-white-color;
+    }
+
+    &.isInactive {
+      color: $glossary-disabled-letter-color;
+      pointer-events: none;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      width: 24px;
+      z-index: 2;
+    }
+
+    .gradient_letter {
+      position: absolute;
+      top: -2px;
+      z-index: 1;
+      width: 34px;
+
+      animation: 0.2s linear 0s normal none running gradient-scale;
+      -webkit-animation: 0.2s linear 0s normal none running gradient-scale;
+
+      @keyframes gradient-scale {
+        0% {
+          transform: scale(0.4);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    padding: 4px 0 8px;
+
+    .letter {
+      font-size: 28px;
+      line-height: 34px;
+      margin-right: 10px;
+
+      .gradient_letter {
+        top: -4px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding-bottom: 18px;
+
+    .letter {
+      &.isSelected {
+        width: 40px;
+
+        animation: 0.2s linear 0s normal none running width-animation;
+        -webkit-animation: 0.2s linear 0s normal none running width-animation;
+
+        @keyframes width-animation {
+          from {
+            width: 24px;
+          }
+          to {
+            width: 40px;
+          }
+        }
+      }
+
+      span {
+        width: auto;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    letter-spacing: -0.448px;
+
+    .letter {
+      margin-right: 9.5px;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    letter-spacing: normal;
+    padding-left: 6px;
+  }
+}

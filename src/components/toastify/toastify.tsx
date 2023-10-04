@@ -42,7 +42,13 @@ export const ToastifyMessage: React.FC<InputProps> = ({
           )}
 
           <div className={cx("text")}>
-            <div className={`${cx("main")} prompt-regular`}>{mainText}</div>
+            <div
+              className={`${cx("main", {
+                withMarginBottom: !!secondaryText,
+              })} prompt-regular`}
+            >
+              {mainText}
+            </div>
             {secondaryText && (
               <div className={`${cx("secondary")} inter-regular`}>
                 {secondaryText}

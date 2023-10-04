@@ -29,8 +29,12 @@
   font-family: "Inter", sans-serif;
 }
 
-.inter-400 {
+.inter_400 {
   font-family: "Inter-400", sans-serif;
+}
+
+.inter_600 {
+  font-family: "Inter-600", sans-serif;
 }
 
 .title-font {
@@ -68,6 +72,20 @@
   @media (min-width: $desktop-large-size) {
     font-size: 50px;
     line-height: 50px;
+  }
+}
+
+.subtitle-font-28_2-36 {
+  font-family: "Prompt-Regular";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  color: $main-dark-color;
+
+  @media (min-width: $desktop-size) {
+    font-size: 36px;
+    line-height: 36px;
   }
 }
 
@@ -157,6 +175,36 @@
   }
 }
 
+.subtitle-font-32-50-80 {
+  font-family: "Prompt-Regular";
+  font-size: 32px;
+  line-height: 32px;
+  color: $main-dark-color;
+
+  @media (min-width: $tablet-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-size) {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
+
+// _36 font, -3 number of pages containing this font
+//  _50 font
+.subtitle_font_36-3_50 {
+  font-family: $prompt400;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $desktop-large-size) {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
 .subtitle-gradient-block-font {
   font-family: "Prompt-Regular";
   font-weight: 400;
@@ -220,7 +268,8 @@
   line-height: 36px;
 }
 
-.font-28 {
+.font-28,
+.prompt-28 {
   font-size: 28px;
   line-height: 28px;
 }
@@ -243,7 +292,7 @@
 }
 
 // ** Inter **
-.inter-16 {
+.inter_16 {
   font-family: "Inter-400", sans-serif;
   font-size: 16px;
   line-height: 20px;

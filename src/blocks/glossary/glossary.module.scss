@@ -1,0 +1,56 @@
+@import "./../../styles/variables.scss";
+
+.glossary_block {
+  padding-top: 26px;
+
+  .selected_letter {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .list_of_terms {
+    margin-top: 24px;
+
+    .term_wrapper {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .term {
+        margin-bottom: 8px;
+      }
+
+      .term,
+      .meaning {
+        display: block;
+        -webkit-text-size-adjust: 100%;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    padding-top: 36px;
+
+    .selected_letter {
+      margin-top: 40px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding-top: 40px;
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding-top: 0;
+
+    .selected_letter {
+      margin-top: 56px;
+    }
+
+    .list_of_terms {
+      margin-top: 32px;
+    }
+  }
+}

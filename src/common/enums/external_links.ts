@@ -18,4 +18,11 @@ export enum ExternalLinks {
   DECARD = "https://decard.io/",
   VENZO = "https://venzo.com/",
   AFRICA_INVESTOR = "https://www.africainvestor.com/",
+
+  // USE_CASES
+  CLIMATE_CAPITAL_TECHNOLOGIES = "https://www.climcap.tech",
+  AECORN = "https://www.aecorn.io",
+
+  // Youtube videos
+  TAGION_TOWNHALL_3 = "https://youtu.be/DY_G4JpsglA",
 }

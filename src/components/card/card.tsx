@@ -11,6 +11,7 @@ interface InputProps {
   title?: string | JSX.Element;
   description: string | JSX.Element;
   label?: string;
+  date?: string;
   img?: { path: string; alt?: string };
   videoSrc?: string;
   counter?: string;
@@ -26,26 +27,32 @@ interface InputProps {
     img?: string;
     videoWrapper?: string;
   };
-  style?: Partial<Record<"videoWrapper" | "title", CSSProperties>>;
+  onClick?: () => void;
+  style?: Partial<Record<"videoWrapper" | "title" | "img", CSSProperties>>;
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
   title,
   description,
   label,
+  date,
   img,
   videoSrc,
   counter,
   fixedFontSize,
   ImgComponent,
   classNames,
+  onClick,
   style,
 }) => {
   return (
-    <div className={`${cx("card")} ${classNames?.card || ""}`}>
+    <div
+      className={`${cx("card")} ${classNames?.card || ""}`}
+      onClick={onClick}
+    >
       {(img || ImgComponent) && (
         <div className={`${cx("img_wrapper")} ${classNames?.img || ""}`}>
-          {img && <img src={img.path} alt={img.alt} />}
+          {img && <img src={img.path} alt={img.alt} style={style?.img} />}
           {ImgComponent && ImgComponent()}
         </div>
       )}
@@ -69,10 +76,11 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
       )}
       <div className={`${cx("main_content")} ${classNames?.mainContent || ""}`}>
         {counter && (
-          <div className={`inter-16 ${classNames?.counter || ""}`}>
+          <div className={`inter_16 ${classNames?.counter || ""}`}>
             {counter}
           </div>
         )}
+
         {title && (
           <div
             className={`${cx("title")} subtitle-font-28-50 ${
@@ -83,11 +91,13 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
             {title}
           </div>
         )}
+
         {label && (
           <div className={`${cx("label")} ${classNames?.label || ""}`}>
             {label}
           </div>
         )}
+
         <div
           className={`${cx("description")} ${
             fixedFontSize?.description
@@ -97,6 +107,8 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
         >
           {description}
         </div>
+
+        {date && <div className={cx("date")}>{date}</div>}
       </div>
     </div>
   );

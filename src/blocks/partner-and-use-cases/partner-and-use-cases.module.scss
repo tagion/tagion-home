@@ -16,6 +16,11 @@
 
   .description {
     margin-bottom: 24px;
+
+    ul {
+      padding-left: 24px;
+      margin: 0;
+    }
   }
 
   .website_info {
@@ -59,9 +64,7 @@
     }
 
     .website_info {
-      position: fixed;
-      left: 80px;
-      top: 228px;
+      display: none;
     }
 
     .main_img {
@@ -78,15 +81,14 @@
       margin: 48px 0 32px;
     }
 
-    .website_info {
-      position: fixed;
-      top: 320px;
+    .description {
+      ul {
+        padding-left: 30px;
+      }
     }
-  }
 
-  @media (min-width: $desktop-max-size) {
-    .website_info {
-      left: calc(((100% - $desktop-max-size) / 2) + 120px);
+    .main_img {
+      border-radius: $card-border-radius;
     }
   }
 }

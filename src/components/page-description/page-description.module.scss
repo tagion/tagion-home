@@ -1,0 +1,131 @@
+@import "./../../styles/variables.scss";
+
+.page_description_card {
+  max-width: 551px;
+  padding: 24px 0;
+  border-bottom: 1px solid $select-item-hover-color;
+
+  // future feature
+  // .labels {
+  //   display: flex;
+  //   flex-direction: row;
+  //   margin-bottom: 26px;
+
+  //   .label {
+  //     &:not(:first-child) {
+  //       margin-left: 24px;
+  //     }
+
+  //     .spot {
+  //       display: inline-block;
+  //       width: 12px;
+  //       height: 12px;
+  //       border-radius: 50%;
+  //       margin-right: 8px;
+  //     }
+  //     .label_name {
+  //       font-size: 16px;
+  //       line-height: 20px;
+  //     }
+  //   }
+  // }
+
+  .desktop_bottom_line {
+    display: none;
+  }
+
+  .card {
+    .card_mainContent {
+      .card_title {
+        margin-bottom: 16px;
+      }
+
+      .card_description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+
+    .card_imgWrapper > img {
+      width: 100%;
+      max-width: 302px;
+      border-radius: $card_small_border-radius;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: $tablet-size) {
+    .card_imgWrapper {
+      margin-bottom: 24px;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    max-width: none;
+    padding: 32px 0 32px 0;
+
+    .card {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+
+      .card_mainContent {
+        padding-right: 137px;
+      }
+
+      .card_imgWrapper {
+        margin-bottom: 0;
+
+        img {
+          width: 302px;
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    position: relative;
+    transition: margin 0.3s, padding 0.3s, background-color 0.3s;
+    border: 0;
+
+    &:hover {
+      padding: 32px;
+      margin: 0 -32px;
+      background-color: $contributor-img-bg-color;
+
+      .desktop_bottom_line {
+        margin: 0 -32px;
+      }
+    }
+
+    .desktop_bottom_line {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      transition: margin 0.3s, padding 0.3s, width 0.3s;
+      border-bottom: 1px solid $select-item-hover-color;
+
+      &.isUpperCardHovered {
+        width: calc(100% + 64px);
+        margin: 0 -32px;
+      }
+    }
+
+    .card > .card_mainContent {
+      padding-right: 24px;
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .card > .card_mainContent {
+      padding-right: 124px;
+    }
+  }
+}

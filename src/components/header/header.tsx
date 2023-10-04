@@ -66,10 +66,7 @@ export const Header: React.FC<InputProps> = ({
     ) {
       document
         .getElementById("header")
-        ?.style.setProperty(
-          "transition",
-          "backdrop-filter 100ms, -webkit-backdrop-filter 200ms, background-color 400ms"
-        );
+        ?.style.setProperty("transition", "background-color 400ms");
     }
 
     setIsHeaderTransparent(
@@ -157,7 +154,7 @@ export const Header: React.FC<InputProps> = ({
           })}
       </nav>
 
-      <SocialLinks className={cx("external_links")} />
+      <SocialLinks className={cx("external_links")} isWhiteColor />
 
       <BurgerMenuIcon
         className={cx("burger_menu_icon")}
@@ -222,7 +219,7 @@ export const Header: React.FC<InputProps> = ({
                       <div className={`${cx("title")} font-28 prompt-regular`}>
                         {name}
                       </div>
-                      <div className="inter-16">{description}</div>
+                      <div className="inter_16">{description}</div>
                     </div>
                   </a>
                 );

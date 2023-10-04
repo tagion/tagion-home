@@ -1,0 +1,11 @@
+- name: redefining-money
+  dataObjectName: redefiningMoneyArticleData
+
+- name: why-tagion-uses-hashgraph
+  dataObjectName: whyTagionusesHashgraphArticleData
+
+- name: tagion-stands-out-from-the-crowd
+  dataObjectName: tagionStandsOutFromTheCrowdArticleData
+
+- name: engineering-tokenomics-for-the-long-run
+  dataObjectName: engineeringTokenomicsForTheLongRunArticleData
