@@ -48,7 +48,7 @@ export const redefiningMoneyArticleData: ArticleDataType = {
   },
   description:
     "Money plays a leading role in our lives. It shapes our actions, ambitions and aspirations. We work hard to earn it and eagerly seek opportunities to make it grow.",
-  author: "Irina Panovich",
+  author: "@0xace",
   labels: [0, 2],
   linkTo: "redefining-money",
   textContent: [
@@ -473,7 +473,7 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
   dateOfCreation: "23 Sep 2023",
   description:
     "We held the 3rd Tagion Community Townhall to discuss the technical infrastructure and economic principles — the backbones of Tagion network that make it unique. Thanks everyone for joining!",
-  author: "Irina Panovich",
+  author: "@0xace",
   descriptiveImgData: {
     path: hashgraphSchemeImg,
     alt: "hashgraph scheme",
@@ -670,7 +670,7 @@ export const engineeringTokenomicsForTheLongRunArticleData: ArticleDataType = {
   dateOfCreation: "27 Sep 2023",
   description:
     "Tokenomics can be compared to a garden. Just as a well-tended garden requires the right balance of plants, nutrients, and care to flourish, a successful tokenomics system relies on the careful cultivation of incentives both on supply and demand sides to create a thriving long-term ecosystem.",
-  author: "Irina Panovich",
+  author: "@0xace",
   mainImgData: {
     path: incentivesBenefitingEcosystemImg,
     alt: "incentives benefiting ecosystem image",

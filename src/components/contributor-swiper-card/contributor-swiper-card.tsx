@@ -2,7 +2,9 @@ import React from "react";
 import classNames from "classnames/bind";
 import { Link } from "gatsby";
 
-import { Card } from "..";
+import { Card, CustomLink } from "..";
+
+import { ReactComponent as LinkedinIcon } from "../../assets/images/linkedin_icon.svg";
 
 import * as styles from "./contributor-swiper-card.module.scss";
 
@@ -13,7 +15,7 @@ interface InputProps {
     portrait: string;
     name: React.JSX.Element;
     description: string;
-    linkTo: string;
+    linkedinLink: string;
     label: string;
   };
   index: number;
@@ -30,10 +32,8 @@ export const ContributorSwiperCard: React.FC<InputProps> = ({
   classNames,
 }) => {
   return (
-    <Link
-      to={contributor.linkTo}
-      target="_blank"
-      className={`${cx("link_wrapper", {
+    <div
+      className={`${cx("contributor_swiper_card", {
         lastItem: index === contributorNumbers - 1,
         firstItem: index === 0,
       })} ${classNames?.linkWrapper || ""}`}
@@ -55,6 +55,13 @@ export const ContributorSwiperCard: React.FC<InputProps> = ({
           img: cx("contributor_imgWrapper"),
         }}
       />
-    </Link>
+      <CustomLink
+        className={cx("linkedin_link")}
+        isExternalLink
+        linkTo={contributor.linkedinLink}
+      >
+        <LinkedinIcon />
+      </CustomLink>
+    </div>
   );
 };
