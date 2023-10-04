@@ -698,7 +698,7 @@ export const engineeringTokenomicsForTheLongRunArticleData: ArticleDataType = {
           <img
             src={supplyAndDemandSidesImg}
             alt="supply and demand sides description image"
-            className="without_margin_top"
+            className="without_margin_top with_border"
           />
           We approach tokenomics from both the supply and demand sides.
           <div className="text-separator" />
