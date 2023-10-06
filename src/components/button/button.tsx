@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 
 import { PaddingSizes } from "../../common/enums";
@@ -50,13 +50,15 @@ export const Button: React.FC<InputProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [buttonWidth, setButtonWidth] = useState(200);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    setButtonWidth(document.getElementById(id || "")?.offsetWidth || 0);
+    setButtonWidth(() => buttonRef?.current?.clientWidth || 200);
   }, []);
 
   return (
     <button
+      ref={buttonRef}
       type={type}
       className={`${cx("button", {
         isRounded,
