@@ -94,6 +94,8 @@ export const Header: React.FC<InputProps> = ({
     return () => window.removeEventListener("scroll", () => scrollHandler());
   }, []);
 
+  const isTwoRowsSubMenu = selectedSubContent && selectedSubContent.length <= 4;
+
   return (
     <header
       id="header"
@@ -185,6 +187,7 @@ export const Header: React.FC<InputProps> = ({
                 navigationLinks[selectedSubMenuIndex].name === "Docs",
               ecosystemSubmenu:
                 navigationLinks[selectedSubMenuIndex].name === "Ecosystem",
+              isTwoRows: isTwoRowsSubMenu,
             })}
           >
             {selectedSubContent?.map(
@@ -202,6 +205,7 @@ export const Header: React.FC<InputProps> = ({
                       isFirstColumn,
                       isSecondColumn: !isFirstColumn,
                       isDisabled: description === "Coming soon",
+                      isTwoRows: isTwoRowsSubMenu,
                     })}
                     key={i}
                   >
@@ -226,6 +230,7 @@ export const Header: React.FC<InputProps> = ({
               }
             )}
           </div>
+          <div className={cx("blur")} />
         </Popper>
       )}
     </header>

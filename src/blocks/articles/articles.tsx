@@ -10,6 +10,11 @@ const cx = classNames.bind(styles);
 
 export const ArticlesBlock: React.FC = () => {
   const [hoveredCardId, setHoveredCardId] = useState(-1);
+  articlesData?.sort(
+    (prevArticle, currentArticle) =>
+      new Date(currentArticle.dateOfCreation).getTime() -
+      new Date(prevArticle.dateOfCreation).getTime()
+  );
 
   return (
     <div className={cx("articles_block")}>
