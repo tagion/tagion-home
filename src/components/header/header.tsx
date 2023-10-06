@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import classNames from "classnames/bind";
-import { ClickAwayListener } from "@mui/base";
 import { Popper } from "@mui/material";
 
-import { SideMenu } from "../side-menu";
+import { CustomLink, SideMenu, SocialLinks } from "../../components";
 import { PageSizes } from "../../common/enums";
-
-import { SocialLinks } from "../socials-links";
 import { navigationLinks } from "../../content";
 
 import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
@@ -35,6 +32,9 @@ export const Header: React.FC<InputProps> = ({
     useState<null | HTMLElement>(null);
   const [selectedSubMenuIndex, setSelectedSubMenuIndex] = useState<number>(-1);
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
+  const [isUnderlineCanBeDisplayed, setIsUnderlineCanBeDisplayed] =
+    useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   // todo move all poper logic into a separate component or hook
   const poperCanBeOpen = isSubMenuOpened && Boolean(anchorSubMenuElement);
@@ -94,6 +94,11 @@ export const Header: React.FC<InputProps> = ({
     return () => window.removeEventListener("scroll", () => scrollHandler());
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => setIsUnderlineCanBeDisplayed(() => true), 400);
+    return () => setIsUnderlineCanBeDisplayed(() => false);
+  }, []);
+
   const isTwoRowsSubMenu = selectedSubContent && selectedSubContent.length <= 4;
 
   return (
@@ -113,9 +118,27 @@ export const Header: React.FC<InputProps> = ({
           navigationLinks.map((link, i) => {
             const withSubMenu = link.subContent?.length;
 
+            const isLinkSelected =
+              isUnderlineCanBeDisplayed &&
+              (link.linkTo
+                ? window.location.href.includes(link.linkTo || "")
+                : link.subContent?.length
+                ? link.subContent.some((subContent) =>
+                    window.location.href.includes(subContent.linkTo || "")
+                  )
+                : false);
+
             const linkContent = (
               <>
-                <span>{link.name}</span>
+                <div
+                  className={cx("link_name", {
+                    isSelected: isLinkSelected,
+                    isHovered: isUnderlineCanBeDisplayed && hoveredIndex === i,
+                  })}
+                >
+                  <span>{link.name}</span>
+                  <div className={cx("underline")} />
+                </div>
                 {withSubMenu && <DownArrowIcon className={cx("arrow")} />}
               </>
             );
@@ -123,34 +146,27 @@ export const Header: React.FC<InputProps> = ({
             return (
               <div
                 className={cx("menu_item_wrapper")}
-                onMouseOver={(e) =>
-                  withSubMenu && handleOnMouseOverMenuItem(e, i)
-                }
-                onMouseLeave={() => withSubMenu && setIsSubMenuOpened(false)}
+                onMouseOver={(e) => {
+                  withSubMenu && handleOnMouseOverMenuItem(e, i);
+                  setHoveredIndex(() => i);
+                }}
+                onMouseLeave={() => {
+                  withSubMenu && setIsSubMenuOpened(false);
+                  setHoveredIndex(() => -1);
+                }}
                 key={i}
               >
-                {link.externalLink ? (
-                  <a
-                    className={`${cx("menu_item", {
-                      withSubMenu,
-                      isActive: isSubMenuOpened && selectedSubMenuIndex === i,
-                    })} user_select_none`}
-                    href={link.linkTo}
-                    target="_blank"
-                  >
-                    {linkContent}
-                  </a>
-                ) : (
-                  <div
-                    className={`${cx("menu_item", {
-                      withSubMenu,
-                      isActive: isSubMenuOpened && selectedSubMenuIndex === i,
-                    })} user_select_none`}
-                    onClick={() => link.linkTo && navigate(link.linkTo)}
-                  >
-                    {linkContent}
-                  </div>
-                )}
+                <CustomLink
+                  isExternalLink={link.externalLink}
+                  className={`${cx("menu_item", {
+                    withSubMenu,
+                    isActive: isSubMenuOpened && selectedSubMenuIndex === i,
+                  })} user_select_none`}
+                  linkTo={link.linkTo}
+                  isLinkDisabled={false}
+                >
+                  {linkContent}
+                </CustomLink>
               </div>
             );
           })}
@@ -198,16 +214,16 @@ export const Header: React.FC<InputProps> = ({
               ) => {
                 const isFirstColumn = (subContentArray.length - 1) / 2 >= i;
                 return (
-                  <a
-                    href={linkTo}
-                    target={externalLink ? "_blank" : ""}
+                  <CustomLink
+                    linkTo={linkTo}
+                    isExternalLink={externalLink}
                     className={cx("link", {
                       isFirstColumn,
                       isSecondColumn: !isFirstColumn,
                       isDisabled: description === "Coming soon",
                       isTwoRows: isTwoRowsSubMenu,
                     })}
-                    key={i}
+                    key={name}
                   >
                     {Icon && (
                       <div className={cx("icon")}>
@@ -225,7 +241,7 @@ export const Header: React.FC<InputProps> = ({
                       </div>
                       <div className="inter_16">{description}</div>
                     </div>
-                  </a>
+                  </CustomLink>
                 );
               }
             )}
