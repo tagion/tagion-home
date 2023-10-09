@@ -4,10 +4,10 @@ import { ThemeProvider } from "@mui/material/styles";
 import { ToastContainer } from "react-toastify";
 
 import { useResizeEvent } from "../../hooks";
-
 import { Footer, Header } from "../../components";
 import { theme } from "../../helpers";
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
+import { BreakpointNames } from "../../common/enums";
 
 import * as styles from "./layout.module.scss";
 
@@ -19,6 +19,7 @@ interface InputProps {
   withoutFooter?: boolean;
   isHeaderShownOnTop?: boolean;
   isPageWithDarkBackground?: boolean;
+  scrollHeightForTransparentHeader?: Partial<Record<BreakpointNames, number>>;
 }
 
 export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
@@ -27,6 +28,7 @@ export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
   withoutFooter,
   isHeaderShownOnTop,
   isPageWithDarkBackground,
+  scrollHeightForTransparentHeader,
   children,
 }) => {
   const [mainMinHeight, setMainMinHeight] = useState("");
@@ -53,6 +55,7 @@ export const Layout: React.FC<PropsWithChildren<InputProps>> = ({
         <Header
           isHeaderShownOnTop={isHeaderShownOnTop}
           isPageWithDarkBackground={isPageWithDarkBackground}
+          scrollHeightForTransparentHeader={scrollHeightForTransparentHeader}
         />
         <main
           style={{
