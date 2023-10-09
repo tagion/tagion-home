@@ -10,6 +10,8 @@ interface InputProps {
   state?: { [key: string]: string | number };
   onClick?: () => void;
   isLinkDisabled?: boolean;
+  onMouseOver?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
@@ -20,6 +22,7 @@ export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
   state,
   isLinkDisabled = !linkTo,
   onClick,
+  ...props
 }) => {
   return isExternalLink ? (
     <a
@@ -27,6 +30,7 @@ export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
       target="_blank"
       className={`${isLinkDisabled ? "disable-link" : ""} ${className}`}
       onClick={onClick}
+      {...props}
     >
       {children}
     </a>
@@ -36,6 +40,7 @@ export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
       className={`${isLinkDisabled ? "disable-link" : ""} ${className}`}
       onClick={onClick}
       state={state}
+      {...props}
     >
       {children}
     </Link>

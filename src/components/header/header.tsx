@@ -146,14 +146,10 @@ export const Header: React.FC<InputProps> = ({
             return (
               <div
                 className={cx("menu_item_wrapper")}
-                onMouseOver={(e) => {
-                  withSubMenu && handleOnMouseOverMenuItem(e, i);
-                  setHoveredIndex(() => i);
-                }}
-                onMouseLeave={() => {
-                  withSubMenu && setIsSubMenuOpened(false);
-                  setHoveredIndex(() => -1);
-                }}
+                onMouseOver={(e) =>
+                  withSubMenu && handleOnMouseOverMenuItem(e, i)
+                }
+                onMouseLeave={() => withSubMenu && setIsSubMenuOpened(false)}
                 key={i}
               >
                 <CustomLink
@@ -164,6 +160,8 @@ export const Header: React.FC<InputProps> = ({
                   })} user_select_none`}
                   linkTo={link.linkTo}
                   isLinkDisabled={false}
+                  onMouseOver={() => setHoveredIndex(() => i)}
+                  onMouseLeave={() => setHoveredIndex(() => -1)}
                 >
                   {linkContent}
                 </CustomLink>
