@@ -3,9 +3,9 @@ import React from "react";
 import { InternalLinks } from "../common/enums";
 
 import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arrow_link.svg";
-import aecornLogoIcon from "../assets/images/aecorn_logo.png";
-import climateCapitalTechnologiesLogoIcon from "../assets/images/climate_capital_technologies_logo.png";
-import BCPLogoIcon from "../assets/images/BCP_logo.png";
+import aecornLogoIcon from "../assets/images/company-logos/aecorn_logo.png";
+import climateCapitalTechnologiesLogoIcon from "../assets/images/company-logos/climate_capital_technologies_logo.png";
+import BCPLogoIcon from "../assets/images/company-logos/BCP_logo.png";
 
 export const natureIsOurClientBlockData = [
   {

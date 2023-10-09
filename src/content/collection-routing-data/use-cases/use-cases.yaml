@@ -2,7 +2,7 @@
   name: climate-capital-technologies
   pageTitle: Climate Capital Technologies
   mainImgSrc: use-cases/CCT_main
-  logoSrc: use-cases/CCT_logo
+  logoSrc: company-logos/climate_capital_technologies_logo
   logoWidth: 64px
   aboutText:
     - paragraph: "Climate Capital Technologies, a partnership between DECARD and Africa Investor, mobilises investment in nature-based and sustainable projects. By combining Africa Investor's project identification and vetting capabilities with DECARD's expertise in Web3 infrastructure and community-focused economic governance, Tagion network facilitates robust investment and capital facilitation of ESG projects at scale."
@@ -19,7 +19,7 @@
   pageTitle: Aecorn
   mainImgSrc: use-cases/aecorn_main
   isImgDisplayedInRelatedInformationBlock: true
-  logoSrc: use-cases/aecorn_logo
+  logoSrc: company-logos/aecorn_dark_logo
   logoWidth: 80px
   aboutText:
     - paragraph: "Existing nature funding mechanisms lack efficiency, transparency, and credibility. Aecorn is revolutionising nature investment with innovative funding tools. Built on the Tagion network and supported by VENZO, Aecorn introduces a groundbreaking nature investment instrument. By investing in land as a nature-based asset, Aecorn ensures the conversion of marginalised soil into forests, conducts in-depth research and development, nurtures the land under the guidance of forest experts, and securely stores data on the transparent Tagion network."
