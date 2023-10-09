@@ -29,7 +29,10 @@ const BlogPage = ({ location: { state } }: InputProps) => {
   }, [selectedFilterIndexProp]);
 
   return (
-    <Layout withPaddingBottom>
+    <Layout
+      withPaddingBottom
+      scrollHeightForTransparentHeader={{ mobile: 20, desktop_large: 100 }}
+    >
       <InformationBlockWrapper
         changeViewAfter={PageSizes.DESKTOP_LARGE}
         gridBreakpoints={{

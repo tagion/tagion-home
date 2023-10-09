@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { Popper } from "@mui/material";
 
 import { CustomLink, SideMenu, SocialLinks } from "../../components";
-import { PageSizes } from "../../common/enums";
+import { BreakpointNames, PageSizes } from "../../common/enums";
 import { navigationLinks } from "../../content";
 
 import { ReactComponent as LogoIcon } from "../../assets/images/logo.svg";
@@ -18,11 +18,13 @@ const cx = classNames.bind(styles);
 interface InputProps {
   isHeaderShownOnTop?: boolean;
   isPageWithDarkBackground?: boolean;
+  scrollHeightForTransparentHeader?: Partial<Record<BreakpointNames, number>>;
 }
 
 export const Header: React.FC<InputProps> = ({
   isHeaderShownOnTop,
   isPageWithDarkBackground,
+  scrollHeightForTransparentHeader,
 }) => {
   const [isSideMenuOpened, setIsSideMenuOpened] = useState<boolean>(false);
   const [isSideMenuDisplayed, setIsSideMenuDisplayed] =
@@ -59,7 +61,9 @@ export const Header: React.FC<InputProps> = ({
 
   const scrollHandler = () => {
     const scrollWithTransparentHeader =
-      window.innerWidth < PageSizes.DESKTOP_LARGE ? 60 : 150;
+      window.innerWidth < PageSizes.DESKTOP_LARGE
+        ? scrollHeightForTransparentHeader?.mobile || 60
+        : scrollHeightForTransparentHeader?.desktop_large || 150;
 
     if (
       window.document.documentElement.scrollTop <= scrollWithTransparentHeader
@@ -146,14 +150,10 @@ export const Header: React.FC<InputProps> = ({
             return (
               <div
                 className={cx("menu_item_wrapper")}
-                onMouseOver={(e) => {
-                  withSubMenu && handleOnMouseOverMenuItem(e, i);
-                  setHoveredIndex(() => i);
-                }}
-                onMouseLeave={() => {
-                  withSubMenu && setIsSubMenuOpened(false);
-                  setHoveredIndex(() => -1);
-                }}
+                onMouseOver={(e) =>
+                  withSubMenu && handleOnMouseOverMenuItem(e, i)
+                }
+                onMouseLeave={() => withSubMenu && setIsSubMenuOpened(false)}
                 key={i}
               >
                 <CustomLink
@@ -164,6 +164,8 @@ export const Header: React.FC<InputProps> = ({
                   })} user_select_none`}
                   linkTo={link.linkTo}
                   isLinkDisabled={false}
+                  onMouseOver={() => setHoveredIndex(() => i)}
+                  onMouseLeave={() => setHoveredIndex(() => -1)}
                 >
                   {linkContent}
                 </CustomLink>
