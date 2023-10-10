@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 interface InputProps {
   title?: string | JSX.Element;
-  description: string | JSX.Element;
+  description?: string | JSX.Element;
   label?: string;
   date?: string;
   img?: { path: string; alt?: string };
@@ -26,6 +26,7 @@ interface InputProps {
     label?: string;
     img?: string;
     videoWrapper?: string;
+    date?: string;
   };
   onClick?: () => void;
   style?: Partial<Record<"videoWrapper" | "title" | "img", CSSProperties>>;
@@ -98,17 +99,23 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
           </div>
         )}
 
-        <div
-          className={`${cx("description")} ${
-            fixedFontSize?.description
-              ? `font-${fixedFontSize.description}`
-              : "body-font"
-          } ${classNames?.description || ""}`}
-        >
-          {description}
-        </div>
+        {description && (
+          <div
+            className={`${cx("description")} ${
+              fixedFontSize?.description
+                ? `font-${fixedFontSize.description}`
+                : "body-font"
+            } ${classNames?.description || ""}`}
+          >
+            {description}
+          </div>
+        )}
 
-        {date && <div className={cx("date")}>{date}</div>}
+        {date && (
+          <div className={`${cx("date")} inter_400 ${classNames?.date || ""}`}>
+            {date}
+          </div>
+        )}
       </div>
     </div>
   );
