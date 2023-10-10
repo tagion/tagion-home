@@ -31,7 +31,7 @@ const BlogPage = ({ location: { state } }: InputProps) => {
   return (
     <Layout
       withPaddingBottom
-      scrollHeightForTransparentHeader={{ mobile: 20, desktop_large: 100 }}
+      scrollHeightForTransparentHeader={{ mobile: 20, desktop_large: 90 }}
     >
       <InformationBlockWrapper
         changeViewAfter={PageSizes.DESKTOP_LARGE}
