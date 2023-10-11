@@ -28,7 +28,10 @@ const CommunityPage = () => {
       setIsMobileIntroImg(window.innerWidth < PageSizes.DESKTOP),
   });
   return (
-    <Layout withPaddingTop={false}>
+    <Layout
+      withPaddingTop={false}
+      scrollHeightForTransparentHeader={{ mobile: 40, desktop_large: 70 }}
+    >
       <GradientSpotsWrapper
         gradients={communityPageGradients.introductoryBlock}
         disableMainSidePaddings

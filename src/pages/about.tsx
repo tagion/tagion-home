@@ -29,7 +29,10 @@ const cx = classNames.bind(styles);
 
 const AboutPage = () => {
   return (
-    <Layout withPaddingTop={false}>
+    <Layout
+      withPaddingTop={false}
+      scrollHeightForTransparentHeader={{ desktop_large: 90 }}
+    >
       <GradientSpotsWrapper
         gradients={mainPageGradients.introductoryBlock}
         disableMainSidePaddings
