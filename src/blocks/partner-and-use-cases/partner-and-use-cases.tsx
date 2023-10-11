@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import { v4 as uuidv4 } from "uuid";
 import { createPortal } from "react-dom";
@@ -14,10 +14,12 @@ type RelatedInformationBlockDataType = {
   title: string;
   data: Array<{
     name: string;
-    description: string;
+    description?: string;
+    date?: string;
     pageTitle: string;
     isImgDisplayedInRelatedInformationBlock: boolean | null;
     mainImgSrc?: string;
+    imgStyle?: CSSProperties;
   }>;
   isStaticImg?: boolean;
 };

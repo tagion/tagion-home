@@ -41,12 +41,14 @@ const UseCasesPage: React.FC<InputProps> = ({ data: { useCase } }) => {
   const mappedRelatedArticles = relatedArticles.map((article) => ({
     // todo rename to 'link' after deleting img staticPath
     name: `/blog/articles/${article.linkTo}`,
-    description: article.description,
     pageTitle: article.name,
+    date: article.dateOfCreation,
     mainImgSrc:
       article.mainImgData?.path || article.descriptiveImgData?.path || "",
     isImgDisplayedInRelatedInformationBlock: true,
+    imgStyle: article?.mainImgData?.style || article?.descriptiveImgData?.style,
   }));
+
   return (
     <Layout withPaddingBottom>
       <InformationBlockWrapper>

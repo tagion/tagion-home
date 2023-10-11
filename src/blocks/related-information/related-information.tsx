@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import { navigate } from "gatsby";
 
@@ -17,10 +17,12 @@ interface InputProps {
   title: string;
   data: Array<{
     name: string;
-    description: string;
+    description?: string;
+    date?: string;
     pageTitle: string;
     isImgDisplayedInRelatedInformationBlock: boolean | null;
     mainImgSrc?: string;
+    imgStyle?: CSSProperties;
   }>;
   isStaticImg?: boolean;
 }
@@ -80,7 +82,10 @@ export const RelatedInformationBlock: React.FC<InputProps> = ({
                   <SmallArrowLinkIcon />
                 </span>
               }
-              description={item.description}
+              style={{
+                img: item?.imgStyle,
+              }}
+              description={item?.description}
               img={
                 withImg && staticImagePath
                   ? {
@@ -89,10 +94,12 @@ export const RelatedInformationBlock: React.FC<InputProps> = ({
                     }
                   : undefined
               }
+              date={item?.date}
               classNames={{
                 card: cx("card"),
                 mainContent: cx("card_mainContent"),
                 title: cx("card_title"),
+                date: cx("card_date"),
                 img: cx("card_imgWrapper"),
               }}
               onClick={() =>
