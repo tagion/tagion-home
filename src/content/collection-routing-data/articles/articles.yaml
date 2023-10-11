@@ -9,3 +9,6 @@
 
 - name: engineering-tokenomics-for-the-long-run
   dataObjectName: engineeringTokenomicsForTheLongRunArticleData
+
+- name: spotlight-the-challenges-of-the-dlt-trilemma
+  dataObjectName: spotlightTheChallengesOfTheDLTtrilemmaArticleData
