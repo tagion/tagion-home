@@ -1,16 +1,19 @@
 import * as React from "react";
 import { HeadFC } from "gatsby";
 
+import { InternalLinks } from "../../common/enums";
+
 const pageTitles = [
-  { path: "/", title: "Tagion" },
-  { path: "/about/", title: "Tagion | About" },
-  { path: "/blog/", title: "Tagion | Blog" },
-  { path: "/community/", title: "Tagion | Community" },
-  { path: "/ecosystem/", title: "Tagion | Ecosystem" },
-  { path: "/privacy-policy/", title: "Tagion | Privacy Policy" },
-  { path: "/terms-of-use/", title: "Tagion | Terms of use" },
-  { path: "/get-tagions/", title: "Tagion | Get Tagions" },
-  { path: "/partners/", title: "Tagion | Partners" },
+  { path: InternalLinks.MAIN, title: "Tagion" },
+  { path: InternalLinks.ABOUT, title: "Tagion | About" },
+  { path: InternalLinks.BLOG, title: "Tagion | Blog" },
+  { path: InternalLinks.COMMUNITY, title: "Tagion | Community" },
+  { path: InternalLinks.ECOSYSTEM, title: "Tagion | Ecosystem" },
+  { path: InternalLinks.PRIVACY_POLICY, title: "Tagion | Privacy Policy" },
+  { path: InternalLinks.TERMS_OF_USE, title: "Tagion | Terms of use" },
+  { path: InternalLinks.GET_TAGIONS, title: "Tagion | Get Tagions" },
+  { path: InternalLinks.PARTNERS, title: "Tagion | Partners" },
+  { path: InternalLinks.USE_CASES, title: "Tagion | Use cases" },
 ];
 
 export const Head: HeadFC = (props) => {

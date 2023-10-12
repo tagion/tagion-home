@@ -13,6 +13,7 @@ import poolsSchemeImg from "../assets/images/blog/pools_scheme.png";
 import seniorityProbabilityMultiplierSchemeImg from "../assets/images/blog/seniority_probability_multiplier_scheme.png";
 import incentivesBenefitingEcosystemImg from "../assets/images/blog/incentives_benefiting_ecosystem.png";
 import supplyAndDemandSidesImg from "../assets/images/blog/supply_and_demand_sides.png";
+import securityScalabilityDecentralisationImg from "../assets/images/blog/security_scalability_decentralisation.png";
 
 type ArticleDataType = {
   name: string;
@@ -48,7 +49,7 @@ export const redefiningMoneyArticleData: ArticleDataType = {
   },
   description:
     "Money plays a leading role in our lives. It shapes our actions, ambitions and aspirations. We work hard to earn it and eagerly seek opportunities to make it grow.",
-  author: "Irina Panovich",
+  author: "@0xace",
   labels: [0, 2],
   linkTo: "redefining-money",
   textContent: [
@@ -473,7 +474,7 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
   dateOfCreation: "23 Sep 2023",
   description:
     "We held the 3rd Tagion Community Townhall to discuss the technical infrastructure and economic principles — the backbones of Tagion network that make it unique. Thanks everyone for joining!",
-  author: "Irina Panovich",
+  author: "@0xace",
   descriptiveImgData: {
     path: hashgraphSchemeImg,
     alt: "hashgraph scheme",
@@ -670,7 +671,7 @@ export const engineeringTokenomicsForTheLongRunArticleData: ArticleDataType = {
   dateOfCreation: "27 Sep 2023",
   description:
     "Tokenomics can be compared to a garden. Just as a well-tended garden requires the right balance of plants, nutrients, and care to flourish, a successful tokenomics system relies on the careful cultivation of incentives both on supply and demand sides to create a thriving long-term ecosystem.",
-  author: "Irina Panovich",
+  author: "@0xace",
   mainImgData: {
     path: incentivesBenefitingEcosystemImg,
     alt: "incentives benefiting ecosystem image",
@@ -757,9 +758,134 @@ export const engineeringTokenomicsForTheLongRunArticleData: ArticleDataType = {
   ],
 };
 
+export const spotlightTheChallengesOfTheDLTtrilemmaArticleData: ArticleDataType =
+  {
+    name: "Spotlight: the challenges of the DLT Trilemma",
+    timeToRead: "2 min",
+    dateOfCreation: "4 Oct 2023",
+    description:
+      "The crypto trilemma looms large in the realm of Distributed Ledger Technology (DLT), representing a challenge in search for the perfect solution.",
+    author: "@0xace",
+    descriptiveImgData: {
+      path: securityScalabilityDecentralisationImg,
+      alt: "security scalability decentralisation image",
+    },
+    labels: [0, 2],
+    linkTo: "spotlight-the-challenges-of-the-dlt-trilemma",
+    textContent: [
+      {
+        body: (
+          <>
+            The crypto trilemma looms large in the realm of Distributed Ledger
+            Technology (DLT), representing a challenge in search for the perfect
+            solution.
+            <div className="text-separator" />
+            Coined by Vitalik Buterin, the founder of Ethereum, the crypto
+            trilemma underscores the difficulty of achieving security,
+            scalability, and decentralisation at the same time.
+            <img
+              src={securityScalabilityDecentralisationImg}
+              alt="security scalability decentralisation image"
+            />
+            It's a complex balancing act, akin to a game of DLT tug-of-war,
+            where enhancing one aspect often weakens the others.
+          </>
+        ),
+      },
+      {
+        subTitle: "Breaking Down the Crypto Trilemma",
+        body: (
+          <>
+            <div
+              className="inter_600 main_dark_text_color"
+              style={{ display: "inline-block" }}
+            >
+              1. Security:
+            </div>{" "}
+            A secure DLT network is resistant to attacks, ensuring the safety,
+            reliability, and tamper-proof nature of transactions. Trust and
+            integrity within the network depend on robust security.
+            <div className="text-separator" />
+            <div
+              className="inter_600 main_dark_text_color"
+              style={{ display: "inline-block" }}
+            >
+              2. Scalability:
+            </div>{" "}
+            Measures a DLT's ability to efficiently handle a growing number of
+            transactions per second (TPS). As usage surges, it must accommodate
+            the demand to prevent slow transactions and high costs.
+            <div className="text-separator" />
+            <div
+              className="inter_600 main_dark_text_color"
+              style={{ display: "inline-block" }}
+            >
+              3. Decentralisation:
+            </div>{" "}
+            Acore principle of DLT, eliminates central authority, fostering
+            resistance to censorship, enhancing privacy, and minimising single
+            points of failure.
+          </>
+        ),
+      },
+      {
+        subTitle: "Drawbacks and Challenges in Current Systems",
+        body: (
+          <>
+            Achieving all three aspects of the crypto trilemma simultaneously
+            has proven daunting. While optimising any two is relatively
+            straightforward, all three together come with limitations.
+            <div className="text-separator" />
+            <div
+              className="inter_600 main_dark_text_color"
+              style={{ display: "inline-block" }}
+            >
+              Scalability
+            </div>{" "}
+            challenges arise from bandwidth, processing power, and storage
+            capacity limitations. Efficient networks demand substantial data
+            transmission, increasing costs and congestion. Computational
+            expenses and extensive storage requirements further strain
+            scalability.
+            <div className="text-separator" />
+            <div
+              className="inter_600 main_dark_text_color"
+              style={{ display: "inline-block" }}
+            >
+              Security
+            </div>{" "}
+            vulnerabilities often arise from limited price discovery and the
+            risk of Sybil attacks. Limited price discovery can incentivise
+            transaction senders to delay actions or engage in front-running,
+            compromising transactional security. Sybil attacks involve malicious
+            actors creating multiple fake identities to manipulate network
+            operations, posing a substantial threat.{" "}
+            <div className="text-separator" />
+            Despite{" "}
+            <div
+              className="inter_600 main_dark_text_color"
+              style={{ display: "inline-block" }}
+            >
+              decentralisation's
+            </div>{" "}
+            ideals, resource aggregation and high financial staking requirements
+            can lead to centralisation trends within DLT networks. Mining power
+            concentration and regulatory capture risks undermine the core
+            principle of decentralisation.
+            <div className="text-separator" />
+            <div className="inter_600 main_dark_text_color">
+              Learn how Tagion addresses each challenge in upcoming articles.
+            </div>
+          </>
+        ),
+      },
+    ],
+  };
+
 export const articlesData = [
   redefiningMoneyArticleData,
   whyTagionusesHashgraphArticleData,
   tagionStandsOutFromTheCrowdArticleData,
   engineeringTokenomicsForTheLongRunArticleData,
+  spotlightTheChallengesOfTheDLTtrilemmaArticleData,
 ];

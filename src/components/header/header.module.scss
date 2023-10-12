@@ -14,7 +14,7 @@
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background-color: $submenu-bg-color;
+  background-color: $header-bg-color;
 
   &.isHeaderTransparent {
     backdrop-filter: inherit;
@@ -133,6 +133,25 @@
           font-size: 16px;
           line-height: 20px;
 
+          .link_name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .underline {
+              width: 0;
+              border-bottom: 1.5px solid $main-dark-color;
+              transition: width 0.3s;
+            }
+
+            &.isSelected,
+            &.isHovered {
+              .underline {
+                width: 100%;
+              }
+            }
+          }
+
           .arrow {
             width: 12px;
             height: 12px;
@@ -173,21 +192,39 @@
   top: 84px !important;
   left: 50% !important;
   z-index: 101;
-  animation: popper-animation 0.3s forwards;
+
+  .blur,
+  .submenu {
+    animation: popper-animation 0.6s forwards;
+  }
+
+  .blur {
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    height: calc(100% - 8px);
+    z-index: 102;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: $submenu-bg-color;
+    border-radius: $card-border-radius;
+  }
 
   .submenu {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 103;
 
     height: 284px;
     padding: 40px;
     margin-top: 8px;
-    border-radius: $card-border-radius;
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    background-color: $submenu-bg-color;
+    &.isTwoRows {
+      height: 210px;
+    }
 
     &.docsSubmenu {
       width: 717px;
@@ -199,7 +236,6 @@
 
         &.isSecondColumn {
           width: 289px;
-          // margin-left: 36px;
         }
       }
     }
@@ -226,8 +262,16 @@
       text-decoration: none;
       cursor: pointer;
 
-      &:nth-child(3n) {
-        margin: 0;
+      &:not(.isTwoRows) {
+        &:nth-child(3n) {
+          margin: 0;
+        }
+      }
+
+      &.isTwoRows {
+        &:nth-child(2n) {
+          margin: 0;
+        }
       }
 
       &.isDisabled {

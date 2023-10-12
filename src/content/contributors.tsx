@@ -37,7 +37,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.CO_FOUNDERS,
     description:
       "IT Advisor for Ørsted Denmark, Senior Consultant KPMG, External Lecturer at Copenhagen Business School, MSc in IT from IT University Copenhagen.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/theis-simonsen-32035313/ ",
   },
   {
     portrait: KristianVestergaard,
@@ -51,7 +51,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.CO_FOUNDERS,
     description:
       "Experienced Entreprise Architect with 20+ years experience leading digital strategy, driving innovation and integrating M&A targets. Director of Digital Architecture at GN Audio A/S.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/kbvestergaard/",
   },
   {
     portrait: CarstenRamussen,
@@ -65,7 +65,8 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.CO_FOUNDERS,
     description:
       "Systems Engineer specialising in hardware cryptography and security. 20+ years of experience in systems engineering, programming and ASIC design. Co-founder/ CTO at Polaric Semiconductor.",
-    linkTo: "/",
+    linkedinLink:
+      "https://www.linkedin.com/in/carsten-bleser-rasmussen-80699915/",
   },
   {
     portrait: NikolaiBang,
@@ -80,7 +81,8 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.ECONOMIC_CONTRIBUTORS,
     description:
       "M.S. in Operations and Management Engineering. 5+ years' strategic experience in upstream and downstream development within finance and technology at Ørsted, Nordea, and Danish Public Care.",
-    linkTo: "/",
+    linkedinLink:
+      "https://www.linkedin.com/in/nicolai-bang-rasmussen-996b9a13b/",
   },
   {
     portrait: JonasLodahl,
@@ -95,7 +97,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.ECONOMIC_CONTRIBUTORS,
     description:
       "Skilled professional with substantial experience and expertise in the domain of issuing tokenised securities at DigiShares. Hold deep knowledge of financial instruments and monetary systems",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/jonaslodahl/",
   },
   {
     portrait: ChristianVincensHeller,
@@ -110,7 +112,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.ECONOMIC_CONTRIBUTORS,
     description:
       "A seasoned COO and CFO in global financial institutions and the banking industry, including 20+ years in international banking at UBS, Credit Suisse and Nordea.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/christianvincensheller/",
   },
   {
     portrait: LeifRasmussen,
@@ -125,7 +127,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.GOVERNANCE_CONTRIBUTORS,
     description:
       "Associate Professor at Copenhagen Business School. His primary research areas include Complexity and Cooperative Innovation, Knowledge as a Commons, and Design of Inquiring Systems.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/leif-bloch-rasmussen-38663a4/",
   },
   {
     portrait: AlexBohdanov,
@@ -140,7 +142,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "Core Developer. Enthusiastic software developer. Sets efficient work and team performance as the highest priority. Leads application team to deliver outstanding user-focused products.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/aleksandr-bohdanov/",
   },
   {
     portrait: MatlabMehdiyev,
@@ -155,7 +157,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "DevOPs and Cloud Engineer with experience working at central bank as a Linux and DevOps engineer. Now spends time developing open and distributed payments systems.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/matlab-mehdiyev/",
   },
   {
     portrait: MaximSpiridonov,
@@ -170,7 +172,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "Mobile Developer. Flutter developer with flair for crypto. Code and finance specialist. Makes complicated things simple.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/m-spiridon/",
   },
   {
     portrait: AntonLabenskiy,
@@ -185,7 +187,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "Mobile Lead Developer. 5 years of experience developing various mobile products.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/labenskiyantondev",
   },
   {
     portrait: PhilipRying,
@@ -200,7 +202,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "Software Engineer and Core Developer. Specialises in elliptic curve cryptography. Loves maths and computer science.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/philip-rying/",
   },
   {
     portrait: RostyslavSmikh,
@@ -215,7 +217,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "MSc in Cybersecurity, Full stack developer, specialicing in multiple coding languages and systems. Former React developmener with technical versatility.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/rostik-smikh/",
   },
   {
     portrait: YuryVuntesmery,
@@ -230,7 +232,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "PhD in Solidstate Electronics, Associate Professor at National Technical University of Ukraine, Chief Software Architect at Video Internet Technologies with experience as CTO in various tech companies.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/yvountesmery/",
   },
   {
     portrait: DaniilDavydov,
@@ -245,7 +247,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
     description:
       "QA Engineer. Started his career with the Tagion project. Main goal is to provide the best quality product.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/daniil-davydov-37a976239/",
   },
   {
     portrait: SteffenPetersen,
@@ -260,7 +262,8 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.CREATIVE_CONTRIBUTORS,
     description:
       "Digital Director at Mindshare Denmark, Group M. Created award-winning strategies for SAS, Ford, Heineken and PepsiCo. MSc Economic Marketing from Copenhagen Business School",
-    linkTo: "/",
+    linkedinLink:
+      "https://www.linkedin.com/in/steffen-nyholt-petersen-35852239/",
   },
   {
     portrait: YuliaDrozdyk,
@@ -275,7 +278,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.CREATIVE_CONTRIBUTORS,
     description:
       "Product and graphic designer responsible for the aesthetic rebranding of Tagion.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/yulia-drozdyk-33661716a/",
   },
   {
     portrait: DanielleTichner,
@@ -290,7 +293,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.ADVISORS,
     description:
       "CEO and Founder at W-Source. Venture Parntner at R3I Ventures. Specialist in strategy and investment management consulting.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/danielletichner/",
   },
   {
     portrait: DennisMeldhedegaardNielsen,
@@ -305,7 +308,7 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.ADVISORS,
     description:
       "Passionate entrepreneur with 20+ technology companies. Chairman of various European tech firms. 25 years consulting experience in strategy, corporate development, and technical solutions.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/denielsen/",
   },
   {
     portrait: TimSimonsen,
@@ -320,6 +323,6 @@ export const contributorsBlockData = [
     type: ContributorsTypeName.AMBASSADORS,
     description:
       "Investor Relations specialist. Experienced Chief Engineer with management, marine engineering, business strategy, and project planning skills.",
-    linkTo: "/",
+    linkedinLink: "https://www.linkedin.com/in/tim-simonsen-a16aa6139/",
   },
 ];

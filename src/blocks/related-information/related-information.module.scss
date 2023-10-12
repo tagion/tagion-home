@@ -30,6 +30,12 @@
     }
   }
 
+  @media (min-width: $tablet-size) {
+    .cards_wrapper > .card > .card_mainContent > .card_date {
+      margin-top: 16px;
+    }
+  }
+
   @media (min-width: $desktop-size) {
     .title {
       margin-bottom: 8px;
@@ -76,6 +82,10 @@
 
           .card_title span {
             margin-right: 0;
+          }
+
+          .card_date {
+            margin-top: 24px;
           }
         }
       }

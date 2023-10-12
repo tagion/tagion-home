@@ -1,15 +1,20 @@
 @import "./../../styles/variables.scss";
 
-.link_wrapper {
-  // disabled <a href/> behaviour. will be removed later //
-  pointer-events: none;
-  cursor: default;
-  ////////////
-
-  display: block;
+.contributor_swiper_card {
   width: 182px;
   min-height: 486px;
-  text-decoration: none;
+  position: relative;
+
+  .linkedin_link {
+    position: absolute;
+    top: 13.5px;
+    left: 13.5px;
+    z-index: 99;
+
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 50%;
+  }
 
   .contributor_imgWrapper {
     display: flex;
@@ -51,6 +56,14 @@
   @media (min-width: $tablet-size) {
     width: 409px;
     min-height: auto;
+
+    .linkedin_link {
+      top: 18px;
+      left: 18px;
+
+      width: 30px;
+      height: 30px;
+    }
 
     .contributor_card {
       display: flex;
