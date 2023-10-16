@@ -28,7 +28,7 @@ export const TweetsSwiper: React.FC<InputProps> = ({
     <div
       className={`${cx(
         "tweets_swiper_block"
-      )} main-top-margins disable-lateral-margins ${classNames?.wrapper}`}
+      )} main-top-margins disable_lateral_margins ${classNames?.wrapper}`}
     >
       <div className={`${cx("title_wrapper")} ${classNames?.title} title-font`}>
         <span>{title}</span>

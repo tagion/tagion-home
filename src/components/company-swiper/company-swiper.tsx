@@ -24,7 +24,7 @@ export const CompanySwiper: React.FC<InputProps> = ({
     <div
       className={`${cx(
         "company_swiper_block"
-      )} main-top-margins disable-lateral-margins ${classNames?.wrapper}`}
+      )} main-top-margins disable_lateral_margins ${classNames?.wrapper}`}
     >
       <div
         className={`${cx("title", { withoutDescription: !description })} ${

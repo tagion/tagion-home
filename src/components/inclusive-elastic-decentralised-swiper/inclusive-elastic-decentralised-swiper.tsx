@@ -25,9 +25,9 @@ export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
     <div
       className={`${cx(
         "inclusive_elastic_decentralised_swiper"
-      )} disable-lateral-margins`}
+      )} disable_lateral_margins`}
     >
-      <div className={`${cx("text_wrapper")} main-lateral-paddings`}>
+      <div className={`${cx("text_wrapper")} main_lateral_paddings`}>
         <div className={`${cx("title")} title-font`}>{title}</div>
         <div className={`${cx("description")} body-font`}>{description}</div>
       </div>
@@ -53,10 +53,10 @@ export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
           disableBottomSwiperButtons
           className={cx("mobile_cards")}
         />
-        <div className={`${cx("desktop_cards")} main-lateral-paddings`}>
+        <div className={`${cx("desktop_cards")} main_lateral_paddings`}>
           {cardGenerator()}
         </div>
-        <div className={`${cx("note")} body-font main-lateral-paddings`}>
+        <div className={`${cx("note")} body-font main_lateral_paddings`}>
           *Tagion enables sharding for unlimited TPS in the future
         </div>
       </div>

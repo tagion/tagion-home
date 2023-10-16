@@ -91,7 +91,7 @@ const EcosystemPage = () => {
       </GradientSpotsWrapper>
 
       <div
-        className={`${cx("questions_blocks_wrapper")} disable-lateral-margins`}
+        className={`${cx("questions_blocks_wrapper")} disable_lateral_margins`}
       >
         <QuestionsBlock
           title="Core building blocks"

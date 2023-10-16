@@ -39,6 +39,7 @@
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-yaml": "^5.12.0",
+    "gsap": "^3.12.2",
     "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",

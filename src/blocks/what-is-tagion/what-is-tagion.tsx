@@ -12,7 +12,7 @@ export const WhatIsTagionBlock: React.FC = () => {
     <div
       className={`${cx(
         "what_is_tagion_block"
-      )} disable-lateral-margins main-top-margins`}
+      )} disable_lateral_margins main-top-margins`}
     >
       <div className={`${cx("title")} subtitle-font-28-36-50-80`}>
         What is Tagion?
