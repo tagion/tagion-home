@@ -13,7 +13,7 @@ export const OurValuesBlock: React.FC = () => {
     <div
       className={`${cx(
         "our_values_block"
-      )} disable-lateral-margins main-lateral-paddings`}
+      )} disable_lateral_margins main_lateral_paddings`}
     >
       <div className={`${cx("title")} title-font`}>Our values</div>
       <QuestionBlockGenerator whiteColor data={ourValuesBlockData} />
