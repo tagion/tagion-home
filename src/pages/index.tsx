@@ -74,12 +74,14 @@ const IndexPage = () => {
         <ValuePartnersBlock />
       </GradientSpotsWrapper>
 
-      <GradientSpotsWrapper
-        gradients={mainPageGradients.subscribeToNewsletterBlock}
+      <AnimatedGradientWrapper
+        // isFlipped
+        withLateralPaddings
+        isBoottomPageGradient
       >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
     </Layout>
   );
 };

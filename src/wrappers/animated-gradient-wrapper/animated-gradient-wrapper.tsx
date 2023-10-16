@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import classNames from "classnames/bind";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { v4 as uuidv4 } from "uuid";
 
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
 import { GradientColorsName } from "../../common/enums";
@@ -25,9 +26,12 @@ const gsapHandler = (id: string, path: MotionPath.Vars["path"]) => {
   });
 };
 
-export const AnimatedGradientWrapper: React.FC<PropsWithChildren<{}>> = ({
-  children,
-}) => {
+export const AnimatedGradientWrapper: React.FC<
+  PropsWithChildren<{
+    isBoottomPageGradient?: boolean;
+    withLateralPaddings?: boolean;
+  }>
+> = ({ children, isBoottomPageGradient, withLateralPaddings }) => {
   const { breakpointDeterminator, pageSize } = usePageBreakpointDeterminator();
   useResizeEvent({
     resizeHandler: () => breakpointDeterminator(),
@@ -58,13 +62,33 @@ export const AnimatedGradientWrapper: React.FC<PropsWithChildren<{}>> = ({
     <div
       className={`${cx("animated_gradient_wrapper")} disable_lateral_margins`}
     >
-      {pageSize &&
-        gsapHandlerData[pageSize] &&
-        gradientGenerator(pageSize).map(({ className, id, imgSrc, style }) => (
-          <img src={imgSrc} className={className} id={id} style={style} />
-        ))}
+      <div
+        className={cx("gradient_wrapper", {
+          isBoottomPageGradient,
+        })}
+      >
+        {pageSize &&
+          gsapHandlerData[pageSize] &&
+          gradientGenerator(pageSize).map(
+            ({ className, id, imgSrc, style }) => (
+              <img
+                src={imgSrc}
+                className={className}
+                id={id}
+                style={style}
+                key={uuidv4()}
+              />
+            )
+          )}
+      </div>
 
-      <div className={cx("children_wrapper")}>{children}</div>
+      <div
+        className={`${cx("children_wrapper")} ${
+          withLateralPaddings && "main_lateral_paddings"
+        }`}
+      >
+        {children}
+      </div>
     </div>
   );
 };
