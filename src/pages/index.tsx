@@ -20,6 +20,7 @@ import {
   nextGennFinancialInfrastrucureData,
   youCanParticipateBlockData,
 } from "../content";
+import { AnimatedGradientWrapper } from "../wrappers";
 
 import pointAnimation from "../assets/videos/point-animation.gif";
 import mainPageIntro from "../assets/images/main-page-intro.png";
@@ -32,10 +33,7 @@ const cx = classNames.bind(styles);
 const IndexPage = () => {
   return (
     <Layout withPaddingTop={false}>
-      <GradientSpotsWrapper
-        gradients={mainPageGradients.introductoryBlock}
-        disableMainSidePaddings
-      >
+      <AnimatedGradientWrapper>
         <IntroductoryBlock
           gifAnimation={pointAnimation}
           img={mainPageIntro}
@@ -53,12 +51,16 @@ const IndexPage = () => {
             introductoryBlock: cx("main_introductory_block"),
           }}
         />
-      </GradientSpotsWrapper>
-      <ScrollingBlock
-        title="Next generation adaptive infrastructure"
-        data={nextGennFinancialInfrastrucureData}
-        classNames={{ title: cx("scrollingBlock_title") }}
-      />
+        <ScrollingBlock
+          title="Next generation adaptive infrastructure"
+          data={nextGennFinancialInfrastrucureData}
+          classNames={{
+            title: cx("scrollingBlock_title"),
+            wrapper: "main_lateral_paddings",
+          }}
+        />
+      </AnimatedGradientWrapper>
+
       <WhatIsTagionBlock />
       <GradientSpotsWrapper
         disableMainSidePaddings={true}
@@ -66,7 +68,7 @@ const IndexPage = () => {
       >
         <SecureScalableDecentralisedBlock />
         <YouCanParticipateBlock
-          className="main-lateral-paddings"
+          className="main_lateral_paddings"
           data={youCanParticipateBlockData.mainPage}
         />
         <ValuePartnersBlock />

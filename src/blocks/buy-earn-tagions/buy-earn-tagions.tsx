@@ -35,7 +35,7 @@ export const BuyEarnTagionsBlock: React.FC = ({}) => {
   }, []);
 
   return (
-    <div className={`${cx("buy_earn_tagions_block")} main-lateral-paddings`}>
+    <div className={`${cx("buy_earn_tagions_block")} main_lateral_paddings`}>
       <GradientSpotsWrapper
         gradients={getTagionsPageGradients.buyEarnTagionBlock}
         disableMainSidePaddings

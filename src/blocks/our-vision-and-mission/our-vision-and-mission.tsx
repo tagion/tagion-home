@@ -14,7 +14,7 @@ export const OurVisionAndMissionBlock: React.FC = () => {
     <div
       className={`${cx(
         "our_vision_and_mission_block"
-      )} disable-lateral-margins`}
+      )} disable_lateral_margins`}
     >
       <div className={`${cx("text")} main-lateral-margins`}>
         <div className={`${cx("title")} title-font`}>
