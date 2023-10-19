@@ -5,15 +5,28 @@ import { BreakpointNames, GradientColorsName } from "../common/enums";
 import phitoGreenGradient from "../assets/images/gradient/phito_green_gradient.png";
 import ionicMintGradient from "../assets/images/gradient/ionic_mint_gradient.png";
 import ozoneBlueGradient from "../assets/images/gradient/ozone_blue_gradient.png";
-import spaceBlueGradient from "../assets/images/gradient/space_blue_gradient.png";
+import tagBlueGradient from "../assets/images/gradient/tag_blue_gradient.png";
 
 import * as styles from "../wrappers/animated-gradient-wrapper/animated-gradient-wrapper.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const gradientGenerator = (pageSize: string) => {
+export type AnimatedGradientsType = {
+  [gradientName: string]: {
+    width: number;
+    gradientImg: string;
+    motionPath: Array<{
+      x: number;
+      y: number;
+      rotation: number;
+      scale?: number;
+    }>;
+  };
+};
+
+export const gradientGenerator = (gradients: AnimatedGradientsType) => {
   const style = (id: GradientColorsName) => {
-    const width = gsapHandlerData[pageSize][id].width;
+    const width = gradients[id].width;
     return {
       width: `${width}px`,
       top: `-${width / 2}px`,
@@ -43,10 +56,10 @@ export const gradientGenerator = (pageSize: string) => {
     },
 
     {
-      id: GradientColorsName.SPACE_BLUE,
-      className: cx("space_blue", "gradient"),
-      imgSrc: spaceBlueGradient,
-      style: style(GradientColorsName.SPACE_BLUE),
+      id: GradientColorsName.TAG_BLUE,
+      className: cx("tag_blue", "gradient"),
+      imgSrc: tagBlueGradient,
+      style: style(GradientColorsName.TAG_BLUE),
     },
   ];
 };
@@ -54,7 +67,7 @@ export const gradientGenerator = (pageSize: string) => {
 const desktopMaxData = {
   phito_green: {
     width: 1400,
-    gradient: phitoGreenGradient,
+    gradientImg: phitoGreenGradient,
     motionPath: [
       { x: 250, y: -280, rotation: 0, scale: 1 },
       { x: 1000, y: -50, rotation: -10, scale: 1.6 },
@@ -66,7 +79,7 @@ const desktopMaxData = {
   },
   ionic_mint: {
     width: 1300,
-    gradient: ionicMintGradient,
+    gradientImg: ionicMintGradient,
     motionPath: [
       { x: 410, y: 60, rotation: 0 },
       { x: 410, y: 0, rotation: 0 },
@@ -78,7 +91,7 @@ const desktopMaxData = {
   },
   ozone_blue: {
     width: 1800,
-    gradient: ozoneBlueGradient,
+    gradientImg: ozoneBlueGradient,
     motionPath: [
       { x: -100, y: 400, rotation: 0, scale: 1 },
       { x: 620, y: 200, rotation: 30, scale: 1.19 },
@@ -88,9 +101,9 @@ const desktopMaxData = {
       { x: -100, y: 400, rotation: 0, scale: 1 },
     ],
   },
-  space_blue: {
+  tag_blue: {
     width: 1450,
-    gradient: spaceBlueGradient,
+    gradientImg: tagBlueGradient,
     motionPath: [
       { x: 100, y: 680, rotation: 0, scale: 1 },
       { x: 882, y: 480, rotation: 75, scale: 1 },
@@ -102,26 +115,68 @@ const desktopMaxData = {
   },
 };
 
-const desktopLargeDataGenerator = () => {
-  const desktopLargeData = {} as typeof desktopMaxData;
+const gradientDataCreator = (coefficient: number) => {
+  const gradientData = {} as typeof desktopMaxData;
   for (const [key, value] of Object.entries(desktopMaxData)) {
     const mappedMotionPath = value.motionPath.map((animationStage) => ({
       ...animationStage,
-      x: animationStage.x * 0.75,
-      y: animationStage.y * 0.75,
+      x: animationStage.x * coefficient,
+      y: animationStage.y * coefficient,
     }));
-    Object.assign(desktopLargeData, {
+    Object.assign(gradientData, {
       [key]: {
         ...value,
         motionPath: mappedMotionPath,
-        width: value.width * 0.75,
+        width: value.width * coefficient,
       },
     });
   }
-  return desktopLargeData;
+  return gradientData;
 };
 
-export const gsapHandlerData = {
-  [BreakpointNames.DESKTOP_MAX as string]: desktopMaxData,
-  [BreakpointNames.DESKTOP_LARGE as string]: desktopLargeDataGenerator(),
+export const topPageAnimatedGradientData = {
+  [BreakpointNames.DESKTOP_MAX as string]: {
+    style: { left: "-80px" },
+    gradients: desktopMaxData,
+  },
+  [BreakpointNames.DESKTOP_LARGE as string]: {
+    style: { left: "-80px" },
+    gradients: gradientDataCreator(0.75),
+  },
+  [BreakpointNames.DESKTOP as string]: {
+    style: { left: "-120px" },
+    gradients: gradientDataCreator(0.7),
+  },
+  [BreakpointNames.TABLET as string]: {
+    style: { left: "-120px" },
+    gradients: gradientDataCreator(0.71),
+  },
+  [BreakpointNames.MOBILE as string]: {
+    style: { left: "-120px" },
+    gradients: gradientDataCreator(0.65),
+  },
+};
+
+export const bottomPageAnimatedGradientData = {
+  [BreakpointNames.DESKTOP_MAX as string]: {
+    style: { transform: "scale(1, -1) rotate(18deg)", left: "210px" },
+    gradients: desktopMaxData,
+  },
+  [BreakpointNames.DESKTOP_LARGE as string]: {
+    style: { transform: "scale(1, -1) rotate(18deg)", left: "-100px" },
+    gradients: gradientDataCreator(0.8),
+  },
+  [BreakpointNames.DESKTOP as string]: {
+    style: { transform: "scale(1, -1)" },
+    gradients: gradientDataCreator(0.75),
+  },
+
+  [BreakpointNames.TABLET as string]: {
+    style: { transform: "scale(1, -1)" },
+    gradients: gradientDataCreator(0.71),
+  },
+  [BreakpointNames.MOBILE as string]: {
+    style: { transform: "scale(1, -1)" },
+    gradients: gradientDataCreator(0.65),
+  },
 };

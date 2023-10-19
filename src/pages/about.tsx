@@ -5,7 +5,8 @@ import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
   aboutPageGradients,
-  mainPageGradients,
+  bottomPageAnimatedGradientData,
+  topPageAnimatedGradientData,
   youCanParticipateBlockData,
 } from "../content";
 import {
@@ -20,6 +21,7 @@ import {
   MeetOurContributorsBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
+import { AnimatedGradientWrapper } from "../wrappers";
 
 import aboutPageIntro from "../assets/images/about-page/about-page-intro.png";
 
@@ -33,10 +35,7 @@ const AboutPage = () => {
       withPaddingTop={false}
       scrollHeightForTransparentHeader={{ desktop_large: 90 }}
     >
-      <GradientSpotsWrapper
-        gradients={mainPageGradients.introductoryBlock}
-        disableMainSidePaddings
-      >
+      <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
           title="About"
           description="We dream of a future where everyone has equal opportunities to participate in a fair economy. Today, we are actively building our dream - a modular, decentralised, scalable and secure network infrastructure for real human interactions. And the best part, is that we are building it together with you."
@@ -48,8 +47,9 @@ const AboutPage = () => {
             introductoryBlock: cx("about_introductory_block"),
           }}
         />
-      </GradientSpotsWrapper>
-      <OurVisionAndMissionBlock />
+        <OurVisionAndMissionBlock />
+      </AnimatedGradientWrapper>
+
       <GradientSpotsWrapper
         gradients={aboutPageGradients.ourValuesBlock}
         disableMainSidePaddings
@@ -78,12 +78,13 @@ const AboutPage = () => {
         <NatureIsOurClientBlock />
       </GradientSpotsWrapper>
       <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
-      <GradientSpotsWrapper
-        gradients={mainPageGradients.subscribeToNewsletterBlock}
+      <AnimatedGradientWrapper
+        gradientData={bottomPageAnimatedGradientData}
+        withLateralPaddings
       >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
     </Layout>
   );
 };

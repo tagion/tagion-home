@@ -33,5 +33,5 @@ export enum GradientColorsName {
   PHITO_GREEN = "phito_green",
   IONIC_MINT = "ionic_mint",
   OZONE_BLUE = "ozone_blue",
-  SPACE_BLUE = "space_blue",
+  TAG_BLUE = "tag_blue",
 }
