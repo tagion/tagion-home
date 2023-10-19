@@ -58,7 +58,9 @@ export const SocialLinks: React.FC<InputProps> = ({
                   : link
               }
               target="_blank"
-              className={`${cx("link")} link tooltip-anchor`}
+              className={`${cx("link")} link ${
+                withTooltips ? "tooltip-anchor" : ""
+              }`}
               key={i}
             >
               <Icon />
