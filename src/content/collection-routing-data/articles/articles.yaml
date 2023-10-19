@@ -12,3 +12,12 @@
 
 - name: spotlight-the-challenges-of-the-dlt-trilemma
   dataObjectName: spotlightTheChallengesOfTheDLTtrilemmaArticleData
+
+- name: tagions-massive-scalability-potential
+  dataObjectName: tagionsMassiveScalabilityPotentialArticleData
+
+- name: security-is-embedded-in-tagions-infrastructure
+  dataObjectName: securityIsEmbeddedInTagionsInfrastructureArticleData
+
+- name: achieving-true-decentralisation-with-node-swapping
+  dataObjectName: achievingTrueDecentralisationWithNodeSwappingArticleData
