@@ -20,13 +20,16 @@ import {
   coreBuildingBlockData,
   FAQBlockData,
   ecosystemPageGradients,
+  bottomPageAnimatedGradientData,
+  topPageAnimatedGradientData,
 } from "../content";
 import { QuestionsBlock } from "../components";
 import { Colors, PageSizes } from "../common/enums";
 import { useResizeEvent } from "../hooks";
+import { AnimatedGradientWrapper } from "../wrappers";
 
 import ecosystemPageIntro from "../assets/images/ecosystem/ecosystem_page_intro.png";
-import problemsIcon from "../assets/images/problems_icon.png";
+// import problemsIcon from "../assets/images/problems_icon.png";
 import FAQ_600_gradient from "../assets/images/gradient/ecosystem/tablet/FAQ_600.png";
 import FAQ_1440_gradient from "../assets/images/gradient/ecosystem/desktop-max/FAQ_1440.png";
 
@@ -35,24 +38,21 @@ import * as styles from "../styles/pages/ecosystem.module.scss";
 const cx = classNames.bind(styles);
 
 const EcosystemPage = () => {
-  const [FAQImage, setFAQImage] = useState("");
+  // const [FAQImage, setFAQImage] = useState("");
 
-  useResizeEvent({
-    resizeHandler: () => {
-      setFAQImage(
-        window.innerWidth >= PageSizes.DESKTOP
-          ? FAQ_1440_gradient
-          : FAQ_600_gradient
-      );
-    },
-  });
+  // useResizeEvent({
+  //   resizeHandler: () => {
+  //     setFAQImage(
+  //       window.innerWidth >= PageSizes.DESKTOP
+  //         ? FAQ_1440_gradient
+  //         : FAQ_600_gradient
+  //     );
+  //   },
+  // });
 
   return (
     <Layout withPaddingTop={false}>
-      <GradientSpotsWrapper
-        gradients={ecosystemPageGradients.introductoryBlock}
-        disableMainSidePaddings
-      >
+      <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
           title={
             <>
@@ -77,7 +77,7 @@ const EcosystemPage = () => {
             title: cx("scrollingBlock_title"),
           }}
         />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
       <GradientSpotsWrapper
         gradients={ecosystemPageGradients.ecosystemVisualizationBlock}
         mixBlendModeMultiply
@@ -121,12 +121,13 @@ const EcosystemPage = () => {
           />
         </div> */}
       </div>
-      <GradientSpotsWrapper
-        gradients={ecosystemPageGradients.subscribeToNewsletterBlock}
+      <AnimatedGradientWrapper
+        gradientData={bottomPageAnimatedGradientData}
+        withLateralPaddings
       >
         <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
         <SubscribeToOurNewsletterBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
     </Layout>
   );
 };

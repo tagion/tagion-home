@@ -16,8 +16,10 @@ import {
   WhatIsTagionBlock,
 } from "../blocks";
 import {
+  bottomPageAnimatedGradientData,
   mainPageGradients,
   nextGennFinancialInfrastrucureData,
+  topPageAnimatedGradientData,
   youCanParticipateBlockData,
 } from "../content";
 import { AnimatedGradientWrapper } from "../wrappers";
@@ -33,7 +35,7 @@ const cx = classNames.bind(styles);
 const IndexPage = () => {
   return (
     <Layout withPaddingTop={false}>
-      <AnimatedGradientWrapper>
+      <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
           gifAnimation={pointAnimation}
           img={mainPageIntro}
@@ -75,9 +77,8 @@ const IndexPage = () => {
       </GradientSpotsWrapper>
 
       <AnimatedGradientWrapper
-        // isFlipped
+        gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
-        isBoottomPageGradient
       >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />

@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
+import React, {
+  CSSProperties,
+  MutableRefObject,
+  useEffect,
+  useState,
+} from "react";
 import classNames from "classnames/bind";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { v4 as uuidv4 } from "uuid";
 
 import { PropsWithChildren } from "../../common/types/props-with-children.type";
 import { GradientColorsName } from "../../common/enums";
 import { usePageBreakpointDeterminator, useResizeEvent } from "../../hooks";
-import { gradientGenerator, gsapHandlerData } from "../../content";
+import { AnimatedGradientsType, gradientGenerator } from "../../content";
 
 import * as styles from "./animated-gradient-wrapper.module.scss";
 
@@ -26,57 +30,89 @@ const gsapHandler = (id: string, path: MotionPath.Vars["path"]) => {
   });
 };
 
+interface InputProps {
+  withLateralPaddings?: boolean;
+  gradientData: {
+    [breakpointName: string]: {
+      style: CSSProperties;
+      gradients: AnimatedGradientsType;
+    };
+  };
+}
+
 export const AnimatedGradientWrapper: React.FC<
-  PropsWithChildren<{
-    isBoottomPageGradient?: boolean;
-    withLateralPaddings?: boolean;
-  }>
-> = ({ children, isBoottomPageGradient, withLateralPaddings }) => {
+  PropsWithChildren<InputProps>
+> = ({ children, withLateralPaddings, gradientData }) => {
+  const [loadedGradientIds, setLoadedGradientIds] = useState<Array<number>>([]);
+
   const { breakpointDeterminator, pageSize } = usePageBreakpointDeterminator();
   useResizeEvent({
     resizeHandler: () => breakpointDeterminator(),
   });
 
+  const currentGradientData = gradientData[pageSize];
+
+  const gradientRefs = React.useRef<Array<MutableRefObject<HTMLImageElement>>>(
+    []
+  );
+  gradientRefs.current = Object.values(GradientColorsName).map(
+    (_, i) => gradientRefs.current[i] ?? React.createRef()
+  );
+
   useEffect(() => {
-    if (pageSize && gsapHandlerData[pageSize]) {
+    if (pageSize && currentGradientData) {
+      const gradients = currentGradientData.gradients;
+
       gsapHandler(
         GradientColorsName.PHITO_GREEN,
-        gsapHandlerData[pageSize].phito_green.motionPath
+        gradients.phito_green.motionPath
       );
       gsapHandler(
         GradientColorsName.IONIC_MINT,
-        gsapHandlerData[pageSize].ionic_mint.motionPath
+        gradients.ionic_mint.motionPath
       );
       gsapHandler(
         GradientColorsName.OZONE_BLUE,
-        gsapHandlerData[pageSize].ozone_blue.motionPath
+        gradients.ozone_blue.motionPath
       );
-      gsapHandler(
-        GradientColorsName.SPACE_BLUE,
-        gsapHandlerData[pageSize].space_blue.motionPath
-      );
+      gsapHandler(GradientColorsName.TAG_BLUE, gradients.tag_blue.motionPath);
     }
   }, [pageSize]);
+
+  useEffect(() => {
+    gradientRefs.current.forEach((ref, i) => {
+      ref.current?.addEventListener("load", () => {
+        setLoadedGradientIds((loadedGradientIds) =>
+          loadedGradientIds.includes(i)
+            ? loadedGradientIds
+            : [...loadedGradientIds, i]
+        );
+      });
+    });
+  });
 
   return (
     <div
       className={`${cx("animated_gradient_wrapper")} disable_lateral_margins`}
     >
       <div
-        className={cx("gradient_wrapper", {
-          isBoottomPageGradient,
-        })}
+        className={cx("gradient_wrapper")}
+        style={currentGradientData?.style}
       >
         {pageSize &&
-          gsapHandlerData[pageSize] &&
-          gradientGenerator(pageSize).map(
-            ({ className, id, imgSrc, style }) => (
+          currentGradientData.gradients &&
+          gradientGenerator(currentGradientData.gradients).map(
+            ({ className, id, imgSrc, style }, i, arr) => (
               <img
+                ref={gradientRefs.current[i]}
                 src={imgSrc}
                 className={className}
                 id={id}
-                style={style}
-                key={uuidv4()}
+                style={{
+                  ...style,
+                  opacity: loadedGradientIds.length === arr.length ? "1" : "0",
+                }}
+                key={id}
               />
             )
           )}
