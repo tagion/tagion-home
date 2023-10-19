@@ -10,9 +10,14 @@ import {
   TweetsAboutTagionBlock,
   ValueForContributorsBlock,
 } from "../blocks";
-import { communityPageGradients, mainPageGradients } from "../content";
+import {
+  bottomPageAnimatedGradientData,
+  communityPageGradients,
+  topPageAnimatedGradientData,
+} from "../content";
 import { useResizeEvent } from "../hooks";
 import { PageSizes } from "../common/enums";
+import { AnimatedGradientWrapper } from "../wrappers";
 
 import comminityPageIntroDesktop from "../assets/images/community/community_page_intro_desktop.png";
 import comminityPageIntroMobile from "../assets/images/community/community_page_intro_mobile.png";
@@ -32,10 +37,7 @@ const CommunityPage = () => {
       withPaddingTop={false}
       scrollHeightForTransparentHeader={{ mobile: 40, desktop_large: 70 }}
     >
-      <GradientSpotsWrapper
-        gradients={communityPageGradients.introductoryBlock}
-        disableMainSidePaddings
-      >
+      <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
           title="Grow With Us"
           description={
@@ -60,7 +62,7 @@ const CommunityPage = () => {
           }}
         />
         <StartContributingBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
       <ValueForContributorsBlock />
       <GradientSpotsWrapper
         gradients={communityPageGradients.tweetsAboutTagionBlock}
@@ -68,12 +70,13 @@ const CommunityPage = () => {
       >
         <TweetsAboutTagionBlock />
       </GradientSpotsWrapper>
-      <GradientSpotsWrapper
-        gradients={mainPageGradients.subscribeToNewsletterBlock}
+      <AnimatedGradientWrapper
+        gradientData={bottomPageAnimatedGradientData}
+        withLateralPaddings
       >
         <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
     </Layout>
   );
 };

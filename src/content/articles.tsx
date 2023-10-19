@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 
-import { Colors, ExternalLinks } from "../common/enums";
+import { Colors, ExternalLinks, InternalLinks } from "../common/enums";
 import { CustomLink } from "../components";
 
 import moneyAsAcommonsImg from "../assets/images/blog/money_as_a_commons.png";
@@ -14,6 +14,10 @@ import seniorityProbabilityMultiplierSchemeImg from "../assets/images/blog/senio
 import incentivesBenefitingEcosystemImg from "../assets/images/blog/incentives_benefiting_ecosystem.png";
 import supplyAndDemandSidesImg from "../assets/images/blog/supply_and_demand_sides.png";
 import securityScalabilityDecentralisationImg from "../assets/images/blog/security_scalability_decentralisation.png";
+import dartHibonWavefrontImg from "../assets/images/blog/dart_hibon_wavefront.png";
+import hashgraphTimeBasedStakingImg from "../assets/images/blog/hashgraph_time-based-staking.png";
+import passiveActivePoolImg from "../assets/images/blog/passive_active_pool.png";
+import passiveActivePoolSchemaImg from "../assets/images/blog/passive_active_pool_schema.png";
 
 type ArticleDataType = {
   name: string;
@@ -882,10 +886,371 @@ export const spotlightTheChallengesOfTheDLTtrilemmaArticleData: ArticleDataType 
     ],
   };
 
+export const tagionsMassiveScalabilityPotentialArticleData: ArticleDataType = {
+  name: "Tagion's massive scalability potential",
+  timeToRead: "2 min",
+  dateOfCreation: "14 Oct 2023",
+  description:
+    "Tagion employs innovative techniques to achieve scalability on a never seen before scale.",
+  author: "@0xace",
+  descriptiveImgData: {
+    path: dartHibonWavefrontImg,
+    alt: "dart hibon wavefront image",
+    style: { border: `1px solid ${Colors.MAIN_DARK}` },
+  },
+  labels: [0, 2],
+  linkTo: "tagions-massive-scalability-potential",
+  textContent: [
+    {
+      body: (
+        <>
+          Tagion employs innovative techniques to achieve scalability on a never
+          seen before scale thanks to:
+          <img
+            src={dartHibonWavefrontImg}
+            alt="dart hibon wavefront image"
+            className="without_margin_bottom with_border"
+          />
+        </>
+      ),
+    },
+    {
+      subTitle:
+        "Wavefront propagation reduces bandwidth requirements, enhancing efficiency.",
+      body: (
+        <>
+          It's a process in which the information sync between two nodes occurs
+          in a seamless manner. This technique aids in lowering the bandwidth
+          requirements of a network. This means that nodes require less data to
+          maintain and update their version of the data, thereby increasing
+          efficiency and contributing to the network's scalability.
+        </>
+      ),
+    },
+    {
+      subTitle:
+        "HiBON ensures data integrity by guaranteeing consistent hash values, even with data structure changes.",
+      body: (
+        <>
+          It's a compression algorithm designed to produce the least amount of
+          data bytes. The critical feature of HiBON is that it guarantees the
+          same hash, or digital fingerprint, for the stored information across
+          the entire network, ensuring data integrity.
+          <div className="text-separator" />
+          The use of HIBON allows for the consistency of data in the network,
+          reducing the risk of errors or discrepancies. The algorithm ensures
+          that irrespective of changes to the data's structure or formatting,
+          the value of the hash remains consistent. This guarantees data
+          integrity throughout the entire network and results in increased
+          scalability.
+        </>
+      ),
+    },
+    {
+      subTitle:
+        "Tagion's DART and Hashgraph redefine scalability in DLT: read, write and delete data rapidly from database.",
+      body: (
+        <>
+          Hashgraph stands out for its efficient data writing capabilities,
+          outpacing blockchain systems with its minimal message requirement for
+          consensus.
+          <div className="text-separator" />
+          From a user perspective, Tagion's stateless network eliminates the
+          need to maintain the entire system's historical state, simplifying
+          data retrieval.
+          <div className="text-separator" />
+          <div className="inter_600 main_dark_text_color">
+            Additionally, the ability to delete obsolete data is a distinctive
+            advantage of Tagion's distributed database in the realm of
+            Distributed Ledger Technology (DLT), lowering barriers to system
+            participation.
+          </div>
+        </>
+      ),
+    },
+  ],
+};
+
+export const securityIsEmbeddedInTagionsInfrastructureArticleData: ArticleDataType =
+  {
+    name: "Security is embedded in Tagion's infrastructure",
+    timeToRead: "3 min",
+    dateOfCreation: "17 Oct 2023",
+    description:
+      "Ensuring the robustness of a DLT network against malicious threats is crucial. Tagion enhances security of the network with time-based staking and Hashgraph.",
+    author: "@0xace",
+    mainImgData: {
+      path: hashgraphTimeBasedStakingImg,
+      alt: "hashgraph time-based staking image",
+      style: { border: `1px solid ${Colors.MAIN_DARK}` },
+    },
+    labels: [0, 2],
+    linkTo: "security-is-embedded-in-tagions-infrastructure",
+    textContent: [
+      {
+        body: (
+          <>
+            Ensuring the robustness of a DLT network against malicious threats
+            is crucial. Tagion enhances security of the network with time-based
+            staking and Hashgraph.
+          </>
+        ),
+      },
+      {
+        subTitle: "Time-Based Staking: Ensuring Network Commitment",
+        body: (
+          <>
+            To join Tagion's network, participants stake a fixed amount of
+            Tagion tokens (TGN) for a predefined duration. This time-based
+            staking mechanism fosters vested interest and deters malicious
+            activities, as penalties can be imposed through token slashing.
+          </>
+        ),
+      },
+      {
+        subTitle: "Balancing Influence: Staking Amount and Seniority",
+        body: (
+          <>
+            Tagion takes a unique approach by ensuring that a participant's
+            stake size doesn't dictate their voting power. The probability of
+            becoming an active node increases linearly with the staked TGN
+            amount, promoting fairness. Additionally, those who maintain their
+            stakes over time earn seniority, further enhancing their chances of
+            joining the active pool.
+          </>
+        ),
+      },
+      {
+        subTitle: "Staking Rewards: Incentivising Engagement",
+        body: (
+          <>
+            Active nodes can earn staking rewards, encouraging swift data
+            communication and engagement. These rewards, distributed among
+            famous witness nodes, motivate continuous participation and promote
+            network efficiency.
+          </>
+        ),
+      },
+      {
+        subTitle: "Curbing Sybil Attacks with Staking Thresholds",
+        body: (
+          <>
+            Sybil attacks, where a single entity deploys multiple nodes to gain
+            undue influence, pose a significant threat. Tagion addresses this by
+            establishing a minimum staking threshold, balancing security and
+            decentralisation.
+          </>
+        ),
+      },
+      {
+        subTitle: "Hashgraph: A Trustworthy Consensus Protocol",
+        body: (
+          <>
+            Hashgraph, a Byzantine fault-tolerant (BFT) protocol, underpins
+            Tagion's network. It ensures consensus integrity even during node
+            swaps between the active and passive pools. Read more{" "}
+            <CustomLink
+              linkTo={`${InternalLinks.ARTICLES}/why-tagion-uses-hashgraph/`}
+              className="underlined-link"
+            >
+              here
+            </CustomLink>
+            .
+          </>
+        ),
+      },
+      {
+        body: <div className="inter_600 main_dark_text_color">In Summary</div>,
+      },
+      {
+        body: (
+          <>
+            Tagion's unique blend of time-based staking and Hashgraph technology
+            paves the way for a secure, equitable, and efficient DLT ecosystem.
+            This innovative approach sets new standards for DLT networks,
+            emphasising fairness, engagement, and robust security.
+          </>
+        ),
+      },
+      {
+        subTitle:
+          "Tagion's security model incorporates the Tagion Hashgraph, an aBFT consensus mechanism highly resilient to cyberattacks.",
+        body: (
+          <>
+            The Tagion Hashgraph uses an aBFT, a consensus mechanism that adds
+            an additional layer of security and reliability to a network. Unlike
+            traditional consensus mechanisms, aBFT is highly resilient to a wide
+            range of cyber-attacks.
+            <div className="text-separator" />
+            The aBFT system can source consensus from nodes across the network,
+            reducing the risk of manipulation by any single node or a group of
+            nodes. It has the power to verify and exclude non-compliant nodes,
+            ensuring that only nodes adhering to the network's rules can
+            participate.
+            <div className="text-separator" />
+            This mechanism not only strengthens the security of the network but
+            also promotes fair participation, thereby boosting trust among
+            network participants.
+          </>
+        ),
+      },
+      {
+        subTitle:
+          "Ordering eliminates bias and tampering risks by providing an unbiased, tamper-proof mechanism for transaction ordering.",
+        body: (
+          <>
+            Tagion Ordering is a system that reduces bias by eliminating the
+            role of a leader and the possibility of tampering with the order of
+            transactions. It ensures full data integrity and transparency,
+            crucial for maintaining trust in the system.
+            <div className="text-separator" />
+            By providing an unbiased and tamper-proof mechanism for transaction
+            ordering, the Tagion model helps prevent fraudulent activities and
+            reinforces the network's overall security.
+            <div className="text-separator" />
+            <div className="inter_600 main_dark_text_color">
+              Node governance incentivises nodes to act in the network's best
+              interest, reducing Sybil attack risks.
+            </div>
+          </>
+        ),
+      },
+    ],
+  };
+
+export const achievingTrueDecentralisationWithNodeSwappingArticleData: ArticleDataType =
+  {
+    name: "Achieving True Decentralisation with Node Swapping",
+    timeToRead: "2 min",
+    dateOfCreation: "18 Oct 2023",
+    description: "Tagion promotes decentralisation through node swapping.",
+    author: "@0xace",
+    descriptiveImgData: {
+      path: passiveActivePoolImg,
+      alt: "passive and active pool image",
+      style: { border: `1px solid ${Colors.MAIN_DARK}` },
+    },
+    labels: [0, 2],
+    linkTo: "achieving-true-decentralisation-with-node-swapping",
+    textContent: [
+      {
+        body: (
+          <>
+            Tagion promotes decentralisation through node swapping.{" "}
+            <img
+              src={passiveActivePoolImg}
+              alt="passive and active pool image"
+              className="without_margin_bottom with_border"
+            />
+          </>
+        ),
+      },
+      {
+        body: (
+          <>
+            DLT technology promises decentralisation, but many systems remain
+            centralised due to fixed node structures and permissions. To address
+            this, Tagion employs a dynamic node swapping mechanism that enables
+            a permissionless and truly decentralised network.
+          </>
+        ),
+      },
+      {
+        subTitle: "Node Pools: Balancing Scalability and Decentralisation",
+        body: (
+          <>
+            Tagion recognises that a network with a fixed set of nodes, while
+            more decentralised than traditional systems, still falls short of
+            true decentralisation.
+            <div className="text-separator" />
+            <div className="inter_600 main_dark_text_color">
+              To maintain scalability without compromising decentralisation,
+              Tagion employs two key concepts: an active pool and a passive
+              pool.
+            </div>
+            <img
+              src={passiveActivePoolSchemaImg}
+              alt="passive and active pool schema image"
+              className="with_border"
+            />
+            Tagion is made up of 2 pools: an active pool of constant size where
+            consensus protocol takes place and a passive pool of dynamic size.
+          </>
+        ),
+      },
+      {
+        body: (
+          <>
+            The active pool consists of a constant number of nodes participating
+            in the Hashgraph consensus, while the passive pool dynamically
+            adjusts in size to accommodate nodes joining or leaving the network.
+            This setup allows for a permissionless way to join the network while
+            preserving a degree of decentralisation.
+          </>
+        ),
+      },
+      {
+        subTitle: "Swapping: A Dynamic Shuffle of Nodes",
+        body: (
+          <>
+            Tagion's network continuously shuffles nodes between the active and
+            passive pools. At regular intervals, a random node from the active
+            pool swaps places with a random node from the passive pool.
+            <div className="text-separator" />
+            To ensure fairness, the system uses the Deterministic Random (UDR)
+            choice agreed upon by the DART. While precise synchronisation is
+            challenging due to network asynchronicity, this occasional
+            discrepancy is minimal and short-lived.
+            <div className="text-separator" />
+            Leaving the active pool is straightforward while joining involves
+            referencing a foundation of events in the DART, allowing new nodes
+            to quickly catch up.
+          </>
+        ),
+      },
+      {
+        subTitle: "A Permissionless System for True Decentralisation",
+        body: (
+          <>
+            <div className="inter_600 main_dark_text_color">
+              Tagion's dynamic node swapping prevents power from accumulating in
+              a small set of nodes, continuously redistributing control.
+              Combined with the two-pool structure, this mechanism makes Tagion
+              a permissionless and fully decentralised system.
+            </div>
+            <div className="text-separator" />
+            Nodes can join the network without seeking permission, ensuring that
+            Tagion achieves the core principles of decentralisation that DLT
+            technology originally set out to achieve.
+          </>
+        ),
+      },
+      {
+        body: <div className="inter_600 main_dark_text_color">In Summary</div>,
+      },
+      {
+        body: (
+          <>
+            Tagion's innovative approach to decentralisation through dynamic
+            node swapping offers a blueprint for DLT systems to realise true
+            decentralisation while accommodating scalability.
+            <div className="text-separator" />
+            By eliminating central points of control and opening the door for
+            anyone to participate, Tagion takes a significant step toward the
+            decentralised future that DLT enthusiasts have long envisioned.
+          </>
+        ),
+      },
+    ],
+  };
+
 export const articlesData = [
   redefiningMoneyArticleData,
   whyTagionusesHashgraphArticleData,
   tagionStandsOutFromTheCrowdArticleData,
   engineeringTokenomicsForTheLongRunArticleData,
   spotlightTheChallengesOfTheDLTtrilemmaArticleData,
+  tagionsMassiveScalabilityPotentialArticleData,
+  securityIsEmbeddedInTagionsInfrastructureArticleData,
+  achievingTrueDecentralisationWithNodeSwappingArticleData,
 ];
