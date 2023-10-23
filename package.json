@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "gatsby develop",
-    "dev:test": "gatsby develop -H 127.0.0.1",
+    "dev:test": "gatsby develop -H 127.0.0.1 --port 7000",
     "deploy": "gatsby serve --port 8000 --host 0.0.0.0",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -43,6 +43,7 @@
     "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-toastify": "^9.1.3",
     "react-tooltip": "^5.13.1",

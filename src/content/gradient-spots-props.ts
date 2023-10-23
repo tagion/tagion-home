@@ -1,3 +1,5 @@
+import { BreakpointNames } from "../common/enums";
+
 export const mainPageGradients = {
   introductoryBlock: {
     desktop_max: {
@@ -129,6 +131,12 @@ export const mainPageGradients = {
 };
 
 export const sideMenuGradients = {
+  desktop_large: {
+    img: () =>
+      require("../assets/images/gradient/side-menu/desktop/side-menu_1024.png")
+        .default,
+    options: { bgPositionY: "bottom" },
+  },
   desktop: {
     img: () =>
       require("../assets/images/gradient/side-menu/desktop/side-menu_1024.png")
