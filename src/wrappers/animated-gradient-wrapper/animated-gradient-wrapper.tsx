@@ -2,6 +2,7 @@ import React, {
   CSSProperties,
   MutableRefObject,
   useEffect,
+  useLayoutEffect,
   useState,
 } from "react";
 import classNames from "classnames/bind";
@@ -79,7 +80,7 @@ export const AnimatedGradientWrapper: React.FC<
     }
   }, [pageSize]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gradientRefs.current.forEach((ref, i) => {
       ref.current?.addEventListener("load", () => {
         setLoadedGradientIds((loadedGradientIds) =>
