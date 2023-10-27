@@ -15,7 +15,13 @@ export const OurValuesBlock: React.FC = () => {
         "our_values_block"
       )} disable_lateral_margins main_lateral_paddings`}
     >
-      <div className={`${cx("title")} title-font`}>Our values</div>
+      <div className={cx("heading")}>
+        <div className={`${cx("title")} title-font`}>Our values</div>
+        <div className={`${cx("description")} body-font`}>
+          We believe in transparency, privacy and solving real problems.
+        </div>
+      </div>
+
       <QuestionBlockGenerator whiteColor data={ourValuesBlockData} />
     </div>
   );
