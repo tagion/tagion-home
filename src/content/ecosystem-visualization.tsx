@@ -25,17 +25,19 @@ const dartAndNodeSwappingBlock = {
       <div className={`${cx("popup_title")} prompt-regular prompt-36 title`}>
         DART Distributed Database and Hashgraph Consensus Mechanism
       </div>
-      <div style={{ letterSpacing: "-0.2px" }}>
-        Ensure your data integrity and back up with distributed and scalable
-        storage. The DART can handle large amounts of data efficiently as the
-        databases are distributed across nodes, optimising the network capacity.
-        You can create customised solutions with sub-DARTs with specific
-        case-based rules and integrated trading capabilities.
-        <div className="text-separator" /> Hashgraph is a revolutionary
-        technology that ensures agreement across nodes. Unlike traditional
-        blockchains, which rely on probability, Hashgraph provides a definitive
-        order of events, so there is greater trust, accuracy and reliability in
-        the network.
+      <div>
+        DART offers distributed and scalable storage for applications, ensuring
+        data integrity and back up. You can create customised solutions with
+        sub-DARTs with specific case-based rules and integrated trading
+        capabilities. The DART can handle large amounts of data efficiently as
+        the databases are distributed across nodes and you can delete obsolete
+        data, optimising the network capacity.
+        <div className="text-separator" />
+        Hashgraph is a revolutionary technology that ensures agreement across
+        nodes, offering a secure and reliable distributed ledger. Unlike
+        traditional blockchains, which rely on probability, Hashgraph consensus
+        is deterministic. There is always an definitive order of events, so
+        there is greater trust, accuracy and reliability in the network.
       </div>
     </>
   ),

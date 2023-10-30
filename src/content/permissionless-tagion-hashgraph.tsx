@@ -32,7 +32,7 @@ export const permissionlessTagionHashgraphBlockData = [
   {
     title: "DART - A Secure and Scalable Distributed Database",
     description:
-      "Distributed applications need distributed and scalable storage with data integrity (correctness of data), resilience and backup, which the DART provides. The dart is a data structure with 256 leaves, allowing to store sha256 hashes very efficiently. The DART has, a cryptographic fingerprint (Called a bullseye) of all the data, which is updated each time the dart is modified, making it impossible to tamper with the data or have incorrect data if the bullseye is correct. Users can easily create a sub-dart with customised governance.",
+      "Distributed applications require scalable storage with data integrity, resilience, and backup, all of which the DART system provides. It efficiently stores SHA-256 hashes using a data structure with 256 leaves. The DART includes a cryptographic fingerprint called a bullseye, which is updated upon modification, ensuring data integrity. Users can create custom sub-darts with their own governance and delete obsolete data.",
     videoSrc: "/videos/dart_animation.mov",
   },
 ];
