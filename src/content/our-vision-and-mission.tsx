@@ -9,8 +9,14 @@ export const ourVisionAndMissioBlockData = [
   },
   {
     title: "Utility and Adoption",
-    description:
-      "Enabling real-world use and adoption through a modular distributed infrastructure and robust developer environment.",
+    description: (
+      <>
+        Building real utility and adoption.
+        <br />
+        Providing customisable infrastructure for a businesses, communities and
+        developers.
+      </>
+    ),
     label: "2023 - 2027",
     style: {
       // todo improve logic when multiple breakpoints have the same objects
@@ -22,9 +28,9 @@ export const ourVisionAndMissioBlockData = [
     },
   },
   {
-    title: "Common Good Network Infrastructure",
+    title: "Integrated Financial Ecosystem",
     description:
-      "Growing an independent system governed as a Commons that powers diverse decentralised applications.",
+      "Capital market with robust marketplace and use cases powered by genuine governance and voting system that takes decisions on a social and monetary level.",
     label: "2028 - 2033",
     style: {
       title: {
@@ -32,6 +38,12 @@ export const ourVisionAndMissioBlockData = [
         desktop: { width: "347px" },
         desktop_large: { width: "347px" },
         desktop_max: { width: "400px" },
+      },
+      description: {
+        mobile: { width: "231px" },
+        tablet: { width: "330px" },
+        desktop: { width: "330px" },
+        desktop_large: { width: "330px" },
       },
     },
   },
