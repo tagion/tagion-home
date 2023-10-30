@@ -1,9 +1,9 @@
 import { BreakpointsStyleObjectType } from "../common/types/breakpoints-style-object-type";
 
-import rocketPng from "../assets/images/rocket.png";
-import walletPng from "../assets/images/wallet.png";
-import transactionPng from "../assets/images/transaction.png";
-import DARTPng from "../assets/images/DART.png";
+import tokenPng from "../assets/images/token_high_resolution.png";
+import explorePng from "../assets/images/explore.png";
+import ideaPng from "../assets/images/idea.png";
+import growthInclinDeclinePng from "../assets/images/growth_incline_decline.png";
 
 export const buildForTheRealWorldData: Array<{
   title: string | React.ReactElement;
@@ -12,35 +12,28 @@ export const buildForTheRealWorldData: Array<{
   style?: { title: BreakpointsStyleObjectType };
 }> = [
   {
-    title: "Tokenise your assets with Tagion SDKs, APIs and WASM",
+    title: "Convert real-world assets into digital tokens",
     description:
-      "Unlock new possibilities: transform real and digital assets into digital tokens easilty with WASM. Experience the future of asset trading with increased liquidity, accessibility and scalability and connect to other ecosystems.",
-    img: rocketPng,
+      "Make your assets liquid, tradeable and accessible. Use tokens to represent ownership, value, access rights to various assets, such as real estate, natural land, art, financial instruments and more.",
+    img: tokenPng,
+  },
+  {
+    title: "Trace and monitor your goods and services with full transparency",
+    description:
+      "Bring accountability and efficiency to your full value chain. Assess and manage goods and services in real-time. Reduce blind spots and increase visibility of your network.",
+    img: explorePng,
+  },
+  {
+    title: "Create your own customised networks, products and services",
+    description:
+      "Thanks to sub-DARTs you can customise your network to work according to your rules. Create incentives and governance rules that suit your context.",
+    img: ideaPng,
   },
   {
     title:
-      "Control and manage your assets with secure wallets (or make your own)",
+      "Optimise your data accuracy. Stay compliant, efficient and secure at low cost",
     description:
-      "Your financial future, your rules. Manage your assets and redefine financial independence. Craft your own personalised asset management solution.",
-    img: walletPng,
-    style: {
-      title: {
-        desktop_large: { letterSpacing: "-0.5px" },
-        desktop_max: { letterSpacing: "-0.5px", width: "800px" },
-      },
-    },
-  },
-  {
-    title: "Trade and exchange your assets with Tagion Exchange protocol",
-    description:
-      "Benefit from real price discovery and fair ordering for every asset type. Take your trading to the next level and trade assets with confidence.",
-    img: transactionPng,
-  },
-  {
-    title: "Flexible asset and data management system",
-    description:
-      "Experience the power to seamlessly update and delete data in the DART Distributed Database. Keep your information dynamic, evolving overtime, while optimising storage efficiency thanks to stateless Tagion protocol.",
-    img: DARTPng,
-    style: { title: { desktop: { width: "350px" } } },
+      "Read, write, update and delete data seamlessly. A flexible asset and data management system, the DART Distributed Database keeps your information dynamic, evolving overtime.",
+    img: growthInclinDeclinePng,
   },
 ];

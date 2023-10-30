@@ -20,7 +20,7 @@ export const coreBuildingBlockData = [
       {
         valueName: "Unique Node Swapping Mechanism for a Permissionless System",
         paragraphList: [
-          "Tagion introduces a unique concept to make the Hashgraph-based system permissionless, where nodes can be randomly swapped in and out. Nodes are swapped in with weights based on their reputational score (see Proof of Community) and their score as node operators, reducing the risk of Sybil attacks. A protocol exists for becoming a node, and new node operators must earn sufficient scores to be swapped in.",
+          "Tagion introduces a unique concept to make the Hashgraph-based system permissionless, where nodes can be randomly swapped in and out. The active pool consists of a constant number of nodes participating in the Hashgraph consensus, while the passive pool dynamically adjusts in size to accommodate nodes joining or leaving the network. This setup allows for a permissionless way to join the network while preserving a degree of decentralisation.",
         ],
       },
     ],
@@ -32,20 +32,14 @@ export const coreBuildingBlockData = [
         valueName:
           "Empowering community ownership and governance of Tagion network ",
         paragraphList: [
-          "Community members drive and shape the development, operation, maintenance, decision-making, and governance of usable resources. Source code and binaries, including IP licenses, concepts and governance rules, and the actual running of the network are resources created, owned and governed by the community.",
+          "Community members drive and shape the development, operation, maintenance, decision-making, and governance of usable resources. Source code, programs, concepts, governance rules, and the actual running network (mainnet) are resources created and governed by the community.",
         ],
       },
       {
         valueName:
           "Proof of Community - Reputation-weighted voting and rewards",
         paragraphList: [
-          "Incentives, governance models and rules are essential for Tagion to be democratic and fair, where everyone has an equal right to join the community. A member`s voting power and rewards are not given, they are earned over time through action, reciprocity and respect.",
-        ],
-      },
-      {
-        valueName: "Proof of Community - How does it work?",
-        paragraphList: [
-          "Each community member has 150 atomic reputational claims that can be given to others in various categories. Each claim has a timestamp and a gene diversification score, preventing in-breeding among newly created member records. These claims determine a member's score in each category, which, in turn, determines their rewards and voting power in the community. The community decides on all governance rules and makes decisions based on these scores.",
+          "Incentives, governance models and rules are essential for Tagion to be democratic and fair, where everyone has an equal right to join the community. A member's voting power and rewards are not given, they are earned over time through action, reputation and staking.",
         ],
       },
       {

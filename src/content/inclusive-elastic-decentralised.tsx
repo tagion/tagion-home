@@ -113,7 +113,7 @@ export const inclusiveElasticDecentralisedData = [
     data: {
       TPS: { value: "10.000*" },
       timeToFinality: { value: "8 seconds" },
-      fees: { value: "$0.0005" },
+      fees: { value: "$0.05" },
       environmentalImpact: {
         value: (
           <>
