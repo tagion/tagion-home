@@ -57,20 +57,20 @@ const AboutPage = () => {
       >
         <OurValuesBlock />
       </GradientSpotsWrapper>
-      <MeetOurContributorsBlock />
       <GradientSpotsWrapper
         gradients={aboutPageGradients.valuePartnersBlock}
         disableMainSidePaddings
       >
         <ValuePartnersBlock className="main-bottom-margins" />
       </GradientSpotsWrapper>
-      <GradientSpotsWrapper
+      {/* <GradientSpotsWrapper
         gradients={aboutPageGradients.foundationBlock}
         disableMainSidePaddings
         bgColor={Colors.MAIN_DARK}
       >
         <FoundationBlock />
-      </GradientSpotsWrapper>
+      </GradientSpotsWrapper> */}
+      <MeetOurContributorsBlock />
       <GradientSpotsWrapper
         gradients={aboutPageGradients.natureIsOurClientBlock}
         disableMainSidePaddings
