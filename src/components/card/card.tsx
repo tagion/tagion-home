@@ -29,7 +29,9 @@ interface InputProps {
     date?: string;
   };
   onClick?: () => void;
-  style?: Partial<Record<"videoWrapper" | "title" | "img", CSSProperties>>;
+  style?: Partial<
+    Record<"videoWrapper" | "title" | "description" | "img", CSSProperties>
+  >;
 }
 
 export const Card: React.FC<PropsWithChildren<InputProps>> = ({
@@ -106,6 +108,7 @@ export const Card: React.FC<PropsWithChildren<InputProps>> = ({
                 ? `font-${fixedFontSize.description}`
                 : "body-font"
             } ${classNames?.description || ""}`}
+            style={style?.description}
           >
             {description}
           </div>

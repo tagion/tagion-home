@@ -41,11 +41,10 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Build <br />
-              The Future. Start Today.
+              Ready For <span className="massive_word">Massive</span> Scale
             </>
           }
-          description="Benefit from our highly scalable, decentralised and secure DLT network infrastructure and drive innovation across finance, supply chains, nature conservation, exchange protocols and beyond."
+          description="Future-proof economies need a modular, distributed and massively scalable foundation to build resilient use cases. Tagion delivers a next-generation transaction-based infrastructure for the real world."
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
@@ -54,11 +53,11 @@ const IndexPage = () => {
           }}
         />
         <ScrollingBlock
-          title="Next generation adaptive infrastructure"
+          title="We stand out from the crowd"
           data={nextGennFinancialInfrastrucureData}
           classNames={{
             title: cx("scrollingBlock_title"),
-            wrapper: "main_lateral_paddings",
+            wrapper: "main-lateral-margins",
           }}
         />
       </AnimatedGradientWrapper>
