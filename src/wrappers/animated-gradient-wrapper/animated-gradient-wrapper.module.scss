@@ -1,0 +1,39 @@
+@import "./../../styles/variables.scss";
+
+.animated_gradient_wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .gradient_wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    .gradient {
+      position: absolute;
+      transition: opacity 1s;
+    }
+
+    .phito_green {
+      z-index: 4;
+    }
+
+    .ionic_mint {
+      z-index: 1;
+    }
+
+    .ozone_blue {
+      z-index: 3;
+    }
+
+    .tag_blue {
+      z-index: 2;
+      filter: contrast(1.2);
+    }
+  }
+
+  .children_wrapper {
+    position: relative;
+    z-index: 99;
+  }
+}

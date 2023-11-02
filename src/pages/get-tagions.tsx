@@ -7,11 +7,13 @@ import {
   YouCanParticipateBlock,
 } from "../blocks";
 import { Layout } from "../templates/layout";
-import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
+import { IntroductoryBlock } from "../components";
 import {
-  getTagionsPageGradients,
+  bottomPageAnimatedGradientData,
+  topPageAnimatedGradientData,
   youCanParticipateBlockData,
 } from "../content";
+import { AnimatedGradientWrapper } from "../wrappers";
 
 import getTagionsPageIntro from "../assets/images/get-tagions-page/get_tagions_intro.png";
 
@@ -22,10 +24,7 @@ const cx = classNames.bind(styles);
 const GetTagionsPage = () => {
   return (
     <Layout withPaddingTop={false}>
-      <GradientSpotsWrapper
-        gradients={getTagionsPageGradients.introductoryBlock}
-        disableMainSidePaddings
-      >
+      <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
           title="Get Tagions"
           description="Buy Tagions today. Join the movement to build a future proof monetary system."
@@ -38,14 +37,15 @@ const GetTagionsPage = () => {
           }}
         />
         <BuyEarnTagionsBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
 
-      <GradientSpotsWrapper
-        gradients={getTagionsPageGradients.subscribeToNewsletterBlock}
+      <AnimatedGradientWrapper
+        gradientData={bottomPageAnimatedGradientData}
+        withLateralPaddings
       >
         <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
         <SubscribeToOurNewsletterBlock />
-      </GradientSpotsWrapper>
+      </AnimatedGradientWrapper>
     </Layout>
   );
 };

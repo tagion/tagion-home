@@ -10,7 +10,7 @@ $circle_margin_top_mobile: -16.5px;
   margin-bottom: 80px;
 
   .text {
-    margin-bottom: 80px;
+    margin-bottom: 48px;
 
     br {
       content: " ";
@@ -84,9 +84,8 @@ $circle_margin_top_mobile: -16.5px;
           }
 
           .description {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: 12px;
+            line-height: 18px;
           }
         }
       }
@@ -98,10 +97,6 @@ $circle_margin_top_mobile: -16.5px;
   }
 
   @media (min-width: $tablet-size) {
-    .text {
-      margin-bottom: 48px;
-    }
-
     .circles_block > .circles_wrapper {
       .circle_block {
         width: 440px;

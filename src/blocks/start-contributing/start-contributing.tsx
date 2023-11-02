@@ -51,7 +51,7 @@ export const StartContributingBlock: React.FC = ({}) => {
   );
 
   return (
-    <div className={`${cx("start_contributing_block")} main-lateral-paddings`}>
+    <div className={`${cx("start_contributing_block")} main_lateral_paddings`}>
       <div className={`${cx("title")} title-font`}>
         Start contributing
         <br />

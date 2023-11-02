@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import classNames from "classnames/bind";
 import { Popper } from "@mui/material";
+import { isSafari } from "react-device-detect";
 
 import { CustomLink, SideMenu, SocialLinks } from "../../components";
 import { BreakpointNames, PageSizes } from "../../common/enums";
@@ -53,9 +54,14 @@ export const Header: React.FC<InputProps> = ({
     setIsSubMenuOpened(() => true);
   };
 
-  const resizeHandler = () => {
-    setIsSideMenuDisplayed(() =>
-      window.innerWidth > PageSizes.DESKTOP_LARGE ? false : true
+  const resizeHandler = (bodyDOM: HTMLElement) => {
+    const { paddingRight } = getComputedStyle(bodyDOM);
+    const parsedPaddingRight = parseFloat(paddingRight);
+    const bodyDOMWidth = bodyDOM.clientWidth - parsedPaddingRight;
+
+    setIsSideMenuDisplayed(
+      () =>
+        (isSafari ? bodyDOMWidth : window.innerWidth) < PageSizes.DESKTOP_LARGE
     );
   };
 
@@ -83,10 +89,11 @@ export const Header: React.FC<InputProps> = ({
   };
 
   useEffect(() => {
-    resizeHandler();
-    window.addEventListener("resize", () => resizeHandler());
+    const bodyDOM = document.getElementsByTagName("body")[0];
+    resizeHandler(bodyDOM);
+    window.addEventListener("resize", () => resizeHandler(bodyDOM));
     return () => {
-      window.removeEventListener("resize", () => resizeHandler());
+      window.removeEventListener("resize", () => resizeHandler(bodyDOM));
     };
   }, []);
 
@@ -183,12 +190,10 @@ export const Header: React.FC<InputProps> = ({
         }}
       />
 
-      {isSideMenuDisplayed && (
-        <SideMenu
-          isOpened={isSideMenuOpened}
-          isOpenedHandler={setIsSideMenuOpened}
-        />
-      )}
+      <SideMenu
+        isOpened={isSideMenuDisplayed && isSideMenuOpened}
+        isOpenedHandler={setIsSideMenuOpened}
+      />
 
       {anchorSubMenuElement && selectedSubContent?.length && (
         <Popper

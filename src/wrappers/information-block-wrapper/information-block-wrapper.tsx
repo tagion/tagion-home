@@ -142,7 +142,7 @@ export const InformationBlockWrapper: React.FC<
     <Grid
       container
       columns={miuCustomColumns}
-      className={`${cx("information_block_wrapper")} main-lateral-paddings  ${
+      className={`${cx("information_block_wrapper")} main_lateral_paddings  ${
         classNames?.informationBlockWrapper || ""
       }`}
       id="information_block_wrapper"

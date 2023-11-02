@@ -25,7 +25,7 @@ export const PermissionlessTagionHashgraphSwiper: React.FC<InputProps> = ({
     <div
       className={`${cx(
         "tagion_hashgrap_swiper_block"
-      )} disable-lateral-margins ${classNames?.wrapper}`}
+      )} disable_lateral_margins ${classNames?.wrapper}`}
     >
       <CustomSwiper
         items={cardGenerator()}

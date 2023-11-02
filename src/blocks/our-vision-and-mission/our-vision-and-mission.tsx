@@ -14,18 +14,17 @@ export const OurVisionAndMissionBlock: React.FC = () => {
     <div
       className={`${cx(
         "our_vision_and_mission_block"
-      )} disable-lateral-margins`}
+      )} disable_lateral_margins`}
     >
       <div className={`${cx("text")} main-lateral-margins`}>
-        <div className={`${cx("title")} title-font`}>
-          Our vision and mission
-        </div>
+        <div className={`${cx("title")} title-font`}>Our vision</div>
         <span className={`${cx("description")} body-font`}>
-          Our vision is to empower inclusive participation to cultivate a Common
-          Good sustainable network for a resilient future. <br />
-          Our mission is to advance use of fair decentralised technology by
-          developing an inclusive economic protocol and network for diverse
-          applications.
+          Our vision is to pioneer a real global alternative to the incumbent
+          financial systems that is open for everyone. <br />
+          Financial systems should benefit everyone and not the few. Everyone
+          deserves the freedom to choose alternatives and create the best life
+          and prosperity for themselves. Tagion enables an efficient economy
+          where every actor is empowered to build their optimal future.
         </span>
       </div>
       <div className={cx("circles_block")}>
@@ -62,7 +61,10 @@ const CircleBlock = ({
   title: string;
   description: JSX.Element | string;
   withVerticalLine?: boolean;
-  style?: { title: BreakpointsStyleObjectType };
+  style?: {
+    title: BreakpointsStyleObjectType;
+    description?: BreakpointsStyleObjectType;
+  };
 }) => {
   const { breakpointDeterminator, pageSize } = usePageBreakpointDeterminator();
   useResizeEvent({
@@ -80,7 +82,12 @@ const CircleBlock = ({
         >
           {title}
         </div>
-        <div className={`${cx("description")} inter_400`}>{description}</div>
+        <div
+          className={`${cx("description")} inter_400`}
+          style={pageSize ? style?.description?.[pageSize] : {}}
+        >
+          {description}
+        </div>
         {withVerticalLine && (
           <div className={cx("vertical_line_wrapper")}>
             <div className={cx("line")}>

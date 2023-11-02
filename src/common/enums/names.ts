@@ -28,3 +28,10 @@ export enum SocialLinkNames {
   GITHUB = "github",
   DISCORD = "discord",
 }
+
+export enum GradientColorsName {
+  PHITO_GREEN = "phito_green",
+  IONIC_MINT = "ionic_mint",
+  OZONE_BLUE = "ozone_blue",
+  TAG_BLUE = "tag_blue",
+}

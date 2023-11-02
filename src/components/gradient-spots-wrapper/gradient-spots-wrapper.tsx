@@ -98,7 +98,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
       className={`${cx("gradient_spots_wrapper", {
         mainSidePaddings: !disableMainSidePaddings,
         disableOverflowHidden,
-      })} disable-lateral-margins ${className?.gradientWrapper || ""}`}
+      })} disable_lateral_margins ${className?.gradientWrapper || ""}`}
       style={{
         background: `no-repeat ${gradientOptions?.bgPositionX || "0%"} ${
           gradientOptions?.bgPositionY || "top"
@@ -120,7 +120,7 @@ export const GradientSpotsWrapper: React.FC<PropsWithChildren<InputProps>> = ({
   return bgColor ? (
     <div
       style={{ backgroundColor: bgColor }}
-      className={`disable-lateral-margins ${className?.bgWrapper || ""}`}
+      className={`disable_lateral_margins ${className?.bgWrapper || ""}`}
     >
       {gradientSpotsWrapper}
     </div>

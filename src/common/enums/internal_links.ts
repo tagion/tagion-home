@@ -17,4 +17,5 @@ export enum InternalLinks {
   USE_CASES = "/use-cases",
   USE_CASES_CCT = "/use-cases/climate-capital-technologies",
   USE_CASES_AECORN = "/use-cases/aecorn/",
+  ARTICLES = "/blog/articles",
 }
