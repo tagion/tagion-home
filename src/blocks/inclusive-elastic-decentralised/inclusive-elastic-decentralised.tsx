@@ -31,14 +31,15 @@ export const InclusiveElasticDecentralisedBlock: React.FC = () => {
       }
       description={
         <>
-          Tagion is a decentralised money-based network for the future
-          sustainable economy with low bandwidth requirements, high transaction
-          per second (TPS), low fees and zero to none environmental impact.
+          Tagion is a DLT infrastructure for transaction-based economies with a
+          customisable stack, high transaction per second (TPS), low fees and
+          zero to none environmental impact.
           <div className="text-separator" />
           We have combined a state-of-the-art distributed Tagion Hashgraph with
           groundbreaking Wavefront, syncing the graph between nodes, and an aBFT
-          consensus mechanism to bring you a complete infrastructure for
-          efficient, fungible and censorship-resistant money.
+          consensus mechanism with a distributed database to bring you a dual
+          layered solution for efficient, fungible and massively scalable use
+          cases.
         </>
       }
     />
