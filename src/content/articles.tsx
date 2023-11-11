@@ -501,9 +501,9 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
             isExternalLink
             className="underlined-link"
           >
-            Whitepaper
+            Whitepaper.
           </CustomLink>{" "}
-          and{" "}
+          {/* and{" "}
           <CustomLink
             linkTo={ExternalLinks.TAGION_TOKENOMICS}
             isExternalLink
@@ -511,7 +511,7 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
           >
             Tokenomics
           </CustomLink>
-          .
+          . */}
           <img src={discordMeetingImg} className="without_margin_bottom" />
         </>
       ),
@@ -647,17 +647,17 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
             isExternalLink
             className="underlined-link"
           >
-            Whitepaper
+            Whitepaper.
           </CustomLink>{" "}
-          and{" "}
+          {/* and{" "}
           <CustomLink
             linkTo={ExternalLinks.TAGION_TOKENOMICS}
             isExternalLink
             className="underlined-link"
           >
             Tokenomics
-          </CustomLink>
-          .
+          </CustomLink> */}
+          {/* . */}
           <div className="text-separator" />
           <div className="inter_600 main_dark_text_color">
             Join us next time! To stay up to date follow us on Tagion
