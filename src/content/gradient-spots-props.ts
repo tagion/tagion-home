@@ -45,9 +45,9 @@ export const mainPageGradients = {
           .default,
 
       options: {
-        bgSize: "80% 80%",
+        bgSize: "75% 80%",
         bgPositionX: "right",
-        bgPositionY: "5%",
+        bgPositionY: "21%",
       },
     },
     desktop_large: {
@@ -56,9 +56,9 @@ export const mainPageGradients = {
           .default,
 
       options: {
-        bgSize: "80% 80%",
+        bgSize: "75% 80%",
         bgPositionX: "right",
-        bgPositionY: "15%",
+        bgPositionY: "27%",
       },
     },
     desktop: {
@@ -69,7 +69,7 @@ export const mainPageGradients = {
       options: {
         bgSize: "80% 80%",
         bgPositionX: "right",
-        bgPositionY: "58%",
+        bgPositionY: "30%",
       },
     },
     tablet: {
@@ -77,14 +77,14 @@ export const mainPageGradients = {
         require("../assets/images/gradient/main-page/tablet/secure_block_600.png")
           .default,
 
-      options: { bgSize: "100% 65%", bgPositionY: "42%" },
+      options: { bgSize: "100% 65%", bgPositionY: "35%" },
     },
     mobile: {
       img: () =>
         require("../assets/images/gradient/main-page/mobile/secure_block_280.png")
           .default,
 
-      options: { bgSize: "100% 48%", bgPositionY: "53%" },
+      options: { bgSize: "100% 35%", bgPositionY: "51%" },
     },
   },
   subscribeToNewsletterBlock: {

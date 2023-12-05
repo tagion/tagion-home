@@ -8,6 +8,7 @@ import {
   ScrollingBlock,
 } from "../components";
 import {
+  AecornBlock,
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
@@ -44,7 +45,7 @@ const IndexPage = () => {
               Ready For <span className="massive_word">Massive</span> Scale
             </>
           }
-          description="Future-proof economies need a modular, distributed and massively scalable foundation to build resilient use cases. Tagion delivers a next-generation transaction-based infrastructure for the real world."
+          description="Future-proof economies need a customisable, distributed and massively scalable foundation to build resilient use cases. Tagion is a decentralised network for high volume transactions and distributed solutions. "
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
@@ -68,13 +69,10 @@ const IndexPage = () => {
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
         <SecureScalableDecentralisedBlock />
-        <YouCanParticipateBlock
-          className="main_lateral_paddings"
-          data={youCanParticipateBlockData.mainPage}
-        />
-        <ValuePartnersBlock />
+        <AecornBlock />
       </GradientSpotsWrapper>
-
+      <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
+      <ValuePartnersBlock />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
