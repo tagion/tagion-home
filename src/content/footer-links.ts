@@ -42,7 +42,7 @@ export const footerColumnLinks = [
         linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
         externalLink: true,
       },
-      // tokenomicsPdfLink,
+      tokenomicsPdfLink,
     ],
   },
 ];
