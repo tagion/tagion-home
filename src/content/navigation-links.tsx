@@ -128,7 +128,7 @@ export const navigationLinks: Array<{
         img: brandGuidelinesIcon,
         externalLink: true,
       },
-      // tokenomicsPdfLink,
+      tokenomicsPdfLink,
     ],
   },
   {
