@@ -2,48 +2,46 @@ import React from "react";
 
 import { BreakpointsStyleObjectType } from "../common/types/breakpoints-style-object-type";
 
-import workInProgressPng from "../assets/images/work_in_progress.png";
-import globePng from "../assets/images/globe.png";
+import exchangePng from "../assets/images/exchange.png";
 import securityPng from "../assets/images/security.png";
-import transaction from "../assets/images/transaction.png";
+import trustPng from "../assets/images/trust.png";
+import workInProgressPng from "../assets/images/work_in_progress.png";
 
 export const nextGennFinancialInfrastrucureData: Array<{
   title: string | React.ReactElement;
   description: string;
   img: string;
-  style?: { title: BreakpointsStyleObjectType };
+  style?: Partial<Record<"title" | "description", BreakpointsStyleObjectType>>;
 }> = [
   {
-    title: "Data integrity with distributed storage on the network",
+    title: "Massively scalable. Prepared for future growth",
     description:
-      "Experience secure decentralisation, efficient transaction tracking, and flexible data management. Handle large volumes of data simultaneously with ease.",
+      "Tagion is unlike other ledgers technologies where all data history is stored. Delete obsolete data and save storage space. Own your data with a distributed database with full consensus.",
     img: workInProgressPng,
-    style: { title: { desktop: { width: "472px" } } },
+    style: {
+      title: { desktop: { width: "472px" } },
+    },
   },
   {
-    title: "Performance at scale with security",
+    title: "Outstanding performance at speed, volume and low cost",
     description:
-      "Transfer money, exchange and validate data fast at almost no cost. Benefit from high transaction volumes optimised for high bandwidth capacity thanks to novel DLT infrastructure.",
+      "Transfer money, exchange and validate data fast at almost no cost. Benefit from high transaction volumes and distributed storage optimised for high throughput.",
+    img: exchangePng,
+  },
+  {
+    title: "No way of jumping the line",
+    description:
+      "No risk of unfair transaction advantage. No need for oracles. Fair ordering ensures there’s no manipulation or bias.",
+    img: trustPng,
+    style: {
+      title: { desktop_large: { width: "400px" } },
+      description: { tablet: { width: "460px" } },
+    },
+  },
+  {
+    title: "Enhanced security with embedded randomness",
+    description:
+      "Randomness makes it hard for attackers to exploit vulnerabilities. It also opens possibilities for novel application features.",
     img: securityPng,
-    style: { title: { tablet: { width: "300px" } } },
-  },
-  {
-    title: "Fair ordering of transactions",
-    description:
-      "A great fit for trading and exchange platforms thanks to fair transaction processing and real price discovery. No risk of unfair transaction advantage.",
-    img: transaction,
-    style: { title: { desktop_max: { width: "365px" } } },
-  },
-  {
-    title: (
-      <>
-        Adapt to the local.{" "}
-        <span style={{ display: "inline-block" }}>Stay global</span>
-      </>
-    ),
-    description:
-      "Create context-specific applications and ecosystems with customisable governance at every layer. Make your own rules to challenge the “one-size-fits-all” approach.",
-    img: globePng,
-    style: { title: { desktop_max: { width: "504px" } } },
   },
 ];

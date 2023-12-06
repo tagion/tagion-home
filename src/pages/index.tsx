@@ -8,6 +8,7 @@ import {
   ScrollingBlock,
 } from "../components";
 import {
+  AecornBlock,
   SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
@@ -41,11 +42,10 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Build <br />
-              The Future. Start Today.
+              Ready For <span className="massive_word">Massive</span> Scale
             </>
           }
-          description="Benefit from our highly scalable, decentralised and secure DLT network infrastructure and drive innovation across finance, supply chains, nature conservation, exchange protocols and beyond."
+          description="Future-proof economies need a customisable, distributed and massively scalable foundation to build resilient use cases. Tagion is a decentralised network for high volume transactions and distributed solutions. "
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
@@ -54,11 +54,11 @@ const IndexPage = () => {
           }}
         />
         <ScrollingBlock
-          title="Next generation adaptive infrastructure"
+          title="We stand out from the crowd"
           data={nextGennFinancialInfrastrucureData}
           classNames={{
             title: cx("scrollingBlock_title"),
-            wrapper: "main_lateral_paddings",
+            wrapper: "main-lateral-margins",
           }}
         />
       </AnimatedGradientWrapper>
@@ -69,13 +69,10 @@ const IndexPage = () => {
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
         <SecureScalableDecentralisedBlock />
-        <YouCanParticipateBlock
-          className="main_lateral_paddings"
-          data={youCanParticipateBlockData.mainPage}
-        />
-        <ValuePartnersBlock />
+        <AecornBlock />
       </GradientSpotsWrapper>
-
+      <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
+      <ValuePartnersBlock />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings

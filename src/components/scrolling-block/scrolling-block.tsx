@@ -15,7 +15,12 @@ interface InputProps {
     title: string | React.ReactElement;
     description: string;
     img: string;
-    style?: { title: { [key in BreakpointNames]?: CSSProperties } };
+    style?: Partial<
+      Record<
+        "title" | "description",
+        { [key in BreakpointNames]?: CSSProperties }
+      >
+    >;
   }>;
   classNames?: { wrapper?: string; title: string };
 }
@@ -56,6 +61,9 @@ export const ScrollingBlock: React.FC<InputProps> = ({
               }}
               style={{
                 title: pageSize ? item.style?.title?.[pageSize] : {},
+                description: pageSize
+                  ? item.style?.description?.[pageSize]
+                  : {},
               }}
             />
           ))}
