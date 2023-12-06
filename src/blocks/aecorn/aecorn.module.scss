@@ -1,0 +1,157 @@
+@import "./../../styles/variables.scss";
+
+.aecorn_block {
+  .forest_img_header {
+    height: 300px;
+    padding: 24px 16px;
+
+    background-image: url("../../assets/images/main/forest.png");
+    background-size: 836px auto;
+    background-position: top -115px left -109px;
+    background-repeat: no-repeat;
+
+    svg {
+      width: 40px;
+    }
+
+    .img_text {
+      max-width: 349px;
+      margin-top: 16px;
+      color: $main-white-color;
+    }
+  }
+
+  .block_body {
+    margin-top: 48px;
+
+    .title {
+      display: block;
+      width: 180px;
+      margin-bottom: 40px;
+    }
+
+    .cases_wrapper {
+      [class~="card"]:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .button_and_title_wrapper {
+      margin-top: 40px;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .forest_img_header {
+      padding: 40px 24px;
+      background-size: 1030px auto;
+      background-position: center left 0;
+
+      .img_text {
+        margin-top: 24px;
+      }
+    }
+
+    .block_body {
+      .title {
+        width: auto;
+      }
+
+      .cases_wrapper {
+        max-width: 644px;
+
+        [class~="title"] {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    .forest_img_header {
+      height: 450px;
+      padding: 56px 80px;
+      background-size: 1542px auto;
+
+      .img_text {
+        width: 476px;
+        max-width: none;
+        margin-top: 32px;
+      }
+    }
+
+    .block_body {
+      margin-top: 56px;
+
+      .title {
+        margin-bottom: 48px;
+      }
+
+      .cases_wrapper {
+        [class~="card"]:not(:last-child) {
+          margin-bottom: 32px;
+        }
+
+        [class~="title"] {
+          margin-bottom: 24px;
+          font-size: 36px;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .forest_img_header {
+      height: 700px;
+      padding: 80px;
+      background-size: 1920px auto;
+      background-position: bottom -45px left 0;
+
+      svg {
+        width: 64px;
+      }
+
+      .img_text {
+        width: 768px;
+        margin-top: 64px;
+      }
+    }
+
+    .block_body {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-top: 80px;
+
+      .cases_wrapper {
+        width: 57.6%;
+        max-width: none;
+
+        [class~="card"]:not(:last-child) {
+          margin-bottom: 48px;
+        }
+
+        [class~="title"] {
+          font-size: 50px;
+          line-height: 50px;
+        }
+      }
+
+      .button_and_title_wrapper {
+        margin: 0;
+
+        .title {
+          width: 426px;
+          margin-bottom: 56px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .forest_img_header {
+      padding: 80px 120px;
+    }
+  }
+}

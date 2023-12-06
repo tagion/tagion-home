@@ -16,6 +16,38 @@
 
     .description {
       color: $main-gray-text-color;
+
+      .cards_wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 8px;
+        max-width: 334px;
+
+        .card {
+          display: flex;
+          flex-direction: column;
+
+          padding: 12px;
+          border: 1px solid $main-white-color;
+          border-radius: $scrollbar-border-radius;
+
+          .id {
+            font-size: 12px;
+            line-height: 15px;
+            margin-bottom: 8px;
+          }
+
+          .text {
+            color: $main-white-color;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+      }
+
+      [class~="text-separator"] {
+        height: 16px;
+      }
     }
 
     .mobile_atoms_bond_img {
@@ -51,7 +83,12 @@
     .description {
       width: 61%;
       max-width: 500px;
-      min-width: 340px;
+      min-width: 363px;
+    }
+
+    .description > .cards_wrapper {
+      width: 334px;
+      max-width: none;
     }
   }
 
@@ -70,6 +107,13 @@
   @media (min-width: $desktop-size) {
     padding: 85px 80px;
     background-position: top 0 left -50px;
+
+    .description > .cards_wrapper {
+      width: auto;
+      max-width: 560px;
+      padding-right: 46px;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 1200px) {
@@ -95,20 +139,42 @@
 
     .title,
     .description {
-      width: 628px;
+      width: 647px;
       max-width: none;
       min-width: auto;
+    }
+
+    .description {
+      .cards_wrapper {
+        width: 608px;
+        max-width: none;
+        padding: 0;
+
+        .card {
+          padding: 16px;
+
+          .id {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 16px;
+          }
+
+          .text {
+            font-size: 24px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      [class~="text-separator"] {
+        height: 24px;
+      }
     }
   }
 
   @media (min-width: 1620px) {
     background-size: 1924px 1082px;
     background-position: top -134px left 0;
-
-    .title,
-    .description {
-      width: 647px;
-    }
   }
 
   @media (min-width: $desktop-max-size) {
