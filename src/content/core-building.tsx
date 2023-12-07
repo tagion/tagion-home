@@ -75,7 +75,7 @@ export const coreBuildingBlockData = [
         valueName:
           "DART - A powerful Distributed Database built into the network",
         paragraphList: [
-          "The DART generates a unique and secure identifier, called a bullseye, for its hash tree. It can quickly and inexpensively calculate the bullseye, even for large databases. By using a consensus mechanism, the nodes in the network agree on the bullseye of their respective databases, creating a robust distributed storage system with network integrity. The DART seamlessly integrates with the consensus process because it facilitates easy comparison of database states",
+          "The DART generates a unique and secure identifier, called a bullseye, for its hash tree. It can quickly and inexpensively calculate the bullseye, even for large databases. By using a consensus mechanism, the nodes in the network agree on the bullseye of their respective databases, creating a robust distributed storage system with network integrity. The DART seamlessly integrates with the consensus process because it facilitates easy comparison of database states.",
         ],
       },
       {
