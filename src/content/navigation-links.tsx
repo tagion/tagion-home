@@ -4,6 +4,7 @@ import { ExternalLinks, InternalLinks } from "../common/enums";
 
 import tokenIcon from "../assets/images/token.png";
 import globeIcon from "../assets/images/globe.png";
+import docsIcon from "../assets/images/docs_icon.svg";
 import brandGuidelinesIcon from "../assets/images/brand_guidelines.png";
 import tokenomicsIcon from "../assets/images/stack-of-coins-icon.png";
 import whitepaperIcon from "../assets/images/whitepaper.png";
@@ -116,10 +117,11 @@ export const navigationLinks: Array<{
       //   Icon: () => <GovermentIcon />,
       // },
       {
-        name: "SDKs",
-        linkTo: InternalLinks.NOT_FOUND,
-        description: "Coming soon",
-        Icon: () => <BuildIcon />,
+        name: "Docs",
+        linkTo: ExternalLinks.DOCS,
+        description: "Tagion Documentation",
+        img: docsIcon,
+        externalLink: true,
       },
       {
         name: "Brand guidelines",
