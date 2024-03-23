@@ -5,7 +5,7 @@ export enum ExternalLinks {
   TAGION_WHITEPAPER = "/resources/tagion-whitepaper.pdf",
 
   GITHUB = "https://github.com/tagion",
-  DOCS = "",
+  DOCS = "https://docs.tagion.org",
   DISCORD = "https://discord.gg/za2hb62quR",
   TWITTER = "https://twitter.com/TagionOfficial",
   TELEGRAM = "https://t.me/tagionChat",

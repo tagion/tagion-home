@@ -79,7 +79,7 @@ export const valueForContributorsBlockData = {
 
     {
       title: <>Docs</>,
-      description: "Coming soon",
+      description: "Tagion documentation",
       img: docsIcon,
       linkTo: ExternalLinks.DOCS,
     },
