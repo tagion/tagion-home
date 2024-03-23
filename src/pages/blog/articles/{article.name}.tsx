@@ -40,7 +40,7 @@ const ArticlePage: React.FC<InputProps> = ({ data: { article } }) => {
           setArticleData(data[article.dataObjectName] as ArticleDataType);
         })
         .catch((e) =>
-          console.log("An error occurred during importing file:", e)
+          console.error("An error occurred during importing file:", e)
         );
   }, [article]);
 

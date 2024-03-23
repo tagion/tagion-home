@@ -96,8 +96,6 @@ export const Form: React.FC<InputProps> = ({
       defineYourselfIndex,
       howWeCanHelp,
     }) => {
-      console.log(email, name, phoneNumber, defineYourselfIndex, howWeCanHelp);
-
       const category =
         defineYourselfIndex === ""
           ? DefineYourselfOptions.INTERESTED

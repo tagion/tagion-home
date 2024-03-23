@@ -31,7 +31,7 @@ export const useRequest = <T>({
       const response = await req();
       setResponse(response.data);
       onSuccess && onSuccess(response.data);
-      console.log(`Response: ${response.data}.\nStatus: ${response.status}.`);
+      // console.log(`Response: ${response.data}.\nStatus: ${response.status}.`);
     } catch (error: unknown) {
       setError(error as Error);
       onFailure && onFailure(error);
