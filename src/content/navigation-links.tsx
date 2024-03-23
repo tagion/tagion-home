@@ -45,7 +45,7 @@ export const tokenomicsPdfLink = {
 };
 
 export const whitepaperPdfLink = {
-  name: "Whitepaper",
+  name: "Tech Concept Paper",
   linkTo: ExternalLinks.TAGION_WHITEPAPER,
   description: "Dive into the details",
   img: whitepaperIcon,

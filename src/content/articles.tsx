@@ -501,7 +501,7 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
             isExternalLink
             className="underlined-link"
           >
-            Whitepaper.
+            Technical Concept Paper.
           </CustomLink>{" "}
           {/* and{" "}
           <CustomLink
@@ -647,7 +647,7 @@ export const tagionStandsOutFromTheCrowdArticleData: ArticleDataType = {
             isExternalLink
             className="underlined-link"
           >
-            Whitepaper.
+            Technical Concept Paper.
           </CustomLink>{" "}
           {/* and{" "}
           <CustomLink
