@@ -29,7 +29,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install  
+        run: npm install --legacy-peer-deps 
+
+      - name: hack a .env file
+        run: echo "GATSBY_GOOGLE_ANALYTICS_ID=wowo" >> .env
 
       - name: build site
         run: |
