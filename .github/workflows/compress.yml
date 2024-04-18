@@ -2,7 +2,7 @@ name: Compress Images
 on:
   pull_request:
     branches: 
-      - page_test
+      - pages_test
     paths:
       - '**.jpg'
       - '**.jpeg'
