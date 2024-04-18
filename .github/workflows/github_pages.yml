@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# defaults:
+#   run:
+#     working-directory: "docs/"
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install  
+
+      - name: build site
+        run: |
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "public/"
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
