@@ -42,7 +42,7 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Ready For New Ecosystems
+              Hey Philip!
             </>
           }
           description="Future-proof economies need a customisable, distributed and massively scalable foundation to build resilient use cases. Tagion is a decentralised network for high volume transactions and distributed solutions. "
