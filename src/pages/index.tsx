@@ -40,9 +40,11 @@ const IndexPage = () => {
         <IntroductoryBlock
           gifAnimation={pointAnimation}
           img={mainPageIntro}
-          title={
-            <>
-              Ready For New Ecosystems
+          title="Ready For New Ecosystems"
+          classNames={{
+            title: cx("scrollingBlock_title"),
+            wrapper: "main-lateral-margins",
+          }}
             </>
           }
           description="Future-proof economies need a customisable, distributed and massively scalable foundation to build resilient use cases. Tagion is a decentralised network for high volume transactions and distributed solutions. "
