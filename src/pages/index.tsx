@@ -42,7 +42,7 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Ready For <span className="massive_word">Massive</span> Scale
+              Ready For <span className="massive_word">New</span> Ecosystems
             </>
           }
           description="Future-proof economies need a customisable, distributed and massively scalable foundation to build resilient use cases. Tagion is a decentralised network for high volume transactions and distributed solutions. "
