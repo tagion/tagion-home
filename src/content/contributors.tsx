@@ -5,11 +5,8 @@ import { ContributorsTypeName } from "../common/enums";
 import TheisSimonsen from "../assets/images/contributors/Theis_Simonsen.png";
 import KristianVestergaard from "../assets/images/contributors/Kristian_Vestergaard.png";
 import CarstenRamussen from "../assets/images/contributors/Carsten_Ramussen.png";
-import NikolaiBang from "../assets/images/contributors/Nikolai_Bang-Rasmussen.png";
 import JonasLodahl from "../assets/images/contributors/Jonas Lodahl.png";
-import ChristianVincensHeller from "../assets/images/contributors/Christian_Vincens_Heller.png";
 import AlexBohdanov from "../assets/images/contributors/Alex_Bohdanov.png";
-import MatlabMehdiyev from "../assets/images/contributors/Matlab_Mehdiyev.png";
 import MaximSpiridonov from "../assets/images/contributors/Maxim_Spiridonov.png";
 import AntonLabenskiy from "../assets/images/contributors/Anton_Labenskiy.png";
 import LeifRasmussen from "../assets/images/contributors/Leif Rasmussen.png";
@@ -67,23 +64,7 @@ export const contributorsBlockData = [
       "Systems Engineer specialising in hardware cryptography and security. 20+ years of experience in systems engineering, programming and ASIC design. Co-founder/ CTO at Polaric Semiconductor.",
     linkedinLink:
       "https://www.linkedin.com/in/carsten-bleser-rasmussen-80699915/",
-  },
-  {
-    portrait: NikolaiBang,
-    name: (
-      <>
-        Nicolai Bang-
-        <br />
-        Rasmussen
-      </>
-    ),
-    label: "Economic contributor",
-    type: ContributorsTypeName.ECONOMIC_CONTRIBUTORS,
-    description:
-      "M.S. in Operations and Management Engineering. 5+ years' strategic experience in upstream and downstream development within finance and technology at Ørsted, Nordea, and Danish Public Care.",
-    linkedinLink:
-      "https://www.linkedin.com/in/nicolai-bang-rasmussen-996b9a13b/",
-  },
+  },  
   {
     portrait: JonasLodahl,
     name: (
@@ -98,22 +79,7 @@ export const contributorsBlockData = [
     description:
       "Skilled professional with substantial experience and expertise in the domain of issuing tokenised securities at DigiShares. Hold deep knowledge of financial instruments and monetary systems",
     linkedinLink: "https://www.linkedin.com/in/jonaslodahl/",
-  },
-  {
-    portrait: ChristianVincensHeller,
-    name: (
-      <>
-        Christian
-        <br />
-        Vincens-Heller
-      </>
-    ),
-    label: "Economic contributor",
-    type: ContributorsTypeName.ECONOMIC_CONTRIBUTORS,
-    description:
-      "A seasoned COO and CFO in global financial institutions and the banking industry, including 20+ years in international banking at UBS, Credit Suisse and Nordea.",
-    linkedinLink: "https://www.linkedin.com/in/christianvincensheller/",
-  },
+  },  
   {
     portrait: LeifRasmussen,
     name: (
@@ -143,22 +109,7 @@ export const contributorsBlockData = [
     description:
       "Core Developer. Enthusiastic software developer. Sets efficient work and team performance as the highest priority. Leads application team to deliver outstanding user-focused products.",
     linkedinLink: "https://www.linkedin.com/in/aleksandr-bohdanov/",
-  },
-  {
-    portrait: MatlabMehdiyev,
-    name: (
-      <>
-        Matlab
-        <br />
-        Mehdiyev
-      </>
-    ),
-    label: "Technology contributor",
-    type: ContributorsTypeName.TECHNOLOGY_CONTRIBUTORS,
-    description:
-      "DevOPs and Cloud Engineer with experience working at central bank as a Linux and DevOps engineer. Now spends time developing open and distributed payments systems.",
-    linkedinLink: "https://www.linkedin.com/in/matlab-mehdiyev/",
-  },
+  },  
   {
     portrait: MaximSpiridonov,
     name: (
