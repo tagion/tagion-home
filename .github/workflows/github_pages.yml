@@ -3,16 +3,19 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - pages_test
+      - master
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# defaults:
-#   run:
-#     working-directory: "docs/"
+env:
+  APP_NAME: tagion-home
+  PROD_PROJECT_NAME: prod-tagion-home
+  GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
+  GATSBY_GOOGLE_ANALYTICS_ID: ${{ secrets.GATSBY_GOOGLE_ANALYTICS_ID }}
+  GATSBY_MAIL_SERVICE_ENDPOINT: ${{ vars.GATSBY_MAIL_SERVICE_ENDPOINT }}
 
 jobs:
   deploy:
@@ -28,11 +31,15 @@ jobs:
           node-version: 18
           cache: npm
 
+      - name: create .env file
+        run: |
+          echo ${{ env.GATSBY_ENV }} > .env
+          echo ${{ env.GATSBY_GOOGLE_ANALYTICS_ID }} >> .env
+          echo ${{ env.GATSBY_MAIL_SERVICE_ENDPOINT }} >> .env
+
       - name: Install dependencies
         run: npm install --legacy-peer-deps 
-      - name: hack a .env file
-        run: echo "GATSBY_GOOGLE_ANALYTICS_ID=wowo" >> .env
-
+  
       - name: build site
         run: |
           npm run build
