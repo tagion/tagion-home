@@ -18,6 +18,7 @@ import dartHibonWavefrontImg from "../assets/images/blog/dart_hibon_wavefront.pn
 import hashgraphTimeBasedStakingImg from "../assets/images/blog/hashgraph_time-based-staking.png";
 import passiveActivePoolImg from "../assets/images/blog/passive_active_pool.png";
 import passiveActivePoolSchemaImg from "../assets/images/blog/passive_active_pool_schema.png";
+import mediumLogoImg from "../assets/images/medium_logo.png";
 
 type ArticleDataType = {
   name: string;
@@ -1244,6 +1245,48 @@ export const achievingTrueDecentralisationWithNodeSwappingArticleData: ArticleDa
     ],
   };
 
+  export const tagionBlogMovedToMediumArticleData: ArticleDataType =
+  {
+    name: "The active Tagion blog is now on https://tagion.medium.com",
+    timeToRead: "2 min",
+    dateOfCreation: "22 Sep 2024",
+    description: "Tagion blog has moved to Medium.",
+    author: "@kv",
+    descriptiveImgData: {
+      path: mediumLogoImg,
+      alt: "Tagion blog moved to Medium",
+      style: { border: `1px solid ${Colors.MAIN_DARK}` },
+    },
+    labels: [0, 2],
+    linkTo: "tagionBlogMovedToMediumArticleData",
+    textContent: 
+    [
+      {
+        body: (
+          <>
+            The Tagion blog has moved to Medium.{" "}
+            <img
+              src={mediumLogoImg}
+              alt="Tagion blog moved to Medium"
+              className="without_margin_bottom with_border"
+            />
+          </>
+        ),
+      },
+      {
+        body: (
+          <>
+            The Tagion blog has been continued at tagion.medium.com. 
+            You may go there to read up on our article series "On Money", 
+            Tokenomcis, our Seed Phrase guide and much more.
+          </>
+        ),
+      },
+      
+    ],
+  };
+ 
+
 export const articlesData = [
   redefiningMoneyArticleData,
   whyTagionusesHashgraphArticleData,
@@ -1252,5 +1295,6 @@ export const articlesData = [
   spotlightTheChallengesOfTheDLTtrilemmaArticleData,
   tagionsMassiveScalabilityPotentialArticleData,
   securityIsEmbeddedInTagionsInfrastructureArticleData,
-  achievingTrueDecentralisationWithNodeSwappingArticleData,
+  achievingTrueDecentralisationWithNodeSwappingArticleData,  
+  tagionBlogMovedToMediumArticleData,
 ];
