@@ -47,7 +47,7 @@ export const contributorsBlockData = [
     label: "Co-founder",
     type: ContributorsTypeName.CO_FOUNDERS,
     description:
-      "Experienced Entreprise Architect with 20+ years experience leading digital strategy, driving innovation and integrating M&A targets. Director of Digital Architecture at GN Audio A/S.",
+      "Experienced Entreprise Architect with 20+ years experience leading digital strategy, driving innovation and integrating M&A targets. Former Director of Digital Architecture at GN Audio A/S.",
     linkedinLink: "https://www.linkedin.com/in/kbvestergaard/",
   },
   {
