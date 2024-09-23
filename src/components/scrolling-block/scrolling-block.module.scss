@@ -44,8 +44,9 @@
     }
 
     .blocks {
-      height: 359px;
-      overflow-y: scroll;
+      //KV: Removed scroll-bar from main page (now always fully expanded)
+      //height: 359px;
+      //overflow-y: scroll;
       position: relative;
 
       .card {
