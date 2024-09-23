@@ -1282,8 +1282,8 @@ export const tagionBlogMovedToMediumArticleData: ArticleDataType = {
           >
             {ExternalLinks.MEDIUM}
           </a>
-          . You may go there to read up on our article series "On Money",
-          Tokenomcis, our Seed Phrase guide and much more.
+          . You may go there to read up on our article series "On the Money",
+          Tokenomics, our Seed Phrase guide and much more.
         </>
       ),
     },
