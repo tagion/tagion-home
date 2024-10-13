@@ -9,13 +9,13 @@ import {
 } from "../components";
 import {
   SubscribeToOurNewsletterBlock,
-  YouCanParticipateBlock,
+  //YouCanParticipateBlock,
   InclusiveElasticDecentralisedBlock,
   PermissionlessTagionHashgraphBlock,
-  EcosystemVisualizationBlock,
+  //EcosystemVisualizationBlock,
 } from "../blocks";
 import {
-  youCanParticipateBlockData,
+  //youCanParticipateBlockData,
   buildForTheRealWorldData,
   coreBuildingBlockData,
   FAQBlockData,
@@ -82,7 +82,7 @@ const EcosystemPage = () => {
         gradients={ecosystemPageGradients.ecosystemVisualizationBlock}
         mixBlendModeMultiply
       >
-        <EcosystemVisualizationBlock />
+
       </GradientSpotsWrapper>
 
       <GradientSpotsWrapper bgColor={Colors.MAIN_DARK} disableMainSidePaddings>
@@ -125,7 +125,6 @@ const EcosystemPage = () => {
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>

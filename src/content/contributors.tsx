@@ -5,6 +5,7 @@ import { ContributorsTypeName } from "../common/enums";
 import TheisSimonsen from "../assets/images/contributors/Theis_Simonsen.png";
 import KristianVestergaard from "../assets/images/contributors/Kristian_Vestergaard.png";
 import CarstenRamussen from "../assets/images/contributors/Carsten_Ramussen.png";
+/*
 import JonasLodahl from "../assets/images/contributors/Jonas Lodahl.png";
 import AlexBohdanov from "../assets/images/contributors/Alex_Bohdanov.png";
 import MaximSpiridonov from "../assets/images/contributors/Maxim_Spiridonov.png";
@@ -19,7 +20,7 @@ import YuliaDrozdyk from "../assets/images/contributors/Yulia_Drozdyk.png";
 import DanielleTichner from "../assets/images/contributors/Danielle Tichner.png";
 import TimSimonsen from "../assets/images/contributors/Tim_Simonsen.png";
 import DennisMeldhedegaardNielsen from "../assets/images/contributors/Dennis_Meldhedegaard_Nielsen.png";
-
+*/
 export const contributorsBlockData = [
   {
     portrait: TheisSimonsen,
@@ -64,7 +65,9 @@ export const contributorsBlockData = [
       "Systems Engineer specialising in hardware cryptography and security. 20+ years of experience in systems engineering, programming and ASIC design. Co-founder/ CTO at Polaric Semiconductor.",
     linkedinLink:
       "https://www.linkedin.com/in/carsten-bleser-rasmussen-80699915/",
-  },  
+  }
+  /*
+  ,  
   {
     portrait: JonasLodahl,
     name: (
@@ -276,4 +279,5 @@ export const contributorsBlockData = [
       "Investor Relations specialist. Experienced Chief Engineer with management, marine engineering, business strategy, and project planning skills.",
     linkedinLink: "https://www.linkedin.com/in/tim-simonsen-a16aa6139/",
   },
+  */
 ];

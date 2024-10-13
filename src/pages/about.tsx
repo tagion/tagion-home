@@ -7,17 +7,14 @@ import {
   aboutPageGradients,
   bottomPageAnimatedGradientData,
   topPageAnimatedGradientData,
-  youCanParticipateBlockData,
 } from "../content";
 import {
   FoundationBlock,
-  LetsTalkBlock,
   OurValuesBlock,
   OurVisionAndMissionBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
-  YouCanParticipateBlock,
-  NatureIsOurClientBlock,
+  //NatureIsOurClientBlock,
   MeetOurContributorsBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
@@ -61,7 +58,6 @@ const AboutPage = () => {
         gradients={aboutPageGradients.valuePartnersBlock}
         disableMainSidePaddings
       >
-        <ValuePartnersBlock className="main-bottom-margins" />
       </GradientSpotsWrapper>
       {/* <GradientSpotsWrapper
         gradients={aboutPageGradients.foundationBlock}
@@ -75,14 +71,12 @@ const AboutPage = () => {
         gradients={aboutPageGradients.natureIsOurClientBlock}
         disableMainSidePaddings
       >
-        <NatureIsOurClientBlock />
+        <ValuePartnersBlock className="main-bottom-margins" />
       </GradientSpotsWrapper>
-      <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>

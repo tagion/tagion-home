@@ -28,7 +28,7 @@ export const MeetOurContributorsBlock: React.FC = () => {
   return (
     <ContributorSwiper
       cardGenerator={contributorsCardGenerator}
-      title="Meet our contributors"
+      title="Meet our founders"
     />
   );
 };

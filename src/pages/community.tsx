@@ -7,7 +7,7 @@ import {
   LetsTalkBlock,
   StartContributingBlock,
   SubscribeToOurNewsletterBlock,
-  TweetsAboutTagionBlock,
+  //TweetsAboutTagionBlock,
   ValueForContributorsBlock,
 } from "../blocks";
 import {
@@ -68,7 +68,6 @@ const CommunityPage = () => {
         gradients={communityPageGradients.tweetsAboutTagionBlock}
         disableMainSidePaddings
       >
-        <TweetsAboutTagionBlock />
       </GradientSpotsWrapper>
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}

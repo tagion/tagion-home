@@ -26,51 +26,15 @@ export const coreBuildingBlockData = [
     ],
   },
   {
-    title: "Building towards a Common Good governed by the Community",
-    questions: [
-      {
-        valueName:
-          "Empowering community ownership and governance of Tagion network ",
-        paragraphList: [
-          "Community members drive and shape the development, operation, maintenance, decision-making, and governance of usable resources. Source code, programs, concepts, governance rules, and the actual running network (mainnet) are resources created and governed by the community.",
-        ],
-      },
-      {
-        valueName:
-          "Proof of Community - Reputation-weighted voting and rewards",
-        paragraphList: [
-          "Incentives, governance models and rules are essential for Tagion to be democratic and fair, where everyone has an equal right to join the community. A member's voting power and rewards are not given, they are earned over time through action, reputation and staking.",
-        ],
-      },
-      {
-        valueName: "A Self-Sustainable Common Good Revenue Model",
-        paragraphList: [
-          <>
-            The users (the community) pay for utilising the system, and the
-            users (the contributors) are paid for their work. Contributors are:
-            <ul>
-              <li>
-                Node operators who provide the infrastructure with a live
-                network.
-              </li>
-              <li>
-                Core members who develop concepts, code, tools and maintain the
-                system.
-              </li>
-              <li>Developers who build applications on top.</li>
-              <li>Ambassadors who create engagement and educate.</li>
-            </ul>
-          </>,
-        ],
-      },
-    ],
-    style: {
-      title: { tablet: { width: "470px" }, desktop_max: { width: "460px" } },
-    },
-  },
-  {
     title: "DART Distributed Database",
     questions: [
+      {
+        valueName:
+          "Decentralized community ownership and governance of the Tagion network",
+        paragraphList: [
+          "-",
+        ],
+      },
       {
         valueName:
           "DART - A powerful Distributed Database built into the network",

@@ -8,10 +8,10 @@ import {
   ScrollingBlock,
 } from "../components";
 import {
-  AecornBlock,
-  SecureScalableDecentralisedBlock,
+  //AecornBlock,
+  //SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
-  ValuePartnersBlock,
+  //ValuePartnersBlock,
   YouCanParticipateBlock,
   LetsTalkBlock,
   WhatIsTagionBlock,
@@ -68,11 +68,8 @@ const IndexPage = () => {
         disableMainSidePaddings={true}
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
-        <SecureScalableDecentralisedBlock />
-        <AecornBlock />
       </GradientSpotsWrapper>
       <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
-      <ValuePartnersBlock />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
