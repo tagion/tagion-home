@@ -11,9 +11,9 @@ import tokenPng from "../assets/images/token.png";
 export const getTagions = {
   title: (
     <>
-      <span>Get </span>
+      <span>Contribute </span>
       <div style={{ display: "inline-block" }}>
-        Tagions <SmallArrowLinkIcon />
+         <SmallArrowLinkIcon />
       </div>
     </>
   ),
@@ -25,14 +25,14 @@ export const getTagions = {
 export const visitTheBlog = {
   title: (
     <>
-      <span>Visit the </span>
+      <span>Follow and </span>
       <div style={{ display: "inline-block" }}>
-        Blog <SmallArrowLinkIcon />
+        learn <SmallArrowLinkIcon />
       </div>
     </>
   ),
   description:
-    "Discover how-to's, latest news, community generated content and more",
+    "Discover the latest news, learn our blog, engage with your peers and the stewards",
   Img: signedPaperPng,
   linkTo: InternalLinks.BLOG,
 };
@@ -40,10 +40,10 @@ export const visitTheBlog = {
 export const joinTheCommunity = {
   title: (
     <>
-      Join the Community <SmallArrowLinkIcon />
+      Get Tagions <SmallArrowLinkIcon />
     </>
   ),
-  description: "Become a part of a diverse network",
+  description: "Be an early supporter and benefit from realising our common goals",
   Img: communityPng,
   linkTo: "/community",
 };

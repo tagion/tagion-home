@@ -7,9 +7,7 @@ export const startContributingData = [
       title: "Maintainer",
       body: (
         <>
-          Do you have a keen eye for detail? If you've noticed a bug, have an
-          idea for a new feature, or want to enhance the user experience, we
-          want to hear from you. <div className="text-separator" />
+          Do you have a keen eye for detail? If you've noticed a bug, have an idea for a new feature, or want to enhance the user experience, we want to hear from you. <div className="text-separator" />
           Go to{" "}
           <span className="navigation_path">
             Discord {">"} Contributing {">"} #website channel
@@ -17,7 +15,10 @@ export const startContributingData = [
           and send a message with the suggestion, including any relevant
           screenshots or examples. <div className="text-separator" />
           Our team will carefully review each submission and select the most
-          impactful and feasible suggestions to implement.
+          impactful and feasible suggestions to implement.<div className="text-separator" />
+          We also seek translators with exceptional language skills, attention to detail and a deep understanding of the distributed technology space.
+Help us bring Tagion to the world!
+Go to Discord &gt; Contributing &gt; #translate and fill out the application form, indicating your language proficiency and providing examples of previous work.
         </>
       ),
     },
@@ -76,59 +77,39 @@ export const startContributingData = [
     },
   },
   {
-    taskName: "Translate",
+    taskName: "Co-Design our Governance",
     description: {
-      title: "Translator",
+      title: "Research contributor",
       body: (
         <>
-          Are you fluent in multiple languages and passionate about contributing
-          to building a fair economy? Do you have expertise in translating
-          complex concepts into clear and concise language?
-          <div className="text-separator" />
-          As a translator, you will be vital in making Tagion accessible to a
-          global audience. You'll bridge language barriers and ensure that our
-          whitepaper, tech and governance papers, important documents and
-          announcements are accurately translated.
-          <div className="text-separator" />
-          We seek exceptional language skills, attention to detail and a deep
-          understanding of the distributed technology space.
+          Are you a researcher, analyst or visionary with a deep understanding of distributed ledger technology, tokenomics and governance?  
+          Moving Tagion from the stewardship of the founders out into decentralisation starts right now, with your input. Help us design the most inclusive, secure and transparent governance system that can safeguard our values und ambitions. 
           <div className="text-separator" />
           Go to{" "}
           <span className="navigation_path">
-            Discord {">"} Contributing {">"} #translate and fill out the
-            application form, indicating your language proficiency and providing
-            examples of previous work.
-          </span>
+            Discord {">"} Contributing {">"} #governance to follow and participate in our development process.
+          </span>{" "}
         </>
       ),
     },
   },
   {
-    taskName: "Research",
+    taskName: "Test our Tech and run a node",
     description: {
-      title: "Research contributor",
+      title: "Test our Tech",
       body: (
         <>
-          Are you a professor, student or research analyst with a deep
-          understanding of distributed ledger technology, tokenomics and
-          governance? Are you curious and have expertise in in-depth research
-          and analysis? Help us stay ahead of the curve and make informed
-          decisions that drive the project's success.
+          All our code it publicly accessible on Github. 
+          Our indiivudal applications and packages will become  ever more comprehensive and at the same time easier to install and use - even for lay people.
           <div className="text-separator" />
-          You'll conduct comprehensive research on various topics, such as
-          regulatory developments, market trends, tokenisation, distributed
-          technology and more. You'll analyse data, compile reports and
-          contribute to the documentation.
+          To decentralise Tagion and release from the stewardship of the founders, we need tester of any skill level to give us feedback on our documentation and functionality. 
+          <div className="text-separator" />
+          Eventually, we need a network of independent nodes to test all aspects of distribution and operation.
           <div className="text-separator" />
           Go to{" "}
           <span className="navigation_path">
-            Discord {">"} Contributing {">"} #research and submit your
-            application.
-          </span>{" "}
-          We'll review the submission based on research background strength,
-          critical thinking skills and a passion for tech and social impact.
-          Highlight your research experience, area of expertise, and any
-          relevant publications or reports you have produced.
+            Discord {">"} Contributing {">"} #release-testing to get involved and share what you learn when setting up and testing our nodes.
+          </span>
         </>
       ),
     },

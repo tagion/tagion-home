@@ -67,10 +67,11 @@ export const navigationLinks: Array<{
   }>;
 }> = [
   {
-    name: "Ecosystem",
-    subContent: [
+    name: "Our Technology",
+    linkTo: InternalLinks.ECOSYSTEM,
+    /*subContent: [
       {
-        name: "Explore Ecosystem",
+        name: "Explore Ecosystem", 
         linkTo: InternalLinks.ECOSYSTEM,
         description: "Learn about our tech stack",
         img: globeIcon,
@@ -99,11 +100,15 @@ export const navigationLinks: Array<{
         description: "Coming soon",
         Icon: () => <DEXIcon />,
       },
-    ],
+    ],*/
   },
   {
-    name: "Community",
+    name: "Your Invitation",
     linkTo: InternalLinks.COMMUNITY,
+  },
+  {
+    name: "Learn & Follow",
+    linkTo: InternalLinks.LEARNANDFOLLOW,
   },
   {
     name: "Docs",
@@ -134,7 +139,7 @@ export const navigationLinks: Array<{
     ],
   },
   {
-    name: "About",
+    name: "The Origins",
     linkTo: InternalLinks.ABOUT,
   },
   {

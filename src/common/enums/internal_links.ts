@@ -6,6 +6,7 @@ export enum InternalLinks {
   ABOUT = "/about",
   ECOSYSTEM = "/ecosystem",
   BLOG = "/blog",
+  LEARNANDFOLLOW = "/learnandfollow",
   GET_TAGIONS = "/get-tagions",
   PRIVACY_POLICY = "/privacy-policy",
   TERMS_OF_USE = "/terms-of-use",

@@ -1,18 +1,10 @@
 export const ourValuesBlockData = [
   {
-    valueName: "Non-political and independent",
+    valueName: "Non-partisan and open",
     paragraphList: [
-      "We are non-political and independent, not bound to a specific system or political belief.",
-      "Our focus is on serving all humans without bias and reaching our mission.",
-      "We believe the current banking infrastructure can be improved to serve all humans with better money and more efficient banking products.",
-    ],
-  },
-  {
-    valueName: "Democratic and open",
-    paragraphList: [
-      "We are democratic and open, welcoming input from community members, commercial partners, and employees at all levels.",
-      "We prioritise human potential, competency, knowledge, and execution over rigid structures.",
-      "Our invention and innovation are open to all, and we share knowledge freely.",
+      "We are independent and non-partisan. While building a decentralised network is necessarily a politcal act, we are not bound to a specific system or political belief. Our focus is on serving all humans without bias and reaching our mission.",
+      "We believe the current monetary and financial infrastructure can be improved to serve all humans with better money and more efficient financial products.",
+      "We are democratic and open, welcoming input from community members, commercial partners, and employees at all levels. Our invention and innovation are open to all, and we share knowledge freely.",
     ],
   },
   {
@@ -24,7 +16,7 @@ export const ourValuesBlockData = [
     ],
   },
   {
-    valueName: "Freedom and responsibility",
+    valueName: "Autonomy and responsibility",
     paragraphList: [
       "We believe in the principles of freedom and responsibility, where freedom is given with accountability for outcomes.",
       "Our commitment to responsibility and accountability extends to all relationships, including the community, internal teams, and partners.",

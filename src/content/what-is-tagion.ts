@@ -8,7 +8,7 @@ export const whatIsTagionBlockCardsData: Array<{
 }> = [
   {
     id: "01",
-    text: "Digital payments",
+    text: "Non-partisan and open",
     styles: {
       [BreakpointNames.DESKTOP]: { width: "95px" },
       [BreakpointNames.DESKTOP_LARGE]: { width: "177px" },
@@ -17,13 +17,13 @@ export const whatIsTagionBlockCardsData: Array<{
   },
   {
     id: "02",
-    text: "Supply chain and logistics",
+    text: "Quality and collaboration",
     styles: {
       [BreakpointNames.DESKTOP]: { width: "127px" },
       [BreakpointNames.DESKTOP_LARGE]: { width: "170px" },
       [BreakpointNames.DESKTOP_MAX]: { width: "170px" },
     },
   },
-  { id: "03", text: "Stock Exchanges and trading platforms" },
-  { id: "04", text: "Digitalisation of real world assets (RWA)" },
+  { id: "03", text: "Autonomy and responsibility" },
+  { id: "04", text: "Privacy and transparency" },
 ];

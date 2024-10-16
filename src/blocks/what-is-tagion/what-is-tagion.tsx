@@ -26,12 +26,9 @@ export const WhatIsTagionBlock: React.FC = () => {
     >
       <div className={`${cx("title")} title-font`}>What is Tagion?</div>
       <div className={`${cx("description")} body-font`}>
-        At its core, Tagion is designed for a massive scale. It's a
-        Hashgraph-based system capable of handling a high volume of transactions
-        at great speed with high security and low cost.
-        <div className="text-separator" />
-        Tagion is a powerful asynchronous Byzantine Fault Tolerant (aBFT)
-        foundational layer for:
+      At its core, Tagion is a distributed database that combines features from blockchains and traditional centralised architectures. It is the alternative to conventional financial infrastructures that are predominatnly owned by corporations that prioritize shareholder value over user-benefits. 
+
+Tagion is decentralised, meaning that no one actor can gain power over others and that user benefits remain safeguarded. Tagion was designed and implemented based on the following values:
         <div className="text-separator" />
         <div className={cx("cards_wrapper")}>
           {whatIsTagionBlockCardsData.length &&
@@ -50,8 +47,9 @@ export const WhatIsTagionBlock: React.FC = () => {
             ))}
         </div>
         <div className="text-separator" />
-        Tagion is a toolbox for developers, communities and entreprises to build
-        locally optimised, globally shared real-world use cases.
+        Different from blockchains, Tagion's software architecture is designed for massive scale. It’s a so-called Hashgraph system that is capable of handling high volumes of transactions at great speed with high security, low cost and minimal energy consumption. 
+        <div className="text-separator" />
+        Tagion is a toolbox for developers, communities and entreprises to build locally optimised, globally shared real-world use cases.
       </div>
       <img
         className={cx("mobile_atoms_bond_img")}

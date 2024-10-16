@@ -24,22 +24,16 @@ export const InclusiveElasticDecentralisedBlock: React.FC = () => {
       cardGenerator={inclusiveCardGenerator}
       title={
         <>
-          Inclusive. Elastic.
+          Fast. Efficient.
           <br />
           Decentralised. Scalable.
         </>
       }
       description={
         <>
-          Tagion is a DLT infrastructure for transaction-based economies with a
-          customisable stack, high transaction per second (TPS), low fees and
-          zero to none environmental impact.
+          Tagion is a DLT infrastructure for transaction-based economies with a customisable stack, high transaction per second (TPS), low fees and zero-to-none environmental impact.
           <div className="text-separator" />
-          We have combined a state-of-the-art distributed Tagion Hashgraph with
-          groundbreaking Wavefront, syncing the graph between nodes, and an aBFT
-          consensus mechanism with a distributed database to bring you a dual
-          layered solution for efficient, fungible and massively scalable use
-          cases.
+          We have combined a state-of-the-art distributed Tagion Hashgraph with groundbreaking Wavefront, syncing the graph between nodes, and an aBFT consensus mechanism with a distributed database to bring you a dual layered solution for efficient, fungible and massively scalable use cases.
         </>
       }
     />

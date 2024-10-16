@@ -4,17 +4,14 @@ export const ourVisionAndMissioBlockData = [
   {
     title: "Research and Development",
     description:
-      "Establishing foundational technology and governance concepts and prototypes.",
+      "Establishing foundational technology and governance concepts and prototypes. Founding of Decard Group AG. Token sales to fund technical development.",
     label: "2017 - 2022",
   },
   {
     title: "Utility and Adoption",
     description: (
       <>
-        Building real utility and adoption.
-        <br />
-        Providing customisable infrastructure for a businesses, communities and
-        developers.
+        Building real utility and adoption. Providing customisable infrastructure for a businesses, communities and developers. Staged decentralisation of Tagion.
       </>
     ),
     label: "2023 - 2027",

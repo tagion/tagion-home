@@ -14,24 +14,24 @@ export const nextGennFinancialInfrastrucureData: Array<{
   style?: Partial<Record<"title" | "description", BreakpointsStyleObjectType>>;
 }> = [
   {
-    title: "Massively scalable. Prepared for future growth",
+    title: "Account for what you value",
     description:
-      "Tagion is unlike other ledgers technologies where all data history is stored. Delete obsolete data and save storage space. Own your data with a distributed database with full consensus.",
+      "Make your assets liquid, tradeable and accessible. Use tokens to represent ownership titles, access rights, financial instruments or any type of asset.  Create your own currencies to represent  what you value and enable the use-cases you envision.",
     img: workInProgressPng,
     style: {
       title: { desktop: { width: "472px" } },
     },
   },
   {
-    title: "Outstanding performance at speed, volume and low cost",
+    title: "You own it, together. Nobody exploits it.",
     description:
-      "Transfer money, exchange and validate data fast at almost no cost. Benefit from high transaction volumes and distributed storage optimised for high throughput.",
+      "Electronic payments and financial tools are a necesity of modern life. The underlying infrastructure should be a public good, universaly accessible and not operated for private profits. That is how Tagion is designed. It belogns to all who contribute and rely on it.",
     img: exchangePng,
   },
   {
-    title: "No way of jumping the line",
+    title: "Decentralised mainnet - federated sub-systems",
     description:
-      "No risk of unfair transaction advantage. No need for oracles. Fair ordering ensures there’s no manipulation or bias.",
+      "Thanks to sub-systems that can synchronize but remain independent from the mainnet, you can customise your network to work according to your rules. Create incentives and governance rules that suit your context.",
     img: trustPng,
     style: {
       title: { desktop_large: { width: "400px" } },
@@ -39,9 +39,9 @@ export const nextGennFinancialInfrastrucureData: Array<{
     },
   },
   {
-    title: "Enhanced security with embedded randomness",
+    title: "At scale and speed",
     description:
-      "Randomness makes it hard for attackers to exploit vulnerabilities. It also opens possibilities for novel application features.",
+      "Read, write, update and delete data seamlessly. Make transactions at the speed of conventional payment systems, but with the benefits of distributed networks. All with minimal energy consumption.",
     img: securityPng,
   },
 ];

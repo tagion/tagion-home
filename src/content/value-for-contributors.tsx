@@ -16,12 +16,12 @@ export const valueForContributorsBlockData = {
   informationCards: [
     {
       title: "Grow your reputation",
-      description: "Engage in community and network governance",
+      description: "Engage and shape our network governance",
       img: securityIcon,
     },
     {
       title: "Get Tagion rewards",
-      description: "Join early, explore and play Get Tagions in return",
+      description: "Join early, explore, contribute and test: Get Tagion tokens in return!",
       img: tokenIcon,
     },
   ],

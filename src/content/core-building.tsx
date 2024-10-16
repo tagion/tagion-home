@@ -81,6 +81,44 @@ export const coreBuildingBlockData = [
           "Sub-DARTs are customisable ecosystems with dedicated databases and optional specialised infrastructure. Each Sub-DART has its own governance rules written in its database, and the user configures and decides on these rules. Infrastructure capabilities are paid for in Tagions. Sub-DARTs can also be integrated into Tagion DEX functionality, making them tradeable with Tagions and all assets on the platform.",
         ],
       },
+      {
+        valueName:
+          "Decentralised community ownership and governance of the Tagion network",
+        paragraphList: [
+          "Tagion will become a truly decentralised network, in which no entity can dominate the others for their own benefit. To achieve this we strive for the highest level of inclusivity and openness for new node-operators to join  the network and contribute to its resilience. Balancing this openness with the need for protection from network attacks and malicious takeovers is the delicate task of our governance system and the staged process of releasing the Tagion mainnet from the stewardship of the founders.",
+        ],
+      },
+      
+    ],
+  },
+  {
+    title: "Ecosystem of applications",
+    questions: [
+      {
+        valueName:
+          "Sub-systems with independent governance and bespoke rules",
+        paragraphList: [
+          "Our database system and network is organised in a federated architecture, with a Tagion mainnet and associated sub-systems. These sub-systems are fully customisable for the specific needs of projects, products or communities. Each sub-system has its own governance rules written in its database, and the users configure and decide on these rules independent from the mainnet rules.",
+        ],
+      },
+      {
+        valueName: "Development suite for complementary currencies",
+        paragraphList: [
+          "Tagion offers fast, efficient transactions without compromising decentralisation or security. This infrastrucutre cannot only transact with Tagions - our native utility tokens - but allows for the creation of bespoke currencies of all kinds. Read our blog series 'On the Money' to learn more about how and why.",
+        ],
+      },
+      {
+        valueName: "Decentralized exchange platform (DEX)",
+        paragraphList: [
+          "A native DEX application will ensure seamless trading with various currencies, both crypto and fiat. Exchange digital assets seamlessly. The Tagion Decentralised Exchange Protocol will enable real price discovery and transparency to create the best use of liquidity and pricing.",
+        ],
+      },
+      {
+        valueName: "Built equally for niche economies and mainstream projects",
+        paragraphList: [
+          "The Tagion network is the only distributed database that  is also decentralised while providing the speed, scale and efficiency needed for mainstream financial applications. The federated architecture with independent sub-systems allows for bespoke product suites and applications for many industries and stakeholder-constellations. The low energy consumption, lean data-architecure and inclusive licensing model and transparent governance provides means the above benefits do not only extend to corporate or governmental implementations but also invite shyper-local, non-profit and experimental communities to build on this infrastructure on equal terms. We’re creating a network where everyone has a stake, fostering an ecosystem that values contribution, collaboration, and mutual growth.",
+        ],
+      },
     ],
   },
 ];
