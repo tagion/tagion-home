@@ -18,7 +18,7 @@ export const OurValuesBlock: React.FC = () => {
       <div className={cx("heading")}>
         <div className={`${cx("title")} title-font`}>Our values</div>
         <div className={`${cx("description")} body-font`}>
-          We believe in transparency, privacy and solving real problems.
+          We believe in transparency, privacy and financial infrastructure that benefits all.
         </div>
       </div>
 

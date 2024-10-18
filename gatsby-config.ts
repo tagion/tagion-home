@@ -18,9 +18,9 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          process.env.GATSBY_GOOGLE_ANALYTICS_ID, // Google Analytics / GA
-        ],
+        trackingIds: ["G-HNKF16JWS5"],
+        //  process.env.GATSBY_GOOGLE_ANALYTICS_ID, // Google Analytics / GA
+        
 
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds

@@ -2,8 +2,8 @@ import React from "react";
 
 import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arrow_link.svg";
 import { ReactComponent as DecardLogoIcon } from "../assets/images/decard_logo_icon.svg";
-import { ReactComponent as VenzoLogoIcon } from "../assets/images/venzo_logo_icon.svg";
-import { ReactComponent as AfricaInvestorLogoIcon } from "../assets/images/africa_investor_logo_icon.svg";
+import { ReactComponent as AeonLogoIcon } from "../assets/images/aeon_logo_icon.svg";
+import { ReactComponent as ProfileLogoIcon } from "../assets/images/profile_icon_logo.svg";
 import { InternalLinks } from "../common/enums";
 
 export const valuePartnersBlockData = [
@@ -16,35 +16,34 @@ export const valuePartnersBlockData = [
       </>
     ),
     description:
-      "A Web3 technology and banking powerhouse with cutting-edge expertise in scalable DLT solutions.",
-    // linkTo: "https://decard.io/",
-    linkTo: InternalLinks.PARTNERS_DECARD,
+      "DECARD conceived and coded Tagion. DECARD has funded the technical development of Tagion through token sales and by helping their clients leverage this cutting-edge technology for business applications in currency design, payments, tokenisation and distributed data-management. ",
+    linkTo: "https://decard.io/",
+    //linkTo: InternalLinks.PARTNERS_DECARD,
   },
   {
-    logo: <VenzoLogoIcon />,
+    logo: <AeonLogoIcon />,
     name: (
       <>
-        <span>VENZO</span>
+        <span>AEON</span>
         <SmallArrowLinkIcon />
       </>
     ),
     description:
-      "Nordic leader in digital transformation with extensive experience in all aspects of digital strategy and technology.",
-    linkTo: InternalLinks.PARTNERS_VENZO,
-    // linkTo: "https://venzo.com/",
+      "Aeon provides an integrated solution for investing in natural capital, supported by a digital platform - built on Tagion technology - that ensures seamless data management for efficient and impactful sustainability investments. Aeon Group is the first user of the Tagion Technology and early collaborator of Decard. ",
+    linkTo: "https://aeongroup.io/",
+    //linkto: InternalLinks.PARTNERS_AEON
   },
 
   {
-    logo: <AfricaInvestorLogoIcon />,
+    logo: <ProfileLogoIcon />,
     name: (
       <>
-        <span>Africa Investor</span>
+        <span>YOU</span>
         <SmallArrowLinkIcon />
       </>
     ),
     description:
-      "An institutional investment holding platform and a principal investor in strategic infrastructure assets in Africa.",
-    linkTo: InternalLinks.PARTNERS_AFRICA_INVESTOR,
-    // linkTo: "https://www.africainvestor.com/",
+      "Achieving decentralisation means handing over the network to its users. Respond to your invitation and become a contributor and co-owner of Tagion. ",
+      linkTo: InternalLinks.COMMUNITY,
   },
 ];

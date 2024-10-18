@@ -12,28 +12,28 @@ export const buildForTheRealWorldData: Array<{
   style?: { title: BreakpointsStyleObjectType };
 }> = [
   {
-    title: "Convert real-world assets into digital tokens",
+    title: "DART",
     description:
-      "Make your assets liquid, tradeable and accessible. Use tokens to represent ownership, value, access rights to various assets, such as real estate, natural land, art, financial instruments and more.",
+      "Our innovative database is built from the bottom up to prevent bottlenecks that have previously hampered the adoption of distributed networks.",
     img: tokenPng,
   },
   {
-    title: "Trace and monitor your goods and services with full transparency",
+    title: "Wavefront",
     description:
-      "Bring accountability and efficiency to your full value chain. Assess and manage goods and services in real-time. Reduce blind spots and increase visibility of your network.",
+      "The patented communication protocol enables fast consensus across our distributed database.",
     img: explorePng,
   },
   {
-    title: "Create your own customised networks, products and services",
+    title: "Ordering and deterministic consensus",
     description:
-      "Thanks to sub-DARTs you can customise your network to work according to your rules. Create incentives and governance rules that suit your context.",
+      "Our consensus is deterministic and reliable, not probabilistic and potentially changeable as in most blockchain implementations. New transactions are submitted in strict order, to prevent fraud and manipulation.",
     img: ideaPng,
   },
   {
     title:
-      "Optimise your data accuracy. Stay compliant, efficient and secure at low cost",
+      "Node swapping",
     description:
-      "Read, write, update and delete data seamlessly. A flexible asset and data management system, the DART Distributed Database keeps your information dynamic, evolving overtime.",
+      "Tagion remains open and secure by combining meritocratic and random elements in determining which nodes participate in the consensus mechanism.",
     img: growthInclinDeclinePng,
   },
 ];

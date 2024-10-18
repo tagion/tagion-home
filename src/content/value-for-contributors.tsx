@@ -16,25 +16,42 @@ export const valueForContributorsBlockData = {
   informationCards: [
     {
       title: "Grow your reputation",
-      description: "Engage in community and network governance",
+      description: "Engage and shape our network governance",
       img: securityIcon,
     },
     {
       title: "Get Tagion rewards",
-      description: "Join early, explore and play Get Tagions in return",
+      description: "Join early, explore, contribute and test: Get Tagion tokens in return!",
       img: tokenIcon,
     },
   ],
   linkCards: [
+    {
+    title: (
+      <>
+        Discord <SmallArrowLinkIcon />
+      </>
+    ),
+    description: "This is where our community meets - join!",
+    img: discordIcon,
+    linkTo: ExternalLinks.DISCORD,
+    },
     {
       title: (
         <>
           GitHub <SmallArrowLinkIcon />
         </>
       ),
-      description: "Read and contribute to code base",
+      description: "Download, audit and contribute to our code base",
       img: githubIcon,
       linkTo: ExternalLinks.GITHUB,
+    
+    },
+    {
+      title: <>Docs</>,
+      description: "Documenation about our tech and governance",
+      img: docsIcon,
+      linkTo: ExternalLinks.DOCS,
     },
     {
       title: (
@@ -42,21 +59,22 @@ export const valueForContributorsBlockData = {
           Medium <SmallArrowLinkIcon />
         </>
       ),
-      description: "Read our latest, write your story",
+      description: "Read our blog: practical and educational",
       img: mediumIcon,
       linkTo: ExternalLinks.MEDIUM,
     },
     {
       title: (
         <>
-          Discord <SmallArrowLinkIcon />
+          Telegram <SmallArrowLinkIcon />
         </>
       ),
-      description: "Find your creative squad",
-      img: discordIcon,
-      linkTo: ExternalLinks.DISCORD,
+      description: "Get updates and Join the chat",
+      img: telegramIcon,
+      linkTo: ExternalLinks.TELEGRAM,
     },
     {
+    
       title: (
         <>
           Twitter <SmallArrowLinkIcon />
@@ -65,23 +83,6 @@ export const valueForContributorsBlockData = {
       description: "Share the love",
       img: twitterIcon,
       linkTo: ExternalLinks.TWITTER,
-    },
-    {
-      title: (
-        <>
-          Telegram <SmallArrowLinkIcon />
-        </>
-      ),
-      description: "Join the chat",
-      img: telegramIcon,
-      linkTo: ExternalLinks.TELEGRAM,
-    },
-
-    {
-      title: <>Docs</>,
-      description: "Tagion documentation",
-      img: docsIcon,
-      linkTo: ExternalLinks.DOCS,
     },
   ],
 };

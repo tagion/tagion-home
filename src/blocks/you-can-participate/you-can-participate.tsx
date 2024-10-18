@@ -35,7 +35,7 @@ export const YouCanParticipateBlock: React.FC<InputProps> = ({
         className={cx("title_wrapper")}
       >
         <Grid item lg={7} className={`${cx("title")} title-font`}>
-          You can participate
+          You are invited
         </Grid>
       </Grid>
 

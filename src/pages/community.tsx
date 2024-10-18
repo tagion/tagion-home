@@ -7,7 +7,7 @@ import {
   LetsTalkBlock,
   StartContributingBlock,
   SubscribeToOurNewsletterBlock,
-  TweetsAboutTagionBlock,
+  //TweetsAboutTagionBlock,
   ValueForContributorsBlock,
 } from "../blocks";
 import {
@@ -39,15 +39,15 @@ const CommunityPage = () => {
     >
       <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
-          title="Grow With Us"
+          title="Co-Develop
+Co-Own"
           description={
             <>
-              Are you a developer, designer, academic, writer or other?
+              Are you a developer, designer, academic, writer or just want to give your idle hardware a new purpose?
               <br />
-              You can join a core unit for system development and governance,
-              update this website, create media and content and more!
+              The foundation of our decentralised network is you!
               <br />
-              Join early and receive Tagion rewards.
+              Join now as we release Tagion from the stewardship of its founders - and shape the future of financial infrastuctures!
             </>
           }
           img={
@@ -68,7 +68,6 @@ const CommunityPage = () => {
         gradients={communityPageGradients.tweetsAboutTagionBlock}
         disableMainSidePaddings
       >
-        <TweetsAboutTagionBlock />
       </GradientSpotsWrapper>
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}

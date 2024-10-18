@@ -9,13 +9,13 @@ import {
 } from "../components";
 import {
   SubscribeToOurNewsletterBlock,
-  YouCanParticipateBlock,
+  //YouCanParticipateBlock,
   InclusiveElasticDecentralisedBlock,
   PermissionlessTagionHashgraphBlock,
-  EcosystemVisualizationBlock,
+  //EcosystemVisualizationBlock,
 } from "../blocks";
 import {
-  youCanParticipateBlockData,
+  //youCanParticipateBlockData,
   buildForTheRealWorldData,
   coreBuildingBlockData,
   FAQBlockData,
@@ -56,12 +56,13 @@ const EcosystemPage = () => {
         <IntroductoryBlock
           title={
             <>
-              Explore Our
+             <span style={{ lineHeight: '1' }}></span>
+              The way of
               <br />
-              Ecosystem
+              the Tagion
             </>
           }
-          description="Safe, secure and stable transactions and data storage powered by permissionless Tagion Hashgraph Consensus and Wavefront, Sybil-resistant security and DART distributed database."
+          description="Discover how Tagion functions under the hood and learn about our patented technologies that allow for the speed, scalability and low energy consumption that set Tagion apart from other DLTs."
           img={ecosystemPageIntro}
           classNames={{
             imgWrapper: cx("ecosystem_img_wrapper"),
@@ -70,7 +71,7 @@ const EcosystemPage = () => {
           }}
         />
         <ScrollingBlock
-          title="Build for the real-world in 50+ programming languages"
+          title="A class of its own in distributed networks"
           data={buildForTheRealWorldData}
           classNames={{
             wrapper: "main-lateral-margins",
@@ -82,7 +83,7 @@ const EcosystemPage = () => {
         gradients={ecosystemPageGradients.ecosystemVisualizationBlock}
         mixBlendModeMultiply
       >
-        <EcosystemVisualizationBlock />
+
       </GradientSpotsWrapper>
 
       <GradientSpotsWrapper bgColor={Colors.MAIN_DARK} disableMainSidePaddings>
@@ -125,7 +126,6 @@ const EcosystemPage = () => {
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>

@@ -11,44 +11,84 @@ import tokenPng from "../assets/images/token.png";
 export const getTagions = {
   title: (
     <>
-      <span>Get </span>
+      <span>Contribute </span>
       <div style={{ display: "inline-block" }}>
-        Tagions <SmallArrowLinkIcon />
+         <SmallArrowLinkIcon />
       </div>
     </>
   ),
-  description: "Join the journey",
-  Img: tokenPng,
-  linkTo: "/get-tagions",
+  description: "Participate in a diverse network, bring what you are good at",
+  Img: communityPng,
+  linkTo: InternalLinks.COMMUNITY,
 };
 
 export const visitTheBlog = {
   title: (
     <>
-      <span>Visit the </span>
+      <span>Follow and </span>
+      <div style={{ display: "inline-block" }}>
+        learn <SmallArrowLinkIcon />
+      </div>
+    </>
+  ),
+  description:
+    "Discover the latest news, learn our blog, engage with your peers and the stewards",
+  Img: signedPaperPng,
+  linkTo: InternalLinks.LEARNANDFOLLOW,
+};
+
+export const joinTheCommunity = {
+  title: (
+    <>
+      Get Tagions <SmallArrowLinkIcon />
+    </>
+  ),
+  description: "Be an early supporter and benefit from realising our common goals",
+  Img: tokenPng,
+  linkTo: "/get-tagions",
+};
+
+export const visitOurBlog = {
+  title: (
+    <>
+      <span>Visit our </span>
       <div style={{ display: "inline-block" }}>
         Blog <SmallArrowLinkIcon />
       </div>
     </>
   ),
   description:
-    "Discover how-to's, latest news, community generated content and more",
+    "Discover the latest news and our blog, engage with your peers and the stewards",
   Img: signedPaperPng,
   linkTo: InternalLinks.BLOG,
 };
 
-export const joinTheCommunity = {
+export const codeAndDocumentation = {
   title: (
     <>
-      Join the Community <SmallArrowLinkIcon />
+      <span>Code and Documentation </span>
+      <div style={{ display: "inline-block" }}>
+         <SmallArrowLinkIcon />
+      </div>
     </>
   ),
-  description: "Become a part of a diverse network",
+  description: "Find all the details and participate in running and governing the network",
+  Img: tokenPng,
+  linkTo: "/get-tagions",
+};
+
+export const joinTheConversation = {
+  title: (
+    <>
+      Join the conversation <SmallArrowLinkIcon />
+    </>
+  ),
+  description: "Engage in a diverse network, meet the team and bring what you are good at",
   Img: communityPng,
   linkTo: "/community",
 };
 
 export const youCanParticipateBlockData = {
-  aboutPage: [visitTheBlog, joinTheCommunity],
+  aboutPage: [visitTheBlog, joinTheCommunity, getTagions],
   mainPage: [getTagions, visitTheBlog, joinTheCommunity],
-};
+  learnandfollowPage: [visitOurBlog, codeAndDocumentation, joinTheConversation],};

@@ -17,6 +17,7 @@ export enum ExternalLinks {
   // PARTNERS
   DECARD = "https://decard.io/",
   VENZO = "https://venzo.com/",
+  AEON = "https://aeongroup.io",
   AFRICA_INVESTOR = "https://www.africainvestor.com/",
 
   // USE_CASES

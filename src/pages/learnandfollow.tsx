@@ -1,20 +1,21 @@
 import React from "react";
 import classNames from "classnames/bind";
 
+import { GlossaryBlock } from "../blocks/glossary/glossary";
+
 import { Layout } from "../templates/layout";
 import {
   GradientSpotsWrapper,
   IntroductoryBlock,
   ScrollingBlock,
 } from "../components";
+
+import { SocialMediaLinksBlock } from '../blocks/social-media-links';
+
+import { YouCanParticipateBlock } from '../blocks/you-can-participate';
+
 import {
-  //AecornBlock,
-  //SecureScalableDecentralisedBlock,
   SubscribeToOurNewsletterBlock,
-  //ValuePartnersBlock,
-  YouCanParticipateBlock,
-  LetsTalkBlock,
-  WhatIsTagionBlock,
 } from "../blocks";
 import {
   bottomPageAnimatedGradientData,
@@ -42,10 +43,10 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Cooperative <span className="massive_word">Financial</span> Infrastructure
+              Learn <span className="massive_word">&</span> Follow
             </>
           }
-          description="Future-proof economies need a customisable, distributed, and scalable foundation. Tagion enables communities and businesses to build cooperative financial solutions that foster transparency, fairness, and efficiency, driving inclusive and sustainable growth. "
+          description="Buy Tagions today. Join the movement to build a future proof monetary system."
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
@@ -53,33 +54,26 @@ const IndexPage = () => {
             introductoryBlock: cx("main_introductory_block"),
           }}
         />
-        <ScrollingBlock
-          title="The technology that enables and aligns"
-          data={nextGennFinancialInfrastrucureData}
-          classNames={{
-            title: cx("scrollingBlock_title"),
-            wrapper: "main-lateral-margins",
-          }}
-        />
       </AnimatedGradientWrapper>
-
-      <WhatIsTagionBlock />
+      <YouCanParticipateBlock data={youCanParticipateBlockData.learnandfollowPage} />
+      <SocialMediaLinksBlock />
+      <GlossaryBlock />
       <GradientSpotsWrapper
         disableMainSidePaddings={true}
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
       </GradientSpotsWrapper>
-      <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>
   );
 };
+
+
 
 export default IndexPage;
 

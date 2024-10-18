@@ -7,17 +7,14 @@ import {
   aboutPageGradients,
   bottomPageAnimatedGradientData,
   topPageAnimatedGradientData,
-  youCanParticipateBlockData,
 } from "../content";
 import {
   FoundationBlock,
-  LetsTalkBlock,
   OurValuesBlock,
   OurVisionAndMissionBlock,
   SubscribeToOurNewsletterBlock,
   ValuePartnersBlock,
-  YouCanParticipateBlock,
-  NatureIsOurClientBlock,
+  //NatureIsOurClientBlock,
   MeetOurContributorsBlock,
 } from "../blocks";
 import { Colors } from "../common/enums";
@@ -37,8 +34,8 @@ const AboutPage = () => {
     >
       <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
-          title="About"
-          description="We dream of a future where everyone has equal opportunities to participate in a fair economy. Today, we are actively building our dream - a modular, decentralised, scalable and secure network infrastructure for real human interactions. And the best part, is that we are building it together with you."
+          title="Built on vision and values"
+          description="We dream of a future where everyone has equal opportunities to participate in a fair economy. Today, we are actively building our dream - a modular, decentralised, scalable and secure network for a cooperative financial system based on real human interactions. And the best part is that we are building it together with you."
           img={aboutPageIntro}
           classNames={{
             imgWrapper: cx("about_img_wrapper"),
@@ -61,7 +58,6 @@ const AboutPage = () => {
         gradients={aboutPageGradients.valuePartnersBlock}
         disableMainSidePaddings
       >
-        <ValuePartnersBlock className="main-bottom-margins" />
       </GradientSpotsWrapper>
       {/* <GradientSpotsWrapper
         gradients={aboutPageGradients.foundationBlock}
@@ -71,18 +67,11 @@ const AboutPage = () => {
         <FoundationBlock />
       </GradientSpotsWrapper> */}
       <MeetOurContributorsBlock />
-      <GradientSpotsWrapper
-        gradients={aboutPageGradients.natureIsOurClientBlock}
-        disableMainSidePaddings
-      >
-        <NatureIsOurClientBlock />
-      </GradientSpotsWrapper>
-      <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
+        <ValuePartnersBlock className="main-bottom-margins" />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <LetsTalkBlock />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>

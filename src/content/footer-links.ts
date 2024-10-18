@@ -12,18 +12,18 @@ export type FooterColumnLinkType = (typeof footerColumnLinks)[number];
 
 export const footerColumnLinks = [
   {
-    title: "Ecosystem",
+    title: "About Tagion",
     links: [
-      { name: "Explore Ecosystem", linkTo: InternalLinks.ECOSYSTEM },
+      { name: "Explore Tech Stack", linkTo: InternalLinks.ECOSYSTEM },
       { name: "Get Tagions", linkTo: InternalLinks.GET_TAGIONS },
     ],
   },
 
   {
-    title: "Company",
+    title: "Legacy",
     links: [
-      { name: "Community", linkTo: InternalLinks.COMMUNITY },
-      { name: "About", linkTo: InternalLinks.ABOUT },
+      { name: "Participate", linkTo: InternalLinks.COMMUNITY },
+      { name: "Origins", linkTo: InternalLinks.ABOUT },
       { name: "Blog", linkTo: InternalLinks.BLOG },
     ],
   },

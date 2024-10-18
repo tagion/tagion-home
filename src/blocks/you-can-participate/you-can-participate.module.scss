@@ -5,7 +5,19 @@
 
   .title_wrapper {
     margin-bottom: 32px;
+    display: flex;                /* Ensure it's flex */
+    justify-content: center;       /* Center-align the title */
+    text-align: center;            /* Center text for non-flex behavior */
+    padding-right: 0;              /* Remove padding-right */
+    
+    .title {
+      width: 100%;                 /* Ensure full width */
+      text-align: center;          /* Center-align text */
+      margin: 0;                   /* Remove any margin that may shift it */
+      padding-right: 0;            /* Remove padding-right */
+    }
   }
+  
 
   .sections_wrapper {
     .section {
@@ -68,11 +80,11 @@
     margin-top: 180px;
 
     .title_wrapper {
-      justify-content: flex-end;
+      justify-content: center;
       margin-bottom: 56px;
 
       .title {
-        padding-right: 300px;
+        padding-right: 0px;
       }
     }
 

@@ -7,14 +7,15 @@ export enum BreakpointNames {
 }
 
 export enum ContributorsTypeName {
+  CO_FOUNDERS = "Co-founders",  
+  /*
   ALL_CONTRIBUTORS = "All contributors",
-  CO_FOUNDERS = "Co-founders",
   ECONOMIC_CONTRIBUTORS = "Economic contributors",
   GOVERNANCE_CONTRIBUTORS = "Governance contributors",
   TECHNOLOGY_CONTRIBUTORS = "Technology contributors",
   CREATIVE_CONTRIBUTORS = "Creative contributors",
   ADVISORS = "Advisors",
-  AMBASSADORS = "Ambassadors",
+  AMBASSADORS = "Ambassadors",*/
 }
 
 export enum BlogPageSectionsName {
