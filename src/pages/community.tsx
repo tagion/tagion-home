@@ -39,8 +39,7 @@ const CommunityPage = () => {
     >
       <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
-          title="Co-Develop
-Co-Own"
+          title="Co-develop, co-own"
           description={
             <>
               Are you a developer, designer, academic, writer or just want to give your idle hardware a new purpose?

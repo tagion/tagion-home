@@ -8,6 +8,8 @@ import communityPng from "../assets/images/community.png";
 import signedPaperPng from "../assets/images/signed_paper.png";
 import tokenPng from "../assets/images/token.png";
 
+import { ExternalLinks } from "../common/enums/external_links";
+
 export const getTagions = {
   title: (
     <>
@@ -60,7 +62,7 @@ export const visitOurBlog = {
   description:
     "Discover the latest news and our blog, engage with your peers and the stewards",
   Img: signedPaperPng,
-  linkTo: InternalLinks.BLOG,
+  linkTo: "https://tagion.medium.com/",
 };
 
 export const codeAndDocumentation = {
@@ -74,7 +76,7 @@ export const codeAndDocumentation = {
   ),
   description: "Find all the details and participate in running and governing the network",
   Img: tokenPng,
-  linkTo: "/get-tagions",
+  linkTo: "https://docs.tagion.org/",
 };
 
 export const joinTheConversation = {
@@ -85,7 +87,7 @@ export const joinTheConversation = {
   ),
   description: "Engage in a diverse network, meet the team and bring what you are good at",
   Img: communityPng,
-  linkTo: "/community",
+  linkTo: ExternalLinks.DISCORD,
 };
 
 export const youCanParticipateBlockData = {
