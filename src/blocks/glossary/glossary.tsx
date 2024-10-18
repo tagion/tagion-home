@@ -15,6 +15,7 @@ export const GlossaryBlock: React.FC = () => {
 
   return (
     <div className={cx("glossary_block")}>
+      <h2 className={cx("glossary_title")}>Glossary of Terms</h2>
       <AlphabetFilter
         selectedLetter={selectedLetter}
         setSelectedLetter={setSelectedLetter}

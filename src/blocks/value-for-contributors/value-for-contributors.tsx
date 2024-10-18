@@ -28,44 +28,11 @@ export const ValueForContributorsBlock: React.FC = () => {
                 img: cx("information_card_img_wrapper"),
                 title: cx("information_card_title"),
               }}
-              key={i}
+              key={i}              
             />
+            
           ))}
       </div>
-
-
     </div>
   );
 };
-
-/*<div className={cx("link_cards")}>
-{valueForContributorsBlockData.linkCards &&
-  valueForContributorsBlockData.linkCards.map((cardData, i) => {
-    const isComimgSoon = cardData.description === "Coming soon";
-    return (
-      <CustomLink
-        linkTo={cardData.linkTo}
-        isExternalLink
-        className={`${cx("custom_link")} ${
-          isComimgSoon && "disable-link"
-        }`}
-        key={i}
-      >
-        <Card
-          title={cardData.title}
-          description={cardData.description}
-          img={{ path: cardData.img }}
-          classNames={{
-            card: cx("link_card", {
-              isComimgSoon,
-            }),
-            img: cx("link_card_img_wrapper"),
-            mainContent: cx("link_card_main_content"),
-            title: cx("link_card_title"),
-            description: cx("link_card_description"),
-          }}
-        />
-      </CustomLink>
-    );
-  })}
-</div>*/

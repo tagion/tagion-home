@@ -67,12 +67,7 @@ const AboutPage = () => {
         <FoundationBlock />
       </GradientSpotsWrapper> */}
       <MeetOurContributorsBlock />
-      <GradientSpotsWrapper
-        gradients={aboutPageGradients.natureIsOurClientBlock}
-        disableMainSidePaddings
-      >
         <ValuePartnersBlock className="main-bottom-margins" />
-      </GradientSpotsWrapper>
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings

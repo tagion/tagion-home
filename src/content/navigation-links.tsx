@@ -106,11 +106,7 @@ export const navigationLinks: Array<{
     name: "Your Invitation",
     linkTo: InternalLinks.COMMUNITY,
   },
-  {
-    name: "Learn & Follow",
-    linkTo: InternalLinks.LEARNANDFOLLOW,
-  },
-  {
+/*  {
     name: "Docs",
     subContent: [
       whitepaperPdfLink,
@@ -137,13 +133,17 @@ export const navigationLinks: Array<{
       },
       tokenomicsPdfLink,
     ],
-  },
+  }, */
   {
     name: "The Origins",
     linkTo: InternalLinks.ABOUT,
   },
   {
+    name: "Learn & Follow",
+    linkTo: InternalLinks.LEARNANDFOLLOW,
+  },
+/*  {
     name: "Blog",
     linkTo: InternalLinks.BLOG,
-  },
+  }, */
 ];
