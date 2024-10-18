@@ -43,10 +43,10 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Learn <span className="massive_word">&</span> Follow
+              Learn <span className="massive_word">&</span> follow
             </>
           }
-          description="Buy Tagions today. Join the movement to build a future proof monetary system."
+          description="Stay up to date on all developments, freshen up on the details and background information and become part of the future of cooperative finance."
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
