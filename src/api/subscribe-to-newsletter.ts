@@ -5,7 +5,7 @@ import {
   ISubscribeToNewsletterResponse,
 } from "../common/interfaces/subscribe-to-newsletter-request";
 
-const CRM_ENDPOINT = "https://i25scrm.azurewebsites.net/api/contacts";
+const CRM_ENDPOINT = "https://decardcrm-esdcdbdqccdgaud0.northeurope-01.azurewebsites.net/api/contacts";
 
 const headers = { "x-environment": process.env.GATSBY_ENV };
 
