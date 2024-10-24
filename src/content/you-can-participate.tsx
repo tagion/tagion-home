@@ -91,6 +91,6 @@ export const joinTheConversation = {
 };
 
 export const youCanParticipateBlockData = {
-  aboutPage: [visitTheBlog, joinTheCommunity, getTagions],
   mainPage: [getTagions, visitTheBlog, joinTheCommunity],
-  learnandfollowPage: [visitOurBlog, codeAndDocumentation, joinTheConversation],};
+  learnandfollowPage: [visitOurBlog, codeAndDocumentation, joinTheConversation],
+  gettagionsPage: [visitTheBlog, getTagions],};

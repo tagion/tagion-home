@@ -77,7 +77,7 @@ Go to Discord &gt; Contributing &gt; #translate and fill out the application for
     },
   },
   {
-    taskName: "Co-Design our Governance",
+    taskName: "Co-design our governance",
     description: {
       title: "Research contributor",
       body: (
@@ -94,9 +94,9 @@ Go to Discord &gt; Contributing &gt; #translate and fill out the application for
     },
   },
   {
-    taskName: "Test our Tech and run a node",
+    taskName: "Test our tech and run a node",
     description: {
-      title: "Test our Tech",
+      title: "Test our tech",
       body: (
         <>
           All our code it publicly accessible on Github. 

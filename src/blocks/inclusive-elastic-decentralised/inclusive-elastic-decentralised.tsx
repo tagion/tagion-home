@@ -2,13 +2,13 @@ import React from "react";
 
 import {
   InclusiveElasticDecentralisedSwiper,
-  InclusiveElasticDecentralisedSwiperCard,
+  //InclusiveElasticDecentralisedSwiperCard,
 } from "../../components";
 import { inclusiveElasticDecentralisedData } from "../../content";
 
 export const InclusiveElasticDecentralisedBlock: React.FC = () => {
-  const inclusiveCardGenerator = () =>
-    inclusiveElasticDecentralisedData &&
+  const inclusiveCardGenerator = () => [];
+  /*  inclusiveElasticDecentralisedData &&
     inclusiveElasticDecentralisedData.map((card, i) => (
       <InclusiveElasticDecentralisedSwiperCard
         Logo={card.Logo}
@@ -18,7 +18,7 @@ export const InclusiveElasticDecentralisedBlock: React.FC = () => {
         key={i}
       />
     ));
-
+*/
   return (
     <InclusiveElasticDecentralisedSwiper
       cardGenerator={inclusiveCardGenerator}

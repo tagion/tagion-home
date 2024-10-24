@@ -4,11 +4,13 @@ import classNames from "classnames/bind";
 import { Layout } from "../templates/layout";
 import { GradientSpotsWrapper, IntroductoryBlock } from "../components";
 import {
+  BuyEarnTagionsBlock,
   LetsTalkBlock,
   StartContributingBlock,
   SubscribeToOurNewsletterBlock,
   //TweetsAboutTagionBlock,
   ValueForContributorsBlock,
+  WhatIsTagionBlock,
 } from "../blocks";
 import {
   bottomPageAnimatedGradientData,
@@ -39,7 +41,11 @@ const CommunityPage = () => {
     >
       <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
-          title="Co-develop, co-own"
+          title={
+            <>
+              Co&#8209;develop<br />and co&#8209;own
+            </>
+          }
           description={
             <>
               Are you a developer, designer, academic, writer or just want to give your idle hardware a new purpose?
@@ -63,6 +69,7 @@ const CommunityPage = () => {
         <StartContributingBlock />
       </AnimatedGradientWrapper>
       <ValueForContributorsBlock />
+      <WhatIsTagionBlock/>
       <GradientSpotsWrapper
         gradients={communityPageGradients.tweetsAboutTagionBlock}
         disableMainSidePaddings
