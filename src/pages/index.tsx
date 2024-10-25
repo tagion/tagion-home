@@ -54,7 +54,11 @@ const IndexPage = () => {
           }}
         />
         <ScrollingBlock
-          title="The technology that enables and aligns"
+          title={
+            <>
+              The technology <br /> that enables and aligns
+            </>
+          }
           data={nextGennFinancialInfrastrucureData}
           classNames={{
             title: cx("scrollingBlock_title"),

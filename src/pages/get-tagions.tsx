@@ -43,7 +43,7 @@ const GetTagionsPage = () => {
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <YouCanParticipateBlock data={youCanParticipateBlockData.aboutPage} />
+        <YouCanParticipateBlock data={youCanParticipateBlockData.gettagionsPage} />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>
