@@ -11,7 +11,7 @@ export const ourVisionAndMissioBlockData = [
     title: "Utility and Adoption",
     description: (
       <>
-        Building real utility and adoption. Providing customisable infrastructure for a businesses, communities and developers. Staged decentralisation of Tagion.
+        Building real utility and adoption. Providing customisable infrastructure for businesses, communities and developers. Staged decentralisation of Tagion.
       </>
     ),
     label: "2023 - 2027",

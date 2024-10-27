@@ -13,7 +13,7 @@ interface InputProps {
   description: string | React.ReactElement;
   cardGenerator: () => React.JSX.Element[];
 }
-
+//          *Tagion enables sharding for unlimited TPS in the future
 export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
   cardGenerator,
   title,
@@ -57,7 +57,6 @@ export const InclusiveElasticDecentralisedSwiper: React.FC<InputProps> = ({
           {cardGenerator()}
         </div>
         <div className={`${cx("note")} body-font main_lateral_paddings`}>
-          *Tagion enables sharding for unlimited TPS in the future
         </div>
       </div>
     </div>

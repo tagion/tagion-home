@@ -18,7 +18,7 @@ export const permissionlessTagionHashgraphBlockData = [
   {
     title: "Towards a Common Good governed by the Community",
     description:
-      "Tagion's goal is to build an infrastructure that is accessible like a public good and governed like a commons. Anyone can become a community member. Node operators, core members, ambassadors, and developers, are incentivise and given a vote in the governance of the network.",
+      "Tagion's goal is to build an infrastructure that is accessible like a public good and governed like a commons. Anyone can become a community member. Node operators, core members, ambassadors, and developers, are incentivised and given a vote in the governance of the network.",
     videoSrc: "/videos/proof_of_community_animation.mov",
   },
 ];
