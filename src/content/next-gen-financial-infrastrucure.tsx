@@ -25,7 +25,7 @@ export const nextGennFinancialInfrastrucureData: Array<{
   {
     title: "You own it, together. Nobody exploits it.",
     description:
-      "Electronic payments and financial tools are a necesity of modern life. The underlying infrastructure should be a public good, universaly accessible and not operated for private profits. That is how Tagion is designed. It belogns to all who contribute and rely on it.",
+      "Electronic payments and financial tools are a necessity of modern life. The underlying infrastructure should be a public good, universally accessible and not operated for private profits. That is how Tagion is designed. It belongs to all who contribute and rely on it.",
     img: ideaPng,
   },
   {

@@ -19,11 +19,11 @@ export const OurVisionAndMissionBlock: React.FC = () => {
       <div className={`${cx("text")} main-lateral-margins`}>
         <div className={`${cx("title")} title-font`}>The Stewards</div>
         <span className={`${cx("description")} body-font`}>
-        Our founders started of with the vision that financial systems should benefit everyone and not the few.
+        Our founders started off with the vision that financial systems should benefit everyone and not the few.
         Everyone deserves the freedom to choose alternatives and create the best life and prosperity for themselves.
-        To this end, they concieved, designed and coded Tagion. And they founded the company Decard to develop, promote and decentralise it.
+        To this end, they conceived, designed and coded Tagion. And they founded the company Decard to develop, promote and decentralise it.
         Once decentralisation is achieved, Decard will be a network partner as any, amongst the ever growing community of node-operators, coders and users.
-        Join us now to co-develop and co-own this vision and its implementaion: the decentralised Tagion network. 
+        Join us now to co-develop and co-own this vision and its implementation: the decentralised Tagion network. 
         </span>
       </div>
       <div className={cx("circles_block")}>

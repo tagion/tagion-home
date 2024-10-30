@@ -10,7 +10,6 @@ import {
   SubscribeToOurNewsletterBlock,
   //TweetsAboutTagionBlock,
   ValueForContributorsBlock,
-  WhatIsTagionBlock,
 } from "../blocks";
 import {
   bottomPageAnimatedGradientData,
@@ -25,6 +24,7 @@ import comminityPageIntroDesktop from "../assets/images/community/community_page
 import comminityPageIntroMobile from "../assets/images/community/community_page_intro_mobile.png";
 
 import * as styles from "../styles/pages/community.module.scss";
+import { WhereToBuyTagionsBlock } from "../blocks/where-to-buy-tagions/where-to-buy-tagions";
 
 const cx = classNames.bind(styles);
 
@@ -69,7 +69,7 @@ const CommunityPage = () => {
         <StartContributingBlock />
       </AnimatedGradientWrapper>
       <ValueForContributorsBlock />
-      <WhatIsTagionBlock/>
+      <WhereToBuyTagionsBlock/>
       <GradientSpotsWrapper
         gradients={communityPageGradients.tweetsAboutTagionBlock}
         disableMainSidePaddings

@@ -49,7 +49,7 @@ export const valueForContributorsBlockData = {
     },
     {
       title: <>Docs</>,
-      description: "Documenation about our tech and governance",
+      description: "Documentation about our tech and governance",
       img: docsIcon,
       linkTo: ExternalLinks.DOCS,
     },

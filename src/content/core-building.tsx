@@ -23,18 +23,18 @@ export const coreBuildingBlockData = [
           "Tagion introduces a unique concept to make the Hashgraph-based system permissionless, where nodes can be randomly swapped in and out. The active pool consists of a constant number of nodes participating in the Hashgraph consensus, while the passive pool dynamically adjusts in size to accommodate nodes joining or leaving the network. This setup allows for a permissionless way to join the network while preserving a degree of decentralisation.",
         ],
       },
+      {
+        valueName:
+          "Decentralized community ownership and governance of the Tagion network",
+        paragraphList: [
+          "Tagion will become a truely decentralised network, in which no entity can dominate the others for their own benefit. To achieve this we strive for the highest level of inclusivity and openenss for new node-operators to join  the network and contribute to its resilience. Balancing this openess with the need for protection from network attacks and malicious takeovers is the delicate task of our governance system and the staged process of releasing the Tagion mainnet from the stewardship of the founders.",
+        ],
+      },
     ],
   },
   {
     title: "DART Distributed Database",
     questions: [
-      {
-        valueName:
-          "Decentralized community ownership and governance of the Tagion network",
-        paragraphList: [
-          "-",
-        ],
-      },
       {
         valueName:
           "DART - A powerful Distributed Database built into the network",
@@ -74,21 +74,6 @@ export const coreBuildingBlockData = [
           "DART includes a recorder chain system that captures all performed changes, ensuring backup, integrity, and documentation. The recorded journals enable replay and undo functions, and they can also aid in synchronising databases. Each node is responsible for maintaining these backups. The distributed nature of the database enhances its resilience by having multiple copies of the data.",
         ],
       },
-      {
-        valueName:
-          "Sub-DARTs host sub-ecosystems with own governance rules and applications",
-        paragraphList: [
-          "Sub-DARTs are customisable ecosystems with dedicated databases and optional specialised infrastructure. Each Sub-DART has its own governance rules written in its database, and the user configures and decides on these rules. Infrastructure capabilities are paid for in Tagions. Sub-DARTs can also be integrated into Tagion DEX functionality, making them tradeable with Tagions and all assets on the platform.",
-        ],
-      },
-      {
-        valueName:
-          "Decentralised community ownership and governance of the Tagion network",
-        paragraphList: [
-          "Tagion will become a truly decentralised network, in which no entity can dominate the others for their own benefit. To achieve this we strive for the highest level of inclusivity and openness for new node-operators to join  the network and contribute to its resilience. Balancing this openness with the need for protection from network attacks and malicious takeovers is the delicate task of our governance system and the staged process of releasing the Tagion mainnet from the stewardship of the founders.",
-        ],
-      },
-      
     ],
   },
   {

@@ -57,9 +57,7 @@ const EcosystemPage = () => {
           title={
             <>
              <span style={{ lineHeight: '1' }}></span>
-              The way of
-              <br />
-              the Tagion
+              The way of <br />the Tagion
             </>
           }
           description="Discover how Tagion functions under the hood and learn about our patented technologies that allow for the speed, scalability and low energy consumption that set Tagion apart from other DLTs."
@@ -96,7 +94,7 @@ const EcosystemPage = () => {
       >
         <QuestionsBlock
           title="Core building blocks"
-          description="For a real decentralised, independent, censorship resistant, borderless monetary system and banking infrastucture."
+          description="For a real decentralised, independent, censorship resistant, borderless monetary system and banking infrastructure."
           data={coreBuildingBlockData}
         />
         {/* <div className={cx("FAQ_wrapper")}>

@@ -1,0 +1,183 @@
+@import "./../../styles/variables.scss";
+
+.where_to_buy_tagions_block {
+  @media (min-width: $mobile-size) {
+    padding: 255px 16px 80px;
+    position: relative;
+    overflow: hidden;
+    background: url("../../assets/images/coming-soon-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .title {
+      margin-bottom: 16px;
+      color: $main-white-color;
+    }
+
+    .description {
+      color: $main-gray-text-color;
+
+      .cards_wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 8px;
+        max-width: 334px;
+
+        .card {
+          display: flex;
+          flex-direction: column;
+
+          padding: 12px;
+          border: 1px solid $main-white-color;
+          border-radius: $scrollbar-border-radius;
+
+          .id {
+            font-size: 12px;
+            line-height: 15px;
+            margin-bottom: 8px;
+          }
+
+          .text {
+            color: $main-white-color;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+      }
+
+      [class~="text-separator"] {
+        height: 16px;
+      }
+    }
+
+    .mobile_atoms_bond_img {
+      position: absolute;
+      transform: rotate(-90deg);
+      top: -243px;
+      right: -80px;
+      width: 556px;
+    }
+  }
+
+  @media (min-width: 474px) {
+    padding: 80px 16px;
+    background-size: cover;
+    background-position: bottom 0 left -360px;
+
+    .title,
+    .description {
+      width: 340px;
+    }
+
+    .mobile_atoms_bond_img {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    padding: 80px 24px;
+    background-size: 1437px 812px;
+    background-position: bottom 0 right -490px;
+
+    .title,
+    .description {
+      width: 61%;
+      max-width: 500px;
+      min-width: 363px;
+    }
+
+    .description > .cards_wrapper {
+      width: 334px;
+      max-width: none;
+    }
+  }
+
+  @media (min-width: 810px) {
+    background-size: 1320px 746px;
+    background-position: top 0 left -100px;
+
+    .title,
+    .description {
+      width: 500px;
+      max-width: none;
+      min-width: auto;
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    padding: 85px 80px;
+    background-position: top 0 left -50px;
+
+    .description > .cards_wrapper {
+      width: auto;
+      max-width: 560px;
+      padding-right: 46px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding: 109px 80px;
+    background-size: 1659px 934px;
+    background-position: top -103px right -220px;
+
+    .title,
+    .description {
+      width: 48%;
+      max-width: 628px;
+      min-width: 500px;
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    padding: 104px 80px;
+    background-position: top -103px left -36px;
+
+    .title {
+      margin-bottom: 24px;
+    }
+
+    .title,
+    .description {
+      width: 647px;
+      max-width: none;
+      min-width: auto;
+    }
+
+    .description {
+      .cards_wrapper {
+        width: 608px;
+        max-width: none;
+        padding: 0;
+
+        .card {
+          padding: 16px;
+
+          .id {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 16px;
+          }
+
+          .text {
+            font-size: 24px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      [class~="text-separator"] {
+        height: 24px;
+      }
+    }
+  }
+
+  @media (min-width: 1620px) {
+    background-size: 1924px 1082px;
+    background-position: top -134px left 0;
+  }
+
+  @media (min-width: $desktop-max-size) {
+    padding: 104px 120px;
+  }
+}

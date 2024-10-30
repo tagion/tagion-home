@@ -4,6 +4,8 @@ export enum ExternalLinks {
   TAGION_TOKENOMICS = "/resources/tagion-tokenomics.pdf",
   TAGION_WHITEPAPER = "/resources/tagion-whitepaper.pdf",
 
+  BUY_TAGIONS = "/buy-tagions",
+
   GITHUB = "https://github.com/tagion",
   DOCS = "https://docs.tagion.org",
   DISCORD = "https://discord.gg/za2hb62quR",
