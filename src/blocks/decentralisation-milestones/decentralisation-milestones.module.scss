@@ -1,0 +1,232 @@
+@import "./../../styles/variables.scss";
+
+.decentralisation_milestones_block {
+  max-width: 600px;
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .rewards_content {
+    .mobile_tasks {
+      .task {
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+
+        &.isActive {
+          &:not(:last-child) {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+
+    .desktop_tasks {
+      display: none;
+    }
+
+    .task_header {
+      padding: 16px;
+      border: 1px solid $main-dark-color;
+      border-radius: $card-border-radius;
+      cursor: pointer;
+
+      &.isActive {
+        border-radius: $card-border-radius $card-border-radius 0 0;
+        background-color: $main-dark-color;
+
+        .task_name {
+          color: $main-white-color;
+        }
+      }
+
+      .label {
+        width: fit-content;
+        padding: 4px 16px;
+        background-color: $numbered-label-color;
+        border-radius: $card-border-radius;
+
+        color: $main-white-color;
+        line-height: 16px;
+      }
+
+      .task_name {
+        margin-top: 16px;
+      }
+    }
+
+    .task_description {
+      margin-top: 24px;
+
+      .title {
+        margin-bottom: 24px;
+      }
+
+      .body {
+        margin-bottom: 32px;
+
+        [class~="navigation_path"] {
+          font-family: "Inter-600", sans-serif;
+          color: $main-dark-color;
+        }
+      }
+
+      a {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-size) {
+    .rewards_content {
+      .mobile_tasks {
+        .task {
+          .task_description {
+            width: 410px;
+            margin-top: 32px;
+
+            a {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .task_header {
+        padding: 24px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-size) {
+    max-width: none;
+
+    .title {
+      margin-bottom: 56px;
+    }
+
+    .rewards_content {
+      .mobile_tasks {
+        display: none;
+      }
+
+      .desktop_tasks {
+        display: flex;
+        flex-direction: row;
+        height: 552px;
+
+        .tasks_list {
+          min-width: 379px;
+          padding-right: 16px;
+          overflow-y: auto;
+        }
+      }
+
+      .task_header {
+        padding: 24px;
+        margin-bottom: 8px;
+
+        &.isActive {
+          border-radius: $card-border-radius;
+        }
+
+        &:hover {
+          background-color: $start-contributing-item-hover-color;
+
+          &.isActive {
+            background-color: $main-dark-color;
+          }
+        }
+      }
+
+      .task_description {
+        margin: 0;
+        width: auto;
+        padding-left: 61px;
+        padding-right: 16px;
+        overflow-y: auto;
+
+        .body {
+          margin-bottom: 40px;
+        }
+
+        a {
+          margin: 0;
+        }
+      }
+
+      .task_description,
+      .desktop_tasks > .tasks_list {
+        scrollbar-color: $main-dark-color $main-gray-color;
+        scrollbar-width: thin;
+
+        // scrollbar styling
+        &::-webkit-scrollbar {
+          width: 3px;
+          border-radius: $scrollbar-border-radius;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: $main-dark-color;
+          border-left: 1px solid transparent;
+          border-right: 1px solid transparent;
+          background-clip: padding-box;
+          border-radius: $scrollbar-border-radius;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $main-dark-color;
+          border-radius: $scrollbar-border-radius;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-large-size) {
+    .title {
+      margin-bottom: 80px;
+    }
+
+    .rewards_content {
+      .desktop_tasks {
+        height: 600px;
+
+        .tasks_list {
+          min-width: 545px;
+          padding-right: 23px;
+        }
+      }
+
+      .task_description {
+        padding-left: 107px;
+        padding-right: 23px;
+
+        .body {
+          margin-bottom: 48px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop-max-size) {
+    .rewards_content {
+      .desktop_tasks {
+        height: auto;
+
+        .tasks_list {
+          min-width: 686px;
+          padding-right: 0;
+          overflow-y: inherit;
+        }
+      }
+
+      .task_description {
+        padding: 0 142px;
+      }
+    }
+  }
+}

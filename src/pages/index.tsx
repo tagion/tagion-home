@@ -73,6 +73,7 @@ const IndexPage = () => {
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
       >
       </GradientSpotsWrapper>
+      <h2 className={cx("invitation_title")}>You are invited</h2>
       <YouCanParticipateBlock data={youCanParticipateBlockData.mainPage} />
       <AnimatedGradientWrapper
         gradientData={bottomPageAnimatedGradientData}

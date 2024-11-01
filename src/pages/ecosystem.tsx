@@ -34,6 +34,7 @@ import FAQ_600_gradient from "../assets/images/gradient/ecosystem/tablet/FAQ_600
 import FAQ_1440_gradient from "../assets/images/gradient/ecosystem/desktop-max/FAQ_1440.png";
 
 import * as styles from "../styles/pages/ecosystem.module.scss";
+// add later when done import // { DecentralisationMilestonesBlock } from "../blocks/decentralisation-milestones";
 
 const cx = classNames.bind(styles);
 
@@ -94,7 +95,18 @@ const EcosystemPage = () => {
       >
         <QuestionsBlock
           title="Core building blocks"
-          description="For a real decentralised, independent, censorship resistant, borderless monetary system and banking infrastructure."
+          description={
+            <>
+              Get an overview of the features of our decentralised, independent, censorship-resistant, borderless monetary system and banking infrastructure. 
+              For a deep-dive read our&nbsp;
+              <a 
+                href="https://www.tagion.org/resources/tagion-whitepaper.pdf" 
+                style={{ color: 'black' }}
+              >
+              technical concept paper
+              </a>.
+            </>
+          }
           data={coreBuildingBlockData}
         />
         {/* <div className={cx("FAQ_wrapper")}>

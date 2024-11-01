@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <span className={`${cx("copyright")} inter-12`}>© 2023 Tagion</span>
+        <span className={`${cx("copyright")} inter-12`}>© 2024 Tagion</span>
       </div>
     </footer>
   );
