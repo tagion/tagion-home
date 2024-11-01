@@ -43,6 +43,7 @@ const GetTagionsPage = () => {
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
+        <h2 className={cx("invitation_title")}>You are invited</h2>
         <YouCanParticipateBlock data={youCanParticipateBlockData.gettagionsPage} />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>

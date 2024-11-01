@@ -10,6 +10,10 @@ import { ReactComponent as ArrowLinkIcon } from "../../assets/images/arrow_in_ci
 
 import * as styles from "./you-can-participate.module.scss";
 
+// removed         <Grid item lg={7} className={`${cx("title")} title-font`}>
+//          You are invited
+//          </Grid>
+
 const cx = classNames.bind(styles);
 
 interface InputProps {
@@ -34,9 +38,6 @@ export const YouCanParticipateBlock: React.FC<InputProps> = ({
         columns={miuCustomColumns}
         className={cx("title_wrapper")}
       >
-        <Grid item lg={7} className={`${cx("title")} title-font`}>
-          You are invited
-        </Grid>
       </Grid>
 
       <Grid container columns={miuCustomColumns}>
