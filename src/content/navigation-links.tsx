@@ -53,6 +53,12 @@ export const whitepaperPdfLink = {
   externalLink: true,
 };
 
+export const manifestoPdfLink = {
+  name: "Tagion Manifesto",
+  linkTo: ExternalLinks.TAGION_MANIFESTO,
+  externalLink: false,
+}
+
 export const navigationLinks: Array<{
   name: string;
   linkTo?: string;

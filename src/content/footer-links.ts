@@ -1,5 +1,5 @@
 import { ExternalLinks, InternalLinks } from "../common/enums";
-import { tokenomicsPdfLink, whitepaperPdfLink } from "./navigation-links";
+import { manifestoPdfLink, tokenomicsPdfLink, whitepaperPdfLink } from "./navigation-links";
 
 export type LinkType = {
   name: string;
@@ -43,6 +43,7 @@ export const footerColumnLinks = [
         externalLink: true,
       },
       tokenomicsPdfLink,
+      manifestoPdfLink,
     ],
   },
 ];
