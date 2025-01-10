@@ -3,6 +3,7 @@ export enum ExternalLinks {
   TAGION_BRAND_GUIDELINES = "/resources/tagion-brand-guidelines.pdf",
   TAGION_TOKENOMICS = "/resources/tagion-tokenomics.pdf",
   TAGION_WHITEPAPER = "/resources/tagion-whitepaper.pdf",
+  TAGION_MANIFESTO = "/resources/tagion-manifesto.pdf",
 
   BUY_TAGIONS = "/buy-tagions",
 
