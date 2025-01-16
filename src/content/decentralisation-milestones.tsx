@@ -100,7 +100,7 @@ Go to Discord &gt; Contributing &gt; #translate and fill out the application for
       body: (
         <>
           All our code it publicly accessible on Github. 
-          Our indiivudal applications and packages will become  ever more comprehensive and at the same time easier to install and use - even for lay people.
+          Our individual applications and packages will become  ever more comprehensive and at the same time easier to install and use - even for lay people.
           <div className="text-separator" />
           To decentralise Tagion and release from the stewardship of the founders, we need tester of any skill level to give us feedback on our documentation and functionality. 
           <div className="text-separator" />
