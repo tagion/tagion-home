@@ -6,7 +6,7 @@ import { useSignupToOurNewsletterFormik } from "../../hooks";
 
 import * as styles from "./subscribe-to-our-newsletter.module.scss";
 
-import ringsPng from "../../assets/images/rings.png";
+// import ringsPng from "../../assets/images/rings.png";
 
 const cx = classNames.bind(styles);
 
@@ -25,9 +25,7 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
   return (
     <div className={cx("subscribe_to_our_newsletter_block")}>
       <div className={cx("content_wrapper")}>
-        <div className={cx("icon_wrapper")}>
-          <img src={ringsPng} />
-        </div>
+        <div className={cx("icon_wrapper")}></div>
         <div className={cx("body")}>
           <div className={`${cx("title")} title-font`}>
             Subscribe to our newsletter

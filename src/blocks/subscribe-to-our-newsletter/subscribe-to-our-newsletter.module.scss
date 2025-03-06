@@ -38,6 +38,10 @@
       display: flex;
       justify-content: center;
       height: 199px;
+      background-image: url("../../assets/images/rings_no_frame.png");
+      background-size: 90%;
+      background-position: bottom;
+      background-repeat: no-repeat;
 
       img {
         position: absolute;
@@ -57,6 +61,16 @@
   }
 
   @media (min-width: $tablet-size) {
+    .icon_wrapper{
+      min-width: 344px;
+      position: relative;
+      background-image: url("../../assets/images/rings_no_frame.png");
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      bottom: 25px;
+    }
+
     .content_wrapper {
       max-width: none;
 
@@ -121,8 +135,14 @@
         border-radius: $card-border-radius;
         overflow: hidden;
 
+        background-image: url("../../assets/images/rings.png");
+        background-size: 100%;
+        background-position: bottom;
+    
+        
+
         position: absolute;
-        top: -25px;
+        bottom: 0px;
         right: 0;
 
         img {
@@ -167,6 +187,9 @@
         height: 480px;
         bottom: 0;
         top: auto;
+        background-image: url("../../assets/images/rings.png");
+        background-size: 100%;
+        background-position: bottom;
 
         img {
           bottom: -118px;
@@ -183,12 +206,25 @@
     .content_wrapper {
       .icon_wrapper {
         width: 520px;
-
-        img {
-          bottom: -158px;
-          width: 660px;
-        }
+        background-image: url("../../assets/images/rings.png");
+        background-size: 100%;
+        background-position: bottom;
       }
     }
   }
+
+  @media (max-width: 768px) and (max-height: 1024px) and (min-width: 768px) and (min-height: 1024px) { //IPAD MINI
+    .content_wrapper {
+      .icon_wrapper {
+        width: 520px;
+        background-image: url("../../assets/images/rings_no_frame.png");
+        background-size: 50%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        left: 80px;
+        top: 0px;
+      }
+    }
+  }
+  
 }

@@ -1,6 +1,7 @@
 @import "./../../styles/variables.scss";
 
 .what_is_tagion_block {
+  margin-top: 0; // remove the top margin
   @media (min-width: $mobile-size) {
     padding: 255px 16px 80px;
     position: relative;
@@ -76,8 +77,9 @@
 
   @media (min-width: $tablet-size) {
     padding: 80px 24px;
-    background-size: 1437px 812px;
+    margin-top: 60px;
     background-position: bottom 0 right -490px;
+    background-size: cover;
 
     .title,
     .description {

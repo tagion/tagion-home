@@ -57,7 +57,6 @@ const IndexPage = () => {
       </AnimatedGradientWrapper>
       <YouCanParticipateBlock data={youCanParticipateBlockData.learnandfollowPage} />
       <SocialMediaLinksBlock />
-      <GlossaryBlock />
       <GradientSpotsWrapper
         disableMainSidePaddings={true}
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
@@ -67,6 +66,7 @@ const IndexPage = () => {
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
+        <GlossaryBlock />
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>
