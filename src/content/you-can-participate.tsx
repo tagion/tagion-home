@@ -7,7 +7,7 @@ import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arr
 import communityPng from "../assets/images/community.png";
 import signedPaperPng from "../assets/images/signed_paper.png";
 import tokenHighResCuttedPng from "../assets/images/token_high_resolution_cutted.png";
-import developerPng from "../assets/images/Developer.png";
+import developerPng from "../assets/images/developer.png";
 
 import { ExternalLinks } from "../common/enums/external_links";
 
