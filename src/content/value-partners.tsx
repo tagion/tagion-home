@@ -11,12 +11,12 @@ export const valuePartnersBlockData = [
     logo: <DecardLogoIcon />,
     name: (
       <>
-        <span>DECARD</span>
+        <span>Decard</span>
         <SmallArrowLinkIcon />
       </>
     ),
     description:
-      "DECARD conceived and coded Tagion. DECARD has funded the technical development of Tagion through token sales and by helping their clients leverage this cutting-edge technology for business applications in currency design, payments, tokenisation and distributed data-management. ",
+      "Decard conceived and coded Tagion. Decard has funded the technical development of Tagion through token sales and by helping their clients leverage this cutting-edge technology for business applications in currency design, payments, tokenisation and distributed data-management. ",
     linkTo: "https://decard.io/",
     //linkTo: InternalLinks.PARTNERS_DECARD,
   },

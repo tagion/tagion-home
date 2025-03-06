@@ -2,9 +2,11 @@
 
 .scrolling_block {
   max-width: 450px;
+  margin-bottom: 80px;
 
   .title {
     margin-bottom: 40px;
+    min-width: 400px;
   }
 
   .card {
@@ -52,7 +54,7 @@
       .card {
         display: flex;
         height: 359px;
-        margin-bottom: 0;
+        margin-bottom: 80px;
 
         .main_content {
           width: 49%;

@@ -6,7 +6,8 @@ import { ReactComponent as SmallArrowLinkIcon } from "../assets/images/small_arr
 
 import communityPng from "../assets/images/community.png";
 import signedPaperPng from "../assets/images/signed_paper.png";
-import tokenPng from "../assets/images/token.png";
+import tokenHighResCuttedPng from "../assets/images/token_high_resolution_cutted.png";
+import developerPng from "../assets/images/Developer.png";
 
 import { ExternalLinks } from "../common/enums/external_links";
 
@@ -46,7 +47,7 @@ export const joinTheCommunity = {
     </>
   ),
   description: "Be an early supporter and benefit from realising our common goals",
-  Img: tokenPng,
+  Img: tokenHighResCuttedPng,
   linkTo: "/get-tagions",
 };
 
@@ -75,7 +76,7 @@ export const codeAndDocumentation = {
     </>
   ),
   description: "Find all the details and participate in running and governing the network",
-  Img: tokenPng,
+  Img: developerPng,
   linkTo: "https://docs.tagion.org/",
 };
 

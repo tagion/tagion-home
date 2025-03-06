@@ -95,7 +95,7 @@ const EcosystemPage = () => {
       >
         <QuestionsBlock
           title="Core building blocks"
-          description={
+          description={ //! FIX THIS ERROR IN THE NEAR FUTURE !
             <>
               Get an overview of the features of our decentralised, independent, censorship-resistant, borderless monetary system and banking infrastructure. 
               For a deep-dive read our&nbsp;
