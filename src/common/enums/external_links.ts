@@ -1,9 +1,11 @@
 export enum ExternalLinks {
   TECH_PAPER = "/resources/tech-paper.pdf",
   TAGION_BRAND_GUIDELINES = "/resources/tagion-brand-guidelines.pdf",
-  TAGION_TOKENOMICS = "/resources/tagion-tokenomics.pdf",
+  TAGION_TOKENOMICS = "https://docs.tagion.org/gov/governance_areas/token_economy/issuance", ///resources/tagion-tokenomics.pdf
   TAGION_WHITEPAPER = "/resources/tagion-whitepaper.pdf",
   TAGION_MANIFESTO = "/resources/tagion-manifesto.pdf",
+  GOVERNANCE_DEVELOPMENT = "https://docs.tagion.org/gov/intro",
+  TECH_DOCUMENTATION = "https://docs.tagion.org/tech/guide",
 
   BUY_TAGIONS = "/buy-tagions",
 
