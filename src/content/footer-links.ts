@@ -14,19 +14,12 @@ export const footerColumnLinks = [
   {
     title: "About Tagion",
     links: [
-      { name: "Explore Tech Stack", linkTo: InternalLinks.ECOSYSTEM },
-      { name: "Get Tagions", linkTo: InternalLinks.GET_TAGIONS },
+      { name: "Governance Development", linkTo: ExternalLinks.GOVERNANCE_DEVELOPMENT }, //https://docs.tagion.org/gov/intro
+      { name: "Tech Documentation", linkTo: ExternalLinks.TECH_DOCUMENTATION }, //https://docs.tagion.org/tech/guide
+      tokenomicsPdfLink,
     ],
   },
 
-  {
-    title: "Legacy",
-    links: [
-      { name: "Participate", linkTo: InternalLinks.COMMUNITY },
-      { name: "Origins", linkTo: InternalLinks.ABOUT },
-      { name: "Blog", linkTo: InternalLinks.BLOG },
-    ],
-  },
   {
     title: "Docs",
     links: [
@@ -37,13 +30,21 @@ export const footerColumnLinks = [
       //   //   externalLink: true,
       // },
       whitepaperPdfLink,
+      manifestoPdfLink,
       {
-        name: "Brand guidelines",
+        name: "Brand Guidelines",
         linkTo: ExternalLinks.TAGION_BRAND_GUIDELINES,
         externalLink: true,
       },
-      tokenomicsPdfLink,
-      manifestoPdfLink,
+    ],
+  },
+  
+  {
+    title: "Next steps",
+    links: [
+      { name: "Participate", linkTo: InternalLinks.COMMUNITY },
+      { name: "Origins", linkTo: InternalLinks.ABOUT },
+      { name: "Blog", linkTo: InternalLinks.BLOG },
     ],
   },
 ];

@@ -38,7 +38,7 @@ export const termsOfUseLink = {
 };
 
 export const tokenomicsPdfLink = {
-  name: "Tokenomics",
+  name: "Tokenomics Update",
   linkTo: ExternalLinks.TAGION_TOKENOMICS,
   description: "Know economic properties",
   img: tokenomicsIcon,
@@ -46,7 +46,7 @@ export const tokenomicsPdfLink = {
 };
 
 export const whitepaperPdfLink = {
-  name: "Tech Concept Paper",
+  name: "Technical Concept Paper",
   linkTo: ExternalLinks.TAGION_WHITEPAPER,
   description: "Dive into the details",
   img: whitepaperIcon,
