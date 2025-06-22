@@ -148,6 +148,10 @@ export const navigationLinks: Array<{
     name: "Learn & Follow",
     linkTo: InternalLinks.LEARNANDFOLLOW,
   },
+  {
+    name: "Documentation",
+    linkTo: ExternalLinks.DOCUMENTATION,
+  },
 /*  {
     name: "Blog",
     linkTo: InternalLinks.BLOG,

@@ -46,7 +46,7 @@ const IndexPage = () => {
               Learn <span className="massive_word">&</span> follow
             </>
           }
-          description="Stay up to date on all developments, freshen up on the details and background information and become part of the future of cooperative finance."
+          description="Stay up to date on all developments, freshen up on the details and background information and become part of the future of cooperative digital infrastructures. "
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),
@@ -56,7 +56,6 @@ const IndexPage = () => {
         />
       </AnimatedGradientWrapper>
       <YouCanParticipateBlock data={youCanParticipateBlockData.learnandfollowPage} />
-      <SocialMediaLinksBlock />
       <GradientSpotsWrapper
         disableMainSidePaddings={true}
         gradients={mainPageGradients.secureScalableDecentralisedBlockGradient}
@@ -66,7 +65,8 @@ const IndexPage = () => {
         gradientData={bottomPageAnimatedGradientData}
         withLateralPaddings
       >
-        <GlossaryBlock />
+        <SocialMediaLinksBlock />
+        {/* <GlossaryBlock /> */}
         <SubscribeToOurNewsletterBlock />
       </AnimatedGradientWrapper>
     </Layout>

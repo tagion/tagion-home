@@ -24,8 +24,8 @@ export const LetsTalkBlock: React.FC = () => {
         >
           <div className={`${cx("title")} title-font`}>Let's talk</div>
           <span className="body-font">
-            Need some extra help and guidance? <br />
-            We're here for it.
+          Have an idea, need help and guidance? <br />
+            We are here for it.
           </span>
         </Grid>
         <Grid

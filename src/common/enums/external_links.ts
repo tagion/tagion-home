@@ -5,7 +5,10 @@ export enum ExternalLinks {
   TAGION_WHITEPAPER = "/resources/tagion-whitepaper.pdf",
   TAGION_MANIFESTO = "/resources/tagion-manifesto.pdf",
   GOVERNANCE_DEVELOPMENT = "https://docs.tagion.org/gov/intro",
-  TECH_DOCUMENTATION = "https://docs.tagion.org/tech/guide",
+  TECH_DOCUMENTATION = "https://docs.tagion.org/tech/intro",
+  DOCUMENTATION = "https://docs.tagion.org/",
+
+  JUSTPAY_WALLET = "https://www.decard.io/justpay",
 
   BUY_TAGIONS = "/buy-tagions",
 

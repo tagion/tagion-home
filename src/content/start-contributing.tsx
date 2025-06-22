@@ -17,8 +17,11 @@ export const startContributingData = [
           Our team will carefully review each submission and select the most
           impactful and feasible suggestions to implement.<div className="text-separator" />
           We also seek translators with exceptional language skills, attention to detail and a deep understanding of the distributed technology space.
-Help us bring Tagion to the world!
-Go to Discord &gt; Contributing &gt; #translate and fill out the application form, indicating your language proficiency and providing examples of previous work.
+          Help us bring Tagion to the world! Go to{" "}
+          <span className="navigation_path">
+            Discord {">"} Contributing {">"} #translate
+          </span>{" "}
+          and fill out the application form, indicating your language proficiency and providing examples of previous work.
         </>
       ),
     },
@@ -44,8 +47,9 @@ Go to Discord &gt; Contributing &gt; #translate and fill out the application for
           project's future.
           <div className="text-separator" /> Go to{" "}
           <span className="navigation_path">
-            Discord {">"} Contributing {">"} #moderation channel to apply.
-          </span>
+            Discord {">"} Contributing {">"} #moderation channel
+          </span> {" "}
+          to apply.
         </>
       ),
     },
@@ -69,21 +73,21 @@ Go to Discord &gt; Contributing &gt; #translate and fill out the application for
           <div className="text-separator" />
           Go to{" "}
           <span className="navigation_path">
-            Discord {">"} Contributing {">"} #design or #write channels and
-            introduce yourself and share your portfolio and ideas with us.
-          </span>
+            Discord {">"} Contributing {">"} #design or #write channels
+          </span> {" "}
+          and introduce yourself and share your portfolio and ideas with us.
         </>
       ),
     },
   },
   {
-    taskName: "Co-design our governance",
+    taskName: "Co-Design our Governance",
     description: {
       title: "Research contributor",
       body: (
         <>
-          Are you a researcher, analyst or visionary with a deep understanding of distributed ledger technology, tokenomics and governance?  
-          Moving Tagion from the stewardship of the founders out into decentralisation starts right now, with your input. Help us design the most inclusive, secure and transparent governance system that can safeguard our values und ambitions. 
+          Are you a researcher, analyst or visionary with a deep understanding of distributed technology, tokenomics and governance?  
+          Moving Tagion from the stewardship of the founders out into decentralisation starts right now, with your input. Help us design the most inclusive, secure and transparent governance system that can safeguard our values und ambitions.
           <div className="text-separator" />
           Go to{" "}
           <span className="navigation_path">
@@ -94,22 +98,23 @@ Go to Discord &gt; Contributing &gt; #translate and fill out the application for
     },
   },
   {
-    taskName: "Test our tech and run a node",
+    taskName: "Test our Tech and run a node",
     description: {
-      title: "Test our tech",
+      title: "Test our Tech",
       body: (
         <>
-          All our code it publicly accessible on Github. 
+          All our code is publicly accessible on Github. 
           Our individual applications and packages will become  ever more comprehensive and at the same time easier to install and use - even for lay people.
           <div className="text-separator" />
           To decentralise Tagion and release from the stewardship of the founders, we need tester of any skill level to give us feedback on our documentation and functionality. 
           <div className="text-separator" />
-          Eventually, we need a network of independent nodes to test all aspects of distribution and operation.
+          Eventually, we need a network of self-managed nodes to test all aspects of distribution and operation.
           <div className="text-separator" />
           Go to{" "}
           <span className="navigation_path">
-            Discord {">"} Contributing {">"} #release-testing to get involved and share what you learn when setting up and testing our nodes.
-          </span>
+            Discord {">"} Contributing {">"} #release-testing
+          </span> {" "}
+          to get involved and share what you learn when setting up and testing our nodes.
         </>
       ),
     },

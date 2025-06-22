@@ -20,7 +20,7 @@ export const getTagions = {
       </div>
     </>
   ),
-  description: "Participate in a diverse network, bring what you are good at",
+  description: "Participate in a diverse network, bring your use-case and skills.",
   Img: communityPng,
   linkTo: InternalLinks.COMMUNITY,
 };
@@ -35,7 +35,7 @@ export const visitTheBlog = {
     </>
   ),
   description:
-    "Discover the latest news, learn our blog, engage with your peers and the stewards",
+    "Discover the latest developments, learn how it works and what powers its development, engage with your peers and current stewards.",
   Img: signedPaperPng,
   linkTo: InternalLinks.LEARNANDFOLLOW,
 };
@@ -46,7 +46,7 @@ export const joinTheCommunity = {
       Get Tagions <SmallArrowLinkIcon />
     </>
   ),
-  description: "Be an early supporter and benefit from realising our common goals",
+  description: "Be an early supporter and benefit from realising our common goals by purchasing out TGN utility tokens.",
   Img: tokenHighResCuttedPng,
   linkTo: "/get-tagions",
 };
@@ -61,7 +61,7 @@ export const visitOurBlog = {
     </>
   ),
   description:
-    "Discover the latest news and our blog, engage with your peers and the stewards",
+    "Discover the latest news and recent blog-posts, for example on money and currency innovation.",
   Img: signedPaperPng,
   linkTo: "https://tagion.medium.com/",
 };
@@ -75,7 +75,7 @@ export const codeAndDocumentation = {
       </div>
     </>
   ),
-  description: "Find all the details and participate in running and governing the network",
+  description: "Find all the technical details, summary descriptions and a glossary.",
   Img: developerPng,
   linkTo: "https://docs.tagion.org/",
 };
@@ -86,7 +86,7 @@ export const joinTheConversation = {
       Join the conversation <SmallArrowLinkIcon />
     </>
   ),
-  description: "Engage in a diverse network, meet the team and bring what you are good at",
+  description: "Engage in a diverse network, meet the team and bring what you are good at.",
   Img: communityPng,
   linkTo: ExternalLinks.DISCORD,
 };

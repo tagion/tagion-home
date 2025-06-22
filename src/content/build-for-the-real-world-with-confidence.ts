@@ -12,28 +12,22 @@ export const buildForTheRealWorldData: Array<{
   style?: { title: BreakpointsStyleObjectType };
 }> = [
   {
-    title: "DART",
+    title: "DART and HiBON",
     description:
-      "Our innovative database is built from the bottom up to prevent bottlenecks that have previously hampered the adoption of distributed networks.",
+      "Our innovative database is built on a new data format that gives ownership and control for each individual record. It's built from the bottom up to prevent bottlenecks in scalability that have previously hampered the adoption of distributed networks. ",
     img: distributedDataPng,
   },
   {
-    title: "Wavefront",
+    title: "Wavefront and Hashgraph",
     description:
-      "The patented communication protocol enables fast consensus across our distributed database.",
+      "Our patented Wavefront communication protocol enables a fast Hashgraph consensus across our distributed database with low computation and storage overheads that allow for any scale.",
     img: roadMapPng,
   },
   {
-    title: "Ordering and deterministic consensus",
-    description:
-      "Our consensus is deterministic and reliable, not probabilistic and potentially changeable as in most blockchain implementations. New transactions are submitted in strict order, to prevent fraud and manipulation.",
-    img: trustPng,
-  },
-  {
     title:
-      "Node swapping",
+      "Network formation",
     description:
-      "Tagion remains open and secure by combining meritocratic and random elements in determining which nodes participate in the consensus mechanism.",
+      "Tagion remains open and secure by combining meritocratic and random elements in determining which nodes participate in the Mainnet consensus. Federated Databases remain independent in their datamanagement and participation rules.",
     img: nodePng,
   },
 ];

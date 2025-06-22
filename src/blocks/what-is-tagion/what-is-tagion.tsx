@@ -26,9 +26,9 @@ export const WhatIsTagionBlock: React.FC = () => {
     >
       <div className={`${cx("title")} title-font`}>What is Tagion?</div>
       <div className={`${cx("description")} body-font`}>
-      At its core, Tagion is a distributed database that combines features from blockchains and traditional centralised architectures. It is the alternative to conventional financial infrastructures that are predominantly owned by corporations that prioritize shareholder value over user-benefits. 
+      In essence, Tagion is a network of distributed databases that combines features from blockchains and traditional centralised architectures. It is the alternative to conventional data management services that are predominantly owned and controlled by corporations that prioritise shareholder value over user-benefits. 
 
-Tagion is decentralised, meaning that no one actor can gain power over others and that user benefits remain safeguarded. Tagion was designed and implemented based on the following values:
+Tagion is built to be decentralised, meaning that no one actor can gain power over others and that user benefits remain safeguarded. Tagion was designed and implemented based on the following values:
         <div className="text-separator" />
         <div className={cx("cards_wrapper")}>
           {whatIsTagionBlockCardsData.length &&
@@ -47,9 +47,9 @@ Tagion is decentralised, meaning that no one actor can gain power over others an
             ))}
         </div>
         <div className="text-separator" />
-        Different from blockchains, Tagion's software architecture is designed for massive scale. It’s a so-called Hashgraph system that is capable of handling high volumes of transactions at great speed with high security, low cost and minimal energy consumption. 
+        Different from blockchains, Tagion's patented database architecture is designed for full data control and massive scale. With its slick and powerful dataformat it ensures security and efficiency. Its Hashgraph consensus mechanism is enhanced with a patented communication protocol that is capable of handling high volumes of transactions at great speed without compromise and at low cost and minimal energy consumption. 
         <div className="text-separator" />
-        Tagion is a toolbox for developers, communities and enterprises to build locally optimised, globally shared real-world use cases.
+        Tagion provides the toolbox for developers, communities and enterprises to build locally optimised, globally shared real-world use cases.
       </div>
       <img
         className={cx("mobile_atoms_bond_img")}

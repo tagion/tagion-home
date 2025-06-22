@@ -77,10 +77,10 @@ export const valueForContributorsBlockData = {
     
       title: (
         <>
-          Twitter <SmallArrowLinkIcon />
+          X <SmallArrowLinkIcon />
         </>
       ),
-      description: "Share the love",
+      description: "For those who love tweeting",
       img: twitterIcon,
       linkTo: ExternalLinks.TWITTER,
     },

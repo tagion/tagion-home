@@ -28,7 +28,7 @@ export const SubscribeToOurNewsletterBlock: React.FC = () => {
         <div className={cx("icon_wrapper")}></div>
         <div className={cx("body")}>
           <div className={`${cx("title")} title-font`}>
-            Subscribe to our newsletter
+            Subscribe to our Newsletter
           </div>
           <form className={cx("form")} onSubmit={onSubmit}>
             <Input
