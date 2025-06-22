@@ -45,7 +45,7 @@ const IndexPage = () => {
               Cooperative <span className="massive_word">Financial</span> Infrastructure
             </>
           }
-          description="Future-proof economies need a customisable, distributed, and scalable foundation. Tagion enables communities and businesses to build cooperative financial solutions that foster transparency, fairness, and efficiency, driving inclusive and sustainable growth. "
+          description="Future-proof data management and sharing  needs a customisable, distributed, and scalable foundation. Tagion enables communities and businesses to build distributed database solutions that foster transparency, fairness, and efficiency, driving inclusive and sustainable growth. "
           classNames={{
             imgWrapper: cx("main_img_wrapper"),
             textWrapper: cx("main_text_wrapper"),

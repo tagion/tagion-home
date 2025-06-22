@@ -16,7 +16,7 @@ export const valuePartnersBlockData = [
       </>
     ),
     description:
-      "Decard conceived and coded Tagion. Decard has funded the technical development of Tagion through token sales and by helping their clients leverage this cutting-edge technology for business applications in currency design, payments, tokenisation and distributed data-management. ",
+      "DECARD is the innovative technology company that conceived and coded Tagion. DECARD has funded the technical development of Tagion through toke sales and by helping their clients leverage this cutting-edge technology for business applications in finance, supply-chain, manufacturing and cyber security. ",
     linkTo: "https://decard.io/",
     //linkTo: InternalLinks.PARTNERS_DECARD,
   },
@@ -43,7 +43,7 @@ export const valuePartnersBlockData = [
       </>
     ),
     description:
-      "Achieving decentralisation means handing over the network to its users. Respond to your invitation and become a contributor and co-owner of Tagion. ",
+      "Achieving decentralisation means handing over the network to its users. Respond to your invitation and become a contributor and co-owner of Tagion.",
       linkTo: InternalLinks.COMMUNITY,
   },
 ];

@@ -61,7 +61,7 @@ const EcosystemPage = () => {
               The way of <br />the Tagion
             </>
           }
-          description="Discover how Tagion functions under the hood and learn about our patented technologies that allow for the speed, scalability and low energy consumption that set Tagion apart from other DLTs."
+          description="Discover how Tagion functions under the hood and learn about our patented technologies that allow for the speed, scalability and low energy consumption that set Tagion apart from other solutions."
           img={ecosystemPageIntro}
           classNames={{
             imgWrapper: cx("ecosystem_img_wrapper"),
@@ -97,14 +97,20 @@ const EcosystemPage = () => {
           title="Core building blocks"
           description={ //! FIX THIS ERROR IN THE NEAR FUTURE !
             <>
-              Get an overview of the features of our decentralised, independent, censorship-resistant, borderless monetary system and banking infrastructure. 
-              For a deep-dive read our&nbsp;
+              Understand how our technology enables real decentralisation and independent, sovereign, scalable data and transaction infrastuctures. For starters, here is a&nbsp;
               <a 
-                href="https://www.tagion.org/resources/tagion-whitepaper.pdf" 
+                href="https://docs.tagion.org/gov/intro/jargonbusting" 
                 style={{ color: 'black' }}
               >
-              technical concept paper
-              </a>.
+              101 article about Tagion works.
+              </a>
+              &nbsp;For a deep dive, find all details on our&nbsp;
+              <a 
+                href="https://docs.tagion.org/tech/intro"
+                style={{ color: 'black' }}
+              >
+              technical documentation pages.
+              </a>
             </>
           }
           data={coreBuildingBlockData}

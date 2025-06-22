@@ -12,16 +12,16 @@ export type FooterColumnLinkType = (typeof footerColumnLinks)[number];
 
 export const footerColumnLinks = [
   {
-    title: "About Tagion",
+    title: "Documentation",
     links: [
       { name: "Governance Development", linkTo: ExternalLinks.GOVERNANCE_DEVELOPMENT }, //https://docs.tagion.org/gov/intro
       { name: "Tech Documentation", linkTo: ExternalLinks.TECH_DOCUMENTATION }, //https://docs.tagion.org/tech/guide
-      tokenomicsPdfLink,
+      { name: "Blog on Medium", linkTo: ExternalLinks.MEDIUM },
     ],
   },
 
   {
-    title: "Docs",
+    title: "Downloads",
     links: [
       // {
       //   name: "Tech paper",
@@ -29,7 +29,11 @@ export const footerColumnLinks = [
       //   //   linkTo: ExternalLinks.TECH_PAPER,
       //   //   externalLink: true,
       // },
-      whitepaperPdfLink,
+      {
+        name: "JustPay Wallet",
+        linkTo: ExternalLinks.JUSTPAY_WALLET,
+        externalLink: true,
+      },
       manifestoPdfLink,
       {
         name: "Brand Guidelines",
@@ -42,9 +46,9 @@ export const footerColumnLinks = [
   {
     title: "Next steps",
     links: [
-      { name: "Participate", linkTo: InternalLinks.COMMUNITY },
-      { name: "Origins", linkTo: InternalLinks.ABOUT },
-      { name: "Blog", linkTo: InternalLinks.BLOG },
+      { name: "Join the Conversation", linkTo: ExternalLinks.DISCORD },
+      { name: "Buy TGN Utility Tokens", linkTo: InternalLinks.GET_TAGIONS },
+      { name: "Co-develope and Participate", linkTo: InternalLinks.COMMUNITY },
     ],
   },
 ];

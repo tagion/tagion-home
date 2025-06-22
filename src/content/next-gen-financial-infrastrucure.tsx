@@ -2,10 +2,10 @@ import React from "react";
 
 import { BreakpointsStyleObjectType } from "../common/types/breakpoints-style-object-type";
 
-import partnersPng from "../assets/images/partners.png";
+import nodePng from "../assets/images/node.png";
 import speedPng from "../assets/images/speed.png";
 import collaboratorsPng from "../assets/images/collaborators.png";
-import highrestokenPng from "../assets/images/token_high_resolution_cutted.png";
+import distributedDataPng from "../assets/images/distributed_data.png";
 
 export const nextGennFinancialInfrastrucureData: Array<{
   title: string | React.ReactElement;
@@ -14,34 +14,34 @@ export const nextGennFinancialInfrastrucureData: Array<{
   style?: Partial<Record<"title" | "description", BreakpointsStyleObjectType>>;
 }> = [
   {
-    title: "Account for what you value",
+    title: "You own it, together. Nobody exploits it.",
     description:
-      "Make your assets liquid, tradeable and accessible. Use tokens to represent ownership titles, access rights, financial instruments or any type of asset.  Create your own currencies to represent  what you value and enable the use-cases you envision.",
-    img: highrestokenPng,
+      "Digital services have become a necessity of modern life, control over (personal) data is too important to leave to corporate interests. The underlying infrastructure should be a public good, universally accessible and not provided for private profits. That is why we designed Tagion. It belongs to all who contribute and rely on it - providing security and fully customisable control over your data - private, public or business-related. ",
+    img: collaboratorsPng,
+  },
+  {
+    title: "The Smart Database - best of both worlds",
+    description:
+      "Blockchains have accelerated common expectations about distribution and decentralisation. Tagion now delivers the long-missed solutions to their shortcomings that kept centralised data-management in place. Our database architecture offers full range of data control and sharing options at the individual record level - without compromising on security, efficiency and decentralised governance. ",
+    img: distributedDataPng,
     style: {
       title: { desktop: { width: "472px" } },
     },
   },
   {
-    title: "You own it, together. Nobody exploits it.",
+    title: "Decentralised Mainnet - Federated Databases",
     description:
-      "Electronic payments and financial tools are a necessity of modern life. The underlying infrastructure should be a public good, universally accessible and not operated for private profits. That is how Tagion is designed. It belongs to all who contribute and rely on it.",
-    img: partnersPng,
-  },
-  {
-    title: "Decentralised mainnet - federated sub-systems",
-    description:
-      "Thanks to sub-systems that can synchronize but remain independent from the mainnet, you can customise your network to work according to your rules. Create incentives and governance rules that suit your context.",
-    img: collaboratorsPng,
+      "Thanks to our native network architecture you can create your own Federated Database. It connects to the Tagion Mainnet but remains fully independent in how it manages proprietary data and participation. You can customise privacy, business and governance rules that suit your context, use-case and stakeholders. ",
+    img: nodePng,
     style: {
       title: { desktop_large: { width: "400px" } },
       description: { tablet: { width: "460px" } },
     },
   },
   {
-    title: "At scale and speed",
+    title: "Security, scale and speed",
     description:
-      "Read, write, update and delete data seamlessly. Make transactions at the speed of conventional payment systems, but with the benefits of distributed networks. All with minimal energy consumption.",
+      "Our patented protocols, architectures and bespoke data formats allow for what seemed impossible before: write, update and delete data seamlessly. Making transactions at the speed of conventional centralised systems, all while benefitting from distributed storage and independent management. And because Tagion is desigend for efficiency at every level, hardware, bandwidth and energy requirements are minimal.",
     img: speedPng,
   },
 ];

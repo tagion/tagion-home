@@ -25,9 +25,9 @@ export const ourVisionAndMissioBlockData = [
     },
   },
   {
-    title: "Integrated Financial Ecosystem",
+    title: "Integrated Decentralised Ecosystem",
     description:
-      "Capital market with robust marketplace and use cases powered by genuine governance and voting system that takes decisions on a social and monetary level.",
+      "Diverse applications in core industries powered by genuine governance and voting systems that decentralises decisions on a social and monetary level.",
     label: "2028 - 2033",
     style: {
       title: {

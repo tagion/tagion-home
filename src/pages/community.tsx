@@ -43,7 +43,7 @@ const CommunityPage = () => {
         <IntroductoryBlock
           title={
             <>
-              Co&#8209;develop<br />and co&#8209;own
+              Co&#8209;Develop<br /> Co&#8209;Own
             </>
           }
           description={
@@ -52,7 +52,7 @@ const CommunityPage = () => {
               <br />
               The foundation of our decentralised network is you!
               <br />
-              Join now as we release Tagion from the stewardship of its founders - and shape the future of financial infrastuctures!
+              Join now as we release Tagion from the stewardship of its founders - and shape the future of digital infrastuctures!
             </>
           }
           img={

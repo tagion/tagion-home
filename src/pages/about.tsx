@@ -35,7 +35,7 @@ const AboutPage = () => {
       <AnimatedGradientWrapper gradientData={topPageAnimatedGradientData}>
         <IntroductoryBlock
           title="Built on vision and values"
-          description="We dream of a future where everyone has equal opportunities to participate in a fair economy. Today, we are actively building our dream - a modular, decentralised, scalable and secure network for a cooperative financial system based on real human interactions. And the best part is that we are building it together with you."
+          description="We dream of a future where everyone has equal opportunities to participate in a fair economy and has full control over their (personal) data. Today, we are actively building our dream - a modular, decentralised, scalable and secure network for a cooperative data management based on real human interactions. And the best part is that we are building it together with you."
           img={aboutPageIntro}
           classNames={{
             imgWrapper: cx("about_img_wrapper"),
