@@ -37,6 +37,7 @@ export const CustomLink: React.FC<PropsWithChildren<InputProps>> = ({
   ) : (
     <Link
       to={linkTo}
+      target="_blank" // OPEN LINKS IN NEW TAB
       className={`${isLinkDisabled ? "disable-link" : ""} ${className}`}
       onClick={onClick}
       state={state}

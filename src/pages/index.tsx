@@ -42,7 +42,7 @@ const IndexPage = () => {
           img={mainPageIntro}
           title={
             <>
-              Cooperative <span className="massive_word">Financial</span> Infrastructure
+              Cooperative <span className="massive_word">Data</span> Infrastructure
             </>
           }
           description="Future-proof data management and sharing  needs a customisable, distributed, and scalable foundation. Tagion enables communities and businesses to build distributed database solutions that foster transparency, fairness, and efficiency, driving inclusive and sustainable growth. "
