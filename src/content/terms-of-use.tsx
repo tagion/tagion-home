@@ -13,7 +13,14 @@ export const termsOfUseData = [
     description: (
       <>
         Acceptance of the Terms of Use These terms of use are entered into by
-        and between you and the DECARD ("we" or "us"). The following terms and
+        and between you and the&nbsp;
+        <a 
+                href="https://www.decard.io/"
+                style={{ color: 'black' }}
+              >
+              DECARD
+        </a>&nbsp;
+        ("we" or "us"). The following terms and
         conditions, together with any documents they expressly incorporate by
         reference (collectively, these "Terms of Use"), govern your access to
         and use of tagion.org, including any content, functionality and services
