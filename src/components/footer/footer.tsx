@@ -56,8 +56,8 @@ export const Footer: React.FC = () => {
             )}
           <div className={`${cx("additional_links_column")} inter-12`}>
             <SocialLinks className={cx("socials")} isWhiteColor />
-            <CustomLink linkTo="https://www.decard.io">Privacy Policy</CustomLink> {/*previous link /privacy-policy */}
-            <CustomLink linkTo="https://www.decard.io">Terms of use</CustomLink> {/*previous link /terms-of-use */}
+            <CustomLink linkTo="/privacy-policy">Privacy Policy</CustomLink>
+            <CustomLink linkTo="/terms-of-use">Terms of use</CustomLink>
           </div>
         </div>
 

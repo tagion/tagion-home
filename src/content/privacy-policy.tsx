@@ -18,7 +18,14 @@ export const privacyPolicyData = [
         you would take the time to read through our privacy policy, so you are
         informed about how we handle your personal data.
         <br />
-        The purpose of this privacy policy is to explain how DECARD collects and
+        The purpose of this privacy policy is to explain how&nbsp;
+        <a 
+                href="https://www.decard.io/"
+                style={{ color: 'black' }}
+              >
+              DECARD
+        </a>&nbsp;
+        collects and
         processes your personal data when you interact with our website. The
         privacy policy applies to tagion.org.
         <br />
